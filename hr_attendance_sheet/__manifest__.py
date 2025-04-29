@@ -16,7 +16,7 @@
 
     # any module necessary for this one to work correctly
     'depends': ['hr_attendance', 'hr_holidays', 'project', 'hr_payroll', 'ohrms_overtime', 'matco_loan_management', 'ebs_waseef_leave_advance',
-                'ebs_lb_payroll', 'waseef_allowance_request'],
+                'ebs_lb_payroll'],
 
     # always loaded
     'data': [
