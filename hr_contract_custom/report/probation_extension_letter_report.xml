@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+         <record id="probation_extension_letter" model="ir.actions.report">
+        <field name="name">Probation Extension Letter</field>
+        <field name="model">trial.period</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hr_contract_custom.probation_extension_letter_report</field>
+        <field name="report_file">hr_contract_custom.probation_extension_letter_report</field>
+        <field name="print_report_name">'Probation Extension Letter - '+(object.related_employee.name if object.related_employee.name else '')</field>
+        <field name="binding_type">report</field>
+        <field name="attachment">'Probation Extension Letter - '+(object.related_employee.name if object.related_employee.name else '')+'.pdf'</field>
+    </record>
+
+        <template id="probation_extension_letter_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.report_probation_extension_letter_document"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_probation_extension_letter_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <br/>
+                    <br/>
+                    <div id="title">
+                        <h2>
+                            <span style="font-weight: 800;">Probation Extension Letter:</span>
+                        </h2>
+                    </div>
+                    <br/>
+                    <span style="position: absolute; right: 50px;"
+                          t-esc="'Date: '+context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                    <br/>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Name</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Employee ID</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.system_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Date of Joining</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.start_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Department</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.department_id.complete_name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Job Title</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.contract_id.job_title.name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+
+                    <div>
+
+                        <span>Dear</span>
+                        <br/>
+                        <br/>
+                        <span>Re: Notice of Probationary Period Extension</span>
+                        <br/>
+                        <br/>
+                        <span>This letter is to notify based on your under performance during your probation period. We
+                            inform you that your probation period will be extended upto next three months
+                        </span>
+                        <br/>
+                        <br/>
+                        <span>This extension will provide you additional time to perform the full range of
+                            responsibilities and demonstrate your ability to more fully and consistently meet outlined
+                            expectations for this position.
+                        </span>
+                        <br/>
+                        <br/>
+                        <span>With this extension, your probationary period is extended upto</span>
+                        <span t-field="o.end_date"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span>Regards,</span>
+                        <br/>
+                        <br/>
+                        <span style="font-size: large;">Human Capital Department</span>
+                        <br/>
+                        <br/>
+                        <span style="color: red;font-size: x-small;">
+                            <i>This is an automatically generated email, Signatory is not required please do not reply
+                            </i>
+                        </span>
+                    </div>
+
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

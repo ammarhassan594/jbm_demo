@@ -1,0 +1,15 @@
+<odoo>
+    <record id="hr_applicant_view_custom_form_inherit" model="ir.ui.view">
+            <field name="name">hr.applicant.form.inherit</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                	<field name="employee_type"/>
+                    <field name="is_create_user"/>
+                </field>
+
+
+            </field>
+    </record>
+</odoo>

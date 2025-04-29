@@ -1,0 +1,86 @@
+<odoo>
+    <record id="ebs_fusion_res_partner_proposal_form" model="ir.ui.view">
+        <field name="name">ebs.fusion.res.partner.proposal.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" context="{'search_default_contact_id':active_id}"
+                        attrs='{"invisible": ["|","|",("is_company", "!=", True),("company_partner", "=", True),("is_vendor","=",True)]}'
+                        name="open_proposals" string="Contracts" icon="fa-tasks"/>
+                <button class="oe_stat_button" type="object" context="{'search_default_partner_id':active_id}"
+                        name="open_service_orders" string="Service Orders" invisible="1"
+                        attrs="{'invisible':[('is_vendor','=',True)]}" icon="fa-tasks"/>
+
+            </div>
+
+
+        </field>
+    </record>
+    <record id="view_clients_review_inherit_form" model="ir.ui.view">
+        <field name="name">inherit.clients.review.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="ebs_fusion_contacts.view_clients_review_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='address']" position="after">
+                <page name="service_order" string="Service Order" groups="ebs_fusion_services.group_service_order_user">
+                    <field name="service_order_ids" domain="[('client_id','=',id)]" readonly="1"
+                           context="{'default_client_id':id}">
+                        <tree default_order='service_order_date desc'>
+                            <field name="name"/>
+
+                            <field name="service_id"/>
+                            <field name="service_code"/>
+                            <field name="day_to_complete"/>
+                            <field name="proposal_id" optional="hide"/>
+                            <field name="partner_id"/>
+
+                            <field name="service_order_date"/>
+                            <field name="status"/>
+                            <field name="start_date" optional="hide"/>
+                            <field name="due_date" optional="hide"/>
+                            <field name="end_date" optional="hide"/>
+                            <field name="is_invoiced" optional="hide"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_clients_review_form_inherit1" model="ir.ui.view">
+        <field name="name">inherit.clients.review.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="hr_employee_custom.view_clients_review_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='employees']" position="after">
+                <page name="labor_quota_id" string="Labor Quota">
+                    <field name="labor_quota_ids">
+                        <tree>
+                            <field name="app_no"/>
+                            <field name="service_order_id"/>
+                            <field name="app_date"/>
+                            <field name="expiry_date"/>
+                            <field name="status"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_partner_dependents_form_inherit" model="ir.ui.view">
+        <field name="name">view.partner.dependents.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="ebs_fusion_contacts.view_partner_dependents_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" context="{'search_default_partner_id':active_id}"
+                        name="open_service_orders" string="Service Orders" icon="fa-tasks"/>
+            </div>
+        </field>
+    </record>
+
+
+</odoo>

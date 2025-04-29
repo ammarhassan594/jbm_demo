@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+
+
+       <record id="asset_transfer_log_tree" model="ir.ui.view">
+            <field name="name">asset.transfer.log.tree</field>
+            <field name="model">ebs.asset.transfer.log</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0" delete="0">
+                    <field name="asset_id"/>
+                    <field name="employee_id"/>
+                    <field name="transfer_date"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="asset_transfer_log_window" model="ir.actions.act_window">
+            <field name="name">Asset Transfer Log</field>
+            <field name="res_model">ebs.asset.transfer.log</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="asset_transfer_log_filter" model="ir.ui.view">
+            <field name="name">asset.transfer.log.filter</field>
+            <field name="model">ebs.asset.transfer.log</field>
+            <field name="arch" type="xml">
+               <search string="Search Contract">
+                   <field name="asset_id"/>
+                   <field name="employee_id"/>
+                   <field name="transfer_date"/>
+
+                    <separator/>
+
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="asset_group" string="Asset" context="{'group_by': 'asset_id'}"/>
+                        <filter name="emp_group" string="Employee" context="{'group_by': 'employee_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

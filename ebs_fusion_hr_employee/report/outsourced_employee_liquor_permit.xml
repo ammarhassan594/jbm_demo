@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="outsourced_employee_liquor_permit"
+                model="hr.employee"
+                string="Outsourced Employee Liquor Permit"
+                report_type="qweb-pdf"
+                name="ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report"
+                file="ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report"
+                print_report_name="object.name"
+                attachment="' Employee Applicant Photo - '+(object.name if object.name else '')+'.pdf'"
+
+        />
+
+        <template id="outsourced_employee_liquor_permits_report">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="margin: 0px !important">
+                        <div class="header">
+                            <div class="row">
+
+                                <div class="col-12" style="padding: 0px !important">
+                                    <img t-if="o.comp_hearder"
+                                         t-att-src="image_data_uri(o.comp_hearder)"
+                                         style="width:100%" alt="Letter Head"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-right: 20px; margin-left: 20px; padding-top: 140px">
+                            <div>
+                                <div>Date:
+                                    <strong>
+                                        <t t-esc="datetime.date.today().strftime('%d/%m/%Y')"/>
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <strong>Qatar Distribution Company</strong>
+                                </div>
+                                <div>P.O. Box 3232</div>
+                                <div>Doha, Qatar</div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div>
+                                <span>Subject:</span>
+                                <strong>Application for Liquor Permit</strong>
+                            </div>
+                            <br/>
+                            <div>Dear Sir,</div>
+                            <br/>
+                            <div>
+                                <div>We kindly request your good office to provide a Liquor Permit for
+                                    <strong>
+                                        <t t-esc="o.title.name"/>
+                                        <t t-esc="o.name"/>
+                                    </strong>
+                                    <t t-if="o.nationality_id">, a citizen of
+                                        <strong>
+                                            <t t-esc="o.nationality_id.name"/>
+                                        </strong>
+                                        ,
+                                        <t t-if="o.marital">
+                                            <strong>
+                                                <t t-esc="o.marital"/>
+                                            </strong>
+                                        </t>
+                                    </t>
+                                    <t t-if="o.passport_no">, holding Passport
+                                        no.
+                                        <strong>
+                                            <t t-esc="o.passport_no"/>
+                                        </strong>
+                                        and
+                                    </t>
+                                    <t t-if="o.qid_no">QID no.
+                                        <strong>
+                                            <t t-esc="o.qid_no"/>
+                                        </strong>
+
+                                    .</t>
+
+                                </div>
+                                <div>
+                                    <strong>
+                                        <t t-esc="o.title.name"/>
+                                        <t t-esc="o.name"/>
+                                    </strong>
+                                    is currently employed in <strong>Fusion Outsourcing and
+                                    Services LLC
+                                </strong>
+                                    <t t-if="o.qid_job_position_id">as a
+                                        <strong>
+                                            <t t-esc="o.qid_job_position_id.name"/>
+                                        </strong>
+                                    </t>
+                                    .
+                                    <t t-if="o.joining_date">They joined the company on the
+
+                                        <strong>
+                                            <t t-esc="o.joining_date.strftime('%d/%m/%Y')"/>
+                                        </strong>
+
+
+                                    .</t> Their present monthly salary is QAR
+                                    <strong>
+                                        <t t-if="o.emp_package - int(o.emp_package) > 0">
+                                            <t t-esc="o.emp_package"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="int(o.emp_package)"/>
+                                        </t>
+                                    </strong>
+                                    .
+                                    Please find the breakdown of their salary below.
+                                </div>
+
+                                <br/>
+                                <div>
+                                    <t t-if="o.contract_id">
+                                        Basic Salary                            <strong style="padding-left: 247px;">-</strong>
+                                        <strong style="padding-left: 110px;">
+                                                   QAR    <t t-esc="o.contract_id.wage"/>
+                                        </strong>
+                                        <br/>
+                                        Housing Allowance                       <strong style="padding-left: 196px;">-</strong>
+                                        <strong style="padding-left: 111px;">
+                                                  QAR     <t t-esc="o.contract_id.accommodation"/>
+                                        </strong>
+                                        <br/>
+                                        Transportation Allowance                <strong style="padding-left: 150px;">-</strong>
+                                        <strong style="padding-left: 111px;">
+                                                   QAR     <t t-esc="o.contract_id.transport_allowance"/>
+                                        </strong>
+                                        <br/>
+                                        Other Allowance
+                                        <strong style="padding-left: 212px;">-</strong>
+                                        <strong style="padding-left: 111px;">
+
+                                                   QAR    <t t-if="o.emp_other_allowance + o.emp_food_allowance + o.contract_id.living_allowance + o.contract_id.mobile_allowance - int(o.emp_other_allowance + o.emp_food_allowance + o.contract_id.living_allowance + o.contract_id.mobile_allowance) > 0">
+                                        <t t-esc="o.emp_other_allowance + o.emp_food_allowance + o.contract_id.living_allowance + o.contract_id.mobile_allowance"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="int(o.emp_other_allowance + o.emp_food_allowance + o.contract_id.living_allowance + o.contract_id.mobile_allowance)"/>
+                                    </t>
+                                        </strong>
+                                        <br/>
+                                    </t>
+                                </div>
+
+                                <br/>
+                                <div>This letter is issued upon his request for whatever legal purpose it may serve, and <strong>
+                                    Main Company Outsourcing and Services LLC
+                                </strong> holds no liability for any commitment enter vide this certificate.
+                                </div>
+                                <br/>
+                                <div>Yours sincerely,</div>
+                                <br/>
+                                <br/>
+                                <div>Alexander Lee</div>
+                                <br/>
+                                <div>
+                                    Director
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="row">
+                                <div class="col-12">
+                                    <img t-if="o.comp_footer"
+                                         t-att-src="image_data_uri(o.comp_footer)"
+                                         style="width:100%" alt="Letter Foot"/>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="page-break-before:always;"></p>
+
+                    </div>
+
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

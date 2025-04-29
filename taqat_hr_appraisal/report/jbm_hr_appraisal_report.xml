@@ -1,0 +1,385 @@
+<odoo>
+    <data>
+        <record id="paper_format_jbm_hr_appraisal" model="report.paperformat">
+            <field name="name">JBM Hr Appraisal paper format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">8</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+        <report id="action_report_jbm_hr_appraisal" model="hr.appraisal" string="Appraisal Report"
+                report_type="qweb-pdf" name="taqat_hr_appraisal.jbm_hr_appraisal_report_template"
+                file="taqat_hr_appraisal.jbm_hr_appraisal_report_template"
+
+                paperformat="taqat_hr_appraisal.paper_format_jbm_hr_appraisal"/>
+        <template id="jbm_hr_appraisal_report_template">
+            <t t-call="web.html_container">
+                <t t-set="total_page" t-value="len(docs)"/>
+                <t t-set="page_number" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="page_number" t-value="page_number + 1"/>
+                    <t t-call="web.basic_layout">
+                        <div class="page" style="direction: rtl;">
+                            <html>
+
+                                <style type="text/css">
+                                    body{
+                                    font-family: 'Lateef', serif;
+                                    font-size:20px;
+                                    }
+                                    .table tr
+                                    {
+                                    line-height:5px!important;
+                                    }
+                                    td{
+                                    border-right: 1px solid #785838!important;
+                                    border-left: 1px solid #785838!important;
+                                    border-bottom: 1px solid #785838!important;
+                                    }
+                                    .custom_td{
+                                    text-align: right!important;
+                                    border: 1px solid #785838!important;
+                                    }
+                                    .test_td {
+                                    border-right:none!important;
+                                    border-left: none!important;
+                                    border-bottom:none!important;
+                                    border-top: none!important;
+                                    }
+                                </style>
+                                <body>
+                                    <img src="/hr_contract_custom/static/src/img/sc_header.jpg"
+                                         style="padding-left:5px;height:147px;width:100%;"/>
+                                    <br/>
+                                    <span style="text-align:center!important;color:#5e0b05;font-size:25px;">
+                                        <center>تقييم أداء موظف خلال فترة اختبار</center>
+                                    </span>
+                                    <table class="table" style="margin-bottom: 0px!important;">
+                                        <tr style="background-color: #dfd7cf!important;text-align:right;line-height: 0.5;">
+                                            <td class="custom_td">التاريخ:
+                                                <t t-esc="o.date_close.strftime('%d/%m/%Y')"/>
+                                            </td>
+                                            <td colspan="2" class="custom_td">
+                                                يجب تقدميه قبل:
+                                                <t t-esc="o.date_close.strftime('%d/%m/%Y')"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <span style="text-align:center!important;color:#5e0b05;font-size:25px;">
+                                        <center>بيانات املوظف</center>
+                                    </span>
+                                    <table class="table" style="margin-bottom: 0px!important;">
+                                        <tr style="background-color: #dfd7cf!important;text-align:right;line-height: 0.5;">
+                                            <td class="custom_td">اسم ظف املو :
+                                                <t t-esc="o.employee_id.name"/>
+                                            </td>
+                                            <td class="custom_td">الوظيفة:
+                                                <t t-esc="o.employee_id.job_id.name"/>
+                                            </td>
+                                            <td class="custom_td">
+                                                الرقم الوظيفي :
+                                                <t t-esc="o.employee_id.sequence"/>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;text-align:right;line-height: 0.5;">
+                                            <td class="custom_td">تاريخ التعيين:
+                                                <t t-if="o.employee_id.joining_date">
+                                                    <t t-esc="o.employee_id.joining_date.strftime('%d/%m/%Y')"/>
+                                                </t>
+                                            </td>
+                                            <td class="custom_td">اإلدارة:
+                                                <t t-esc="o.employee_id.department_id.name"/>
+                                            </td>
+                                            <td class="custom_td">
+                                                القسم:
+                                                <t t-esc="o.employee_id.department_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;text-align:right;line-height: 0.5;">
+                                            <td class="custom_td">فترة مدة اختبار:</td>
+                                            <td class="custom_td" colspan="2">تاريخ إنتهاء فترة اختبار:</td>
+                                        </tr>
+                                    </table>
+                                    <span style="text-align:center!important;color:#5e0b05;font-size:25px;">
+                                        <center>عناصر التقييم</center>
+                                    </span>
+                                    <table class="table" style="border: 1px solid #785838!important;">
+                                        <tr style="background-color: #785838!important;line-height: 0.6!important;">
+                                            <td colspan="2" width="25%" style="color: white;text-align:center;">العنصر
+                                                الرئيسي
+                                            </td>
+                                            <td width="5%" style="color: white;">الدرجة القصوى</td>
+                                            <td width="60%" style="color: white;text-align:center;">العنصر الفرعي</td>
+                                            <td width="5%" style="color: white;">الدرجة العظمى</td>
+                                            <td width="5%" style="color: white;">درجة التقييم</td>
+                                        </tr>
+
+                                        <tr style="background-color: #dfd7cf!important;border-top: 0px solid!important;">
+                                            <td width="12.5%" rowspan="9"
+                                                style="line-height: 12!important;text-align:center!important;">الوظيفي
+                                            </td>
+                                            <td width="12.5%" rowspan="3"
+                                                style="line-height: 1!important;text-align:center!important;">القدرة على
+                                                حتمل املسؤولية
+                                            </td>
+                                            <td width="5%" rowspan="3"
+                                                style="line-height: 1!important;text-align:center!important;">18
+                                            </td>
+                                            <td width="60%" style="text-align:right!important;">اجلدية يف حتمل الواجبات
+                                                الوظيفية واحلماس فيما يوكل اليه من
+                                                مهام
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">6</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td style="text-align:right!important;">التعامل بحكمة واتزان مع املواقف
+                                                املختلفة (العادية والطارئة)
+                                            </td>
+                                            <td style="text-align:center!important;">6</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td style="text-align:right!important;">القدرة على مواجهة مشاكل العمل بشكل
+                                                موضوعي وسليم
+                                            </td>
+                                            <td style="text-align:center!important;">6</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="12.5%" rowspan="3"
+                                                style="text-align:center!important;line-height: 1!important;">تنمية
+                                                املعلومات واملهارات
+                                            </td>
+                                            <td width="5%" rowspan="3"
+                                                style="line-height: 1!important;text-align:center!important;">18
+                                            </td>
+                                            <td width="60%" style="text-align:right!important;">القدرة على اكتساب
+                                                معلومات ومعارف جديدة تربطه بعمله
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">6</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td style="text-align:right!important;">القدرة على املبادرة يف حتصيل
+                                                املعلومات واملهارات من خالل التطوير
+                                                الذاتي
+                                            </td>
+                                            <td style="text-align:center!important;">6</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td style="text-align:right!important;">احلرص على تبادل اخلبرات والتجارب
+                                                فيما يخدم مصلحة العمل
+                                            </td>
+                                            <td style="text-align:center!important;">6</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="12.5%" rowspan="3"
+                                                style="line-height: 1!important;text-align:center!important;">جودة العمل
+                                            </td>
+                                            <td width="5%" rowspan="3"
+                                                style="line-height: 1!important;text-align:right!important;">24
+                                            </td>
+                                            <td width="60%"
+                                                style="text-align:right!important;line-height: 0.8!important;">جودة
+                                                العمل الذي يقوم
+                                                املوظف بإجنازه وفق التعليمات احملددة وخلوه من األخطاء
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">8</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td style="text-align:right!important;">القدرة على اجناز االعمال املوكلة
+                                                للموظف يف الوقت احملدد
+                                            </td>
+                                            <td style="text-align:center!important;">8</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td style="text-align:right!important;">احلاجة الى االشراف واملتابعة من قبل
+                                                الرئيس املباشر
+                                            </td>
+                                            <td style="text-align:center!important;">8</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="12.5%" rowspan="6" style="text-align:center!important;">الشخصية
+                                            </td>
+                                            <td width="12.5%" rowspan="2" style="text-align:center!important;">عالقات
+                                                العمل
+                                            </td>
+                                            <td width="5%" rowspan="2" style="text-align:center!important;">16</td>
+                                            <td width="60%"
+                                                style="text-align:right!important;line-height: 0.8!important;">لتنفيذها(
+                                                القدرة على إقامة عالقات إيجابية مع الرؤساء )تقبل ارشاداتهم اإليجابية
+                                                واملبادرة
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">8</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="60%" style="text-align:right!important;">القدرة على إقامة عالقات
+                                                فعالة مع زمالئه والعمل بروح الفريق الواحد
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">8</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="12.5%" rowspan="4" style="text-align:center!important;">
+                                                االنضباط
+                                            </td>
+                                            <td width="5%" rowspan="4" style="text-align:center!important;">24</td>
+                                            <td width="60%" style="text-align:right!important;">االلتزام باحلضور ملقر
+                                                العمل يف املواعيد املقررة لذلك
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">6</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="60%" style="text-align:right!important;">االلتزام باالنصراف من
+                                                مقر العمل يف املواعيد املقررة لذلك
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">6</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="60%" style="text-align:right!important;">االستخدام األمثل لساعات
+                                                العمل الرسمية
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">6</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="60%" style="text-align:right!important;">غياب املوظف عن العمل دون
+                                                اخطار او اذن مسبق
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">6</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;">
+                                            <td width="60%" colspan="4" style="text-align:center!important;">املجموع
+                                                الكلي للدرجات
+                                            </td>
+                                            <td width="5%" style="text-align:center!important;">100</td>
+                                            <td width="5%"></td>
+                                        </tr>
+                                    </table>
+                                    <table class="table" style="margin-bottom: 0px !important;">
+                                        <tr class="text-center" style="background-color: #dfd7cf!important;">
+                                            <td class="custom_td" style="color:#5e0b05;text-align:center!important;">49
+                                                - 0
+                                            </td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td class="custom_td" style="color:#5e0b05;text-align:center!important;">65
+                                                - 50
+                                            </td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td class="custom_td" style="color:#5e0b05;text-align:center!important;">75
+                                                - 66
+                                            </td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td class="custom_td" style="color:#5e0b05;text-align:center!important;">89
+                                                - 76
+                                            </td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td class="custom_td" style="color:#5e0b05;text-align:center!important;">90
+                                                فأعلى
+                                            </td>
+                                        </tr>
+                                        <tr class="text-center" style="background-color: #785838!important;">
+                                            <td class="custom_td" style="color: white!important;">ضعيف</td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td style="color: white!important;">مقبول</td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td style="color: white!important;">جيد</td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td style="color: white!important;">ً جيد جدا</td>
+                                            <th class="test_td" style="background-color: white!important;"></th>
+                                            <td style="color: white!important;">ممتاز</td>
+                                        </tr>
+                                    </table>
+                                    <span style="text-align:center!important;color:#5e0b05;font-size:25px;">
+                                        <center>توصية مدير اإلدارة</center>
+                                    </span>
+                                    <table class="table" style="border: 1px solid #785838!important;">
+                                        <tr style="background-color: #dfd7cf!important;" class="text-right">
+                                            <td style="border-top:1px solid #785838!important;border-bottom:none!important;">
+                                                <i class="fa fa-square-o" aria-hidden="true"
+                                                   style="color:#785838!important;line-height: 1px;"></i>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                                <span>تثبيتا لموظف</span>
+                                            </td>
+                                            <td style="border-top:1px solid #785838!important;border-bottom:none!important;"></td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;" class="text-right">
+                                            <td style="border-top:none!important;border-bottom:none!important;"><i
+                                                    class="fa fa-square-o" aria-hidden="true"
+                                                    style="color:#785838!important;line-height: 1px;"></i>&amp;nbsp;&amp;nbsp;&amp;nbsp;عدم
+                                                تثبيت الموظف
+                                            </td>
+                                            <td style="border-top:none!important;border-bottom:none!important;">توقيع
+                                                مدير الادارة&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                                <span style="letter-spacing: 1px!important;color:#805500!important;">
+                                                    .........................................
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #dfd7cf!important;" class="text-right">
+                                            <td style="border-top:none!important;"><i class="fa fa-square-o"
+                                                                                      aria-hidden="true"
+                                                                                      style="color:#785838!important;line-height: 1px;"></i>&amp;nbsp;&amp;nbsp;&amp;nbsp;تمديد
+                                                فترة اختبار
+                                                مدة &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                                <span style="letter-spacing: 1px!important;color:#805500!important;">
+                                                    ..........................................................
+                                                </span>
+                                            </td>
+                                            <td style="border-top:none!important;"></td>
+                                        </tr>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-6">
+                                        </div>
+                                        <div class="col-6">
+                                            اعتماد
+                                            &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                            <span style="letter-spacing: 1px!important;color:#805500!important;">
+                                                ............................................................
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                </body>
+                            </html>
+                        </div>
+                        <div class="row footer">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span t-esc="total_page" style="font-size:10px!important;"/>
+                                    </td>
+                                    <td><span style="padding-left:7px;">من</span></td>
+                                    <td>
+                                        <span t-esc="page_number"
+                                              style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

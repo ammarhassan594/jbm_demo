@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="dms_integration_form_view" model="ir.ui.view">
+        <field name="name">dms.integration.form</field>
+        <field name="model">dms.integration</field>
+        <field name="arch" type="xml">
+            <form string="Dms Integration">
+                <sheet>
+                    <group>
+                        <field name="model_id" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="content_type_id"/>
+                            <field name="api_method"/>
+                            <field name="url"/>
+                            <field name="send_attachments"/>
+                            <field name="use_odoo_name"/>
+                            <field name="file_name"
+                                   attrs="{
+                                   'required': [('use_odoo_name', '=', False)],
+                                   'invisible': [('use_odoo_name', '!=', False)]
+                                   }"/>
+                            <field name="send_datetime"
+                                   attrs="{
+                                   'invisible': [('use_odoo_name', '!=', False)]
+                                   }"
+                            />
+                        </group>
+                        <group>
+                            <field name="field_state_id"
+                                   options="{'no_create': True, 'no_open':True, 'no_edit':True'}"
+                                   domain="[('model_id', '=', model_id)]"
+                            />
+                            <field name="state_value_id" force_save="1" domain="[('model_id', '=', model_id),
+                                                                                 ('state_field_id', '=',field_state_id)]"
+                                   widget="selection"/>
+                            <field name="report_id" force_save="1"
+                                   domain="[('model_id', '=', model_id)]"
+                                   options="{'no_create': True, 'no_open':True, 'no_edit':True'}"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="conditions" string="DMS Conditions">
+                            <field name="dms_condition_ids">
+                                <tree string="DMS Conditions">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="condition_type" optional="show"/>
+                                    <field name="filter_domain" optional="hide"/>
+                                    <field name="field_name" optional="hide"/>
+                                    <field name="operator" optional="hide"/>
+                                    <field name="value_type" optional="hide"/>
+                                    <field name="value" optional="hide"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <div class="oe_title">
+
+                                            <h1>
+                                                <field name="name" placeholder="Budget more than 90k"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="model" invisible="1"/>
+                                                <field name="dms_configuration_id" invisible="1"/>
+                                                <field name="condition_type" required="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="sequence"/>
+                                            </group>
+                                        </group>
+                                        <label for="field_name" string="Condition"
+                                               attrs="{'invisible' : [('condition_type', '!=', 'field_selection')],'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                        <div class="o_row"
+                                             attrs="{'invisible' : [('condition_type', '!=', 'field_selection')]}">
+                                            <field name="field_name"
+                                                   placeholder="ex. partner_id.total_invoiced"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                            <field name="operator"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                            <field name="value_type"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                            <field name="value"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                        </div>
+                                        <group>
+                                            <field name="python_code"
+                                                   attrs="{'invisible' : [('condition_type', '!=', 'python_code')],'required' : [('condition_type', '=', 'python_code')]}"
+                                                   widget="ace" options="{'mode': 'python'}"/>
+                                            <field name="filter_domain" widget="domain"
+                                                   options="{'model': 'model', 'in_dialog': True}"
+                                                   attrs="{'invisible' : [('condition_type', '!=', 'domain')],'required' : [('condition_type', '=', 'domain')]}"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="api_fields" string="Sent Fields">
+                            <field name="dms_field_ids">
+                                <tree>
+                                    <field name="model_id" invisible="1" readonly="1"/>
+                                    <!--                                    <field name="field_id" required="1"-->
+                                    <!--                                           options="{'no_create': True, 'no_open':True, 'no_edit':True'}"-->
+                                    <!--                                           domain="[('model_id', '=', model_id)]"/>-->
+                                    <field name="python_code"/>
+                                    <field name="api_field" required="1"/>
+                                    <field name="send_type" required="1"/>
+                                    <field name="file_name_expression"
+                                           attrs="{'required': [('send_type', '=', 'attachment')]}
+                                           " optional="hide"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="model_id" invisible="1" readonly="1"
+                                               options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                        <field name="python_code" widget="ace" options="{'mode': 'python'}"/>
+                                    </group>
+                                    <group>
+                                        <!--                                        <field name="field_id" required="1" domain="[('model_id', '=', model_id)]"-->
+                                        <!--                                               options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>-->
+                                        <field name="api_field" required="1"/>
+                                        <field name="send_type" required="1"/>
+                                        <field name="file_name_expression" widget="ace"
+                                           attrs="{'required': [('send_type', '=', 'attachment')],
+                                           'invisible': [('send_type', '!=', 'attachment')]}"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="dms_sent_records" string="DMS Sent Records">
+                            <field name="dms_temporary_ids" readonly="1" edit="0" create="0">
+                                <tree>
+                                    <field name="file_name"/>
+                                    <field name="report_id"
+                                           options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                    <field name="content_type_id"/>
+                                    <field name="api_method"/>
+                                    <field name="attachment" widget="binary"
+                                           options="{'no_create': True, 'no_edit':True'}"/>
+                                    <field name="res_id"/>
+                                    <field name="model_id"
+                                           options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                    <field name="processing_date"/>
+                                    <field name="processed"/>
+                                    <field name="user_id"
+                                           options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="file_name"/>
+                                            <field name="report_id"
+                                                   options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                            <field name="content_type_id"/>
+                                            <field name="api_method"/>
+                                            <field name="attachment" widget="binary"
+                                                   options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                        </group>
+                                        <group>
+                                            <field name="res_id"/>
+                                            <field name="model_id"
+                                                   options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                            <field name="processing_date"/>
+                                            <field name="processed"/>
+                                            <field name="user_id"
+                                                   options="{'no_create': True, 'no_open':True, 'no_edit':True'}"/>
+                                        </group>
+                                    </group>
+                                    <notebook>
+                                        <page string="Response">
+                                            <field name="response"/>
+                                        </page>
+                                        <page string="Request">
+                                            <field name="request"/>
+                                        </page>
+                                    </notebook>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dms_integration_tree_view" model="ir.ui.view">
+        <field name="name">dms.integration.tree</field>
+        <field name="model">dms.integration</field>
+        <field name="arch" type="xml">
+            <tree string="Dms Integration">
+                <field name="model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dms_integration_search_view" model="ir.ui.view">
+        <field name="name">dms.integration.search</field>
+        <field name="model">dms.integration</field>
+        <field name="arch" type="xml">
+            <search string="Dms Integration">
+                <field name="model_id"/>
+                <group expand="1" string="Group By">
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dms_integration_act_window" model="ir.actions.act_window">
+        <field name="name">Dms Integration</field>
+        <field name="res_model">dms.integration</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="dms_integration_search_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                There is no examples click here to add new Dms Integration.
+            </p>
+        </field>
+    </record>
+
+</odoo>

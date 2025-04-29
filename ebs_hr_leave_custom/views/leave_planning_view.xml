@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="hr_leave_planning_view_form" model="ir.ui.view">
+            <field name="name">hr.leave.planning.view.form</field>
+            <field name="model">hr.leave.planning</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="return_to_draft" string="Return Request" states="confirm"
+                                type="object"/>
+                        <button string="Confirm" name="action_confirm" states="draft" type="object"
+                                class="btn"/>
+
+                        <button string="Approve" name="action_approve" states="confirm" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object" name="leaves_request_action"
+                                    class="oe_stat_button" icon="fa-list-ul">
+                                <field name="count_leaves_request" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_id_domain" invisible="1"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="employee_id"
+                                       options="{'no_open': True,'no_create_edit': True,}"
+                                       domain="employee_id_domain"/>
+                                <field name="employee_number"/>
+                                <field name="type_leave" force_save="1" readonly="1"/>
+                                <field name="department_id" options="{'no_open': True,'no_create_edit': True,}"/>
+                                <field name="manager_id" options="{'no_open': True,'no_create_edit': True,}"/>
+                            </group>
+                            <group>
+                                <field name="job_id" options="{'no_open': True,'no_create_edit': True,}"/>
+                                <field name="available_number_days" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Leaves">
+                                <field name="planning_lines_ids" force_save="1">
+                                    <tree editable="bottom">
+                                        <field name="leave_id_domain" invisible="1"/>
+                                        <field name="leave_type_id" domain="leave_id_domain" required="1"/>
+                                        <field name="date_from" required="1"/>
+                                        <field name="date_to" required="1"/>
+                                         <field name="state" invisible="1"/>
+                                        <field name="employee_replacement_id" required="1"/>
+                                        <field name="working_days"/>
+                                        <field name="calendar_days"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="leave_id_domain" invisible="1"/>
+                                                <field name="leave_type_id" domain="leave_id_domain" required="1"/>
+                                                <field name="employee_replacement_id"/>
+                                            </group>
+                                            <group>
+                                                <field name="date_from" required="1"/>
+                                                <field name="date_to" required="1"/>
+                                                <field name="working_days"/>
+                                                <field name="calendar_days"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                                <group class="oe_right" name="total_days">
+                                    <field name="total_of_working_days"/>
+                                    <field name="total_of_calendar_days"/>
+                                    <field name="total_allocation_days" force_save="1" invisible="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_leave_planning_view_tree" model="ir.ui.view">
+            <field name="name">hr.leave.planning.view.tree</field>
+            <field name="model">hr.leave.planning</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="manager_id"/>
+                    <field name="job_id"/>
+                    <field name="planning_lines_ids" widget="many2many_tags" string="Leaves"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_hr_leave_planning" model="ir.actions.act_window">
+            <field name="name">Leave Planning</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.leave.planning</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="hr_leave_planning_lines_view_dashboard" model="ir.ui.view">
+            <field name="name">hr.leave.planning.lines.view.dashboard</field>
+            <field name="model">hr.planning.leave.line</field>
+            <field name="arch" type="xml">
+                <calendar string="Planning Leave"
+                          event_open_popup="true" date_start="date_from" date_stop="date_to" mode="month"
+                          quick_add="False" color="leave_planning_id">
+                    <field name="leave_planning_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_hr_leave_planning_lines_calendar" model="ir.actions.act_window">
+            <field name="name">Leave Planning Calendar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.planning.leave.line</field>
+            <field name="view_mode">calendar</field>
+        </record>
+
+        <menuitem
+                id="menu_hr_leave_planning_base"
+                name="Leave Planning"
+                parent="hr_holidays.menu_hr_holidays_root"
+                sequence="1"
+                groups="base.group_user"
+        />
+
+        <menuitem
+                name="Planning"
+                id="menu_hr_leave_planning"
+                parent="menu_hr_leave_planning_base"
+                sequence="1"
+                action="action_hr_leave_planning"
+                groups="base.group_user"/>
+
+        <menuitem
+                name="Planning Calendar"
+                id="menu_hr_leave_lines_calendar"
+                parent="menu_hr_leave_planning_base"
+                sequence="2"
+                action="action_hr_leave_planning_lines_calendar"
+                groups="base.group_user"/>
+    </data>
+</odoo>

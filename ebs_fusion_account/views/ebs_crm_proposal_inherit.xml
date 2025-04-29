@@ -1,0 +1,15 @@
+<odoo>
+    <record id="ebs_crm_proposal_inehrit_view_form" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.inherit.Form</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="inherit_id" ref="ebs_fusion_services.view_ebs_crm_proposal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//div[@name='button_box']" position="inside">
+                <button attrs="{'invisible':['|',('fme','=',False),('state','!=','active')]}" class="oe_stat_button" style="width: 140px;" type="object" name="get_turnover"
+                                icon="fa-bar-chart-o">
+                                <field string="Turnover"  name="turnover_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

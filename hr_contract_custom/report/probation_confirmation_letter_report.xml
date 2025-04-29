@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="probation_confirmation_letter"
+                model="trial.period"
+                string="Probation Confirmation Letter"
+                report_type="qweb-pdf"
+                name="hr_contract_custom.probation_confirmation_letter_report"
+                file="hr_contract_custom.probation_confirmation_letter_report"
+                print_report_name="'Probation Confirmation Letter - '+(object.related_employee.name if object.related_employee.name else '')"
+                attachment="'Probation Confirmation Letter - '+(object.related_employee.name if object.related_employee.name else '')+'.pdf'"
+
+
+        />
+
+        <template id="probation_confirmation_letter_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.report_probation_confirmation_letter_document"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_probation_confirmation_letter_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <br/>
+                    <br/>
+                    <div id="title">
+                        <h2>
+                            <span style="font-weight: 800;">Probation Confirmation Letter:</span>
+                        </h2>
+                    </div>
+                    <br/>
+                    <span style="position: absolute; right: 50px;" t-esc="'Date: '+context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                    <br/>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Name</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Employee ID</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.system_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Date of Joining</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.start_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Department</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.department_id.complete_name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Job Title</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.contract_id.job_title.name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+
+                    <div>
+
+                        <span>Dear</span>
+                        <br/>
+                        <br/>
+                        <span>We are pleased to inform you that you have successfully completed your probationary period.</span>
+                        <br/>
+                        <br/>
+                        <span>Effective </span><span t-field="o.confirmation_date"/><span> your employment at Main Company Manufacturing has been confirmed.</span>
+                        <br/>
+                        <br/>
+                        <span>Good luck and wish you all the success in your career with us</span>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span>Regards,</span>
+                        <br/>
+                        <br/>
+                        <span style="font-size: large;">Human Capital Department</span>
+                        <br/>
+                        <br/>
+                        <span style="color: red;font-size: x-small;"><i>This is an automatically generated email, Signatory is not required please do not reply</i></span>
+                    </div>
+
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

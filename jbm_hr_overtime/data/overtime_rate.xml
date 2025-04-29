@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="normal_overtime" model="overtime.rate">
+            <field name="type">normal</field>
+        </record>
+        <record id="special_overtime" model="overtime.rate">
+            <field name="type">special</field>
+        </record>
+
+    </data>
+</odoo>

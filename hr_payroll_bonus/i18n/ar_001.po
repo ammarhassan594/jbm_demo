@@ -1,0 +1,230 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_payroll_bonus
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-11 19:42+0000\n"
+"PO-Revision-Date: 2023-06-11 19:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__allowed_for
+msgid "Allowed For"
+msgstr "مسموح ل"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__amount
+msgid "Amount"
+msgstr "الكميه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__4
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__4
+msgid "April"
+msgstr "ابريل"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__8
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__8
+msgid "August"
+msgstr "اغسطس"
+
+#. module: hr_payroll_bonus
+#: model:ir.actions.act_window,name:hr_payroll_bonus.bonus_configuration_action
+#: model:ir.ui.menu,name:hr_payroll_bonus.bonus_configuration_menu
+msgid "Bonus Configuration"
+msgstr "تهيئه المكافأت"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__bonus_type
+msgid "Bonus Type"
+msgstr "انواع المكافأت"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__allowed_for__both
+msgid "Both"
+msgstr "كلاهما"
+
+#. module: hr_payroll_bonus
+#: model:ir.model,name:hr_payroll_bonus.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__create_uid
+msgid "Created by"
+msgstr "انشأت بواسطه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__create_date
+msgid "Created on"
+msgstr "انشأت في"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__12
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__12
+msgid "December"
+msgstr "ديسيمبر"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__2
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__2
+msgid "February"
+msgstr "فبراير"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_type__fixed_amount
+msgid "Fixed Amount"
+msgstr "القيمه الثابته"
+
+#. module: hr_payroll_bonus
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bonus.bonus_configuration_form_view
+msgid "From:"
+msgstr "من"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__id
+msgid "ID"
+msgstr "رقم"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__1
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__1
+msgid "January"
+msgstr "يناير"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__7
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__6
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__6
+msgid "June"
+msgstr "يونيو"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration____last_update
+msgid "Last Modified on"
+msgstr "اخر تعديل في"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل في"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__3
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__3
+msgid "March"
+msgstr "مارس"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__5
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__5
+msgid "May"
+msgstr "مايو"
+
+#. module: hr_payroll_bonus
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bonus.res_config_settings_payroll_bonus_inherit
+msgid "Month Of Bonus"
+msgstr "شهر المكافأه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__bonus_month
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_res_config_settings__bonus_month
+msgid "Month of Bonus"
+msgstr "شهر المكافأه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__allowed_for__not_qatari
+msgid "Not Qatari"
+msgstr "غير قطري"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__11
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__11
+msgid "November"
+msgstr "نوفمبر"
+
+#. module: hr_payroll_bonus
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bonus.bonus_configuration_form_view
+msgid "Number Of Days"
+msgstr "عدد الايام"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__number_of_days_from
+msgid "Number Of Days From"
+msgstr "عدد الايام من"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__number_of_days_to
+msgid "Number Of Days To"
+msgstr "عدد الايام الي"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__10
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__10
+msgid "October"
+msgstr "اكتوبر"
+
+#. module: hr_payroll_bonus
+#: model:ir.model,name:hr_payroll_bonus.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_type__percentage
+msgid "Percentage"
+msgstr "نسبه مئويه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields,field_description:hr_payroll_bonus.field_bonus_configuration__percentage
+msgid "Percentage of Basic Salary"
+msgstr "نسبه مئويه من المرتب الاساسي"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__allowed_for__qatari
+msgid "Qatari"
+msgstr "قطري"
+
+#. module: hr_payroll_bonus
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__bonus_configuration__bonus_month__9
+#: model:ir.model.fields.selection,name:hr_payroll_bonus.selection__res_config_settings__bonus_month__9
+msgid "September"
+msgstr "سبتمبر"
+
+#. module: hr_payroll_bonus
+#: model_terms:ir.ui.view,arch_db:hr_payroll_bonus.bonus_configuration_form_view
+msgid "To:"
+msgstr "الي:"
+
+#. module: hr_payroll_bonus
+#: model:hr.salary.rule,name:hr_payroll_bonus.hr_salary_rule_yearly_bonus
+msgid "Yearly Bonus"
+msgstr "مكافأه سنويه"
+
+#. module: hr_payroll_bonus
+#: model:ir.model,name:hr_payroll_bonus.model_bonus_configuration
+msgid "bonus.configuration"
+msgstr "تهيئه المكافأت"

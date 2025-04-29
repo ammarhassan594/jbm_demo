@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+
+        <record id="employee_it_access_right_form_view" model="ir.ui.view">
+            <field name="name">employee.it.access.right.form.view</field>
+            <field name="model">it.access.right.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="show_description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_it_access_right_tree_view" model="ir.ui.view">
+            <field name="name">employee.it.access_right.tree.view</field>
+            <field name="model">it.access.right.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="show_description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="it_access_right_action" model="ir.actions.act_window">
+            <field name="name">IT Access Right Reqeust</field>
+            <field name="res_model">it.access.right.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="it_access_right_request" name="IT Access Right"
+                  action="it_access_right_action" parent="employee_it_devices.it_root_menu"/>
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+<odoo>
+    <record id="letter_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">letter.res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Report Signature"
+                     string="Report Signature"
+                     data-key="ebs_jbm_hr_holiday_custom">
+                    <h2>Signature Dimensions For Approvals and Leaves</h2>
+                    <div class="row mt16 o_settings_container"
+                         name="pincode_setting_container">
+                    </div>
+                    <div class="row mt16 o_settings_container"
+                         name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Set Max Number Of Letter Request On Day.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="report_signature_width" class="o_light_label">Signature Width (cm)</label>
+                                    <field name="report_signature_width"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Check Allow Print Signature / Stamp.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="report_signature_height" class="o_light_label">Signature Height (cm)
+                                    </label>
+                                    <field name="report_signature_height"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_letter_config" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+<!--    <menuitem id="menu_report_signature_root"-->
+<!--                  name="Sign Signature"-->
+<!--                  sequence="40"-->
+<!--        />-->
+
+<!--    <menuitem id="menu_report_signature_setting_root"-->
+<!--              parent="menu_report_signature_root"-->
+<!--              name="Setting"-->
+<!--              groups="base.group_system"-->
+<!--              sequence="50"/>-->
+
+<!--    <menuitem id="menu_report_signature_config_root"-->
+<!--              name="Configuration"-->
+<!--              parent="menu_report_signature_setting_root"-->
+<!--              action="action_letter_config"-->
+<!--              sequence="1"/>-->
+
+</odoo>

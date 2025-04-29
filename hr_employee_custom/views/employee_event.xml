@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_event_form_view" model="ir.ui.view">
+            <field name="name">employee.event.form</field>
+            <field name="model">hr.employee.event</field>
+            <field name="arch" type="xml">
+                <form string="Employee Event">
+                    <group>
+                        <field name="employee_id"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               invisible="1"/>
+                        <field name="name"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="event_reason"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="start_date"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               widget="date"/>
+                        <!--                        <field name="end_date" attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>-->
+                        <field name="is_triggered" invisible="1"/>
+                        <field name="is_processed" invisible="1"/>
+                        <field name="update_info"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="employee_fusion_id"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="org_unit_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="line_manager_id_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="position_code_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="job_title_fkey" readonly="1" force_save="1"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="cost_center_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="employee_group_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="employee_sub_group_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="payroll_area_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="contract_type_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="probation_end_date"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="confirmation_date"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="salutation_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="first_name"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="middle_name"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="last_name"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="birth_date"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="gender_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="nationality_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="birth_country_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="shift_type_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="ot_eligibility"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="system_id"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="email_id"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                        <field name="payscale_group_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                        <field name="payscale_level_fkey"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"
+                               options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+
+                        <field name="is_esd"
+                               attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)]}"/>
+                    </group>
+                    <notebook>
+                        <page name="compensations_list" string="Related Compensations">
+                            <field name="related_compensation" mode="tree"
+                                   attrs="{'readonly': ['|',('is_processed','=', True),('is_triggered','=', True)], 'invisible':[('is_esd', '=', False)]}">
+                                <tree editable="bottom">
+                                    <field name="is_new" invisible="1"/>
+                                    <field name="is_payroll"/>
+                                    <field name="state"/>
+                                    <field name="name"
+                                           options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                    <field name="component_description"
+                                           attrs="{'readonly':[('is_payroll','=',False)]}"/>
+                                    <field name="from_date"/>
+                                    <field name="to_date"/>
+                                    <field name="value" attrs="{'readonly':[('is_payroll','=',True)]}"/>
+                                    <field name="amount" attrs="{'readonly':[('is_payroll','=',False)]}"/>
+                                    <field name="currency" attrs="{'readonly':[('is_payroll','=',False)]}"/>
+                                    <field name="frequency"/>
+                                    <field name="period"/>
+                                    <field name="related_compensation" invisible="1"/>
+                                    <field name="related_event_compensation" invisible="1"/>
+                                    <field name="create_uid" invisible="1"/>
+                                    <field name="create_date" invisible="1"/>
+                                    <field name="write_uid" invisible="1"/>
+                                    <field name="write_date" invisible="1"/>
+                                </tree>
+                            </field>
+                            <group>
+                                <group>
+                                    <field name="old_active_salary" attrs="{'invisible':[('is_esd', '=', False)]}"
+                                           readonly="1" force_save="1"/>
+                                    <field name="new_active_salary" attrs="{'invisible':[('is_esd', '=', False)]}"
+                                           readonly="1" force_save="1"/>
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="employee_events_tree_view" model="ir.ui.view">
+            <field name="name">hr.employee.event.tree</field>
+            <field name="model">hr.employee.event</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Events">
+                    <field name="employee_id"/>
+                    <field name="employee_fusion_id"/>
+                    <field name="name"/>
+                    <field name="event_reason"/>
+                    <field name="start_date" widget="date"/>
+                    <!--                                <field name="end_date"/>-->
+                    <field name="update_info"/>
+                    <field name="is_triggered" readonly="1"/>
+                    <field name="is_processed" readonly="1"/>
+                    <field name="create_uid" readonly="1"/>
+                    <field name="create_date" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_events_act_window" model="ir.actions.act_window">
+            <field name="name">Employee Events</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employee.event</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        <menuitem name="Employee Events" id="employee_events_menu" parent="hr.menu_human_resources_configuration"-->
+<!--                  action="employee_events_act_window"/>-->
+
+    </data>
+</odoo>

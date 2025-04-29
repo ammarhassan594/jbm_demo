@@ -1,0 +1,232 @@
+<odoo>
+    <!--    <delete id="mail.mail_activity_rule_user" model="ir.rule"/>-->
+
+
+    <record model="ir.rule" id="ebs_crm_proposal_comp_rule">
+        <field name="name">EBS Crm Contract multi-company</field>
+        <field name="model_id" ref="model_ebs_crm_proposal"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+
+    </record>
+
+
+
+    <record model="ir.rule" id="ebs_crm_pricelist_comp_rule">
+        <field name="name">EBS Crm Pricelist multi-company</field>
+        <field name="model_id" ref="model_ebs_crm_pricelist"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value eval="[('module', '=', 'base'), ('name', '=', 'res_partner_portal_public_rule')]"/>
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+
+    <record model="ir.rule" id="base.res_partner_portal_public_rule">
+        <field name="name">res_partner: portal/public: read access on my commercial partner</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">[('id', 'child_of', user.commercial_partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal')), (4, ref('base.group_public'))]"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_write" eval="False"/>
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="ir.module.category" id="module_category_workflow">
+        <field name="name">Workflows</field>
+        <field name="description">Helps you manage the workflows.</field>
+        <field name="sequence">5</field>
+    </record>
+
+
+
+
+
+
+    <record id="group_fusion_workflow_assigned" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_workflow"/>
+<!--        <field name="users" eval="[(4, ref('base.group_user'))]"/>-->
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_fusion_workflow_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_workflow"/>
+        <field name="implied_ids" eval="[(4, ref('group_fusion_workflow_assigned'))]"/>
+<!--        <field name="users" eval="[(4, ref('base.user_admin'))]"/>-->
+    </record>
+
+    <record id="group_fusion_activity_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_workflow"/>
+        <field name="implied_ids" eval="[(4, ref('group_fusion_workflow_manager'))]"/>
+<!--        <field name="users" eval="[(4, ref('base.user_admin'))]"/>-->
+    </record>
+
+<!--     <record id="workflow_line_rule" model="ir.rule">-->
+<!--            <field name="name">Workflow Line</field>-->
+<!--            <field ref="model_ebs_crm_proposal_workflow_line" name="model_id"/>-->
+<!--            <field name="domain_force">[('assigned_to.employee_id.department_id.id','=',user.employee_id.department_id.id)]</field>-->
+<!--            <field name="groups" eval="[(4, ref('ebs_fusion_services.group_fusion_workflow_assigned'))]"/>-->
+<!--        </record>-->
+
+
+
+    <record model="ir.rule" id="ebs_crm_proposal_workflow_assigned_rule">
+        <field name="name">EBS Crm Workflow Assigned rule</field>
+        <field name="model_id" ref="model_ebs_crm_proposal_workflow_line"/>
+        <field name="groups" eval="[(4, ref('group_fusion_workflow_assigned'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_create"/>
+        <field name="domain_force">['|',('assigned_to','=',user.id),('assigned_to', 'in',[g.user_id.id for g in
+            user.employee_ids.child_ids])]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="ebs_crm_proposal_workflow_all_rule">
+        <field name="name">EBS Crm Workflow All rule</field>
+        <field name="model_id" ref="model_ebs_crm_proposal_workflow_line"/>
+        <field name="groups" eval="[(4, ref('group_fusion_workflow_manager'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>
+        <field name="domain_force">[]</field>
+    </record>
+
+
+    <record model="ir.module.category" id="module_category_services">
+        <field name="name">Services</field>
+        <field name="description">Helps you manage the services module.</field>
+        <field name="sequence">4</field>
+    </record>
+
+
+
+
+
+
+
+
+
+    <record model="ir.module.category" id="module_service_order">
+        <field name="name">Service Order</field>
+        <field name="description">Helps you manage the service order</field>
+        <field name="sequence">7</field>
+    </record>
+
+    <record id="group_service_order_user" model="res.groups">
+        <field name="name">User</field>
+        <!--        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+        <field name="category_id" ref="module_service_order"/>
+        <field name="users" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_service_order_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_service_order"/>
+        <field name="implied_ids" eval="[(4, ref('group_service_order_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record model="ir.module.category" id="module_category_labor_quota">
+        <field name="name">Labor Quota</field>
+        <field name="description">Helps you manage the labor quota</field>
+        <field name="sequence">6</field>
+    </record>
+
+    <record id="group_labor_quota_user" model="res.groups">
+        <field name="name">User</field>
+        <!--        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+        <field name="category_id" ref="module_category_labor_quota"/>
+        <field name="users" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_labor_quota_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_labor_quota"/>
+        <field name="implied_ids" eval="[(4, ref('group_labor_quota_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="group_services_user" model="res.groups">
+        <field name="name">User</field>
+        <!--        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+        <field name="category_id" ref="module_category_services"/>
+        <field name="users" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_services_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_services"/>
+        <field name="implied_ids" eval="[(4, ref('group_services_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record model="ir.rule" id="ebs_crm_activity_user_rule">
+        <field name="name">EBS Crm Activity rule for User</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_fusion_workflow_assigned'))]"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record model="ir.rule" id="ebs_crm_activity_manager_rule">
+        <field name="name">EBS Crm Activity rule for Manager</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="groups" eval="[(4, ref('group_fusion_activity_admin'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>
+        <field name="domain_force">['|',('user_id','=',user.id),'|',('user_id', 'in',[g.user_id.id for g in
+            user.employee_ids.child_ids]),'|',
+            ('create_uid','=',user.id),('create_uid', 'in',[g.create_uid.id for g in user.employee_ids.child_ids])]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="ebs_crm_activity_admin_rule">
+        <field name="name">EBS Crm Activity rule for Admin</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="groups" eval="[(4, ref('group_fusion_activity_admin'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+    </record>
+
+    <record model="ir.rule" id="ebs_crm_service_order_user_rule">
+        <field name="name">EBS Crm Service Order Rule For User</field>
+        <field name="model_id" ref="model_ebs_crm_service_process"/>
+        <field name="groups" eval="[(4, ref('group_service_order_user'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>
+        <field name="domain_force">[('assigned_user_id', '=', user.id)]</field>
+    </record>
+
+    <record model="ir.rule" id="ebs_crm_service_order_manager_rule">
+        <field name="name">EBS Crm Service Order Rule For Manager</field>
+        <field name="model_id" ref="model_ebs_crm_service_process"/>
+        <field name="groups" eval="[(4, ref('group_service_order_manager'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+
+</odoo>

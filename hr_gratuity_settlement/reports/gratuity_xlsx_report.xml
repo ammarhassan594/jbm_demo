@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="action_gratuity_xlsx_report"
+                model="hr.gratuity"
+                string="Generate Allowance Request XLSX Report"
+                report_type="xlsx"
+                name="hr_gratuity_settlement.request_allowance_xlsx_report"
+                file="hr_gratuity_settlement.request_allowance_xlsx_report"
+                attachment_use="False"
+        />
+    </data>
+</odoo>

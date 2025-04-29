@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <report
+                id="employees_salaries_xlsx"
+                model="hr.payslip.run"
+                string="رواتب الموظفين المعينين"
+                report_type="xlsx"
+                name="payslip_reports.employees_salaries_xlsx_report"
+                file="employees_salaries_xlsx_report"
+                attachment_use="False"
+        />
+    </data>
+</odoo>

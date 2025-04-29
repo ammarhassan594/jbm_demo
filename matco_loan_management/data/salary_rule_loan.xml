@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Adding a salary rule for loan-->
+    <data noupdate="0">
+
+        <record id="hr_rule_loan_payment" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="8"/>
+            <field name="code">LOAN</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Loan Payment</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_loan_payment(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_rule_personal_loan" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="9"/>
+            <field name="code">PERSONALLO</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Personal Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = -payslip.env['hr.payslip'].calculate_personal_loan_deductions(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_rule_car_loan" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="10"/>
+            <field name="code">CARLO</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Car Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = -payslip.env['hr.payslip'].calculate_car_loan_deductions(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_rule_marriage_loan" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="11"/>
+            <field name="code">MARRIAGELO</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Marriage Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = -payslip.env['hr.payslip'].calculate_marriage_loan_deductions(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_rule_gw_loan" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="12"/>
+            <field name="code">GWLOAN</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Good Will Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = -payslip.env['hr.payslip'].calculate_good_will_loan_deductions(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+    </data>
+</odoo>

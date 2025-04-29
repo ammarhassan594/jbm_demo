@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="district_1" model="ebspayroll.districts">
+            <field name="value">1</field>
+            <field name="name">بيروت</field>
+            <field name="governorate" ref="governorate_"/>
+        </record>
+
+        <record id="district_2" model="ebspayroll.districts">
+            <field name="value">2</field>
+            <field name="name">بعبدا</field>
+            <field name="governorate" ref="governorate_2"/>
+        </record>
+
+        <record id="district_3" model="ebspayroll.districts">
+            <field name="value">3</field>
+            <field name="name">المتن</field>
+            <field name="governorate" ref="governorate_2"/>
+        </record>
+
+        <record id="district_4" model="ebspayroll.districts">
+            <field name="value">4</field>
+            <field name="name">الشوف</field>
+            <field name="governorate" ref="governorate_2"/>
+        </record>
+
+        <record id="district_5" model="ebspayroll.districts">
+            <field name="value">5</field>
+            <field name="name">عاليه</field>
+            <field name="governorate" ref="governorate_2"/>
+        </record>
+
+        <record id="district_6" model="ebspayroll.districts">
+            <field name="value">6</field>
+            <field name="name">كسروان</field>
+            <field name="governorate" ref="governorate_2"/>
+        </record>
+
+        <record id="district_7" model="ebspayroll.districts">
+            <field name="value">7</field>
+            <field name="name">جبيل</field>
+            <field name="governorate" ref="governorate_2"/>
+        </record>
+
+        <record id="district_9" model="ebspayroll.districts">
+            <field name="value">9</field>
+            <field name="name">طرابلس</field>
+            <field name="governorate" ref="governorate_3"/>
+        </record>
+
+        <record id="district_10" model="ebspayroll.districts">
+            <field name="value">10</field>
+            <field name="name">الكورة</field>
+            <field name="governorate" ref="governorate_3"/>
+        </record>
+
+        <record id="district_11" model="ebspayroll.districts">
+            <field name="value">11</field>
+            <field name="name">زغرتا</field>
+            <field name="governorate" ref="governorate_3"/>
+        </record>
+
+        <record id="district_12" model="ebspayroll.districts">
+            <field name="value">12</field>
+            <field name="name">البترون</field>
+            <field name="governorate" ref="governorate_3"/>
+        </record>
+
+        <record id="district_13" model="ebspayroll.districts">
+            <field name="value">13</field>
+            <field name="name">عكار</field>
+            <field name="governorate" ref="governorate_7"/>
+        </record>
+
+        <record id="district_14" model="ebspayroll.districts">
+            <field name="value">14</field>
+            <field name="name">بشري</field>
+            <field name="governorate" ref="governorate_3"/>
+        </record>
+
+        <record id="district_16" model="ebspayroll.districts">
+            <field name="value">16</field>
+            <field name="name">صيدا</field>
+            <field name="governorate" ref="governorate_4"/>
+        </record>
+
+        <record id="district_17" model="ebspayroll.districts">
+            <field name="value">17</field>
+            <field name="name">صور</field>
+            <field name="governorate" ref="governorate_4"/>
+        </record>
+
+        <record id="district_18" model="ebspayroll.districts">
+            <field name="value">18</field>
+            <field name="name">جزين</field>
+            <field name="governorate" ref="governorate_4"/>
+        </record>
+
+        <record id="district_20" model="ebspayroll.districts">
+            <field name="value">20</field>
+            <field name="name">زحلة</field>
+            <field name="governorate" ref="governorate_5"/>
+        </record>
+        <record id="district_21" model="ebspayroll.districts">
+            <field name="value">21</field>
+            <field name="name">البقاع الغربي</field>
+            <field name="governorate" ref="governorate_5"/>
+        </record>
+        <record id="district_22" model="ebspayroll.districts">
+            <field name="value">22</field>
+            <field name="name">بعلبك</field>
+            <field name="governorate" ref="governorate_8"/>
+        </record>
+        <record id="district_23" model="ebspayroll.districts">
+            <field name="value">23</field>
+            <field name="name">الهرمل</field>
+            <field name="governorate" ref="governorate_8"/>
+        </record>
+        <record id="district_24" model="ebspayroll.districts">
+            <field name="value">24</field>
+            <field name="name">راشيا</field>
+            <field name="governorate" ref="governorate_5"/>
+        </record>
+
+        <record id="district_26" model="ebspayroll.districts">
+            <field name="value">26</field>
+            <field name="name">النبطية</field>
+            <field name="governorate" ref="governorate_6"/>
+        </record>
+
+        <record id="district_27" model="ebspayroll.districts">
+            <field name="value">27</field>
+            <field name="name">بنت جبيل</field>
+            <field name="governorate" ref="governorate_6"/>
+        </record>
+
+        <record id="district_28" model="ebspayroll.districts">
+            <field name="value">28</field>
+            <field name="name">مرجعيون</field>
+            <field name="governorate" ref="governorate_6"/>
+        </record>
+
+        <record id="district_29" model="ebspayroll.districts">
+            <field name="value">29</field>
+            <field name="name">حاصبيا</field>
+            <field name="governorate" ref="governorate_6"/>
+        </record>
+
+    </data>
+</odoo>

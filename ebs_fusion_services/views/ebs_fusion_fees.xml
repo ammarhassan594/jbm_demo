@@ -1,0 +1,62 @@
+<odoo>
+    <!--    ebs fusion fees form-->
+    <record model="ir.ui.view" id="view_ebs_fusion_fees_form">
+        <field name="name">ebs.fusion.fees.Form</field>
+        <field name="model">ebs.fusion.fees</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="type"/>
+                            <field name="invoice_period"/>
+                            <field name="product_id"/>
+                            <field name="account_analytic_id"/>
+                        </group>
+                        <group>
+                            <field name="is_fme"/>
+                            <field name="is_fss"/>
+                            <field name="is_fos"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs fusion fees tree-->
+    <record id="view_ebs_fusion_fees_tree" model="ir.ui.view">
+        <field name="name">ebs.fusion.fees.tree</field>
+        <field name="model">ebs.fusion.fees</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="type"/>
+                <field name="invoice_period"/>
+                <field name="product_id"/>
+                <field name="is_fme"/>
+                <field name="is_fss"/>
+                <field name="is_fos"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs fusion fees action-->
+    <record model="ir.actions.act_window" id="action_ebs_fusion_fees">
+        <field name="name">Main Company Fees</field>
+        <field name="res_model">ebs.fusion.fees</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <menuitem id="fusion_fees_menu"
+        name="Main Company Fees"
+        parent="crm.crm_menu_config"
+        sequence="15"
+        action="action_ebs_fusion_fees"
+        />
+
+
+</odoo>

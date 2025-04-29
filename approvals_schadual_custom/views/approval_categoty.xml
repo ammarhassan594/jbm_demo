@@ -1,0 +1,21 @@
+<odoo>
+
+    <record id="approval_category_view_form" model="ir.ui.view">
+        <field name="name">approval.category</field>
+        <field name="model">approval.category</field>
+        <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='manager_approval']" position="after">
+                <field name="is_employee_manager_approval"/>
+            </xpath>
+            <xpath expr="//field[@name='approval_type']" position="after">
+                <field name="select_type" attrs="{'invisible':[('approval_type', '!=', 'purchase')]}"/>
+                <field name="is_it_device" attrs="{'invisible':[('approval_type', '!=', 'it')]}"/>
+                <field name="is_it_request" attrs="{'invisible':[('approval_type', '!=', 'it')]}"/>
+                <field name="is_it_access_right" attrs="{'invisible':[('approval_type', '!=', 'access')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

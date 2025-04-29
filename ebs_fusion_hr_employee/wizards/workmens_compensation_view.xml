@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="workmens_compensation_wizard_form" model="ir.ui.view">
+        <field name="name">workmens.compensation.form</field>
+        <field name="model">insurance.workmens.compensation</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <div>Please confirm to download workmens compensation report.</div>
+                </group>
+                <footer>
+                    <button name="button_confirm" string="Confirm" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="workmens_compensation_wizard_action" model="ir.actions.act_window">
+        <field name="name">Workmens Compensation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">insurance.workmens.compensation</field>
+        <field name="view_mode">form</field>
+    </record>
+
+</odoo>

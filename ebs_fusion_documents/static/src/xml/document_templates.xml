@@ -1,0 +1,32 @@
+<odoo>
+    <templates>
+        <t t-name="documents.DocumentsInspector.buttons">
+            <div class="mb-3">
+                <div class="btn-group">
+                    <button class="btn fa fa-download o_inspector_button o_inspector_download" title="Download99"/>
+                    <t t-if="widget.records[0].data.active">
+                        <button t-if="widget.currentFolder"
+                                class="btn fa fa-share-alt o_inspector_button o_inspector_share"
+                                title="Share this selection" groups="documents.group_documents_user"/>
+
+                    </t>
+                </div>
+
+                <button t-if="widget.records[0].data.active"
+                        class="o_active btn fa fa-archive o_inspector_button o_inspector_archive pull-right"
+                        title="Archive"/>
+                <t t-else="">
+                    <button class="btn pull-right o_inspector_button o_inspector_delete" title="Delete">
+                        <i class="fa fa-trash"/>
+                        <small>Delete</small>
+                    </button>
+                    <button class="btn pull-right o_inspector_button o_archived o_inspector_archive"
+                            style="margin-right:4px" title="Un-archive">
+                        <i class="fa fa-upload"/>
+                        <small>Restore</small>
+                    </button>
+                </t>
+            </div>
+        </t>
+    </templates>
+</odoo>

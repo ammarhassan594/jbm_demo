@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_recruitment_hr_applicant_children,hr_recruitment.hr_applicant_children,model_hr_applicant_children,,1,1,1,1
+access_hr_recruitment_hr_applicant_survey,hr_recruitment.hr_applicant_survey,model_hr_applicant_survey,,1,1,1,1
+access_hr_job_default_signatures,hr_recruitment.hr_job_default_signature,model_hr_job_default_signature,,1,1,1,1
+access_hr_recruitment_education,hr_recruitment.hr_recruitment_education,model_hr_recruitment_education,,1,1,1,1

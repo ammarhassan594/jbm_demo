@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="report_delivery_note_temp">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <style>
+                        @font-face {
+                        font-family: 'DecoType';
+                        src: url(/credit_note/static/src/font/43-DecoType-Naskh-Variants.ttf)
+                        format('truetype');
+                        }
+                        @font-face {
+                        font-family: 'AdvertisingMedium';
+                        src: url(/credit_note/static/src/font/AdvertisingMedium-1.ttf)
+                        format('truetype');
+                        }
+                        @font-face {
+                        font-family: 'AdvertisingBold';
+                        src: url(/credit_note/static/src/font/AdvertisingBold.ttf) format('truetype');
+                        }
+                    </style>
+                    <t t-foreach="docs" t-as="o">
+
+                        <div class="header" style="">
+                            <div class="row">
+                                <div class="col-12" style="padding: 0px !important">
+                                    <img src="/credit_note/static/src/img/header.jpg"
+                                         style="height:120px;width:100%" alt="Letter Head"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <fieldset style="border: 1px black solid; padding: 10px; margin: 10px;">
+
+                            <legend style="border: 2px #b8860b solid; margin-left: 9em; padding: 0.2em 0.8em; width: 40%; background-color: rgb(0, 32, 96);
+                            font-size:16pt; font-family: AdvertisingMedium; text-align: center; font-weight:bold; color: white; border-radius: 10px;">
+                                Delivery Note | سند استلام
+                            </legend>
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:11pt;font-family: AdvertisingMedium; direction: rtl;">
+
+                                <tr>
+                                    <td style="border: 1px solid black; background-color: rgb(226, 234, 246); text-align: right; font-family: AdvertisingMedium; direction: rtl; width: 20%;">
+                                        التاريخ:
+                                    </td>
+                                    <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                        <span t-field="o.date_done" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; background-color: rgb(226, 234, 246); text-align: right; font-family: AdvertisingMedium; direction: rtl; width: 20%;">
+                                        الموضوع:
+                                    </td>
+                                    <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                        <span t-field="o.name" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; background-color: rgb(226, 234, 246); text-align: right; font-family: AdvertisingMedium; direction: rtl; width: 20%;">
+                                        المورد:
+                                    </td>
+                                    <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                        <span t-field="o.partner_id.name" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; background-color: rgb(226, 234, 246); text-align: right; font-family: AdvertisingMedium; direction: rtl; width: 20%;">
+                                        فاتورة رقم:
+                                    </td>
+                                    <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                        <span t-field="o.origin" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; background-color: rgb(226, 234, 246); text-align: right; font-family: AdvertisingMedium; direction: rtl; width: 20%;">
+                                        الطلب المرتبط:
+                                    </td>
+                                    <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                        <span t-field="o.material_request_id.name" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:11pt; font-family: AdvertisingMedium; direction: rtl;">
+                                <tbody>
+                                    <tr style="border: 1px solid black;">
+
+                                        <th
+                                                style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px; width: 5%; border: 1px solid black; text-align: center;">
+                                            <span>الرقم</span>
+                                            <br/>
+                                            <span style="direction: ltr;">.No</span>
+                                        </th>
+                                        <th
+                                                style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px; width: 45%; border: 1px solid black; text-align: center;">
+                                            <span>الوصف</span>
+                                            <br/>
+                                            <span style="direction: ltr;">Description</span>
+                                        </th>
+                                        <th
+                                                style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px; width: 25%; border: 1px solid black; text-align: center;">
+                                            <span>الرقم المرجعي</span>
+                                            <br/>
+                                            <span style="direction: ltr;">Reference Number</span>
+                                        </th>
+                                        <th
+                                                style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px; width: 15%; border: 1px solid black; text-align: center;">
+                                            <span>الوحدة</span>
+                                            <br/>
+                                            <span style="direction: ltr;">Unit</span>
+                                        </th>
+                                        <th
+                                                style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px; width: 10%; border: 1px solid black; text-align: center;">
+                                            <span>الكمية</span>
+                                            <br/>
+                                            <span style="direction: ltr;">.Qty</span>
+                                        </th>
+                                    </tr>
+                                    <t t-set="seq" t-value="1" />
+                                    <t t-set="total_qty" t-value="0" />
+                                    <t t-foreach="o.move_ids_without_package" t-as="line">
+                                        <tr>
+                                            <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                                <span t-esc="seq" />
+                                            </td>
+                                            <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                                <span t-field="line.description_picking"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                                <span t-field="line.product_id.default_code"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                                 <span t-field="line.product_uom"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium;">
+                                                 <span t-field="line.quantity_done"/>
+                                            </td>
+                                        </tr>
+                                        <t t-set="seq" t-value="seq + 1" />
+                                        <t t-set="total_qty" t-value="total_qty + line.quantity_done" />
+                                    </t>
+                                    <tr>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; background-color: rgb(189, 159, 87); text-align: center; font-family: AdvertisingMedium; padding: 0;">
+                                            <span>المجموع</span>
+                                            <br/>
+                                            <span>Total</span>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium; background-color: rgb(189, 159, 87); ">
+
+                                        </td>
+                                        <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium; background-color: rgb(189, 159, 87);">
+
+                                        </td>
+                                        <td style="border: 1px solid black; text-align: center; font-family: AdvertisingMedium; background-color: rgb(189, 159, 87);">
+                                            <span t-esc="total_qty" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <p style="text-align: right; direction: rtl; margin-bottom: 0; font-family: AdvertisingMedium; font-size:16pt;">الجهة الطالبة والمستلمة:</p>
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:11pt; font-family: AdvertisingMedium;">
+                                    <tr style="border: 1px solid black;">
+                                        <th colspan="2"
+                                            axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px;">
+                                            Employee Information
+                                        </th>
+                                        <th colspan="2" axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; text-align: right; font-weight:bold; font-size: 18px;">
+                                            بيانات المستلم
+                                        </th>
+                                    </tr>
+                                    <tr style="border: 1px solid black;">
+                                        <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                                <span t-field="o.user_id.employee_id.registration_number" />
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            الرقم الوظيفي:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                                <span t-field="o.user_id.employee_id.name" />
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            اسم الموظف:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                              <span t-field="o.user_id.employee_id.department_id.parent_id.name" />
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            الإدارة:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-field="o.user_id.employee_id.department_id.name" />
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            القسم:
+                                        </td>
+                                    </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                        </fieldset>
+
+                        <div class="footer">
+                            <div class="row">
+                                <img t-attf-src="/credit_note/static/src/img/footer.jpg" alt="footer"
+                                     style="padding-left:5px;height:80px;width:100%;"/>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+
+        </template>
+
+
+        <report
+                id="report_deliver_note_report_action"
+                model="stock.picking"
+                string="Delivery Note Report"
+                report_type="qweb-pdf"
+                name="credit_note.report_delivery_note_temp"
+                file="credit_note.report_delivery_note_temp"
+                menu="False"
+                print_report_name="'Delivery Note'"
+        />
+    </data>
+</odoo>

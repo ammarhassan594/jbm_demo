@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_activity_tree_view" model="ir.ui.view">
+            <field name="name">employee.activity.tree</field>
+            <field name="model">employee.activity</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Activity" create="0" delete="0">
+                    <field name="model_id"/>
+                    <field name="number_of_record_created"/>
+                    <field name="number_of_record_updated"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_activity_view_form" model="ir.ui.view">
+            <field name="name">employee.activity.form</field>
+            <field name="model">employee.activity</field>
+            <field name="arch" type="xml">
+                <form string="Employee Activity" create="0" edit="0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="model_id"/>
+                                <field name="number_of_record_created"/>
+                                <field name="number_of_record_updated"/>
+                                <field name="employee_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="employee_activity_view_action" model="ir.actions.act_window">
+            <field name="name">Employee Activity</field>
+            <field name="res_model">employee.activity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="hr_menu_employee_activity"
+                name="Employee Activity"
+                action="employee_activity_view_action"
+                parent="hr.menu_hr_employee_payroll"
+        />
+
+    </data>
+</odoo>

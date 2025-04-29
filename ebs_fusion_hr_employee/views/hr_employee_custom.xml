@@ -1,0 +1,1229 @@
+<odoo>
+
+    <record id="ebs_custom_hr_employee_view" model="ir.ui.view">
+        <field name="name">custom.hr.employee.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+<!--            Hide Schedule group of base-->
+            <xpath expr="//notebook//page//group[4]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+<!--            Hide planning group of base-->
+<!--            <xpath expr="//notebook//page//group[@name='planning']" position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--            </xpath>-->
+            <xpath expr="//form" position="attributes">
+                <attribute name="archive">0</attribute>
+            </xpath>
+
+            <xpath expr="//header" position="attributes">
+                <attribute name="invisible">context.get('my_profile')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='leave_manager_id']" position="attributes">
+                <attribute name="string">Leaves</attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='button_box']" position="attributes">
+                <attribute name="invisible">context.get('my_profile')</attribute>
+            </xpath>
+            <field name="name" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <xpath expr="//page[@name='personal_information']//field[@name='private_email']" position="after">
+                <field name="overseas_phone_number"/>
+            </xpath>
+
+<!--            <field name="parent_id" position="attributes">-->
+<!--                <attribute name="attrs">{'invisible':[('employee_type','=','fos_employee')]}</attribute>-->
+<!--            </field>-->
+            <field name="parent_id" position="after">
+<!--                <field name="attested_e_contract"/>-->
+                <field name="ndu" invisible="1"/>
+<!--                <field name="medical_insurance" attrs="{'invisible': [('employee_type','!=','fusion_employee')]}"/>-->
+<!--                <field name="wc_insurance" attrs="{'invisible': [('employee_type','!=','fusion_employee')]}"/>-->
+                <field name="wc_insurance" invisible="1"/>
+<!--                <field name="child_allowance"/>-->
+<!--                <field name="tuition_fees"/>-->
+<!--                <field name="medical_ins"/>-->
+<!--                <field name="life_insurance" attrs="{'invisible': [('employee_type','!=','fusion_employee')]}"/>-->
+<!--                <field name="have_national_address" attrs="{'invisible': [('employee_type','!=','fos_employee')]}"/>-->
+<!--                <field name="has_private_medical_insurance"-->
+<!--                       attrs="{'invisible': [('employee_type','!=','fos_employee')]}"/>-->
+<!--                <field name="has_workmens_compensation" attrs="{'invisible': [('employee_type','!=','fos_employee')]}"/>-->
+                <field name="client_abbreviation" invisible="1"/>
+                <field name="oracle_id"
+                       attrs="{'invisible': ['|', ('employee_type','!=','fos_employee'), ('client_abbreviation', '!=', 'QA')]}"/>
+                <field name="taleo_id"
+                       attrs="{'invisible': ['|', ('employee_type','!=','fos_employee'), ('client_abbreviation', '!=', 'QA')]}"/>
+                <field name="qa_staff_no"
+                       attrs="{'invisible': ['|', ('employee_type','!=','fos_employee'), ('client_abbreviation', '!=', 'QA')]}"/>
+                <field name="transfer_no" attrs="{'invisible': ['|',('employee_type','!=','fos_employee'),
+                    ('outsourced_status','!=','sponsored_Transferring_out')]}"/>
+                <field name="end_of_notice_period" attrs="{'invisible': ['|',('employee_type','!=','fos_employee'),
+                    ('outsourced_status','!=','sponsored_Transferring_out')]}"/>
+                <field name="release_of_responsibility" attrs="{'invisible': ['|',('employee_type','!=','fos_employee'),
+                    ('outsourced_status','!=','sponsored_Transferring_out')]}"/>
+                <field name="absconding_report_no" attrs="{'invisible': ['|',('employee_type','!=','fos_employee'),
+                    ('outsourced_status','!=','sponsored_absconding')]}"/>
+                <field name="transfer_completion" attrs="{'invisible': ['|',('employee_type','!=','fos_employee'),
+                    ('outsourced_status','!=','transferred_out')]}"/>
+                <field name="cancellation_date" attrs="{'invisible': ['|',('employee_type','!=','fos_employee'),
+                    ('outsourced_status','!=','cancelled')]}"/>
+                <field name="has_employee_personal_profile" invisible="1"/>
+                <field name="has_access_card" invisible="1"/>
+            </field>
+
+            <field name="mobile_phone" position="before">
+
+<!--                <field name="sequence" string="Employee No"-->
+<!--                       attrs="{'required': [('employee_type', '=', 'fusion_employee')]}"/>-->
+                <field name="title"/>
+                <field name="name" string="Name(English)" placeholder="Name" required="1"
+                       style="text-transform: capitalize;"/>
+                <field name="arabic_name" string="Name(Arabic)" placeholder="الاسم"/>
+                <field name="qid_name" invisible="1"/>
+                <field name="is_qid" invisible="1"/>
+                <field name="passport_name" invisible="1"/>
+                <field name="date_entry" invisible="1"/>
+                <field name="visa_valid_till" invisible="1"/>
+
+                <field name="reference" invisible="1"/>
+
+                <field name="employee_type" readonly="1"/>
+
+                <field name="company_id" string="Main Company" options="{'no_create': True, 'no_create_edit':True}"/>
+                <field name="partner_parent_id" attrs="{'invisible':[('employee_type','=','fusion_employee')]}"
+                       string="Client" options="{'no_create': True, 'no_create_edit':True}"
+                       context="{'employee_type': employee_type, 'partner_parent_from_employee': True, 'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form'}"/>
+                <field name="partner_parent_id" attrs="{'invisible':[('employee_type','!=','fusion_employee')]}"
+                       string="Company" options="{'no_create': True, 'no_create_edit':True}"
+                       context="{'employee_type': employee_type, 'partner_parent_from_employee': True, 'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form'}"/>
+
+<!--                <field name="sponsored_company_id" required="1" string="Company Sponsor"-->
+<!--                       options="{'no_create': True, 'no_create_edit':True}"-->
+<!--                       context="{'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form','partner_parent_id': partner_parent_id, 'employee_type': employee_type, 'partner_sponsered_from_employee': True}"/>-->
+                <field name="visa_type" invisible="1"/>
+                <field name="visa_no" invisible="1"/>
+                <field name="visa_expire"/>
+                <field name="qid_no"/>
+                <field name="qid_expiry_date" force_save="1" readonly="1"/>
+                <field name="passport_no"/>
+                <field name="passport_expiry_date" force_save="1" readonly="1"/>
+                <field name="active_contract" string="Active Contract"
+                       attrs="{'invisible':[('employee_type','!=','fos_employee')]}"
+                       groups="hr_contract_custom.group_access_other_employee_contract"/>
+                <field name="active_contract" string="Active Contract"
+                       attrs="{'invisible':[('employee_type','!=','fusion_employee')]}"
+                       groups="hr_contract_custom.group_access_fusion_employee_contract"/>
+<!--                <field name="prorata_method" force_save="False"/>-->
+                <field name="entry_date" attrs="{'invisible': [('employee_type', '!=', 'fos_employee')]}"/>
+                <field name="exit_date" attrs="{'invisible': [('employee_type', '!=', 'fos_employee')]}"/>
+<!--                <field name="service_fee" attrs="{'invisible': [('employee_type', '!=', 'fos_employee')]}"/>-->
+                <field name="marital" string="Marital Status *"
+                       attrs="{'readonly': [('read_only_user_role','=',True)]}"/>
+                <field name="user_partner_id" readonly="1"/>
+                <field name="related_contact_ids" widget="many2many_tags" invisible="1"/>
+                <field name="main_parent_id" invisible="1"/>
+
+
+                <field name="lang" invisible="1" options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+            </field>
+
+            <xpath expr="//page[@name='personal_information']//field[@name='country_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']//field[@name='passport_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']//field[@name='marital']/.." position="before">
+                <group name="national_address" string="National Address">
+                    <field name="emp_residence_id" attrs="{'invisible':[('employee_type','!=','fos_employee')]}"
+                           options="{'no_create_edit': 1, 'no_create': 1}"/>
+                    <field name="zone_id"/>
+                    <field name="na_street"/>
+                    <field name="building"/>
+<!--                    <field name="unit"/>-->
+                </group>
+            </xpath>
+
+            <xpath expr="//page[@name='public']//field[@name='address_id']" position="before">
+
+                <field name="work_phone"/>
+                <field name="work_email"/>
+
+            </xpath>
+            <xpath expr="//field[@name='emergency_contact']/.." position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="private_email" position="after">
+                <field name="phone_personal"/>
+<!--                <field name="sponsor" required="1"/>-->
+            </field>
+            <xpath expr="//page[@name='personal_information']" position="inside">
+                <group>
+                    <group string="Emergency - Qatar">
+                        <field name="emergency_contact_qatar"/>
+                        <field name="emergency_relation_qatar"/>
+                        <field name="emergency_phone_qatar"/>
+                    </group>
+                    <group string="Emergency - Home Country">
+                        <field name="emergency_contact"/>
+                        <field name="emergency_relation_hc"/>
+                        <field name="emergency_phone"/>
+                    </group>
+                    <group string="Private Information" invisible="1">
+
+                        <field name="religion"/>
+                        <field name="currency_home_country_id"/>
+                        <field name="father_name"/>
+                        <field name="mother_name"/>
+                        <field name="phone_personal"/>
+                        <field name="phone_home"/>
+                        <field name="p_o_box"/>
+                        <field name="trainings_attended"/>
+                        <field name="bank_details_in_the_home_country_id"/>
+                        <field name="police_certificate_id"
+                               domain="[('employee_id', '=', id), ('employee_id', '!=', False)]" context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="passport_ref_no_id"
+                               domain="[('employee_id', '=', id), ('employee_id', '!=', False)]" context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="driver_lic_no_id" domain="[('employee_id', '=', id), ('employee_id', '!=', False)]"
+                               context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="driver_lic_expiry_date"/>
+                        <field name="pro_id_card_ref_no_id"
+                               domain="[('employee_id', '=', id), ('employee_id', '!=', False)]" context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="pro_id_expiry_date"/>
+
+                        <field name="health_certificate_expiry_date"/>
+                    </group>
+                    <group string="Private Information" invisible="1">
+                        <field name="blood_group"/>
+                        <field name="blood_test_id" domain="[('employee_id', '=', id), ('employee_id', '!=', False)]"
+                               context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="eye_test"/>
+                        <field name="vaccination_card_id"
+                               domain="[('employee_id', '=', id), ('employee_id', '!=', False)]" context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="height"/>
+                        <field name="weight"/>
+                        <field name="waist_size"/>
+                        <field name="feet_size"/>
+                        <field name="dress_size"/>
+                        <field name="certificates_obtained"/>
+
+                        <field name="labor_card_id" domain="[('employee_id', '=', id), ('employee_id', '!=', False)]"
+                               context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="labor_card_expiry_date"/>
+
+                        <field name="work_permit_ref_no_id"
+                               domain="[('employee_id', '=', id), ('employee_id', '!=', False)]" context="{
+                                'default_employee_id':id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"/>
+                        <field name="work_permit_expiry_date"/>
+                        <field name="remark"/>
+                    </group>
+                    <group string="Health Condition">
+                        <field name="allergic_food_drink"/>
+                        <field name="hypertensive"/>
+                        <field name="diabetic"/>
+                        <field name="heart_desease"/>
+                        <field name="blood_pressure"/>
+                        <field name="any_contagious_disease"/>
+                        <field name="do_you_smoke"/>
+                        <field name="drink_alcohol"/>
+                        <field name="others_comments"/>
+                    </group>
+                    <group string="Social Media User Name Employee">
+                        <field name="facebook"/>
+                        <field name="google"/>
+                        <field name="skype_id"/>
+                        <field name="twitter"/>
+                        <field name="linkedin"/>
+                        <field name="snapchat"/>
+                        <field name="other"/>
+                        <field name="comments"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//page[@name='public']" position="before">
+                <page name="document_page" string="Documents">
+                    <button name="%(ebs_fusion_documents.document_button_action)d"
+                            string="Create Document"
+                            type="action" class="oe_highlight"
+                            context="{
+                                'default_employee_id':id,
+                                'default_partner_id':user_partner_id,
+                                'default_res_id': id,
+                                'default_res_model': context.get('active_model'),
+                                'hide_field': 1,
+                                }"
+                            invisible="context.get('my_profile')"/>
+                    <field name="document_o2m">
+                        <tree>
+                            <field name="name"/>
+                            <field name="document_number"/>
+                            <field name="document_type_id" required="1"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="issue_date"/>
+                            <field name="expiry_date"/>
+                            <field name="status"/>
+                            <field name="type" invisible="1"/>
+                            <button name="access_content" icon="fa-download" type="object"
+                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                            <button name="preview_document" icon="fa-eye" type="object"
+                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="expired_document_page" string="Expired Documents">
+
+                    <field name="expired_document_o2m">
+                        <tree>
+                            <field name="name"/>
+                            <field name="document_number"/>
+                            <field name="document_type_id" required="1"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="issue_date"/>
+                            <field name="expiry_date"/>
+                            <field name="status"/>
+                            <field name="type" invisible="1"/>
+                            <button name="access_content" icon="fa-download" type="object"
+                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                            <button name="preview_document" icon="fa-eye" type="object"
+                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+            <xpath expr="//page[@name='public']" position="after">
+
+                <page name="passport_details" invisible="1" string="Passport Details">
+                    <field name="passport_details_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree decoration-warning="passport_type=='regular'"
+                              decoration-success="passport_type=='special'" decoration-muted="passport_type=='service'">
+                            <field name="passport_serial_no_id"/>
+                            <field name="passport_ref_no"/>
+                            <field name="expiry_date"/>
+                            <field name="place_issue"/>
+                            <field name="place_birth"/>
+                            <field name="country_passport_id"/>
+                            <field name="citizenship_id"/>
+                            <field name="double_citizenship_ids" widget="many2many_tags"/>
+                            <field name="passport_type"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="first_name"/>
+                                        <field name="middle_name"/>
+                                        <field name="last_name_1"/>
+                                        <field name="last_name_2"/>
+                                        <field name="father_name"/>
+
+                                        <field name="passport_serial_no_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="passport_ref_no"/>
+                                        <field name="expiry_date"/>
+                                        <field name="place_birth"/>
+                                        <field name="citizenship_id"/>
+                                        <field name="passport_type"/>
+                                    </group>
+                                    <group>
+                                        <field name="issue_date"/>
+                                        <field name="place_issue"/>
+                                        <field name="country_passport_id"/>
+                                        <field name="double_citizenship_ids" widget="many2many_tags"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page name="education" string="Education Certificate" invisible="1">
+                    <field name="education_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree>
+
+                            <field name="education_type_id"/>
+                            <field name="certificate_type_id"/>
+                            <field name="year_passing"/>
+                            <field name="university_institute"/>
+
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="education_type_id"/>
+                                        <field name="year_passing"/>
+                                        <field name="certificate_type_id"/>
+                                        <field name="university_institute"/>
+                                        <field name="no_certificate"/>
+                                        <field name="grade"/>
+                                        <field name="qualification_employees_staff"/>
+                                        <field name="education_spatial_environment"/>
+                                    </group>
+                                    <group string="Document ">
+                                        <field name="certificates_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="attested_education_certificate_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="training_certificate_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="education_certificate_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="nortarized_certificate_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="candidate_transcript"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+
+                                        <field name="candidate_university_letter_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="text"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page name="visa_details" string="Visa Details" invisible="1">
+                    <field name="visa_details_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree>
+                            <field name="application_no"/>
+                            <field name="visa_no"/>
+                            <field name="visa_type"/>
+                            <field name="visa_serial_no_id"/>
+                            <field name="date_entry"/>
+                            <field name="after_entry"/>
+
+                        </tree>
+                        <form>
+                            <sheet>
+                                <field name="image_1920" widget='image' class="oe_avatar"
+                                       options='{"preview_image": "image_128"}'/>
+                                <group>
+                                    <group>
+                                        <field name="application_no"/>
+                                        <field name="visa_type"/>
+                                        <field name="visa_serial_no_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="after_entry"/>
+                                        <field name="profession_id"/>
+                                        <field name="main_official_name"/>
+                                        <field name="manager_id"/>
+                                        <field name="certificate_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"
+                                        />
+
+                                    </group>
+                                    <group>
+                                        <field name="visa_no"/>
+                                        <field name="date_entry"/>
+                                        <field name="visa_valid_till"/>
+                                        <field name="emp_name"/>
+                                        <field name="representative_name"/>
+                                        <field name="blood_group"/>
+                                        <field name="recidency_type"/>
+                                        <field name="sponsor_name"/>
+                                        <field name="sponsor_id"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="text"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page name="hr_employee_econtract" string="E-Contract" invisible="1">
+                    <field name="hr_employee_econtract_ids">
+                        <tree>
+                            <field name="fullname"/>
+                            <field name="employees_address"/>
+                            <field name="passport_number"/>
+                            <field name="work_visa_number"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="fullname" required="1"/>
+                                        <field name="passport_number"/>
+                                        <field name="nationality_id"/>
+                                        <field name="joining_date"/>
+                                        <field name="food_allowance"/>
+                                        <field name="transportation_allowance"/>
+                                        <field name="total_salary"/>
+                                        <field name="contract_duration"/>
+                                    </group>
+                                    <group>
+                                        <field name="employees_address"/>
+                                        <field name="housing_allowance" invisible="1"/>
+                                        <field name="zone_no"
+                                               attrs='{"invisible": [("housing_allowance", "=", "no")]}'/>
+                                        <field name="street_no"
+                                               attrs='{"invisible": [("housing_allowance", "=", "no")]}'/>
+                                        <field name="building_no"
+                                               attrs='{"invisible": [("housing_allowance", "=", "no")]}'/>
+                                        <field name="work_visa_number"/>
+                                        <field name="qatar_id"/>
+                                        <field name="basic_salary"/>
+                                        <field name="other_allownce"/>
+                                        <field name="probation_period"/>
+                                        <field name="ticket_eligibility"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page name="residency_permit" string="QID" invisible="1">
+                    <field name="residency_permit_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree>
+                            <field name="residency_id"/>
+                            <field name="occupation"/>
+                            <field name="residency_type"/>
+                            <field name="qid_ref_no"/>
+                            <field name="expiry_date"/>
+
+                            <field name="Sponsor_name"/>
+                            <field name="Sponsor_id"/>
+                            <field name="visa_residence_permit"/>
+                            <field name="visit_visa"/>
+                            <field name="text"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="first_name"/>
+                                        <field name="middle_name"/>
+                                        <field name="last_name_1"/>
+                                        <field name="last_name_2"/>
+                                        <field name="father_name"/>
+                                        <field name="residency_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="qid_ref_no"/>
+                                        <field name="expiry_date"/>
+                                        <field name="passport_no"/>
+
+                                        <field name="residency_type"/>
+                                        <field name="Sponsor_id"/>
+                                        <field name="visa_residence_permit"/>
+                                    </group>
+                                    <group>
+                                        <field name="occupation"/>
+                                        <field name="Sponsor_name"/>
+                                        <field name="visit_visa"/>
+                                        <field name="text"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page name="bank_details" string="Bank Details" invisible="1">
+                    <field name="bank_details_ids">
+                        <tree>
+                            <field name="acc_number"/>
+                            <field name="bank_name"/>
+                            <field name="company_id"/>
+                            <field name="iban_no"/>
+                            <field name="acc_holder_name"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="insurance" string="Insurance" invisible="1">
+                    <field name="insurance_ids">
+                        <tree editable="bottom">
+                            <field name="name_insurer"/>
+                            <field name="provider"/>
+                            <field name="policy_no"/>
+                            <field name="type_insurance"/>
+                            <field name="insurance_covered"/>
+                            <field name="issue_date"/>
+                            <field name="valid_till"/>
+                            <field name="exceptions"/>
+                            <field name="text"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="health_card" string="Health Card" invisible="1">
+                    <field name="health_card_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="nationality_id"/>
+                            <field name="passport_serial_no_id"
+                                   domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                   context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                            <field name="qid_serial_no_id"
+                                   domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                   context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                            <field name="hc_serial_no_id"
+                                   domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                   context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                            <field name="text"/>
+                        </tree>
+                    </field>
+                </page>
+
+
+                <!--                Address fields sponsoring_dependents todo-->
+                <page name="sponsoring_dependents" string="Sponsoring Dependents" invisible="1">
+                    <field name="sponsoring_dependents_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree>
+                            <field name="dependant_type"/>
+                            <field name="marriage_certificate_id"
+                                   attrs="{'invisible':['!',('dependant_type','=','wife')]}"/>
+                            <field name="marriage_contract_id"
+                                   attrs="{'invisible':['!',('dependant_type','=','wife')]}"/>
+                            <field name="non_marriageid_certificate_id"
+                                   attrs="{'invisible':['!',('dependant_type','=','wife')]}"/>
+                            <field name="divorce_certificate_id"
+                                   attrs="{'invisible':['!',('dependant_type','=','wife')]}"/>
+                            <field name="birth_certificate_id"
+                                   attrs="{'invisible':['!',('dependant_type','=','child')]}"/>
+                            <field name="lives_birth_id" attrs="{'invisible':['!',('dependant_type','=','child')]}"/>
+                            <field name="bank_info"/>
+                            <field name="bank_name"/>
+                            <field name="iban"/>
+                            <field name="text"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="dependant_type"/>
+                                        <field name="marriage_certificate_id"
+                                               attrs="{'invisible':['!',('dependant_type','=','wife')]}"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="non_marriageid_certificate_id"
+                                               attrs="{'invisible':['!',('dependant_type','=','wife')]}"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="birth_certificate_id"
+                                               attrs="{'invisible':['!',('dependant_type','=','child')]}"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="bank_info"/>
+                                        <field name="iban"/>
+                                    </group>
+                                    <group>
+                                        <field name="marriage_contract_id"
+                                               attrs="{'invisible':['!',('dependant_type','=','wife')]}"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="divorce_certificate_id"
+                                               attrs="{'invisible':['!',('dependant_type','=','wife')]}"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="lives_birth_id"
+                                               attrs="{'invisible':['!',('dependant_type','=','child')]}"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="bank_name"/>
+                                        <field name="text"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page name="family_details" string="Family Details" invisible="1">
+                    <field name="family_details_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree>
+                            <field name="relation_with_dependent"/>
+                            <field name="first_name"/>
+                            <field name="middel_name"/>
+                            <field name="last_name"/>
+                            <field name="dob"/>
+                            <field name="nationality_id"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="employee_id" invisible="1"/>
+                                        <field name="first_name"/>
+                                        <field name="middel_name"/>
+                                        <field name="last_name"/>
+                                        <field name="mobile_number"/>
+                                        <field name="emergency_no"/>
+                                        <field name="nationality_id"/>
+                                        <field name="permanent_address"/>
+                                        <field name="blood_group"/>
+                                        <field name="place_issue"/>
+                                        <field name="country_passport_id"/>
+                                        <field name="double_citizenship_ids" widget="many2many_tags"/>
+                                        <field name="profession_id"/>
+                                        <field name="text"/>
+                                    </group>
+                                    <group>
+                                        <field name="relation_with_dependent"/>
+                                        <field name="dob"/>
+                                        <field name="alt_mobile_number"/>
+                                        <field name="company_email"/>
+                                        <field name="personal_email"/>
+                                        <field name="current_address"/>
+                                        <field name="passport_id"
+                                               domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                               context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                                        <field name="place_birth"/>
+                                        <field name="citizenship_id"/>
+                                        <field name="passport_type"/>
+                                        <field name="work_status"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+
+                </page>
+
+
+                <page name="driving_licence" string="Driving Licence" invisible="1">
+                    <field name="driving_licence_ids" context="{'active_id': id, 'active_model': 'hr.employee'}">
+                        <tree editable="bottom">
+                            <field name="vehicle_used"/>
+                            <field name="licence_type"/>
+                            <field name="licence_serial_id"
+                                   domain="[('employee_id', '=', context.get('active_id')), ('employee_id', '!=', False)]"
+                                   context="{
+                                                'default_employee_id': context.get('active_id'),
+                                                'default_res_id': context.get('active_id'),
+                                                'default_res_model': context.get('active_model'),
+                                                'hide_field': 1,
+                                                }"/>
+                            <field name="driving_ref_no"/>
+                            <field name="expiry_date"/>
+                            <field name="form_individual_licence"/>
+                            <field name="text"/>
+                        </tree>
+                    </field>
+                </page>
+
+
+                <page name="history_experience" string="History Experience" invisible="1">
+                    <field name="history_experience_ids">
+                        <tree editable="bottom">
+                            <field name="company_worked"/>
+                            <field name="location"/>
+                            <field name="cancel_noc"/>
+                            <field name="text"/>
+                        </tree>
+                    </field>
+                </page>
+
+<!--                <page name="hobbies" string="Hobbies" attrs="{'invisible': [('employee_type','!=','fusion_employee')]}">-->
+<!--                    <field name="hobbies_ids">-->
+<!--                        <tree editable="bottom">-->
+<!--                            <field name="type_hobbies"/>-->
+<!--                            <field name="frequency_activity"/>-->
+<!--                            <field name="text"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
+<!--                </page>-->
+
+                <page string="QCSW" invisible="1">
+                    <group string="QCSW - Activation Application on Single Window Portal">
+                        <group>
+                            <field name="qcsw_dated"/>
+                            <field name="qcsw_company_name"/>
+                            <field name="qcsw_cr_no"/>
+                            <field name="qcsw_address"/>
+                            <field name="qcsw_admin_supervisor"/>
+
+                            <field name="qcsw_file"/>
+                        </group>
+                        <group>
+                            <field name="qcsw_mobile_no"/>
+                            <field name="qcsw_phone"/>
+                            <field name="qcsw_po_box"/>
+                            <field name="qcsw_fax"/>
+                            <field name="qcsw_email"/>
+                            <field name="qcsw_preffered_contact"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="qcsw_comments"/>
+                    </group>
+                </page>
+                <page string="Allowance" invisible="1">
+                    <field name="employee_allowance_ids">
+                        <tree editable="top">
+                            <field name="type"/>
+                            <field name="start_date"/>
+                            <field name="renewal_date"/>
+                            <field name="comments"/>
+                            <field name="instructions"/>
+                        </tree>
+                    </field>
+
+                </page>
+
+
+            </xpath>
+
+            <field name="birthday" position="after">
+                <field name="age"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_employee_view_form_extended" model="ir.ui.view">
+        <field name="name">custom.hr.employee.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="documents_hr.hr_employee_view_form"/>
+        <field name="arch" type="xml">
+            <button name="action_open_documents" position="replace">
+                <button name="open_related_documents"
+                        class="oe_stat_button"
+                        groups="documents.group_documents_user"
+                        icon="fa-file-text"
+                        type="object">
+                    <field name="document_count" widget="statinfo"/>
+                </button>
+            </button>
+        </field>
+    </record>
+
+
+    <record id="hr_employee_list_inherited" model="ir.ui.view">
+        <field name="name">hr.employee.list.view.inherited</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath position="after" expr="//field[@name='parent_id']">
+<!--                <field name="qid_no"/>-->
+<!--                <field name="qid_expiry_date"/>-->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="employee_custom_qid_search" model="ir.ui.view">
+        <field name="name">employee_custom.search</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='sponsored_company_id']" position="after">
+                <field name="qid_no_search"/>
+                <field name="passport_no_search"/>
+                <field name="visa_no_search"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!--NEW SERVER ACTION CREATE-->
+    <record model="ir.actions.server" id="hr_employee_server_action">
+        <field name="name">Res Partner Server Action</field>
+        <field name="model_id" ref="model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['hr.employee'].open_my_profile()
+        </field>
+    </record>
+
+
+    <menuitem
+            id="menu_hr_employee_my_profile_root"
+            name="My Profile"
+            action="hr_employee_server_action"
+            sequence="100"
+            groups="hr.group_hr_user,hr_attendance.group_hr_attendance_kiosk,hr.group_hr_manager"/>
+
+
+<!--    <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">-->
+<!--        <field name="name">Main Company Employees</field>-->
+<!--        <field name="res_model">hr.employee</field>-->
+<!--        <field name="view_mode">kanban,tree,form,activity</field>-->
+<!--        <field name="domain">[('employee_type', '=', 'fusion_employee')]</field>-->
+<!--        <field name="context">{'default_employee_type': 'fusion_employee'}</field>-->
+<!--        <field name="view_id" eval="False"/>-->
+<!--        <field name="search_view_id" ref="hr.view_employee_filter"/>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Add a new Main employee-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                With just a quick glance on the Odoo employee screen, you-->
+<!--                can easily find all the information you need for each person;-->
+<!--                contact data, job position, availability, etc.-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <menuitem
+            id="hr.menu_hr_employee_user"
+            name="Main Company Employees"
+            action="hr.open_view_employee_list_my"
+            parent="hr.menu_hr_employee_payroll"
+
+            sequence="2"/>
+
+    <record model="ir.ui.menu" id="hr.menu_hr_employee_user">
+        <field name="groups_id" eval="[(6, 0, [ref('ebs_fusion_hr_employee.group_access_fusion_employee')])]"/>
+    </record>
+
+    <record id="outsourced_employee_client_list_view" model="ir.ui.view">
+        <field name="name">outsourced_employee_client_list_view</field>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="outsourced_status"/>
+                <field name="visa_no"/>
+                <field name="visa_issue"/>
+                <field name="visa_expire"/>
+                <field name="qid_no"/>
+                <field name="qid_expiry_date"/>
+                <field name="exit_date"/>
+                <field name="emp_trial_end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="outsourced_employee_list_view" model="ir.ui.view">
+        <field name="name">outsourced_employee_list_view</field>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nationality_id"/>
+                <field name="partner_parent_id"/>
+                <field name="outsourced_status"/>
+                <field name="qid_no"/>
+                <field name="qid_expiry_date"/>
+                <field name="visa_no"/>
+                <field name="department_id" optional="hide"/>
+                <field name="visa_issue"/>
+                <field name="visa_expire"/>
+                <field name="passport_no"/>
+                <field name="passport_expiry_date"/>
+                <field name="entry_date"/>
+                <field name="joining_date"/>
+                <field name="contract_start_date"/>
+                <field name="bank_account_id" optional="hide"/>
+                <field name="service_fee" optional="hide"/>
+                <field name="job_id" optional="hide"/>
+<!--                <field name="emp_wage" optional="hide"/>-->
+<!--                <field name="emp_accommodation" optional="hide"/>-->
+<!--                <field name="emp_transport_allowance" optional="hide"/>-->
+<!--                <field name="emp_food_allowance" optional="hide"/>-->
+<!--                <field name="emp_other_allowance" optional="hide"/>-->
+<!--                <field name="emp_package" optional="hide"/>-->
+                <field name="phone_personal" optional="hide"/>
+                <field name="emergency_contact" optional="hide"/>
+                <field name="private_email" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="open_view_fos_employee_list_my" model="ir.actions.act_window">
+        <field name="name">Outsourced Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form,kanban,activity</field>
+        <field name="domain">[('employee_type', '=', 'fos_employee')]</field>
+        <field name="context">{'default_employee_type': 'fos_employee'}</field>
+        <field name="view_id" eval="False"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('ebs_fusion_hr_employee.outsourced_employee_list_view')})]"/>
+        <field name="search_view_id" ref="hr.view_employee_filter"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new Outsourced Employees
+            </p>
+            <p>
+                With just a quick glance on the Odoo employee screen, you
+                can easily find all the information you need for each person;
+                contact data, job position, availability, etc.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_hr_fos_employee_payroll"
+            name="Outsourced Employees"
+            parent="hr.menu_hr_employee_payroll"
+            action="open_view_fos_employee_list_my"
+            groups="ebs_fusion_hr_employee.group_access_other_employee"
+            sequence="3"/>
+    <menuitem
+            id="menu_hr_payroll_fos_employees"
+            name="Outsourced Employees"
+            parent="hr_payroll.menu_hr_payroll_employees_root"
+            action="ebs_fusion_hr_employee.open_view_fos_employee_list_my"
+            groups="ebs_fusion_hr_employee.group_access_other_employee"
+            sequence="15"/>
+
+    <record id="open_view_client_employee_list_my" model="ir.actions.act_window">
+        <field name="name">Client Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="domain">[('employee_type', '=', 'client_employee')]</field>
+        <field name="context">{'default_employee_type': 'client_employee'}</field>
+        <field name="view_id" eval="False"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('ebs_fusion_hr_employee.outsourced_employee_list_view')})]"/>
+        <field name="search_view_id" ref="hr.view_employee_filter"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new Client employee
+            </p>
+            <p>
+                With just a quick glance on the Odoo employee screen, you
+                can easily find all the information you need for each person;
+                contact data, job position, availability, etc.
+            </p>
+        </field>
+    </record>
+    <odoo>
+    <record id="hr_employee_view_kanban_inherited_client_add_phone" model="ir.ui.view">
+        <field name="name">hr.employee.view.kanban.inherited.add.phone</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_employee_custom.hr_employee_view_kanban_inherited_client"/>
+        <field name="arch" type="xml">
+            <xpath expr="//li[field[@name='employee_check_in']]" position="before">
+                <li t-if="record.phone_personal.raw_value" class="o_force_ltr">
+                    <strong>Personal Phone :</strong>
+                    <field name="phone_personal" class="oe_inline"/>
+                </li>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
+    <menuitem
+            id="menu_hr_client_employee_payroll"
+            name="Client Employees"
+            parent="hr.menu_hr_employee_payroll"
+            action="open_view_client_employee_list_my"
+            groups="ebs_fusion_hr_employee.group_access_client_employee"
+            sequence="4"/>
+
+
+    <menuitem
+            id="hr.menu_hr_employee"
+            name="Employee Directory"
+            action="hr.hr_employee_public_action"
+            parent="hr.menu_hr_root"
+            sequence="6"/>
+
+    <act_window
+            name="Print letter"
+            id="action_outsourced_employee_letter_print"
+            res_model="letter.print.wizard"
+            binding_model="hr.employee"
+            binding_views="list,form"
+            view_mode="form"
+            target="new"
+            context="{'employee_id': active_id}"
+            groups="ebs_fusion_hr_employee.group_access_other_employee"
+    />
+    <act_window
+            name="Pay Card Report"
+            id="action_outsourced_employee_pay_card_report"
+            res_model="pay.card"
+            binding_model="hr.employee"
+            binding_views="list,form"
+            view_mode="form"
+            target="new"
+            groups="ebs_lb_payroll.group_fos_payroll,ebs_lb_payroll.group_fusion_payroll"
+            context="{'employee_id': active_id}"/>
+
+    <act_window
+            name="Insurance: Workmens Compensation Addition"
+            id="action_outsourced_employee_insurance_addition"
+            res_model="insurance.workmens.compensation"
+            binding_model="hr.employee"
+            binding_views="list,form"
+            view_mode="form"
+            target="new"
+            groups="hr_contract_custom.group_access_other_employee_contract,hr_contract_custom.group_access_fusion_employee_contract"
+            context="{'employee_id': active_id, 'addition': True}"/>
+
+    <act_window
+            name="Insurance: Workmens Compensation Deletion"
+            id="action_outsourced_employee_insurance_deletion"
+            res_model="insurance.workmens.compensation"
+            binding_model="hr.employee"
+            binding_views="list,form"
+            view_mode="form"
+            target="new"
+            groups="hr_contract_custom.group_access_other_employee_contract,hr_contract_custom.group_access_fusion_employee_contract"
+            context="{'employee_id': active_id, 'deletion': True}"/>
+
+    <record model="ir.actions.server" id="action_update_employee_outsourced_status">
+        <field name="name">Update Outsourced Status</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.action_update_employee_outsourced_status()
+        </field>
+    </record>
+
+</odoo>

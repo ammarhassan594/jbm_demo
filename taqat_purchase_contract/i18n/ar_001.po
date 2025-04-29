@@ -1,0 +1,388 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* taqat_purchase_contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-17 09:25+0000\n"
+"PO-Revision-Date: 2023-08-17 09:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_needaction
+msgid "Action Needed"
+msgstr "اﻷجراء المطلوب"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_ids
+msgid "Activities"
+msgstr "اﻷنشطه"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_state
+msgid "Activity State"
+msgstr "حاله النشاط"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: taqat_purchase_contract
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "Cancel"
+msgstr "اغلاق"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields.selection,name:taqat_purchase_contract.selection__purchase_contract__status__cancelled
+msgid "Cancelled"
+msgstr "اغلاق"
+
+#. module: taqat_purchase_contract
+#: model:ir.model,name:taqat_purchase_contract.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: taqat_purchase_contract
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "Complete"
+msgstr "مكتمل"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields.selection,name:taqat_purchase_contract.selection__purchase_contract__status__completed
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: taqat_purchase_contract
+#: model:ir.model,name:taqat_purchase_contract.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__contact_name
+msgid "Contact Name"
+msgstr "اسم جهه اﻷتصال"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__contract_id
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_tree
+msgid "Contract"
+msgstr "العقد"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__contract_date
+msgid "Contract Date"
+msgstr "تاريخ العقد"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__contract_number
+msgid "Contract Number"
+msgstr "اسم العقد"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__create_uid
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__create_date
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__display_name
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__document_ids
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "Documents"
+msgstr "الوثائق"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields.selection,name:taqat_purchase_contract.selection__purchase_contract__status__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__from_date
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__from_date
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: taqat_purchase_contract
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.taqat_general_Terms_and_Condition_res_config_settings_view
+msgid "General Terms And Conditions"
+msgstr "الشروط واﻷحكام العامة"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_res_company__general_terms_and_conditions
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_res_config_settings__general_terms_and_conditions
+msgid "General Terms and Conditions"
+msgstr "الشروط واﻷحكام العامة"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__has_message
+msgid "Has Message"
+msgstr "لديه رساله"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__id
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__id
+msgid "ID"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_needaction
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_has_error
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields.selection,name:taqat_purchase_contract.selection__purchase_contract__status__in_progress
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "In Progress"
+msgstr "تحت التنفيذ"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract____last_update
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__write_uid
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__write_date
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "مرفق اساسي"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي ﻷنشطتي"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد اﻷنشطه"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد اﻷخطاء"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__payment_terms_id
+msgid "Payment Term"
+msgstr "شروط الدفع"
+
+#. module: taqat_purchase_contract
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: taqat_purchase_contract
+#: model:ir.model,name:taqat_purchase_contract.model_purchase_contract
+msgid "Purchase Contract"
+msgstr "عقد الشراء"
+
+#. module: taqat_purchase_contract
+#: model:ir.model,name:taqat_purchase_contract.model_purchase_contract_term
+msgid "Purchase Contract Terms and Conditions"
+msgstr "شروط وأحكام عقد الشراء"
+
+#. module: taqat_purchase_contract
+#: model:ir.actions.act_window,name:taqat_purchase_contract.contract_purchase_action
+#: model:ir.ui.menu,name:taqat_purchase_contract.menu_contract_purchase
+msgid "Purchase Contracts"
+msgstr "عقود الشراء"
+
+#. module: taqat_purchase_contract
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "Reset To Draft"
+msgstr "اعاده الي المسوده"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__status
+msgid "Status"
+msgstr "حاله"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "أنشطه مستقبليه"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__terms_and_condition_line_ids
+#: model_terms:ir.ui.view,arch_db:taqat_purchase_contract.view_contract_form
+msgid "Terms and Conditions"
+msgstr "الشروط واﻷحكام"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__to_date
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract_term__to_date
+msgid "To Date"
+msgstr "الي تاريخ"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءه"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الغير مقروءه"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__vendor_id
+msgid "Vendor"
+msgstr "مورد"
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,field_description:taqat_purchase_contract.field_purchase_contract__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: taqat_purchase_contract
+#: model:ir.model.fields,help:taqat_purchase_contract.field_purchase_contract__website_message_ids
+msgid "Website communication history"
+msgstr ""

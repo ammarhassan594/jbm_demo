@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_credit_note_temp">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <div class="header">
+<!--                        <div class="row">-->
+<!--                            <div class="col-12" style="width:100%">-->
+                                <img src="/credit_note/static/src/img/header.jpg" class="img-fluid" />
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="arab" style="direction:rtl;">
+                        <div class="text-center">
+                            <h5 class="text-center">
+                                <u>
+                                    <b>
+                                        سند استلام
+                                    </b>
+                                </u>
+                            </h5>
+                        </div>
+                        <br/>
+                        <table class="table table-borderless">
+                            <tbody style="float: right;">
+                                <tr>
+                                    <td style="text-align: right;">التــاريخ:</td>
+                                    <td>
+                                        <span t-field="o.invoice_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">المـــــورد:</td>
+                                    <td>
+                                        <span t-esc="o.partner_id and o.partner_id.name or ''"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">فاتــــورة رقم:</td>
+                                    <td>
+                                        <span t-esc="o.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">المـــرجع:</td>
+                                    <td>
+                                        <span t-esc="o.purchase_id and o.purchase_id.name or ''"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="text-align: right;">
+                            <span style="word-spacing:5px;width:100%;text-align: right;">
+                               استلمت انا الموقع أدناه، الأصناف الموضحة بالجدول التالي:
+                            </span>
+                        </div>
+
+                        <br/>
+                    </div>
+                    <table class="table table-bordered" width="100%">
+                        <thead>
+                            <tr style="background-color:#3355FF;">
+                                <th class="text-center" style="border:1px solid black !important" width="10%">
+                                    <span>#</span>
+                                </th>
+                                <th class="text-center" style="border:1px solid black !important" width="60%">
+                                    <span>الوصف</span>
+                                </th>
+                                <th class="text-center" style="border:1px solid black !important" width="10%">
+                                    <span>سعر الوحده</span>
+                                </th>
+                                <th class="text-center" style="border:1px solid black !important" width="10%">
+                                    <span>الكميه</span>
+                                </th>
+                                <th class="text-center" style="border:1px solid black !important" width="10%">
+                                    <span>الاجمالي</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="count" t-value="0"/>
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <t t-set="count" t-value="count + 1"/>
+                                <tr class="text-center">
+                                    <td style="border:1px solid black !important" width="10%">
+                                        <span t-esc="count"/>
+                                    </td>
+                                    <td style="border:1px solid black !important" width="80%">
+                                        <span t-field="line.product_id.name"/>
+                                    </td>
+                                    <td style="border:1px solid black !important" width="80%">
+                                        <span t-field="line.price_unit"/>
+                                    </td>
+                                    <td style="border:1px solid black !important" width="10%">
+                                        <span t-field="line.quantity"/>
+                                    </td>
+
+                                    <td style="border:1px solid black !important" width="10%">
+                                        <span t-field="line.price_subtotal"/>
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
+
+
+                                    <td colspan="4" style="border:1px solid black !important" width="90%">
+                                        <center style="text-align:center;">الاجمالي</center>
+                                    </td>
+
+
+                                    <td colspan="1" style="border:1px solid black !important" width="10%">
+                                        <span t-esc="sum(o.invoice_line_ids.mapped('quantity'))"/>
+                                    </td>
+                                </tr>
+                            </t>
+
+                        </tbody>
+                    </table>
+
+                    <t t-set="purchase_orders" t-value="o.invoice_line_ids.mapped('purchase_order_id')"/>
+                    <div>
+                        <h4 style="float:right">
+                            <u>
+                                <b>
+                                    :الجهة الطالبة والمُستلـمة
+                                </b>
+                            </u>
+                        </h4>
+                        <h4 style="float:right;">
+                            <b>
+                                <t t-if="purchase_orders">
+                                    <t t-esc="purchase_orders[0].approve_requester_id.name"/>
+                                </t>
+                            </b>
+
+                        </h4>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-6">
+                            <span style="float:right;font-size:20px!important;">:التوقيع</span>
+                            <span style="float:right"/>
+                        </div>
+                        <div class="col-6" style="float:right">
+                            <span style="float:right;font-size:20px!important;">:الاسـم</span>
+                            <span style="float:right">
+                                <t t-if="purchase_orders">
+                                    <t t-esc="purchase_orders[0].approve_requester_id.name"/>
+                                </t>
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div>
+                         <u>
+                            <b style="float:right;font-size:20px!important;">:سند رقم</b>
+                         </u>
+                        <b style="float:right;font-size:20px!important;margin-right:10px;">
+                            <t t-esc="o.name"/>
+                        </b>
+                    </div>
+
+                    <div style="width:100%; text-align:left;" DIR="LTR" >
+                        <img src="/credit_note/static/src/img/stamp.jpg"
+                                    style="height:150px;width:150px;"/>
+                    </div>
+
+                    <div class="footer">
+                                <img src="/credit_note/static/src/img/footer.jpg"
+                                     style="height:80px;width:100%;"/>
+                            </div>
+
+<!--                    <div class="footer">-->
+<!--                        <div style="margin-top:-100px;">-->
+<!--                            hhhhhhhhhhhhhhgfdfdsfsfffffffffffffffffffff-->
+<!--&lt;!&ndash;                                 <img t-if="o.company_id.company_report_footer" t-att-src="image_data_uri(o.company_id.company_report_footer)"&ndash;&gt;-->
+<!--&lt;!&ndash;                                 style="width:100%" alt="Letter Foot"/>&ndash;&gt;-->
+<!--                                <img src="/credit_note/static/src/img/credit_note_footer.png" style="width:100%" />-->
+<!--                            </div>-->
+
+<!--                    </div>-->
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

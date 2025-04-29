@@ -1,0 +1,89 @@
+<odoo>
+    <data>
+        <record id="hr_emp_child_search" model="ir.ui.view">
+            <field name="name">hr.emp.child.search</field>
+            <field name="model">hr.emp.child</field>
+            <field name="arch" type="xml">
+                <search string="Search Role">
+                    <field name="emp_id" filter_domain="['|', ('emp_id.name','ilike',self), ('emp_id.registration_number','ilike',self)]"/>
+                    <field name="name" filter_domain="[('name','ilike',self)]"/>
+                    <field name="qid" filter_domain="[('qid','ilike',self)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="employee_childs_form" model="ir.ui.view">
+            <field name="name">employee_childs_form</field>
+            <field name="model">hr.emp.child</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                                        <group name="top_group" colspan="4">
+                                            <group name="group_left" string="Dependent Info">
+                                                <field name="emp_id"/>
+                                                <field name="name"/>
+                                                <field name="relation"/>
+                                                <filed name="gender"/>
+                                                <field name="date_of_birth"/>
+                                                <field name="insurance_details"/>
+                                                <field name="school_name"/>
+                                                <field name="age" readonly="1" invisible="1"/>
+                                            </group>
+                                            <group string="QID Info">
+                                                <field name="qid"/>
+                                                <field name="QID_expiry_date"/>
+                                                <field name="QID_attachment"/>
+                                            </group>
+                                        </group>
+                                        <group name="bottom_group" colspan="4">
+                                            <group string="Hamad Card Info">
+                                                <field name="hamad_card_number"/>
+                                                <field name="Hamad_card_expiry_date"/>
+                                            </group>
+                                            <group string="Passport Info">
+                                                <field name="passport_number"/>
+                                                <field name="passport_issue_date"/>
+                                                <field name="passport_issue_place"/>
+                                                <field name="Passport_expiry_date"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="employee_childs_tree" model="ir.ui.view">
+            <field name="name">employee_childs_tree</field>
+            <field name="model">hr.emp.child</field>
+            <field name="arch" type="xml">
+                <tree>
+                                    <field name="emp_id"/>
+                                    <field name="name"/>
+                                    <field name="relation" readonly="1"/>
+                                    <field name="date_of_birth"/>
+                                    <field name="qid"/>
+                                    <field name="passport_number"/>
+                                    <field name="passport_issue_date" optional="hide"/>
+                                    <field name="passport_issue_place" optional="hide"/>
+                                    <field name="hamad_card_number"/>
+                                    <field name="Hamad_card_expiry_date"/>
+                                    <field name="Passport_expiry_date" optional="hide"/>
+                                    <field name="insurance_details" optional="hide"/>
+                                    <field name="school_name" optional="hide"/>
+                                    <field name="age" invisible="1"/>
+                                </tree>
+            </field>
+        </record>
+
+
+        <record id="employee_childs_act_window" model="ir.actions.act_window">
+            <field name="name">Employee Dependent</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.emp.child</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="employee_childs_menu" name="Dependents"  parent="hr.menu_human_resources_configuration" action="employee_childs_act_window"/>
+    </data>
+</odoo>

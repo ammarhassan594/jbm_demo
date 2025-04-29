@@ -1,0 +1,91 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_hr_sponsor
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-14 13:38+0000\n"
+"PO-Revision-Date: 2023-06-14 13:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__create_uid
+msgid "Created by"
+msgstr "انشأت بواسطه"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__create_date
+msgid "Created on"
+msgstr "انشأت في"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: jbm_hr_sponsor
+#: model:ir.actions.act_window,name:jbm_hr_sponsor.hr_sponsor_action
+msgid "Employee Sponsor"
+msgstr ""
+
+#. module: jbm_hr_sponsor
+#: model:ir.ui.menu,name:jbm_hr_sponsor.hr_sponsor_menu
+msgid "Employee Sponsors"
+msgstr "كفلاء الموظفين"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__id
+msgid "ID"
+msgstr ""
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor____last_update
+msgid "Last Modified on"
+msgstr "أخر تعديل في"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__write_uid
+msgid "Last Updated by"
+msgstr "أخر تعديل بواسطة"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__write_date
+msgid "Last Updated on"
+msgstr "أخر تعديل في"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__payer_bank_short_name
+msgid "Payer Bank Short Name"
+msgstr "أسم البنك القائم بالدفع"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__payer_eid
+msgid "Payer EID"
+msgstr " القائم بالدفع EID "
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__payer_iban
+msgid "Payer IBAN"
+msgstr "IBAN القائم بالدفع"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model.fields,field_description:jbm_hr_sponsor.field_hr_employee_sponsor__payer_qid
+msgid "Payer QID"
+msgstr "QID القائم بالدفع"
+
+#. module: jbm_hr_sponsor
+#: model:ir.model,name:jbm_hr_sponsor.model_hr_employee_sponsor
+msgid "hr.employee.sponsor"
+msgstr ""

@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* attendance_api
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 08:13+0000\n"
+"PO-Revision-Date: 2023-01-23 08:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: attendance_api
+#: model_terms:ir.ui.view,arch_db:attendance_api.attendance_api_res_config_setting
+msgid ""
+"<br/>\n"
+"                                Add attendance api token for the generate from attendance system."
+msgstr ""
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_res_config_settings__attendance_api_token
+#: model_terms:ir.ui.view,arch_db:attendance_api.attendance_api_res_config_setting
+msgid "API Token"
+msgstr "رمز API"
+
+#. module: attendance_api
+#: model:ir.model,name:attendance_api.model_hr_attendance
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__attendance_id
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: attendance_api
+#: model_terms:ir.ui.view,arch_db:attendance_api.attendance_api_res_config_setting
+msgid "Attendance API"
+msgstr "الحضور API"
+
+#. module: attendance_api
+#: model:ir.model,name:attendance_api.model_attendance_api_log
+msgid "Attendance Api log"
+msgstr "سجل الحضور Api"
+
+#. module: attendance_api
+#: model_terms:ir.ui.view,arch_db:attendance_api.view_employee_form_attendance_api_custom
+msgid "Attendance Configuration"
+msgstr "تكوين الحضور"
+
+#. module: attendance_api
+#: model:ir.actions.act_window,name:attendance_api.action_attendance_api_log
+#: model:ir.ui.menu,name:attendance_api.menu_attendance_api_log
+msgid "Attendance api log"
+msgstr "سجل واجهة برمجة تطبيقات الحضور"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_hr_attendance__check_in_punch_id
+msgid "Check In Punch ID"
+msgstr "تحقق في معرف لكمة"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_hr_attendance__check_out_punch_id
+msgid "Check Out Punch ID"
+msgstr "تحقق من Punch ID"
+
+#. module: attendance_api
+#: model:ir.model,name:attendance_api.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التكوين"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__date
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: attendance_api
+#: model_terms:ir.ui.view,arch_db:attendance_api.attendance_api_log_form_view
+msgid "Done"
+msgstr "فعله"
+
+#. module: attendance_api
+#: model:ir.model,name:attendance_api.model_hr_employee
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__employee_record_id
+msgid "Employee"
+msgstr "موظف"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__employee_id
+msgid "Employee Id"
+msgstr "هوية الموظف"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__error
+msgid "Error"
+msgstr "خطأ"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_hr_employee__punch_user_id
+msgid "Punch User ID"
+msgstr "معرف مستخدم لكمة"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__punch_id
+msgid "Punch id"
+msgstr "معرف لكمة"
+
+#. module: attendance_api
+#: model:ir.model.fields,field_description:attendance_api.field_attendance_api_log__punch_type
+msgid "Punch type"
+msgstr "نوع لكمة"

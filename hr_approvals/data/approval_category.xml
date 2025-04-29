@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="approval.category" id="approval_category_data_furniture_allowance">
+        <field name="name">Furniture Allowance Request</field>
+        <field name="image" type="base64" file="approvals/static/src/img/credit-card-solid.svg"/>
+        <field name="sequence">40</field>
+        <field name="has_date">required</field>
+        <field name="has_period">no</field>
+        <field name="has_product">no</field>
+        <field name="has_quantity">no</field>
+        <field name="has_amount">required</field>
+        <field name="has_reference">no</field>
+        <field name="has_partner">required</field>
+        <field name="has_payment_method">required</field>
+        <field name="has_location">no</field>
+        <field name="requirer_document">optional</field>
+        <field name="approval_minimum">1</field>
+        <field name='approval_type'>furniture_allowance</field>
+        <field name='has_employee'>required</field>
+        <field name='is_requisition_request'>yes</field>
+    </record>
+    <record model="approval.category" id="approval_category_data_advance_payment">
+        <field name="name">Advance Payment Application</field>
+        <field name="image" type="base64" file="approvals/static/src/img/credit-card-solid.svg"/>
+        <field name="sequence">40</field>
+        <field name="has_date">required</field>
+        <field name="has_period">no</field>
+        <field name="has_product">no</field>
+        <field name="has_quantity">no</field>
+        <field name="has_amount">required</field>
+        <field name="has_reference">no</field>
+        <field name="has_partner">required</field>
+        <field name="has_payment_method">required</field>
+        <field name="has_location">no</field>
+        <field name="requirer_document">optional</field>
+        <field name="approval_minimum">1</field>
+        <field name='approval_type'>advance_payment</field>
+        <field name='has_employee'>required</field>
+        <field name='is_requisition_request'>yes</field>
+    </record>
+
+</odoo>

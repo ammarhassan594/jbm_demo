@@ -1,0 +1,130 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="tax_rule_tree" model="ir.ui.view">
+            <field name="name">Tax Rules</field>
+            <field name="model">ebspayroll.tax.rules</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fromdate"/>
+                    <field name="todate"/>
+                    <field name="frequency"/>
+                    <field name="currency"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tax_rule_lines_tree" model="ir.ui.view">
+            <field name="name">Tax Rules Lines</field>
+            <field name="model">ebspayroll.tax.rules.lines</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="from_amount"/>
+                    <field name="to_amount"/>
+                    <field name="percentage"/>
+                </tree>
+            </field>
+        </record>
+        <record id="tax_rule_reductions_tree" model="ir.ui.view">
+            <field name="name">Tax Rules Reductions</field>
+            <field name="model">ebspayroll.tax.rules.reductions</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="main_amount"/>
+                    <field name="spouse_amount"/>
+                    <field name="child_amount"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Form views -->
+
+        <record id="tax_rules_form" model="ir.ui.view">
+            <field name="name">Tax Rules</field>
+            <field name="model">ebspayroll.tax.rules</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="fromdate"/>
+                                <field name="todate"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="type"/>
+                                <field name="frequency"/>
+                                <field name="currency"/>
+                            </group>
+                        </group>
+                        <group name="group_down">
+                            <field name="description"/>
+                        </group>
+                        <notebook name="tax_rules_form_notebook">
+                            <page name="tax_rules_line_page" string="Tax Rule Lines"
+                                  attrs="{'invisible': [('type', '==', 'TR')]}">
+                                <field name="tax_rule_lines"/>
+                            </page>
+                            <page name="tax_rules_reductions_page" string="Tax Rule Reductions"
+                                  attrs="{'invisible': [('type', '==', 'T')]}">
+                                <field name="tax_rule_reductions"/>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="tax_rules_lines_form" model="ir.ui.view">
+            <field name="name">Tax Rules Lines</field>
+            <field name="model">ebspayroll.tax.rules.lines</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+
+                            <field name="from_amount"/>
+                            <field name="to_amount"/>
+                            <field name="percentage"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tax_rules_reductions_form" model="ir.ui.view">
+            <field name="name">Tax Rules Reductions</field>
+            <field name="model">ebspayroll.tax.rules.reductions</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="main_amount"/>
+                                <field name="spouse_amount"/>
+                                <field name="child_amount"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--window -->
+        <record id="tax_rules_window" model="ir.actions.act_window">
+            <field name="name">Tax Rules</field>
+            <field name="res_model">ebspayroll.tax.rules</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+
+    </data>
+</odoo>

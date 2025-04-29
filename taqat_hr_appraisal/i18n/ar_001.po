@@ -1,0 +1,1864 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* taqat_hr_appraisal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 06:24+0000\n"
+"PO-Revision-Date: 2023-01-23 06:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: taqat_hr_appraisal
+#: model:ir.actions.report,print_report_name:taqat_hr_appraisal.action_report_jbm_appraisal_appraisal_a
+msgid "'Appraisals appraisal A'"
+msgstr "'تقييم التقييمات أ'"
+
+#. module: taqat_hr_appraisal
+#: model:ir.actions.report,print_report_name:taqat_hr_appraisal.action_report_jbm_appraisal_appraisal_b
+msgid "'Appraisals appraisal B'"
+msgstr "'تقييم التقييمات ب'"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "1 -االبداع واالبتكار"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "1 -اجلدية واحلماس"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "1 -احلضور"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "1 -الدقة واالتقان يف العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "1 -العالقات مع الرؤساء"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "1 -القدرة على إعداد خطط العمل وبرامجه"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "1 -القدرة على التعلم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "10"
+msgstr "١٠"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "100"
+msgstr "١٠٠"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "14"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "16"
+msgstr "١٦"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "18"
+msgstr "١٨"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "2 -االنصراف"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "2 -االهتمام بالتطوير"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"2 -االهتمام بالتطوير\n"
+"                                                <span>العمل</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"2 -العالقات مع الزمالء\n"
+"                                                <br/>\n"
+"                                                <span>والتعاون معهم</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "2 -القدرة على التنسيق وتوزيع العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "2 -حسن التصرف"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "2 -سرعة إجناز العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "20"
+msgstr "٢٠"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "24"
+msgstr "٢٤"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"3 -استخدام ساعات العمل\n"
+"                                                <br/>\n"
+"                                                <span>الرسمية</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "3 -التعاون يف تبادل اخلبرات"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"3 -القدرة على حل املشاكل\n"
+"                                                <br/>\n"
+"                                                <span>واتخاذ القرار</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "3 -متابعة العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "4 -الغياب املفاجئ"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"49\n"
+"                                                - 0"
+msgstr ""
+"٤٩\n"
+"                                                - ٠"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"65\n"
+"                                                - 50"
+msgstr ""
+"٦٥\n"
+"                                                - ٥٠"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"75\n"
+"                                                - 66"
+msgstr ""
+"٧٥\n"
+"                                                - ٦٦"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"89\n"
+"                                                - 76"
+msgstr ""
+"٨٩\n"
+"                                                - ٧٦"
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"90\n"
+"                                                -\n"
+"                                                100"
+msgstr ""
+"٩٠\n"
+"                                                -\n"
+"                                                ١٠٠"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"90\n"
+"                                                فأعلى"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>1-\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>2-</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>3-</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>4-\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>5-</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>6-</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>"
+msgstr ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>-١\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>-٢</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>-٣</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>-٤\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>-٥</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>-٦</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">\n"
+"                                                    ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو جي ً ـد جـدا أو جيـد\n"
+"                                                    إذا\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">أتيحـت لـه فرصـة تدريـب خـال العـام الـذي\n"
+"                                                    يوضـع عنـه تقريـر تقييـم\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">\n"
+"                                                    األداء، وتخلـف عنـه دون عـذر تقبلـه جهـة عملـه.\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">\n"
+"                                                    ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو جي ً ـد جـدا أو جيـد،\n"
+"                                                    مـن\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">الفئـات املبينـة فيمـا يلي:</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    املوظـف الـذي وقـع عليـه جـزاء تأديبـي باخلصـم مـن راتبـه أو الوقـف\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>عـن العمـل ملـدة تزيـد علـى عشـرة أيـام، أو وقعـت عليـه جـزاءات\n"
+"                                                    يجـاوز\n"
+"\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>مجموعهـا اخلصـم مـن الراتـب أو الوقـف عـن العمـل خمسـة عشـر\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>ً يوما خالل العام الذي يوضع عنه التقرير، أو جزاء أشد.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">\n"
+"                                                    ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو جي ً ـد جـدا إذا\n"
+"                                                    أتيحـت\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">لـه فرصـة تدريـب خـال العـام الـذي يوضـع عنـه\n"
+"                                                    تقريـر تقييـم األداء،\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">\n"
+"                                                    ولـم يجتـازه بنجـاح.\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">\n"
+"                                                    ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو جي ً ـد جـدا، مـن\n"
+"                                                    الفئـات\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">املبينـة فيمـا يلـي:</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">1 .</span>\n"
+"                                                <span>\n"
+"                                                    .املوظـف الـذي وقـع عليـه جـزاء تأديبـي باخلصـم مـن راتبـه أو الوقف\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    عـن العمـل ملـدة تزيـد علـى خمسـة أيـام، أو وقعـت عليـه جـزاءات\n"
+"                                                    جتـاوز\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    مجموعهـا اخلصـم مـن الراتـب أو الوقـف عـن العمـل ملـدة تزيـد علـى\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    عشــرة أيـام ، خـــــال العـــام الـذي يوضـــع عنـه تقريـر تقييـم\n"
+"                                                    األداء، أو\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>جزاء أشد.</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:brown;\">2 .</span>\n"
+"                                                <span>.املوظـف مـن شـاغلي الوظائـف مـن الثالثـة إلـى األولـى الـذى وقـع\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>عليـه جـزاء خـال العـام الـذي يوضـع عنـه تقريـر تقييـم األداء.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">\n"
+"                                                    ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو جيـد جً ـدا أو جيـد\n"
+"                                                    إذا\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">\n"
+"                                                    أتيحـت لـه فرصـة تدريـب خـال العـام الـذي يوضـع عنـه تقريـر تقييـم\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">األداء، وتخلـف عنـه دون عـذر تقبلـه جهـة\n"
+"                                                    عملـه.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو\n"
+"                                                    جي ً ـد جـدا، مـن\n"
+"                                                    الفئـات\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">املبينـة فيمـا يلـي</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">1 .</span>\n"
+"                                                <span>املوظـف الـذي وقـع عليـه جـزاء تأديبـي باخلصـم مـن راتبـه أو\n"
+"                                                    الوقف\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>عـن العمـل ملـدة تزيـد علـى خمسـة أيـام، أو وقعـت عليـه جـزاءات\n"
+"                                                    جتـاوز\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>مجموعهـا اخلصـم مـن الراتـب أو الوقـف عـن العمـل ملـدة تزيـد\n"
+"                                                    علـى\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>عشــرة أيـام ، خـــــال العـــام الـذي يوضـــع عنـه تقريـر تقييـم\n"
+"                                                    األداء، أو\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>جزاء أشد.</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">2 .</span>\n"
+"                                                <span>املوظـف مـن شـاغلي الوظائـف مـن الثالثـة إلـى األولـى الـذى وقـع\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>عليـه جـزاء خـال العـام الـذي يوضـع عنـه تقريـر تقييـم األداء.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو\n"
+"                                                    جي ً ـد جـدا، مـن\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">الفئـات املبينـة فيمـا يلـي</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>املوظـف الـذي وقـع عليـه جـزاء تأديبـي باخلصـم مـن راتبـه أو\n"
+"                                                    الوقف\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>عـن العمـل ملـدة تزيـد علـى خمسـة أيـام، أو وقعـت عليـه جـزاءات\n"
+"                                                    جتـاوز\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>مجموعهـا اخلصـم مـن الراتـب أو الوقـف عـن العمـل خمسـة عشـر ً\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>يوما خالل العام الذي يوضع عنه التقرير، أو جزاء أشد.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">ال يجـوز تقييـم أداء املوظـف مبسـتوى ممتـاز أو\n"
+"                                                    جيـد جً ـدا إذا أتيحـت\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">لـه فرصـة تدريـب خـال العـام الـذي يوضـع عنـه\n"
+"                                                    تقريـر تقييـم األداء،\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:red;\">ولـم يجتـازه بنجـاح.</span>\n"
+"                                                <br/>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"<i class=\"fa fa-square-o\" aria-hidden=\"true\" style=\"color:#785838!important;line-height: 1px;\"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                                <span>تثبيتا لموظف</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"<i class=\"fa fa-square-o\" aria-hidden=\"true\" style=\"color:#785838!important;line-height: 1px;\"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;تمديد\n"
+"                                                فترة اختبار\n"
+"                                                مدة &amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                                <span style=\"letter-spacing: 1px!important;color:#805500!important;\">\n"
+"                                                    ..........................................................\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"<i class=\"fa fa-square-o\" aria-hidden=\"true\" style=\"color:#785838!important;line-height: 1px;\"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;عدم\n"
+"                                                تثبيت الموظف"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<span style=\"color:#5e0b05;font-size:25px!important\">\n"
+"                                            التي حصل عليها املوظف خالل السنة:\n"
+"                                        </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<span style=\"color:#5e0b05;font-size:30px!important\">\n"
+"                                            األداء الوظيفي\n"
+"                                        </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<span style=\"color:#5e0b05;font-size:40px!important\">\n"
+"                                            ثانيًا: بيانات متأل بمعرفة الرئيس المباشر:\n"
+"                                        </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<span style=\"color:#661a00!important;\">التوصية:</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"text-align: center;color: blue;\">manager's feedback</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span/>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <br/>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"<span style=\"color:white;\">\n"
+"                                                    مالحظات\n"
+"                                                </span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span style=\"color:white;\">\n"
+"                                                    املوارد البشرية\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "<span style=\"font-size:30px!important\">املسؤول املختص:</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "<span style=\"padding-left:7px;\">من</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<span>الدورة التدريبية</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>أو عنصر التميز</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"<span>الموارد البشرية</span>\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <span>ملاحظات</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__appraisal_description
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_custom_inherit_form_view
+msgid "Appraisal Description"
+msgstr "وصف التقييم"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal__hr_appraisal_description_ids
+msgid "Appraisal Descriptions"
+msgstr "أوصاف التقييم"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal__hr_appraisal_note_ids
+msgid "Appraisal Note"
+msgstr "مذكرة تثمين"
+
+#. module: taqat_hr_appraisal
+#: model:ir.actions.report,name:taqat_hr_appraisal.action_report_jbm_hr_appraisal
+msgid "Appraisal Report"
+msgstr "تقرير التقييم"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal__hr_appraisal_warning_ids
+msgid "Appraisal Warnings"
+msgstr "تحذيرات التقييم"
+
+#. module: taqat_hr_appraisal
+#: model:ir.actions.report,name:taqat_hr_appraisal.action_report_jbm_appraisal_appraisal_a
+msgid "Appraisals appraisal A"
+msgstr "تقييم التقييمات أ"
+
+#. module: taqat_hr_appraisal
+#: model:ir.actions.report,name:taqat_hr_appraisal.action_report_jbm_appraisal_appraisal_b
+msgid "Appraisals appraisal B"
+msgstr "تقييم التقييمات ب"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__create_uid
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__create_uid
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__create_date
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__create_date
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.taqat_custom_hr_employee_view
+msgid "Degree"
+msgstr "الدرجة العلمية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__description
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Direct manager full name arabic"
+msgstr "مدير مباشر الاسم الكامل عربي"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Direct manager job position"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Direct manager signature"
+msgstr "توقيع المدير المباشر"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__display_name
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__display_name
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model,name:taqat_hr_appraisal.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model,name:taqat_hr_appraisal.model_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__hr_appraisal_id
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__hr_appraisal_id
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__hr_appraisal_id
+msgid "Employee Appraisal"
+msgstr "تقييم الموظف"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_employee__employee_Profession
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_employee__employee_degree
+msgid "Employee Degree"
+msgstr "درجة الموظف"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_employee__employee_degree_date
+msgid "Employee Degree Date"
+msgstr "تاريخ درجة الموظف"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__hr_notes
+msgid "HR Notes"
+msgstr "ملاحظات الموارد البشرية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model,name:taqat_hr_appraisal.model_hr_appraisal_description_line
+msgid "Hr Appraisal Description Line"
+msgstr "سطر وصف تقييم الموارد البشرية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model,name:taqat_hr_appraisal.model_hr_appraisal_note_line
+msgid "Hr Appraisal Note Line"
+msgstr "خط ملاحظة تقييم الموارد البشرية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model,name:taqat_hr_appraisal.model_hr_appraisal_warning_line
+msgid "Hr Appraisal Warning Line"
+msgstr "خط تحذير تقييم الموارد البشرية"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Hr notes"
+msgstr "ملاحظات الموارد البشرية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__id
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__id
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line____last_update
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line____last_update
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__write_uid
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__write_uid
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_description_line__write_date
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__write_date
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__score
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Score"
+msgstr "نتيجة"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__subject
+msgid "Subject"
+msgstr "موضوع"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__training_course
+msgid "Training Course"
+msgstr "دورة تدريبية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__training_date
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Training Date"
+msgstr "تاريخ التدريب"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__training_name
+msgid "Training Name"
+msgstr "اسم التدريب"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__training_place
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Training Place"
+msgstr "مكان التدريب"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_note_line__training_time
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Training Time"
+msgstr "وقت التدريب"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "Training course"
+msgstr "دورة تدريبية"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__warning_date
+msgid "Warning Date"
+msgstr "تاريخ التحذير"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__warning_description
+msgid "Warning Description"
+msgstr "وصف التحذير"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__warning_reason
+msgid "Warning Reason"
+msgstr "سبب التحذير"
+
+#. module: taqat_hr_appraisal
+#: model:ir.model.fields,field_description:taqat_hr_appraisal.field_hr_appraisal_warning_line__warning_type
+msgid "Warning Type"
+msgstr "نوع التحذير"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "test"
+msgstr "امتحان"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "warning Description"
+msgstr "وصف التحذير"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "warning date"
+msgstr "تاريخ التحذير"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "warning reason"
+msgstr "سبب التحذير"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "warning type"
+msgstr "نوع التحذير"
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "أولا: بيانات متأل مبعرفة املوارد البشرية:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"إبتكار طرق جيدة تؤدي إلى تبسيط اإلجراءات وحتسني مستوى\n"
+"                                                <br/>\n"
+"                                                <span>األداء والسرعة يف إجناز األعمال</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "إسم الدورة التدريبية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "إسم املوظف:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "اإلدارة:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "اإلســـــــم:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "اإلســــــم:     Direct manager name"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"االستخدام األمثل لساعات\n"
+"                                                العمل الرسمية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "االستخدام األمثل لساعات العمل الرسمية وتخصيص أوقات العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "االلتزام باإلنصراف من مقر العمل يف املواعيد املقررة لذلك."
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"االلتزام باالنصراف من\n"
+"                                                مقر العمل يف املواعيد املقررة لذلك"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"االلتزام باحلضور ملقر\n"
+"                                                العمل يف املواعيد املقررة لذلك"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "االلتزام باحلضور ملقر العمل يف املواعيد املقررة لذلك."
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "االنضباط"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"اجلدية يف حتمل الواجبات\n"
+"                                                الوظيفية واحلماس فيما يوكل اليه من\n"
+"                                                مهام"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"اجلزاءات التأديبية التي وقعت على املوظف\n"
+"                                                خالل سنة التقييم:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "اجلنسية:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"احلاجة الى االشراف واملتابعة من قبل\n"
+"                                                الرئيس املباشر"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"احلرص على تبادل اخلبرات والتجارب\n"
+"                                                فيما يخدم مصلحة العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "اسم ظف املو :"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"اعتماد\n"
+"                                            &amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                            <span style=\"letter-spacing: 1px!important;color:#805500!important;\">\n"
+"                                                ............................................................\n"
+"                                            </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "الانضـــباط"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "البيان"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "التاريخ"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "التاريخ:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "التخصص:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"التعامل بحكمة واتزان مع املواقف\n"
+"                                                املختلفة (العادية والطارئة)"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"التعامل بحكمة واتزان مع املواقف املختلفة سواء يف احلاالت العادية\n"
+"                                                <br/>\n"
+"                                                <span>أو الطارئة.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "التقييم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "التوقيـع:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "الدرج"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "الدرجة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"الدرجة\n"
+"                                                <br/>\n"
+"                                                <span>العظمى</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"الدرجة\n"
+"                                                <br/>\n"
+"                                                <span>املستحقة</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "الدرجة العظمى"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "الدرجة القصوى"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "الدرجة المستحقة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "الدرجة املالية:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"الدورات التدريبية أو عناصر التميز (خطاب شكر، مكافأة، أعمال بارزة... إلخ)"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "الرقم الشخصي:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "الرقم الوظيفي :"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "الرقم الوظيفي:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "الســــنة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "الشخصية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"العنصر\n"
+"                                                الرئيسي"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "العنصر ال"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "العنصر الرئيس"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "العنصر الفرعي"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "الفرعي العنصر"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"القدرة على\n"
+"                                                المبادرة\n"
+"                                                <br/>\n"
+"                                                <span>والابتكار</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"القدرة على\n"
+"                                                تنمية\n"
+"                                                <br/>\n"
+"                                                <span>املعلومات واملهارات</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"القدرة على\n"
+"                                                حتمل املسؤولية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "القدرة على إجناز األعمال املوكلة للموظف يف الوقت احملدد."
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "القدرة على إجناز األعمال دون احلاجة إلى املتابعة املستمرة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"القدرة على إقامة عالقات\n"
+"                                                فعالة مع زمالئه والعمل بروح الفريق الواحد"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"القدرة على إقامة عالقات إيجابية مع الرؤساء وتقبل إرشاداتهم\n"
+"                                                <br/>\n"
+"                                                <span>ومالحظاتهم وتوجيهاتهم، والتفاعل معها بإيجابية، واملبادرة إلى\n"
+"                                                    تنفيذها.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"القدرة على إقامة عالقات فعالة مع زمالئه فيما يخدم مصلحة\n"
+"                                                <br/>\n"
+"                                                <span>العمل، واحلرص على العمل بروح الفريق الواحد.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"القدرة على اجناز االعمال املوكلة\n"
+"                                                للموظف يف الوقت احملدد"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"القدرة على اكتساب\n"
+"                                                معلومات ومعارف جديدة تربطه بعمله"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "القدرة على التخطيط والتنظيم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"القدرة على املبادرة يف حتصيل\n"
+"                                                املعلومات واملهارات من خالل التطوير\n"
+"                                                الذاتي"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"القدرة على تحمل\n"
+"                                                <br/>\n"
+"                                                <span>المسؤولية</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"القدرة على مواجهة مشاكل العمل بشكل\n"
+"                                                موضوعي وسليم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"القدرة على مواجهة مشاكل العمل واتخاذ القرار بشكل موضوعي\n"
+"                                                <br/>\n"
+"                                                <span>وسليم وعدم الرجوع إلى الرئيس األعلى إال يف أضيق احلدود.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"القدرة على وضع التصور املستقبلي لإلدارة من جمي ً ع اجلوانب وفقالألهداف."
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "القسم / الوحدة:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "القسم:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "الوظيفة:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "الوظيفي"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "املؤهل العلمي:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"املجموع\n"
+"                                                الكلي للدرجات"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "املجموع الكلي للدرجات"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "املدة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "املسمى الوظيفي:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "بيانات املوظف"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "تاريخ إنتهاء فترة اختبار:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "تاريخ اجلزاء"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "تاريخ احلصول على الدرجة:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "تاريخ التعيني:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "تاريخ التعيين:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"ترتيب العمل يف اإلدارة بشكل مدروس ومنظم وفق خطة معينة وتوزيعه\n"
+"                                                    وجدولته وفقا ملهارات وقدرات العاملني وأهميته."
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"تقدمي أفكار واقتراحات أو جتارب أو وسائل عمل فعالة لإلرتقاء\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    مبستوى االداء.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid ""
+"تقرير تقييم األداء الوظيفي لعام\n"
+"                                                ("
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "تقرير تقييم األداء الوظيفي لعام ) (Appraisal year"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "تقييم أداء موظف خلال فترة اختبار"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "تقييم األداء آلخر ثالث سنوات:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"تنمية\n"
+"                                                املعلومات واملهارات"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "توصية مدير اإلدارة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"توقيع\n"
+"                                                مدير الادارة&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                                <span style=\"letter-spacing: 1px!important;color:#805500!important;\">\n"
+"                                                    .........................................\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"جودة\n"
+"                                                العمل الذي يقوم\n"
+"                                                املوظف بإجنازه وفق التعليمات احملددة وخلوه من األخطاء"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "جودة ال"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "جودة العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"جودة العمل التي التي يقوم املوظف بإجنازه وفق التعليمات احملددة\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    وخلوه من األخطاء.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "جي ً د جدا"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "جيد"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "درجة التقييم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "سبب اجلزاء"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "سـنة احلصول على املؤهل:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "شرح ال"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "شرح العنصر"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "ضعيف"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"عالقات\n"
+"                                                العمل"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "علاقات ال"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "عناصر التقييم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"عناصر التميز )خطاب شكر، مكافأة، أعمال بارزة،\n"
+"                                            إلخ...(:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"غياب املوظف عن العمل دون\n"
+"                                                اخطار او اذن مسبق"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "غياب املوظف عن العمل دون إخطار أو إذن مسبق."
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "فترة مدة اختبار:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid ""
+"لتنفيذها(\n"
+"                                                القدرة على إقامة عالقات إيجابية مع الرؤساء )تقبل ارشاداتهم اإليجابية\n"
+"                                                واملبادرة"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "مالحظات املوارد البشرية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"مدى جدية حتمل املوظف لواجبات وظيفته وحماسه فيما يوكل إليه\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    من مهام.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"مدى حرص املوظف على تبادل اخلبرات والتجارب فيما يخدم\n"
+"                                                <br/>\n"
+"                                                <span>مصلحة العمل.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"مدى قدرة املوظف على اكتساب معلومات ومعارف جديدة ترتبط\n"
+"                                                <br/>\n"
+"                                                <span>\n"
+"                                                    بعمله.\n"
+"                                                </span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid ""
+"مدى قدرة املوظف على املبادرة يف حتصيل املعلومات واملهارات من\n"
+"                                                <br/>\n"
+"                                                <span>خالل التطوير الذاتي.</span>"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "مقبول"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "مكان اإلنعقاد"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "ملاحظات"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "ممتاز"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "منوذج (أ) لشاغلي الوظائف اإلشرافية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "منوذج )ب( لشاغلي الوظائف غير اإلشرافية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+msgid "نتيجة التقييم"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "نموذج )ب( لشاغلي الوظائف غير الإشرافية"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_a_template
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "نوع اجلزاء"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "يجب تقدميه قبل:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "ً أولا: بيانات متأل معرفة الموارد البشرية:"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_hr_appraisal_report_template
+msgid "ً جيد جدا"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "ًاألداء الوظيفي"
+msgstr ""
+
+#. module: taqat_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:taqat_hr_appraisal.jbm_appraisal_appraisal_b_template
+msgid "ًثانيًا: بيانات متأل بمعرفة الرئيس المباشر:"
+msgstr ""

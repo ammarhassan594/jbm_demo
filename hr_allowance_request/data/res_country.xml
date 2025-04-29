@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--     Add new Nationality of Qatari Document Holder    -->
+        <record id="qd" model="res.country">
+            <field name="name">Qatari Document Holder</field>
+            <field name="code">QD</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id="ebs_document_type_form_view" model="ir.ui.view">
+        <field name="name">ebs.document.type.form.view</field>
+        <field name="model">ebs.document.type</field>
+        <field name="inherit_id" ref="ebs_fusion_documents.view_ebs_document_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[2]" position="after">
+                <group>
+                    <group>
+                        <field name='has_reminder_for_renewal' widget="radio" options="{'horizontal': true}"/>
+                        <field name='has_issue_date' widget="radio" options="{'horizontal': true}"/>
+                        <field name='has_expiry_date' widget="radio" options="{'horizontal': true}"/>
+                        <field name='is_completed' widget="radio" options="{'horizontal': true}" invisible="1"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='show_ar_file']" position="after">
+                <field name='is_license'/>
+                <field name="is_agreement"/>
+                <field name="is_financial_audit"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

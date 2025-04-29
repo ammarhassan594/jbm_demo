@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="export_partner_wizard_view_form" model="ir.ui.view">
+            <field name="name">export.partner.wizard.form</field>
+            <field name="model">export.payment</field>
+            <field name="arch" type="xml">
+                <form string="Export Payment">
+                    <group class="oe_title">
+                        <field name="bank_account_id"/>
+                        <field name="date"/>
+                    </group>
+                    <footer>
+                        <button name="generate_payment" string="Generate" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_export_payment_wizard" model="ir.actions.act_window">
+            <field name="name">Export Payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">export.payment</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                id="menu_export_payment"
+                name="Export Payment"
+                action="action_export_payment_wizard"
+                parent="account_reports.account_reports_audit_reports_menu"
+        />
+
+
+    </data>
+</odoo>

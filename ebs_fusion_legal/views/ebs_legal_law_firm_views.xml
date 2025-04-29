@@ -1,0 +1,39 @@
+<odoo>
+    <!--    ebs legal law firm form-->
+    <record model="ir.ui.view" id="view_ebs_legal_law_firm_form">
+        <field name="name">ebs.legal.law.firm.Form</field>
+        <field name="model">ebs.legal.law.firm</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal law firm tree-->
+    <record id="view_ebs_legal_law_firm_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.law.firm.tree</field>
+        <field name="model">ebs.legal.law.firm</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal law firm action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_law_firm">
+        <field name="name">Legal Law Firm</field>
+        <field name="res_model">ebs.legal.law.firm</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_law_firm" name="Law Firms"
+               parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_law_firm" sequence="1"/>
+
+</odoo>

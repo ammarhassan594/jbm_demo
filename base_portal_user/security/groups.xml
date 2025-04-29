@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="access_backend_category" model="ir.module.category">
+            <field name="name">Access Backend</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="group_user_portal" model="res.groups">
+            <field name="name">Portal User</field>
+            <field name="category_id" ref="access_backend_category"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+    <!--    ebs legal activity type form-->
+    <record model="ir.ui.view" id="view_ebs_legal_activity_type_form">
+        <field name="name">ebs.legal.activity.type.Form</field>
+        <field name="model">ebs.legal.activity.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal activity type tree-->
+    <record id="view_ebs_legal_activity_type_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.activity.type.tree</field>
+        <field name="model">ebs.legal.activity.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal activity type action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_activity_type">
+        <field name="name">Legal Activity Type</field>
+        <field name="res_model">ebs.legal.activity.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_activity_type" name="Activity Type"
+               parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_activity_type" sequence="5"/>
+
+</odoo>

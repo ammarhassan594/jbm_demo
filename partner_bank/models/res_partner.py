@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fields, api, _class RESPartner(models.Model):    _inherit = "res.partner"    is_bank_acc_manager = fields.Boolean(string="Company Bank Account Manager")

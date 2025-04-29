@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_scheduled_entries_configuration","scheduled.entries.configuration","model_scheduled_entries_configuration","base.group_user",1,1,1,1
+"access_scheduled_entries_lines","scheduled.entries.lines","model_scheduled_entries_lines","base.group_user",1,1,1,1

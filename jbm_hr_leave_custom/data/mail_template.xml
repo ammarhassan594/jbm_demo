@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="leave_notify_approver" model="mail.template">
+            <field name="name">Leave Notify Approver</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+        </record>
+    </data>
+</odoo>

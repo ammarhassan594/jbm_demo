@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="legal_types_tree" model="ir.ui.view">
+            <field name="name">Legal Types</field>
+            <field name="model">ebspayroll.legal.types</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="value"/>
+                    <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="legal_types_form" model="ir.ui.view">
+            <field name="name">Legal Types</field>
+            <field name="model">ebspayroll.legal.types</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="value"/>
+
+                            </group>
+                            <group name="group_right">
+                                 <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="legal_types_window" model="ir.actions.act_window">
+            <field name="name">Legal Types</field>
+            <field name="res_model">ebspayroll.legal.types</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

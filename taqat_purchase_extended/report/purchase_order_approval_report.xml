@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_taqat_extended_purchase_order" model="report.paperformat">
+        <field name="name">JBM Purchase Custom Paper format A4</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">45</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">40</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="purchase_order_approval_template" model="ir.actions.report">
+        <field name="name">Purchase Order Approval</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">taqat_purchase_extended.purchase_order_approval_report</field>
+        <field name="report_file">taqat_purchase_extended.purchase_order_approval_report</field>
+        <field name="binding_model_id" ref="model_purchase_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_taqat_extended_purchase_order"/>
+    </record>
+
+
+    <template id="purchase_order_approval_report">
+        <t t-call="web.html_container">
+            <t t-set="total_page" t-value="len(docs)"/>
+            <t t-set="page_number" t-value="0"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-set="page_number" t-value="page_number + 1"/>
+                <t t-set="o" t-value="o.sudo()"/>
+                <t t-call="web.basic_layout">
+                    <div class="page" style="direction: rtl; text-align: center;" DIR="RTL" align="right">
+                        <style>
+                            @font-face {
+                            font-family: 'AdvertisingMedium';
+                            src: local('AdvertisingMedium'), local('AdvertisingMedium'),
+                            font-style: normal;
+                            font-weight: 400;
+                            url(/taqat_purchase_extended/static/src/font/AdvertisingMediumRegular.ttf)
+                            format('truetype');
+                            }
+
+                            .font-po {
+                            font-family: AdvertisingMedium;
+                            font-size: 16px;
+                            font-weight: bold;
+                            }
+
+                            table {
+                            font-family: AdvertisingMedium;
+                            font-size: 18px;
+                            font-weight: bold;
+                            }
+
+                        </style>
+
+                        <html>
+                            <div class="header">
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img t-if="o.company_id.company_report_header"
+                                             t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                             style="width:100%" alt="Letter Head"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </html>
+                        <br/>
+                        <div class="font-po">
+                            <span style="font-weight: normal;">امر شراء محلى</span>
+                            <br/>
+                            <span style="font-size:18px;">
+                                Purchase Order
+                            </span>
+                            <br/>
+                            <span style="font-weight: normal;">
+
+                            </span>
+                        </div>
+                        <br/>
+                        <table style="width:100%;border: none; text-align: center;" DIR="LTR">
+                            <tr>
+                                <td style="border: none;">Purchase Reg.
+                                    <span>No.</span>
+                                </td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">
+                                    <t t-if="o.approval_sequence">
+                                        <t t-esc="o.approval_sequence"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="o.name"/>
+                                    </t>
+                                </td>
+                                <td style=" border: none;width:30;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">رقـم طلب شراء</td>
+                            </tr>
+                            <tr>
+                                <td style=" border: none;">Date</td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">
+                                    <t t-if="o.date_approve">
+                                        <t t-esc="o.date_approve.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="o.date_order.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">التاريـــــــــــخ</td>
+                            </tr>
+                            <tr>
+                                <td style=" border: none;">To</td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">
+                                    <t t-esc="o.partner_id.name"/>
+                                </td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">الســـــــــــادة</td>
+                            </tr>
+                            <tr>
+                                <td style=" border: none;">Tel</td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">
+                                    <t t-esc="o.partner_id.mobile"/>
+                                </td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">هــــــــــــاتـف</td>
+                            </tr>
+                            <tr>
+                                <td style=" border: none;">Approval No.</td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">
+                                    <span t-esc="o.get_approval_request().name"/>
+                                </td>
+                                <td style=" border: none;width:30px;text-align: center;">:</td>
+                                <td style=" border: none;text-align: center;">رقـــم
+                                    <span>الموافقــة</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table class="table" style="margin-bottom: 0px !important;">
+                            <tr style="background-color: #0d005f!important; color:white;text-align:right;line-height: 0.5!important;">
+                                <td style="border-top: 1px solid #785838!important;text-align:center;font-size:18px!important;">
+                                    In <b>Reference</b> to your quotations Ref "
+                                    <t t-esc="o.partner_ref"/>
+                                    " : Dated :
+                                    <t t-if="o.quotation_date">
+                                        <t t-esc="o.quotation_date.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="o.date_order.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table style="width:100%; border:none;" DIR="LTR">
+                            <tr>
+                                <td style="text-align: left !important;border: none;width:50%;">
+
+                                    <span>
+                                        Please provide us with the following items :-
+                                    </span>
+
+
+                                </td>
+
+                                <td style="text-align: right !important;border: none;width:50%;">
+
+                                    <span>-:الرجاء تزويدنا
+                                        بالآتي
+                                    </span>
+
+
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <br/>
+                        <style>
+                            table, th,td {
+                            border:1px solid black;
+                            }
+                        </style>
+                        <t t-set="totals" t-value="0"/>
+
+                        <table style="width:100%;vertical-align: middle;" DIR="RTL">
+                            <tr>
+                                <th style="background-color: #0d005f; color:white;text-align:center;vertical-align: middle;">
+                                    الرقم
+                                    <br></br>
+                                    <span>.No</span>
+                                </th>
+                                <th style="text-align: center !important;background-color: #0d005f; color:white;vertical-align: middle;">
+                                    الوصف للبضاعة
+                                    <br></br>
+                                    <span>Product Description</span>
+                                    <br></br>
+                                </th>
+                                <th style="text-align: center !important;background-color: #0d005f; color:white;vertical-align: middle;">
+                                    الكمية
+                                    <br></br>
+                                    <span>.Qty</span>
+                                </th>
+                                <th style="text-align: center !important;background-color: #0d005f; color:white;vertical-align: middle;">
+                                    سعر
+                                    <br></br>
+                                    <span>الوحدة</span>
+                                    <br></br>
+                                    <span>Unit Price</span>
+                                </th>
+                                <th style="text-align: center !important;background-color: #0d005f; color:white;vertical-align: middle;">
+                                    القيمة الإجمالية
+                                    <br></br>
+                                    <span>Total Price</span>
+                                    <br></br>
+                                    <span>.QR ريال</span>
+                                </th>
+
+                                <th style="text-align: center !important;background-color: #0d005f; color:white;vertical-align: middle;">
+                                    <span>تاريخ التسليم</span>
+                                    <br></br>
+                                    <span>Receipt Date</span>
+                                </th>
+
+                            </tr>
+                            <t t-set="count" t-value="0"/>
+                            <tr t-foreach="o.order_line" t-as="line">
+                                <t t-set="count" t-value="count + 1"/>
+                                <t t-set="totals" t-value="totals + line.price_subtotal"/>
+                                <td style="text-align: center !important;">
+                                    <span t-esc="count"/>
+                                </td>
+                                <td style="text-align: center !important;">
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td style="text-align: center !important;">
+                                    <span t-field="line.product_qty"/>
+                                </td>
+                                <td style="text-align: center !important;">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td style="text-align: center !important;">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                                <td style="text-align: center !important;">
+                                    <span t-esc="line.date_planned.date().strftime('%d/%m/%Y') if line.date_planned else ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center !important;background-color: #ae7e0a">المجموع
+                                    <br></br>
+                                    <span>Total</span>
+                                </td>
+                                <td style="background-color: #ae7e0a; text-align: center !important;vertical-align: middle;"
+                                    colspan="3">
+                                    <span class="pr-2"
+                                          t-esc="o.currency_id.with_context(lang='ar_001').amount_to_text(totals) + ' قطري فقط لا غير ' "/>
+                                </td>
+                                <td style="background-color: #ae7e0a;text-align: center !important;vertical-align: middle;">
+                                    <t t-esc="'{0:,.2f}'.format(totals)"/>
+                                </td>
+                                <td style="background-color: #ae7e0a">
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="width:100%; font-weight: normal;border:none; margin-top:10px;" DIR="LTR">
+                            <tr>
+                                <td style="text-align: left !important;border: none;width:50%;">
+                                    <span>
+                                    </span>
+                                    <br/>
+
+                                    <span t-raw="o.company_id.purchase_terms_condition_en"/>
+
+                                </td>
+
+                                <td style="text-align: right !important;border: none;width:50%;">
+                                    <span>
+                                    </span>
+                                    <br/>
+
+                                    <span t-raw="o.company_id.purchase_terms_condition_ar"/>
+
+                                </td>
+                            </tr>
+
+                        </table>
+                        <table style="width:100%;text-align:center; font-weight: normal; border:none;" DIR="LTR">
+
+                            <tr style="border:none;">
+                                <td style="border: none;" width="50%">
+                                    <p>
+                                        <span t-raw="o.env['ir.config_parameter'].sudo().get_param('purchase_note_en')"/>
+                                    </p>
+                                </td>
+
+                                <td style="text-align: right!important; border:none;" width="50%">
+                                    <p>
+                                        <span t-raw="o.env['ir.config_parameter'].sudo().get_param('purchase_note_ar')"/>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="row font-po" DIR="RTL" style="color: red; font-weight: normal;">
+                            <div class="col-6" style="text-align:right;font-size:16px;">
+                            </div>
+                            <div class="col-6" style="text-align:left;font-size:16px;" DIR="LTR">
+                            </div>
+                        </div>
+
+                        <table style="width:100%; border:none; font-weight: normal;" DIR="LTR">
+                            <tr>
+                                <td style="text-align: center !important;border: none;width:60%;vertical-align: middle;"
+                                    rowspan="3">
+
+                                    <t t-set="shared_service_manager_group"
+                                       t-value="o.env.ref('jbm_group_access_right_extended.custom_group_shared_service_manager')"/>
+                                    <t t-set="shared_service_manager_users"
+                                       t-value="shared_service_manager_group.users"/>
+                                    <t t-set="shared_service_manager"
+                                       t-value="shared_service_manager_users[0] if shared_service_manager_users else False"/>
+
+
+                                    <div class="row" DIR="LTR" style="height: 75px;">
+                                        <div class="col-3" style="vertical-align: middle;">
+                                            <h4 style="text-align:right;padding-top:20px;">Approval</h4>
+                                        </div>
+                                        <t t-if="o.state == 'purchase'">
+                                            <div class="col-6">
+                                                <div class="text-center">
+                                                    <t t-set="width"
+                                                       t-value="o.env['ir.config_parameter'].get_param('taqat_purchase_extended.purchase_signature_width')"/>
+                                                    <t t-set="height"
+                                                       t-value="o.env['ir.config_parameter'].get_param('taqat_purchase_extended.purchase_signature_height')"/>
+                                                    <img
+                                                            t-attf-src="data:image/*;base64,{{shared_service_manager.sudo().sign_signature}}"
+                                                            alt="Logo"
+                                                            t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                                </div>
+
+                                                <!--                                            <div t-else="" style="width:100%;text-align:center;">-->
+                                                <!--                                                -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                                                <!--                                            </div>-->
+                                            </div>
+                                        </t>
+                                        <div class="col-3" style="vertical-align: middle;">
+                                            <h4 style="text-align:left;padding-top:20px;">اعتمـــاد</h4>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+
+                                <td style="text-align: center !important;border: none;width:20%;" colspan="2">
+
+                                    <span style="font-size:18px;">:للتنسيق والتواصل
+                                    </span>
+                                    <br/>
+                                    <span style="font-size:18px;">
+                                        For coordination and communication:
+                                    </span>
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #0d005f;color:white;border: 1px solid black;height:50px;vertical-align: middle;"
+                                    width="25%">
+                                    ممثل الإدارة
+                                    <br/>
+                                    Department Representative
+                                </td>
+                                <td style="background-color: #0d005f;border: 1px solid black;color:white;height:50px;vertical-align: middle;"
+                                    width="20%">
+                                    رقم التواصل
+                                    <br/>
+                                    Contact Details
+                                    <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; border: 1px solid black;height:50px;vertical-align: middle;"
+                                    width="20%">
+                                    <span style="padding-left: 3px" t-field="o.user_id.name"/>
+                                </td>
+                                <td style="text-align: center; border: 1px solid black;height:50px;vertical-align: middle;"
+                                    width="20%">
+                                    <span style="padding-left: 3px" t-field="o.phone_number"/>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <div class="text-center" style="width:220px; height: 180px; margin-right: 320px;">
+                            <t t-set="width"
+                               t-value="o.env['ir.config_parameter'].get_param('taqat_purchase_extended.purchase_stamp_width')"/>
+                            <t t-set="height"
+                               t-value="o.env['ir.config_parameter'].get_param('taqat_purchase_extended.purchase_stamp_height')"/>
+                            <img t-if="o.company_id.favicon"
+                                 t-att-src="image_data_uri(o.company_id.favicon)"
+                                 alt="Logo"
+                                 t-attf-style="width:#{( 96 * float(width))/2.54}px;
+                                         height:#{( 96 * float(height))/2.54}px;"/>
+                        </div>
+
+                        <!--                        <div class="footer">-->
+                        <!--                            <div class="row">-->
+                        <!--                                <div class="col-12">-->
+                        <!--                                    <img t-if="o.company_id.company_report_footer"-->
+                        <!--                                         t-att-src="image_data_uri(o.company_id.company_report_footer)"-->
+                        <!--                                         style="width:100%" alt="Letter Foot"/>-->
+
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+
+                        <div class="footer">
+                            <img src="/taqat_purchase_extended/static/src/img/footer.jpg"
+                                 style="height:50px;width:100%;"/>
+
+                            <br/>
+                            <br/>
+
+
+                            <p style="direction: ltr; text-align: left; font-size:11px; white-space: pre-wrap; color:#6D6D6D;">
+                                FM-QMS-03-05 Rev.1 (01/07/2023) 9001:2015 نظام أداره الجودة
+                            </p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

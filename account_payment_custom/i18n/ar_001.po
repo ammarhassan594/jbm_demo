@@ -1,0 +1,628 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_payment_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-24 11:52+0000\n"
+"PO-Revision-Date: 2024-07-24 14:56+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: account_payment_custom
+#: model:ir.actions.report,print_report_name:account_payment_custom.report_payment_transfer_action
+msgid "'Account Payment Report'"
+msgstr "'طباعة نموذج الدفع'"
+
+#. module: account_payment_custom
+#: model:ir.actions.report,print_report_name:account_payment_custom.report_payment_method_action_new
+msgid "'Payment Check Report'"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.actions.report,print_report_name:account_payment_custom.report_payment_cash_receipt_action
+msgid "'Payment cash receipt'"
+msgstr "'طباعة سند قبض كاش'"
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid ") From Iban Number. ("
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid ") From Our Account Number. ("
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid ") To Accounts As Per The Following List By Qatari Riyals:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid ""
+") To The\n"
+"                                    Following\n"
+"                                    Bank Account Number By Qatari Riyals:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ": الرقم"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":استلمنا من السيد / السادة"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":التاريخ"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid ":التوقيع"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":تاريخ الشيك"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":مبلغ وقدره"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":مسحوب على بنك"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":نقداً / شيك رقم"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid ":وذلك عن"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid ""
+"<br/>\n"
+"                                    P.O.Box:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<span class=\"border-bottom border-dark\">Sub :Transfer For Date</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<span class=\"border-bottom border-dark\">Sub :Transfer From Account.</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<span class=\"thankyou\">Thanking you,</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid ""
+"<span style=\"font-size: 10px; margin-right:230px;\">F-QMS-10-01 Rev.1(14/07/2024)</span>\n"
+"                                <span style=\"font-size: 10px; margin-left:260px; text-align:right;"
+"\">نظام إدارة الجودة\n"
+"                                    9001:2015\n"
+"                                </span>\n"
+"                                <span style=\"font-size: 10px; text-align:center;\">صفحة 1 من 1</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "<span style=\"padding-left:7px;\">من</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<span style=\"text-align:right;\">Authorized Signatory</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<span>Authorized Signatory</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid ""
+"<span>Authorized Signatory</span>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<span>P.O.Box:</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "<span>قطري فقط لا غير</span>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<strong>Account No</strong>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<strong>Bank Branch</strong>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<strong>Bank Name</strong>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<strong>Beneficiary</strong>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<strong>Purpose of Transfer</strong>"
+msgstr "سبب التحويل"
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "<strong>Swift Code</strong>"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "Amount"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "Bank Name"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.view_account_payment_form_inherited
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: account_payment_custom
+#: model:ir.model.fields,field_description:account_payment_custom.field_account_budget_post__budget_position_number
+msgid "Budget Position Number"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_account_budget_post
+msgid "Budgetary Position"
+msgstr "وضع الميزانية "
+
+#. module: account_payment_custom
+#: code:addons/account_payment_custom/report/payment_report.py:0
+#, python-format
+msgid "Cannot generate cash receipt report for payment type: send"
+msgstr ""
+
+#. module: account_payment_custom
+#: code:addons/account_payment_custom/report/payment_report.py:0
+#, python-format
+msgid "Cannot generate payment check report for payment type: Receive and Payment method not by Check"
+msgstr ""
+
+#. module: account_payment_custom
+#: code:addons/account_payment_custom/report/payment_report.py:0
+#, python-format
+msgid "Cannot generate payment transfer report for payment type: Receive"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model.fields,field_description:account_payment_custom.field_account_payment__case_name
+msgid "Case Name"
+msgstr "اسم الحالة"
+
+#. module: account_payment_custom
+#: model:ir.actions.report,name:account_payment_custom.report_payment_cash_receipt_action
+msgid "Cash Receipt"
+msgstr "طباعة نموذج سند قبض شيك"
+
+#. module: account_payment_custom
+#: model:ir.model.fields,field_description:account_payment_custom.field_account_payment__manual_check_no
+msgid "Check Number"
+msgstr "رقم الشيك"
+
+#. module: account_payment_custom
+#: model:ir.actions.server,name:account_payment_custom.action_print_company_cheque
+msgid "Company Cheque"
+msgstr "طباعة شيك شركة"
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_res_currency
+msgid "Currency"
+msgstr "العملة"
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "Date:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "Dear Sir,"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model.fields,field_description:account_payment_custom.field_account_payment__ref
+msgid "Description"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "IBAN Account"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "Kindly Arrange To Transfer The Amount"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "Letter Head"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "Logo"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "Number:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.actions.report,name:account_payment_custom.report_payment_method_action_new
+msgid "Payment Method Check/Bank Transfer"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.actions.report,name:account_payment_custom.report_payment_transfer_action
+msgid "Payment Transfer"
+msgstr "طباعة نموذج تحويل بنكي"
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_account_payment
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: account_payment_custom
+#: model:ir.actions.server,name:account_payment_custom.action_print_personal_cheque
+msgid "Personal Cheque"
+msgstr "طباعة شيك شخصي"
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.view_account_payment_form_inherited
+msgid "Print Payment Method Check"
+msgstr "طباعة سند صرف"
+
+#. module: account_payment_custom
+#: model:ir.model.fields,field_description:account_payment_custom.field_account_payment__qid_number
+msgid "QID Number"
+msgstr "رقم البطاقة الشخصية"
+
+#. module: account_payment_custom
+#: model:ir.model.fields,field_description:account_payment_custom.field_account_payment__reference_sequence
+msgid "Reference Sequence"
+msgstr "تسلسل المرجعية"
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "Sr#"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.view_account_payment_tree_inherit_tree
+msgid "Vendor Bank Account"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "account_auditor.name"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "account_manager.name"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "account_name.name"
+msgstr ""
+
+#. module: account_payment_custom
+#: code:addons/account_payment_custom/models/res_currency.py:0
+#, python-format
+msgid "and"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "equivalent to"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_transfer_report_template
+msgid "footer"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid "header"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_report_account_payment_custom_cash_receipt_template
+msgid "report.account_payment_custom.cash_receipt_template"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_report_account_payment_custom_payment_company_check_template
+msgid "report.account_payment_custom.payment_company_check_template"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_report_account_payment_custom_payment_method_report_template
+msgid "report.account_payment_custom.payment_method_report_template"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_report_account_payment_custom_payment_method_report_template2
+msgid "report.account_payment_custom.payment_method_report_template2"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_report_account_payment_custom_payment_personal_check_template
+msgid "report.account_payment_custom.payment_personal_check_template"
+msgstr ""
+
+#. module: account_payment_custom
+#: model:ir.model,name:account_payment_custom.model_report_account_payment_custom_payment_transfer_report_template
+msgid "report.account_payment_custom.payment_transfer_report_template"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "إسم البنك:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "إسم بند الموازنة:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "اسم البنك:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "اسم المستفيد:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "اسم بند الموازنة:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "الإسم:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "الاسم:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "الاعتماد"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "التاريخ:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "التوقيع:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "الرقم:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "المبلغ:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "المحاسب"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "المحاسب:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "المدقق:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "المستلم"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "بيانات السند"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "بيانات المستلم(في حالة شيك)"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "تاريخ(التحويل بنكي/الشيك):"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "درهم"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "رئيس حسابات"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "رئيس قسم الشؤون المالية:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "رقم البطاقة الشخصية:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "رقم الحساب:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "رقم الشيك:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "رقم الهاتف:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "رقم بند الموازنة:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "رقم(التحويل بنكي/الشيك):"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "ريال"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "سند صرف"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "سند صرف رقم:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "سند صرف شيك"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid "سند قبض"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid "شيك"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "مبلغ وقدره:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "مدير إدارة الخدمات المشتركة:"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+msgid "مراجع"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.cash_receipt_template
+msgid "نقداً"
+msgstr ""
+
+#. module: account_payment_custom
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template
+#: model_terms:ir.ui.view,arch_db:account_payment_custom.payment_method_report_template2
+msgid "وذلك عن:"
+msgstr ""

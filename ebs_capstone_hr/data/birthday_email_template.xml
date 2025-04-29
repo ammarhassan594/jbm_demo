@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+        <record id="email_template_birthday" model="mail.template">
+            <field name="name">BIRTHDAY:Reminder</field>
+            <field name="model_id" ref="ebs_capstone_hr.model_hr_employee"/>
+            <field name="subject">{{object.name}}- Birthday Reminder</field>
+            <field name="email_from">{{(object.work_email )}}</field>
+            <field name="email_to">{{(object.work_email)}}</field>
+            <field name="email_cc">{{object.get_email()}}</field>
+            <!--            <field name="partner_to">${object.partner_id.id if object.partner_id.email and object.partner_id.email == object.email else False}</field>-->
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding:0px;">
+                    <p style="margin:0px;padding:0px;font-size:13px;">
+                        <br/>
+                        Hey<t t-esc="object.name"/>,
+
+                        You think you are special just because it's your birthday today?
+                        No way! You're special every day!!!
+
+                        Team Foodak is wishing you a lifetime of happiness and success and never forget #ForeverYoung
+
+                        Wishing you a very happy birthday!
+                        <br/>
+
+                    </p>
+                </div>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

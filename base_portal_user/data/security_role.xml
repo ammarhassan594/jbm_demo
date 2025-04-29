@@ -1,0 +1,1 @@
+<odoo>    <record model="res.users.role" id="access_backend">        <field name="name">Access Backend</field>        <field name="group_id" eval="ref('base_portal_user.group_user_portal')"/>    </record></odoo>

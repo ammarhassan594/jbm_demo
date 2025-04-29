@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="jbm_hr_employee_form_view_inherit" model="ir.ui.view">
+            <field name="name">jbm.hr.employee.form.view.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="coach_id" position="after">
+                    <field name="orientation"/>
+                </field>
+
+                <xpath expr="//notebook" position="inside">
+                    <page name="employee_systems" string="Employee Systems">
+                        <group>
+                            <field name="employee_system_ids">
+                                <tree editable="bottom">
+                                    <field name="employee_system_id" force_save="1"/>
+                                    <field name="link" widget="url"/>
+                                </tree>
+                            </field>
+                            <field name="employee_procedure_ids">
+                                <tree editable="bottom">
+                                    <field name="procedure_name_id"/>
+                                </tree>
+
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

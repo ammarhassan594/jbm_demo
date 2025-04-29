@@ -1,0 +1,7 @@
+<odoo>
+    <record id="group_ebs_fusion_legal" model="res.groups">
+        <field name="name">Access to Legal</field>
+    </record>
+
+
+</odoo>

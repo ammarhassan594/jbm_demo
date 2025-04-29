@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+       <menuitem id="check_template_menu"
+            name="Check Templates"
+            parent="account.account_account_menu"
+            action="check_template_window"
+            sequence="7"/>
+    </data>
+</odoo>

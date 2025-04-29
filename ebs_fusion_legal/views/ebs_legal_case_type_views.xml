@@ -1,0 +1,76 @@
+<odoo>
+    <!--    ebs legal case type form-->
+    <record model="ir.ui.view" id="view_ebs_legal_case_type_form">
+        <field name="name">ebs.legal.case.type.Form</field>
+        <field name="model">ebs.legal.case.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal case type tree-->
+    <record id="view_ebs_legal_case_type_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.case.type.tree</field>
+        <field name="model">ebs.legal.case.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal case type action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_case_type">
+        <field name="name">Legal Case Type</field>
+        <field name="res_model">ebs.legal.case.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_type" name="Case Type"
+               parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_case_type" sequence="4"/>
+
+    <!--    ebs legal types form-->
+    <record model="ir.ui.view" id="view_ebs_legal_types_form">
+        <field name="name">ebs.legal.types.Form</field>
+        <field name="model">ebs.legal.types</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal types tree-->
+    <record id="view_ebs_legal_types_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.types.tree</field>
+        <field name="model">ebs.legal.types</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal types action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_types">
+        <field name="name">Types</field>
+        <field name="res_model">ebs.legal.types</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_types" name="Types"
+               parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_types" sequence="3"/>
+
+</odoo>

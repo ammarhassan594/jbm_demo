@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+
+        <record id="attendance_sheet_line_tree_view" model="ir.ui.view">
+            <field name="name">attendance.sheet.line.tree</field>
+            <field name="model">attendance.sheet.line</field>
+            <field name="arch" type="xml">
+                <tree string="Attendance Lines"  create="0">
+                    <field name="state" invisible="1"/>
+                                        <field name="date"/>
+                                        <field name="day"/>
+                                        <field name="ac_sign_in" widget="float_time"/>
+                                        <field name="ac_sign_out" widget="float_time"/>
+                                        <field name="worked_hours" widget="float_time" sum="Quantity"/>
+                                        <field name="status" invisible="1"/>
+                                        <field name="status_char"/>
+                                        <field name="display_attendance" invisible="1"/>
+                                        <button name="get_attendance_records" string="Display" type="object"
+                                                attrs="{'invisible':[('display_attendance','=',False)]}"
+                                                class="btn-primary"/>
+                                        <field name="note" optional="hide" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

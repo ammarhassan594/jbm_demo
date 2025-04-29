@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="appraisal_view_hr_job_form" model="ir.ui.view">
+            <field name="name">appraisal.view.hr.job.form</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[@name='button_box']" position="inside">
+
+                    <button class="oe_stat_button" icon="fa-users" name="view_related_employees"
+                            type="object">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="no_of_employee"/>
+                            </span>
+                            <span class="o_stat_text">Employee(s)</span>
+                        </div>
+                    </button>
+                </xpath>
+
+                <xpath expr="//field[@name='no_of_recruitment']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_recruitment']" position="before">
+                    <field name="n_allowed_employees"/>
+                    <field name="no_of_employee"/>
+                    <field name="expected_employees"/>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]" position="after">
+                    <group>
+                        <group>
+                            <field name="job_code"/>
+                            <field name="parent_id" options="{'no_create': True,'no_edit':True}"
+                                   domain="[('id', '!=', id)]"/>
+                        </group>
+                        <group>
+                            <field name="course_ids" options="{'no_create': True,'no_edit':True}"
+                                   widget="many2many_tags"/>
+                            <field name="job_category"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//notebook//page[1]" position="before">
+                    <page name="job_skills_lines_types" string="Skills And Objectives Types">
+                        <field name="skill_type_line_ids" force_save="1">
+                            <tree editable="bottom">
+                                <field name="skill_type_id" options="{'no_create': True,'no_edit':True}" force_save="1"
+                                       context="{'job_type_skills': parent.skill_type_line_ids, 'default_limit': 200}"/>
+                                <field name="overall_score" force_save="1"/>
+                                <field name="overall_grade"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="skill_type_id" options="{'no_create': True,'no_edit':True}"
+                                           force_save="1"
+                                           context="{'job_type_skills': parent.skill_type_line_ids, 'default_limit': 200}"/>
+                                    <field name="overall_grade"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+
+                    <page name="job_skills_lines" string="Skills And Objectives">
+                        <field name="available_skill_ids" invisible="1"/>
+                        <field name="skill_line_ids" force_save="1">
+                            <tree editable="bottom">
+                                <field name="job_id" invisible="1"/>
+                                <field name="skill_id" options="{'no_create': True,'no_edit':True}" domain="[('id', 'in', parent.available_skill_ids)]"
+                                       context="{'from_job_position': True, 'default_limit': 200, 'job_skills': parent.skill_line_ids, 'current_job_id': job_id}"/>
+                                <field name="description" force_save="1"/>
+                                <field name="skill_type_id" options="{'no_create': True,'no_edit':True}" readonly="1"
+                                       force_save="1"/>
+                                <field name="default_show" force_save="1"/>
+                                <field name="default_percentage" force_save="1"/>
+                                <field name="default_overall_grade" force_save="1"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="job_id" invisible="1"/>
+                                    <field name="skill_id" options="{'no_create': True,'no_edit':True}" domain="[('id', 'in', parent.available_skill_ids)]"
+                                           context="{'from_job_position': True, 'default_limit':200,'job_skills': parent.skill_line_ids, 'current_job_id': job_id}"/>
+                                    <field name="description" force_save="1"/>
+                                    <field name="skill_type_id" options="{'no_create': True,'no_edit':True}"
+                                           readonly="1" force_save="1"/>
+                                    <field name="default_show" force_save="1"/>
+                                    <field name="default_percentage" force_save="1"/>
+                                    <field name="default_overall_grade" force_save="1"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page name="job_description" string="Description">
+
+                        <field name="description"/>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_hr_job_tree" model="ir.ui.view">
+            <field name="name">hr.job</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="n_allowed_employees"/>
+                    <field name="no_of_employee"/>
+                    <field name="expected_employees"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

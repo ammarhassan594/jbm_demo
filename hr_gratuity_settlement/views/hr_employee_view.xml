@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+<!--        All-->
+        <record id="view_employee_form_custom" model="ir.ui.view">
+            <field name="name">Hr Employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_email']" position="after">
+                    <field name="total_working_years" force_save="1" invisible="1"/>
+                    <field name="total_working_days" force_save="1" invisible="1"/>
+                    <field name="salary_rate" force_save="1" invisible="1"/>
+                    <field name="can_see_end_of_service" invisible="1"/>
+                    <field name="current_user" invisible="1"/>
+                    <field name="total_amount_working_days_no_store"
+                           attrs="{'invisible': [('can_see_end_of_service', '!=', True)]}"
+                           force_save="1"/>
+                    <field name="eos_a_amount"
+                           attrs="{'invisible': [('can_see_end_of_service', '!=', True)]}"
+                           force_save="1"/>
+                    <field name="employee_unpaid_leaves_days" force_save="1" invisible="1"/>
+                    <field name="employee_gratuity_duration" force_save="1" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

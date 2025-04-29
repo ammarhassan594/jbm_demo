@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="tax_rule_1" model="ebspayroll.tax.rules">
+            <field name="name">Tax Rule</field>
+            <field name="frequency">Monthly</field>
+            <field name="fromdate">1900-01-01</field>
+            <field name="todate">2099-01-01</field>
+            <field name="type">T</field>
+            <field name="currency" ref="base.LBP"/>
+        </record>
+
+        <record id="tax_rule_2" model="ebspayroll.tax.rules">
+            <field name="name">Tax Reduction</field>
+            <field name="frequency">Monthly</field>
+            <field name="fromdate">1900-01-01</field>
+            <field name="todate">2099-01-01</field>
+            <field name="type">TR</field>
+            <field name="currency" ref="base.LBP"/>
+        </record>
+        <!--        tax rule lines-->
+        <record id="tax_rule_line_1" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">0</field>
+            <field name="to_amount">500000</field>
+            <field name="percentage">2</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+
+        <record id="tax_rule_line_2" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">500000</field>
+            <field name="to_amount">500000</field>
+            <field name="percentage">4</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+        <record id="tax_rule_line_3" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">1250000</field>
+            <field name="to_amount">2500000</field>
+            <field name="percentage">7</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+        <record id="tax_rule_line_4" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">2500000</field>
+            <field name="to_amount">5000000</field>
+            <field name="percentage">11</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+        <record id="tax_rule_line_5" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">5000000</field>
+            <field name="to_amount">10000000</field>
+            <field name="percentage">15</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+        <record id="tax_rule_line_6" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">10000000</field>
+            <field name="to_amount">18750000</field>
+            <field name="percentage">20</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+        <record id="tax_rule_line_7" model="ebspayroll.tax.rules.lines">
+            <field name="from_amount">18750000</field>
+            <field name="to_amount">9999999999999</field>
+            <field name="percentage">25</field>
+            <field name="tax_rule" ref="tax_rule_1"/>
+        </record>
+
+        <!-- tax rule reductions-->
+
+        <record id="tax_rule_reduction_1" model="ebspayroll.tax.rules.reductions">
+            <field name="main_amount">625000</field>
+            <field name="spouse_amount">208333</field>
+            <field name="child_amount">41666</field>
+            <field name="tax_rule" ref="tax_rule_2"/>
+        </record>
+
+    </data>
+</odoo>

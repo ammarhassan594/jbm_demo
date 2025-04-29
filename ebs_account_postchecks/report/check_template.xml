@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="check_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+
+                    <div style="font-family:Calibri">
+                        <span t-if="o.is_post_dated_check == False" style="position:absolute;top:28px; right:260px"
+                              t-field="o.payment_date"/>
+                        <span t-if="o.is_post_dated_check == True" style="position:absolute;top:28px; right:260px"
+                              t-field="o.check_date"/>
+
+                    </div>
+
+                    <div style="font-family:Calibri">
+
+                        <span style="position:absolute; top:63px;left:160px;" t-field="o.partner_id.name"/>
+
+                        <t t-set="amount" t-value="'**' + str(o.amount) + '**'"/>
+                        <span style="position:absolute; top:130px;right:220px;" t-esc="amount"/>
+                        <span style="position:absolute; top:100px;left:100px; width=200px">
+                            <span style="width=200px" t-field="o.check_amount_in_words"/>
+                        </span>
+                    </div>
+
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>
+

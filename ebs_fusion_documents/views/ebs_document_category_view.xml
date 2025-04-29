@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ebs_document_category_form_view" model="ir.ui.view">
+        <field name="name">Ebs Document Category Form View</field>
+        <field name="model">ebs.document.category</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ebs_document_category_tree_view" model="ir.ui.view">
+        <field name="name">Ebs Document Category Tree View</field>
+        <field name="model">ebs.document.category</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ebs_document_category_action" model="ir.actions.act_window">
+        <field name="name">Document Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.document.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="ebs_document_category_menu" name="Document Category" parent="documents.Config" action="ebs_document_category_action" sequence="6"/>
+
+</odoo>

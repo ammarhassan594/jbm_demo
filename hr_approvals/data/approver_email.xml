@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="template_email_approver" model="mail.template">
+            <field name="name">اشعار طلب اعتماد الموافقات</field>
+            <field name="model_id" ref="hr_approvals.model_approval_request"/>
+            <field name="subject">{{object.name}}- Reminder</field>
+            <field name="email_from">{{object.company_id.email}}</field>
+            <field name="email_to">{{}}</field>
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding:0px;">
+                    <p style="margin:0px;padding:0px;font-size:13px;">
+                        تم تقديم طلب رقم:
+                        <br/>
+                         (<t t-esc="object.name"/>)
+                        <br/>
+                        نوع الطلب:
+                        (<t t-esc="ctx['category_name']"/>)
+                        <br/>
+                        للموظف :<t t-esc="ctx['employee_name']"/>
+                        <br/>
+                        يرجي مراجعه الطلب في الموارد
+
+                    </p>
+                </div>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

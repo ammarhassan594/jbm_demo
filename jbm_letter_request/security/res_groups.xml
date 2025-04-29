@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="jbm_letter_request_multi_company_rule" model="ir.rule">
+            <field name="name">Letter Request Multi Company Rule</field>
+            <field name="model_id" ref="model_jbm_letter_request"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="jbm_letter_request_see_own_document" model="ir.rule">
+            <field name="name">Letter Request: see own document</field>
+            <field name="model_id" ref="model_jbm_letter_request"/>
+            <field name="domain_force">[
+                ('employee_id.user_id', '=', user.id)]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('base_portal_user.group_user_portal')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="jbm_letter_request_see_all_document" model="ir.rule">
+            <field name="name">Letter Request: see all document</field>
+            <field name="model_id" ref="model_jbm_letter_request"/>
+            <field name="domain_force">[
+                (1, '=', 1)]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),
+                                        (4, ref('jbm_group_access_right_extended.custom_hr_manager'))
+                                        ]"/>
+        </record>
+
+
+    </data>
+</odoo>

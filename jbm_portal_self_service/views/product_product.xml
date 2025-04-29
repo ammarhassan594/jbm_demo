@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record id="inherit_stock_product_product_tree_view" model="ir.ui.view">
+            <field name="name">product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.view_stock_product_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='qty_available']" position="attributes">
+                    <attribute name="groups">!base_portal_user.group_user_portal</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='virtual_available']" position="attributes">
+                    <attribute name="groups">!base_portal_user.group_user_portal</attribute>
+                </xpath>
+            </field>
+
+        </record>
+
+
+        <record id="inherit_product_product_tree_view" model="ir.ui.view">
+            <field name="name">product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lst_price']" position="attributes">
+                    <attribute name="groups">!base_portal_user.group_user_portal</attribute>
+                </xpath>
+                <xpath expr="//field[@name='product_template_variant_value_ids']" position="attributes">
+                    <attribute name="groups"></attribute>
+                </xpath>
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="contract_employment_offer" model="report.paperformat">
+            <field name="name">Contract</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">20</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">18</field>
+            <field name="margin_right">18</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="employment_offer"
+                model="hr.contract"
+                string="Employment offer"
+                report_type="qweb-pdf"
+                name="hr_contract_custom.employment_offer_report"
+                file="hr_contract_custom.employment_offer_report"
+                print_report_name="object.name"
+                attachment="(object.company_id.name)+' Job Offer - '+(object.job_id.job_title.name if object.job_id.job_title else '')+'.pdf'"
+                paperformat="hr_contract_custom.contract_employment_offer"
+
+        />
+
+        <template id="employment_offer_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.report_employment_offer"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_employment_offer">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="o"/>
+                <style>
+                    .pad{
+                    padding-right:200px;
+                    }
+                    span.a {
+                    display: inline-block;
+                    }
+                </style>
+                <div class="page" style="line-height: 1.3; font-size:24px;">
+                    <img src="/hr_contract_custom/static/src/img/sc_header.jpg"
+                         style="padding-left:5px;height:147px;width:100%;"/>
+                    <br/>
+                    <br/>
+                    <div class="text-right">
+                        <span class="pad">المحترم</span>
+                        <span t-esc="o.employee_id.name"/>
+                        <span>/</span>
+                        <span>السيد</span>
+                    </div>
+                    <div class="text-right">
+                        <span>,السلام عليكم ورحمة الله وبركاته</span>
+                    </div>
+                    <div class="text-center">
+                        <b>
+                            <span>الموضوع:</span>
+                            <u>عرض وظيفي</u>
+                        </b>
+                    </div>
+                    <br/>
+                    <div class="text-center">
+                        <span>بالإشارة الى الموضوع أعلاه، يرجى التكرم بالإحاطة بأنه تم ترشيحكم</span>
+                    </div>
+                    <div class="text-right">
+                        <span>للتعيين بمؤسسة الشيخ جاسم بن محمد بن ثاني للرعاية الاجتماعية بوظيفة</span>
+                    </div>
+                    <div class="text-right" style="direction: rtl;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <span>
+                                        "
+                                        <t t-esc="o.job_id.name"/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span>" بموجب عقد توظيف على الدرجة
+                                        المالية"
+                                    </span>
+                                </td>
+                                <td>
+                                    <t t-esc="o.job_grade.name"/>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="text-right">
+                        <span>
+                            :من جدول الرواتب الخاص بموظفي المؤسسة طبقاً لما يلي
+                        </span>
+                    </div>
+                    <br/>
+                    <table width="100%" style="border: 5px solid black;font-size: 18px;">
+                        <tr>
+                            <td width="20%" style="border: 1px solid black; text-align:center;">المبلغ / ريال</td>
+                            <td width="40%" style="border: 1px solid black; text-align:center;">البيان</td>
+                            <td width="30%" style="border: 1px solid black; text-align:center;">اللائحة</td>
+                            <td width="10%" style="border: 1px solid black; text-align:center;">م</td>
+                        </tr>
+                        <tr style="border-top: 5px solid black;">
+                            <td style="border: 1px solid black; text-align:center">
+                                <span t-esc="o.wage"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">الراتب الأساسي
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">جدول الرواتب
+                                والدرجات
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">1</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align:center">
+                                <span t-esc="o.accommodation"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">(بدل السكن (أعزب
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; direction:rtl">المادة (16)</td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">2</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align:center">
+                                <span t-esc="o.social_allowance"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">(علاوة اجتماعية
+                                (أعزب
+                            </td>
+                            <td style="border: 1px solid black;text-align:right; direction:rtl">المادة (17)</td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">3</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align:center">
+                                <span t-esc="o.transport_allowance"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">بدل التنقل</td>
+                            <td style="border: 1px solid black;text-align:right; direction:rtl">المادة (19)</td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">4</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align:center">
+                                <span t-esc="o.car_allowance"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">بدل استخدام سيارة
+                                خاصة
+                            </td>
+                            <td style="border: 1px solid black;text-align:right; direction:rtl">المادة (20)</td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">5</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align:center">
+                                <span t-esc="o.mobile_allowance"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">بدل هاتف</td>
+                            <td style="border: 1px solid black;text-align:right; direction:rtl">المادة (29)</td>
+                            <td style="border: 1px solid black; text-align:right; padding-right:10px">6</td>
+                        </tr>
+                        <tr style="border-top: 5px solid black;">
+                            <td style="border: 5px solid black; text-align:center">
+                                <t t-esc="o.wage+o.accommodation+o.social_allowance+o.transport_allowance+o.car_allowance+o.mobile_allowance"/>
+                            </td>
+                            <td style="border: 1px solid black; text-align:center" colspan="3">
+                                الاجمـــــــــــــــــــــــــــــــــــــــــــــالي
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="text-align:right">
+                        <span style="padding-right:85px;">بالإضافة الى البدلات والامتيازات الأخرى المنصوص عليها في
+                            لائحة
+                        </span>
+                        <br/>
+                        <span>الموارد البشرية للمؤسسة.</span>
+                        <br/>
+                        <span style="padding-right:110px;">لذا، يرجى التكرم بموافاتنا بردكم على العرض الوظيفي هذا كتابةً
+                            خلال
+                        </span>
+                        <br/>
+                        <span>أسبوعين من تاريخه.</span>
+                        <br/>
+                    </div>
+                    <div style="text-align:center">
+                        <span>وتفضلوا بقبول فائق الاحترام،</span>
+                    </div>
+                    <br/>
+                    <div style="text-align:center">
+                        <span>ناصر مبارك الكعبي</span>
+                        <br/>
+                        <span>مدير إدارة الرعاية الاجتماعية</span>
+                        <br/>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div style="text-align:right;">
+                        <span>
+                            <u>
+                                <b>البدلات والامتيازات الوظيفية</b>
+                            </u>
+                        </span>
+                    </div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="text-align:right;">منحة إجازة تصرف بواقع راتب شهر أساسي</td>
+                            <td>-</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">رسوم تعليم للأبناء بحد أقصى 100,000 ريال</td>
+                            <td>-</td>
+                            <td>2</td>
+
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">توفير التأمين الصحي والعلاج وفقا لخطة التأمين المعتمدة
+                                بالمؤسسة تحت الاجراء
+                            </td>
+                            <td>-</td>
+                            <td>3</td>
+                        </tr>
+
+                    </table>
+                    <br/>
+                    <br/>
+                    <div style="text-align:right;font-size: 24px;margin-left: -4%;">
+                        <b>
+                            <u>مصوغات التعيين</u>
+                        </b>
+                    </div>
+                    <table style="width: 100%;font-size: 24px;margin-left: -6%;">
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>-نسخة عن المستندات الشخصية البطاقة الشخصية - جواز السفر</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>عقد الزواج - شهادات ميلاد الأبناء – شهادة الايبان البنكي – 4صور شخصية حديثة</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    &#160;&#160;
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>نسخة من المؤهلات العلمية الشهادات الدراسية مصدقة من الجهة المختصة</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>المختصة - وشهادات الدورات التدريبية - شهادات الخبرة طبقا للسيرة الذاتية</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    &#160;
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>شهادة تفيد تأدية الخدمة الوطنية او تأجيلها للذكور</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>شهادة اخلاء طرف من العمل السابق لمن سبق له العمل</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>شهادة من ديوان الخدمة المدنية تفيد عدم عمل الموظف للموظفين الجدد</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>شهادة حسن سير وسلوك من الأدلة الجنائية</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>شهادة لياقة طبية معتمدة</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;padding-right:25px;">
+                                <span>بيان بالترقيات الوظيفية موضح به تاريخ الحصول على أخر ترقية لمن سبق له العمل</span>
+                            </td>
+                            <td style="width: 2%;">
+                                <center>
+                                    <i class="fa fa-square" aria-hidden="true" style="font-size:7px;"></i>
+                                </center>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </t>
+        </template>
+
+    </data>
+</odoo>

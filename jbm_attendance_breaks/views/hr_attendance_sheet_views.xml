@@ -1,0 +1,1 @@
+<odoo>    <record id="ake_attendance_sheet.action_justification_history_log" model="ir.actions.act_window">        <field name="domain">[('attendance_state', '!=', 'break')]</field>    </record></odoo>

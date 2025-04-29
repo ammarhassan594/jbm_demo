@@ -1,0 +1,112 @@
+<odoo>
+    <!--    ebs document type form-->
+    <record model="ir.ui.view" id="view_ebs_document_type_form">
+        <field name="name">ebs.document.type.Form</field>
+        <field name="model">ebs.document.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="name_arabic"/>
+                            <field name="view_sequence"/>
+                            <field name="description"/>
+                            <field name="image_attachment_id" invisible="1"/>
+
+                            <field name="is_individual" string="Related To Partner"/>
+                            <field name="is_services" string="Related To Service"/>
+                        </group>
+                        <group>
+                            <field name="meta_data_template"/>
+                            <field name="document_categ_id"/>
+                            <field name="abbreviation" attrs="{'required': [('seq_req','=',True)]}"/>
+                            <field name="seq_req"/>
+                            <field name="sequence" attrs="{'invisible': [('seq_req', '=', False )]}" readonly="1"/>
+
+                            <field name="show_ar_file"/>
+                            <field name="folder_ids" string="Folder" invisible="1"/>
+
+                        </group>
+                    </group>
+                    <group>
+                    </group>
+                    <notebook>
+                        <page string="Deafult Folder Deatils">
+                            <field name="default_folder_ids">
+                                <tree editable="bottom">
+                                    <field name="company_id" required="1"
+                                           options="{'no_create': True, 'no_create_edit':True}"/>
+                                    <field name="folder_id" required="1"
+                                           options="{'no_create': True, 'no_create_edit':True}"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs document type tree-->
+    <record id="view_ebs_document_type_tree" model="ir.ui.view">
+        <field name="name">ebs.document.type.tree</field>
+        <field name="model">ebs.document.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="view_sequence"/>
+                <field name="name"/>
+                <field name="name_arabic"/>
+                <field name="document_categ_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs document type action-->
+    <record model="ir.actions.act_window" id="action_ebs_document_type">
+        <field name="name">Document Types</field>
+        <field name="res_model">ebs.document.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_document_types" name="Document Types"
+              parent="documents.Config" action="ebs_fusion_documents.action_ebs_document_type" sequence="7"/>
+
+    <record model="ir.ui.view" id="view_ebs_visa_type_form">
+        <field name="name">ebs.visa.type.Form</field>
+        <field name="model">ebs.visa.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ebs_visa_type_tree" model="ir.ui.view">
+        <field name="name">ebs.visa.type.tree</field>
+        <field name="model">ebs.visa.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs document type action-->
+    <record model="ir.actions.act_window" id="action_ebs_visa_type">
+        <field name="name">Visa Types</field>
+        <field name="res_model">ebs.visa.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_visa_types" name="Visa Types"
+              parent="documents.Config" action="ebs_fusion_documents.action_ebs_visa_type" sequence="8"/>
+
+</odoo>

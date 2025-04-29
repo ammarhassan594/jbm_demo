@@ -1,0 +1,163 @@
+<odoo>
+    <data noupdate="0">
+        <!--        todo : structure type-->
+        <record id="structure_type_jbm_old" model="hr.payroll.structure.type">
+            <field name="name">JBM Old</field>
+            <field name="country_id" eval="False"/>
+            <field name="wage_type">monthly</field>
+        </record>
+        <!--        todo : structure -->
+        <record id="structure_worker_jbm_old" model="hr.payroll.structure">
+            <field name="name">JBM Worker Pay Old</field>
+            <field name="type_id" ref="structure_type_jbm"/>
+            <field name="country_id" eval="False"/>
+        </record>
+
+        <!--        todo : salary rules [ALW]-->
+
+        <record id="hr_salary_car_alw" model="hr.salary.rule">
+            <field name="name">Car Allowance</field>
+            <field name="code">CAR-ALW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.car_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.car_alw</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+        <record id="salary_rule_end_of_basic_salary_bonus" model="hr.salary.rule">
+            <field name="name">End of Basic Salary Bonus</field>
+            <field name="code">EOBS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.end_of_basic_salary_bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.end_of_basic_salary_bonus</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+
+        <record id="salary_rule_monthly_incentive" model="hr.salary.rule">
+            <field name="name">Monthly Incentive</field>
+            <field name="code">MI</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.monthly_incentive</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.monthly_incentive</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+
+        <record id="salary_rule_representative_monthly_allowance" model="hr.salary.rule">
+            <field name="name">Representative Monthly Allowance</field>
+            <field name="code">RMA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.representative_monthly_allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.representative_monthly_allowance</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+
+
+        <record id="salary_rule_work_condition_allowance" model="hr.salary.rule">
+            <field name="name">Work Condition Allowance</field>
+            <field name="code">WCA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.work_condition_allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.work_condition_allowance</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+        <record id="hr_salary_rule_social" model="hr.salary.rule">
+            <field name="name">Social Allowance</field>
+            <field name="code">SOCIAL</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.social_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.social_alw</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+        <record id="hr_salary_rule_housing" model="hr.salary.rule">
+            <field name="name">Housing Allowance</field>
+            <field name="code">HOUSING</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.housing_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.housing_alw</field>
+            <field name="sequence" eval="3"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+        <record id="hr_salary_rule_transport" model="hr.salary.rule">
+            <field name="name">Transport Allowance</field>
+            <field name="code">TRA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.transport_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.transport_alw</field>
+            <field name="sequence" eval="4"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+        <record id="hr_salary_rule_other" model="hr.salary.rule">
+            <field name="name">Other Allowance</field>
+            <field name="code">OTHER</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.other_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.other_alw</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+        <record id="hr_salary_rule_mobile" model="hr.salary.rule">
+            <field name="name">Mobile Allowance</field>
+            <field name="code">MOBILE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.mobile_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.mobile_alw</field>
+            <field name="sequence" eval="6"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+        <record id="hr_salary_rule_car_alw" model="hr.salary.rule">
+            <field name="name">Car Allowance</field>
+            <field name="code">CARALW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.car_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.car_alw</field>
+            <field name="sequence" eval="7"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+        <record id="hr_salary_rule_car_alw" model="hr.salary.rule">
+            <field name="name">Supervision Allowance</field>
+            <field name="code">SUPERVISION</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="condition_python">result = contract.supervision_alw</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.supervision_alw</field>
+            <field name="sequence" eval="8"/>
+            <field name="struct_id" ref="structure_worker_jbm"/>
+        </record>
+
+
+    </data>
+</odoo>

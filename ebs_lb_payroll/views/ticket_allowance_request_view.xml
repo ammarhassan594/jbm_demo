@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="ticket_allowance_request_tree" model="ir.ui.view">
+            <field name="name">ticket_allowance_request_tree</field>
+            <field name="model">ebs.payroll.ticket.allowance.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="contract_id"/>
+                    <field name="request_date"/>
+                    <field name="amount"/>
+                    <field name="approved_amount"/>
+                    <field name="payment_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Form views -->
+
+        <record id="ticket_allowance_request_form" model="ir.ui.view">
+            <field name="name">ticket_allowance_request_form</field>
+            <field name="model">ebs.payroll.ticket.allowance.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="submit_request" string="Submit" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="accept_request" string="Approve" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '!=', 'submit')]}"/>
+                        <button name="reject_request" string="Reject" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '!=', 'submit')]}"/>
+                        <button name="draft_request" string="Set Draft" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '!=', 'submit')]}"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True}" force_save="1"/>
+                                <field name="contract_id" options="{'no_create': True}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                       domain="[
+                                       ('employee_id','=',employee_id)
+                                       ,('state','=','open')
+                                       ]"
+                                       force_save="1"
+                                />
+                                <field name="remaining_amount" invisible="1"/>
+                                <field name="remaining_amount2" readonly="1"/>
+                                <field name="amount" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="request_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="payment_date"  attrs="{'readonly': [('state', '!=', 'submit')],
+                                                                     'invisible':[('state','in',['draft','reject'])]}"/>
+                                <field name="approved_amount"  attrs="{'readonly': [('state', '!=', 'submit')],
+                                                                     'invisible':[('state','in',['draft','reject'])]}"/>
+                            </group>
+                        </group>
+                        <group name="group_down">
+                            <field name="description" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+        <!--window -->
+        <record id="ticket_allowance_request_window" model="ir.actions.act_window">
+            <field name="name">Ticket Allowance Request</field>
+            <field name="res_model">ebs.payroll.ticket.allowance.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

@@ -1,0 +1,51 @@
+<odoo>
+
+    <record id="taqat_custom_hr_employee_view" model="ir.ui.view">
+        <field name="name">custom.hr.employee.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_title']//..//.." position="before">
+                <div class="oe_title">
+                    <h2>
+                        <!--                    <field name="emp_serial_number" readonly="1"/>-->
+                    </h2>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_employee_form_custom" model="ir.ui.view">
+        <field name="name">hr.employee</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_employee_custom.view_employee_form_custom"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='state_id']" position="before">
+                <field name="nationality"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="taqat_hr_employee_list_inherited" model="ir.ui.view">
+        <field name="name">hr.employee.list.view.inherited</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath position="before" expr="//field[@name='name']">
+                <!--            <field name="emp_serial_number"/>-->
+            </xpath>
+            <xpath expr="//field[@name='activity_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='activity_date_deadline']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

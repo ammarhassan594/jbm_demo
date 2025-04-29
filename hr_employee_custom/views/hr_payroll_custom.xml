@@ -1,0 +1,14 @@
+<odoo>
+    <record id="hr_payslip_view_custom_form_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip.form.inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="domain">
+                    ['|',('employee_type','=','fusion_employee'),('employee_type','=','fos_employee')]
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

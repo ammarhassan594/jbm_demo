@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_users_form_custom" model="ir.ui.view">
+        <field name="name">res.user.custom</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+           <xpath expr="//notebook/page[@name='access_rights']//field[@name='company_ids']" position="after">
+               <field name="write_capability_ids" widget="many2many_tags" options="{'no_create': True,'no_create_edit':True}"/>
+           </xpath>
+        </field>
+    </record>
+</odoo>

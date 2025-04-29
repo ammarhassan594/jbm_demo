@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_extended_view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                    <page string="National Address">
+                        <group>
+                            <group>
+                                <field name="address_zone"/>
+                                <field name="address_street"/>
+                                <field name="address_building"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_extended_ebs_fusion_contacts_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="ebs_fusion_contacts.view_partner_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='address']" position="after">
+                    <page string="National Address">
+                        <group>
+                            <group>
+                                <field name="address_zone"/>
+                                <field name="address_street"/>
+                                <field name="address_building"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//sheet" position="before">
+                    <header>
+                            <button name="%(ebs_fusion_documents.document_button_action)d"
+                                    string="Create Document"
+                                    type="action" class="oe_stat_button"
+                                    icon="fa-file"
+                                    context="{
+                    'default_partner_id':id,
+                    'default_res_id': id,
+                    'default_res_model': context.get('active_model'),
+                    'hide_field': 1,
+                    }"/>
+
+                        <field name="contact_state" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                </xpath>
+                <xpath expr="//sheet" position="after">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

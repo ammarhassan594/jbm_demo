@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_users_form_simple_modif_custom" model="ir.ui.view">
+            <field name="name">res.users.preferences.form.custom</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="hr.res_users_view_form_profile"/>
+             <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                     <field name="share" invisible="1"/>
+                 	<field name="employee_ids" invisible="1"/>
+                    <button string="Create employee" type="object" name="action_create_employee" attrs="{'invisible': ['|', '|', ('id', '=', False), ('share', '=', True), ('employee_count', '&gt;', 0)]}"/>
+                            <!-- share is not correctly recomputed because it depends on fields of reified view => invisible before saving (id=False) -->
+                </xpath>
+                 <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="%(hr.hr_employee_action_from_user)d" class="oe_stat_button" icon="fa-users" attrs="{'invisible': [('employee_count', '=', 0)]}" context="{'active_test': False}" type="action">
+                        <field name="employee_count" widget="statinfo" string="Employee(s)"/>
+                    </button>
+                </xpath>
+                
+                 <xpath expr="//field[@name='employee_parent_id']" position="attributes">
+                    <attribute name="options">{"no_open": True}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

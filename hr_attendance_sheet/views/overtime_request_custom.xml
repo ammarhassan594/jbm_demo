@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="overtime_request_form_inherit" model="ir.ui.view">
+            <field name="name">overrtime.request.form.inherit</field>
+            <field name="model">hr.overtime</field>
+            <field name="inherit_id" ref="ohrms_overtime.hr_overtime_form_view"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[2]" position="after">
+                    <page string="Attendance Sheet">
+                        <group>
+                            <field name="attendance_sheet_ids" readonly="1"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

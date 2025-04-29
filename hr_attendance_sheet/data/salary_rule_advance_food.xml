@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Salary Rule Food Deduction -->
+        <record id="hr_salary_rule_worker_food_ded" model="hr.salary.rule">
+            <field name="name">Food Deduction</field>
+            <field name="code">FOODDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.FOODDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.FOODDED.amount</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+
+        <!-- Input Type Food Deduction -->
+        <record id="hr_payslip_other_input_rule_food_ded" model="hr.payslip.input.type">
+            <field name="name">Food Deduction</field>
+            <field name="code">FOODDED</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+    </data>
+</odoo>

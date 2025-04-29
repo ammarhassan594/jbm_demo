@@ -1,0 +1,30 @@
+<odoo>
+
+    <record id="workflow_change_status_wiz" model="ir.ui.view">
+        <field name="name">workflow_change_status_wiz</field>
+        <field name="model">ebs.wf.status.wiz</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="status" required="1"/>
+                        <field name="workflow_ids" invisible="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="workflow_status_change_wiz_act_win" model="ir.actions.act_window">
+        <field name="name">Work Flow Status</field>
+        <field name="res_model">ebs.wf.status.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="workflow_change_status_wiz"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

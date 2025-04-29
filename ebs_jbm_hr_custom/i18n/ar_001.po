@@ -1,0 +1,290 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_jbm_hr_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230613\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-17 14:12+0000\n"
+"PO-Revision-Date: 2024-04-17 14:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_jbm_hr_custom
+#: code:addons/ebs_jbm_hr_custom/models/hr_contract.py:0
+#, python-format
+msgid "%s amount is not between of salary scale."
+msgstr "%s المبلغ ليس بين جدول الرواتب."
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__allowance_id
+msgid "Allowance"
+msgstr "مخصص"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__allowance_type
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__allowance_type
+msgid "Allowance Type"
+msgstr "نوع البدل"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__create_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__create_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__create_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__create_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__create_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__create_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__create_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__create_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__create_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__create_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__type_id
+msgid "Degree"
+msgstr "الشهادة "
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__display_name
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__display_name
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__display_name
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__display_name
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__display_name
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__display_name
+msgid "Display Name"
+msgstr "اسم العرض "
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__element_ids
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_custom.hr_salary_scale_configuration_form_view
+msgid "Elements"
+msgstr "عناصر"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_employee
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__employee_id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__employee_id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.actions.act_window,name:ebs_jbm_hr_custom.employee_activity_view_action
+#: model:ir.ui.menu,name:ebs_jbm_hr_custom.hr_menu_employee_activity
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_custom.employee_activity_tree_view
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_custom.employee_activity_view_form
+msgid "Employee Activity"
+msgstr "نشاط الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_employee_activity
+msgid "Employee Description"
+msgstr "وصف الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_employee_procedure
+msgid "Employee Procedure"
+msgstr "إجراءات الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee__employee_procedure_ids
+msgid "Employee Procedures"
+msgstr "إجراءات الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_employee_system
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee__employee_system_ids
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_custom.jbm_hr_employee_form_view_inherit
+msgid "Employee Systems"
+msgstr "انظمة الموظف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__food_allowance
+msgid "Food Allowance"
+msgstr "بدل الطعام"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__from_amount
+msgid "From"
+msgstr "من"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__grade
+msgid "Grade"
+msgstr "رتبة"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__housing_allowance
+msgid "Housing Allowance"
+msgstr "بدل سكن"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_payroll_element
+msgid "Hr Payroll Element"
+msgstr "عنصر كشوف رواتب الموارد البشرية"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_salary_allowance
+#: model:ir.ui.menu,name:ebs_jbm_hr_custom.menu_hr_salary_allowance
+msgid "Hr Salary Allowance"
+msgstr "بدل راتب الموارد البشرية"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model,name:ebs_jbm_hr_custom.model_hr_salary_scale_configuration
+msgid "HrSalaryScaleConfiguration"
+msgstr ""
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity____last_update
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure____last_update
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system____last_update
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element____last_update
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance____last_update
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__write_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__write_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__write_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__write_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__write_uid
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__write_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__write_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__write_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__write_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__write_date
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__link
+msgid "Link"
+msgstr "الرابط"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__living_allowance
+msgid "Living Allowance"
+msgstr "بدل المعيشة"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__maximum_ticket_allowance
+msgid "Maximum Ticket Allowance"
+msgstr "الحد الأقصى لبدل التذكرة"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__mobile_allowance
+msgid "Mobile Allowance"
+msgstr "بدل المحمول"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__model_id
+msgid "Model"
+msgstr "نموذج "
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_allowance__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__number_of_record_created
+msgid "Number of records Created"
+msgstr "عدد السجلات التي تم إنشاؤها"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_employee_activity__number_of_record_updated
+msgid "Number of records Updated"
+msgstr "عدد السجلات المحدثة"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_salary_scale_configuration__number_of_years
+msgid "Number of years"
+msgstr "عدد السنوات"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee__orientation
+msgid "Orientation"
+msgstr "الاتجاه"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__other_allowance
+msgid "Other Allowance"
+msgstr "بدلات أخرى"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_procedure__procedure_name_id
+msgid "Procedure Name"
+msgstr "اسم الإجراء\n"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.actions.act_window,name:ebs_jbm_hr_custom.action_hr_salary_allowance
+msgid "Salary Allowance"
+msgstr "بدل الراتب"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_contract__scale_configuration_id
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__salary_scale_id
+msgid "Salary Scale"
+msgstr "سلم الرواتب"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.actions.act_window,name:ebs_jbm_hr_custom.action_salary_scale_configuration
+msgid "Salary Scale Configuration"
+msgstr "تكوين سلم الرواتب"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_employee_system__system
+msgid "System"
+msgstr "النظام"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_custom.field_hr_payroll_element__to_amount
+msgid "To"
+msgstr "إلى"
+
+#. module: ebs_jbm_hr_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_hr_custom.selection__hr_salary_allowance__allowance_type__transport_allowance
+msgid "Transport Allowance"
+msgstr "بدل النقل"
+
+#. module: ebs_jbm_hr_custom
+#: code:addons/ebs_jbm_hr_custom/models/hr_contract.py:0
+#, python-format
+msgid "Warning"
+msgstr ""

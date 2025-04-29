@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="certificate_salary_details" model="letter.type">
+            <field name="name">Employment/ Salary Certificate with Salary Details</field>
+            <field name="code">csd</field>
+        </record>
+
+        <record id="work_certificate_report_letter" model="letter.type">
+            <field name="name">Employment / Work Certificate Letter</field>
+            <field name="code">wcl</field>
+        </record>
+
+
+    </data>
+</odoo>

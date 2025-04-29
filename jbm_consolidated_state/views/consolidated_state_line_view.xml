@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <record id="consolidated_state_line_form" model="ir.ui.view">
+            <field name="name">Consolidated.State.line.Form</field>
+            <field name="model">consolidated.state.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="field_id" domain="[('model_id','=',parent.model_id)]"/>
+                            <field name="field_state_id"/>
+                            <field name="state"/>
+                            <field name="time_in_days"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="consolidated_state_line_action" model="ir.actions.act_window">
+            <field name="name">consolidated.state.line.action</field>
+            <field name="res_model">consolidated.state.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,309 @@
+<odoo>
+    <data>
+        <!--tree view of model-->
+        <record id="permanent_employee_payroll_group_tree" model="ir.ui.view">
+            <field name="name">Payroll Group Tree</field>
+            <field name="model">permanent.employee.pay.scale</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="special"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                    <field name="employee_ids" widget="many2many_tags"/>
+                    <field name="contract_ids" widget="many2many_tags"/>
+                    <field name="is_qatari"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form view of model-->
+        <record id="permanent_employee_payroll_group_form" model="ir.ui.view">
+            <field name="name">Payroll Group Form</field>
+            <field name="model">permanent.employee.pay.scale</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="special"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                                <field name="is_qatari"/>
+                                <field name="is_gcc_country" attrs="{'invisible':[('is_qatari','=', True)]}"/>
+                                <field name="is_married"/>
+                                <field name="gender"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Pay Scale" groups="hr_payroll.group_hr_payroll_user">
+                                <group attrs="{'invisible':[('is_qatari','=', False)]}" string="QATARI NATIONALS">
+                                    <group>
+                                        <label for="basic_from" string="Basic"/>
+                                        <div>
+                                            <field name="basic_from" class="oe_inline"/>
+                                            -
+                                            <field name="basic_to" class="oe_inline"/>
+
+                                        </div>
+
+                                        <label for="social_allowance" string="Social"/>
+                                        <div>
+                                            <field name="social_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="housing_allowance" string="Housing"/>
+                                        <div>
+                                            <field name="housing_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="transport_allowance" string="Transport Allowance"/>
+                                        <div>
+                                            <field name="transport_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="mobile_allowance" string="Mobile Phone Allowance"/>
+                                        <div>
+                                            <field name="mobile_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <!--                                    <label for="air_ticket_allowance" string="Annual Air Ticket Allowance"/>-->
+                                        <!--                                    <div>-->
+                                        <!--                                        <field name="air_ticket_allowance" class="oe_inline"/>-->
+                                        <!--                                    </div>-->
+
+                                        <!--                                    <label for="mobilisation_class" string="Mobilisation Class"/>-->
+                                        <!--                                    <div>-->
+                                        <!--                                        <field name="mobilisation_class" class="oe_inline"/>-->
+                                        <!--                                    </div>-->
+
+                                        <!--                                    <label for="mobilisation_allowance" string="Mobilisation/ Repatriation/Shipping Allowance"/>-->
+                                        <!--                                    <div>-->
+                                        <!--                                        <field name="mobilisation_allowance" class="oe_inline"/>-->
+                                        <!--                                    </div>-->
+                                        <label for="car_loan" string="Car Loan"/>
+                                        <div>
+                                            <field name="car_loan" class="oe_inline"/>
+
+                                        </div>
+
+                                        <label for="marriage_loan" string="Marriage Loan"/>
+                                        <div>
+                                            <field name="marriage_loan" class="oe_inline"/>
+
+                                        </div>
+                                        <label for="total_salary_from" string="Total Salary"/>
+                                        <div>
+                                            <field name="total_salary_from" class="oe_inline"/>
+                                            -
+                                            <field name="total_salary_to" class="oe_inline"/>
+                                        </div>
+                                    </group>
+
+                                    <group>
+                                        <label for="furniture_allowance" string="Furniture Allowance"/>
+                                        <div>
+                                            <field name="furniture_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="education_allowance" string="Education Allowance"/>
+                                        <div>
+                                            <field name="education_allowance" class="oe_inline"/>
+                                        </div>
+                                        <label for="travel_class" string="Travel Class"/>
+                                        <div>
+                                            <field name="travel_class" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="business_allowance_gulf" string="Business Allowance GCC"/>
+                                        <div>
+                                            <field name="business_allowance_gulf" class="oe_inline"/>
+                                        </div>
+                                        <label for="business_allowance_non_gulf"
+                                               string="Business Allowance All Countries"/>
+                                        <div>
+                                            <field name="business_allowance_non_gulf" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="annual_leaves" string="Annual Leaves"/>
+                                        <div>
+                                            <field name="annual_leaves" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="long_sick_leaves" string="Long Sick Leaves"/>
+                                        <div>
+                                            <field name="long_sick_leaves" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="short_sick_leaves" string="Short Sick Leaves"/>
+                                        <div>
+                                            <field name="short_sick_leaves" class="oe_inline"/>
+                                        </div>
+
+                                    </group>
+                                </group>
+                                <group attrs="{'invisible':[('is_qatari','=', True)]}" string="EXPAT EMPLOYEES">
+                                    <group>
+                                        <label for="basic_from" string="Basic"/>
+                                        <div>
+                                            <field name="basic_from" class="oe_inline"/>
+                                            -
+                                            <field name="basic_to" class="oe_inline"/>
+
+                                        </div>
+
+                                        <label for="housing_allowance" string="Housing"/>
+                                        <div>
+                                            <field name="housing_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="transport_allowance" string="Transport Allowance"/>
+                                        <div>
+                                            <field name="transport_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="mobile_allowance" string="Mobile Phone Allowance"/>
+                                        <div>
+                                            <field name="mobile_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="air_ticket_allowance" string="Annual Air Ticket Allowance"/>
+                                        <div>
+                                            <field name="air_ticket_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="mobilisation_class" string="Mobilisation Class"/>
+                                        <div>
+                                            <field name="mobilisation_class" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="mobilisation_allowance"
+                                               string="Mobilisation/ Repatriation/Shipping Allowance"/>
+                                        <div>
+                                            <field name="mobilisation_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="total_salary_from" string="Total Salary"/>
+                                        <div>
+                                            <field name="total_salary_from" class="oe_inline"/>
+                                            -
+                                            <field name="total_salary_to" class="oe_inline"/>
+                                        </div>
+                                    </group>
+
+                                    <group>
+                                        <label for="car_loan" string="Car Loan"/>
+                                        <div>
+                                            <field name="car_loan" class="oe_inline"/>
+
+                                        </div>
+
+                                        <label for="furniture_allowance" string="Furniture Allowance"/>
+                                        <div>
+                                            <field name="furniture_allowance" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="education_allowance" string="Education Allowance"/>
+                                        <div>
+                                            <field name="education_allowance" class="oe_inline"/>
+                                        </div>
+                                        <label for="travel_class" string="Travel Class"/>
+                                        <div>
+                                            <field name="travel_class" class="oe_inline"/>
+                                        </div>
+
+                                        <label for="business_allowance_gulf" string="Business Allowance GCC"/>
+                                        <div>
+                                            <field name="business_allowance_gulf" class="oe_inline"/>
+                                        </div>
+                                        <label for="business_allowance_non_gulf"
+                                               string="Business Allowance All Countries"/>
+                                        <div>
+                                            <field name="business_allowance_non_gulf" class="oe_inline"/>
+                                        </div>
+
+                                        <!--                                        <label for="annual_leaves" string="Annual Leaves"/>-->
+                                        <!--                                        <div>-->
+                                        <!--                                            <field name="annual_leaves" class="oe_inline"/>-->
+                                        <!--                                        </div>-->
+                                        <label for="leave_carry_forwards"/>
+                                        <div>
+                                            <field name="leave_carry_forwards" class="oe_inline"/>
+                                        </div>
+
+                                        <!--                                        <label for="long_sick_leaves" string="Long Sick Leaves"/>-->
+                                        <!--                                        <div>-->
+                                        <!--                                            <field name="long_sick_leaves" class="oe_inline"/>-->
+                                        <!--                                        </div>-->
+
+                                        <!--                                        <label for="short_sick_leaves" string="Short Sick Leaves"/>-->
+                                        <!--                                        <div>-->
+                                        <!--                                            <field name="short_sick_leaves" class="oe_inline"/>-->
+                                        <!--                                        </div>-->
+
+                                    </group>
+                                </group>
+
+                            </page>
+                            <!--                        <page string="Pay Scale" attrs="{'invisible': [('employee_type', '!=', 'temp')]}"-->
+                            <!--                              groups="hr_payroll.group_hr_payroll_user">-->
+                            <!--                            <group>-->
+                            <!--                                <group>-->
+                            <!--                                    <label for="basic_for_temp_employee" string="Basic"/>-->
+                            <!--                                    <div>-->
+                            <!--                                        <field name="basic_for_temp_employee" class="oe_inline"/>-->
+
+                            <!--                                    </div>-->
+                            <!--                                </group>-->
+                            <!--                            </group>-->
+                            <!--                        </page>-->
+                            <page name="leave_types" string="Leave Type">
+                                <group name="leave_types">
+                                    <field name="leave_type_ids">
+                                        <tree editable="bottom">
+                                            <field name="leave_type"/>
+                                            <field name="days"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <field name="leave_type"/>
+                                                <field name="days"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Employees">
+                                <group>
+                                    <field name="employee_ids" readonly="1"/>
+                                </group>
+                            </page>
+                            <page string="Contracts">
+                                <group>
+                                    <field name="contract_ids" readonly="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="permanent_employee_payroll_group" model="ir.actions.act_window">
+            <field name="name">Groups</field>
+            <field name="res_model">permanent.employee.pay.scale</field>
+            <field name="view_mode">tree,form</field>
+            <field name="usage">menu</field>
+        </record>
+
+        <menuitem
+                id="menu_permanent_payroll_group_view"
+                name="Permanent Staff Pay Scale"
+                parent="hr.menu_human_resources_configuration"
+                sequence="7"
+                action="permanent_employee_payroll_group"/>
+    </data>
+</odoo>

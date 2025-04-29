@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="ir_send_mail_cron_document_type" model="ir.cron">
+            <field name="name">CHECK EMPLOYEE DOCUMENT TYPE</field>
+            <field name="model_id" ref="ebs_capstone_hr.model_ebs_hr_document"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.check_document_type_duration()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>

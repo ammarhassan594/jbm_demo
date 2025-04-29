@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_hr_department_form_policy_inherited" model="ir.ui.view">
+            <field name="name">hr.department.form.policy.inherited</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="type_of_department"/>
+                </field>
+                <xpath expr="//form//sheet" position="inside">
+                    <notebook>
+                        <page string="Policies and Procedures">
+                            <field name="policy_ids">
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="effected_date"/>
+                                    <field name="attachment_ids" widget="many2many_binary"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+</odoo>

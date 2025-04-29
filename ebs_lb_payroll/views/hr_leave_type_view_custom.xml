@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+
+        <record id="custom_hr_leave_type_view" model="ir.ui.view">
+            <field name="name">custom_hr_leave_type_view</field>
+            <field name="model">hr.leave.type</field>
+            <field name="priority">32</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='active']" position="after">
+                    <field name="is_annual"/>
+                    <field name="is_unpaid"/>
+                    <field name="is_paid"/>
+                    <field name="is_permission"/>
+                    <field name="allocated_per_month" attrs="{'invisible': [('is_paid', '!=', True)]}"/>
+                    <field name="is_haj_leave" invisible="1"/>
+                    <field name="is_sick_leave" invisible="0"/>
+                    <field name="additional_element_type_id" attrs="{
+                    'invisible':[('is_sick_leave','=',False)]
+                    }"/>
+                </xpath>
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

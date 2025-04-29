@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate="1">
+        <!--		[Education Allowance, Furniture Allowance, Ticket Allowance, Mobilization Allowance ,BUSINESS/TRAINING Trip allowance ]-->
+        <record id="allowance_type_education" model="allowance.type">
+            <field name="name">Education Allowance</field>
+            <field name="code">education</field>
+        </record>
+        <record id="allowance_type_furniture" model="allowance.type">
+            <field name="name">Furniture Allowance</field>
+            <field name="code">furniture</field>
+        </record>
+         <record id="allowance_type_furniture_maintenance" model="allowance.type">
+            <field name="name">Furniture Maintenance Allowance</field>
+            <field name="code">maintenance</field>
+        </record>
+        <record id="allowance_type_ticket" model="allowance.type">
+            <field name="name">Ticket Allowance</field>
+            <field name="code">ticket</field>
+        </record>
+        <record id="allowance_type_leave" model="allowance.type">
+            <field name="name">Leave Allowance</field>
+            <field name="code">leave</field>
+        </record>
+        <record id="allowance_type_mobilization" model="allowance.type">
+            <field name="name">Mobilization Allowance</field>
+            <field name="code">mobilization</field>
+        </record>
+        <record id="allowance_type_trip" model="allowance.type">
+            <field name="name">BUSINESS/TRAINING Trip allowance</field>
+            <field name="code">trip</field>
+        </record>
+        <record id="allowance_EOSB_advance" model="allowance.type">
+            <field name="name">EOSB Advance</field>
+            <field name="code">eosb</field>
+        </record>
+
+    </data>
+</odoo>

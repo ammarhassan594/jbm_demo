@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <report
+                id="collaborator_employees_salaries_xlsx"
+                model="hr.payslip.run"
+                string="كشف مكافأت المتعاونين"
+                report_type="xlsx"
+                name="payslip_reports.collaborator_employees_salaries"
+                file="collaborator_employees_salaries"
+                attachment_use="False"
+        />
+    </data>
+</odoo>

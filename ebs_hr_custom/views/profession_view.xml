@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="profession_view_tree">
+            <field name="name">employee.profession.Tree</field>
+            <field name="model">profession.profession</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="eng_name"/>
+                    <field name="arabic_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="profession_view_form">
+            <field name="name">employee.profession.Form</field>
+            <field name="model">profession.profession</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group col="2">
+                                <field name="eng_name"/>
+                                <field name="arabic_name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="profession_window" model="ir.actions.act_window">
+            <field name="name">Employee Profession</field>
+            <field name="res_model">profession.profession</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_profession"
+                name="Employee Profession"
+                parent="hr.menu_human_resources_configuration"
+                sequence="9"
+                action="profession_window"/>
+
+    </data>
+</odoo>

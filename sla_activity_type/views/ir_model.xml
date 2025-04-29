@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="activity_type_ir_model_form_view_inherit" model="ir.ui.view">
+            <field name="name">activity.type.ir.model.form.view.inherit</field>
+            <field name="model">ir.model</field>
+            <field name="inherit_id" ref="base.view_model_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='views']" position="after">
+                    <page string="SLA Activity type" name="sla_activity_type"
+                          groups="base.group_no_one">
+                        <group>
+                            <group>
+                                <field name="apply_sla_activity" />
+                                <field name="manager_expression"
+                                       attrs="{'invisible': [('apply_sla_activity', '!=', True)]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

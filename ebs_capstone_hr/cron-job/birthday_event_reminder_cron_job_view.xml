@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="ir_send_mail_cron_action_birthday_event_reminder" model="ir.cron">
+            <field name="name">CHECK EMPLOYEE BIRTHDAY EVENT REMINDER</field>
+            <field name="model_id" ref="ebs_lb_payroll.model_hr_employee"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.check_employee_birthday_event_reminder()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_hr_appraisal_warning_line,access_access_hr_appraisal_warning_line,model_hr_appraisal_warning_line,base.group_user,1,1,1,1
+access_hr_appraisal_description_line,access_access_hr_appraisal_description_line,model_hr_appraisal_description_line,base.group_user,1,1,1,1
+access_hr_appraisal_note_line,access_access_hr_appraisal_note_line,model_hr_appraisal_note_line,base.group_user,1,1,1,1

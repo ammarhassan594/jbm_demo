@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Approval Category Loan -->
+        <record model="ir.module.category" id="module_category_gratuity">
+            <field name="name">Gratuity Approval</field>
+            <field name="description">Gratuity Category Approval</field>
+            <field name="sequence">47</field>
+        </record>
+
+        <record id="group_gratuity_first_approval" model="res.groups">
+            <field name="name">Gratuity First Approval</field>
+            <field name="category_id" ref="module_category_gratuity"/>
+        </record>
+
+        <record id="group_gratuity_second_approval" model="res.groups">
+            <field name="name">Gratuity Second Approval</field>
+            <field name="category_id" ref="module_category_gratuity"/>
+        </record>
+
+    </data>
+</odoo>

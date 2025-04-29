@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ake_early_late_attandence.reject_justification_after_time" model="ir.cron">
+            <field name="name">Reject Justification After Time</field>
+            <field name="interval_type">hours</field>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=0))"/>
+        </record>
+
+        <record id="update_lasted_attendance_late_in_early_out" model="ir.cron">
+            <field name="name">Update Time Of Lasted Attendance Late in or early out</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="doall">True</field>
+            <field name="active">False</field>
+            <field name="model_id" ref="jbm_notification_justification.model_hr_attendance"/>
+            <field name="code" eval="'model.update_last_time_justification()'"/>
+        </record>
+
+
+        <record id="send_sms_notification_early_out" model="ir.cron">
+            <field name="name">Send Sms Notification Early Out Justification</field>
+            <field name="interval_number">12</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="jbm_notification_justification.model_hr_attendance"/>
+            <field name="code">model.send_notification_early_check_out()</field>
+            <field name="state">code</field>
+        </record>
+
+    </data>
+</odoo>

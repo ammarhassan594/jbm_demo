@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <record id="hr_attendance.view_attendance_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.attendance.tree.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="groups_id"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager')),(4, ref('hr_attendance.group_hr_attendance_user'))]"/>
+            <field name="arch" type="xml">
+                <tree position="attributes">
+                    <attribute name="edit">1</attribute>
+                    <attribute name="editable">bottom</attribute>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_holiday_leave_to_approve_view_form_inherit_custom" model="ir.ui.view">
+            <field name="name">hr.leave.inherit.form.custom</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+                <field name="employee_id" position="replace"/>
+                <xpath expr="//group[@name='col_left']//field[@name='employee_ids']" position="replace">
+                </xpath>
+                <xpath expr="//label[@id='label_dates']" position="before">
+                    <field name="multi_employee" invisible="1" force_save="1"/>
+                    <field name="employee_id"
+                           groups="jbm_group_access_right_extended.group_timeOff_manager,hr_holidays.group_hr_holidays_user"
+                           attrs="{
+                        'invisible': ['|', '|', ('holiday_type', '!=', 'employee'), ('state', '!=', 'validate'), ('employee_id', '=', False)]
+                        }" widget="many2one_avatar_employee"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_holiday_leave_to_approve_view_form_managers" model="ir.ui.view">
+            <field name="name">hr.leave.inherit.form.custom</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holiday_leave_to_approve_view_form_inherit_custom"/>
+            <field name="groups_id"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_hr_manager'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@id='label_dates']" position="before">
+                    <field name="employee_ids"
+                           groups="jbm_group_access_right_extended.group_timeOff_manager,hr_holidays.group_hr_holidays_user"
+                           attrs="{
+                        'required': [('holiday_type', '=', 'employee'), ('state', 'in', ('draft', 'cancel', 'refuse'))],
+                        'invisible': ['|', ('holiday_type', '!=', 'employee'), '&amp;', ('state', '=', 'validate'), ('employee_id', '!=', False)],
+                        }" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="jbm_hr_leave_time_off_manager" model="ir.actions.act_window">
+            <field name="name">All Time Off</field>
+            <field name="res_model">hr.leave</field>
+            <field name="view_mode">tree,kanban,form,calendar,activity</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Meet the time off dashboard.
+                </p>
+                <p>
+                    A great way to keep track on employee’s PTOs, sick days, and approval status.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_all_leaves"
+                name="All Leaves"
+                action="jbm_hr_leave_time_off_manager"
+                parent="hr_holidays.menu_hr_holidays_root"
+                groups="jbm_group_access_right_extended.group_timeOff_manager"
+        />
+        <record id="hr_holidays.menu_hr_holidays_approvals" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_hr_manager'))]"/>
+
+        </record>
+
+    </data>
+</odoo>

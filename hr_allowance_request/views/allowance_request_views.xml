@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--Allowance Tree view-->
+        <record id="allowance_request_tree_view" model="ir.ui.view">
+            <field name="name">allowance.request.tree</field>
+            <field name="model">allowance.request</field>
+            <field name="arch" type="xml">
+                <tree string="Allowance Requests">
+                    <field name="name" string="Name"/>
+                    <field name="employee_number" string="Employee Number"/>
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <field name="total_collected" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Allowance Form view-->
+        <record id="allowance_request_form_view" model="ir.ui.view">
+            <field name="name">allowance.request.form</field>
+            <field name="model">allowance.request</field>
+            <field name="arch" type="xml">
+                <form string="Allowance Request">
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" states="draft"
+                                class="oe_highlight"/>
+
+                        <button name="action_first_approve" type="object" string="First Approval"
+                                states="confirmed" class="oe_highlight"
+                                groups="hr_allowance_request.group_allowance_first_approval"/>
+
+                        <button name="action_approve" type="object" string="Second Approval"
+                                states="first_approved" class="oe_highlight"
+                                groups="hr_allowance_request.group_allowance_second_approval,
+                                hr_allowance_request.hr_employee_approved_amount"/>
+
+                        <button name="action_paid" type="object" string="Paid"
+                                states="approved" class="oe_highlight"
+                                groups="hr_allowance_request.group_allowance_second_approval"/>
+
+                        <button name="action_refuse" type="object" string="Refuse"
+                                states="confirmed,first_approved,approved" class="oe_highlight"
+                                groups="hr_allowance_request.group_allowance_first_approval,hr_allowance_request.group_allowance_second_approval"/>
+
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,approved,paid"
+                                groups="hr_allowance_request.group_allowance_cancel"
+                                confirm="Are you sure you want to cancel this record"/>
+                        <!--                        <button name="action_draft" type="object" string="Set To Draft" states="confirmed"/>-->
+
+                        <button name="action_draft" type="object" string="Set To Draft" states="confirmed,approved,paid"
+                          groups="base.group_erp_manager"/>
+                        <!--                        groups="hr_allowance_request.group_allowance_draft"-->
+
+                        <!--                        <button name="action_add_new_dependent" type="object" string="Add New Dependent"-->
+                        <!--                                class="oe_highlight"-->
+                        <!--                                attrs="{'invisible': ['|', '|', '|','|',('parent','!=',False), ('state', '!=', 'paid'), ('display_airport_info','!=', True),-->
+                        <!--                                ('marital','!=', 'married')]}"/>-->
+
+
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,confirmed,first_approved,approved,paid"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_open_child_allowances" type="object"
+                                    class="oe_stat_button" icon="fa-book"
+                                    attrs="{'invisible': [('children_count', '=', 0)]}">
+                                <div class="o_stat_info">
+                                    <field name="children_count" class="o_stat_value"/>
+                                    <span class="o_stat_text">Allowances</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_number" string="Employee Number"/>
+                                <field name="employee_id" options="{'no_open': True, 'no_create': True}"/>
+                                <field name="user_id" invisible="1"/>
+                                <!--                                <field name="employee_id_domain" invisible="1"/>-->
+                                <field name="allowance_type"
+                                       options="{'no_open': True, 'no_create': True, 'no_edit': True}"/>
+                                <field name="parent" invisible="1"/>
+                                <field name="dependent_id" force_save="1" attrs="{'invisible': [('parent','=', False)]}"
+                                       options="{'no_open': True, 'no_create': True}"/>
+
+                                <field name="code" invisible="1"/>
+                                <field name="date" readonly="1"/>
+                                <field name="created_automatically" invisible="1"/>
+                                <field name="payment_date"
+                                       attrs="{'invisible':['|', ('code','not in',['furniture', 'maintenance', 'ticket', 'leave']),
+                                       ('created_automatically','=', True)],
+                                       'required':[('code','in',['furniture', 'maintenance'])]}"/>
+                                <!--                                <field name="effective_date"-->
+                                <!--                                       attrs="{'invisible':[('code','not in',['ticket', 'leave', 'furniture', 'maintenance'])],-->
+                                <!--                                       'required':[('code', 'in', ['ticket', 'leave'])]}"/>-->
+                                <field name="final_approve_date" attrs="{'invisible':[('state','!=','approved')]}"/>
+                                <field name="academic_id"
+                                       attrs="{'invisible':[('code','!=','education')],'required':[('code','=','education')]}"
+                                       options="{'no_create': True, 'no_open': True}"
+                                />
+                                <field name="display_airport_info" invisible="1"/>
+                                <field name="airport_id" attrs="{'invisible':[('display_airport_info','!=', True)]}"/>
+                                <field name="adult_fare" attrs="{'invisible':[('display_airport_info','!=', True)]}"/>
+                                <field name="child_fare" attrs="{'invisible':[('display_airport_info','!=', True)]}"/>
+                                <field name="infant_fare" attrs="{'invisible':[('display_airport_info','!=', True)]}"/>
+                                <field name="air_ticket_allowance" string="Air Ticket Class"
+                                       attrs="{'invisible':[('code','not in', ['ticket', 'leave'])]}"/>
+                                <field name="start_date" attrs="{'invisible':[('code','!=','trip')]}"/>
+                                <field name="end_date" attrs="{'invisible':[('code','!=','trip')]}"/>
+                                <field name="destination"
+                                       attrs="{'invisible':[('code','!=','trip')],'required':[('code','=','trip')]}"/>
+
+                            </group>
+                            <group>
+                                <field name="country_id"/>
+                                <field name="marital"/>
+                                <field name="gender"/>
+                                <field name="currency_id" readonly="1"/>
+                                <field name="ticket_leave_id"
+                                       attrs="{
+                                       'invisible':[('code','!=','ticket')],
+                                        'readonly': [('state', '!=', 'draft')] ,
+                                        'required': [('code', '=', 'ticket'),
+                                                ('state', '=', 'confirmed')] }"
+                                       options="{'no_create':True, 'no_edit': True}"/>
+                                <field name="count_dependants_note"
+                                       attrs="{'invisible':[('display_airport_info','!=', True)]}"/>
+                                <field name="total_dependent" invisible="1"/>
+                                <field name="eligible_dependent" invisible="1"/>
+                            </group>
+                        </group>
+
+                        <group class="oe_right" colspan="2">
+                            <field name="eligible_amount" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"
+                                   attrs="{'invisible':[('code','=','education')]}"
+                            />
+                            <field name="remaining_amount" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"
+                                   invisible="1"
+                            />
+                            <field name="requested_amount" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"
+                                   attrs="{'invisible':[('code','not in',['eosb'])]}"
+                            />
+                            <field name="approved_amount" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"
+                                   attrs="{'invisible':[('code','not in',['maintenance'])]}"
+                                   groups="hr_allowance_request.hr_employee_approved_amount"/>
+                            <!--                            <field name="approved_amount" widget="monetary"-->
+                            <!--                                   options="{'currency_field': 'currency_id'}"-->
+                            <!--                                attrs="{'readonly':[('state','=','draft')],'required':[('state','=','confirmed')]}"&ndash;&gt;-->
+                            <!--                                   groups="hr_allowance_request.hr_employee_approved_amount"/>-->
+                        </group>
+                        <div class="oe_clear"/>
+                        <notebook>
+                            <page string="Allowance Lines" name="allowance_lines_page" default_focus="1"
+                                  attrs="{'invisible':[('code','!=','education')],'required':[('code','=','education')]}"
+                            >
+                                <field name="education_allowance_ids"
+                                       attrs="{'required':[('code','=','education')],
+                                       'readonly':[('state','not in',['draft'])]}"
+                                >
+                                    <tree editable="bottom">
+                                        <field name="dependent_id_domain" invisible="1"/>
+                                        <field name="dependent_id"
+                                               options="{'no_open': True, 'no_create': True}"
+                                               domain="dependent_id_domain"/>
+                                        <field name="eligible_amount" force_save="1"/>
+                                        <field name="requested_amount" force_save="1"/>
+                                        <field name="balance" force_save="1"/>
+                                        <field name="invoice_number" required="1"/>
+                                        <field name="invoice_attachments" widget="many2many_binary"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="dependent_id"
+                                                       options="{'no_open': True, 'no_create': True}"/>
+                                                <field name="eligible_amount" force_save="1"/>
+                                                <field name="requested_amount" force_save="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="balance" force_save="1"/>
+                                                <field name="invoice_number"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Payment lines" name="payment_lines" default_focus="1"
+                                  attrs="{'invisible': ['|',
+                                      ('code','not in',['education', 'mobilization', 'trip', 'eosb', 'ticket']),
+                                      ('state', 'not in', ['first_approved', 'approved', 'paid'])
+                                      ]}">
+                                <field name="allowance_line" nolabel="1"
+                                       attrs="{'readonly':[('state','in',['approved', 'canceled', 'confirmed', 'refused'])]}">
+                                    <tree editable="bottom">
+                                        <field name="date"/>
+                                        <field name="ref"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Amortization" name="depreciation_line"
+                                  attrs="{'invisible':[('state','not in',['approved', 'paid'])]}">
+                                <field name="depreciation_line" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="date" string="Date"/>
+                                        <field name="amount" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}" string="Amount"/>
+                                    </tree>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2">
+                                    <field name="remaining_unamortized_balance"/>
+                                    <field name="amortized_balance"/>
+                                </group>
+                            </page>
+                            <page string="Note" name="note">
+                                <field name="note"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                        <field name="total_collected" widget="monetary"
+                               options="{'currency_field': 'currency_id'}"/>
+                    </group>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--    Allowance Kanban View    -->
+        <record id="allowance_request_view_kanban" model="ir.ui.view">
+            <field name="name">allowance.request.view.kanban</field>
+            <field name="model">allowance.request</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" create="0">
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="effective_date"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="eligible_amount"/>
+                    <field name="payment_date"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click container">
+                                <div class="row no-gutters">
+                                    <div class="col-2">
+                                        <img t-att-src="kanban_image('hr.employee', 'image_128', record.employee_id.raw_value)"
+                                             t-att-title="record.employee_id.value"
+                                             t-att-alt="record.employee_id.value"
+                                             class="oe_kanban_avatar o_image_40_cover float-left mr4"/>
+                                    </div>
+                                    <div class="col-10">
+                                        <span class="badge badge-pill float-right mt4 mr16">
+                                            Eligible Amount:
+                                            <t t-esc="record.eligible_amount.value"/>
+                                        </span>
+
+                                        <strong class="o_kanban_record_title">
+                                            <t t-esc="record.employee_id.value"/>
+                                        </strong>
+                                        <div class="text-muted o_kanban_record_subtitle">
+                                            <t t-esc="record.name.value"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="row no-gutters justify-content-end">-->
+                                <!--                                    <div class="col-2"/>-->
+                                <!--                                    <div class="col-10">-->
+                                <!--                                        <span class="text-muted">Effective Date:</span>-->
+                                <!--                                        <field name="effective_date" widget="date"/>-->
+                                <!--                                        <span class="text-muted">Payment Date:</span>-->
+                                <!--                                        <field name="payment_date" widget="date"/>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <div class="row no-gutters"
+                                     t-if="['confirmed', 'first_approved', 'paid', 'draft','approved', 'refused'].includes(record.state.raw_value)">
+                                    <div class="col-2"/>
+                                    <div class="col-10">
+                                        <span t-if="record.state.raw_value === 'approved'"
+                                              class="fa fa-check text-muted"/>
+                                        <!--                                        <span t-else="" class="fa fa-ban text-muted"/>-->
+                                        <span class="text-muted">
+                                            <t t-esc="record.state.value"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <button t-if="record.state.raw_value === 'confirmed'"
+                                                name="action_first_approve"
+                                                type="object" class="btn btn-primary btn-sm mt8"
+                                                groups="hr_allowance_request.group_allowance_first_approval">First
+                                            Approve
+                                        </button>
+                                        <button t-if="record.state.raw_value === 'first_approved'" name="action_approve"
+                                                type="object" class="btn btn-primary btn-sm mt8"
+                                                groups="hr_allowance_request.group_allowance_second_approval">
+                                            Approve
+                                        </button>
+                                        <button t-if="['confirmed', 'first_approved'].includes(record.state.raw_value)"
+                                                name="action_refuse" type="object" class="btn btn-secondary btn-sm mt8">
+                                            Refuse
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--Allowance search view-->
+        <record id="view_allowance_request_search_form" model="ir.ui.view">
+            <field name="name">allowance.request.search.form</field>
+            <field name="model">allowance.request</field>
+            <field name="arch" type="xml">
+                <search string="Allowance">
+                    <filter string="My Requests" name="myrequest" domain="[('employee_id.user_id.id', '=', uid)]"/>
+                    <field name="employee_id" string="Employee"/>
+                    <filter string="Employee" name="employee_id" context="{'group_by':'employee_id'}"/>
+                    <filter string="Status" name="status" context="{'group_by':'state'}"/>
+                    <filter invisible="1" string="Late Activities" name="activities_overdue"
+                            domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                            help="Show all records which has next action date is before today"/>
+                    <filter invisible="1" string="Today Activities" name="activities_today"
+                            domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter invisible="1" string="Future Activities" name="activities_upcoming_all"
+                            domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                        ]"/>
+                    <group string="Group By">
+                        <filter name="groupby_allowance_type" string="Allowance Type"
+                                context="{'group_by': 'allowance_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action for smart button -->
+        <record id="action_allowance_request_request" model="ir.actions.act_window">
+            <field name="name">Request for Allowance</field>
+            <field name="res_model">allowance.request</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">[('employee_id', '=', active_id )]</field>
+            <field name="context">{'search_default_employee_id': [active_id]}</field>
+            <field name="search_view_id" ref="view_allowance_request_search_form"/>
+        </record>
+
+        <!-- Shortcuts -->
+        <record id="act_hr_employee_allowance_request" model="ir.actions.act_window">
+            <field name="name">Allowances</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">allowance.request</field>
+            <field name="binding_model_id" ref="hr.model_hr_employee"/>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_myallowance': 1}</field>
+            <field name="view_id" eval="allowance_request_tree_view"/>
+        </record>
+        <!--Allowance menu-->
+        <menuitem
+                id="base_menu_allowance_requests"
+                name="Allowances Request"
+                parent="hr.menu_hr_root"
+                groups="base.group_user"
+                sequence="3"/>
+
+        <menuitem name="Allowances"
+                  id="menu_allowance_requests"
+                  parent="base_menu_allowance_requests"
+                  action="act_hr_employee_allowance_request"
+                  groups="base.group_user"
+                  sequence="1"/>
+
+        <!--    action generate allowance report-->
+        <record id="action_generate_allowance_report" model="ir.actions.server">
+            <field name="name">Generate Allowance Report</field>
+            <field name="model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="binding_model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_generate_allowance_report()
+            </field>
+        </record>
+
+        <!--    Action  Server First Approved    -->
+        <record id="action_server_allowance_first_approve" model="ir.actions.server">
+            <field name="name">First Approve</field>
+            <field name="model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="binding_model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('hr_allowance_request.group_allowance_first_approval'))]"/>
+            <field name="code">
+                action = records.action_server_first_approved()
+            </field>
+        </record>
+
+        <!--    Action Server Second Approved    -->
+        <record id="action_server_allowance_approve" model="ir.actions.server">
+            <field name="name">Approve</field>
+            <field name="model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="binding_model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('hr_allowance_request.group_allowance_second_approval'))]"/>
+            <field name="code">
+                action = records.action_server_approved_allowance()
+            </field>
+        </record>
+
+        <record id="act_allowance_paid_action" model="ir.actions.server">
+            <field name="name">Paid</field>
+            <field name="model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="binding_model_id" ref="hr_allowance_request.model_allowance_request"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_mass_paid_allowance()
+            </field>
+        </record>
+
+        <!--access_allowance_request_line_manager,allowance.request.line,model_allowance_request_line,hr.group_hr_manager,1,1,1,1-->
+        <!--access_allowance_request_line_officer,allowance.request.line.group_hr_user,model_allowance_request_line,hr.group_hr_user,1,1,1,1-->
+        <!--access_allowance_request_line_user,allowance.request.line.group_user,model_allowance_request_line,base.group_user,1,1,1,1-->
+
+
+    </data>
+</odoo>

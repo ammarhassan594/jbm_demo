@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <menuitem
+        id="payroll_allowance_menu"
+        name="Allowance"
+        parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
+        sequence="70"/>
+
+<!--    <menuitem id="transportation_rule_menu" name="Transportation Rule" sequence="65" action="transportation_rule_window"-->
+<!--              parent="hr_payroll.menu_hr_salary_configuration"/>-->
+<!--    <menuitem id="end_of_service_service_menu" name="End Of Service Payment Request" sequence="40"-->
+<!--              action="ebs_mod_end_of_service_payment_request_action" parent="ebs_lb_payroll.payroll_allowance_menu"/>-->
+
+<!--    <menuitem id="ebs_hr_eos_other_entitlements_types_menu" name="EOS Other Entitlement Types" sequence="510"-->
+<!--              action="ebs_hr_eos_other_entitlements_types_action" parent="hr_payroll.menu_hr_salary_configuration"/>-->
+
+    <menuitem id="additional_element_menu" name="Additional Elements" sequence="10" action="additional_element_window"
+              parent="ebs_lb_payroll.payroll_allowance_menu"/>
+
+    <menuitem id="additional_element_lines_menu" name="Additional Elements Lines" sequence="11" action="additional_element_lines_window"
+          parent="ebs_lb_payroll.payroll_allowance_menu"/>
+
+
+    <menuitem id="additional_elements_types_menu" name="Additional Elements Types" sequence="70"
+              action="additional_elements_types_window" parent="hr_payroll.menu_hr_salary_configuration"/>
+<!--    <menuitem id="salary_report_config_menu" name="Salary Report Config" sequence="512"-->
+<!--              action="salary_report_config_action" parent="hr_payroll.menu_hr_salary_configuration"/>-->
+    <menuitem id="wps_config_menu" name="WPS Config" sequence="513"
+              action="wps_config_action" parent="hr_payroll.menu_hr_salary_configuration"/>
+
+<!--    <menuitem id="additional_elements_types_menu" name="Additional Elements Types" sequence="70"-->
+<!--              action="additional_elements_types_window" parent="hr_payroll.menu_hr_salary_configuration"/>-->
+
+<!--    <menuitem id="allowance_request_type_window_menu" name="Allowance Request Types" sequence="100"-->
+<!--              action="allowance_request_type_window" parent="hr_payroll.menu_hr_salary_configuration"/>-->
+
+<!--    <menuitem id="allowance_request_window_menu" name="Allowance Request" sequence="20"-->
+<!--              action="allowance_request_window" parent="ebs_lb_payroll.payroll_allowance_menu"/>-->
+
+<!--    <menuitem id="ticket_allowance_request_window_menu" name="Ticket Allowance Request" sequence="30"-->
+<!--              action="ticket_allowance_request_window" parent="ebs_lb_payroll.payroll_allowance_menu"/>-->
+
+<!--  <menuitem id="import_allowances_window_menu" name="Import Allowances" sequence="35"-->
+<!--              action="ebspayroll_import_allowances_window" parent="ebs_lb_payroll.payroll_allowance_menu"/>-->
+
+<!--    <menuitem id="Lebanese_payroll_data_menu" name="Lebanese Payroll Data" sequence="90"-->
+<!--              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"/>-->
+<!--  <menuitem id="import_allowances_conf_window_menu" name="Import Allowances Configuration" sequence="93"-->
+<!--              action="ebspayroll_import_allowances_conf_window" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"/>-->
+<menuitem id="ebs_payroll_emp_transfer_config_menu" name="Employee Transfer Configuration" sequence="95"
+              action="ebs_payroll_emp_transfer_config_window" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"/>
+
+    <menuitem id="payslip_line_view_menu"
+              name="Payroll Lines"
+              sequence="20"
+              action="custom_payslip_line_window"
+              parent="hr_payroll.menu_hr_payroll_report"/>
+
+
+
+    <menuitem id="salary_report_action_wizard"
+              name="Payroll Report"
+              sequence="30"
+              action="salary_report_wizard"
+              parent="hr_payroll.menu_hr_payroll_report"/>
+
+    <menuitem id="wps_report_action_wizard"
+              name="WPS Report"
+              sequence="32"
+              action="wps_report_wizard"
+              parent="hr_payroll.menu_hr_payroll_report"
+              groups="base.group_erp_manager"/>
+
+
+
+<!--    <record model="ir.ui.menu" id="hr_payroll.menu_hr_payslip_entry_type_view">-->
+<!--        <field name="active" eval="False"/>-->
+<!--    </record>-->
+
+
+    <record model="ir.ui.menu" id="transportation_rule_menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_payroll.menu_hr_salary_configuration">
+        <field name="active" eval="True"/>
+    </record>
+
+
+</odoo>

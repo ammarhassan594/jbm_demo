@@ -1,0 +1,129 @@
+<odoo>
+
+    <record id="paperformat_employee_report_letter" model="report.paperformat">
+        <field name="name">Letter Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">28</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="noc_to_waive_notice_period_report_action"
+            model="hr.employee"
+            report_type="qweb-pdf"
+            string="NOC to Waive Notice Period"
+            name="ebs_fusion_hr_employee.noc_to_waive_notice_period_report"
+            file="ebs_fusion_hr_employee.noc_to_waive_notice_period_report"
+            print_report_name="'NOC to Waive Notice Period - %s' % object.name"
+            paperformat="ebs_fusion_hr_employee.paperformat_employee_report_letter"
+            menu="False"
+    />
+
+    <template id="noc_to_waive_notice_period_report">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.basic_layout">
+                <div class="page" style="margin: 0px !important">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-12" style="padding: 0px !important">
+                                <img t-if="o.company_id.company_report_header"
+                                     t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                     style="width:100%" alt="Letter Head"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-family: sans-serif;font-size: 18px;direction:rtl;line-height: 2.0;margin-right: 20px; margin-left: 20px; padding-top: 300px">
+
+                        <div style="font-weight: bold;">
+                            <div style="text-align: right;">
+                                <span style="font-weight: 550;">التاريخ:</span>
+                                <b style="font-weight: 550;">
+                                    <t t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"/>
+                                </b>
+                            </div>
+                            <br/>
+                            <div style="text-align: right;">السيد/ مدير ادارة علاقات العمل المحترم
+                            </div>
+                            <br/>
+                            <div style="text-align: right;">وزارة العمل – دولة
+                                قطر
+                            </div>
+                            <div style="text-align: right;">تحية طيبة وبعد،،،</div>
+                        </div>
+                        <br/>
+                        <div style="text-align: center;">
+                            <u style="font-weight: bold;">الموضوع " عدم ممانعة من نقل الكفالة و التنازل على فترة
+                               الاخطار"
+                            </u>
+                        </div>
+                        <br/>
+                        <div style="text-align: right;">
+                            <p>نحيط سيادتكم علمأ نحن شركة/ <b>فيوجن اوتسورسينج اند سيرفيسز</b> ،
+                                قيد منشأة رقم
+                                <b>14.4008.00</b>
+                                ،بانه
+                                قد تم إخلاء طرف السيد/
+                                <b>&#160;<t t-esc="o.arabic_name"/>
+                                    ،
+                                </b>
+                                الجنسية
+                                <span>&#160;<t
+                                        t-esc="o._get_eng_to_arabic('res.country', o.nationality_id.id, 'name')"/>
+                                    ،
+                                </span>
+                                ويحمل جواز سفر رقم
+                                <b>
+                                    <t t-esc="o.passport_no"/>
+                                    ،
+                                </b>
+                                و رخصة إقامة رقم
+                                <b>&#160;<t t-esc="o.qid_no"/> &#160;،
+                                </b>
+                                من شركتنا ولا مانع لدينا من
+                                إنتقاله وتغيير جهة
+                                العمل إلى اي شركة
+                                <b>يرغب الانتقال اليها.&#160;</b>
+                            </p>
+                            <p>و هذا الكتاب بمثابة اقرار
+                                <b>&#160;عدم
+                                    ممانعة بإلغاء فترة الإخطار&#160;
+                                </b>
+                                وذلك حسب النظم المتبعة لدى إدارتكم المُوقرة ، شاكرين لكم حسن تعاونكم معنا.
+
+                            </p>
+                            <br/>
+                            <p style="text-align: center;">وتفضلوا بقبول فائق الإحترام والتقدير..</p>
+                        </div>
+                        <br/>
+                        <div>
+                            <p style="padding-left: 10%;">مقدمه لسيادتكم</p>
+                            <p>&#160;شركة/
+                                <b>فيوجن اوتسورسينج اند سيرفيسز</b>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <img t-if="o.company_id.company_report_footer"
+                                     t-att-src="image_data_uri(o.company_id.company_report_footer)"
+                                     style="width:100%" alt="Letter Foot"/>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="page-break-before:always;"></p>
+
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

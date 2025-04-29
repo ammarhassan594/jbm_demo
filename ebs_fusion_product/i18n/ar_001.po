@@ -1,0 +1,252 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 08:44+0000\n"
+"PO-Revision-Date: 2023-01-23 08:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__actual_cost_of_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__actual_cost_of_product
+msgid "Actual Cost of Product"
+msgstr "التكلفة الفعلية للمنتج"
+
+#. module: ebs_fusion_product
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_product.ebs_fusion_product_template_form
+msgid "Asset Model"
+msgstr "نموذج الأصول"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__asset_id
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__asset_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_product.ebs_fusion_product_template_form
+msgid "Assets"
+msgstr "الأصول"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__certification_of_product_id
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__certification_of_product_id
+msgid "Certification of Product"
+msgstr "شهادة المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__company_name_manufacturer
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__company_name_manufacturer
+msgid "Company Name of Manufacturer"
+msgstr "اسم الشركة المصنعة"
+
+#. module: ebs_fusion_product
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_product.ebs_fusion_product_template_form
+msgid "Cost"
+msgstr "كلفة"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__date_of_esta_company
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__date_of_esta_company
+msgid "Date of Establishment of Company"
+msgstr "تاريخ تأسيس الشركة"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__date_of_manufacturer
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__date_of_manufacturer
+msgid "Date of Manufacturer"
+msgstr "تاريخ الشركة المصنعة"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__duration_use_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__duration_use_product
+msgid "Duration Use of the Product"
+msgstr "مدة استخدام المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__end_date_guarantee_certification
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__end_date_guarantee_certification
+msgid "End Date Guarantee/Certification"
+msgstr "ضمان / شهادة تاريخ الانتهاء"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__industry_of_product_id
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__industry_of_product_id
+msgid "Industry of Product"
+msgstr "صناعة المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__is_asset
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__is_asset
+msgid "Is Asset"
+msgstr "هو أصل"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__landing_cost_of_shipping_air
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__landing_cost_of_shipping_air
+msgid "Landing cost of Shipping (Air)"
+msgstr "تكلفة هبوط الشحن (جوي)"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__landing_cost_of_shipping_land
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__landing_cost_of_shipping_land
+msgid "Landing cost of Shipping (Land)"
+msgstr "تكلفة الهبوط للشحن (بري)"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__landing_cost_of_shipping_sea
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__landing_cost_of_shipping_sea
+msgid "Landing cost of Shipping (Sea)"
+msgstr "تكلفة الهبوط للشحن (البحر)"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__letter_agency_autho_id
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__letter_agency_autho_id
+msgid "Letter of Authority or Agency to whom it may concern"
+msgstr "خطاب تفويض أو وكالة لمن يهمه الأمر"
+
+#. module: ebs_fusion_product
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_product.ebs_fusion_product_template_form
+msgid "Manufacture"
+msgstr "صناعة"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__marketing_contact_person
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__marketing_contact_person
+msgid "Marketing Contact Person"
+msgstr "مسؤول الاتصال التسويقي"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__partner_id
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__partner_id
+msgid "Partner"
+msgstr "شريك"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__paetner_name_manufacturer
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__paetner_name_manufacturer
+msgid "Partner Name of the Manufacturer"
+msgstr "اسم الشريك للشركة المصنعة"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields.selection,name:ebs_fusion_product.selection__product_template__product_training_program_manual__power_point
+msgid "Power Point"
+msgstr "عرض تقديمي"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields.selection,name:ebs_fusion_product.selection__product_template__product_training_program_manual__presentation_marketing_tools
+msgid "Presentation Marketing Tools"
+msgstr "أدوات تسويق العروض التقديمية"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__process_delivering_the_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__process_delivering_the_product
+msgid "Process of Delivering the Product"
+msgstr "عملية تسليم المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__process_installation_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__process_installation_product
+msgid "Process of Installation of Product"
+msgstr "عملية تركيب المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__product_country_manufacturer_id
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__product_country_manufacturer_id
+msgid "Product Country Manufacturer"
+msgstr "بلد المنتج الشركة المصنعة"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__product_insurance_cost
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__product_insurance_cost
+msgid "Product Insurance Cost"
+msgstr "تكلفة تأمين المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__product_operation_cost
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__product_operation_cost
+msgid "Product Operation Cost"
+msgstr "تكلفة تشغيل المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model,name:ebs_fusion_product.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__production_timeline_to_manufacture
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__production_timeline_to_manufacture
+msgid "Production Timeline to Manufacture"
+msgstr "الجدول الزمني للإنتاج للتصنيع"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__profile_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__profile_product
+msgid "Profile of the Product (When used in the past)"
+msgstr "الملف الشخصي للمنتج (عند استخدامه في الماضي)"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__requirement_install_the_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__requirement_install_the_product
+msgid "Requirement to Install the Product"
+msgstr "شرط تثبيت المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__sales_contact_person
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__sales_contact_person
+msgid "Sales Contact Person"
+msgstr "مندوب المبيعات"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__shelf_life_spare_parts
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__shelf_life_spare_parts
+msgid "Shelf Life of the Spare Parts"
+msgstr "العمر الافتراضي لقطع الغيار"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__spare_parts_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__spare_parts_product
+msgid "Spare Parts of the Product"
+msgstr "قطع غيار المنتج"
+
+#. module: ebs_fusion_product
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_product.ebs_fusion_product_template_form
+msgid "Specification Of Product"
+msgstr "مواصفات المنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__start_date_guarantee_certification
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__start_date_guarantee_certification
+msgid "Start Date Guarantee/Certification"
+msgstr "ضمان / شهادة تاريخ البدء"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__technical_contact_person
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__technical_contact_person
+msgid "Technical Contact Person"
+msgstr "مسؤول الاتصال الفني"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__product_training_program_manual
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__timeline_installation
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__product_training_program_manual
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__timeline_installation
+msgid "Timeline of the Installation"
+msgstr "الجدول الزمني للتثبيت"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__user_manual_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__user_manual_product
+msgid "User Manual of the Product"
+msgstr "دليل المستخدم للمنتج"
+
+#. module: ebs_fusion_product
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_product__vendor_manufacturing_tools
+#: model:ir.model.fields,field_description:ebs_fusion_product.field_product_template__vendor_manufacturing_tools
+msgid "Vendor Manufacturing Tools"
+msgstr "أدوات تصنيع البائعين"

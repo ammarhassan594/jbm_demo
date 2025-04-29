@@ -1,0 +1,1395 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 08:23+0000\n"
+"PO-Revision-Date: 2023-01-23 08:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_account
+#: model:mail.template,subject:ebs_fusion_account.mail_template_data_proforma_invoice
+msgid ""
+"${object.company_id.name} Proforma Invoice (Ref ${object.name or 'n/a' })"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model:ir.actions.report,print_report_name:ebs_fusion_account.action_proforma_invoice_report
+msgid "'%s' %(object.payment_sequence)"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model:mail.template,body_html:ebs_fusion_account.mail_template_data_proforma_invoice
+msgid ""
+"<?xml version=\"1.0\"?>\n"
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Dear ${object.partner_id.name}<br/><br/>\n"
+"        Thank you for your payment.\n"
+"        Here is your proforma invoice.\n"
+"        Do not hesitate to contact us if you have any questions.\n"
+"        <br/><br/>\n"
+"        Best regards,<br/>\n"
+"        % if user and user.signature:\n"
+"        ${user.signature | safe}\n"
+"        % endif\n"
+"    </p>\n"
+"</div>\n"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid ""
+"<br/>\n"
+"                            <strong>Invoice Date: </strong>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Proforma Invoice Sequence</span>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Withholding Tax Journal</span>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "<span>,</span>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid ""
+"<span>Invoice To:</span>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "<strong>Invoice No: </strong>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "<strong>PAYMENT DETAILS :</strong>"
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model:res.groups,name:ebs_fusion_account.group_access_invoice_read
+msgid "Access Of Invoice Read"
+msgstr "قراءة الفاتورة"
+
+#. module: ebs_fusion_account
+#: model:res.groups,name:ebs_fusion_account.group_access_delete
+msgid "Access to Delete Records"
+msgstr "الوصول إلى حذف السجلات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__account
+msgid "Account"
+msgstr "حساب"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_assets_report
+msgid "Account Assets Report"
+msgstr "تقرير أصول الحساب "
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Account Currency"
+msgstr "عملة الحساب"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Account Name"
+msgstr "أسم الحساب"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Account Number"
+msgstr "رقم حساب"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_partner__property_account_payable_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_users__property_account_payable_id
+msgid "Account Payable"
+msgstr "حساب الدائن "
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_partner__property_account_receivable_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_users__property_account_receivable_id
+msgid "Account Receivable"
+msgstr "حساب مدين "
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Accounting"
+msgstr "محاسبة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_supplier_form_extended
+msgid "Accounting Entries"
+msgstr "مداخيل حسابية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_budget_post__account_ids
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__account_ids
+msgid "Accounts"
+msgstr "الحسابات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_aged_payable
+msgid "Aged Payable"
+msgstr "حسابات دائنة مستحقة متأخرة "
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_aged_receivable
+msgid "Aged Receivable"
+msgstr "المتأخر المدين"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__amount
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Amount"
+msgstr "مقدار"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__amount_residual_turnover
+msgid "Amount Residual"
+msgstr "المبلغ المتبقي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__amount_to_pay
+msgid "Amount To Pay"
+msgstr "المبلغ للدفع"
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_turnover.py:0
+#, python-format
+msgid "Amount To Pay can not be 0."
+msgstr "لا يمكن أن يكون المبلغ المدفوع 0."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__practical_amount
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__to_practical_amount
+msgid "Amount really earned/spent."
+msgstr "المبلغ المكتسب / المصروف حقًا."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__to_amount
+msgid "Amount to be Transferred"
+msgstr "المبلغ المراد تحويله"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__existing_amount
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__from_amount
+msgid ""
+"Amount you plan to earn/spend. Record a positive amount if it is a revenue "
+"and a negative amount if it is a cost."
+msgstr ""
+"المبلغ الذي تخطط لربحه / إنفاقه. سجل مبلغًا موجبًا إذا كان يمثل إيرادًا"
+"ومبلغ سلبي إذا كان يمثل تكلفة."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__analytic_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Analytic Account"
+msgstr "حساب تحليلي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__apply_withholding_tax
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__apply_withholding_tax
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__apply_withholding_tax
+msgid "Apply Withholding Tax"
+msgstr "تطبيق ضريبة الاستقطاع"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__approve_requester_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__approve_requester_id
+msgid "Approve Requester"
+msgstr "مقدم طلب الموافقة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Auditor Contact Details"
+msgstr "تفاصيل الاتصال المدقق"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Auditors"
+msgstr "المدققين"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_supplier_form_extended
+msgid "Bank Accounts"
+msgstr "حسابات بنكية"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Bank Name"
+msgstr "اسم البنك"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__bill_amount
+msgid "Bill Amount"
+msgstr "مبلغ الفاتورة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Branch Name"
+msgstr "اسم الفرع"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_crossovered_budget
+msgid "Budget"
+msgstr "الميزانية "
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_crossovered_budget_lines
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__budget_line_id
+msgid "Budget Line"
+msgstr "بند الميزانية "
+
+#. module: ebs_fusion_account
+#: model:ir.actions.act_window,name:ebs_fusion_account.custom_budget_lines_action_view
+#: model:ir.ui.menu,name:ebs_fusion_account.custom_budget_lines_menu
+msgid "Budget Lines"
+msgstr "خطوط الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.actions.act_window,name:ebs_fusion_account.action_ebs_budget_transfer
+#: model:ir.ui.menu,name:ebs_fusion_account.menu_ebs_budget_transfer
+msgid "Budget Transfer"
+msgstr "تحويل الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_budget_post
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__general_budget_id
+msgid "Budgetary Position"
+msgstr "وضع الميزانية "
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_budget_post__budgetary_position_type
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__budgetary_position_type
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_position_custom_view_search
+msgid "Budgetary Position Type"
+msgstr "نوع موقف الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Cancelled Plan"
+msgstr "الخطة الملغاة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__client_id
+msgid "Client"
+msgstr "عميل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget__state__committee_confirmed
+msgid "Committee Confirmed"
+msgstr "وأكدت اللجنة"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_res_company
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_budget_post__company_ids
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__company_ids
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__company_ids
+msgid "Companies"
+msgstr "شركات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_turnover_form
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.account_payment_custom_view
+msgid "Confirm Proforma Invoice"
+msgstr "تأكيد الفاتورة الأولية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget__state__confirm
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_budget_transfer__state__confirmed
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_turnover__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Confirmed Plan"
+msgstr "خطة مؤكدة"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_ebs_crm_proposal
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__contract_id
+msgid "Contract"
+msgstr "لمدة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_supplier_form_extended
+msgid "Corporate Banking"
+msgstr "الخدمات المصرفية للشركات"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Corporate Banking Signatory"
+msgstr "توقيع الخدمات المصرفية للشركات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__currency_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__currency_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__currency_id
+msgid "Currency"
+msgstr "عملة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_supplier_form_extended
+msgid "Custom conversion Rate"
+msgstr "معدل التحويل المخصص"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__date_from
+msgid "Date From"
+msgstr "التاريخ من"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__date_to
+msgid "Date To"
+msgstr "التاريخ ل"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Deactivate"
+msgstr "تعطيل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__desc
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__description
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Description"
+msgstr "وصف"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__discount_rate
+msgid "Discount Rate"
+msgstr "معدل الخصم"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget__state__done
+msgid "Done"
+msgstr "منتهي "
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Done Plan"
+msgstr "الخطة المنتهية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget__state__draft
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_budget_transfer__state__draft
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_turnover__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Draft Plan"
+msgstr "مخطط"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__dynamic_approval_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__dynamic_approval_id
+msgid "Dynamic Approval"
+msgstr "الموافقة الديناميكية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__dynamic_approve_pending_group
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr "مجموعة الموافقة الديناميكية المعلقة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__dynamic_approve_request_ids
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr "طلب الموافقة الديناميكي"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_ebs_budget_transfer
+msgid "EBS Budget Transfer"
+msgstr "تحويل ميزانية EBS"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_ebs_monthly_budget_line
+msgid "EBS Monthly Budget Line"
+msgstr "خط الميزانية الشهرية لـ EBS"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_ebs_proforma_lines
+msgid "EBS Proforma Lines"
+msgstr "خطوط EBS الأولية"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_ebs_turnover
+msgid "EBS Turnover"
+msgstr "معدل دوران نظام الفرامل ذات التحكم الإلكتروني (EBS)"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__employee_ids
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_tree
+msgid "Entries..."
+msgstr "إدخالات ..."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__exceed_margin_finance
+msgid "Exceed Margin Finance"
+msgstr "تجاوز هامش التمويل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__existing_amount
+msgid "Existing Amount"
+msgstr "المبلغ الحالي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__account_budget_post__budgetary_position_type__expenses
+msgid "Expenses"
+msgstr "نفقات"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Financial Audit"
+msgstr "محاسبه ماليه"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_budget_transfer_form
+msgid "From"
+msgstr "من"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__from_crossovered_budget_id
+msgid "From Budget"
+msgstr "من الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__from_crossovered_budget_lines_id
+msgid "From Budget Lines"
+msgstr "من خطوط الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__practical_amount
+msgid "From Practical Amount"
+msgstr "من المبلغ العملي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__amount_of_reservation
+msgid "From Reserved Amount"
+msgstr "من المبلغ المحجوز"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "General Budget"
+msgstr "الميزانية العامة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_turnover_form
+msgid "Generate Invoice"
+msgstr "توليد الفاتورة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__hr
+msgid "HR"
+msgstr "الموارد البشرية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "IBAN"
+msgstr "رقم الحساب بصيغة IBAN"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_needaction
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_has_error
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__it
+msgid "Information Technology"
+msgstr "تكنولوجيا المعلومات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__invoice_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_turnover_form
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__invoice_count
+msgid "Invoice Count"
+msgstr "عدد الفاتورة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__is_invoice_read_access
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__is_invoice_read_access
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__is_invoice_read_access
+msgid "Invoice Read Access"
+msgstr "الوصول إلى قراءة الفاتورة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__invoice_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__invoice_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__invoice_date
+msgid "Invoice/Bill Date"
+msgstr "تاريخ الفاتورة "
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__is_dynamic_approval_requester
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr "هو طالب الموافقة الديناميكي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__is_proforma
+msgid "Is Proforma"
+msgstr "هل بروفورما"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move_line__is_withholding_tax_entry
+msgid "Is Withholding Tax Entry"
+msgstr "يتم اقتطاع إدخال الضريبة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__is_post_dated_check
+msgid "Is post date"
+msgstr "هو تاريخ آخر"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_journal
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__legal
+msgid "Legal"
+msgstr "قانوني"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Letter Foot"
+msgstr "قدم الرسالة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Letter Head"
+msgstr "رأس الرسالة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__marketing
+msgid "Marketing"
+msgstr "تسويق"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Memo"
+msgstr "مذكرة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.crossovered_budget_lines_custom_view_form
+msgid "Monthly Budget Line"
+msgstr "خط الميزانية الشهرية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__monthly_budget_line_ids
+msgid "Monthly budget line"
+msgstr "خط الميزانية الشهرية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__need_validation
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__need_validation
+msgid "Need Validation"
+msgstr "تحتاج التحقق"
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_turnover.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي حدث التقويم"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__next_review
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__next_review
+msgid "Next Review"
+msgstr "المراجعة القادمة"
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_turnover.py:0
+#, python-format
+msgid "No account defined for product \"%s\"."
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/account_payment_custom.py:0
+#, python-format
+msgid "Only a draft payment can be posted."
+msgstr "يمكن نشر دفعة مسودة فقط."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__opening_balance_entry
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__opening_balance_entry
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__opening_balance_entry
+msgid "Opening Balance Entry"
+msgstr "إدخال الرصيد الافتتاحي"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "PROFORMA INVOICE"
+msgstr "الفاتورة الأولية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_turnover__state__paid
+msgid "Paid"
+msgstr "دفع"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_turnover__state__partially_paid
+msgid "Partially Paid"
+msgstr "المدفوعة جزئيا"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__payed_by_fusion
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__payed_by_fusion
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__payed_by_fusion
+msgid "Payed By Main Company"
+msgstr "تدفع من قبل الشركة الرئيسية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__payment_id
+msgid "Payment"
+msgstr "قسط"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__is_payment_read_access
+msgid "Payment Read Access"
+msgstr "الوصول لقراءة الدفع"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_form
+msgid "Period"
+msgstr "فترة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__from_amount
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__amount
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_tree
+msgid "Planned Amount"
+msgstr "المبلغ المخطط"
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/account_move_custom.py:0
+#, python-format
+msgid ""
+"Please Add Advance Tax payment account In Tax Group Of Withholding Tax."
+msgstr ""
+"الرجاء إضافة حساب دفع الضريبة مقدمًا في المجموعة الضريبية لضريبة الاستقطاع."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/account_move_custom.py:0
+#, python-format
+msgid ""
+"Please Add Tax current account (payable) In Tax Group Of Withholding Tax."
+msgstr ""
+"الرجاء إضافة حساب دفع الضريبة مقدمًا في المجموعة الضريبية لضريبة الاستقطاع."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/account_move_custom.py:0
+#: code:addons/ebs_fusion_account/models/account_payment_custom.py:0
+#, python-format
+msgid "Please Add Withholding Tax Journal in Account Configuration."
+msgstr "الرجاء إضافة دفتر يومية لضريبة الاستقطاع في تكوين الحساب."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_budget_transfer.py:0
+#, python-format
+msgid "Please Enter To amount."
+msgstr "الرجاء إدخال المبلغ."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_turnover.py:0
+#, python-format
+msgid "Please define an accounting sales journal for the company %s (%s)."
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_monthly_budget_line__actual_amount
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_budget_transfer_form
+msgid "Practical Amount"
+msgstr "المبلغ العملي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__procurement
+msgid "Procurement"
+msgstr "تحصيل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__proforma_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.account_payment_custom_search_view
+msgid "Proforma"
+msgstr "بروفورما"
+
+#. module: ebs_fusion_account
+#: model:ir.actions.report,name:ebs_fusion_account.action_proforma_invoice_report
+msgid "Proforma Invoice"
+msgstr "الفاتورة الأولية"
+
+#. module: ebs_fusion_account
+#: model:ir.model,name:ebs_fusion_account.model_report_ebs_fusion_account_report_proforma_invoice
+msgid "Proforma Invoice Report"
+msgstr "تقرير الفاتورة الأولية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_company__proforma_sequence_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_config_settings__proforma_sequence_id
+msgid "Proforma Invoice Sequence"
+msgstr "تسلسل الفاتورة الأولية"
+
+#. module: ebs_fusion_account
+#: model:mail.template,name:ebs_fusion_account.mail_template_data_proforma_invoice
+msgid "Proforma Invoice: Send by email"
+msgstr "الفاتورة الأولية: إرسال عبر البريد الإلكتروني"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.account_payment_custom_view
+msgid "Proforma lines"
+msgstr "الخطوط الأولية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__quantity
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Quantity"
+msgstr "كمية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__rate
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Rate"
+msgstr "معدل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__rejected
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__remaining_budget
+msgid "Remaining Amount"
+msgstr "الكمية المتبقية"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Remove Zero Amounts"
+msgstr "قم بإزالة المبالغ الصفرية"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Remove Zero Paid Amounts"
+msgstr "إزالة المبالغ المدفوعة الصفرية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__amount_of_reservation
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_custom_view_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_custom_view_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.crossovered_budget_lines_custom_view_form
+msgid "Reservation Amount"
+msgstr "مبلغ الحجز"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_budget_transfer_form
+msgid "Reserved Amount"
+msgstr "المبلغ المحجوز"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__activity_user_id
+msgid "Responsible User"
+msgstr "مستخدم مسؤول"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__account_budget_post__budgetary_position_type__revenues
+msgid "Revenues"
+msgstr "الإيرادات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__role_distribution_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__role_distribution_id
+msgid "Role Distribution"
+msgstr "توزيع الدور"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__sales
+msgid "Sales"
+msgstr "مبيعات"
+
+#. module: ebs_fusion_account
+#: model:ir.actions.act_window,name:ebs_fusion_account.account_send_proforma_invoice_by_email
+msgid "Send Proforma Invoice by email"
+msgstr "إرسال الفاتورة الأولية عبر البريد الإلكتروني"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__payment_sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_proforma_lines__service_order_id
+msgid "Service Order"
+msgstr "طلب الخدمة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_import_journal_creation__code
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_journal__code
+msgid "Short Code"
+msgstr "الكود المختصر"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+msgid "Signatory Contact Details"
+msgstr "تفاصيل الاتصال الموقعة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget_lines__type_of_budget__social
+msgid "Social Media"
+msgstr "وسائل التواصل الاجتماعي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__state
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__state
+msgid "State"
+msgstr "ولاية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__state_from_name
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__state_from_name
+msgid "State From Name"
+msgstr "الدولة من الاسم"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Swift Code"
+msgstr "رمز السرعة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_account_bank_statement_import_journal_creation__code
+#: model:ir.model.fields,help:ebs_fusion_account.field_account_journal__code
+msgid "The journal entries of this journal will be named using this prefix."
+msgstr "سيتم تسمية إدخالات دفتر اليومية لهذه المجلة باستخدام هذه البادئة."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/account_payment_custom.py:0
+#, python-format
+msgid "The payment cannot be processed because the invoice is not open!"
+msgstr "لا يمكن معالجة الدفع لأن الفاتورة ليست مفتوحة!"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_proforma_lines__currency_id
+msgid "The payment's currency."
+msgstr "عملة الدفع."
+
+#. module: ebs_fusion_account
+#: model:res.groups,comment:ebs_fusion_account.group_access_delete
+msgid "The user will be able to delete records."
+msgstr "سيتمكن المستخدم من حذف السجلات."
+
+#. module: ebs_fusion_account
+#: model:res.groups,comment:ebs_fusion_account.group_access_invoice_read
+msgid "The user will be able to read only invoice."
+msgstr "سيتمكن المستخدم من قراءة الفاتورة فقط."
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_res_partner__property_account_payable_id
+#: model:ir.model.fields,help:ebs_fusion_account.field_res_users__property_account_payable_id
+msgid ""
+"This account will be used instead of the default one as the payable account "
+"for the current partner"
+msgstr ""
+"سوف يتم استخدام هذا الحساب بدلًا من الحساب الافتراضي كحساب دائن للشريك "
+"الحالي "
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_res_partner__property_account_receivable_id
+#: model:ir.model.fields,help:ebs_fusion_account.field_res_users__property_account_receivable_id
+msgid ""
+"This account will be used instead of the default one as the receivable "
+"account for the current partner"
+msgstr ""
+"سوف يتم استخدام هذا الحساب بدلًا من الحساب الافتراضي كحساب مدين للشريك "
+"الحالير"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_company__tin_tax_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_config_settings__tin_tax_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_res_config_settings_view_form
+msgid "Tin Tax"
+msgstr "ضريبة القصدير"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_budget_transfer_form
+msgid "To"
+msgstr "ل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__to_crossovered_budget_id
+msgid "To Budget"
+msgstr "إلى الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__to_crossovered_budget_lines_id
+msgid "To Budget Lines"
+msgstr "إلى خطوط الميزانية"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__to_practical_amount
+msgid "To Practical Amount"
+msgstr "إلى المبلغ العملي"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__to_amount_of_reservation
+msgid "To Reserved Amount"
+msgstr "إلى المبلغ المحجوز"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_move_line_tree_inherit
+msgid "Total"
+msgstr "مجموع"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.report_proforma_invoice
+msgid "Total (QAR):"
+msgstr "حرب شاملة):"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.view_ebs_budget_transfer_form
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__transfer_date
+msgid "Transfer Date"
+msgstr "تاريخ التحويل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__name
+msgid "Transfer Reason"
+msgstr "سبب التحويل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__ebs_budget_transfer__state__transferred
+msgid "Transferred"
+msgstr "نقل"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__turn_over_amount
+msgid "Turn Over Amount"
+msgstr "المبلغ المقلوب"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__turn_over_date
+msgid "Turn Over Date"
+msgstr "تاريخ التسليم"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_turnover__turn_over_rate
+msgid "Turn Over Rate"
+msgstr "معدل دوران"
+
+#. module: ebs_fusion_account
+#: model:ir.actions.act_window,name:ebs_fusion_account.action_ebs_turnover
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__turnover_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__turnover_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__turnover_id
+#: model:ir.ui.menu,name:ebs_fusion_account.menu_ebs_turnover_
+#: model:product.template,name:ebs_fusion_account.product_turnover
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.account_move_custom_view
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_crm_proposal_inehrit_view_form
+msgid "Turnover"
+msgstr "دوران"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_crm_proposal__turnover_count
+msgid "Turnover Count"
+msgstr "عدد دوران"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget_lines__type_of_budget
+msgid "Type"
+msgstr "يكتب"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: ebs_fusion_account
+#: model:product.template,uom_name:ebs_fusion_account.product_turnover
+msgid "Units"
+msgstr "الوحدات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_crossovered_budget__validated
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__validated
+#: model:ir.model.fields.selection,name:ebs_fusion_account.selection__crossovered_budget__state__validate
+msgid "Validated"
+msgstr "تم التصديق "
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.budget_lines_view_search
+msgid "Validated Plan"
+msgstr "خطة مصدقة"
+
+#. module: ebs_fusion_account
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_account.ebs_fusion_res_partner_supplier_form_extended
+msgid "View accounts detail"
+msgstr "عرض تفاصيل الحسابات"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_ebs_budget_transfer__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,help:ebs_fusion_account.field_ebs_budget_transfer__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__withholding_tax_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__withholding_tax_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__withholding_tax_id
+msgid "Withholding Tax"
+msgstr "تجميد الضرائب"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_bank_statement_line__withholding_tax_journal_entry
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_move__withholding_tax_journal_entry
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__withholding_tax_journal_entry
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_account_payment__withholding_tax_move_id
+msgid "Withholding Tax JV"
+msgstr "ضريبة الاستقطاع JV"
+
+#. module: ebs_fusion_account
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_company__withholding_tax_journal_id
+#: model:ir.model.fields,field_description:ebs_fusion_account.field_res_config_settings__withholding_tax_journal_id
+msgid "Withholding Tax Journal"
+msgstr "مجلة ضريبة الاستقطاع"
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_budget_transfer.py:0
+#, python-format
+msgid "You can't transfer budget to same budget line."
+msgstr "لا يمكنك تحويل الميزانية إلى نفس بند الميزانية."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_budget_transfer.py:0
+#, python-format
+msgid "You don't have enough amount to transfer."
+msgstr "ليس لديك مبلغ كافٍ للتحويل."
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/account_payment_custom.py:0
+#, python-format
+msgid "You have to define a sequence for %s in your company."
+msgstr ""
+
+#. module: ebs_fusion_account
+#: code:addons/ebs_fusion_account/models/ebs_turnover.py:0
+#, python-format
+msgid "You have to select an invoice address in Contract."
+msgstr "يجب عليك تحديد عنوان الفاتورة في العقد."

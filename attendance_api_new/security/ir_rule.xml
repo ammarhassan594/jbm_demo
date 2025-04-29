@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+
+        <record id="portal_attendance_record_user_rol" model="ir.rule">
+            <field name="name">Portal attendance User</field>
+            <field ref="attendance_api_new.model_machine_attendance_record" name="model_id"/>
+            <field name="groups" eval="[(4, ref('jbm_portal_self_service.group_self_service_user'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('employee_id.user_id', '=', user.id),
+                ('employee_id.id', 'child_of', user.employee_id.child_ids.ids)
+                ]
+            </field>
+        </record>
+
+        <record id="jbm_hr_attendance_record_user_rule" model="ir.rule">
+            <field name="name">user: see own attendance</field>
+            <field name="model_id" ref="attendance_api_new.model_machine_attendance_record"/>
+            <field name="domain_force">
+                [
+                '|',
+                ('employee_id.user_id', '=', user.id),
+                ('employee_id.id', 'child_of', user.employee_id.child_ids.ids)
+                ]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('hr_attendance.group_hr_attendance'))]"/>
+        </record>
+
+        <record id="jbm_hr_attendance_record_manager_rule" model="ir.rule">
+            <field name="name">manager: see all attendance</field>
+            <field name="model_id" ref="attendance_api_new.model_machine_attendance_record"/>
+            <field name="domain_force">
+                [
+                (1, '=', 1)
+                ]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[
+            (4,ref('base.group_erp_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_accounting_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_hr_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_hr_user')),
+            (4,ref('jbm_group_access_right_extended.custom_general_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),
+            ]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,254 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_minor_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-02 04:49+0000\n"
+"PO-Revision-Date: 2024-09-02 04:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_minor_integration
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "<span class=\"oe_inline\">(Months)</span>"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__accommodation_api
+msgid "Accommodation Api"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.purchase_order_form
+msgid "Accommodation Details"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_product_product__accommodation_type
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_product_template__accommodation_type
+msgid "Accommodation Type"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.account_payment_method_form_view
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.account_payment_method_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.account_payment_method_tree_view
+msgid "Account Payment Method"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model_terms:ir.actions.act_window,help:jbm_minor_integration.account_payment_method_act_window
+msgid "Add a new payment method"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__case_attachment_id
+msgid "Attachment"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__bank_name
+msgid "Bank Name"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__account_payment_method_line__case_integration_api_type__bank_transfer
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__account_payment_method_line__payment_method__bank_transfer
+msgid "Bank Transfer"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__beneficiary_commercial_number
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "Beneficiary Commercial Number"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__beneficiary_qid
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "Beneficiary Qid"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__case_qid
+msgid "Case  QID"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment_method_line__case_integration_api_type
+msgid "Case Integration API Type"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__case_name
+msgid "Case Name"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__case_ref_no
+msgid "Case Reference NO."
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__account_payment_method_line__case_integration_api_type__check
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__account_payment_method_line__payment_method__check
+msgid "Check"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__commercial_registration_number
+msgid "Commercial Registration Number"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "Commercial registration number"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "Confirm Recurring Payment"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__end_date
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__product_template__accommodation_type__hotel
+msgid "Hotel"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__product_template__accommodation_type__house
+msgid "House"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__iban_number
+msgid "Iban Number"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__initial_payment
+msgid "Initial Payment"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model,name:jbm_minor_integration.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.account_payment_method_form_view
+msgid "Method"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment_method_line__payment_method
+msgid "Method Of Payment"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__recurring_payment_id
+msgid "Origin Payment"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__payee
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "Payee"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__payee_qid
+#: model_terms:ir.ui.view,arch_db:jbm_minor_integration.view_account_payment_form
+msgid "Payee Qid"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.actions.act_window,name:jbm_minor_integration.account_payment_method_act_window
+#: model:ir.ui.menu,name:jbm_minor_integration.account_payment_method_menu
+msgid "Payment Method"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model,name:jbm_minor_integration.model_account_payment_method_line
+msgid "Payment Methods"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model,name:jbm_minor_integration.model_account_payment
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__recurring_payment_ids
+msgid "Payments"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__person_no
+msgid "PersonNO."
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__priority
+msgid "Priority"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model,name:jbm_minor_integration.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model,name:jbm_minor_integration.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__recurring
+msgid "Recurring"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__account_move__state__recurring_approved
+msgid "Recurring Approved"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__recurring_every
+msgid "Recurring Every"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__region
+msgid "Region"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__rooms_no
+msgid "Rooms NO."
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_purchase_order__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_move__state
+#: model:ir.model.fields,field_description:jbm_minor_integration.field_account_payment__state
+msgid "Status"
+msgstr ""
+
+#. module: jbm_minor_integration
+#: model:ir.model.fields.selection,name:jbm_minor_integration.selection__purchase_order__priority__2
+msgid "Very Urgent"
+msgstr ""

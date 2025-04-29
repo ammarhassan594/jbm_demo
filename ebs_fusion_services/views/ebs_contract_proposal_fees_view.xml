@@ -1,0 +1,83 @@
+<odoo>
+    <!--    ebs crm contract fees form-->
+    <record model="ir.ui.view" id="view_ebs_contract_proposal_fees_form">
+        <field name="name">ebs.contract.proposal.fees.Form</field>
+        <field name="model">ebs.contract.proposal.fees</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="fusion_fees_id"/>
+                            <field name="type"/>
+                            <field name="label"/>
+                            <field name="invoiced_amount"/>
+                            <field name="client_id"/>
+
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="invoice_period"/>
+                            <field name="next_invoice_date"/>
+                            <field name="remaining_amount"/>
+                             <field name="contract_id"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm contract fees tree-->
+    <record id="view_ebs_contract_proposal_fees_tree" model="ir.ui.view">
+        <field name="name">ebs.contract.proposal.fees.tree</field>
+        <field name="model">ebs.contract.proposal.fees</field>
+        <field name="arch" type="xml">
+            <tree create="0">
+                <field name="fusion_fees_id"/>
+                <field name="type"/>
+                <field name="label"/>
+                <field name="amount"/>
+                <field name="invoice_period"/>
+                <field name="next_invoice_date"/>
+                <field name="remaining_amount"/>
+                <field name="invoiced_amount"/>
+                <field name="contract_id"/>
+                <field name="client_id"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="view_ebs_contract_proposal_fees_search" model="ir.ui.view">
+        <field name="name">ebs.contract.proposal.fees.search</field>
+        <field name="model">ebs.contract.proposal.fees</field>
+        <field name="arch" type="xml">
+            <search string="Lines">
+                <field name="client_id"/>
+                <field name="contract_id"/>
+                <field name="fusion_fees_id"/>
+                <field name="type"/>
+                <field name="state"/>
+                <group expand="0" string="Group By">
+                    <filter string="Client" name="client" context="{'group_by': 'client_id'}"/>
+                    <filter string="Contract" name="contract" context="{'group_by': 'contract_id'}"/>
+                    <filter string="Type" name="type" context="{'group_by': 'type'}"/>
+                    <filter string="State" name="state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+         </field>
+    </record>
+
+
+    <!--ebs crm contract fees action-->
+    <record model="ir.actions.act_window" id="action_ebs_contract_proposal_fees">
+        <field name="name">Contract Fees</field>
+        <field name="res_model">ebs.contract.proposal.fees</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('contract_id','!=',False)]</field>
+    </record>
+</odoo>

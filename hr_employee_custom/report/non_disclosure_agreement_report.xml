@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_work_certificate" model="report.paperformat">
+            <field name="name">Work Certificate</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">25</field>
+            <field name="margin_right">25</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="non_disclosure_agreement_report"
+                model="hr.employee"
+                string="Non-disclosure Agreement"
+                report_type="qweb-pdf"
+                name="hr_employee_custom.non_disclosure_agreement_report_template"
+                file="hr_employee_custom.non_disclosure_agreement_report_template"
+                print_report_name="'Non-disclosure Agreement'"
+                paperformat="hr_employee_custom.paperformat_work_certificate"
+        />
+
+        <template id="non_disclosure_agreement_report_template">
+            <t t-call="web.html_container">
+                <t t-set="total_page" t-value="len(docs)"/>
+                <t t-set="page_number" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="page_number" t-value="page_number + 1"/>
+                    <t t-call="web.basic_layout">
+                        <div class="page" style="direction: rtl;">
+                            <img src="/hr_contract_custom/static/src/img/sc_header.jpg"
+                                 style="padding-left:5px;height:147px;width:100%;"/>
+                            <br/>
+                            <br/>
+                            <div class="text-center" style="font-size:24px;">
+                                <span>
+                                    إقرار بالمحافظة على سرية المعلومات
+                                </span>
+                            </div>
+
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    أنا
+                                    <t t-esc="o.arabic_name"/>
+                                    الموقع أدناه، أقر والتزم بعدم كشف أو استخدام أية
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    معلومات سرية خاصة بمؤسسة الشيخ جاسم بن محمد بن ثاني للرعاية
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    الاجتماعية، والتي قد اطلع عليها بحكم وظيفتي، أو بأي سبب آخر، وتكون متعلقة
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    بعمل المؤسسة، أو السماح باستخدامها أو كشفها لأي شخص أو أية جهة أخرى
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    دون الحصول على إذن مسبق من المؤسسة كتابة، وأقر أنه في حال موافقة
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    المؤسسة على كشف أي من تلك المعلومات السرية أو السماح بكشفها أو
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    استخدامها، بأن يكون كشفها، أو استخدامها، أو السماح بذلك، بالقدر الذي تسمح
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    به التعليمات، أو بأداء المهام الوظيفية في حدود ونطاق الوظيفة.
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    وأتعهد بأنه في حال معرفتي، أو اطلاعي بحكم وظيفتي، أو بسببها، أو بغير ذلك
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    من الأسباب، بأنه تم كشف أو استخدام أية معلومات أو بيانات تعتبرها المؤسسة
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    سرية، بطريقة غير مشروعة، أو السماح بكشفها، أو استخدامها بذات الطريقة
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    غير المشروعة، أتعهد بأن أخطر إدارة المؤسسة فوراً وكتابة بذلك الفعل.
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    كما أتعهد بتقديم أي مساعدة للمؤسسة في أية إجراءات تتخذها ضد من يقوم
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    باستخدام أو كشف تلك المعلومات السرية.
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    وأتعهد بالتزامي بالمحافظة على السرية طيلة فترة عملي في المؤسسة، وكذلك
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    بعد فترة انتهاء عملي بها.
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    وبموجب هذا التعهد فإنني التزم بتعويض المؤسسة عن أية أضرار أو خسائر قد
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    تصيبها نتيجة عدم التزامي بهذا التعهد.
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    كما أقر بأن هذا التعهد يخضع في تفسيره للقوانين المعمول بها في دولة قطر،
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    مع التزامي التام بكل ما تنص عليه القوانين القطرية بشأن المحافظة على
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    السرية، وأقر بقبولي لاختصاص المحاكم القطرية كصاحبة اختصاص أصيل ووحيد
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:4px;">
+                                    للفصل في أي نزاع قد ينشأ بيني وبين المؤسسة فيما يتعلق بهذا التعهد في حال
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    لم يتم التوصل إلى حل ودي بشأنه خلال ثلاثة أسابيع من تاريخ إخطاري بأي
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;">
+                                <span style="word-spacing:5px;">
+                                    إخلال به.
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    الاســـــــــــــــــم:
+                                    <t t-esc="o.arabic_name"/>
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    الوظيفـــــــــــــة:
+                                    <t t-esc="o.job_id.name"/>
+                                </span>
+                            </div>
+
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    الرقم الشخصي:
+                                    <t t-esc="o.qid_no"/>
+                                </span>
+                            </div>
+
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    التوقيـــــــــــــــع:
+                                    ..........................................................................
+                                </span>
+                            </div>
+                            <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                <span style="word-spacing:5px;">
+                                    التاريــــــــــــــــخ:
+                                    <t t-esc="datetime.date.today().strftime('%d/%m/%Y')"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row footer">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span t-esc="total_page" style="font-size:10px!important;"/>
+                                    </td>
+                                    <td>
+                                        <span style="padding-left:7px;">من</span>
+                                    </td>
+                                    <td>
+                                        <span t-esc="page_number"
+                                              style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

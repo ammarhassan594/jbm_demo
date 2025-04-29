@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <!--Import Wizard View-->
+        <record id="attendance_analysis_wizard_form" model="ir.ui.view">
+            <field name="name">Attendance Analysis Report</field>
+            <field name="model">attendance.analysis</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Attendance Analysis">
+
+                    <group>
+                        <label for="date_from" string="Period" class="oe_inline"/>
+                        <div class="o_row">
+                            <field name="date_from" class="oe_inline"/>
+                            To
+                            <field name="date_to" class="oe_inline"/>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="employee_ids"/>
+                    </group>
+
+
+                    <footer>
+                        <button name="print_attendance_analysis_report" class="oe_highlight" string="Print"
+                                type="object"/>
+                        <button string="Cancel" class="oe_highlight" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_attendance_analysis_act_window" model="ir.actions.act_window">
+            <field name="name">Attendance Analysis Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">attendance.analysis</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_attendance_analysis" name="Daily Report"
+                  action="action_attendance_analysis_act_window"
+                  parent="hr_attendance.menu_hr_attendance_view_attendances"
+                  sequence="20"/>
+    </data>
+</odoo>

@@ -1,0 +1,3012 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-12 09:58+0000\n"
+"PO-Revision-Date: 2023-09-12 09:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_custom
+#: model:ir.actions.report,print_report_name:hr_employee_custom.non_disclosure_agreement_report
+msgid "'Non-disclosure Agreement'"
+msgstr "أجريمنت دسكلسر-نون"
+
+#. module: hr_employee_custom
+#: model:ir.actions.report,print_report_name:hr_employee_custom.terms_conditions_mobile_report
+msgid "'Terms Conditions For Using Mobile Phone'"
+msgstr "هاتف محمول استخدام ل الأحكام والشروط "
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "--&gt;"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__res_partner__prorata_method__30
+msgid "30 Days per Month"
+msgstr "أيام لكل شهر 30"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__res_partner__prorata_method__365
+msgid "365 Days"
+msgstr "365 أيام"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.res_config_settings_view_form_housing
+msgid "<span class=\"o_form_label\">Check Housing Duration</span>"
+msgstr "<span class=\"o_form_label\">مدة الإسكان الشيك</span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "<span style=\"padding-left:7px;\">من</span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"padding-right:15px;\">التي تزيد عن الاستخدامات ذات الصلة بالعمل بالمؤسسة.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"padding-right:15px;\">التي تزيد عن الاستخدامات ذات الصلة "
+"بالعمل بالمؤسسة.                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "<span style=\"padding-right:15px;\">المؤسسة.</span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "<span style=\"padding-right:15px;\">الهواتف الجوال.</span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"padding-right:15px;\">حتى يتسنى للمؤسسة اتخاذ الإجراءات اللازمة مع أوريدو،\n"
+"                                    وأهمها إيقاف\n"
+"                                </span>\n"
+"                                <span style=\"padding-right:15px;\">استخدام خط الهاتف.</span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"padding-right:15px;\">غرامات أو أي إجراء آخر قد يفرض من قبل شركة\n"
+"                                    الاتصالات.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"padding-right:15px;\">غرامات أو أي إجراء آخر قد يفرض من قبل شركة\n"
+"                                    الاتصالات.                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "<span style=\"padding-right:15px;\">وخصمها من راتبي.</span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "<span style=\"padding-right:15px;\">وقف الخدمة.</span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:4px;\">\n"
+"                                    للفصل في أي نزاع قد ينشأ بيني وبين المؤسسة فيما يتعلق بهذا التعهد في حال\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:4px;\">للفصل في أي نزاع قد ينشأ بيني وبين المؤسسة"
+" فيما يتعلق بهذا التعهد في حال                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                        الاســـــــــــــــــم:\n"
+"                                        ..........................................................................\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">الاســـــــــــــــــم:\n"
+"                                        ..........................................................................                                    </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                        التاريــــــــــــــــخ:\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">التاريــــــــــــــــخ:"
+"                                    </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                        التوقيـــــــــــــــع:\n"
+"                                        ..........................................................................\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">التوقيـــــــــــــــع:\n"
+"                                        ..........................................................................                                    </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                        الرقم الشخصي:\n"
+"                                        ..........................................................................\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">الرقم الشخصي:\n"
+"                                        ..........................................................................                                    </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                        الوظيفـــــــــــــة:\n"
+"                                        ..........................................................................\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">الوظيفـــــــــــــة:\n"
+"                                        ..........................................................................                                    </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    إخلال به.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">إخلال به.                                "
+"</span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    استخدامها، بأن يكون كشفها، أو استخدامها، أو السماح بذلك، بالقدر الذي تسمح\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">استخدامها، بأن يكون كشفها، أو استخدامها، "
+"أو السماح بذلك، بالقدر الذي تسمح                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    الاجتماعية، والتي قد اطلع عليها بحكم وظيفتي، أو بأي سبب آخر، وتكون متعلقة\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">الاجتماعية، والتي قد اطلع عليها بحكم "
+"وظيفتي، أو بأي سبب آخر، وتكون متعلقة                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    التوقيـــــــــــــــع:\n"
+"                                    ..........................................................................\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">التوقيـــــــــــــــع:\n"
+"                                    ..........................................................................                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    السرية، وأقر بقبولي لاختصاص المحاكم القطرية كصاحبة اختصاص أصيل ووحيد\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">السرية، وأقر بقبولي لاختصاص المحاكم "
+"القطرية كصاحبة اختصاص أصيل ووحيد                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    المؤسسة على كشف أي من تلك المعلومات السرية أو السماح بكشفها أو\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">المؤسسة على كشف أي من تلك المعلومات السرية"
+" أو السماح بكشفها أو                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    باستخدام أو كشف تلك المعلومات السرية.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">باستخدام أو كشف تلك المعلومات السرية."
+"                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    بعد فترة انتهاء عملي بها.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">بعد فترة انتهاء عملي بها."
+"                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    بعمل المؤسسة، أو السماح باستخدامها أو كشفها لأي شخص أو أية جهة أخرى\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">بعمل المؤسسة، أو السماح باستخدامها أو "
+"كشفها لأي شخص أو أية جهة أخرى                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    به التعليمات، أو بأداء المهام الوظيفية في حدود ونطاق الوظيفة.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">به التعليمات، أو بأداء المهام الوظيفية في "
+"حدود ونطاق الوظيفة.                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    تصيبها نتيجة عدم التزامي بهذا التعهد.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">تصيبها نتيجة عدم التزامي بهذا التعهد."
+"                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    دون الحصول على إذن مسبق من المؤسسة كتابة، وأقر أنه في حال موافقة\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">دون الحصول على إذن مسبق من المؤسسة كتابة، "
+"وأقر أنه في حال موافقة                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    سرية، بطريقة غير مشروعة، أو السماح بكشفها، أو استخدامها بذات الطريقة\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">سرية، بطريقة غير مشروعة، أو السماح بكشفها،"
+" أو استخدامها بذات الطريقة                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    غير المشروعة، أتعهد بأن أخطر إدارة المؤسسة فوراً وكتابة بذلك الفعل.\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">غير المشروعة، أتعهد بأن أخطر إدارة المؤسسة"
+" فوراً وكتابة بذلك الفعل.                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    كما أتعهد بتقديم أي مساعدة للمؤسسة في أية إجراءات تتخذها ضد من يقوم\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">كما أتعهد بتقديم أي مساعدة للمؤسسة في أية "
+"إجراءات تتخذها ضد من يقوم                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    كما أقر بأن هذا التعهد يخضع في تفسيره للقوانين المعمول بها في دولة قطر،\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">كما أقر بأن هذا التعهد يخضع في تفسيره "
+"للقوانين المعمول بها في دولة قطر،                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    لم يتم التوصل إلى حل ودي بشأنه خلال ثلاثة أسابيع من تاريخ إخطاري بأي\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">لم يتم التوصل إلى حل ودي بشأنه خلال ثلاثة "
+"أسابيع من تاريخ إخطاري بأي                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    مع التزامي التام بكل ما تنص عليه القوانين القطرية بشأن المحافظة على\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">مع التزامي التام بكل ما تنص عليه القوانين "
+"القطرية بشأن المحافظة على                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    معلومات سرية خاصة بمؤسسة الشيخ جاسم بن محمد بن ثاني للرعاية\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">معلومات سرية خاصة بمؤسسة الشيخ جاسم بن "
+"محمد بن ثاني للرعاية                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    من الأسباب، بأنه تم كشف أو استخدام أية معلومات أو بيانات تعتبرها المؤسسة\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">من الأسباب، بأنه تم كشف أو استخدام أية "
+"معلومات أو بيانات تعتبرها المؤسسة                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    وأتعهد بأنه في حال معرفتي، أو اطلاعي بحكم وظيفتي، أو بسببها، أو بغير ذلك\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">وأتعهد بأنه في حال معرفتي، أو اطلاعي بحكم "
+"وظيفتي، أو بسببها، أو بغير ذلك                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    وأتعهد بالتزامي بالمحافظة على السرية طيلة فترة عملي في المؤسسة، وكذلك\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">وأتعهد بالتزامي بالمحافظة على السرية طيلة "
+"فترة عملي في المؤسسة، وكذلك                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                    وبموجب هذا التعهد فإنني التزم بتعويض المؤسسة عن أية أضرار أو خسائر قد\n"
+"                                </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">وبموجب هذا التعهد فإنني التزم بتعويض "
+"المؤسسة عن أية أضرار أو خسائر قد                                </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                توافق عليها إدارة المؤسسة، وأن أتحمل قيمة أي تجاوز مالي في قيمة تلك الفئة،\n"
+"                            </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">توافق عليها إدارة المؤسسة، وأن أتحمل قيمة "
+"أي تجاوز مالي في قيمة تلك الفئة،                            </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                من المؤسسة، والخط الملحق به في الغرض المخصص له، وفى حدود الفئة التي\n"
+"                            </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">من المؤسسة، والخط الملحق به في الغرض "
+"المخصص له، وفى حدود الفئة التي                            </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                والالتزام بكافة الشروط والإحكام الخاصة باستخدام الهاتف والخط الملحق به\n"
+"                            </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">والالتزام بكافة الشروط والإحكام الخاصة "
+"باستخدام الهاتف والخط الملحق به                            </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span style=\"word-spacing:5px;\">\n"
+"                                وفقا لما يلي:\n"
+"                            </span>"
+msgstr ""
+"<span style=\"word-spacing:5px;\">وفقا لما يلي:                            "
+"</span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span>\n"
+"                                    <span style=\"padding-right:10px;\">-</span>\n"
+"                                    <span style=\"padding-right:15px;\">تغيير الوظيفة أو طبيعة العمل التي على أساسها تم\n"
+"                                        منحي الهاتف\n"
+"                                    </span>\n"
+"                                </span>\n"
+"\n"
+"                                <span>\n"
+"                                    <span style=\"padding-right:10px;\"/>\n"
+"                                    <span style=\"padding-right:24px;\">الجوال والخط الملحق به.</span>\n"
+"                                </span>"
+msgstr ""
+"<span>\n"
+"                                    <span style=\"padding-right:10px;\">-</span>\n"
+"                                    <span style=\"padding-right:15px;\">تغيير الوظيفة أو طبيعة العمل التي على أساسها تم\n"
+"                                        منحي الهاتف\n"
+"                                    </span>\n"
+"                                </span>\n"
+"\n"
+"                                <span>\n"
+"                                    <span j=\"2/\">\n"
+"                                    <span style=\"padding-right:24px;\">الجوال والخط الملحق به.</span>\n"
+"                                </span></span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span>\n"
+"                                    <span style=\"padding-right:10px;\">-</span>\n"
+"                                    <span style=\"padding-right:15px;\">تغييرانتهاء العمل بالمؤسسة سواء بالاستقالة او بأي\n"
+"                                        وسيلة أو سبب آخر.\n"
+"                                    </span>\n"
+"                                </span>\n"
+"\n"
+"                                <span>\n"
+"                                    <span style=\"padding-right:10px;\">-</span>\n"
+"                                    <span style=\"padding-right:15px;\">تلف الهاتف وعدم صلاحيته للاستخدام.</span>\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid ""
+"<span>\n"
+"                                    إقرار بالمحافظة على سرية المعلومات\n"
+"                                </span>"
+msgstr ""
+"<span>إقرار بالمحافظة على سرية المعلومات                                "
+"</span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span>\n"
+"                                شروط وأحكام استخدام\n"
+"                            </span>"
+msgstr "<span>شروط وأحكام استخدام                            </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"<span>\n"
+"                                هاتف جوال المؤسسة والخط الملحق به\n"
+"                            </span>"
+msgstr ""
+"<span>هاتف جوال المؤسسة والخط الملحق به                            </span>"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.report_employee_applicant_photo
+msgid ""
+"<span>Employee Applicant Photo</span>\n"
+"                            <br/>"
+msgstr "<span>صورة مقدم الطلب الموظف</span> "
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.hr_employee_view_kanban_inherited_client
+msgid "<strong>Client/Company :</strong>"
+msgstr ":عميل/شركة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__absconding_report_no
+msgid "Absconding Report No."
+msgstr ".تقرير الهروب رقم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__account
+msgid "Account"
+msgstr "حساب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__active
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__event_compensation__state__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__active_contract
+msgid "Active Contract"
+msgstr "عقد نشط"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__all_model_read_only
+msgid "All Model Read Only"
+msgstr "كل طراز للقراءة فقط"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__created_by
+msgid "Amended By"
+msgstr "عدل بواسطة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__amount
+msgid "Amount"
+msgstr "المبلغ "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__apostolic
+msgid "Apostolic"
+msgstr "رسولي"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_applicant
+msgid "Applicant"
+msgstr "المتقدم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__state
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__state
+msgid "Approval State"
+msgstr "دولة الموافقة"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.hr_housing_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Approve"
+msgstr "يعتمد"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.approve_employee_event_view_form
+msgid "Approve Employee"
+msgstr "اعتماد الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.approve_employee_event_view_action
+msgid "Approve Employee Event"
+msgstr "الموافقة على حدث الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_approve_employee_event
+msgid "Approve Employee Events wizard"
+msgstr "الموافقة على معالج أحداث الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__state__approved
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__state__approved
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__arabic_mothers_name
+msgid "Arabic Mother's name"
+msgstr "اسم الام بالعربية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_attendance__arabic_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__arabic_name
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__attachment_ids
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_attendance
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__attested_e_contract
+msgid "Attested E-Contract"
+msgstr "عقد إلكتروني مصدق"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__awarded_country
+msgid "Awarded Country"
+msgstr "بلد منحت "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__baptist
+msgid "Baptist"
+msgstr "المعمدان"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__wage
+msgid "Basic Salary"
+msgstr "راتب اساسي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__birth_country
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__birth_country_fkey
+msgid "Birth Country"
+msgstr "دولة ولادة "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الولادة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__buddhist
+msgid "Buddhist"
+msgstr "بوذي"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Business Phone No"
+msgstr "رقم هاتف العمل"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.approve_employee_event_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_partner_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.log_note_reject_wizard_view_form
+msgid "Cancel"
+msgstr "إلغاء "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__cancelled
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__case
+msgid "Cases"
+msgstr "حالات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__is_esd
+msgid "Change To Contract Salary Components"
+msgstr "تغيير لتعاقد مكونات الراتب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__charismatic
+msgid "Charismatic"
+msgstr "كاريزمي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_config_settings__check_housing_duration
+msgid "Check Housing Duration"
+msgstr "مدة الإسكان الشيك"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__christian
+msgid "Christian"
+msgstr "مسيحي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__christian-reformed
+msgid "Christian Reformed"
+msgstr "الإصلاح المسيحي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__city
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__emirate_text
+msgid "City"
+msgstr "المدينة"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "City *"
+msgstr "مدينة *"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__client_employee
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "Client Employee"
+msgstr "موظف العميل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__client_employee_ids
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__client_employee_ids
+msgid "Client Employees"
+msgstr "موظفو العميل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__partner_parent_id
+msgid "Client/Company"
+msgstr ":عميل/شركة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__code
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__code
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__code
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__name
+msgid "Code"
+msgstr "الكود"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__name
+msgid "Color Class"
+msgstr "فئة اللون"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract__partner_parent_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__company_name
+msgid "Company Name"
+msgstr "اسم الشركة "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract__sponsored_company_id
+msgid "Company Sponsor"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_resume_line__educational_status__completed
+msgid "Completed"
+msgstr "منجز"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__component_description
+msgid "Component Description"
+msgstr "وصف القطع"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_partner_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_user_wizard_form
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__confirmation_date
+msgid "Confirmation Date"
+msgstr "تاريخ الإعتماد"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.contact_relation_type_window
+#: model:ir.model,name:hr_employee_custom.model_contact_relation_type
+msgid "Contact Relation Type"
+msgstr "نوع علاقة الاتصال"
+
+#. module: hr_employee_custom
+#: model:ir.ui.menu,name:hr_employee_custom.contact_relation_type_view_menu
+msgid "Contact Relation Types"
+msgstr "أنواع علاقات الاتصال"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__contract_employment_type
+msgid "Contract Employment Type"
+msgstr "نوع التوظيف بالعقد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__to_date
+msgid "Contract End Date"
+msgstr "تاريخ انتهاء العقد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__contract_start_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__from_date
+msgid "Contract Start Date"
+msgstr "تاريخ بدء العقد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__contract_type
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__contract_type_fkey
+msgid "Contract Type"
+msgstr "نوع العقد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__contractor
+msgid "Contractor"
+msgstr "المتعاقد "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__cost_center
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__cost_center_fkey
+msgid "Cost Center"
+msgstr "مركز كلف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__country_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Country *"
+msgstr "دولة *"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__city_code
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_state__city_code
+msgid "Country Code"
+msgstr "رمز الدولة"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Country of Birth *"
+msgstr "بلد الميلاد *"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_res_country_state
+msgid "Country state"
+msgstr "الولاية "
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "Create Employee"
+msgstr "إنشاء موظف"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "Create Outsourced Employee"
+msgstr "إنشاء موظف خارجي"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.link_employee_user_wizard_action
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Create User"
+msgstr "إنشاء مستخدم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_applicant__is_create_user
+msgid "Create User?"
+msgstr "إنشاء مستخدم ?"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__create_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__create_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__currency
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__event_compensation__period__daily
+msgid "Daily"
+msgstr "يوميًا"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__date_of_cancellation
+msgid "Date Of Cancellation"
+msgstr "تاريخ الإلغاء"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Date Of Modification"
+msgstr "تاريخ التعديل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__date_of_transfer_completion
+msgid "Date Of Transfer Completion"
+msgstr "تاريخ إتمام التحويل"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Date of Birth *"
+msgstr "تاريخ الولادة *"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__date_issuing
+msgid "Date of Issuing Warning Letter"
+msgstr "تاريخ اصدار خطاب التحذير"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__date_offence
+msgid "Date of Offence"
+msgstr "تاريخ الجريمة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__date_report_offence
+msgid "Date of Reporting the Offence"
+msgstr "تاريخ التبليغ عن المخالفة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__res_partner__prorata_method__m
+msgid "Days per month"
+msgstr "أيام في الشهر"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__default_color_combo
+msgid "Default Combo"
+msgstr "كومبو افتراضي"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_department
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__related_department
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Dependendts"
+msgstr "المعالون"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#, python-format
+msgid "Dependent  Approved"
+msgstr "المعال معتمد"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#, python-format
+msgid "Dependent  Rejected. Rejection Reason: "
+msgstr "المعال مرفوض. سبب الرفض:"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__dependents
+msgid "Dependents"
+msgstr "المعالون"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_log_note_reject_wizard
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__description
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__description
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__display_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__display_name
+msgid "Display Name"
+msgstr "اسم العرض "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__attached_documents
+msgid "Documents"
+msgstr "المستندات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_notice__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_notice.py:0
+#, python-format
+msgid "Draft Warning File must be filled!"
+msgstr "يجب ملء مسودة ملف التحذير!"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_resume_line_type__type__edu
+msgid "Education"
+msgstr "تعليم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__education_level
+msgid "Education Level"
+msgstr "مستوى التعليم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__educational_status
+msgid "Educational Status"
+msgstr "الحالة التعليمية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__effected_date
+msgid "Effected Date"
+msgstr "تاريخ نفذت"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__start_date
+msgid "Effective Date"
+msgstr "تاريخ السريان"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__madlsa_electricity
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__madlsa_electricity
+msgid "Electricity Number"
+msgstr "رقم الكهرباء"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__email_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__city_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__emirate_id
+msgid "Emirate"
+msgstr "الإمارة"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_employee
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__employee_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__employee_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_attendance__visible_name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__employee_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__employee_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__employee_id
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__po_box
+msgid "Employee Address PO-Box"
+msgstr "صندوق بريد عنوان الموظف "
+
+#. module: hr_employee_custom
+#: model:ir.actions.report,name:hr_employee_custom.employee_applicant_photo
+msgid "Employee Applicant Photo"
+msgstr "صورة مقدم الطلب الموظف"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#, python-format
+msgid "Employee Approved"
+msgstr "وافق الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.employee_color_combo_act_window
+#: model:ir.model,name:hr_employee_custom.model_employee_color_combo
+msgid "Employee Color Combo"
+msgstr "الموظف اللون كومبو"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.employee_color_combo_tree_view
+msgid "Employee Color Combos"
+msgstr "مجموعات لون الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.employee_event_form_view
+msgid "Employee Event"
+msgstr "حدث الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.employee_events_act_window
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.employee_events_tree_view
+msgid "Employee Events"
+msgstr "أحداث الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.actions.server,name:hr_employee_custom.sap_integration_cron_ir_actions_server
+#: model:ir.cron,cron_name:hr_employee_custom.sap_integration_cron
+#: model:ir.cron,name:hr_employee_custom.sap_integration_cron
+msgid "Employee Events Scheduler"
+msgstr "جدولة أحداث الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__firstname
+msgid "Employee Firstname"
+msgstr "الموظف الاسم الأول"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__employee_group
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__employee_group_fkey
+msgid "Employee Group"
+msgstr "مجموعة الموظفين"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__lastname
+msgid "Employee Lastname"
+msgstr "اسم العائلة للموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__middlename
+msgid "Employee Middlename"
+msgstr "الاسم الأوسط للموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_employee_penalty
+msgid "Employee Penalty"
+msgstr "عقوبة الموظف"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#, python-format
+msgid "Employee Rejected. Rejection Reason: "
+msgstr "الموظف مرفوض. سبب الرفض:"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.hr_employee_skills_action_window
+msgid "Employee Skills"
+msgstr "مهارات الموظفين"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__employee_sub_group
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__employee_sub_group_fkey
+msgid "Employee SubGroup"
+msgstr "المجموعة الفرعية للموظفين"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_applicant__employee_type
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract__employee_type
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__employee_type
+msgid "Employee Type"
+msgstr "نوع موظف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,help:hr_employee_custom.field_hr_housing__wage
+msgid "Employee's monthly gross wage."
+msgstr ".الأجر الإجمالي الشهري للموظف"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:hr_employee_custom.employee_button_action
+#: model:ir.actions.server,name:hr_employee_custom.open_view_fusion_employees
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.ebs_fusion_contacts_form_extended
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+#, python-format
+msgid "Employees"
+msgstr "الموظفين "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__time_hired_in_no
+msgid "Employment Period in Numbers"
+msgstr "فترة العمل بالأرقام"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__time_hired
+msgid "Employment Tenure"
+msgstr "مدة العمل"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.action_hr_contract_employment_type
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__employment_type_id
+msgid "Employment Type"
+msgstr "نوع الوظيفة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__end_of_notice_period
+msgid "End of Notice Period"
+msgstr "نهاية فترة الإخطار"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__evang
+msgid "Evang"
+msgstr "إيفانج"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__evangelical
+msgid "Evangelical"
+msgstr "إنجيلية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_event_compensation
+msgid "Event Compensation"
+msgstr "تعويض الحدث"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__event_reason_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__event_reason
+msgid "Event Reason"
+msgstr "سبب الحدث"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.event_reason_tree_view
+msgid "Event Reasons"
+msgstr "أسباب الحدث"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.event_type_act_window
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__event_type_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__event_type_id
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.event_type_form_view
+msgid "Event Type"
+msgstr "نوع الحدث"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.event_type_tree_view
+msgid "Event Types"
+msgstr "أنواع الأحداث"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__employee_event_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Events"
+msgstr "الأحداث"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_resume_line_type__type__exp
+msgid "Experience"
+msgstr "خبرة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__partner_parent_id_fos
+msgid "FOS Client/ FOS Company"
+msgstr "عميل FOS / شركة FOS"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_applicant__employee_type__fos_employee
+msgid "FOS Employee"
+msgstr "موظف FOS"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__fos_employee_ids
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__fos_employee_ids
+msgid "FOS Employees"
+msgstr "موظفي FOS"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Family"
+msgstr "أسرة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee_event__gender_fkey__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__attachment_ids
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__attachment_ids
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__attachment_ids
+msgid "File"
+msgstr "الملف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__first_name
+msgid "First Name"
+msgstr "الاسم الاول"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__free-church-alzey
+msgid "Free church Alzey"
+msgstr "كنيسة ألزي الحرة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__free-religion-of-the-den
+msgid "Free religion of the den"
+msgstr "حرر الدين من العرين"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__freelance
+msgid "Freelancer"
+msgstr "مستقل "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__french-reformed
+msgid "French reformed"
+msgstr "إصلاح الفرنسية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__frequency
+msgid "Frequency"
+msgstr "معدل الحدوث "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__from_date
+msgid "From Date"
+msgstr "من التاريخ"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__gender
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__gender_fkey
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Gender *"
+msgstr "الجنس *"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.approve_employee_event_view_form
+msgid "Generate ID"
+msgstr "توليد المعرف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__grade
+msgid "Grade"
+msgstr "رتبة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__group_id
+msgid "Group"
+msgstr "المجموعة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__hr
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "HR"
+msgstr "الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_contract_employment_type
+msgid "HR Contract Type"
+msgstr "نوع عقد الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_employee_event
+msgid "HR Employee Event"
+msgstr "حدث موظف الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_housing_attachment
+msgid "HR Housing Attachment"
+msgstr "مرفق إسكان الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_housing_category
+msgid "HR Housing Category"
+msgstr "فئة إسكان الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_housing_type
+msgid "HR Housing Type"
+msgstr "نوع إسكان الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_major_subject
+msgid "HR Major Subject"
+msgstr "موضوع الموارد البشرية الرئيسي"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_policy_procedure
+msgid "HR Policy Procedure"
+msgstr "إجراءات سياسة الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__has_grading_system
+msgid "Has Grading System"
+msgstr "نظام الدرجات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__has_private_medical_insurance
+msgid "Has Private Medical Insurance?"
+msgstr "هل لديك تأمين طبي خاص؟"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__has_workmens_compensation
+msgid "Has Workmen's Compensation?"
+msgstr "هل تعويضات العمال؟"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__hebrew-reg-baden
+msgid "Hebrew reg. BADEN"
+msgstr "العبرية ريج. سيئة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__hebrew-reg-wuertbg
+msgid "Hebrew reg. WUERTBG"
+msgstr "العبرية ريج. ويرتبج"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__hebrew-state
+msgid "Hebrew state"
+msgstr "الدولة العبرية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__hindu
+msgid "Hindu"
+msgstr "هندوسي"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.hr_housing_action_window
+msgid "Housing"
+msgstr "الإسكان"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_housing.py:0
+#, python-format
+msgid "Housing  Approved"
+msgstr "تمت الموافقة على السكن"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_housing.py:0
+#, python-format
+msgid "Housing  Rejected. Rejection Reason: "
+msgstr "رفض السكن. سبب الرفض:"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_housing.py:0
+#, python-format
+msgid "Housing Contract Duration must be approx. 1 year"
+msgstr "يجب أن تكون مدة عقد الإسكان تقريبية. سنة واحدة"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.hr_housing_type_action_window
+msgid "Housing File Type"
+msgstr "نوع ملف السكن"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__housing_category_id
+msgid "Housing Type"
+msgstr "نوع السكن"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_housing
+msgid "Housing for employees"
+msgstr "سكن للموظفين"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__housing_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Housings"
+msgstr "الإسكان"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_notice
+msgid "Hr Notice"
+msgstr "إشعار الموارد البشرية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_notice_offences
+msgid "Hr Notice Offences"
+msgstr "مخالفات حقوق الإنسان"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__id_generated
+msgid "ID generated"
+msgstr "تم إنشاء المعرف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,help:hr_employee_custom.field_employee_color_combo__default_color_combo
+msgid ""
+"If any condition was not fulfilled with the employee then we are set to "
+"default color combo, if is boolean checked then apply that color combo"
+msgstr ""
+"إذا لم يتم استيفاء أي شرط مع الموظف ، فنحن مضبوطون على ذلكمجموعة الألوان "
+"الافتراضية ، إذا تم تحديد قيمة منطقية ، فقم بتطبيق مجموعة الألوان هذه"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.res_config_settings_view_form_housing
+msgid ""
+"If checked, this will restrict the user from entering a housing contract\n"
+"                                    with a duration different that 1 year approx."
+msgstr ""
+"إذا تم تحديده ، فسيؤدي ذلك إلى تقييد المستخدم من إبرام عقد الإسكان\n"
+"بمدة مختلفة عن سنة واحدة تقريبًا."
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__event_compensation__state__inactive
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__inactive_related_compensation
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__related_inactive_compensations
+msgid "Inactive Salary Compensation"
+msgstr "تعويض الراتب غير النشط"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__it
+msgid "Information Technology"
+msgstr "تكنولوجيا المعلومات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__inside_country
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__inside_country
+msgid "Inside The Country"
+msgstr "داخل الدولة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__inside_country_mev
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__inside_country_mev
+msgid "Inside the Country – MEV"
+msgstr " MEV - داخل الدولة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__institute_name
+msgid "Institute Name"
+msgstr "اسم المعهد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__invisible_user_role
+msgid "Invisible User Role"
+msgstr "دور المستخدم غير المرئي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__is_contract_access
+msgid "Is Contract Access"
+msgstr "هو الوصول إلى العقد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__is_labor
+msgid "Is Labor"
+msgstr "هو العمل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__is_new
+msgid "Is New"
+msgstr "جديد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__is_new_hire
+msgid "Is New Hire"
+msgstr "هو توظيف جديد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__is_payroll
+msgid "Is Payroll Element"
+msgstr "هو عنصر الرواتب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__is_probation
+msgid "Is Probation"
+msgstr "هو الاختبار"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__is_processed
+msgid "Is SAP Processed"
+msgstr "يتم معالجة SAP"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__is_sap_processed
+msgid "Is Sap Processed"
+msgstr "يتم معالجة SAP"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__is_triggered
+msgid "Is Schedule Processed"
+msgstr "يتم معالجة الجدول الزمني"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__islamic
+msgid "Islamic"
+msgstr "إسلامي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__israelite
+msgid "Israelite"
+msgstr "إسرائيلي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__issued_date
+msgid "Issued Date"
+msgstr "تاريخ الإصدار"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__jehovah-s-witness
+msgid "Jehovah's witness"
+msgstr "شاهد يهوه"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__jewish
+msgid "Jewish"
+msgstr "يهودي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__job_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__job_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__job_id
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__job_title
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__job_title_fkey
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__related_job_title
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__job_title
+msgid "Job/Position Title"
+msgstr "الوظيفة / المسمى الوظيفي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__joining_date
+msgid "Joining Date"
+msgstr "تاريخ الانضمام"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type____last_update
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__last_name
+msgid "Last Name"
+msgstr "الكنية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__write_uid
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_approve_employee_event__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__write_date
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type_reason__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__leaver
+msgid "Leaver"
+msgstr "ليفر"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__legal
+msgid "Legal"
+msgstr "قانوني"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__life_insurance
+msgid "Life Insurance"
+msgstr "التأمين على الحياة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__line_manager_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__line_manager_id_fkey
+msgid "Line Manager"
+msgstr "المدير المباشر"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_link_employee_partner_wizard
+msgid "Link Employee Partner Wizard"
+msgstr "معالج ارتباط الموظف الشريك"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_link_employee_user_wizard
+msgid "Link Employee User Wizard"
+msgstr "معالج ارتباط المستخدم بالموظف"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:hr_employee_custom.link_employee_partner_wizard_action
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+#, python-format
+msgid "Link Partner"
+msgstr "رابط الشريك"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__housing_location
+msgid "Location"
+msgstr "الموقع "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__lutheran-church
+msgid "Lutheran Church"
+msgstr "الكنيسة اللوثرية"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "MADLSA"
+msgstr "مادالسا"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__madlsa_email
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__madlsa_email
+msgid "MADLSA Email"
+msgstr "البريد الإلكتروني MADLSA"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__company_id
+msgid "Main Company"
+msgstr "الشركة الرئيسية "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_applicant__employee_type__fusion_employee
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__fusion_employee
+msgid "Main Company Employee"
+msgstr "موظف الشركة الرئيسي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__fusion_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__employee_fusion_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__fusion_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__related_fusion_id
+msgid "Main Company ID"
+msgstr "معرف الشركة الرئيسي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__main_parent_id
+msgid "Main Parent"
+msgstr "الوالد الرئيسي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__major_subject
+msgid "Major Subject"
+msgstr "الموضوع الرئيسي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_major_subject__name
+msgid "Majors"
+msgstr "الرئيسية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee_event__gender_fkey__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__parent_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__related_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__marketing
+msgid "Marketing"
+msgstr "تسويق"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__med_com_password
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__med_com_password
+msgid "Media Passsword"
+msgstr "كلمة مرور الوسائط"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "Medical Commision"
+msgstr "القومسيون الطبي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__medical_insurance
+msgid "Medical Insurance"
+msgstr "تأمين طبي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__mennonite-church
+msgid "Mennonite Church"
+msgstr "كنيسة مينونايت"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__middle_name
+msgid "Middle Name"
+msgstr "الاسم الوسطى"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__med_com_phone
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__med_com_phone
+msgid "Mobile Number"
+msgstr "رقم الهاتف المحمول"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__event_compensation__period__monthly
+msgid "Monthly"
+msgstr "شهرياً"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__moravian-congregation
+msgid "Moravian Congregation"
+msgstr "مجمع مورافيا"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__mormon
+msgid "Mormon"
+msgstr "مورمون"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__mothers_name
+msgid "Mother's name"
+msgstr "اسم الأم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__muslim
+msgid "Muslim"
+msgstr "مسلم"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.hr_employee_view_search_own
+msgid "My Profile"
+msgstr "ملفي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__attested_e_contract__n/a
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__ndu__n/a
+msgid "N/A"
+msgstr "غير متاح"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__ndu
+msgid "NDU"
+msgstr "تم إمضاء السرية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_contact_relation_type__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_category__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_policy_procedure__name
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_country_emirate__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__have_national_address
+msgid "National Address Registered?"
+msgstr "العنوان الوطني مسجل؟"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__nationality_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__nationality_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__nationality
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__nationality_fkey
+msgid "Nationality"
+msgstr "جنسية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__nationality_birth
+msgid "Nationality – Birth"
+msgstr "الجنسية - الميلاد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__lang
+msgid "Native Language"
+msgstr "اللغة الأم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__netherl
+msgid "Netherl"
+msgstr "نيذرل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__netherl-reformed-church
+msgid "Netherl. Reformed Church"
+msgstr "Netherl. الكنيسة الإصلاحية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__new_active_salary
+msgid "New Active Salary"
+msgstr "الراتب النشط الجديد"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_recruitment.py:0
+#, python-format
+msgid "New Employee %s Hired"
+msgstr "موظف جديد %s استأجرت"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__new-apostolic
+msgid "New apostolic"
+msgstr "رسولي جديد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__attested_e_contract__no
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__ndu__no
+msgid "No"
+msgstr "لا"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__no-denomination
+msgid "No denomination"
+msgstr "لا توجد فئة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__nre
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__housing_residential_type__nre
+msgid "Non-Relative House"
+msgstr "منزل غير قريب"
+
+#. module: hr_employee_custom
+#: model:ir.actions.report,name:hr_employee_custom.non_disclosure_agreement_report
+msgid "Non-disclosure Agreement"
+msgstr "اتفاق غير معلن"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_resume_line_type__type__nor
+msgid "Normal"
+msgstr "طبيعي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__notice_ids
+msgid "Notices"
+msgstr "إشعارات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__oecumenic
+msgid "Oecumenic"
+msgstr "مسكوني"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice_offences__name
+msgid "Offences"
+msgstr "الجرائم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__old_active_salary
+msgid "Old Active Salary"
+msgstr "الراتب النشط القديم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__old-catholic
+msgid "Old Catholic"
+msgstr "الكاثوليكية القديمة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_resume_line__educational_status__ongoing
+msgid "Ongoing"
+msgstr "جاري التنفيذ"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__oracle_id
+msgid "Oracle ID"
+msgstr "معرف أوراكل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__org_unit
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__org_unit_fkey
+msgid "Org Unit"
+msgstr "الوحدة التنظيمية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__comments
+msgid "Others/Comments"
+msgstr "تعليقات أخرى"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__onboarding
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__onboarding
+msgid "Outside Visa Test Process"
+msgstr "عملية اختبار التأشيرة الخارجية"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_clients_review_form_inherit
+msgid "Outsourced Employee"
+msgstr "موظف الاستعانة بمصادر خارجية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__fos_employee
+msgid "Outsourced Employees"
+msgstr "الموظفون الخارجيون"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_outsourced_status_log
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__outsourced_status_log_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Outsourced Status Log"
+msgstr "سجل حالة الاستعانة بمصادر خارجية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__ot_eligibility
+msgid "Overtime Eligibility"
+msgstr "الأهلية للعمل الإضافي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__own
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__housing_residential_type__own
+msgid "Owned House"
+msgstr "منزل مملوك"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__housing_ownership
+msgid "Ownership"
+msgstr "ملكية"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "PO-Box *"
+msgstr "صندوق بريد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_partner_wizard__partner_ids
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__madlsa_password
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__madlsa_password
+msgid "Password"
+msgstr "كلمة المرور"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__name
+msgid "Pay Component"
+msgstr "مكون الدفع"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#, python-format
+msgid "Pay Component must be unique per Event!"
+msgstr "يجب أن يكون مكون الدفع فريدًا لكل حدث!"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__payroll_area
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__payroll_area_fkey
+msgid "Payroll Area"
+msgstr "منطقة الرواتب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__payscale_level
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__payscale_level_fkey
+msgid "Payroll Level"
+msgstr "مستوى الرواتب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__payscale_group
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__payscale_group_fkey
+msgid "Payscale Group"
+msgstr "مجموعة مقياس الأجور"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.ebs_fusion_contacts_form_extended
+msgid "Penalty"
+msgstr "جزاء"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__penalty_issued_for
+msgid "Penalty Issued For"
+msgstr "العقوبة الصادرة على"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__state__pending
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__state__pending
+msgid "Pending Approval"
+msgstr "ما زال يحتاج بتصدير"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__period
+msgid "Period"
+msgstr "الفترة"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Personal Email *"
+msgstr "البريد الإلكتروني الشخصي *"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Personal Phone No"
+msgstr "رقم الهاتف الشخصي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__madlsa_phone
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__madlsa_phone
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Place of Birth *"
+msgstr "مكان الولادة *"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_department__policy_ids
+msgid "Policies"
+msgstr "سياسات"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_hr_department_form_policy_inherited
+msgid "Policies and Procedures"
+msgstr "السياسات والإجراءات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__position_code
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__position_code_fkey
+msgid "Position"
+msgstr "المنصب "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__potential_candidate
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__potential_candidate
+msgid "Potential Candidate"
+msgstr "مرشح محتمل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__code
+msgid "Prefix"
+msgstr "بادئة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__private_email
+msgid "Private Email"
+msgstr "بريد الكتروني خاص"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__probation_end_date
+msgid "Probation End Date"
+msgstr "تاريخ انتهاء الاختبار"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.log_note_reject_wizard_view_form
+msgid "Proceed"
+msgstr "تقدم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__procurement
+msgid "Procurement"
+msgstr "تحصيل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__prorata_method
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__prorata_method
+msgid "Prorata Method"
+msgstr "طريقة Prorata"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__protestant
+msgid "Protestant"
+msgstr "البروتستانتية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__qa_staff_no
+msgid "QA Staff Number"
+msgstr "عدد موظفي ضمان الجودة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__qid_name
+msgid "QID Name"
+msgstr "اسم البطاقة الشخصية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__read_only_user_role
+msgid "Read Only User Role"
+msgstr "قراءة دور المستخدم فقط"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.log_note_reject_wizard_view_action
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__reason
+#: model:ir.model.fields,field_description:hr_employee_custom.field_log_note_reject_wizard__reason
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.log_note_reject_wizard_view_form
+msgid "Reason"
+msgstr "سبب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_sap_event_type__event_type_reason_ids
+msgid "Reasons"
+msgstr "الأسباب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__reference
+msgid "Reference"
+msgstr "الرقم المرجعي "
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.hr_housing_form
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__refuse_reason
+msgid "Refuse Reason"
+msgstr "سبب الرفض "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__state__refuse
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__state__reject
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Reject"
+msgstr "رفض"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__reject_reason
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__reject_reason
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__reject_reason
+msgid "Reject Reason"
+msgstr "رفض السبب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__related_compensation
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__related_compensation
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__related_compensations
+msgid "Related Compensation"
+msgstr "التعويضات ذات الصلة"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.employee_event_form_view
+msgid "Related Compensations"
+msgstr "التعويضات ذات الصلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__related_contact_ids
+msgid "Related Contact"
+msgstr "جهة اتصال ذات صلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__related_declaration_form
+msgid "Related Declaration Form"
+msgstr "نموذج التصريح ذي الصلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__related_employee
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__related_employee
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__related_employee
+msgid "Related Employee"
+msgstr "الموظف المرتبط"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__related_event
+msgid "Related Event"
+msgstr "حدث ذو صلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__related_event_compensation
+msgid "Related Event Compensation"
+msgstr "تعويض الحدث ذي الصلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_attachment__related_housing
+msgid "Related Housing"
+msgstr "الإسكان ذات الصلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__related_lease_contract
+msgid "Related Lease Contract"
+msgstr "عقد الإيجار ذي الصلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__related_requisition
+msgid "Related Requisition"
+msgstr "طلب ذات صلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__related_sequence
+msgid "Related Sequence"
+msgstr "التسلسل ذو الصلة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__contact_relation_type_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__contact_relation_type_id
+msgid "Relation Type"
+msgstr "نوع العلاقة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__rel
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__housing_residential_type__rel
+msgid "Relative House"
+msgstr "بيت الأقارب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__release_of_responsibility_date
+msgid "Release of Responsibility Date"
+msgstr "تاريخ الإعفاء من المسؤولية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__religion
+msgid "Religion"
+msgstr "دِين"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__ren
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_housing__housing_residential_type__ren
+msgid "Rental House"
+msgstr "بيت للايجار"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_department__type_of_department
+msgid "Reporting Type"
+msgstr "نوع الإبلاغ"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_res_country_emirate
+msgid "Res Country Emirate"
+msgstr "الدقة بلد الإمارات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__housing_residential_type
+msgid "Residential Type"
+msgstr "النوع السكني"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__related_line_type
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line_type__type
+msgid "Resume Type"
+msgstr "نوع السيرة الذاتية"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_resume_line
+msgid "Resumé line of an employee"
+msgstr "بند السيرة الذاتية لموظف "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__roman-catholic
+msgid "Roman Catholic"
+msgstr "الروم الكاثوليك"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_sap_event_type
+msgid "SAP Event Type"
+msgstr "نوع حدث SAP"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_sap_event_type_reason
+msgid "SAP Event Type Reason"
+msgstr "سبب نوع حدث SAP"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__sales
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__salutation
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__salutation_fkey
+msgid "Salutation"
+msgstr "تحية"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_partner_wizard_form
+msgid "Select Partner"
+msgstr "حدد الشريك"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_user_wizard_form
+msgid "Select User"
+msgstr "اختر المستخدم"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.link_employee_user_wizard_form
+msgid "Select User or add only email for create new user."
+msgstr "حدد مستخدم أو أضف بريدًا إلكترونيًا فقط لإنشاء مستخدم جديد."
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__sequence
+msgid "Sequence"
+msgstr "التسلسل "
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.hr_housing_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Set Pending"
+msgstr "تعيين معلق"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__shia-muslim
+msgid "Shi'a Muslim"
+msgstr "مسلم شيعي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__shift_type
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__shift_type_fkey
+msgid "Shift Type"
+msgstr "نوع التحول"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_notice__state__signed
+msgid "Signed"
+msgstr "وقعت"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_employee.py:0
+#: code:addons/hr_employee_custom/wizards/link_user_wizard.py:0
+#, python-format
+msgid "Signup: invalid template user"
+msgstr "الاشتراك:  قالب المستخدم غير صالح"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_department__type_of_department__social
+msgid "Social Media"
+msgstr "وسائل التواصل الاجتماعي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__sponsored_company_id
+msgid "Sponsor Company"
+msgstr "الشركة الراعية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored
+msgid "Sponsored"
+msgstr "برعاية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored_outside_country_to_cancelled
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored_outside_country_to_cancelled
+msgid "Sponsored - Outside the Country - To be Cancelled"
+msgstr "برعاية - خارج الدولة - سيتم إلغاؤها"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored_absconding
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored_absconding
+msgid "Sponsored – Absconding"
+msgstr "برعاية - الهروب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored_outside_country
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored_outside_country
+msgid "Sponsored – Outside The Country"
+msgstr "برعاية - خارج البلاد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored_to_cancelled
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored_to_cancelled
+msgid "Sponsored – To be Cancelled"
+msgstr "برعاية - سيتم إلغاؤها"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored_transfer_rejected
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored_transfer_rejected
+msgid "Sponsored – Transfer Rejected"
+msgstr "دعائية - تم رفض التحويل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__sponsored_transferring_out
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__sponsored_transferring_out
+msgid "Sponsored – Transferring Out"
+msgstr "برعاية - نقل للخارج"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,help:hr_employee_custom.field_hr_employee__contract_start_date
+msgid "Start date of the contract."
+msgstr "تاريخ بدء العقد."
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__state
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__state_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__state
+msgid "State"
+msgstr "الحالة "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__outsourced_status
+#: model:ir.model.fields,field_description:hr_employee_custom.field_outsourced_status_log__outsourced_status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__student
+msgid "Student"
+msgstr "طالب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_color_combo__subgroup_id
+msgid "Subgroup"
+msgstr "المجموعة الفرعية"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__religion__sunni-muslim
+msgid "Sunni Muslim"
+msgstr "مسلم سني"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__system_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__system_id
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__related_system_id
+msgid "System ID"
+msgstr "معرف النظام"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__taleo_id
+msgid "Taleo ID"
+msgstr "معرف تاليو"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__tawtheeq_number
+msgid "Tawtheeq Number"
+msgstr "رقم توثيق"
+
+#. module: hr_employee_custom
+#: model:ir.actions.report,name:hr_employee_custom.terms_conditions_mobile_report
+msgid "Terms Conditions For Using Mobile Phone"
+msgstr "شروط شروط استخدام الهاتف المحمول"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,help:hr_employee_custom.field_res_country_emirate__city_code
+#: model:ir.model.fields,help:hr_employee_custom.field_res_country_state__city_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"كود الدولة حسب المعيار الدولي أيزو المكون من حرفين.\n"
+"يمكنك استخدام هذا الحقل لإجراء بحث سريع."
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,help:hr_employee_custom.field_hr_contract__employee_type
+#: model:ir.model.fields,help:hr_employee_custom.field_hr_employee__employee_type
+msgid ""
+"The employee type. Although the primary purpose may seem to categorize "
+"employees, this field has also an impact in the Contract History. Only "
+"Employee type is supposed to be under contract and will have a Contract "
+"History."
+msgstr ""
+"نوع الموظف. على الرغم من أن الهدف الرئيسي يبدو أنه لفرز الموظفين في فئات، "
+"إلا أن هذا الحقل يحدث تغييراً في سجل العقود. فقط نوع الموظفين هو ما يجب أن "
+"يكون ضمن العقد وسيكون لديه سجل للعقد. "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__title
+msgid "Title"
+msgstr "لقب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__to_date
+msgid "To Date"
+msgstr "ان يذهب في موعد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__total_days
+msgid "Total Days"
+msgstr "مجموع الأيام"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__total_salary_package
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__total_salary_package
+msgid "Total Salary Package"
+msgstr "حزمة الراتب الإجمالي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__total_service_fees
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__total_service_fees
+msgid "Total Service Fees"
+msgstr "إجمالي رسوم الخدمة"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__employee_type__trainee
+msgid "Trainee"
+msgstr "متدرب"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__transfer_no
+msgid "Transfer No."
+msgstr "رقم التحويل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__transferred_out
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__transferred_out
+msgid "Transferred Out"
+msgstr "المحولة إلى الخارج"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__transferring_in
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__transferring_in
+msgid "Transferring In"
+msgstr "التحويل للداخل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_contract_employment_type__name
+msgid "Type"
+msgstr "النوع"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__type_business
+msgid "Type Of Business"
+msgstr "نوع من الاعمال"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_employee_penalty__type_of_penalty
+msgid "Type of Penalty"
+msgstr "نوع العقوبة"
+
+#. module: hr_employee_custom
+#: model:ir.model,name:hr_employee_custom.model_hr_resume_line_type
+msgid "Type of a resumé line"
+msgstr "نوع بند السيرة الذاتية "
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing_type__name
+msgid "Types"
+msgstr "أنواع"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee_event__update_info
+msgid "Update Employee Information"
+msgstr "تحديث معلومات الموظف"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_link_employee_user_wizard__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__madlsa_username
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__madlsa_username
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__housing_utility_bill
+msgid "Utility Bill"
+msgstr "فاتورة مرافق"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_event_compensation__value
+msgid "Value (If not Payroll)"
+msgstr "القيمة (إن لم يكن جدول الرواتب)"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__visa_ready_to_use
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__visa_ready_to_use
+msgid "Visa Ready To Use"
+msgstr "تأشيرة جاهزة للاستخدام"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__is_wps
+msgid "WPS"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__name
+msgid "Warning Sequence"
+msgstr "تسلسل التحذير"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_notice__type_offence
+msgid "Warning Type"
+msgstr "نوع التحذير"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.hr_notice_offences_action_window
+#: model:ir.ui.menu,name:hr_employee_custom.hr_notice_offences_menu
+msgid "Warning Types"
+msgstr "أنواع التحذير"
+
+#. module: hr_employee_custom
+#: model:ir.actions.act_window,name:hr_employee_custom.hr_notice_action_window
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.view_employee_form_custom
+msgid "Warnings"
+msgstr "تحذيرات"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_partner__madlsa_water
+#: model:ir.model.fields,field_description:hr_employee_custom.field_res_users__madlsa_water
+msgid "Water Number"
+msgstr "رقم الماء"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__wc_insurance
+msgid "Wc Insurance"
+msgstr "تأمين WC"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__wizard_name
+msgid "Wizard name"
+msgstr "اسم المعالج"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__work_multi_entry
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__work_multi_entry
+msgid "Work - Multi Entry"
+msgstr "عمل - دخول متعدد"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__work_city
+msgid "Work City"
+msgstr "مدينة العمل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_resume_line__work_country
+msgid "Work Country"
+msgstr "بلد العمل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__outsourced_status__work_permit
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__outsourced_status_log__outsourced_status__work_permit
+msgid "Work Permit"
+msgstr "تصريح عمل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_employee__work_permit_no
+msgid "Work Permit No"
+msgstr "رقم تصريح العمل"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__event_compensation__period__yearly
+msgid "Yearly"
+msgstr "سنويًا"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields,field_description:hr_employee_custom.field_hr_housing__yearly_rent_value
+msgid "Yearly Rent Value"
+msgstr "قيمة الإيجار السنوي"
+
+#. module: hr_employee_custom
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__attested_e_contract__yes
+#: model:ir.model.fields.selection,name:hr_employee_custom.selection__hr_employee__ndu__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: hr_employee_custom
+#: code:addons/hr_employee_custom/models/hr_recruitment.py:0
+#, python-format
+msgid "You must define a Contact Name for this applicant."
+msgstr "عليك تحديد اسم لهذا المتقدم. "
+
+#. module: hr_employee_custom
+#: model:ir.actions.report,print_report_name:hr_employee_custom.employee_applicant_photo
+msgid "object.name"
+msgstr ""
+"Approval Request for Purchase Requisition to Purchase User - ${object.name}"
+
+#. module: hr_employee_custom
+#: model:ir.actions.server,name:hr_employee_custom.set_emp_cust_document_ir_actions_server
+#: model:ir.cron,cron_name:hr_employee_custom.set_emp_cust_document
+#: model:ir.cron,name:hr_employee_custom.set_emp_cust_document
+msgid "set employee customer document"
+msgstr "تعيين مستند العميل الخاص بالموظف"
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "أنا"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"استخدام الهاتف الجوال أو خط الهاتف في أغراض العمل\n"
+"                                    بالمؤسسة فقط."
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid "الاســـــــــــــــــم:"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"الالتزام بالقوانين والأعراف والتقاليد السارية بالدولة\n"
+"                                    والخاصة باستخدام"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"الالتزام بتحمل المسؤولية كاملة عن أي مخالفة لشروط تقديم\n"
+"                                    الخدمة من"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"الالتزام بتسليم الهاتف الجوال للمؤسسة في الحالات\n"
+"                                    التالية:"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"الالتزام بسرعة اخطار المؤسسة في حال فقد وضياع الهاتف على\n"
+"                                    الفور،"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"الالتزام بعدم تجاوز حد الائتمان المسموح به للهاتف، حتى\n"
+"                                    لا يتسبب في"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid "التاريــــــــــــــــخ:"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"التحكم في استخدام الهاتف الجوال، والالتزام بسداد كل\n"
+"                                    تكاليف الاستخدام"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "الحفاظ على الهاتف من أي تلف غير عادي."
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid "الرقم الشخصي:"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid "الموقع أدناه، أقر والتزم بعدم كشف أو استخدام أية"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid "الموقعة أدناه، أقر وألتزم باستخدام الهاتف المستلم"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.non_disclosure_agreement_report_template
+msgid "الوظيفـــــــــــــة:"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"تسري هذه الشروط والاحكام على أي وسيلة اتصال أخرى\n"
+"                                    توفرها"
+msgstr ""
+
+#. module: hr_employee_custom
+#: model_terms:ir.ui.view,arch_db:hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template
+msgid ""
+"يحق للمؤسسة حصر قيمة الاستخدامات التي لا تخص أعمال\n"
+"                                    المؤسسة،"
+msgstr ""

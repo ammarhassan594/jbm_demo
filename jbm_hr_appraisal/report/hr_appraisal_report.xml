@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="jbm_hr_appraisal_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="o" t-value="o.sudo()"/>
+
+                    <t t-call="web.basic_layout">
+                        <html>
+                            <style>
+                                body {
+                                font-size: 14px;
+                                }
+                                td{
+                                border: 1px solid #504949;
+                                padding-right: 3px;
+                                }
+                                .td_bg {
+                                background-color:#b4c6e7 !important;
+                                }
+                            </style>
+                            <div class="page" style="direction: rtl; text-align: right!important;">
+                                <div class="header">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img t-if="o.company_id.company_report_header"
+                                                 t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                                 style="width:100%" alt="Letter Head"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 t-if="o.in_probation == True"
+                                    style="text-align:center!important;color:#002060;"
+                                    class="Bold">
+                                    نموذج تقييم الأداء الوظيفي (فترة اختبار)
+                                </h5>
+
+                                <h5 t-elif="o.job_id.job_category == 'supervisory'"
+                                    style="text-align:center!important;color:#002060;"
+                                    class="Bold">
+                                    نموذج تقييم الأداء الوظيفي (الوظائف الإشرافية)
+                                </h5>
+                                <h5 t-elif="o.job_id.job_category == 'non_supervisory'"
+                                    style="text-align:center!important;color:#002060;"
+                                    class="Bold">
+                                    نموذج تقييم الأداء الوظيفي (الوظائف الغير الإشرافية)
+                                </h5>
+
+                                <table width="100%"
+                                       style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">اسم الموظف</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.arabic_name"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">الرقم الوظيفي</td>
+                                        <td colspan="3">
+                                            <span>
+                                                <t t-esc="o.employee_id.registration_number"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">ﺍﻹﺩﺍﺭﺓ</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.department_id.parent_id.name"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">الوحدة / القسم</td>
+                                        <td colspan="3">
+                                            <span>
+                                                <t t-esc="o.employee_id.department_id.name"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">الرقم الشخصي</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.employee_qid_number"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">الجنسية</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.country_id.name"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">تاريخ التعيين</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.joining_date"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">المسمى الوظيفي</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.job_id.name"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">الدرجة المالية</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.contract_id.payscale_id.description"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">تاريخ الحصول على الدرجة</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.contract_id.date_start"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">التخصص</td>
+                                        <td>
+                                            <span>
+                                                <t t-esc="o.employee_id.degree_field"/>
+                                            </span>
+                                        </td>
+                                        <td class="td_bg">المؤهل العلمي</td>
+                                        <td colspan="3">
+                                            <span>
+                                                <t t-esc="o.employee_id.degree_id.name"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br/>
+
+                                <h6 style="text-align:right!important;" class="Bold">ﺍلجزﺍءﺍﺕ ﺍﻟﺘﺄﺩﻳﺒﻴﺔ ﺍﻟﺘﻲ ﻭﻗﻌﺖ ﻋﻠﻰ
+                                    الموﻇﻒ ﺧﻼﻝ ﺳﻨﺔ ﺍﻟﺘﻘﻴﻴﻢ: (تعبأ أليا من البرنامج من ملف الموظف)
+                                </h6>
+                                <t t-if="o.employee_id.notice_ids">
+                                    <table width="100%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                        <tr class="td_bg">
+                                            <td style="text-align: center;" class="Bold" width="2%">
+                                                م
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                نوع الجزاء
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                سبب الجزاء
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                تاريخ الجزاء
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                ملاحظات الموارد البشرية
+                                            </td>
+                                        </tr>
+                                        <t t-set="sr_number" t-value="0"/>
+                                        <tr t-foreach="o.employee_id.notice_ids" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.type_offence.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.reason"/>
+                                            </td>
+
+                                            <td>
+                                                <span t-esc="line.date_offence"/>
+                                            </td>
+
+                                            <td/>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <p>
+                                                    <b>لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً، من
+                                                        الفئات المبينة فيما يلي: للاسترشاد
+                                                    </b>
+                                                    <br/>
+
+                                                    1- الموظف الذي وقع عليه جزاء تأديبي بالخصم من راتبه أو
+
+                                                    الوقف عن العمل لمدة تزيد عن خمسة أيام، أو وقعت عليه
+
+                                                    جزاءات تجاوز مجموعها الخصم من الراتب أو الوقف عن
+
+                                                    العمل لمدة تزيد عن عشرة أيام، خلال العام الذي يوضع عنه
+
+                                                    تقرير تقييم الأداء، أو جزاء أشد.
+                                                    <br/>
+                                                    <br/>
+                                                    2-الموظف من شاغلي الوظائف من الثالثة إلى الأولى الذي
+                                                    وقع عليه جزاء خلال العام الذي يوضع عنه تقرير تقييم
+                                                    الأداء.
+                                                </p>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>
+                                                    <b>لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً أو جيد، من
+                                                        الفئات
+                                                        المبينة فيما يلي: للاسترشاد
+                                                    </b>
+                                                    <br/>
+                                                    الموظف الذي وقع عليه جزاء تأديبي بالخصم من راتبه أو الوقف عن العمل
+                                                    لمدة
+                                                    تزيد على عشرة أيام،
+                                                    أو وقعت عليه جزاءات يجاوز مجموعها الخصم من الراتب
+                                                    أو الوقف عن العمل خمسة عشر يوماً خلال العام الذي يوضع عنه التقرير،
+                                                    أو
+                                                    جزاء أشد.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </t>
+                                <t t-else="">
+                                    <table width="100%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                        <tr class="td_bg">
+                                            <td style="text-align: center;" class="Bold" width="2%">
+                                                م
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                نوع الجزاء
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                سبب الجزاء
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                تاريخ الجزاء
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                ملاحظات الموارد البشرية
+                                            </td>
+                                        </tr>
+                                        <t t-set="sr_number" t-value="0"/>
+                                        <tr t-foreach="[1,2]" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <p>
+                                                    <b>لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً، من
+                                                        الفئات المبينة فيما يلي: للاسترشاد
+                                                    </b>
+                                                    <br/>
+
+                                                    1- الموظف الذي وقع عليه جزاء تأديبي بالخصم من راتبه أو
+
+                                                    الوقف عن العمل لمدة تزيد عن خمسة أيام، أو وقعت عليه
+
+                                                    جزاءات تجاوز مجموعها الخصم من الراتب أو الوقف عن
+
+                                                    العمل لمدة تزيد عن عشرة أيام، خلال العام الذي يوضع عنه
+
+                                                    تقرير تقييم الأداء، أو جزاء أشد.
+                                                    <br/>
+                                                    <br/>
+                                                    2-الموظف من شاغلي الوظائف من الثالثة إلى الأولى الذي
+                                                    وقع عليه جزاء خلال العام الذي يوضع عنه تقرير تقييم
+                                                    الأداء.
+                                                </p>
+                                            </td>
+                                            <td colspan="2">
+                                                <p>
+                                                    <b>لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً أو جيد، من
+                                                        الفئات
+                                                        المبينة فيما يلي: للاسترشاد
+                                                    </b>
+                                                    <br/>
+                                                    الموظف الذي وقع عليه جزاء تأديبي بالخصم من راتبه أو الوقف عن العمل
+                                                    لمدة
+                                                    تزيد على عشرة أيام،
+                                                    أو وقعت عليه جزاءات يجاوز مجموعها الخصم من الراتب
+                                                    أو الوقف عن العمل خمسة عشر يوماً خلال العام الذي يوضع عنه التقرير،
+                                                    أو
+                                                    جزاء أشد.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </t>
+                                <br/>
+
+                                <h6 style="text-align:center!important;" class="Bold">
+                                    الدورات التدريبية أو عناصر التميز (خطاب شكر/ مكافأة / أعمال بارزة..إلخ) التي حصل
+                                    عليها الموظف خلال السنة
+                                </h6>
+
+                                <t t-if="o.employee_id.employee_course_ids or o.employee_id.employee_excellence_ids">
+                                    <table width="100%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                        <tr class="td_bg">
+                                            <td style="text-align: center;" class="Bold" width="2%">
+                                                م
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                الدورة التدريبية او عنصر التميز
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                البيان
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                التاريخ
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                التقييم
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                ملاحظات الموارد البشرية
+                                            </td>
+                                        </tr>
+                                        <t t-set="sr_number" t-value="0"/>
+                                        <tr t-foreach="o.employee_id.employee_course_ids" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.course_training_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.location"/>
+                                            </td>
+
+                                            <td>
+                                                <span t-esc="line.date_taken"/>
+                                            </td>
+                                            <td>
+                                                <span t-if="line.passed">ناجح</span>
+                                                <span t-if="not line.passed">راسب</span>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.remarks"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-foreach="o.employee_id.employee_excellence_ids" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.type_id.name"/>
+                                            </td>
+                                            <td>
+
+                                            </td>
+
+                                            <td>
+                                                <span t-esc="line.date_taken"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.remarks"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <p>
+                                                    <b>
+                                                        لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً إذا
+                                                        أتيحت له فرصة تدريب خلال العام الذي يوضع عنه تقرير
+                                                        تقييم الاداء، ولم يجتزه بنجاح.
+                                                    </b>
+                                                </p>
+                                            </td>
+                                            <td colspan="3">
+                                                <p>
+                                                    <b>
+                                                        لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً أو جيد إذا
+                                                        أتيحت
+                                                        له
+                                                        فرصة تدريب خلال العام الذي يوضع عنه تقرير تقييم الاداء، وتخلف
+                                                        عنه
+                                                        دون عذر تقبله جھة عمله.
+                                                    </b>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </t>
+                                <t t-else="">
+                                    <table width="100%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                        <tr class="td_bg">
+                                            <td style="text-align: center;" class="Bold" width="2%">
+                                                م
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                الدورة التدريبية او عنصر التميز
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                البيان
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                التاريخ
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                التقييم
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                ملاحظات الموارد البشرية
+                                            </td>
+                                        </tr>
+                                        <t t-set="sr_number" t-value="0"/>
+                                        <tr t-foreach="[1,2]" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td/>
+                                            <td/>
+
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <p>
+                                                    <b>
+                                                        لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً إذا
+                                                        أتيحت له فرصة تدريب خلال العام الذي يوضع عنه تقرير
+                                                        تقييم الاداء، ولم يجتزه بنجاح.
+                                                    </b>
+                                                </p>
+                                            </td>
+                                            <td colspan="3">
+                                                <p>
+                                                    <b>
+                                                        لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً أو جيد إذا
+                                                        أتيحت
+                                                        له
+                                                        فرصة تدريب خلال العام الذي يوضع عنه تقرير تقييم الاداء، وتخلف
+                                                        عنه
+                                                        دون عذر تقبله جھة عمله.
+                                                    </b>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </t>
+                                <br/>
+
+                                <h6 style="text-align:center!important;" class="Bold">
+                                    تقييم الأداء لأخر ثلاث سنوات: (تعبأ أليا من البرنامج من ملف الموظف)
+                                </h6>
+
+                                <t t-set="appraisal_ids"
+                                   t-value="o.employee_id.appraisal_ids.filtered(lambda x: x.id != o.id and x.state == 'done' and (o.date_close.year - x.date_close.year) &lt;= 3 ).sorted(key=lambda p: p.date_close, reverse=True)"/>
+                                <t t-if="len(appraisal_ids) &lt; 3">
+                                    <t t-set="appraisal_ids" t-value="appraisal_ids[:3]"/>
+                                </t>
+                                <t t-if="appraisal_ids">
+                                    <table width="100%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                        <tr class="td_bg">
+                                            <td style="text-align: center;" class="Bold" width="2%">
+                                                م
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                تاريخ التقييم
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                الدرجة
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                التقدير
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                معتمد التقييم
+                                            </td>
+                                        </tr>
+                                        <t t-set="sr_number" t-value="0"/>
+                                        <tr t-foreach="appraisal_ids" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <!--                                        <t t-set="rate"-->
+                                            <!--                                           t-value="line.appraisal_current_grade / line.appraisal_overall_grade * 100"/>-->
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span t-esc="line.date_close"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span t-esc="'{0:,.2f}'.format(line.appraisal_current_grade)"/>
+                                            </td>
+
+                                            <td style="text-align: center;">
+                                                <t t-if=" 0 &gt;= line.appraisal_current_grade &lt; 50">
+                                                    <span>
+                                                        <b>ضعيف</b>
+                                                    </span>
+                                                </t>
+                                                <t t-elif=" 50 &gt;= line.appraisal_current_grade &lt; 66">
+                                                    <span>
+                                                        <b>مقبول</b>
+                                                    </span>
+                                                </t>
+                                                <t t-elif=" 66 &gt;= line.appraisal_current_grade &lt; 76">
+                                                    <span>
+                                                        <b>جيد</b>
+                                                    </span>
+                                                </t>
+                                                <t t-elif=" 76 &gt;= line.appraisal_current_grade &lt; 90">
+                                                    <span>
+                                                        <b>جيد جدا</b>
+                                                    </span>
+                                                </t>
+                                                <t t-else="">
+                                                    <span>
+                                                        <b>ممتاز</b>
+                                                    </span>
+                                                </t>
+                                                <!--                                            <span t-esc="line.appraisal_current_grade / appraisal_overall_grade * 100"/>-->
+                                            </td>
+
+                                            <td>
+                                                <span t-esc="line.approved_by_id.name"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </t>
+                                <t t-else="">
+                                    <table width="100%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px;">
+                                        <tr class="td_bg">
+                                            <td style="text-align: center;" class="Bold" width="2%">
+                                                م
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                تاريخ التقييم
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                الدرجة
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                التقدير
+                                            </td>
+                                            <td style="text-align: center;" class="Bold">
+                                                معتمد التقييم
+                                            </td>
+                                        </tr>
+                                        <t t-set="sr_number" t-value="0"/>
+                                        <tr t-foreach="[1,2,3]" t-as="line">
+                                            <t t-set="sr_number" t-value="sr_number + 1"/>
+                                            <!--                                        <t t-set="rate"-->
+                                            <!--                                           t-value="line.appraisal_current_grade / line.appraisal_overall_grade * 100"/>-->
+                                            <td width="2%" class="td_bg">
+                                                <span t-esc="sr_number"/>
+                                            </td>
+                                            <td style="text-align: center;"/>
+                                            <td style="text-align: center;"/>
+
+                                            <td style="text-align: center;"/>
+                                            <td/>
+                                        </tr>
+                                    </table>
+
+                                </t>
+
+
+                                <p style="page-break-after: always;"/>
+                                <t t-set="skill_types"
+                                   t-value="set(o.appraisal_skill_line_ids.mapped('skill_type_id'))"/>
+                                <table width="100%"
+                                       style="border: 3px solid #504949; font-size:13px;box-shadow: 5px 10px;">
+                                    <tr>
+                                        <!--                                        <td style="text-align: center;" class="Bold" width="5%">-->
+                                        <!--                                        </td>-->
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            العنصر الرئيسي
+                                        </td>
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            الدرجة
+                                        </td>
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            العنصر الفرعي
+                                        </td>
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            شرح العنصر
+                                        </td>
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            الدرجة العظمي
+                                        </td>
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            تقييم الموظف لنفسه
+                                        </td>
+                                        <td style="text-align: center; background-color:#1f3864!important;color:white"
+                                            class="Bold">
+                                            الدرجة المستحقة
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="skill_types" t-as="type">
+                                        <t t-set="first_element"
+                                           t-value="o.appraisal_skill_line_ids.filtered(lambda x: x.skill_type_id == type)[0]"/>
+                                        <t t-set="skills"
+                                           t-value="o.appraisal_skill_line_ids.filtered(lambda x: x.skill_type_id == type)"/>
+                                        <t t-set="row_span_number" t-value="len(skills)"/>
+                                        <t t-set="serial" t-value="0"/>
+                                        <tr>
+                                            <t t-set="serial" t-value="serial + 1"/>
+                                            <!--                                            <td/>-->
+                                            <td t-att-rowspan="row_span_number"
+                                                style="background-color:#1f3864!important; color:white">
+                                                <span t-esc="type.name"/>
+                                            </td>
+                                            <td t-att-rowspan="row_span_number"
+                                                style="background-color:#b4c6e7!important;">
+                                                <span t-esc="sum(skills.mapped('overall_grade'))"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc=" str(serial) + '- ' + first_element.skill_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="first_element.description"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="first_element.overall_grade"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="first_element.employee_grade"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="first_element.approve_grade"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-foreach="skills - first_element" t-as="skill">
+                                            <t t-set="serial" t-value="serial + 1"/>
+                                            <!--                                            <td/>-->
+                                            <td>
+                                                <span t-esc=" str(serial) + '- ' + skill.skill_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="skill.description"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="skill.overall_grade"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="skill.employee_grade"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="skill.approve_grade"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr style="background-color:#bf8f00!important;">
+                                        <td colspan="4">
+                                            المجموع الكلي للدرجات
+                                        </td>
+                                        <td>
+                                            <span t-esc="o.appraisal_overall_grade"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="sum(o.appraisal_skill_line_ids.mapped('employee_grade'))"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="sum(o.appraisal_skill_line_ids.mapped('approve_grade'))"/>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <br/>
+                                <div class="row">
+                                    <table width="10%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px; margin-right:200px">
+                                        <tr>
+                                            <td style="text-align: center;" class="Bold">
+                                                49-0
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; background-color:#002060!important;color:white">
+                                                <b>ضعيف</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table width="10%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px; margin-right:15px">
+                                        <tr>
+                                            <td style="text-align: center;" class="Bold">
+                                                65-50
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; background-color:#2f5496!important;color:white">
+                                                <b>مقبول</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table width="10%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px; margin-right:15px">
+                                        <tr>
+                                            <td style="text-align: center;" class="Bold">
+                                                75-66
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; background-color:#8eaadb!important;"
+                                                class="td_bg">
+                                                <b>جيد</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table width="10%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px; margin-right:15px">
+                                        <tr>
+                                            <td style="text-align: center;" class="Bold">
+                                                89-76
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; background-color:#b4c6e7!important;"
+                                                class="td_bg">
+                                                <b>جيد جدا</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table width="10%"
+                                           style="border: 3px solid #504949; font-size:14px;box-shadow: 5px 10px; margin-right:15px">
+                                        <tr>
+                                            <td style="text-align: center;" class="Bold">
+                                                100-90
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; background-color:#d9e2f3!important;"
+                                                class="td_bg">
+                                                <b>ممتاز</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br/>
+                                <br/>
+                                <table width="100%"
+                                       style="border: 3px solid #504949; font-size:14px;">
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">التوصية</td>
+                                        <td colspan="3" style="text-align:center;">
+                                            <t t-esc="o.recommendation"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">المسؤول المباشر</td>
+                                        <td>
+                                            <t t-if="o.manager_ids" t-esc="o.manager_ids[0].arabic_name"/>
+                                        </td>
+                                        <td class="td_bg">معتمد التقييم</td>
+                                        <td>
+                                            <t t-if="o.appraisal_batch_id and o.appraisal_batch_id.dynamic_approve_request_ids and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by.employee_id"
+                                               t-esc="o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by.employee_id.arabic_name"/>
+                                        </td>
+                                    </tr>
+
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">المسمى الوظيفي</td>
+                                        <td>
+                                            <t t-esc="o.employee_id.parent_id.job_id.with_context(lang='ar_001').name"/>
+                                        </td>
+                                        <td class="td_bg">المسمى الوظيفي</td>
+                                        <td>
+                                            <t t-if="o.employee_id.job_id"
+                                               t-esc="o.employee_id.job_id.with_context(lang='ar_001').name"/>
+                                        </td>
+                                    </tr>
+                                    <!--t-if="o.appraisal_batch_id and o.appraisal_batch_id.dynamic_approve_request_ids and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by.employee_id"-->
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg" width="25%">التوقيع</td>
+                                        <td width="25%">
+                                            <t t-set="width"
+                                               t-value="o.env['ir.config_parameter'].get_param('jbm_hr_appraisal.appraisal_signature_width')"/>
+                                            <t t-set="height"
+                                               t-value="o.env['ir.config_parameter'].get_param('jbm_hr_appraisal.appraisal_signature_height')"/>
+                                            <t t-if="o.employee_id.parent_id.user_id">
+                                                <t t-if="o.employee_id.parent_id.user_id.sudo().sign_signature">
+                                                    <t t-if="image_data_uri(o.employee_id.parent_id.user_id.sudo().sign_signature)">
+                                                        <img
+                                                                t-att-src="image_data_uri(o.employee_id.parent_id.user_id.sudo().sign_signature)"
+                                                                alt="Logo"
+                                                                t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                                    </t>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-esc="o.employee_id.parent_id.arabic_name"/>
+                                                </t>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="o.employee_id.parent_id.arabic_name"/>
+                                            </t>
+
+                                        </td>
+                                        <td class="td_bg" width="25%">التوقيع</td>
+                                        <td width="25%">
+                                            <t t-if="o.appraisal_batch_id and o.appraisal_batch_id.dynamic_approve_request_ids and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by.employee_id"
+                                               t-esc="o.appraisal_batch_id.dynamic_approve_request_ids[-1].approved_by.employee_id.arabic_name"/>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr style="line-height:22px;border-bottom: 3px solid #504949;">
+                                        <td class="td_bg">توقيع الموظف</td>
+                                        <td>
+                                            <t t-set="width"
+                                               t-value="o.env['ir.config_parameter'].get_param('jbm_hr_appraisal.appraisal_signature_width')"/>
+                                            <t t-set="height"
+                                               t-value="o.env['ir.config_parameter'].get_param('jbm_hr_appraisal.appraisal_signature_height')"/>
+                                            <t t-if="o.employee_id.user_id">
+                                                <t t-if="o.employee_id.user_id.sudo().sign_signature">
+                                                    <t t-if="image_data_uri(o.employee_id.user_id.sudo().sign_signature)">
+                                                        <img
+                                                                t-att-src="image_data_uri(o.employee_id.user_id.sudo().sign_signature)"
+                                                                alt="Logo"
+                                                                t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                                    </t>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-esc="o.employee_id.arabic_name"/>
+                                                </t>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="o.employee_id.arabic_name"/>
+                                            </t>
+                                        </td>
+                                        <td class="td_bg">التاريخ</td>
+                                        <td>
+                                            <t t-if="o.appraisal_batch_id and o.appraisal_batch_id.dynamic_approve_request_ids and o.appraisal_batch_id.dynamic_approve_request_ids[-1].approve_date"
+                                               t-esc="o.appraisal_batch_id.dynamic_approve_request_ids[-1].approve_date.date()"/>
+
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <br/>
+                                <div align="center" style="direction: rtl;color:red; font-size:16px">
+                                    <b>
+                                        ملاحظة: يعلن الموظف بصورة من تقرير تقييم الأداء بمجرد اعتماده ويجوز للموظف أن
+                                        يتظلم خلال خمسة عشر يوماً من تاريخ علمه ولا يعتبر التقرير نهائياً إلا بعد انقضاء
+                                        ميعاد التظلم منه أو البت فيه.
+
+                                    </b>
+                                    <span t-esc="o.employee_id.partner_id.user_id.sign_signature"/>
+
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="text-left">
+                                    <t t-set="width"
+                                       t-value="o.env['ir.config_parameter'].get_param('jbm_hr_appraisal.appraisal_stamp_width')"/>
+                                    <t t-set="height"
+                                       t-value="o.env['ir.config_parameter'].get_param('jbm_hr_appraisal.appraisal_stamp_height')"/>
+                                    <img t-if="o.company_id.favicon"
+                                         t-att-src="image_data_uri(o.company_id.favicon)"
+                                         alt="Logo"
+                                         t-attf-style="width:#{( 96 * float(width))/2.54}px;
+                                         height:#{( 96 * float(height))/2.54}px;"/>
+                                </div>
+
+                                <div class="footer">
+                                    <div class="row">
+                                        <img t-if="o.company_id.company_report_footer"
+                                             t-att-src="image_data_uri(o.company_id.company_report_footer)"
+                                             style="width:100%" alt="Letter Footer"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </html>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

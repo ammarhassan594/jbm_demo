@@ -1,0 +1,339 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_account_postchecks
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 12:49+0000\n"
+"PO-Revision-Date: 2023-02-08 12:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ", Email"
+msgstr "، بريد إلكتروني"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ", Tel. no"
+msgstr "، هاتف. لا"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid "<b style=\"position:absolute; left:0px\">Beneficiary name :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<b style=\"position:absolute; left:0px\">Dear Sir,</b>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Amount :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Bank account no. :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Bank address :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Bank name :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">IBAN :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Memo :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Swift code :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Description :</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Venture Capital Vision for Internet Marketing</b>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Date:</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <span style=\"position:absolute; left:0px\">Please debit all bank charges to our above-mentioned\n"
+"                            account in Qatari Riyals and advise us accordingly\n"
+"                        </span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:0px\">Yours Sincerely,</b>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:200px\">Anthony Awkar</b>\n"
+"                        <b style=\"position:absolute; right:200px\">Lolwa Al-Marri</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<br/>\n"
+"                        <span style=\"position:absolute; left:0px\">Commercial Registration 118894</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:0px\">To</b>\n"
+"                        <br/>\n"
+"                        <b style=\"position:absolute; left:0px\">The Manager</b>\n"
+"                        <br/>\n"
+"                        <span style=\"position:absolute; left:0px\">Qatar National Bank</span>\n"
+"                        <br/>\n"
+"                        <span style=\"position:absolute; left:0px\">Doha, Qatar</span>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"<span>\n"
+"                            _________________________________________________________________________________________________________________________________________\n"
+"                        </span><br/>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__bank_id
+msgid "Bank"
+msgstr "بنك"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__account_for_post_checks
+msgid "Bank Account for Post Checks"
+msgstr "حساب مصرفي للشيكات اللاحقة"
+
+#. module: ebs_account_postchecks
+#: model:ir.actions.report,name:ebs_account_postchecks.bank_transfer_action
+msgid "Bank Transfer"
+msgstr "التحويل المصرفي"
+
+#. module: ebs_account_postchecks
+#: code:addons/ebs_account_postchecks/models/account_move_custom.py:0
+#, python-format
+msgid ""
+"Cannot create unbalanced journal entry. Ids: %s\n"
+"Differences debit - credit: %s"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_payment__check_date
+msgid "Check Date"
+msgstr "راجع التاريخ"
+
+#. module: ebs_account_postchecks
+#: model:ir.actions.report,name:ebs_account_postchecks.check_template_action
+msgid "Check Report"
+msgstr "تحقق من التقرير"
+
+#. module: ebs_account_postchecks
+#: model:ir.actions.act_window,name:ebs_account_postchecks.check_template_window
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_payment__check_template_id
+msgid "Check Template"
+msgstr "تحقق من النموذج"
+
+#. module: ebs_account_postchecks
+#: model:ir.ui.menu,name:ebs_account_postchecks.check_template_menu
+msgid "Check Templates"
+msgstr "تحقق القوالب"
+
+#. module: ebs_account_postchecks
+#: model:ir.model,name:ebs_account_postchecks.model_ebs_checks_templates
+msgid "Check templates"
+msgstr "تحقق من القوالب"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_payment__is_post_dated_check
+msgid "Is post date"
+msgstr "هو تاريخ آخر"
+
+#. module: ebs_account_postchecks
+#: model:ir.model,name:ebs_account_postchecks.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: ebs_account_postchecks
+#: code:addons/ebs_account_postchecks/models/payments_custom.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.payment_view_form_custom
+#, python-format
+msgid "Journal Voucher"
+msgstr "قسيمة دفتر اليومية"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid "Logo"
+msgstr "شعار"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_ebs_checks_templates__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_account_postchecks
+#: code:addons/ebs_account_postchecks/models/payments_custom.py:0
+#, python-format
+msgid "Only a draft payment can be posted."
+msgstr "يمكن نشر دفعة مسودة فقط."
+
+#. module: ebs_account_postchecks
+#: model:ir.model,name:ebs_account_postchecks.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_payment__post_check_entry_id
+msgid "Post Check Entry"
+msgstr "بعد إدخال الشيك"
+
+#. module: ebs_account_postchecks
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_bank_statement_line__related_payment_id
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_move__related_payment_id
+#: model:ir.model.fields,field_description:ebs_account_postchecks.field_account_payment__related_payment_id
+msgid "Related Payment"
+msgstr "الدفع ذات الصلة"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.check_template_search
+msgid "Search Orders"
+msgstr "تقسيمات البحث"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid "Subject: <b>Telegraphic Transfer</b>"
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: code:addons/ebs_account_postchecks/models/payments_custom.py:0
+#, python-format
+msgid "The payment cannot be processed because the invoice is not open!"
+msgstr "لا يمكن معالجة الدفع لأن الفاتورة ليست مفتوحة!"
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"With respect to the above-mentioned subject, kindly\n"
+"                            you are hereby authorized to debit our A/C No."
+msgstr ""
+
+#. module: ebs_account_postchecks
+#: code:addons/ebs_account_postchecks/models/payments_custom.py:0
+#, python-format
+msgid "You have to define a sequence for %s in your company."
+msgstr "يجب عليك تحديد تسلسل لـ٪ s في شركتك."
+
+#. module: ebs_account_postchecks
+#: model_terms:ir.ui.view,arch_db:ebs_account_postchecks.bank_transfer_report
+msgid ""
+"and arrange the following\n"
+"                            payment\n"
+"                            transaction, as follows:"
+msgstr ""

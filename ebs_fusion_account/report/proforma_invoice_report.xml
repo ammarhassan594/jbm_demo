@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_proforma_invoice">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-12">
+                                <img t-if="o.company_id.company_report_header" t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                 style="height:100px;width:105%;padding-right:10px;margin-top:70px;" alt="Letter Head"/>
+<!--                                <img src="/hr_contract_custom/static/src/img/Sa_header.png" class="img-fluid"/>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <h1>PROFORMA INVOICE</h1>
+                        </div>
+
+                        <div class="col-6" style="text-align:right;">
+<!--                            <strong>Invoice No: </strong><span><t t-esc="o.payment_sequence"/></span>-->
+                            <br/>
+                            <strong>Invoice Date: </strong><span><t t-esc="o.date.strftime('%d/%m/%Y')"/></span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Invoice To:</span>
+                            <br/>
+                            <div>
+                                <span t-esc="o.partner_id.name"/>
+                            </div>
+                            <t t-if="o.partner_id.child_ids">
+                                <t t-foreach="o.partner_id.child_ids" t-as="address">
+                                    <t t-if="address.address_type == 'head_office'">
+                                        <t t-if="address.street">
+                                            <span t-esc="address.street"/>,
+                                        </t>
+                                        <t t-if="address.city">
+                                            <span t-esc="address.city"/>
+                                        </t>
+                                        <t t-if="address.state_id">
+                                            <span t-esc="address.state_id.name"/>,
+                                        </t>
+                                        <t t-if="address.zip">
+                                            <span t-esc="address.zip"/>
+                                        </t>
+                                        <t t-if="address.country_id">
+                                            <span t-esc="address.country_id.name"/>
+                                        </t>
+
+                                    </t>
+                                </t>
+                            </t>
+                        </div>
+                        <div class="col-6">
+                        </div>
+                    </div>
+                    <br/>
+                    <table class="table table-sm table-bordered" style="width:100%;">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th name="th_quantity" class="text-left">Quantity</th>
+                                <th name="th_description" class="text-left">Description</th>
+                                <th name="th_rate" class="text-center">Rate</th>
+                                <th name="th_amount" style="text-align:right;padding-right:10x;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody style="border-collapse: separate;border-spacing: 10px;">
+                            <t t-foreach="o.proforma_ids" t-as="proforma_line">
+                                <tr>
+                                    <td class="text-left">
+                                        <span t-esc="proforma_line.quantity"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-esc="proforma_line.description"/>
+                                        <t t-if="proforma_line.employee_ids">
+                                            <t t-foreach="proforma_line.employee_ids" t-as="employee">
+                                                <span>,</span>
+                                                <span t-esc="employee.name"/>
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="proforma_line.rate"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="proforma_line.amount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <tr class="table-secondary">
+                            <td></td>
+                            <td></td>
+                            <td class="text-center">Total (QAR):</td>
+                            <td style="text-align:right;">
+                                <span t-esc="sum(o.proforma_ids.mapped('amount'))"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-sm table-borderless" style="margin-bottom: 0">
+                        <tbody>
+                            <tr>
+                                <td style="width: 20%">Memo </td>
+                                <td>:  <t t-esc="o.ref"/></td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td colspan="2"><strong>PAYMENT DETAILS :</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Account Name </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.partner_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Account Number </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.acc_number"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Account Currency </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.currency_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Bank Name </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.bank_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Branch Name </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.branch"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Swift Code </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.bank_id.bic"/></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">IBAN </td>
+                                <td>: <t t-esc="o.journal_id.bank_account_id.iban_no"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-12">
+                                 <img t-if="o.company_id.company_report_footer" t-att-src="image_data_uri(o.company_id.company_report_footer)"
+                                 style="width:100%" alt="Letter Foot"/>
+<!--                                <img src="/hr_contract_custom/static/src/img/sa_1footer.png" class="img-fluid"/>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <record id="paperformat_proforma_invoice" model="report.paperformat">
+        <field name="name">Proforma invoice</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">60</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="action_proforma_invoice_report"
+            model="account.payment"
+            string="Proforma Invoice"
+            report_type="qweb-pdf"
+            name="ebs_fusion_account.report_proforma_invoice"
+            file="ebs_fusion_account.report_proforma_invoice"
+            menu="True"
+            paperformat="ebs_fusion_account.paperformat_proforma_invoice"
+
+    />
+</odoo>

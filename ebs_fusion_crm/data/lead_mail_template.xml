@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="mail_template_stage_proposal_lead" model="mail.template">
+            <field name="name">Proposal: Send by email</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="subject">Proposal {{object.name}}</field>
+            <field name="partner_to">{{ object.partner_id != False and object.partner_id.id }}</field>
+            <field name="email_from">{{(object.user_id.email_formatted or user.email_formatted) | safe}}</field>
+            <field name="email_to">{{object.email_from | safe}}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0"
+                       style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;">
+                    <tr>
+                        <td align="center">
+                            <table border="0" cellpadding="0" cellspacing="0" width="590"
+                                   style="padding: 24px; background-color: white; color: #454748; border-collapse:separate;">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" style="min-width: 590px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                   style="background-color: white; padding: 0; border-collapse:separate;">
+                                                <tr>
+                                                    <td valign="middle">
+                                                        <span style="font-size: 10px;">Proposal</span>
+                                                        <br/>
+                                                    </td>
+                                                    <td valign="middle" align="right">
+                                                        <img t-attf-src="/logo.png?company={{ object.company_id.id }}"
+                                                             style="padding: 0px; margin: 0px; height: 48px;"
+                                                             t-att-alt="object.company_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="text-align:center;">
+                                                        <hr width="100%"
+                                                            style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="min-width: 590px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="590"
+                                                   style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                <tr>
+                                                    <td valign="top" style="font-size: 13px;">
+                                                        <div style="margin: 0px; padding: 0px;">
+                                                            <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                                                                <p>Hello
+                                                                    <t t-out="object.partner_id.name if object.partner_id.id else object.partner_name"/>
+
+                                                                </p>
+                                                                <br/>
+                                                                <br/>
+                                                                <t t-if="object.opportunity_type_service_mapping_ids">
+                                                                    <div style="display:table;border: 1px solid black;">
+                                                                        <div style="display:table-header-group;">
+                                                                            <div class="col-12"
+                                                                                 style="display:table-row;">
+                                                                                <div class="col-3"
+                                                                                     style="display:table-cell;border: 1px solid black;">
+                                                                                    <strong>Service</strong>
+                                                                                </div>
+                                                                                <div class="col-3"
+                                                                                     style="display:table-cell;border: 1px solid black;">
+                                                                                    <strong>Service Option</strong>
+                                                                                </div>
+                                                                                <div class="col-3"
+                                                                                     style="display:table-cell;border: 1px solid black;">
+                                                                                    <strong>Govt. Fees</strong>
+                                                                                </div>
+                                                                                <div class="col-3"
+                                                                                     style="display:table-cell;border: 1px solid black;">
+                                                                                    <strong>Main Company Fees</strong>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div style="display:table-row-group;">
+                                                                            <t t-foreach="object.opportunity_type_service_mapping_ids"
+                                                                               t-as="line">
+                                                                                <div class="col-12"
+                                                                                     style="display:table-row;">
+                                                                                    <div class="col-3"
+                                                                                         style="display:table-cell;border: 1px solid black;">
+                                                                                        <t t-esc="line.service_id.name"/>
+
+                                                                                    </div>
+                                                                                    <t t-if="line.service_option_id.name == 'new'">
+                                                                                        <div class="col-3"
+                                                                                             style="display:table-cell;border: 1px solid black;">
+                                                                                            New
+                                                                                        </div>
+                                                                                    </t>
+
+                                                                                    <t t-if="line.service_option_id.name == 'renew'">
+                                                                                        <div class="col-3"
+                                                                                             style="display:table-cell;border: 1px solid black;">
+                                                                                            Renew
+                                                                                        </div>
+                                                                                    </t>
+                                                                                    <t t-if="line.service_option_id.name == 'manage'">
+                                                                                        <div class="col-3"
+                                                                                             style="display:table-cell;border: 1px solid black;">
+                                                                                            Other
+                                                                                        </div>
+                                                                                    </t>
+                                                                                    <div class="col-3"
+                                                                                         style="display:table-cell;border: 1px solid black;">
+                                                                                        <t t-esc="line.govt_fees"/>
+                                                                                    </div>
+                                                                                    <div class="col-3"
+                                                                                         style="display:table-cell;border: 1px solid black;">
+                                                                                        <t t-esc="line.fusion_fees"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </t>
+                                                                        </div>
+                                                                    </div>
+                                                                </t>
+                                                                <br/>
+                                                                <p>This is your Proposal. Please confirm it.</p>
+                                                                <p>If you have any questions, please do not hesitate to
+                                                                    contact us.
+                                                                </p>
+                                                                <br/>
+
+                                                                Thank you,
+                                                                <br/>
+                                                                <t t-if="object.user_id">
+                                                                    <p>--
+                                                                        <t t-esc="object.user_id.name"/>
+                                                                    </p>
+                                                                </t>
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"
+                                            style="min-width: 590px; padding: 0 8px 0 8px; font-size:11px;">
+                                            <hr width="100%"
+                                                style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 4px 0px;"/>
+                                            <b t-out="object.company_id.name or ''"></b>
+                                            <br/>
+                                            <div style="color: #999999;">
+                                                <t t-out="object.company_id.phone or ''"></t>
+                                                <t t-if="object.company_id.email">
+                                                    |
+                                                    <a t-attf-href="'mailto:%s' % {{ object.company_id.email }}"
+                                                       style="text-decoration:none; color: #999999;"
+                                                       t-out="object.company_id.email or ''"></a>
+                                                </t>
+                                                <t t-if="object.company_id.website">
+                                                    |
+                                                    <a t-attf-href="'%s' % {{ object.company_id.website }}"
+                                                       style="text-decoration:none; color: #999999;"
+                                                       t-out="object.company_id.website or ''"></a>
+                                                </t>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </field>
+        </record>
+    </data>
+</odoo>

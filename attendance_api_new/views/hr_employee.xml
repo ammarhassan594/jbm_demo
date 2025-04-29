@@ -1,0 +1,26 @@
+<odoo>
+
+    <record id="ebs_custom_hr_employee_view_inherit" model="ir.ui.view">
+        <field name="name">custom.hr.employee.view.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='mobile_phone']" position="before">
+                <field name="employee_qid_number"/>
+            </xpath>
+        </field>
+    </record>
+
+     <record id="inherit_hr_employee_list_inherited" model="ir.ui.view">
+        <field name="name">inherit.hr.employee.list.view.inherited</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath position="after" expr="//field[@name='parent_id']">
+                <field name="employee_qid_number"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

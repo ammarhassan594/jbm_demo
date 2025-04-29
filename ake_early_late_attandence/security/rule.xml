@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'hr_attendance'), '|','|',
+                ('name', '=', 'hr_attendance_rule_attendance_manual'),
+                ('name', '=', 'hr_attendance_rule_attendance_manager'),
+                ('name', '=', 'hr_attendance_rule_attendance_employee')
+               ]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+        <record id="hr_attendance.hr_attendance_rule_attendance_manual" model="ir.rule">
+            <field name="active">False</field>
+        </record>
+
+        <record id="hr_attendance.hr_attendance_rule_attendance_manager" model="ir.rule">
+            <field name="active">False</field>
+        </record>
+
+        <record id="hr_attendance.hr_attendance_rule_attendance_employee" model="ir.rule">
+            <field name="active">False</field>
+        </record>
+
+
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'hr_attendance'), '|','|',
+                ('name', '=', 'hr_attendance_rule_attendance_manual'),
+                ('name', '=', 'hr_attendance_rule_attendance_manager'),
+                ('name', '=', 'hr_attendance_rule_attendance_employee')
+               ]"/>
+            </function>
+            <value eval="{'noupdate': True}"/>
+        </function>
+        <!--     See Own attendance and his subroutines   -->
+        <record id="jbm_hr_attendance_user_rule" model="ir.rule">
+            <field name="name">user: see own attendance</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="domain_force">
+                [
+                '|',
+                ('employee_id.user_id', '=', user.id),
+                ('employee_id.id', 'child_of', user.employee_id.child_ids.ids)
+                ]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('hr_attendance.group_hr_attendance'))]"/>
+        </record>
+
+        <record id="jbm_hr_attendance_manager_rule" model="ir.rule">
+            <field name="name">manager: see all attendance</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="domain_force">
+                [
+                (1, '=', 1)
+                ]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[
+            (4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_accounting_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_hr_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_hr_user')),
+            (4,ref('jbm_group_access_right_extended.custom_general_manager')),
+            (4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),
+            ]"/>
+        </record>
+
+
+    </data>
+</odoo>

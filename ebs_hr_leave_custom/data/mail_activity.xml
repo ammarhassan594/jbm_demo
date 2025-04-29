@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="mail_act_leave_air_ticket" model="mail.activity.type">
+        <field name="name">In-house Leave Ticket</field>
+        <field name="res_model">hr.flight.ticket</field>
+    </record>
+
+    <record id="mail_act_hr_leave_planning_approval" model="mail.activity.type">
+        <field name="name">Leave Planning Approval</field>
+        <field name="res_model">hr.leave.planning</field>
+    </record>
+
+
+</odoo>

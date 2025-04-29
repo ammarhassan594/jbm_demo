@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+
+
+        <template id="hr_jobs_detail" inherit_id="website_hr_recruitment.detail">
+            <xpath expr="//h1" position="replace">
+                <h1 class="mb0 mt0" t-field="job.job_title"/>
+                <small>
+                    <span t-field="job.name"/>
+                </small>
+                <h5>
+                    <span t-esc="job.department_id.name"/>
+                </h5>
+            </xpath>
+        </template>
+        <template id="hr_jobs_apply" inherit_id="website_hr_recruitment.apply">
+            <xpath expr="//form/div[1]//div[2]" position="after">
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="nationality">Nationality (Country)</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <select id="country_select" class="form-control" name="nationality" required="">
+                            <option value="">Select Nationality ...</option>
+                            <t t-foreach="countries or []" t-as="country">
+                                <option t-att-value="country.id"
+                                        t-att-selected="country.code == 'AE'"
+                                        t-att-data-code="country.code">
+                                    <t t-esc="country.name"/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="gender">Gender</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <select id="gender_select" class="form-control" name="gender" required="">
+                            <option value="">Select Gender ...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="national_service_div" class="form-group row form-field" style="display: none;">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="national_service">National Services</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <input id="national_service_field" type="checkbox"
+                               style="display: inline;width: 20px;height:20px; vertical-align: bottom;"
+                               name="national_service"/>
+                    </div>
+                </div>
+                <div class="form-group row form-field ">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="currently_employed">Currently Employed</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <input type="checkbox" style="display: inline;width: 20px;height:20px; vertical-align: bottom;"
+                               name="currently_employed"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//input[@name='Resume']" position="attributes">
+                <attribute name="accept">.pdf</attribute>
+                <attribute name="required">1</attribute>
+            </xpath>
+        </template>
+
+
+
+    </data>
+</odoo>

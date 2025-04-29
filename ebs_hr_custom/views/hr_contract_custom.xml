@@ -1,0 +1,199 @@
+<odoo>
+    <data>
+
+        <record id="wassef_custom_hr_contract_view" model="ir.ui.view">
+            <field name="name">custom.hr.contract.view</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='resource_calendar_id']" position="after">
+                    <field name="resource_calendar_domain" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='resource_calendar_id']" position="attributes">
+                    <attribute name="domain">resource_calendar_domain</attribute>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="registration_number"/>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="options">{"no_open": True}</attribute>
+                </xpath>
+                <xpath expr="/form/header" position="inside">
+                    <button name="reset_to_draft" string="Edit" class="oe_highlight" type="object"
+                            groups="ebs_hr_custom.group_user_to_edit_employee_contract"
+                            attrs="{'invisible':[('state','!=','open')]}"
+                            confirm="Are You Sure You Want Edit Employee Contract?"/>
+                    <button name="move_to_probation" string="Probation" class="oe_highlight" type="object"
+                            attrs="{'invisible':[('state','!=','draft')]}" invisible="1"/>
+                    <button name="move_to_running" string="Running" class="oe_highlight" type="object"
+                            attrs="{'invisible':[('state','!=','draft')]}"/>
+                    <button name="move_to_cancel" string="Cancel" class="oe_highlight" type="object"
+                            attrs="{'invisible':[('state','!=','open')]}" confirm="Are you sure you want to cancel this record"/>
+                    <button name="move_to_expired" string="Expired" class="oe_highlight" type="object"
+                            attrs="{'invisible':[('state','!=','open')]}"/>
+
+                </xpath>
+                <xpath expr="/form/header/field[@name='state']" position="attributes">
+                    <attribute name="options">"{'clickable': '0'}"</attribute>
+                </xpath>
+                <xpath expr="//form" position="attributes">
+                    <attribute name="rp_edit">state == 'draft'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='hr_responsible_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='information']" position="after">
+                    <page string="Leave Type" name="leavetype">
+                        <group name="leave_type">
+                            <field name="leave_type"/>
+                        </group>
+                    </page>
+                    <page string="Retroactive Salary" name="retroactive_salary_page"
+                          attrs="{'invisible': [('retroactive','=',False)]}">
+                        <group name="retroactive_salary_group" attrs="{'invisible': [('retroactive','=',False)]}">
+                            <field name="previous_contract" attrs="{'invisible': [('retroactive','=',False)]}"/>
+                            <field name="retroactive_salary" attrs="{'invisible': [('retroactive','=',False)]}"
+                                   force_save="True"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='date_end']" position="attributes">
+                    <attribute name="attrs">{'required': [('wassef_employee_type', '=', 'temp')]}</attribute>
+                </xpath>
+                <!--           @M.Ashraf -> Leave Type Selection     -->
+                <xpath expr="//field[@name='hr_responsible_id']" position="after">
+                    <field name="type_leave" readonly="1"/>
+                </xpath>
+
+                <field name="department_id" position="after">
+                    <field name="wassef_employee_type"/>
+                    <field name="type_leave" invisible="1"/>
+                    <field name="is_married" invisible="1"/>
+                    <field name="is_qatari" invisible="1"/>
+                    <field name="is_male" invisible="1"/>
+                    <field name="permanent_staff_contract_domain" invisible="1"/>
+                    <field name="payroll_group" attrs="{'invisible': [('wassef_employee_type','!=','perm_in_house')]}"
+                           force_save="1"/>
+                    <field name="permanent_staff_employee"
+                           attrs="{'invisible': [('wassef_employee_type','!=','perm_staff')]}"
+                           domain="permanent_staff_contract_domain"
+                           force_save="1"/>
+                    <field name="is_classified" groups="ebs_hr_custom.group_user_manage_classified_employee"/>
+                    <field name="is_confidential" groups="hr.group_hr_manager" invisible="1"/>
+                    <field name="country"/>
+                </field>
+                <field name="job_id" position="after">
+                    <field name="retroactive"/>
+                    <field name="required_airport" invisible="1"/>
+                    <field name="airport_name" attrs="{'required':[('required_airport', '=', True)]}"/>
+                </field>
+                <xpath expr="//page[@name='information']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('wassef_employee_type', '!=' , 'perm_in_house')]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='information']" position="after">
+                    <page string="Salary Information" name="salary_info_permanent_staff"
+                          attrs="{'invisible':[('wassef_employee_type','=','perm_in_house')]}">
+                        <!--                        <group>-->
+                        <!--                            <field name="warning_message" attrs="{'invisible': [('warning','=',False)]}"/>-->
+                        <!--                            <field name="warning" invisible="1"/>-->
+                        <!--                        </group>-->
+
+
+                        <group string="Salary Information For Permanent Staff"
+                               attrs="{'invisible':[('wassef_employee_type','=', 'temp')]}">
+                            <group>
+                                <field name="wage" force_save="1"/>
+                                <field name="social_allowance_for_permanent_staff"
+                                       attrs="{'readonly': [('is_classified','=', False)],
+                                               'invisible': [('is_qatari', '=', False)]}" force_save="1"/>
+                                <field name="accommodation"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="transport_allowance"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="mobile_allowance"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="mobilisation_allowance_for_permanent_staff"
+                                       attrs="{'readonly': [('is_classified','=', False)],
+                                               'invisible': [('is_qatari', '=', True)]}"
+                                       force_save="1"/>
+                                <field name="other_allowance"
+                                       attrs="{'readonly': [('is_classified','=', False)],
+                                              'invisible': [('is_classified', '=', False)]}"
+                                       force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="car_loan_for_permanent_staff"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="marriage_loan_for_permanent_staff"
+                                       attrs="{'readonly': [('is_classified','=', False)],
+                                               'invisible': ['|', ('is_qatari', '=', False), ('is_male', '=', False)]}"
+                                       force_save="1"/>
+                                <field name="furniture_allowance_for_permanent_staff"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="education_allowance_for_permanent_staff"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="business_allowance_non_gulf"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="business_allowance_gulf"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                                <field name="gross_salary"
+                                       attrs="{'readonly': [('is_classified','=', False)]}" force_save="1"/>
+                            </group>
+                        </group>
+                        <group string="Salary Information For Temporary Employees"
+                               attrs="{'invisible':[('wassef_employee_type','!=', 'temp')]}">
+                            <group>
+                                <field name="wage"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_contract_leave_type_form" model="ir.ui.view">
+            <field name="name">contract.leave.type.form</field>
+            <field name="model">contract.leave.type</field>
+            <field name="arch" type="xml">
+                <form string="Contract Leave Type">
+                    <sheet>
+                        <group>
+                            <field name="leave_type"/>
+                            <field name="days"/>
+                            <field name="allocation_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_contract_leave_type_tree" model="ir.ui.view">
+            <field name="name">contract.leave.type.tree</field>
+            <field name="model">contract.leave.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="leave_type"/>
+                    <field name="days"/>
+                    <field name="allocation_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="inherit_hr_contract_view_search" model="ir.ui.view">
+            <field name="name">inherit.hr.contract.view.search</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                    <separator/>
+                    <filter string="Permanent in house Employees" name="filter_in_house_employee"
+                            domain="[('employee_id.wassef_employee_type', '=', 'perm_in_house')]"/>
+                    <filter string="Permanent Staff Employees" name="filter_staff_employee"
+                            domain="[('employee_id.wassef_employee_type', '=', 'perm_staff')]"/>
+                    <filter string="Temporary Employees" name="filter_temporary_employee"
+                            domain="[('employee_id.wassef_employee_type', '=', 'temp')]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+    <record model="ir.ui.view" id="hr_recruitment_stage_form_inherited">
+        <field name="name">hr.recruitment.stage.form.inherited</field>
+        <field name="model">hr.recruitment.stage</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_recruitment_stage_form"/>
+        <field name="arch" type="xml">
+            <field name="job_ids" position="after">
+                <field name="state" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="hr_applicant_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.applicant.form.inherit</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='hiring_manager_id']" position="after">
+                <field name="state" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

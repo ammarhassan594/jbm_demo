@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fields, api, _class ApprovalRequestType(models.Model):    _name = "approval.request.type"    _description = "Approval Request Type"    name = fields.Char(string="Name", required=True)    category_id = fields.Many2one(comodel_name="approval.category", string="Category", required=True)

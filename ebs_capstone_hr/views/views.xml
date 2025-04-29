@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ebs_capstone_hr_custom_form">
+            <field name="name">ebs.capstone.hr.custom.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='payroll_group']" position="inside">
+                    <field name="joining_date"/>
+                    <field name="contract_duration"/>
+                </xpath>
+                <!--                <field name='job_id' position="before">-->
+                <!--                    <field name="joining_date"/>-->
+                <!--                    <field name="contract_duration"/>-->
+                <!--                </field>-->
+                <xpath expr="//page[@name='public']/div/div[1]/group[4]/field[@name='resource_calendar_id']"
+                       position="before">
+                    <field name="annual_leave"/>
+
+                </xpath>
+                <xpath expr="//page[@name='personal_information']/group/group[2]/field[@name='identification_id']"
+                       position="before">
+                    <!--                    <field name="ikama"/>-->
+                </xpath>
+
+                <!--                <xpath expr="//field[@name='km_home_work']" position="before">-->
+                <!--                    <field name="sponsorship_type" required="1"/>-->
+                <!--                    <field name="waseef_sponsor" required="1"/>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="status"/>
+
+                </xpath>
+                <!--                 <xpath expr="//field[@name='emergency_phone']" position="after">-->
+                <!--                    <field name="health_card"/>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='km_home_work']" position="after">
+                    <field name="owns_car"/>
+                    <field name="driving_license"/>
+
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="after">
+                    <field name="bank_account_type"/>
+                    <field name="sim_card"/>
+
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="before">
+                    <field name="bank_name"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

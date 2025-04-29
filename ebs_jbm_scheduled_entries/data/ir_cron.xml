@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="ir_cron_scheduler_generate_scheduled_entries" model="ir.cron">
+            <field name="name">Generate scheduled entries</field>
+            <field name="model_id" ref="model_scheduled_entries_configuration"/>
+            <field name="state">code</field>
+            <field name="code">model.generate_scheduled_entries()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,170 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 08:36+0000\n"
+"PO-Revision-Date: 2023-01-23 08:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__purchase
+msgid "Approved"
+msgstr "وافق"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Budget line is not available for the order."
+msgstr ".بند الميزانية غير متاح للأمر"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Budget preparation line is not available for the order."
+msgstr ".سطر إعداد الميزانية غير متوفر للأمر"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Chart of account is not link to any budget position for the product."
+msgstr ".مخطط الحساب ليس مرتبطًا بأي موضع ميزانية للمنتج"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_line_custom.py:0
+#, python-format
+msgid "Chart of account is not link to any budgetory position for the %s."
+msgstr ".%s مخطط الحساب ليس مرتبطًا بأي موضع في الميزانية لـ"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid ""
+"Chart of account is not link to any budgetory position for the product."
+msgstr ""
+"مخطط الحساب ليس مرتبطًا بأي موضع ميزانية للمنتج."
+
+#. module: ebs_fusion_purchase
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_purchase.ebs_fusion_purchase_order_form
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields,field_description:ebs_fusion_purchase.field_purchase_order__department_id
+msgid "Department"
+msgstr "قسم"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Finanace Manager approval needed."
+msgstr ".مطلوب موافقة مدير الشؤون المالية"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields,field_description:ebs_fusion_purchase.field_purchase_order_line__is_coo_approval_needed
+msgid "Is Coo Approval Needed"
+msgstr "هل هناك حاجة إلى موافقة Coo"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields,field_description:ebs_fusion_purchase.field_purchase_order_line__is_finanace_approval_needed
+msgid "Is Finanace Approval Needed"
+msgstr "هل الموافقة المالية مطلوبة"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__done
+msgid "Locked"
+msgstr "مقفل"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Order amount is more than budget amount."
+msgstr ".مبلغ الطلب أكبر من مبلغ الميزانية"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Order amount is more than budget preparation amount."
+msgstr ".مبلغ الطلب أكبر من مبلغ إعداد الميزانية"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__draft
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_custom.py:0
+#, python-format
+msgid "Please Approve the line first."
+msgstr ".الرجاء الموافقة على السطر أولاً"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_line_custom.py:0
+#, python-format
+msgid ""
+"Please configure Chart of Accounts in the expense account of the %s or to "
+"product category."
+msgstr ""
+"الرجاء تكوين مخطط الحسابات في حساب المصروفات لـ s% أو إلى "
+"فئة المنتج."
+
+#. module: ebs_fusion_purchase
+#: model:ir.model,name:ebs_fusion_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model,name:ebs_fusion_purchase.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "بند أمر الشراء"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__rejected
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_purchase.ebs_fusion_purchase_order_form
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__sent
+msgid "Sent"
+msgstr "أرسلت"
+
+#. module: ebs_fusion_purchase
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_purchase.ebs_fusion_purchase_order_form
+msgid "Set to Draft"
+msgstr "تعيين إلى مسودة"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields,field_description:ebs_fusion_purchase.field_purchase_order__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: ebs_fusion_purchase
+#: code:addons/ebs_fusion_purchase/models/purchase_order_line_custom.py:0
+#, python-format
+msgid "There is no budget defined for the %s."
+msgstr ".%s لا توجد ميزانية محددة لـ"
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields.selection,name:ebs_fusion_purchase.selection__purchase_order__state__to_approve
+msgid "To Approve"
+msgstr "للموافقة "
+
+#. module: ebs_fusion_purchase
+#: model:ir.model.fields,field_description:ebs_fusion_purchase.field_purchase_order__is_active_budget_preparation
+msgid "is active budget preparation"
+msgstr "هو إعداد الميزانية النشط"

@@ -1,0 +1,48 @@
+<odoo>
+
+    <record id="hr_loan_type_tree_view" model="ir.ui.view">
+        <field name="name">hr.loan.type.tree</field>
+        <field name="model">hr.loan.type</field>
+        <field name="inherit_id" ref="matco_loan_management.hr_loan_type_tree_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="show_in_loan"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hr_loan_type_form_view" model="ir.ui.view">
+        <field name="name">hr.loan.type.form</field>
+        <field name="model">hr.loan.type</field>
+        <field name="inherit_id" ref="matco_loan_management.hr_loan_type_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='purpose_code']" position="after">
+                <field name="show_in_loan"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="jbm_hr_loan_custom.hr_loan_form_view" model="ir.ui.view">
+        <field name="name">hr.loan.loan.form</field>
+        <field name="model">hr.loan</field>
+        <field name="inherit_id" ref="matco_loan_management.hr_loan_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header//button[last()]" position="after">
+                <button type="action" name="%(jbm_hr_loan_custom.restart_loan_action)d"
+                        string="Restart Loan" class="btn btn-secondary"
+                        groups="hr.group_hr_manager" states="paid"
+                />
+            </xpath>
+            <xpath  expr="//field[@name='loan_type']" position="after">
+                <field name="loan_type_domain" invisible="1"/>
+            </xpath>
+            <xpath  expr="//field[@name='loan_type']" position="attributes">
+                <attribute name="domain">loan_type_domain</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

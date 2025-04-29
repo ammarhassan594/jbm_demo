@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="inherit_ebs_jbm_approval_extend_purchase_order_form" model="ir.ui.view">
+            <field name="name">inherit.ebs.jbm.approval.extend.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="ebs_jbm_approval_extend.ebs_jbm_approval_extend_purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="approval_request_id" position="after">
+                    <field name="mr_request_id" string="Material Request Number" readonly="1"/>
+                    <field name="mr_user_id" string="Material Requester"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

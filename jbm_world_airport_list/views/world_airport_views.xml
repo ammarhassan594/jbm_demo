@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <!--tree view of  model-->
+    <record id="world_airports_tree" model="ir.ui.view">
+        <field name="name">World Airports Tree</field>
+        <field name="model">world.airport</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="country"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view of  model-->
+    <record id="world_airport_form" model="ir.ui.view">
+        <field name="name">World Airports Form</field>
+        <field name="model">world.airport</field>
+        <field name="arch" type="xml">
+            <form>
+                 <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="country"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="world_airport_act_window" model="ir.actions.act_window">
+        <field name="name">World Airports</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">world.airport</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="world_airport_menu" name="World Airports List" parent="hr.menu_human_resources_configuration" sequence="7"
+              action="world_airport_act_window" />
+
+    </data>
+</odoo>

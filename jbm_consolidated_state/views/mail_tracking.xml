@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="jbm_consolidated_state_view_mail_tracking_value_form" model="ir.ui.view">
+            <field name="name">mail.tracking.value.form.inherit</field>
+            <field name="model">mail.tracking.value</field>
+            <field name="inherit_id" ref="mail.view_mail_tracking_value_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='field']" position="before">
+                    <field name="model_name"/>
+                </xpath>
+                <xpath expr="//field[@name='field']" position="after">
+                    <field name="res_id"/>
+                    <field name="created_on"/>
+                </xpath>
+                <xpath expr="//field[@name='old_value_char']" position="after">
+                    <field name="selection_old_value_key"/>
+                </xpath>
+                <xpath expr="//field[@name='new_value_char']" position="after">
+                    <field name="selection_new_value_key"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

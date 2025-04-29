@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+            id="jbm_approval_request_menu"
+            name="All Approvals"
+            action="approvals.approval_request_action_all"
+            parent="approvals.approvals_approval_menu"
+            groups="jbm_group_access_right_extended.custom_committee_user,jbm_group_access_right_extended.custom_procurement_manager,jbm_group_access_right_extended.procurement_user_role,jbm_group_access_right_extended.custom_accounting_manager,jbm_group_access_right_extended.custom_accountant_role_manager,jbm_group_access_right_extended.custom_accounting_auditor_manager"
+    />
+
+    <menuitem
+            id="jbm_stock_location_menu"
+            name="Locations"
+            action="stock.action_location_form"
+            parent="stock.menu_stock_root"
+            groups="jbm_group_access_right_extended.custom_general_manager,jbm_group_access_right_extended.custom_general_manager_representative,jbm_group_access_right_extended.custom_accounting_manager,jbm_group_access_right_extended.custom_accountant_role_manager,jbm_group_access_right_extended.custom_accounting_auditor_manager"
+    />
+
+    <menuitem id="jbm_menu_budget_preparation_procurement" name="Budget Preparation"
+              action="ebs_jbm_budget_custom.action_budget_preparation"
+              parent="account_accountant.menu_accounting"
+              groups="jbm_group_access_right_extended.custom_procurement_manager"
+    />
+
+
+    <menuitem id="jbm_main_menu_budget_preparation_committee" name="Budget Preparation"
+              action="ebs_jbm_budget_custom.action_budget_preparation"
+              groups="jbm_group_access_right_extended.custom_hr_manager,jbm_group_access_right_extended.custom_committee_user,jbm_group_access_right_extended.custom_committee_leader"
+    />
+
+    <menuitem id="jbm_main_menu_budget_committee" name="Budgets"
+              action="account_budget.act_crossovered_budget_view"
+              groups="jbm_group_access_right_extended.custom_committee_user,jbm_group_access_right_extended.custom_committee_leader"
+    />
+
+
+    <menuitem
+            id="jbm_approvals_category_menu_config"
+            parent="approvals.approvals_menu_config"
+            name="Approvals Types"
+            action="approvals.approval_category_action"
+            groups="jbm_group_access_right_extended.custom_general_manager,jbm_group_access_right_extended.custom_general_manager_representative"/>
+
+    <menuitem
+            id="jbm_menu_action_account_form"
+            parent="account.menu_finance_entries_accounting_miscellaneous"
+            name="Chart of accounts"
+            action="account.action_account_form"
+            groups="jbm_group_access_right_extended.custom_general_manager,jbm_group_access_right_extended.custom_general_manager_representative"/>
+
+    <menuitem parent="account.menu_finance_entries_management"
+              id="account_budget.menu_act_crossovered_budget_view"
+              name="Budgets"
+              action="account_budget.act_crossovered_budget_view" sequence="60"
+              groups="jbm_group_access_right_extended.custom_general_manager,account.group_account_manager,jbm_group_access_right_extended.custom_general_manager_representative"/>
+</odoo>

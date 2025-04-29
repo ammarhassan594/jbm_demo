@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* employee_ooredoo_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-03 07:51+0000\n"
+"PO-Revision-Date: 2024-08-03 07:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: employee_ooredoo_integration
+#: model:ir.actions.server,name:employee_ooredoo_integration.ir_action_employee_send_sms
+msgid "Action Send SMS For Employee"
+msgstr ""
+
+#. module: employee_ooredoo_integration
+#: model:ir.model,name:employee_ooredoo_integration.model_dynamic_integration_configuration
+msgid "Configuration of Dynamic Integration"
+msgstr ""
+
+#. module: employee_ooredoo_integration
+#: model:ir.model.fields,field_description:employee_ooredoo_integration.field_hr_employee__integration_configuration_id
+msgid "Configuration of Integration"
+msgstr ""
+
+#. module: employee_ooredoo_integration
+#: model:ir.model,name:employee_ooredoo_integration.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: employee_ooredoo_integration
+#: model:ir.model,name:employee_ooredoo_integration.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "دفعات إيصال الدفع "
+
+#. module: employee_ooredoo_integration
+#: model_terms:ir.ui.view,arch_db:employee_ooredoo_integration.inherit_hr_payslip_run_view_form
+msgid "SEND PAYSLIP SMS"
+msgstr "ارسال اشعار الراتب برسالة نصية"

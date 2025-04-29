@@ -1,0 +1,58 @@
+<odoo>
+    <record id="custom_documents_view" model="ir.ui.view">
+        <field name="name">custom.documents.view</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/sheet/notebook/page[@name='related_to']/group" position="inside">
+                <field name="edit_access" invisible="1"/>
+                <field name="employee_id" attrs="{'readonly':[('edit_access', '=', False)]}"/>
+                <field name="employee_client_id" attrs="{'invisible':[('employee_client_id','=',False)]}"/>
+<!--                <field name="employee_type" attrs="{'invisible':[('employee_type','=',False)]}"/>-->
+                <field name="partner_id" string="Partner" invisible="context.get('hide_field')"
+                       attrs="{'readonly':[('edit_access', '=', False)]}"/>
+            </xpath>
+
+
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="documents_custom_kanban_inherit">
+        <field name="name">documents.custom.inherit.kanban</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_kanban"/>
+        <field name="priority">16</field>
+        <field name="type">kanban</field>
+
+        <field name="arch" type="xml">
+            <xpath expr="//kanban//templates//div[hasclass('o_kanban_record_title')]" position="after">
+
+                <field name="employee_id" options="{'no_create_edit':True}"/>
+            </xpath>
+            <xpath expr="//kanban//templates//div[hasclass('o_kanban_record_body')]/t[1]" position="after">
+                <div t-if="record.employee_client_id.raw_value">
+                    <strong>Client Name</strong>:
+                    <field name="employee_client_id" options="{'no_create_edit':True}"/>
+                </div>
+                <div t-if="record.employee_id.raw_value">
+                    <strong>Employee Name</strong>:
+                    <field name="employee_id" options="{'no_create_edit':True}"/>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="document_view_search_inherit">
+        <field name="name">documents.document.search.inherit</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="employee_client_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>

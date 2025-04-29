@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--tree view of  model-->
+    <record id="dependents_fares_tree" model="ir.ui.view">
+        <field name="name">Dependents Fares Tree</field>
+        <field name="model">dependents.fares</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="destination"/>
+                <field name="adult_fare"/>
+                <field name="child_fare"/>
+                <field name="infant_fare"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view of  model-->
+    <record id="dependents_fares_form" model="ir.ui.view">
+        <field name="name">Dependents Fares Form</field>
+        <field name="model">dependents.fares</field>
+        <field name="arch" type="xml">
+            <form>
+                 <sheet>
+                    <group>
+                        <group>
+                            <field name="destination"/>
+                            <field name="adult_fare"/>
+                            <field name="child_fare"/>
+                        </group>
+                        <group>
+                            <field name="infant_fare"/>
+                            <field name="date_year"/>
+                            <field name="travel_class"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--tree view of  model-->
+    <record id="world_airports_tree" model="ir.ui.view">
+        <field name="name">World Airports Tree</field>
+        <field name="model">world.airports</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="airport"/>
+                <field name="country"/>
+                <field name="airport_code"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view of  model-->
+    <record id="world_airports_form" model="ir.ui.view">
+        <field name="name">World Airports Form</field>
+        <field name="model">world.airports</field>
+        <field name="arch" type="xml">
+            <form>
+                 <sheet>
+                    <group>
+                        <group>
+                            <field name="airport"/>
+                            <field name="country"/>
+                        </group>
+                        <group>
+                            <field name="airport_code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="world_airports_action" model="ir.actions.act_window">
+        <field name="name">World Airports</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">world.airports</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="dependents_fares_action" model="ir.actions.act_window">
+        <field name="name">Dependents Fares</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dependents.fares</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a Dependent's Fare
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="dependents_fares" name="Fares" parent="hr.menu_human_resources_configuration" sequence="6"
+              action="dependents_fares_action" />
+    <menuitem id="world_airport_menu" name="World Airports List" parent="hr.menu_human_resources_configuration" sequence="7"
+              action="world_airports_action" />
+</odoo>

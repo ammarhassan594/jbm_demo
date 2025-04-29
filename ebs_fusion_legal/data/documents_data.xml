@@ -1,0 +1,8 @@
+<odoo>
+    <record id="documents_legal_folder" model="documents.folder">
+        <field name="name">Legal</field>
+        <field name="sequence">13</field>
+        <field name="group_ids" eval="[(4, ref('ebs_fusion_legal.group_ebs_fusion_legal'))]"/>
+        <field name="read_group_ids" eval="[(4, ref('ebs_fusion_legal.group_ebs_fusion_legal'))]"/>
+    </record>
+</odoo>

@@ -1,0 +1,69 @@
+<odoo>
+  <record id="res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">res.config.settings.view.form.inherit.cts.api</field>
+    <field name="model">res.config.settings</field>
+    <field name="priority" eval="80"/>
+    <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//div[hasclass('settings')]" position="inside">
+
+        <div class="app_settings_block" data-string="CTS API" string="CTS API" data-key="cts_api">
+
+          <h2>CTS API</h2>
+          <div class="row mt16 o_settings_container" name="cts_setting_container">
+            <div class="col-12 col-lg-6 o_setting_box" title="Set Customer Data For Integration With Ooredoo.">
+
+              <div class="o_setting_right_pane">
+                <field name="cts_auth_url"/>
+                <div class="text-muted">
+                  <label for="cts_auth_url" class="o_form_label">Authentication URL</label>
+                  <br/>
+                                    Add Authentication  URL To Integrate With CTS.
+                </div>
+              </div>
+
+              <div class="o_setting_right_pane">
+                <field name="cts_url"/>
+                <div class="text-muted">
+                  <label for="cts_url" class="o_form_label">CTS URL</label>
+                  <br/>
+                                    Add URL To Integrate With CTS.
+                </div>
+              </div>
+
+
+              <div class="o_setting_right_pane">
+                <field name="cts_username"/>
+                <div class="text-muted">
+                  <label for="cts_username" class="o_form_label">Username</label>
+                  <br/>
+                                    Add Username To Integrate With CTS.
+                </div>
+              </div>
+
+              <div class="o_setting_right_pane">
+                <field name="cts_password"/>
+                <div class="text-muted">
+                  <label for="cts_password" class="o_form_label">Password</label>
+                  <br/>
+                                    Add Password To Integrate With CTS.
+                </div>
+              </div>
+              <div class="o_setting_right_pane">
+                <field name="ssl_certificate_url"/>
+                <div class="text-muted">
+                  <label for="ssl_certificate_url" class="o_form_label">SSL certificate Url</label>
+                  <br/>
+                                    Add SSL URL To Integrate With CTS.
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </xpath>
+    </field>
+  </record>
+</odoo>

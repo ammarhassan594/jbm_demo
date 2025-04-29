@@ -1,0 +1,114 @@
+<odoo>
+
+    <record id="taqat_custom_res_config_settings_view" model="ir.ui.view">
+        <field name="name">custom.res.config.settings.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase_stock.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='request_vendor_setting_container']" position="after">
+                <h2>Budget</h2>
+                <div class="row mt16 o_settings_container" name="active_budget_conf">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="is_active_budget"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_active_budget"/>
+                            <div class="text-muted">
+                                Active Budget
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Budget Preparation</h2>
+                <div class="row mt16 o_settings_container" name="active_budget_preparation_conf">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="is_active_budget_preparation"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_active_budget_preparation"/>
+                            <div class="text-muted">
+                                Active Preparation Budget
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+	<record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">custom.res.config.settings.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='default_accounts']//.." position="after">
+               <t groups="account.group_account_user" attrs="{'invisible': [('chart_template_id','=',False)]}">
+                            <h2>Default Product Accounts</h2>
+                            <div class="row mt16 o_settings_container" id="default_products_accounts">
+                                <div class="col-12 col-lg-6 o_setting_box" >
+                                    <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane">
+                                        <div class="content-group">
+                                            <div>
+                                                <span class="o_form_label">Service Products:</span>
+                                            </div>
+                                            <div class="row mt8">
+                                                <label for="product_service_account_income_id" class="col-lg-4 o_light_label" string="Income Account" />
+                                                <field name="product_service_account_income_id" domain="[('company_id','=',company_id)]"/>
+                                            </div>
+                                            <div class="row mt8">
+                                                <label for="product_service_account_expense_id" class="col-lg-4 o_light_label" string="Expense Account" />
+                                                <field name="product_service_account_expense_id" domain="[('company_id','=',company_id)]"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                     <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane">
+                                        <div class="content-group">
+                                            <div>
+                                                <span class="o_form_label">Storable Products:</span>
+                                            </div>
+                                            <div class="row mt8">
+                                                <label for="product_storable_account_income_id" class="col-lg-4 o_light_label" string="Income Account" />
+                                                <field name="product_storable_account_income_id" domain="[('company_id','=',company_id)]"/>
+                                            </div>
+                                            <div class="row mt8">
+                                                <label for="product_storable_account_expense_id" class="col-lg-4 o_light_label" string="Expense Account" />
+                                                <field name="product_storable_account_expense_id" domain="[('company_id','=',company_id)]"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-12 col-lg-6 o_setting_box">
+                                     <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane">
+                                        <div class="content-group">
+                                            <div>
+                                                <span class="o_form_label">Consumable Products:</span>
+                                            </div>
+                                            <div class="row mt8">
+                                                <label for="product_cons_account_income_id" class="col-lg-4 o_light_label" string="Income Account" />
+                                                <field name="product_cons_account_income_id" domain="[('company_id','=',company_id)]"/>
+                                            </div>
+                                            <div class="row mt8">
+                                                <label for="product_cons_account_expense_id" class="col-lg-4 o_light_label" string="Expense Account" />
+                                                <field name="product_cons_account_expense_id" domain="[('company_id','=',company_id)]"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </t>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

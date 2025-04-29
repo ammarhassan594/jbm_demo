@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="jbm_report_hr_appraisal_supervisory_non_supervisory" model="ir.actions.report">
+            <field name="name">نموذج تقييم الأداء الوظيفي</field>
+            <field name="model">hr.appraisal</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jbm_hr_appraisal.jbm_hr_appraisal_template</field>
+            <field name="report_file">jbm_hr_appraisal.jbm_hr_appraisal_template</field>
+            <field name="print_report_name">object.employee_id.name</field>
+        <field name="binding_model_id" ref="hr_appraisal.model_hr_appraisal"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

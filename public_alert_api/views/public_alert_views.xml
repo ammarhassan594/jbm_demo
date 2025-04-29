@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="public_alert_view_tree">
+            <field name="name">public.alert.tree.view</field>
+            <field name="model">public.alert</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="public_alert_view_form">
+            <field name="name">public.alert.form.view</field>
+            <field name="model">public.alert</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group col="2">
+                                <field name="title" required="1"/>
+                                <field name="date" />
+                                <field name="attachment" widget="binary"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="public_alert_action" model="ir.actions.act_window">
+            <field name="name">Public Alert</field>
+            <field name="res_model">public.alert</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_public_alert"
+                name="Public Alert"
+                action="public_alert_action"/>
+
+    </data>
+</odoo>

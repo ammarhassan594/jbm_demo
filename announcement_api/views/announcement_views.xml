@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="announcement_view_tree">
+            <field name="name">announcement.tree.view</field>
+            <field name="model">announcement</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="attachment" widget="binary"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="announcement_view_form">
+            <field name="name">announcement.form.view</field>
+            <field name="model">announcement</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group col="2">
+                                <field name="name" required="1"/>
+                                <field name="date" />
+                                <field name="attachment" widget="binary"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="announcement_action" model="ir.actions.act_window">
+            <field name="name">Announcement</field>
+            <field name="res_model">announcement</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_announcement"
+                name="Announcement"
+                action="announcement_action"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,176 @@
+
+.document_table_class{
+  width: 1000px;
+  height: auto;
+  margin: 30px 30px 8px 30px;
+  padding: 17px 0 20px;
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.12);
+  border: solid 0.5px #cdcdcd;
+  background-color: #ffffff;
+}
+.document_table_class .document_table_title{
+  width: 127px;
+  height: 20px;
+ /* margin: 4px 315px 10px 20px;*/
+  font-family: 'ProximaNova';
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747;
+  padding: 21px 0px 10px 20px;
+}
+.document_table{
+    margin-top:10px;
+    font-size: 14px;
+    font-family: 'ProximaNova';
+}
+
+.document_table thead{
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: left;
+  color: #a1a0a5;
+}
+
+.document_table tbody td a{
+    color: #b79854;
+}
+
+.doc_pager .pagination .page-item.active .page-link{
+    background-color: #b79854;
+    border-color: #b79854;
+}
+.doc_pager .pagination{
+    display:inline-flex;
+}
+
+.add_document{
+  margin-top: -10px;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+
+@media only screen and (min-width: 1441px){
+    .document_table_class{
+        width: calc(100% - 45px);
+        margin-left: 30px;
+    }
+    .document_folder_structure table{
+        font-size:14px !important;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width:1440px){
+    .document_table_class{
+        width: calc(100% - 45px);
+        margin-left: 15px;
+    }
+    .document_folder_structure table{
+        font-size:14px !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width:1200px){
+    .document_table_class{
+        width: calc(100% - 45px);
+        margin-left: 15px;
+    }
+    .document_folder_structure table{
+        font-size:14px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px)  {
+    /*.document_table_class{
+        width: calc(100% - 45px);
+        margin-left: 15px;
+    }*/
+    .document_table_class{
+        width: 70%;
+        margin-left: 12px;
+    }
+    .table{
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+    }
+    .document_folder_structure .table{
+        font-size:14px !important;
+    }
+}
+
+@media only screen and (max-width: 767px)  {
+    .document_table_class{
+        width: 70%;
+        margin-left: 12px;
+    }
+    .table{
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+    }
+}
+#document_page{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#document_page .card-title{
+    font-family: "Montserrat-Bold";
+    color: #201747;
+    font-size: 16px;
+    margin-bottom: 12px !important;
+    margin-top: 30px !important;
+}
+#document_page .card-body{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#document_page .row {
+    padding-left: 0px !important;
+}
+#document_page .table {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+.flex-container {
+    display:flex;
+    flex-direction: row;
+}
+.document_folder_structure {
+    width:30%;
+    margin-right: 0px !important;
+}
+.doc_table{
+    height:100%;
+}
+.document_folder_structure tr:hover{
+    cursor: pointer;
+    color: #b79854;
+}
+.document_folder_structure .active{
+    color: #b79854;
+    font-weight: bold;
+}
+.no_docs_message {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.o_documents_kanban_upload {
+    display: none;
+}

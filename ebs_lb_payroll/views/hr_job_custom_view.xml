@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+
+
+        <record id="custom_hr_job_view" model="ir.ui.view">
+            <field name="name">custom_hr_job_view</field>
+            <field name="model">hr.job</field>
+            <field name="priority">32</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='department_id']" position="after">
+<!--                    <field name="payroll_grade" invisible="1"/>-->
+                </xpath>
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

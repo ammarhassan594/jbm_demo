@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_leave_allocation_custom_form">
+            <field name="name">hr.leave.allocation.custom.form</field>
+            <field name="model">hr.leave.allocation</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form_manager"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='display_name']" position="replace"/>-->
+                <xpath expr="//field[@name='allocation_type']" position="after">
+                    <field name="date_button" widget="radio" class="ml8"
+                            attrs="{'invisible': [('allocation_type', '!=', 'accrual')]}"/>
+                    <field name="start_date" class="ml8"
+                            attrs="{'required': ['&amp;', ('date_button', '=', 'start'), ('allocation_type', '=', 'accrual')],
+                                    'invisible': ['|', ('date_button', '!=', 'start'), ('allocation_type', '!=', 'accrual')]
+                                    }"/>
+                    <field name="joining_date" class="ml8"
+                            attrs="{'required': ['&amp;', ('date_button', '=', 'joining'), ('allocation_type', '=', 'accrual')],
+                                    'invisible': ['|', ('date_button', '!=', 'joining'), ('allocation_type', '!=', 'accrual')]
+                                    }"/>
+                </xpath>
+                <field name="employee_id" position="after">
+                    <field name="year"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hr_leave_allocation_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.leave.allocation.tree.inherit</field>
+            <field name="model">hr.leave.allocation</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                     <field name="leaves_taken" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

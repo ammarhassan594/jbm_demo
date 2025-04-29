@@ -1,0 +1,227 @@
+<odoo>
+    <data>
+
+        <record id="activity_interview_panel" model="mail.activity.type">
+            <field name="name">Interview Panel</field>
+            <field name="summary">You were added to an interview panel</field>
+            <field name="res_model">hr.applicant</field>
+        </record>
+        <record id="hr_applicant_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.applicant.form.inherit</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_application_send" type="object" class="oe_highlight" string="Send Email"/>
+                </xpath>
+
+                <field name="kanban_state" position="before">
+                    <field name="image_1920" widget='image' class="oe_avatar" readonly="0"
+                           options='{"zoom": true, "preview_image":"image_1920"}'/>
+                </field>
+
+                <button name="archive_applicant" position="replace">
+                </button>
+
+                <field name="user_id" position="after">
+                    <field name="emp_id" readonly="1"/>
+                </field>
+
+                <div name="button_box" position="inside">
+                    <button name="action_show_proposed_contracts" class="oe_stat_button" icon="fa-book" type="object"
+                            help="Proposed Contracts">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="proposed_contracts_count"/>
+                            </span>
+                            <span class="o_stat_text">Offers</span>
+                        </div>
+                    </button>
+                </div>
+
+                <field name="type_id" position="after">
+                    <field name="education_id"/>
+                    <field name="date_of_birth"/>
+                    <field name="nationality"/>
+                    <field name="nationality_name" invisible="1"/>
+                    <field name="gender"/>
+                    <field name="national_service"
+                           attrs="{'invisible':['|',('nationality_name','!=','United Arab Emirates'),('gender','!=','male')]}"/>
+                    <field name="currently_employed"/>
+                    <field name="last_position"/>
+                    <field name="current_employer"/>
+                    <field name="notice_period"/>
+                    <field name="current_location"/>
+                    <field name="total_years_of_exp"/>
+                    <field name="marital_status"/>
+                    <field name="related_children">
+                        <form>
+                            <group>
+                                <field name="name"/>
+                                <field name="gender"/>
+                                <field name="age"/>
+                            </group>
+                        </form>
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="age"/>
+                        </tree>
+                    </field>
+                </field>
+
+
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+
+                <field name="source_id" position="after">
+                    <field name="panel_ids" widget="many2many_tags"/>
+                </field>
+
+                <field name="availability" position="after">
+                    <field name="hiring_date"/>
+                    <field name="current_salary"/>
+                    <field name="currency"/>
+                    <field name="willing_relocate"/>
+                    <field name="hiring_manager_id"/>
+                    <field name="name_stage" invisible="1"/>
+                </field>
+
+                <field name="description" position="after">
+                    <notebook>
+                        <page name="surveys" string="Interviews">
+                            <field name="response_ids">
+                                <tree edit="0" create="0" delete="0" options="{'no_create': True, 'no_open': True}">
+                                    <field name="response_id"/>
+                                    <field name="user_id"/>
+                                    <field name="related_survey" invisible="1" force_save="1"/>
+                                    <button name="action_start_survey"
+                                            class="oe_stat_button"
+                                            icon="fa-user"
+                                            type="object"
+                                            help="Answer related job question"
+                                            context="{'survey_id': related_survey}"
+                                            attrs="{'invisible':[('related_survey','=',False)]}">
+                                    </button>
+                                    <button name="action_print_survey"
+                                            class="oe_stat_button"
+                                            icon="fa-print"
+                                            type="object"
+                                            help="Print interview report"
+                                            attrs="{'invisible':[('related_survey','=',False)]}">
+                                    </button>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="educational" string="Educational Background">
+                            <field name="educational_background"/>
+                        </page>
+                        <page name="offers" string="Other Interviews or Offers">
+                            <field name="other_offers"/>
+                        </page>
+                    </notebook>
+                </field>
+
+                <xpath expr="//button[@name='create_employee_from_applicant']" position="replace">
+                    <button string="Create Employee" name="create_employee_from_applicant" type="object" data-hotkey="v" class="oe_highlight o_create_employee" attrs="{'invisible': [('name_stage', '!=', 'Contract Signed')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="hr_contract_applicant_view_form" model="ir.ui.view">
+            <field name="name">hr.contract.applicant.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <field name="job_id" position="after">
+                    <field name="applicant_id" invisible="0"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="hr_recruitment_stage_form_inherited">
+            <field name="name">hr.recruitment.stage.form.inherited</field>
+            <field name="model">hr.recruitment.stage</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_recruitment_stage_form"/>
+            <field name="arch" type="xml">
+                <field name="job_ids" position="after">
+                    <field name="generate_contract"/>
+                    <field name="create_employee"/>
+                    <field name="start_interview"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="hr_job_website_custom_inherit" model="ir.ui.view">
+            <field name="name">hr.job.form.custom.inherit</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr_core.view_hr_job_form_inherited"/>
+            <field name="arch" type="xml">
+                <group name="compensations" position="after">
+                    <group string="Website Desc">
+                        <field name="website_description"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="hr_job_view_kanban_inherit" model="ir.ui.view">
+            <field name="name">hr.job.kanban.inherit</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr_recruitment.view_hr_job_kanban"/>
+            <field name="priority">1000</field>
+            <field name="mode">extension</field>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban[1]/field[@name='name']" position="after">
+                    <field name="job_title"/>
+                </xpath>
+                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[2]/div" position="after">
+                    <div class="o_kanban_record_subtitle col-12">
+                        <field name="job_title"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="hr_recruitment.create_job_simple" model="ir.actions.act_window">
+            <field name="name">Create a Job Position</field>
+            <field name="res_model">hr.job</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" eval="False"/>
+            <field name="target">new</field>
+        </record>
+
+
+        <!-- Education Tree View -->
+        <record model="ir.ui.view" id="hr_recruitment_education_tree">
+            <field name="name">hr.recruitment.education.tree</field>
+            <field name="model">hr.recruitment.education</field>
+            <field name="arch" type="xml">
+                <tree string="Education" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Education Action -->
+        <record id="hr_recruitment_education_action" model="ir.actions.act_window">
+            <field name="name">Education</field>
+            <field name="res_model">hr.recruitment.education</field>
+            <field name="view_id" ref="hr_recruitment_education_tree"/>
+        </record>
+
+        <menuitem
+                id="menu_hr_recruitment_education"
+                name="Education"
+                parent="hr_recruitment.menu_hr_recruitment_configuration"
+                action="hr_recruitment_education_action"
+                sequence="6" groups="base.group_no_one"/>
+    </data>
+</odoo>

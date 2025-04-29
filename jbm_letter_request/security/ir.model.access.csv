@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jbm_letter_request,access.jbm.letter.request,model_jbm_letter_request,,1,1,1,1
+access_letter_type,access.letter.type,model_letter_type,,1,1,1,1

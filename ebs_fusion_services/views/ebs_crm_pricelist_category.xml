@@ -1,0 +1,38 @@
+<odoo>
+    <!--    ebs crm pricelist category form-->
+    <record model="ir.ui.view" id="view_ebs_crm_pricelist_categories_form">
+        <field name="name">ebs.crm.pricelist.categories.Form</field>
+        <field name="model">ebs.crm.pricelist.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm pricelist categories tree-->
+    <record id="view_ebs_crm_pricelist_categories_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.pricelist.categories.tree</field>
+        <field name="model">ebs.crm.pricelist.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm pricelist categories action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_pricelist_categories">
+        <field name="name">Pricelist Categories</field>
+        <field name="res_model">ebs.crm.pricelist.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_purchase_contract,purchase_contract,model_purchase_contract,,1,1,1,1
+access_purchase_contract_term,purchase_contract_term,model_purchase_contract_term,,1,1,1,1

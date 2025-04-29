@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="tier_validation_buttons">
+            <div>
+                <button
+                        name="action_dynamic_approval_request"
+                        string="Request Validation"
+                        t-attf-attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('#{state_field}', 'not in', [#{state_from}])]}"
+                        type="object"
+                />
+                <button
+                        name="%(base_dynamic_approval.recall_dynamic_approval_wizard_action)d"
+                        string="Restart Validation"
+                        t-attf-attrs="{'invisible': ['|',('dynamic_approve_request_ids', '=', []),('#{state_field}', 'not in', [#{state_from}])]}"
+                        type="action"
+                />
+            </div>
+        </template>
+        <template id="tier_validation_label">
+            <div>
+                <field name="need_validation" invisible="1"/>
+                <field name="validated" invisible="1"/>
+                <field name="rejected" invisible="1"/>
+                <div class="alert alert-warning"
+                     role="alert"
+                     t-attf-attrs="{'invisible': ['|', '|', '|',('validated', '=', True), ('#{state_field}', 'not in', [#{state_from}]),('rejected', '=', True), ('dynamic_approve_request_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p>
+                        <i class="fa fa-info-circle"/>
+                        This Record needs to be
+                        validated.
+                        <field name="dynamic_approve_pending_group" invisible="1"/>
+                        <button
+                                name="%(base_dynamic_approval.approve_dynamic_approval_wizard_action)d"
+                                string="Validate"
+                                attrs="{'invisible': [('dynamic_approve_pending_group', '=', False)]}"
+                                type="action"
+                                class="oe_inline oe_button btn-success"
+                                icon="fa-thumbs-up"
+                        />
+                        <button
+                                name="%(base_dynamic_approval.reject_dynamic_approval_wizard_action)d"
+                                string="Reject"
+                                attrs="{'invisible': [('dynamic_approve_pending_group', '=', False)]}"
+                                type="action"
+                                class="btn-icon btn-danger"
+                                icon="fa-thumbs-down"
+                        />
+                        <br/>
+                        <field name="next_review"/>
+                    </p>
+                </div>
+                <div class="alert alert-success"
+                     role="alert"
+                     t-attf-attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('#{state_field}', 'not in', [#{state_from}]), ('dynamic_approve_request_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p>
+                        <i class="fa fa-thumbs-up"/>
+                        Operation has been
+                        <b>validated</b>
+                        !
+                    </p>
+                </div>
+                <div class="alert alert-danger"
+                     role="alert"
+                     t-attf-attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('#{state_field}', 'not in', [#{state_from}]), ('dynamic_approve_request_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p>
+                        <i class="fa fa-thumbs-down"/>
+                        Operation has been
+                        <b>rejected</b>
+                        .
+                    </p>
+                </div>
+            </div>
+        </template>
+        <template id="approval_tree">
+            <group string="Approvals" name="approvals" attrs="{'invisible':[('dynamic_approve_request_ids', '=', [])]}">
+                <field name="dynamic_approve_request_ids" readonly="1" nolabel="1" style="pointer-events:none;">
+                    <tree decoration-success="status == 'approved'"
+                          decoration-warning="status == 'pending'"
+                          decoration-danger="status == 'rejected'"
+                          decoration-info="status == 'new'">
+                        <field name="status"/>
+                        <field name="user_id" invisible="1"/>
+                        <field name="user_ids" widget="many2many_tags"/>
+                        <field name="group_id"/>
+                        <field name="approve_date"/>
+                        <field name="approve_note"/>
+                        <field name="reject_date"/>
+                        <field name="reject_reason"/>
+                    </tree>
+                </field>
+            </group>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,94 @@
+<odoo>
+    <data>
+
+
+        <record id="asset_tree_custom" model="ir.ui.view">
+            <field name="name">asset.tree.custom</field>
+            <field name="model">account.asset</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_purchase_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="type_of_asset"/>
+                    <field name="account_analytic_id" optional="hide"/>
+                    <field name="employee_id" optional="hide"/>
+                    <field name="department_id" optional="hide"/>
+                    <field name="product_id" optional="hide"/>
+                    <field name="po_id" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="asset_form_custom" model="ir.ui.view">
+            <field name="name">asset.form.custom</field>
+            <field name="model">account.asset</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="go_transfer_log" type="object" class="oe_stat_button"
+                             icon="fa-bars">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Transfer Log</span>
+                                </div>
+                    </button>
+                </xpath>
+
+
+                <xpath expr="//button[@name='action_save_model']" position="after">
+                    <button name="%(transfer_asset_action)d"
+                                        string="Transfer Asset"
+                                        type="action" class="oe_highlight"
+                                        attrs="{'invisible': [('state', '=', 'model')]}"
+                                        context="{
+                                        'default_asset_id':id,
+                                        }"
+                                        />
+                </xpath>
+
+                <xpath expr="//field[@name='acquisition_date']" position="after">
+                    <field name="type_of_asset"/>
+                    <field name="employee_id"
+                           attrs="{'invisible':
+                            [('state', '=', 'model')],
+                             'readonly': [('state','!=','draft')]}"/>
+                    <field name="department_id" readonly="True"
+                           attrs="{'invisible': [('state', '=', 'model')]}"/>
+                    <field name="product_id" readonly="True"
+                           attrs="{'invisible': [('state', '=', 'model')]}"/>
+                    <field name="po_id" readonly="True"
+                           attrs="{'invisible': [('state', '=', 'model')]}"/>
+                    <field name="contract_id"
+                           />
+                </xpath>
+            </field>
+        </record>
+
+
+
+        <record id="asset_filter_custom" model="ir.ui.view">
+            <field name="name">asset.filter.custom</field>
+            <field name="model">account.asset</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="account_analytic_id"/>
+                    <field name="employee_id" />
+                    <field name="department_id" />
+                    <field name="product_id" />
+                    <field name="po_id" string="Purchase Order"/>
+                </xpath>
+                <xpath expr="//search/group/filter[@name='model']" position="after">
+                    <filter string="Analytic Account" name="analytic_account_group" domain="[]" context="{'group_by':'account_analytic_id'}"/>
+                    <filter string="Product" name="product_group" domain="[]" context="{'group_by':'product_id'}"/>
+                    <filter string="Purchase Order" name="po_group" domain="[]" context="{'group_by':'po_id'}"/>
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

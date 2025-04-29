@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_group_access_right_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 07:20+0000\n"
+"PO-Revision-Date: 2023-01-23 07:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_group_access_right_extended
+#: model_terms:ir.actions.act_window,help:jbm_group_access_right_extended.jbm_hr_leave_time_off_manager
+msgid ""
+"A great way to keep track on employee’s PTOs, sick days, and approval "
+"status."
+msgstr ""
+"طريقة رائعة لتتبع أوامر PTO للموظفين ، والأيام المرضية ، والموافقة "
+"الحالة."
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_accountant_role_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.accountant_role
+msgid "Accountant"
+msgstr "محاسب"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_accounting_auditor_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.custom_accounting_auditor_role
+msgid "Accounting Auditor"
+msgstr "مدقق حسابات"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_accounting_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.custom_accounting_manager_role
+msgid "Accounting Manager"
+msgstr "مدير المحاسبة"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.ui.menu,name:jbm_group_access_right_extended.menu_all_leaves
+msgid "All Leaves"
+msgstr "كل الأوراق"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.actions.act_window,name:jbm_group_access_right_extended.jbm_hr_leave_time_off_manager
+msgid "All Time Off"
+msgstr "كل الوقت"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.group_crm_manager
+msgid "CRM Manager"
+msgstr "مدير CRM"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_general_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.custom_general_manager_role
+msgid "General manager"
+msgstr "مدير عام"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_general_manager_assistant
+#: model:res.users.role,name:jbm_group_access_right_extended.custom_general_manager_assistant_role
+msgid "General manager assistant"
+msgstr "مساعد المدير العام"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_group_hr_employee_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.group_hr_employee_role
+msgid "HR Employee"
+msgstr "موظف موارد بشرية"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_group_inventory_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.group_inventory_manager_role
+msgid "Inventory Manager"
+msgstr "مدير المخزون"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_jbm_group_attendance_manager
+msgid "JBM Attendance Manager"
+msgstr "مدير الحضور JBM"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.module.category,name:jbm_group_access_right_extended.jbm_access_right_groups
+msgid "JBM Manager Groups"
+msgstr "مجموعات مدير JBM"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.group_timeOff_manager
+msgid "JBM Time Off Manager"
+msgstr ""
+
+#. module: jbm_group_access_right_extended
+#: model_terms:ir.actions.act_window,help:jbm_group_access_right_extended.jbm_hr_leave_time_off_manager
+msgid "Meet the time off dashboard."
+msgstr "تلبية الوقت من لوحة القيادة."
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model.fields,field_description:jbm_group_access_right_extended.field_res_users__hide_menu_ids
+#: model:ir.model.fields,field_description:jbm_group_access_right_extended.field_res_users_role__menu_items_ids
+msgid "Menu"
+msgstr "قائمة"
+
+#. module: jbm_group_access_right_extended
+#: model_terms:ir.ui.view,arch_db:jbm_group_access_right_extended.user_role_view_inherited
+msgid "Menu Items"
+msgstr "عناصر القائمة"
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid "Only a Time Off Manager can approve/refuse its own requests."
+msgstr "يمكن فقط لمدير الوقت الموافقة / رفض الطلبات الخاصة به."
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid "Only a Time Off Manager can reset a refused leave."
+msgstr "يمكن لمدير الوقت فقط إعادة تعيين إجازة مرفوضة."
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid "Only a Time Off Manager can reset a started leave."
+msgstr "يمكن فقط لمدير وقت الإجازة إعادة تعيين إجازة بدأت."
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid "Only a Time Off Manager can reset other people leaves."
+msgstr "يمكن فقط لـ Time Off Manager إعادة تعيين مغادرة الأشخاص الآخرين."
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_group_operational_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.group_operational_employee_role
+msgid "Operational Employee"
+msgstr "موظف تشغيلي"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.group_payroll_outsourced
+msgid "Payroll Outsourced"
+msgstr "الاستعانة بمصادر خارجية في كشوف المرتبات"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model,name:jbm_group_access_right_extended.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "دفعات إيصال الدفع "
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_procurement_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.custom_procurement_manager_role
+msgid "Procurement manager"
+msgstr "مدير المشتريات"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model,name:jbm_group_access_right_extended.model_ir_rule
+msgid "Record Rule"
+msgstr "تسجيل القاعدة"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_sales_manager_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.group_sales_manager_role
+msgid "Sales Manager"
+msgstr "مدير المبيعات"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model.fields,help:jbm_group_access_right_extended.field_res_users__hide_menu_ids
+msgid "Select menu items that needs to be hidden to this user"
+msgstr "حدد عناصر القائمة التي يجب إخفاؤها عن هذا المستخدم"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model.fields,help:jbm_group_access_right_extended.field_res_users_role__menu_items_ids
+msgid "Select menu items that needs to be hidden to this user "
+msgstr "حدد عناصر القائمة التي يجب إخفاؤها عن هذا المستخدم"
+
+#. module: jbm_group_access_right_extended
+#: model:res.groups,name:jbm_group_access_right_extended.custom_group_shared_service_manager
+#: model:res.users.role,name:jbm_group_access_right_extended.shared_services_manager
+msgid "Shared Services Manager"
+msgstr "مدير الخدمات المشتركة"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model,name:jbm_group_access_right_extended.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model,name:jbm_group_access_right_extended.model_res_users_role
+msgid "User role"
+msgstr "دور المستخدم"
+
+#. module: jbm_group_access_right_extended
+#: model:ir.model,name:jbm_group_access_right_extended.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid "You must be %s's Manager to approve this leave"
+msgstr ""
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid ""
+"You must be either %s's manager or Time off Manager to approve this leave"
+msgstr ""
+
+#. module: jbm_group_access_right_extended
+#: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0
+#, python-format
+msgid ""
+"You must either be a Time off Officer or Time off Manager to approve this "
+"leave"
+msgstr ""
+"يجب أن تكون إما موظف إجازة أو مدير إجازة للموافقة على ذلك"
+"غادر"

@@ -1,0 +1,798 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_portal_self_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-09 09:47+0000\n"
+"PO-Revision-Date: 2024-07-09 09:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"-:اقر انا الموقع\n"
+"                                أعلاه"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ":التوقيع"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ":تحديد المسموح"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ":غير مسموح"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+":مدير إدارة الخدمات\n"
+"                                            المشتركة"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ":مسموح"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "<b>المسؤول المباشر:</b>"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "<u>أدرك بأن هذا التصريح لا يعتبر تكليف عمل إضافي.</u>"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"<u>أدرك بأنه لا يحق لي المطالبة بأي بدل أو تعويض مالي عن العمل خارج ساعات الدوام\n"
+"                                        الرسمية.\n"
+"                                    </u>"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__access
+msgid "Access"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_request__in_out_document_device__allowed
+msgid "Allowed"
+msgstr "مسموح"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,help:jbm_portal_self_service.field_approval_category__approval_type
+msgid ""
+"Allows you to define which documents you would like to create once the "
+"request has been approved"
+msgstr ""
+"يتيح لك تحديد أي المستندات ترغب في إنشائها بمجرد أن تتم الموافقة على الطلب "
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_approval_category
+msgid "Approval Category"
+msgstr "فئة الموافقة "
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_approval_request
+msgid "Approval Request"
+msgstr "طلب موافقة "
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_category__approval_type
+msgid "Approval Type"
+msgstr "نوع الموافقة"
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.approval_request_action_to_review_category
+msgid "Approvals to review"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "الموظف العادي "
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Cancel"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__certification
+msgid "Certification"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__change_data
+msgid "Change data"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__children_id
+msgid "Children"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__clearance
+msgid "Clearances Request"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.self_service_contact
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee__contract_id
+msgid "Current Contract"
+msgstr "العقد الوظيفي الحالي"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,help:jbm_portal_self_service.field_hr_employee__contract_id
+msgid "Current contract of the employee"
+msgstr "عقد الموظف الحالي "
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__date_from
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__date_to
+msgid "Date To"
+msgstr "الى تاريخ"
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "Date:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.approval_request_view_form
+msgid "Dependent"
+msgstr "اﻷشخاص المعاليين"
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.approval_request_view_form
+msgid "Determine Allowed"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__determined_allowed
+msgid "Determined Allowed"
+msgstr "تحديد الأجهزة/المستندات المسموح إدخالها"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__it
+msgid "Device, technical defect support, other"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "Employee Information"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Employee's Name"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.approval_request_view_form
+msgid "IN / Out Documents or Devices"
+msgstr "إدخال/إخراج المستندات أو اﻷجهزة"
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.it_equipment_category_action
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__select_type__it_equipment
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__product_category__select_type__it_equipment
+msgid "IT Equipment"
+msgstr "طلب أجهزه"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__in_out_document_device
+msgid "In Out Document Device"
+msgstr "إدخال/ إخراج المستندات أو الأجهزة"
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.insurance_request_category_action
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__select_type__insurance_request
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__product_category__select_type__insurance_request
+msgid "Insurance Request"
+msgstr "طلب تأمين صحي"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__job_card
+msgid "Job Card"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Job Position"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/adminstrative_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/it_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/it_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/it_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/selfservice_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/selfservice_dashboard.xml:0
+#: code:addons/jbm_portal_self_service/static/src/xml/selfservice_dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+#, python-format
+msgid "Letter Head"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "Logo"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_request__in_out_document_device__not_allowed
+msgid "Not Allowed"
+msgstr "غير مسموح"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_category__previous_request_count
+msgid "Number of requests"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"Off-hours\n"
+"                                Access Permit |تصريح دخول المؤسسة خارج أوقات العمل\n"
+"                                الرسمية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.over_time_category_action
+msgid "Offer Time Request"
+msgstr "طلب حضور خارج أوقات العمل"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee__office_floor
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee_base__office_floor
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee_public__office_floor
+msgid "Office Floor"
+msgstr "طابق المكتب"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee__office_no
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee_base__office_no
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_employee_public__office_no
+msgid "Office NO."
+msgstr "رقم المكتب"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__performance_grievance
+msgid "Performance evaluation grievance"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "Permit Details"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.report,name:jbm_portal_self_service.approval_permit_over_time_request
+msgid "Permit Over Time Request"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__permit_over_time
+msgid "Permit Work"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.approval_request_view_form
+msgid "Permit Work Report"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Preferences"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.approval_category_view_kanban
+msgid "Previous Request:"
+msgstr "الطلبات السابقة"
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_product_category
+msgid "Product Category"
+msgstr "فئة المنتج"
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_approval_product_line
+msgid "Product Line"
+msgstr "سلسلة المنتج "
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_hr_leave__remaining_balance
+msgid "Remaining Balance"
+msgstr "الرصيد المتبقي"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__resignation
+msgid "Resignation"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Save"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_category__select_type
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__select_type
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_product_category__select_type
+msgid "Select Type"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.client,name:jbm_portal_self_service.self_service_action_dashboard
+#: model:ir.ui.menu,name:jbm_portal_self_service.self_service_root
+msgid "Self Service"
+msgstr "الخدمات الذاتية"
+
+#. module: jbm_portal_self_service
+#: model:res.groups,name:jbm_portal_self_service.group_self_service_manager
+#: model:res.users.role,name:jbm_portal_self_service.self_service_manager
+msgid "Self Service / Manager"
+msgstr "الخدمات الذاتية - مدير"
+
+#. module: jbm_portal_self_service
+#: model:res.groups,name:jbm_portal_self_service.group_self_service_user
+#: model:res.users.role,name:jbm_portal_self_service.self_service_user
+msgid "Self Service / User"
+msgstr "الخدمات الذاتية - موظف"
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "Shared Service Department Approval"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Status"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model,name:jbm_portal_self_service.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.training_course_category_action
+msgid "Training Course"
+msgstr "دورات تدريبية"
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__select_type__training_course
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__product_category__select_type__training_course
+msgid "Training Course Request"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_product_line__product_category_id
+#: model:ir.model.fields,field_description:jbm_portal_self_service.field_approval_request__product_category_id
+msgid "Type"
+msgstr "الفئة"
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.server,name:jbm_portal_self_service.update_leave_remaining_balance_cron_ir_actions_server
+#: model:ir.cron,cron_name:jbm_portal_self_service.update_leave_remaining_balance_cron
+#: model:ir.cron,name:jbm_portal_self_service.update_leave_remaining_balance_cron
+msgid "Update Leave Remaining Balance"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.res_users_view_form_profile
+msgid "Users"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.model.fields.selection,name:jbm_portal_self_service.selection__approval_category__approval_type__work_start
+msgid "Work Start"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "footer"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "أتعهد بعدم مشاركة أو تسريب أي معلومات سرية أو حساسة"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "أدرك أن هذا التصريح قابل للسحب في أي وقت من قبل الإدارة"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"أفهم تماماً أن الإدارة غير مسؤولة عن أي إصابة أو خسارة أو\n"
+"                                    ضرر يمكن أن يحدث لي أثناء تواجدي خارج ساعات الدوام الرسمية."
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/js/hr_dashboard.js:0
+#, python-format
+msgid "إجازات الموظفين"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "إدخال/ إخراج مستندات أو أجهزة:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "اسم الموظف:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "اعتماد إدارة الخدمات المشتركة"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "الإدارة:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.leave_portal_action
+#, python-format
+msgid "الاجازات"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.hr_permissions_action
+msgid "الاستئذانات"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "التاريخ:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "التقييم"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "التوقيع:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "الحضور"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "الحضور اليومي"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "الرقم الوظيفي:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/js/hr_dashboard.js:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "السلف"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "الشهادات"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "القسم:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/js/hr_dashboard.js:0
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "المزايا الوظيفية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "المسمي الوظيفي:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.resignation_portal_approval_category_action
+#, python-format
+msgid "انتهاء خدمة"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "بأنني أفهم وأوافق على النقاط التالية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "بيانات التصريح"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "بيانات الموظف"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "تاريخ انتهاء التصريح:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "تاريخ بداية التصريح:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.change_data_approval_category_action
+#, python-format
+msgid "تغيير بيانات"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "جهات الاتصال"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.ui.menu,name:jbm_portal_self_service.hr_root_menu
+msgid "خدمات  الموارد البشرية "
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/selfservice_dashboard.xml:0
+#: model:ir.actions.client,name:jbm_portal_self_service.administrative_services_action_dashboard
+#, python-format
+msgid "خدمات الشؤون الإدارية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/selfservice_dashboard.xml:0
+#: model:ir.actions.client,name:jbm_portal_self_service.hr_services_action_dashboard
+#, python-format
+msgid "خدمات الموارد البشرية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/selfservice_dashboard.xml:0
+#: model:ir.actions.client,name:jbm_portal_self_service.it_services_action_dashboard
+#: model:ir.ui.menu,name:jbm_portal_self_service.it_services_portal_root_menu
+#, python-format
+msgid "خدمات نظم المعلومات"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/it_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.it_approval_category_action
+#, python-format
+msgid "دعم فني"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "دورات تدريبية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "رصيد التاخيرات"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "رقم البطاقة الشخصية:"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"سأتخذ جميع التدابير اللازمة للحفاظ على أمن المؤسسة\n"
+"                                    وممتلكاتها."
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"سألتزم بالتواجد في المناطق المسموح بها فقط ولأغراض عملية\n"
+"                                    محددة."
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid ""
+"سألتزم بجميع قواعد السلامة والأمان المعمول بها في\n"
+"                                    المؤسسة."
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model:ir.actions.act_window,name:jbm_portal_self_service.certification_portal_approval_category_action
+msgid "شهادة"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/it_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.access_approval_category_action
+#, python-format
+msgid "صلاحية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/it_dashboard.xml:0
+#, python-format
+msgid "طلب أجهزه"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.attendance_approval_category_action
+#, python-format
+msgid "طلب احتياج"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.clearances_portal_approval_category_action
+#, python-format
+msgid "طلب اخلاء طرف"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.job_card_approval_category_action
+#, python-format
+msgid "طلب البطاقة الوظيفية"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "طلب تأمين صحي"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.performance_grievance_approval_category_action
+#, python-format
+msgid "طلب تظلم تقييم الأداء الوظيفي"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "طلب حضور خارج أوقات العمل"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/adminstrative_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.purchase_approval_category_action
+#, python-format
+msgid "طلب شراء"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#. openerp-web
+#: code:addons/jbm_portal_self_service/static/src/xml/hr_dashboard.xml:0
+#: model:ir.actions.act_window,name:jbm_portal_self_service.work_start_approval_category_action
+#, python-format
+msgid "طلب مباشرة عمل"
+msgstr ""
+
+#. module: jbm_portal_self_service
+#: model_terms:ir.ui.view,arch_db:jbm_portal_self_service.permit_over_time_request
+msgid "مقدم الطلب:"
+msgstr ""

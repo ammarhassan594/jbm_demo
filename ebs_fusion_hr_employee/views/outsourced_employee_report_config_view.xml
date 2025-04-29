@@ -1,0 +1,45 @@
+<odoo>
+
+    <record id="outsourced_employee_report_config_form_view" model="ir.ui.view">
+        <field name="name">outsourced.employee.report.config.form</field>
+        <field name="model">outsourced.employee.report.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="template" required="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="user_ids" widget="many2many_tags" required="1"
+                               options="{'no_create_edit': 1, 'no_create': 1}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="outsourced_employee_report_config_tree_view" model="ir.ui.view">
+        <field name="name">outsourced.employee.report.config.tree</field>
+        <field name="model">outsourced.employee.report.config</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="template"/>
+                <field name="user_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="outsourced_employee_report_config_action" model="ir.actions.act_window">
+        <field name="name">Outsourced Employee Report Config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">outsourced.employee.report.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="outsourced_employee_report_config_menu" name="Outsourced Employee Report Config"
+              parent="hr.menu_human_resources_configuration"
+              action="ebs_fusion_hr_employee.outsourced_employee_report_config_action" sequence="30"/>
+
+</odoo>

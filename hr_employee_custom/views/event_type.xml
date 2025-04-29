@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="event_type_form_view" model="ir.ui.view">
+            <field name="name">sap.event.type.form</field>
+            <field name="model">sap.event.type</field>
+            <field name="arch" type="xml">
+                <form string="Event Type">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="is_new_hire"/>
+                                <field name="is_probation"/>
+                                <field name="event_type_reason_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="event_type_tree_view" model="ir.ui.view">
+            <field name="name">sap.event.type.tree</field>
+            <field name="model">sap.event.type</field>
+            <field name="arch" type="xml">
+                <tree string="Event Types">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="event_reason_tree_view" model="ir.ui.view">
+            <field name="name">sap.event.type.reason.tree</field>
+            <field name="model">sap.event.type.reason</field>
+            <field name="arch" type="xml">
+                <tree string="Event Reasons">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="event_type_act_window" model="ir.actions.act_window">
+            <field name="name">Event Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sap.event.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+<!--        <menuitem name="Event Type" id="event_type_menu" parent="hr.menu_human_resources_configuration"-->
+<!--                  action="event_type_act_window"/>-->
+
+    </data>
+</odoo>

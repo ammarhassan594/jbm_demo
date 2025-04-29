@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="ir_action_employee_send_sms" model="ir.actions.server">
+            <field name="name">Action Send SMS For Employee</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="employee_ooredoo_integration.model_hr_payslip_run"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_employee_send_sms()
+            </field>
+        </record>
+    </data>
+</odoo>

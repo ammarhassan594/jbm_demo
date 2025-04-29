@@ -1,0 +1,25 @@
+<odoo>
+       <record id="ir_cron_scheduler_document_renewal_action" model="ir.cron">
+              <field name="name">Document Renewal</field>
+              <field name="model_id" ref="model_documents_document"/>
+              <field name="state">code</field>
+              <field name="code">model.notify_renewal()</field>
+              <field name="user_id" ref="base.user_root"/>
+              <field name="interval_number">1</field>
+              <field name="interval_type">days</field>
+              <field name="numbercall">-1</field>
+              <field eval="False" name="doall"/>
+       </record>
+       <record id="ir_cron_scheduler_document_expiry" model="ir.cron">
+            <field name="name">Document Expiry</field>
+            <field name="model_id" ref="model_documents_document"/>
+            <field name="state">code</field>
+            <field name="code">model.update_expired_status()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+        </record>
+
+</odoo>

@@ -1,0 +1,701 @@
+<odoo>
+    <template id="website_contact_us_inherit" inherit_id="website.contactus" name="Contact Us">
+
+        <xpath expr="//t[@t-call='website.layout']" position="replace">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <section class="pt8 pb8">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-12 s_title pt16 pb16">
+                                        <h1>Contact us</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="container mt-2">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="oe_structure">
+                                    <section class="s_text_block">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <p>
+                                                        Contact us about anything related to our company or
+                                                        services.
+                                                        <br/>
+                                                        We'll do our best to get back to you as soon as possible.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="text-center my-3" name="mail_button">
+                                    <a role="button" t-attf-href="mailto:{{ res_company.email }}"
+                                       class="btn btn-primary" id="o_contact_mail">Send us an email
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="oe_structure mt-2"/>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <!--    Portal Templates Inherited-->
+    <template id="portal.portal_my_home" name="My Portal">
+        <t t-call="portal.portal_layout">
+            <t t-set="my_details" t-value="True"/>
+            <div class="o_portal_my_home">
+                <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
+                <h1 class="portal-heading">Documents</h1>
+                <div class="o_portal_docs row">
+                    <div class="portal-item d-flex col-3">
+                        <div class="image_section_class">
+                            <div class="image_display_class">
+                                <a href="/my/account">
+                                    <img class="portal-img" src="/ebs_fusion_theme/static/src/img/profile.png"></img>
+                                </a>
+                                <div class="portal-item-text">My Profile</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-item d-flex col-3">
+                        <div class="image_section_class">
+                            <div class="image_display_class">
+                                <a href="/my/employees">
+                                    <img class="portal-img" src="/ebs_fusion_theme/static/src/img/hr.png"></img>
+                                </a>
+                                <div class="portal-item-text">HR &amp; Employees</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-item d-flex col-3">
+                        <div class="image_section_class">
+                            <div class="image_display_class">
+                                <a href="">
+                                    <img class="portal-img" src="/ebs_fusion_theme/static/src/img/marketing.png"></img>
+                                </a>
+                                <div class="portal-item-text">Marketing</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-item d-flex col-3">
+                        <div class="image_section_class">
+                            <div class="image_display_class">
+                                <a href="#">
+                                    <img class="portal-img" src="/ebs_fusion_theme/static/src/img/sale.png"></img>
+                                </a>
+                                <div class="portal-item-text">Sales</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-item d-flex col-3">
+                        <div class="image_section_class">
+                            <div class="image_display_class">
+                                <a href="#">
+                                    <img class="portal-img" src="/ebs_fusion_theme/static/src/img/bd.png"></img>
+                                </a>
+                                <div class="portal-item-text">Business Development</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+        </t>
+    </template>
+    <template id="portal.portal_docs_entry" name="My Portal Docs Entry">
+        <a t-att-href="url" t-att-title="title"
+           class="d-flex col-3 portal-item list-group-item-action d-flex justify-content-between">
+            <img t-if="image" t-attf-src="/ebs_fusion_theme/static/src/img/{{image}}" class="portal-img"></img>
+            <img t-if="not image" src="/ebs_fusion_theme/static/src/img/profile.png" class="portal-img"></img>
+            <span class="portal-item-text">
+                <t t-esc="title"/>
+            </span>
+            <span class="d-none badge badge-secondary badge-pill" t-esc="count"/>
+        </a>
+    </template>
+    <template id="account.portal_my_home_invoice" name="Portal My Home : invoice entries"
+              inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Accounts</t>
+                <t t-set="url" t-value="'/my/invoices'"/>
+                <t t-set="count" t-value="invoice_count"/>
+                <t t-set="image" t-value="'account.png'"/>
+            </t>
+        </xpath>
+    </template>
+    <template id="layout_logo_show" inherit_id="website.option_header_brand_logo" name="Show Logo">
+        <xpath expr="//a[@t-attf-class='navbar-brand logo #{_link_class}']" position="replace">
+            <a href="/" class="navbar-brand logo">
+
+            </a>
+        </xpath>
+    </template>
+
+
+    <template id="portal_my_employees" name="My Employees">
+
+        <t t-call="portal.portal_layout">
+            <style>
+                .dropdown-item.active {
+                background-color: #b79854 !important;
+                }
+            </style>
+            <div class="">
+                <div class="d-flex">
+                    <div class="w-100">
+                        <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                        <t t-if="not employees">
+                            <p>There are currently no employees for your account.</p>
+                        </t>
+
+                        <div class="container employee_table_class mt-4" style="background-color: #ffffff;">
+                            <div t-if="pager" class="o_portal_pager text-center employee_pager">
+                                <t t-call="portal.pager"/>
+                            </div>
+                            <div>
+                                <span class="employee_table_title">
+                                    <b>List of employees</b>
+                                </span>
+
+                                <form t-if="searchbar_inputs" class="form-inline o_portal_search_panel ml-lg-4 mr-2"
+                                      style="float:right;width:30%;margin-top: -5px !important;">
+                                    <div class="input-group input-group-sm w-100">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    style="background-color: #b79854;border-color: #b79854;"/>
+                                            <div class="dropdown-menu" role="menu">
+                                                <t t-foreach='searchbar_inputs' t-as='input'>
+                                                    <a t-att-href="'#' + searchbar_inputs[input]['input']"
+                                                       t-attf-class="dropdown-item#{search_in == searchbar_inputs[input]['input'] and ' active' or ''}">
+                                                        <span t-raw="searchbar_inputs[input]['label']"/>
+                                                    </a>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm" placeholder="Search"
+                                               t-att-value='search' name="search"/>
+                                        <span class="input-group-append">
+                                            <button class="btn btn-secondary search-submit" type="button"
+                                                    style="background-color: #b79854;border-color: #b79854;">
+                                                <span class="fa fa-search"/>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                            <t t-if="employees">
+                                <table class="employee_table table ">
+                                    <thead>
+                                        <tr class="active">
+                                            <th>
+                                                QID no.
+                                                <i class="fa fa-sort-amount-asc sort_by_qid_no ml-1"
+                                                   style="font-size:11px;color: #b79854;"
+                                                   t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'QID No'"/>
+                                                <i t-else="" class="fa fa-sort-amount-asc sort_by_qid_no ml-1"
+                                                   style="font-size:11px;"/>
+                                            </th>
+                                            <th class="text-muted">Name
+                                                <i class="fa fa-sort-amount-asc sort_by_employee_name ml-1"
+                                                   style="font-size:11px;color: #b79854;"
+                                                   t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Reference'"/>
+                                                <i t-else="" class="fa fa-sort-amount-asc sort_by_employee_name ml-1"
+                                                   style="font-size:11px;"/>
+                                            </th>
+                                            <th class="text-muted">Passport No.
+                                                <i class="fa fa-sort-amount-asc sort_by_passport_no ml-1"
+                                                   style="font-size:11px;color: #b79854;"
+                                                   t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Passport No'"/>
+                                                <i t-else="" class="fa fa-sort-amount-asc sort_by_passport_no ml-1"
+                                                   style="font-size:11px;"/>
+                                            </th>
+                                            <th class="text-muted">Sponsor name
+                                                <i class="fa fa-sort-amount-asc sort_by_sponsor ml-1"
+                                                   style="font-size:11px;color: #b79854;"
+                                                   t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Sponsor'"/>
+                                                <i t-else="" class="fa fa-sort-amount-asc sort_by_sponsor ml-1"
+                                                   style="font-size:11px;"/>
+                                            </th>
+                                            <th class="text-muted">Nationality</th>
+                                            <th class="text-muted">Job Title</th>
+                                            <th class="text-muted">Gender</th>
+                                            <th class="text-muted">Status
+                                                <i class="fa fa-sort-amount-asc sort_by_emp_status ml-1"
+                                                   style="font-size:11px;color: #b79854;"
+                                                   t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'State'"/>
+                                                <i t-else="" class="fa fa-sort-amount-asc sort_by_emp_status ml-1"
+                                                   style="font-size:11px;"/>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="employees" t-as="employee">
+                                            <tr>
+                                                <td>
+                                                    <t t-esc="employee.qid_no"/>
+                                                </td>
+                                                <td>
+                                                    <a t-attf-href="/my/employees/#{employee.id}?{{ keep_query() }}">
+                                                        <t t-esc="employee.name"/>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="employee.passport_no"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="employee.sponsored_company_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="employee.nationality_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="employee.job_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="employee.gender"/>
+                                                </td>
+                                                <td>
+                                                    <t t-if="employee.state == 'pending'">
+                                                        <button class="text-white rounded btn-space"
+                                                                style="border: none;background-color: #b79854;">
+                                                            <span t-field="employee.state"/>
+                                                        </button>
+                                                    </t>
+                                                    <t t-if="employee.state == 'approved'">
+                                                        <button class="text-white rounded btn-space"
+                                                                style="border: none;background-color: #a5a737;">
+                                                            <span t-field="employee.state"/>
+                                                        </button>
+                                                    </t>
+                                                    <t t-if="employee.state == 'reject'">
+                                                        <button class="text-white rounded btn-space"
+                                                                style="border: none;background-color: #cdcdcd;">
+                                                            <span t-field="employee.state"/>
+                                                        </button>
+                                                    </t>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+
+    </template>
+
+    <template id="employee_portal_template" name="Em Portal Template" inherit_id="portal.portal_sidebar" primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div class="row mt16 o_portal_sale_sidebar">
+                <div t-attf-class="col-lg-12">
+                    <div t-call="ebs_fusion_theme.employee_portal_content"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="employee_portal_content" name="Employee Portal Content">
+        <div id="">
+            <div class="profile-heading mb-4">
+                Profile
+            </div>
+            <div class="row">
+                <div class="col-8" style="padding-right: 0px !important;">
+                    <div class="card">
+                        <div class="card-body profile-card" style="height: 350px !important;">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.name"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.private_email"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.phone_personal"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.birthday and employee.birthday.strftime('%d/%m/%Y')"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nationality</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.nationality_id.name"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>QID Number</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.qid_no"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Passport Number</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.passport_no"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sponsor</td>
+                                    <td>:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="employee.sponsored_company_id.name"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card profile-card" style="height: 350px !important;">
+                        <div class="row" style="height: inherit;">
+                            <div class="col-12"
+                                 style="display: flex !important; justify-content: center !important;">
+                                <img t-att-src="'/web/image/hr.employee/%s/image_256' % employee.id"
+                                     itemprop="image" class="img img-fluid" alt="Client Image"
+                                     style="margin: auto !important; display: block !important;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <ul class="nav nav-tabs" id="hrTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="employee-document-tab" data-toggle="tab"
+                            data-target="#employee-docs"
+                            type="button" role="tab" aria-controls="docs" aria-selected="true">Documents
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="dependents-tab" data-toggle="tab" data-target="#dependent-employees"
+                            type="button" role="tab" aria-controls="dependent-employees" aria-selected="false">Dependent
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content " id="hrTabContent">
+                <div class="tab-pane fade show active" id="employee-docs" role="tabpanel" aria-labelledby="docs-tab">
+                    <table class="docs_table table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Document Number</th>
+                                <th scope="col">Document Type</th>
+                                <th scope="col">Issue Date</th>
+                                <th scope="col">Expiry Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">View</th>
+                                <th scope="col">Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="documents" t-as="doc">
+                                <tr>
+                                    <td>
+                                        <t t-esc="doc.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.document_number"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.document_type_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.issue_date and doc.issue_date.strftime('%d/%m/%Y')"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.expiry_date and doc.expiry_date.strftime('%d/%m/%Y')"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.status == 'na'">
+                                            <div style="border: 1px solid #b79854; border-radius: 20px !important;">
+                                                <button class="text-white rounded btn-space"
+                                                        style="color: #b79854 !important;">
+                                                    <span t-field="doc.status"/>
+                                                </button>
+                                            </div>
+                                        </t>
+                                        <t t-if="doc.status == 'active'">
+                                            <div style="border: 1px solid #3A974C;border-radius: 20px !important;">
+                                                <button class="text-white rounded btn-space"
+                                                        style="color: #3A974C!important;">
+                                                    <span t-field="doc.status"/>
+                                                </button>
+                                            </div>
+                                        </t>
+                                        <t t-if="doc.status == 'expired'">
+                                            <div style="border: 1px solid #D11A2A;border-radius: 20px !important;">
+                                                <button class="text-white rounded btn-space"
+                                                        style="color: #D11A2A!important;">
+                                                    <span t-field="doc.status"/>
+                                                </button>
+                                            </div>
+                                        </t>
+                                    </td>
+                                    <td align="center">
+                                        <a t-attf-href="/web/content/#{doc.attachment_id.id}" target="_blank">
+                                            <i class="fa fa-eye" aria-hidden="false"/>
+                                        </a>
+                                    </td>
+                                    <td align="center">
+                                        <a t-att-href="'/web/content/%s?download=true' % doc.attachment_id.id">
+                                            <span>
+                                                <i class="fa fa-download" aria-hidden="false"/>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade show" id="dependent-employees" role="tabpanel"
+                     aria-labelledby="dependent-employees-tab">
+                    <table class="docs_table dependent_employees table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Relation</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="dependent_ids" t-as="dependent">
+                                <tr t-att-data-href="'/my/dependent/%s' % dependent.id">
+                                    <td>
+                                        <t t-esc="dependent.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="dict(dependent._fields['relation_with_dependent'].selection).get(dependent.relation_with_dependent)"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="dependent.email"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="dependent.phone"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="dependent_portal_template" name="Dependent Portal Template" inherit_id="portal.portal_sidebar"
+              primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div class="row mt16 o_portal_sale_sidebar">
+                <div t-attf-class="col-lg-12">
+                    <div t-call="ebs_fusion_theme.dependent_portal_content"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="dependent_portal_content" name="Dependent Portal Content">
+        <div id="">
+            <div class="profile-heading mb-4">
+                Profile
+            </div>
+            <div class="row">
+                <div class="col-12" style="padding-right: 0px !important;">
+                    <div class="card">
+                        <div class="card-body profile-card">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td style="width:15%">Name</td>
+                                    <td style="width:2%">:</td>
+                                    <td style="width:20%">
+                                        <span>
+                                            <t t-esc="dependent_id.name"/>
+                                        </span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Relation</td>
+                                    <td style="width:2%">:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="dict(dependent_id._fields['relation_with_dependent'].selection).get(dependent_id.relation_with_dependent)"/>
+                                        </span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td style="width:2%">:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="dependent_id.email"/>
+                                        </span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td style="width:2%">:</td>
+                                    <td>
+                                        <span>
+                                            <t t-esc="dependent_id.phone"/>
+                                        </span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <ul class="nav nav-tabs" id="dependentTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="dependent-document-tab" data-toggle="tab"
+                            data-target="#dependent-docs"
+                            type="button" role="tab" aria-controls="docs" aria-selected="true">Documents
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content " id="dependentTabContent">
+                <div class="tab-pane fade show active" id="dependent-docs" role="tabpanel" aria-labelledby="docs-tab">
+                    <table class="docs_table table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Document Number</th>
+                                <th scope="col">Document Type</th>
+                                <th scope="col">Issue Date</th>
+                                <th scope="col">Expiry Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">View</th>
+                                <th scope="col">Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="documents" t-as="doc">
+                                <tr>
+                                    <td>
+                                        <t t-esc="doc.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.document_number"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.document_type_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.issue_date and doc.issue_date.strftime('%d/%m/%Y')"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.expiry_date and doc.expiry_date.strftime('%d/%m/%Y')"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.status == 'na'">
+                                            <div style="border: 1px solid #b79854; border-radius: 20px !important;">
+                                                <button class="text-white rounded btn-space"
+                                                        style="color: #b79854 !important;">
+                                                    <span t-field="doc.status"/>
+                                                </button>
+                                            </div>
+                                        </t>
+                                        <t t-if="doc.status == 'active'">
+                                            <div style="border: 1px solid #3A974C;border-radius: 20px !important;">
+                                                <button class="text-white rounded btn-space"
+                                                        style="color: #3A974C!important;">
+                                                    <span t-field="doc.status"/>
+                                                </button>
+                                            </div>
+                                        </t>
+                                        <t t-if="doc.status == 'expired'">
+                                            <div style="border: 1px solid #D11A2A;border-radius: 20px !important;">
+                                                <button class="text-white rounded btn-space"
+                                                        style="color: #D11A2A!important;">
+                                                    <span t-field="doc.status"/>
+                                                </button>
+                                            </div>
+                                        </t>
+                                    </td>
+                                    <td align="center">
+                                        <a t-attf-href="/web/content/#{doc.attachment_id.id}" target="_blank">
+                                            <i class="fa fa-eye" aria-hidden="false"/>
+                                        </a>
+                                    </td>
+                                    <td align="center">
+                                        <a t-att-href="'/web/content/%s?download=true' % doc.attachment_id.id">
+                                            <span>
+                                                <i class="fa fa-download" aria-hidden="false"/>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+</odoo>

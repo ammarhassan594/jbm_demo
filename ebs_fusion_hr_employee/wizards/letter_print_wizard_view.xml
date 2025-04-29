@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="letter_print_wizard_form" model="ir.ui.view">
+            <field name="name">letter.print.wizard.form</field>
+            <field name="model">letter.print.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="report_action" required="1"/>
+                    </group>
+                    <footer>
+                        <button name="button_confirm" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="letter_print_wizard_action" model="ir.actions.act_window">
+            <field name="name">Letter Print</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">letter.print.wizard</field>
+            <field name="view_mode">form</field>
+        </record>
+
+</odoo>

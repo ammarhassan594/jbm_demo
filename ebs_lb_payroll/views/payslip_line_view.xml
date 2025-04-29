@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="custom_payslip_line_tree" model="ir.ui.view">
+            <field name="name">custom.payslip.line.tree</field>
+            <field name="model">hr.payslip.line</field>
+            <field name="arch" type="xml">
+                <tree create="0" delete="0" edit="0">
+                    <field name="slip_id" optional="show"/>
+                    <field name="employee_id" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="code" optional="show"/>
+                    <field name="salary_rule_id" optional="show"/>
+                    <field name="date_from" optional="show"/>
+                    <field name="date_to" optional="show"/>
+                    <field name="amount" optional="show" sum="Total Amount"/>
+                    <field name="total" optional="show" sum="Total"/>
+                    <field name="state" optional="show"/>
+                    <field name="payslip_run_id" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="custom_payslip_line_filter" model="ir.ui.view">
+            <field name="name">custom.payslip.line.filter</field>
+            <field name="model">hr.payslip.line</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="slip_id"/>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="salary_rule_id"/>
+                    <field name="state"/>
+                    <field name="payslip_run_id"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="salary_rule_id_group" string="Rule" context="{'group_by': 'salary_rule_id'}"/>
+                        <filter name="employee_id_group" string="Payslip" context="{'group_by': 'slip_id'}"/>
+                        <filter name="slip_id_group" string="Employee" context="{'group_by': 'employee_id'}"/>
+                        <filter name="payslip_run_id_group" string="Payslip Run" context="{'group_by': 'payslip_run_id'}"/>
+                        <filter name="state_group" string="Status" context="{'group_by': 'state'}"/>
+
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="custom_payslip_line_window" model="ir.actions.act_window">
+            <field name="name">Payslip Lines</field>
+            <field name="res_model">hr.payslip.line</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

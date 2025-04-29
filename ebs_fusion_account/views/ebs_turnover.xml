@@ -1,0 +1,72 @@
+<odoo>
+    <!--    ebs labor quota  form-->
+    <record model="ir.ui.view" id="view_ebs_turnover_form">
+        <field name="name">ebs.turnover.Form</field>
+        <field name="model">ebs.turnover</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Confirm" name="confirm_turnover" states="draft" type="object"
+                            class="oe_highlight"/>
+                    <button string="Generate Invoice" attrs="{'invisible': ['|',('invoice_id', '!=', False),('state','=','draft')]}" name="generate_invoice" type="object"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                     <div class="oe_button_box" name="button_box" attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                            <button name="get_invoice" type="object" class="oe_stat_button" icon="fa-pencil-square-o" >
+                                <field string="Invoice" name="invoice_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                    <h1>
+                        <field name="name" force_save="1"/>
+                    </h1>
+                    <group>
+                        <group>
+
+                            <field name="invoice_id" invisible="1"/>
+                            <field name="client_id" required="1" options="{'no_create_edit': True}" attrs="{'readonly':[('state','!=','draft')]}"/>
+                             <field name="contract_id" options="{'no_create_edit': True}" readonly="context.get('is_from_contract')" required="1" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="turn_over_date"  attrs="{'readonly':[('state','!=','draft')]}"/>
+
+                        </group>
+                        <group>
+                            <field name="turn_over_rate" readonly="context.get('is_from_contract')" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="turn_over_amount" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="discount_rate" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="amount_to_pay" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs labor quota tree-->
+    <record id="view_ebs_turnover_tree" model="ir.ui.view">
+        <field name="name">ebs.turnover.tree</field>
+        <field name="model">ebs.turnover</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="client_id"/>
+                <field name="turn_over_date"/>
+                <field name="turn_over_rate"/>
+                <field name="turn_over_amount"/>
+                <field name="discount_rate"/>
+                <field name="amount_to_pay"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs labor quota action-->
+    <record model="ir.actions.act_window" id="action_ebs_turnover">
+        <field name="name">Turnover</field>
+        <field name="res_model">ebs.turnover</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_ebs_turnover_" name="Turnover"
+              parent="account.menu_finance_entries_management" sequence="105" action="action_ebs_turnover"/>
+
+</odoo>

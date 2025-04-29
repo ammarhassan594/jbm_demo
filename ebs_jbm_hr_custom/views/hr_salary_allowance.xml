@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record id="hr_salary_allowance_tree_view" model="ir.ui.view">
+            <field name="name">hr.salary.allowance.tree</field>
+            <field name="model">hr.salary.allowance</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="allowance_type"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hr_salary_allowance_form_view">
+            <field name="name">hr.salary.allowance.form</field>
+            <field name="model">hr.salary.allowance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="allowance_type"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_salary_allowance">
+            <field name="name">Salary Allowance</field>
+            <field name="res_model">hr.salary.allowance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_hr_salary_allowance" name="Hr Salary Allowance"
+                  parent="hr.menu_human_resources_configuration" action="ebs_jbm_hr_custom.action_hr_salary_allowance"/>
+    </data>
+</odoo>

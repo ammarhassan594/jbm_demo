@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+<!--        <record id="sequence_job_code" model="ir.sequence">-->
+<!--            <field name="name">Job Code</field>-->
+<!--            <field name="code">job.code</field>-->
+<!--            <field name="prefix">J</field>-->
+<!--            <field name="padding">6</field>-->
+<!--            <field name="number_next">1</field>-->
+<!--            <field name="number_increment">1</field>-->
+<!--            <field name="company_id"></field>-->
+<!--        </record>-->
+
+        <record id="sequence_contract_sequence" model="ir.sequence">
+            <field name="name">Contract</field>
+            <field name="code">hr.contract</field>
+            <field name="prefix">C</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id"></field>
+        </record>
+
+    </data>
+</odoo>

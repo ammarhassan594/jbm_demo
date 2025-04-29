@@ -1,0 +1,83 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="payslip_logs_tree" model="ir.ui.view">
+            <field name="name">Payslip Logs</field>
+            <field name="model">ebspayroll.payslip.logs</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false" duplicate="false">
+                    <field name="employee"/>
+                    <field name="payslip"/>
+                    <field name="date"/>
+                    <!--                    <field name="cnss_earnings_amount"/>-->
+                    <!--                    <field name="illness_motherhood_amount_user"/>-->
+                    <!--                    <field name="illness_motherhood_amount"/>-->
+                    <!--                    <field name="end_service_amount"/>-->
+                    <!--                    <field name="family_compensation_amount"/>-->
+                </tree>
+            </field>
+        </record>
+        <!--Form views -->
+        <record id="payslip_logs_form" model="ir.ui.view">
+            <field name="name">Payslip Logs</field>
+            <field name="model">ebspayroll.payslip.logs</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false" delete="false" duplicate="false">
+                    <sheet>
+
+                        <group>
+                            <div>
+                                <label for="employee" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="employee"/>
+                            </div>
+                            <div>
+                                <label for="payslip" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="payslip"/>
+                            </div>
+                            <div>
+                                <label for="date" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="date"/>
+                            </div>
+                            <div>
+                                <label for="cnss_earnings_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="cnss_earnings_amount"/>
+                            </div>
+
+
+                            <div>
+                                <label for="illness_motherhood_amount_user"
+                                       style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="illness_motherhood_amount_user"/>
+                            </div>
+                            <div>
+                                <label for="illness_motherhood_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="illness_motherhood_amount"/>
+                            </div>
+                            <div>
+                                <label for="end_service_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="end_service_amount"/>
+                            </div>
+                            <div>
+                                <label for="family_compensation_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="family_compensation_amount"/>
+                            </div>
+                            <div>
+                                <label for="tax_reduction_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                <field name="tax_reduction_amount"/>
+                            </div>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--window -->
+        <record id="payslip_logs_window" model="ir.actions.act_window">
+            <field name="name">Payslip Logs</field>
+            <field name="res_model">ebspayroll.payslip.logs</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="payslip_logs_menu" name="Payslip Logs" sequence="90"
+                  action="payslip_logs_window" parent="hr_payroll.menu_hr_payroll_payslips"/>
+    </data>
+</odoo>

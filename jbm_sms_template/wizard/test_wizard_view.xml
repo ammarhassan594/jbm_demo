@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="jbm_test_wizard_form" model="ir.ui.view">
+            <field name="name">jbm.test.wizard.form</field>
+            <field name="model">jbm.sms.test.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Test" type="object" name="test_wizard_fun"/>
+                        <button string="Cancel" special="cancel" class="btn btn-second"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="jbm_test_wizard_action" model="ir.actions.act_window">
+            <field name="name">Test</field>
+            <field name="res_model">jbm.sms.test.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

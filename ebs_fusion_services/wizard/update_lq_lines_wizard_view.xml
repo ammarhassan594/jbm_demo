@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_update_lq_lines_wizard" model="ir.ui.view">
+        <field name="name">Update Lines</field>
+        <field name="model">update.lq.lines.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Labor Quota Sublines">
+                        <field name="labor_quota_subline_ids" options='{"no_create": True}' nolabel="1">
+                            <tree readonly="1">
+                                <field name="line_id"/>
+                                <field name="ref_no"/>
+                                <field name="nationality_id"/>
+                                <field name="job_id"/>
+                                <field name="gender"/>
+                                <field name="status"/>
+                                <field name="employee_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight"/>
+                    <button class="btn-secondary" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_update_lq_lines_wizard" model="ir.actions.act_window">
+        <field name="name">Update Lines</field>
+        <field name="res_model">update.lq.lines.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

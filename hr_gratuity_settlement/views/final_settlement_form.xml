@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_final_settlement_document">
+<!--        <t t-call="web.external_layout">-->
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
+            <div class="page">
+                <p>
+                    <strong>Employee Name:
+                        <span style="display: inline-block;padding-right: 40px;" t-field="o.employee_id.name"/>
+                    </strong>
+                    <strong>Employee Code:
+                        <span style="display: inline-block;padding-right: 40px;"
+                              t-field="o.employee_id.registration_number"/>
+                    </strong>
+                    <strong>Date of Hire:
+                        <span style="display: inline-block;padding-right: 40px;" t-field="o.employee_joining_date"/>
+                    </strong>
+                </p>
+                <p>
+                    <strong>Job Title:
+                        <span style="display: inline-block;padding-right: 40px;" t-field="o.employee_id.job_id.name"/>
+                    </strong>
+                    <strong>Department:
+                        <span style="display: inline-block;padding-right: 40px;"
+                              t-field="o.employee_id.department_id.name"/>
+                    </strong>
+                    <strong>Location:
+                        <span style="display: inline-block;width:200px;" t-field="o.employee_id.work_location"/>
+                    </strong>
+                </p>
+                <div style="border:2px solid black;background:black;"/>
+                <p>
+                    <strong>Reason for leaving (Please check only one box)</strong>
+                </p>
+                <div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <div t-if="o.employee_id.status == 'resigned'"
+                             style="width: 45px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'resigned'"
+                             style="width: 45px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span>Resigned</span>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <div t-if="o.employee_id.status == 'terminated'"
+                             style="width: 45px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'terminated'"
+                             style="width: 45px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span style="margin-bottom:5px;">Terminated</span>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <div t-if="o.employee_id.status == 'no_show'"
+                             style="width: 50px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'no_show'"
+                             style="width: 50px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span style="margin-bottom:5px;">No Show</span>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <div t-if="o.employee_id.status == 'retirement'"
+                             style="width: 50px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'retirement'"
+                             style="width: 50px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span style="margin-bottom:5px;">Retirement</span>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <div t-if="o.employee_id.status == 'death'"
+                             style="width: 50px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'death'"
+                             style="width: 50px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span style="margin-bottom:5px;">Death</span>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <div t-if="o.employee_id.status == 'medical_disability'"
+                             style="width: 50px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'medical_disability'"
+                             style="width: 50px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span style="margin-bottom:5px;">Medical Disability</span>
+                    </div>
+                    <div style="display: inline-block;">
+                        <div t-if="o.employee_id.status == 'reason'"
+                             style="width: 50px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.employee_id.status != 'reason'"
+                             style="width: 50px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                        <span style="margin-bottom:5px;width: 200px">Other Reason</span>
+                    </div>
+                    <div>
+                        <p>
+                            <strong>Effective Date:
+                                <span style="padding-left: 40px;" t-field="o.effective_date"/>
+                            </strong>
+                        </p>
+                        <p style="padding-left: 140px;">(Without effective date the request will not be processed)</p>
+                    </div>
+                </div>
+                <div style="border:2px solid black;background:black;"/>
+                <p>
+                    <strong>Human Resources Checklist</strong>
+                </p>
+                <div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">In case of resignation, resignation letter is received</span>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">In case of termination, incident report is attached</span>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">In case of no show, efforts made to contact the employee
+                        </span>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">Number of days worked (to be paid as final settlement)</span>
+                        <span style="display: inline-block;padding-left: 20px;"
+                              t-esc="round(o.employee_gratuity_years,2)"/>
+                        <span>Years</span>
+                        x
+                        <span style="display: inline-block;padding-left: 5px;"
+                              t-esc="round(o.salary_rate,2)"/>
+                        =
+                        <span style="display: inline-block;padding-left: 5px;"
+                              t-esc="round(o.total_amount_working_days_no_store,2)"/>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">Leave entitlements to be paid (if any)</span>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">End of service to be included in final settlement</span>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">Notice Pay (if any to be paid as final settlement)</span>
+                    </div>
+                    <div>
+                        <div style="width: 20px;height: 20px;border:3px solid black;display: inline-block;"/>
+                        <span style="padding-left: 20px;">Ticket to home town to be included in final settlement</span>
+                    </div>
+                    <div style="width:200px;height:60px;float:right;margin-top: 20px;overflow:auto;">
+                        <div style="border:1px solid black;background:black;float:right;width:200px;"/>
+                        <p>
+                            <strong>Approved by</strong>
+                        </p>
+                    </div>
+                </div>
+                <div style="border:solid white;height:60px;overflow:auto;"/>
+                <div>
+                    <div style="border:2px solid black;background:black;"/>
+                    <p>
+                        <strong>Clearance</strong>
+                    </p>
+                    <div>
+                        <div style="width:200px;height:60px;float:left;margin-top: 20px;overflow:auto;">
+                            <div style="border:1px solid black;background:black;float:right;width:200px;"/>
+                            <p>
+                                <strong>Head of Department</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="width:200px;height:60px;float:right;margin-top: 20px;overflow:auto;">
+                            <div style="border:1px solid black;background:black;float:right;width:200px;"/>
+                            <p>
+                                <strong>IT/Operations</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="border:solid white;height:50px;overflow:auto;"/>
+                <div style="border:2px solid black;background:black;"/>
+                <div>
+                    <!--                    <div>-->
+                    <table style="width:100%;border-collapse: collapse;border-spacing: 0;" cellspacing="0">
+                        <tr>
+                            <td style="padding:0px;">
+                                <div style="width: 45px;height: 20px;border:3px solid black;display: inline-block;"/>
+                                <span style="padding-left: 20px;">Database updated</span>
+                            </td>
+                            <td style="padding:0px;">
+                                <div style="width: 45px;height: 20px;border:3px solid black;display: inline-block;"/>
+                                <span style="padding-left: 20px;">All third parties (banks, leasing co.&apos;s...)
+                                    notified
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0px;">
+                                <div style="width: 45px;height: 20px;border:3px solid black;display: inline-block;"/>
+                                <span style="padding-left: 20px;">Employee insurance card received</span>
+                            </td>
+                            <td style="padding:0px;">
+                                <div style="width: 45px;height: 20px;border:3px solid black;display: inline-block;"/>
+                                <span style="padding-left: 20px;">Exit interview conducted by:</span>
+                                <div style="border:1px solid black;background:black;display: inline-block;width:200px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding:0px;">
+                                <div style="width: 45px;height: 20px;border:3px solid black;display: inline-block;"/>
+                                <span style="padding-left: 20px;">All company belongings (Computer, Key, mobile..)
+                                    returned in good condition
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="margin-bottom:15px;padding-left:0px;">
+                                <span>List of items received:</span>
+                                <div style="border:1px solid black;background:black;width:650px;float:right;margin-top:10px;margin-bottom:25px;"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
+                        <div style="width:200px;height:60px;float:left;margin-top: 20px;overflow:auto;">
+                            <div style="border:1px solid black;background:black;float:right;width:200px;"/>
+                            <p>
+                                <strong>Verified By</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="width:200px;height:60px;float:right;margin-top: 20px;overflow:auto;">
+                            <div style="border:1px solid black;background:black;float:right;width:200px;"/>
+                            <p>
+                                <strong>HR Manager</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="page-break-before: always;"/>
+                <div style="border:2px solid black;background:black;"/>
+                <p>
+                    <strong>Payroll Checklist</strong>
+                </p>
+                <div>
+                    <div style="padding-bottom:10px;">
+                        <span>Number of unavailed earned leaves (to be paid as final settlement)</span>
+                        <span style="float:right;">
+                            <span style="display: inline-block;padding-left: 20px;"
+                                  t-esc="round(o.leave_balance_days,2)"/>
+                            x
+                            <span style="display: inline-block;padding-left: 5px;"
+                                  t-esc="round(o.leave_salary_rate,2)"/>
+                            =
+                            <span style="display: inline-block;padding-left: 5px;"
+                                  t-esc="round(o.leaves_amount,2)"/>
+                        </span>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Notice Pay (if any to be paid as final settlement)</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.total_notice_pay,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Ticket (If payable in cash)</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.ticket_entitlement,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>End of Service Gratuity</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.total_amount_working_days_no_store,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Any other amount to be paid as final settlement</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.other_additions,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Addition Remarks</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-field="o.addition_remarks"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Total amount to be paid</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.total_amount_pay,2)"/>
+                    </div>
+                </div>
+                <div style="border:2px solid black;background:black;"/>
+                <p>
+                    <strong>Deductions</strong>
+                </p>
+                <div>
+                    <div style="padding-bottom:10px;">
+                        <span>Any material (not returned)</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.any_material,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Any outstanding loan/Advance/ (clearance required from 3rd party)</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.advance_salary,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Notice Pay (if need to be adjusted in final settlement)</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.notice_period_deduction,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Misc. Deduction</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.misc_deduction,2)"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Deduction Remarks</span>
+                        <span style="display: inline-block;width:700px;float:right;text-align: right;"
+                              t-field="o.deduction_remarks"/>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span>Total Deductions</span>
+                        <span style="display: inline-block;padding-left: 20px;float:right;"
+                              t-esc="round(o.total_amount_deduction,2)"/>
+                    </div>
+                </div>
+                <div style="border:2px solid black;background:black;"/>
+                <div>
+                    <div style="padding-bottom:10px;padding-top:10px;">
+                        <span>
+                            <strong>Total amount to be paid as final settlement</strong>
+                        </span>
+                        <span style="float:right;">
+                            <span style="display: inline-block;padding-left: 20px;"
+                                  t-esc="round(o.total_amount_pay,2)"/>
+                            -
+                            <span style="display: inline-block;padding-left: 5px;"
+                                  t-esc="round(o.total_amount_deduction,2)"/>
+                            =
+                            <span style="display: inline-block;padding-left: 5px;"
+                                  t-esc="round(o.total_amount_final_settlement,2)"/>
+                        </span>
+                    </div>
+                </div>
+                <div style="border:2px solid black;background:black;"/>
+                <div>
+                    <div style="display: inline-block;padding-right: 20px;padding-top: 20px;">
+                        <span style="padding-right:30px;">
+                            <strong>Mode of Final Settlement</strong>
+                        </span>
+                        <span style="padding-right:10px;">CASH</span>
+                        <div t-if="o.mode_final_settlement == 'cash'"
+                             style="width: 40px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.mode_final_settlement != 'cash'"
+                             style="width: 40px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <span style="margin-bottom:5px;padding-right:10px;">CHEQUE</span>
+                        <div t-if="o.mode_final_settlement == 'cheque'"
+                             style="width: 40px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.mode_final_settlement != 'cheque'"
+                             style="width: 40px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <span style="margin-bottom:5px;padding-right:10px;">BANK TRANSFER</span>
+                        <div t-if="o.mode_final_settlement == 'bank_transfer'"
+                             style="width: 40px;height: 20px;border:3px solid black;background:black;display: inline-block;padding-right: 5px;"/>
+                        <div t-if="o.mode_final_settlement != 'bank_transfer'"
+                             style="width: 40px;height: 20px;border:3px solid black;display: inline-block;padding-right: 5px;"/>
+                    </div>
+                </div>
+                <div style="padding-top:5px;">
+                    <div t-if="o.mode_final_settlement != 'cash'" style="display: inline-block;padding-right: 20px;">
+                        <span>Cheque No.</span>
+                        <span style="display: inline-block;padding-left: 20px;padding-right: 20px;"
+                              t-field="o.ref_final_settlement"/>
+                    </div>
+                    <div style="display: inline-block;padding-right: 20px;">
+                        <span>Amount</span>
+                        <span style="display: inline-block;padding-left: 20px;padding-right: 20px;"
+                              t-esc="round(o.total_amount_final_settlement,2)"/>
+                    </div>
+                    <div t-if="o.mode_final_settlement != 'cash'" style="display: inline-block;padding-right: 20px;">
+                        <span>Date</span>
+                        <span style="display: inline-block;padding-left: 20px;padding-right: 20px;"
+                              t-field="o.date_final_settlement" t-options='{"widget": "date"}'/>
+                    </div>
+                </div>
+                <p style="padding-top:5px;">
+                    I hereby confirm that, I have received all my dues, my full and final settlement amount from <span style="padding-left:5px;" t-esc="o.company_id.name"/>.
+                    I certify that the amount shown in section &quot;M&quot; is the full and final
+                    settlement of my services and there is nothing due and /or outstanding against my account. I confirm
+                    that I cannot claim any dues from <span style="padding-left:5px;" t-esc="o.company_id.name"/>.
+                </p>
+                <div style="padding-top:5px;padding-bottom:5px;">
+                    <span style="padding-right:100px;">
+                        Cheque Received by
+                    </span>
+                    <span style="padding-left: 20px;">Name</span>
+                    <div style="border:1px solid black;background:black;display: inline-block;width:200px;"/>
+                    <span style="padding-left: 20px;">Signature</span>
+                    <div style="border:1px solid black;background:black;display: inline-block;width:200px;"/>
+                </div>
+                <div style="border:2px solid black;background:black;"/>
+                <p>
+                    <strong>Final Settlement Form</strong>
+                </p>
+                <div>
+                    <div style="display: inline-block;width:180px;padding-right:25px;height:100px;">
+                        <span>Prepared by</span>
+                        <div style="display: inline-block;width:150px;border:1px solid black;text-align: center;margin-top:40px;"/>
+                    </div>
+                    <div style="display: inline-block;width:180px;padding-right:25px;height:100px;">
+                        <span>Checked by HR</span>
+                        <div style="display: inline-block;width:150px;border:1px solid black;text-align: center;margin-top:40px;"/>
+                    </div>
+                    <div style="display: inline-block;width:180px;padding-right:25px;height:100px;">
+                        <span>Verified by Finance</span>
+                        <div style="display: inline-block;width:150px;border:1px solid black;text-align: center;margin-top:40px;"/>
+                    </div>
+                    <div style="display: inline-block;width:160px;height:100px;">
+                        <span>Approved by MD</span>
+                        <div style="display: inline-block;width:150px;border:1px solid black;text-align: center;margin-top:40px;"/>
+                    </div>
+                </div>
+            </div>
+<!--        </t>-->
+    </template>
+
+    <template id="report_final_settlement">
+        <t t-call="web.html_container">
+            <div class="header">
+                <img t-attf-src="hr_gratuity_settlement/static/images/Header.png" alt="header" style="width:300px;"/>
+            </div>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="hr_gratuity_settlement.report_final_settlement_document" t-lang="lang"/>
+            </t>
+            <div class="footer">
+                <img t-attf-src="hr_gratuity_settlement/static/images/Footer.png" alt="footer" style="width:900px;"/>
+            </div>
+        </t>
+    </template>
+    <template id="report_final_settlement_windows">
+        <t t-call="web.html_container">
+            <div class="header">
+                <img t-attf-src="hr_gratuity_settlement\static\images\Header.png" alt="header" style="width:300px;"/>
+            </div>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="hr_gratuity_settlement.report_final_settlement_document" t-lang="lang"/>
+            </t>
+            <div class="footer">
+                <img t-attf-src="hr_gratuity_settlement\static\images\Footer.png" alt="footer" style="width:900px;"/>
+            </div>
+        </t>
+    </template>
+</odoo>

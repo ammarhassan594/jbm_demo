@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/ebs_fusion_theme/static/src/fonts/Montserrat-Regular.otf');
+}
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('/ebs_fusion_theme/static/src/fonts/Montserrat-Medium.otf');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('/ebs_fusion_theme/static/src/fonts/Montserrat-SemiBold.otf');
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/ebs_fusion_theme/static/src/fonts/Montserrat-Bold.ttf');
+}
+@font-face {
+    font-family: 'Sk-Modernist-Regular';
+    src: url('/ebs_fusion_theme/static/src/fonts/Sk-Modernist-Regular.otf');
+}
+@font-face {
+    font-family: 'Sk-Modernist-Bold';
+    src: url('/ebs_fusion_theme/static/src/fonts/Sk-Modernist-Bold.otf');
+}
+@font-face {
+    font-family: 'Sk-Modernist-Mono';
+    src: url('/ebs_fusion_theme/static/src/fonts/Sk-Modernist-Mono.otf');
+}
+.password_input{display:inline-block;margin-right:10px;}
+
+.form-group{
+  text-align: center;
+}
+
+.page_name{
+font-family: 'Montserrat-Medium';
+}
+
+.navbar{
+    padding:0 !important;
+}
+#login_page{
+    margin-top: 40px;
+}
+
+.form-group>label{
+  padding-left: 5px;
+  padding-right: 5px;
+  position:relative;
+  font-weight: 100;
+  font-family: 'Montserrat-Regular';
+  font-weight: bold;
+}
+.form-group {
+    max-height: 60px;
+}
+main {
+    linear-gradient(to right bottom, #ba7b84, #9c151a);
+    background-color: rgba(0, 0, 0, 0);
+    background-size: auto, auto;
+    background-size: cover;
+}
+
+@media (min-width: 360px) {
+.add_bg_img {
+    background-image: url(/ebs_fusion_theme/static/src/img/fusion1.jpg) !important;
+    }
+}
+
+@media (min-width: 912px) {
+.add_bg_img {
+    background-image: url(/ebs_fusion_theme/static/src/img/fusion2.jpg) !important;
+    }
+}
+
+@media (min-width: 1366px) {
+.add_bg_img {
+    background-image: url(/ebs_fusion_theme/static/src/img/fusion3.jpg) !important;
+    }
+}
+
+@media (min-width: 1920px) {
+.add_bg_img {
+    background-image: url(/ebs_fusion_theme/static/src/img/fusion4.jpg) !important;
+    }
+}
+
+.form-group> label.error{
+    position:relative;
+    top:10px !important;
+    left:0px;
+    color: red;
+    font-size:12px !important;
+    margin-bottom: 0px;
+}
+
+.form-group>input{
+  /*border:none;*/
+  font-family: 'Montserrat-Regular';
+}
+
+.text_color {
+color: #000000;
+font-family: 'Montserrat-SemiBold';
+margin: auto;
+font-size: 87%;
+}
+.btn-custom, .btn-custom:hover {
+    color: #FFFFFF !important;
+    background-color: #b79854 !important;
+    border-radius: 0 !important;
+    border-color: none !important;
+    width:32% !important;
+}
+
+.space {
+margin-top: -22px;
+}
+.space a{
+text-decoration:none;
+}
+.login_input_field {
+margin-left:34%
+}
+input:focus{
+    outline: none;
+}
+#submit_button{
+font-family: 'Montserrat-SemiBold';
+width: 32%;
+}
+
+.reset-info{
+  width: 425px;
+  height: 38px;
+  margin: 40px 0 50px;
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  margin-left:34%;
+  color: #000000;
+}
+#reset_buttons{
+color: #FFFFFF;
+background-color: #b79854;
+font-family: 'Montserrat-SemiBold';
+width: 115%;
+border-radius:0;
+}
+#change_password{
+color: #FFFFFF;
+background-color: #b79854;
+font-family: 'Montserrat-SemiBold';
+width: 115%;
+border-radius:0;
+}
+button:focus{
+    outline: none;
+}

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jbm_hr_payroll_jbm_hr_payroll,jbm_hr_payroll.jbm_hr_payroll,model_jbm_hr_payroll_jbm_hr_payroll,base.group_user,1,1,1,1

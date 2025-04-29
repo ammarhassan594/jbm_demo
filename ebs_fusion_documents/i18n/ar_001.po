@@ -1,0 +1,2231 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_documents
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-06 13:52+0000\n"
+"PO-Revision-Date: 2023-02-06 13:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__est_first_issue
+msgid " First Issue"
+msgstr "العدد الأول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__duration__1
+msgid "1 Year"
+msgstr "سنة واحدة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__duration__2
+msgid "2 Year"
+msgstr "سنتان"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__duration__3
+msgid "3 Year"
+msgstr "ثلاث سنوات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__duration__4
+msgid "4 Year"
+msgstr "أربع سنوات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__duration__5
+msgid "5 Year"
+msgstr "خمس سنوات"
+
+#. module: ebs_fusion_documents
+#: model:mail.template,body_html:ebs_fusion_documents.document_email_template_send
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    Document ${object.name},\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                </p>\n"
+"                <p>\n"
+"                    <br/>\n"
+"                    Thank you.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid ""
+"<span class=\"document_table_title\">\n"
+"                                        <b>List of documents</b>\n"
+"                                    </span>"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid "<span class=\"document_table_title\">Folders</span>"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.docs_portal_content
+msgid ""
+"<span>\n"
+"                            <i class=\"fa fa-download\" aria-hidden=\"false\"/>\n"
+"                        </span>\n"
+"                        Download Document"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_kanban
+msgid "<strong>Client Name</strong>:"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_kanban
+msgid "<strong>Doc No.</strong>:"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_kanban
+msgid "<strong>Expiry Date</strong>:"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_kanban
+msgid "<strong>Version</strong>:"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.constraint,message:ebs_fusion_documents.constraint_ebs_document_type_abbreviation_unique
+msgid "A Document Type With This Abbreviation Already Exists."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.constraint,message:ebs_fusion_documents.constraint_ebs_document_type_metadata_template_unique
+msgid "A Document Type With This Metadata Template Already Exists."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__abbreviation
+msgid "Abbreviation"
+msgstr "اختصار"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,description:ebs_fusion_documents.fme_documents_access_category
+msgid "Access FME Documents"
+msgstr "الوصول إلى مستندات FME"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,description:ebs_fusion_documents.fos_documents_access_category
+msgid "Access FOS Documents"
+msgstr "الوصول إلى مستندات FOS"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,description:ebs_fusion_documents.fss_documents_access_category
+msgid "Access FSS Documents"
+msgstr "الوصول إلى مستندات FSS"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,description:ebs_fusion_documents.finance_documents_access_category
+msgid "Access Finance Documents"
+msgstr "الوصول إلى مستندات التمويل"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,description:ebs_fusion_documents.hr_documents_access_category
+msgid "Access HR Documents"
+msgstr "الوصول إلى وثائق الموارد البشرية"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,description:ebs_fusion_documents.legal_documents_access_category
+msgid "Access Legal Documents"
+msgstr "الوصول إلى المستندات القانونية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__active
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__status__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__active_domain
+msgid "Active domain"
+msgstr "المجال النشط"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__add_sign
+msgid "Add Sign"
+msgstr "إضافة تسجيل"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+msgid "Add contacts to notify..."
+msgstr "إضافة جهات اتصال لإخطار ..."
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__partner_ids
+msgid "Additional Contacts"
+msgstr "جهات اتصال إضافية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__address
+msgid "Address"
+msgstr "عنوان"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_address_description
+msgid "Address Description"
+msgstr "وصف العنوان"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__admin_manager
+msgid "Administration Manager"
+msgstr "مدير الإدارة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__is_agreement
+msgid "Agreement"
+msgstr "اتفاق"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid "All"
+msgstr "الجميع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__allowances_salary
+msgid "Allowances Salary"
+msgstr "الراتب البدلات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__4
+msgid "April"
+msgstr "أبريل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__arabic_file
+msgid "Arabic File"
+msgstr "ملف عربي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__arabic_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__name_arabic
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: ebs_fusion_documents
+#. openerp-web
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#, python-format
+msgid "Archive"
+msgstr "أرشيف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_area
+msgid "Area"
+msgstr "منطقة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__articles_of_association
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Articles of Association"
+msgstr "النظام الأساسي"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+msgid "Attach a file"
+msgstr "إرفاق ملف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__attachment_ids
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__8
+msgid "August"
+msgstr "أغسطس"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__author_id
+msgid "Author"
+msgstr "مؤلف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__author_id
+msgid ""
+"Author of the message. If not set, email_from may hold an email address that"
+" did not match any partner."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_authorizers_ids
+msgid "Authorizers"
+msgstr "المفوضون"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__banking_signatory
+msgid "Banking Signatory"
+msgstr "توقيع مصرفي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__basic_salary
+msgid "Basic Salary"
+msgstr "راتب اساسي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__building
+msgid "Building"
+msgstr "مبنى"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_business_activities
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_business_activities_ids
+#: model:ir.ui.menu,name:ebs_fusion_documents.menu_business_activities
+msgid "Business Activities"
+msgstr "الأنشطة التجارية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_business_activities
+msgid "Business Activity"
+msgstr "النشاط التجاري"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_cr_legal_form
+msgid "CR Legal Form "
+msgstr "الشكل القانوني للسجل التجاري"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_trade_name
+msgid "CR Trade Name"
+msgstr "الاسم التجاري للسجل التجاري"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_cr_trade_type
+msgid "CR Trade Type"
+msgstr "نوع التجارة CR"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__can_edit_body
+msgid "Can Edit Body"
+msgstr "يمكن تحرير الجسم"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.update_document_view_form
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/models/res_user_inherit.py:0
+#, python-format
+msgid "Cannot send email: user %s has no email address."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_capital
+msgid "Capital"
+msgstr "عاصمة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__email_cc
+msgid "Cc"
+msgstr "ج ج"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__to_date
+msgid "Check-in Date"
+msgstr "تاريخ الوصول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__from_date
+msgid "Check-out Date"
+msgstr "موعد انتهاء الأقامة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__is_client_rel
+msgid "Client Relation"
+msgstr "علاقة العميل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__code
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_business_activities_search
+msgid "Code"
+msgstr "شفرة"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Commercial License Metadata"
+msgstr "البيانات الوصفية للرخصة التجارية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_reg_no
+msgid "Commercial Reg. No."
+msgstr "السجل التجاري. لا."
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_commercial_reg_status
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_reg_status
+#: model:ir.ui.menu,name:ebs_fusion_documents.menu_commercial_reg_status
+msgid "Commercial Reg. status"
+msgstr "السجل التجاري. حالة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__commercial_registration_(cr)_application
+msgid "Commercial Registration (CR) Application"
+msgstr "طلب التسجيل التجاري"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Commercial Registration (CR) Metadata"
+msgstr "البيانات الوصفية للسجل التجاري"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_commercial_reg_status
+msgid "Commercial Registration Status"
+msgstr "حالة السجل التجاري"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__composer_id
+msgid "Composer"
+msgstr "ملحن"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__composition_mode
+msgid "Composition mode"
+msgstr "وضع التكوين"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__reply_to_force_new
+msgid "Considers answers as new thread"
+msgstr "يعتبر الإجابات كموضوع جديد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__residency_type__consular
+msgid "Consular Services"
+msgstr "الخدمات القنصلية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_res_partner
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_res_partner__address_type
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_res_users__address_type
+msgid "Contact Address Type"
+msgstr "نوع عنوان الاتصال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__power_of_attorney_contact_person
+msgid "Contact Person"
+msgstr "الشخص الذي يمكن الاتصال به"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__body
+msgid "Contents"
+msgstr "محتويات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__country_passport_id
+msgid "Country of Passport"
+msgstr "بلد جواز السفر"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.update_document_view_form
+msgid "Create Document"
+msgstr "إنشاء وثيقة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_mod_contact_document
+msgid "Create documents for contacts wizard"
+msgstr "إنشاء مستندات لمعالج جهات الاتصال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_creation_date
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__date_of_birth
+msgid "Date Of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__date_of_contract
+msgid "Date Of Contract"
+msgstr "تاريخ العقد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__date_term
+msgid "Date of Term"
+msgstr "تاريخ المدة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__date_initiation
+msgid "Date of initiation"
+msgstr "تاريخ البدء"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__financial_day
+msgid "Day"
+msgstr "يوم"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_ebs_document_type_form
+msgid "Deafult Folder Deatils"
+msgstr "تفاصيل المجلد الافتراضية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__12
+msgid "December"
+msgstr "ديسمبر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__default_folder_ids
+msgid "Default Folder Details"
+msgstr "تفاصيل المجلد الافتراضية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__null_value
+msgid "Default Value"
+msgstr "القيمة الافتراضية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__degree
+msgid "Degree"
+msgstr "درجة"
+
+#. module: ebs_fusion_documents
+#. openerp-web
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#, python-format
+msgid "Delete"
+msgstr "يمسح"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__auto_delete
+msgid "Delete Emails"
+msgstr "حذف رسائل البريد الإلكتروني"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__auto_delete_message
+msgid "Delete Message Copy"
+msgstr "حذف نسخة الرسالة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__description
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__desc
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_tree
+msgid "Description"
+msgstr "وصف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__passport_type__diplomatic
+msgid "Diplomatic"
+msgstr "دبلوماسي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__auto_delete_message
+msgid ""
+"Do not keep a copy of the email in the document communication history (mass "
+"mailing only)"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_documents_document
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__document_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_ids
+msgid "Document"
+msgstr "المستند"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+msgid "Document #"
+msgstr "المستند #"
+
+#. module: ebs_fusion_documents
+#: model:mail.template,name:ebs_fusion_documents.document_email_template_send
+msgid "Document : Send by email"
+msgstr "المستند: إرسال عبر البريد الإلكتروني"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.ebs_document_category_action
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__document_categ_id
+#: model:ir.ui.menu,name:ebs_fusion_documents.ebs_document_category_menu
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_search
+msgid "Document Category"
+msgstr "فئة الوثيقة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_document_cycle
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_cycle_ids
+msgid "Document Cycle"
+msgstr "دورة الوثيقة"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.server,name:ebs_fusion_documents.ir_cron_scheduler_document_expiry_ir_actions_server
+#: model:ir.cron,cron_name:ebs_fusion_documents.ir_cron_scheduler_document_expiry
+#: model:ir.cron,name:ebs_fusion_documents.ir_cron_scheduler_document_expiry
+msgid "Document Expiry"
+msgstr "انتهاء صلاحية المستند"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.docs_portal_content
+msgid "Document Name"
+msgstr "اسم الملف"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_number
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__document_number
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.docs_portal_content
+#, python-format
+msgid "Document Number"
+msgstr "رقم المستند"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Document Number:"
+msgstr "رقم المستند:"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.server,name:ebs_fusion_documents.ir_cron_scheduler_document_renewal_action_ir_actions_server
+#: model:ir.cron,cron_name:ebs_fusion_documents.ir_cron_scheduler_document_renewal_action
+#: model:ir.cron,name:ebs_fusion_documents.ir_cron_scheduler_document_renewal_action
+msgid "Document Renewal"
+msgstr "تجديد الوثيقة"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/models/documents_document_custom.py:0
+#, python-format
+msgid "Document Send By mail"
+msgstr "إرسال المستند بالبريد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_document_send_mail
+msgid "Document Send Mail"
+msgstr "وثيقة إرسال البريد"
+
+#. module: ebs_fusion_documents
+#: model:mail.template,subject:ebs_fusion_documents.document_email_template_send
+msgid "Document Send by Mail Information"
+msgstr "إرسال المستند عن طريق معلومات البريد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_type_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_type_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__doc_type_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__document_type_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.docs_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_search
+msgid "Document Type"
+msgstr "نوع الوثيقة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_type_categ_id
+msgid "Document Type Category"
+msgstr "فئة نوع المستند"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Document Type:"
+msgstr "نوع الوثيقة:"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_ebs_document_type
+#: model:ir.ui.menu,name:ebs_fusion_documents.menu_ebs_document_types
+msgid "Document Types"
+msgstr "أنواع المستندات"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Document Version"
+msgstr "نسخة الوثيقة"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.server,name:ebs_fusion_documents.document_custom_server_action
+msgid "Document: Send By Mail"
+msgstr "المستند: إرسال بالبريد"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/wizard/update_document.py:0
+#: model:ir.actions.act_window,name:ebs_fusion_documents.document_button_action
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__document_o2m
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_document_view_activity
+#, python-format
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_documents_folder
+msgid "Documents Workspace"
+msgstr "مساحة عمل المستندات "
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__double_citizenship_ids
+msgid "Double Country Citizenship"
+msgstr "جنسية الدولة المزدوجة"
+
+#. module: ebs_fusion_documents
+#. openerp-web
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#, python-format
+msgid "Download99"
+msgstr "تنزيل 99"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__duration
+msgid "Duration"
+msgstr "مدة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__e-contract
+msgid "E-Contract"
+msgstr "العقد الإلكتروني"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_document_type
+msgid "EBS Document Type"
+msgstr "نوع مستند EBS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_document_type_folder
+msgid "EBS Document Type Folder"
+msgstr "مجلد نوع مستند EBS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_na_building
+msgid "EBS NA Building"
+msgstr "مبنى EBS NA"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_na_street
+msgid "EBS NA Street"
+msgstr "شارع EBS NA"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_na_zone
+msgid "EBS NA Zone"
+msgstr "منطقة EBS NA"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_est_sector
+msgid "EST Sector"
+msgstr "قطاع EST"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_document_category
+msgid "Ebs Document Category"
+msgstr "فئة وثيقة EBS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__edit_access
+msgid "Edit Access"
+msgstr "تحرير الوصول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__email_from
+msgid "Email From"
+msgstr "البريد الإلكتروني من"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__email_to
+msgid "Email To"
+msgstr "إرسال بالبريد الإلكتروني إلى"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__employee_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Employee"
+msgstr "موظف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__entry_date
+msgid "Entry Date"
+msgstr "موعد الدخول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__residency_type__entry
+msgid "Entry Visas"
+msgstr "تأشيرات الدخول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__est_id
+msgid "Est. ID"
+msgstr "EST. بطاقة تعريف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__est_name_en
+msgid "Est. Name (En)"
+msgstr "EST. الاسم (بالإنجليزية)"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Est. Name(Ar)"
+msgstr "EST. الاسم (بالعربية)"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_est_sector
+#: model:ir.ui.menu,name:ebs_fusion_documents.menu_est_sector
+msgid "Est. Sector"
+msgstr "EST. قطاع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__establishment_card
+msgid "Establishment Card"
+msgstr "بطاقة التأسيس"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Establishment Card Metadata"
+msgstr "البيانات الوصفية لبطاقة التأسيس"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__residency_type__exit
+msgid "Exit Permit"
+msgstr "تصريح خروج"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__status__expired
+msgid "Expired"
+msgstr "منتهي الصلاحية"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_home_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_home_menu_documents_breadcrumb
+msgid "Expired Documents"
+msgstr "المستندات منتهية الصلاحية"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__expiry_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__expiry_date
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.docs_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+#, python-format
+msgid "Expiry Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Expiry Date:"
+msgstr "تاريخ الانتهاء:"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__extra_field_ids
+msgid "Extra Field"
+msgstr "حقل إضافي"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Extra Info"
+msgstr "معلومات اضافية"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,name:ebs_fusion_documents.fme_documents_access_category
+msgid "FME Documents"
+msgstr "وثائق FME"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_fme_read_dms
+msgid "FME Read DMS"
+msgstr "FME قراءة DMS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_fme_read_write_dms
+msgid "FME Read/Write DMS"
+msgstr "FME قراءة / كتابة DMS"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_search
+msgid "FOLDERS"
+msgstr "المجلدات"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,name:ebs_fusion_documents.fos_documents_access_category
+msgid "FOS Documents"
+msgstr "وثائق FOS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_fos_read_dms
+msgid "FOS Read DMS"
+msgstr "FOS قراءة DMS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_fos_read_write_dms
+msgid "FOS Read/Write DMS"
+msgstr "FOS قراءة / كتابة DMS"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,name:ebs_fusion_documents.fss_documents_access_category
+msgid "FSS Documents"
+msgstr "وثائق FSS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_fss_read_dms
+msgid "FSS Read DMS"
+msgstr "قراءة FSS DMS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_fss_read_write_dms
+msgid "FSS Read/Write DMS"
+msgstr "FSS قراءة / كتابة DMS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__residency_type__family
+msgid "Family Residence Visa"
+msgstr "تأشيرة الإقامة العائلية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__father_name
+msgid "Father Name"
+msgstr "اسم الأب"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__2
+msgid "February"
+msgstr "شهر فبراير"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__model_object_field
+msgid "Field"
+msgstr "مجال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__file
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "File"
+msgstr "ملف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__file_name
+msgid "File name"
+msgstr "اسم الملف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__copyvalue
+msgid ""
+"Final placeholder expression, to be copy-pasted in the desired template "
+"field."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,name:ebs_fusion_documents.finance_documents_access_category
+msgid "Finance Documents"
+msgstr "وثائق التمويل"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_finance_read_dms
+msgid "Finance Read DMS"
+msgstr "قراءة التمويل DMS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_finance_read_write_dms
+msgid "Finance Read/Write DMS"
+msgstr "التمويل قراءة / كتابة DMS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__financial_link_partner
+msgid "Financial Manager"
+msgstr "مدير مالي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__financial_month
+msgid "Financial Month"
+msgstr "الشهر المالي"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Financial Year"
+msgstr "السنة المالية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__financial_year
+msgid "Financial year"
+msgstr "السنة المالية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__first_name
+msgid "First Name"
+msgstr "الاسم الأول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__folder_ids
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__folder_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_custom_folder_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_share_view_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_share_view_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_workflow_rule_view_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_workflow_rule_view_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_search
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_facet_view_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_facet_view_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_ebs_document_type_form
+msgid "Folder"
+msgstr "مجلد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__foreign_aoa
+msgid "Foreign AOA"
+msgstr "AOA الخارجية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__foreign_cr
+msgid "Foreign CR"
+msgstr "CR الأجنبية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__foreign_poa
+msgid "Foreign POA"
+msgstr "وكالة أجنبية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__gender
+msgid "Gender"
+msgstr "جنس"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__general_manager
+msgid "General Manager"
+msgstr "مدير عام"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__general_secretary
+msgid "General Secretary"
+msgstr "الأمين العام"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,name:ebs_fusion_documents.hr_documents_access_category
+msgid "HR Documents"
+msgstr "وثائق الموارد البشرية"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_hr_read_dms
+msgid "HR Read DMS"
+msgstr "HR قراءة DMS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_hr_read_write_dms
+msgid "HR Read/Write DMS"
+msgstr "HR قراءة / كتابة DMS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__res_partner__address_type__head_office
+msgid "Head Office"
+msgstr "المكتب الرئيسي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__hide_related_fields
+msgid "Hide Related Fields"
+msgstr "إخفاء الحقول ذات الصلة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__residency_type__id
+msgid "ID Cards"
+msgstr "بطاقات الهوية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__image_attachment_id
+msgid "Image Attachment"
+msgstr "مرفق الصورة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__parent_id
+msgid "Initial thread message."
+msgstr "رسالة الموضوع الأولي."
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__is_input_document
+msgid "Input"
+msgstr "مدخل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_folder__is_default_folder
+msgid "Is Default Folder"
+msgstr "هو المجلد الافتراضي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__is_mail_template_editor
+msgid "Is Editor"
+msgstr "محرر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__is_expired
+msgid "Is Expired"
+msgstr "منتهي الصلاحية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_res_partner__is_shareholder
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_res_users__is_shareholder
+msgid "Is Shareholder"
+msgstr "مساهم"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__issue_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__issue_date
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.docs_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+#, python-format
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Issue Date:"
+msgstr "تاريخ الإصدار:"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__1
+msgid "January"
+msgstr "يناير"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__job_id
+msgid "Job Position"
+msgstr "وظيفه"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__job_title
+msgid "Job Title"
+msgstr "مسمى وظيفي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__6
+msgid "June"
+msgstr "يونيه"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__res_partner__address_type__labor_accommodation
+msgid "Labor Accommodation"
+msgstr "سكن عمال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__lang
+msgid "Language"
+msgstr "لغة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__last_name_1
+msgid "Last Name 1"
+msgstr "الاسم الأخير 1"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__last_name_2
+msgid "Last Name 2"
+msgstr "الاسم الأخير 2"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type_folder__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_update_document__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__layout
+msgid "Layout"
+msgstr "تَخطِيط"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__lead_id
+msgid "Lead"
+msgstr "يقود"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__lease_agreement
+msgid "Lease Agreement"
+msgstr "عقد الإيجار"
+
+#. module: ebs_fusion_documents
+#: model:ir.module.category,name:ebs_fusion_documents.legal_documents_access_category
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_home_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_home_menu_documents_breadcrumb
+msgid "Legal Documents"
+msgstr "وثائق قانونية"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_cr_legal_form
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_legal_form
+#: model:ir.ui.menu,name:ebs_fusion_documents.menu_cr_legal_form
+msgid "Legal Form"
+msgstr "استمارة قانونية"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_legal_read_dms
+msgid "Legal Read DMS"
+msgstr "قراءة قانونية DMS"
+
+#. module: ebs_fusion_documents
+#: model:res.groups,name:ebs_fusion_documents.group_access_legal_read_write_dms
+msgid "Legal Read/Write DMS"
+msgstr "قراءة / كتابة قانونية DMS"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_folder__level
+msgid "Level"
+msgstr "مستوى"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__liaison_officer
+msgid "Liaison Officer"
+msgstr "ضابط إتصال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__license_number
+msgid "License Number"
+msgstr "رقم الرخصة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_licence_type
+msgid "License Type"
+msgstr "نوع الرخصة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__loan_agreement
+msgid "Loan Agreement"
+msgstr "اتفاقية قرض"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__res_partner__address_type__local_office
+msgid "Local Office"
+msgstr "المكتب المحلي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_location_category
+msgid "Location Category"
+msgstr "فئة الموقع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_location_type
+msgid "Location Type"
+msgstr "نوع الموقع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__is_log
+msgid "Log an Internal Note"
+msgstr "سجل ملاحظة داخلية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__mail_activity_type_id
+msgid "Mail Activity Type"
+msgstr "نوع نشاط البريد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__reply_to_force_new
+msgid ""
+"Manage answers as new incoming emails instead of replies going to the same "
+"thread."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_partner_id
+msgid "Manager in charge"
+msgstr "المدير المسؤول"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_managers_ids
+msgid "Managers"
+msgstr "المديرين"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__3
+msgid "March"
+msgstr "يمشي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__5
+msgid "May"
+msgstr "يمكن"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__record_name
+msgid "Message Record Name"
+msgstr "اسم سجل الرسالة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__message_type
+msgid ""
+"Message type: email for email message, notification for system message, "
+"comment for other messages such as user replies"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Metadata"
+msgstr "البيانات الوصفية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__meta_data_template
+msgid "Metadata Template"
+msgstr "قالب البيانات الوصفية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__middle_name
+msgid "Middle Name"
+msgstr "الاسم الأوسط"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__status__na
+msgid "N/A"
+msgstr "غير متاح"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_business_activities__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_commercial_reg_status__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_legal_form__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_cr_trade_type__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_category__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_zone__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_visa_type__name
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_est_sector__name
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_business_activities_search
+#, python-format
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__record_name
+msgid "Name get of the related document."
+msgstr "اسم الحصول على الوثيقة ذات الصلة."
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Name(Ar)"
+msgstr "الاسم (بالعربية)"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__child_national_ids
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__res_partner__address_type__national_address
+msgid "National Address"
+msgstr "العنوان الوطني"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__nationality
+msgid "Nationality"
+msgstr "جنسية"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid "No."
+msgstr "لا."
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_no_brances
+msgid "No. of branches"
+msgstr "عدد الفروع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__notes
+msgid "Notes"
+msgstr "ملحوظات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__notify
+msgid "Notify followers"
+msgstr "إعلام المتابعين"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__notify
+msgid "Notify followers of the document (mass post only)"
+msgstr "إخطار المتابعين بالمستند (النشر الجماعي فقط)"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__11
+msgid "November"
+msgstr "شهر نوفمبر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__occupation
+msgid "Occupation"
+msgstr "إشغال"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__10
+msgid "October"
+msgstr "اكتوبر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__lang
+msgid ""
+"Optional translation language (ISO code) to select when sending out an "
+"email. If not set, the english version will be used. This should usually be "
+"a placeholder expression that provides the appropriate language, e.g. {{ "
+"object.partner_id.lang }}."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__null_value
+msgid "Optional value to use if the target field is empty"
+msgstr "قيمة اختيارية لاستخدامها إذا كان الحقل الهدف فارغًا"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__is_original
+msgid "Original"
+msgstr "إبداعي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__reply_to_mode
+msgid ""
+"Original Discussion: Answers go in the original document discussion thread. \n"
+" Another Email Address: Answers go to the email address mentioned in the tracking message-id instead of original document discussion thread. \n"
+" This has an impact on the generated message-id."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__text
+msgid "Others/Comments"
+msgstr "أخرى / تعليقات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__mail_server_id
+msgid "Outgoing mail server"
+msgstr "خادم البريد الصادر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__is_output_document
+msgid "Output"
+msgstr "انتاج |"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_owner_name
+msgid "Owner Name"
+msgstr "اسم المالك"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_document_folder_view
+msgid "Parent Folder"
+msgstr "المجلد الأصل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__parent_id
+msgid "Parent Message"
+msgstr "رسالة الوالد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__partner_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_mod_contact_document__contact_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_search
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.documents_custom_tree
+msgid "Partner"
+msgstr "شريك"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_partner_ids
+msgid "Partners"
+msgstr "شركاء"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__agreement_party1
+msgid "Party 1"
+msgstr "الطرف 1"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__agreement_party2
+msgid "Party 2"
+msgstr "الطرف 2"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__passport_id
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__passport
+msgid "Passport"
+msgstr "جواز سفر"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Passport Metadata"
+msgstr "بيانات تعريف جواز السفر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__passport_name
+msgid "Passport Name"
+msgstr "اسم جواز السفر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__passport_no
+msgid "Passport No"
+msgstr "رقم جواز السفر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__passport_type
+msgid "Passport Type"
+msgstr "نوع جواز السفر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__period
+msgid "Period in Years"
+msgstr "الفترة بالسنوات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__place_of_birth
+msgid "Place Of Birth"
+msgstr "مكان الميلاد"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__place_of_issue
+msgid "Place Of Issue"
+msgstr "مكان الإصدار"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__copyvalue
+msgid "Placeholder Expression"
+msgstr "تعبير العنصر النائب"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/models/documents_document_custom.py:0
+#: code:addons/ebs_fusion_documents/models/documents_document_custom.py:0
+#: code:addons/ebs_fusion_documents/models/documents_document_custom.py:0
+#, python-format
+msgid "Please select Document For same Client"
+msgstr "الرجاء تحديد مستند لنفس العميل"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/wizard/send_mail_document_wizard.py:0
+#, python-format
+msgid "Please set Email To OR Recipient "
+msgstr "يرجى تعيين البريد الإلكتروني إلى أو المستلم"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_plot_no
+msgid "Plot No."
+msgstr "القطعة رقم."
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__power_of_attorney
+msgid "Power of Attorney"
+msgstr "تفويض"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Power of Attorney Metadata"
+msgstr "البيانات الوصفية للتوكيل الرسمي"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__qid
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__qid
+msgid "QID"
+msgstr "البطاقة الشخصية"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "QID Metadata"
+msgstr "بيانات تعريف البطاقة الشخصية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__qid_name
+msgid "QID Name"
+msgstr "اسم البطاقة الشخصية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__recipient_ids
+msgid "Recipient"
+msgstr "متلقي"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+msgid "Recipients"
+msgstr "المستلمون"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/models/ebs_document_type_folder.py:0
+#, python-format
+msgid "Record For %s Company Already Exist."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#, python-format
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__passport_type__regular
+msgid "Regular"
+msgstr "عادي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__res_id
+msgid "Related Document ID"
+msgstr "معرف الوثيقة ذات الصلة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__model
+msgid "Related Document Model"
+msgstr "نموذج الوثيقة ذات الصلة"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Related To"
+msgstr "متعلق ب"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__is_individual
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_ebs_document_type_form
+msgid "Related To Partner"
+msgstr "ذات صلة بالشريك"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__is_services
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_ebs_document_type_form
+msgid "Related To Service"
+msgstr "ذات الصلة بالخدمة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__render_model
+msgid "Rendering Model"
+msgstr "نموذج التقديم"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__reply_to_mode
+msgid "Replies"
+msgstr "الردود"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__reply_to
+msgid "Reply To"
+msgstr "الرد على"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__reply_to
+msgid ""
+"Reply email address. Setting the reply_to bypasses the automatic thread "
+"creation."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__residency_period
+msgid "Residency Period in Years"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__residency_type
+msgid "Residency Type"
+msgstr "نوع الاقامة"
+
+#. module: ebs_fusion_documents
+#. openerp-web
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#, python-format
+msgid "Restore"
+msgstr "يعيد"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid "Search"
+msgstr "يبحث"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#, python-format
+msgid "Search <span class=\"nolabel\"> (in Content)</span>"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.view_business_activities_search
+msgid "Search Business Activities"
+msgstr "البحث في الأنشطة التجارية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__est_sector
+msgid "Sector"
+msgstr "قطاع"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/wizard/create_contact_document.py:0
+#, python-format
+msgid "Select 1 File"
+msgstr "حدد ملفًا واحدًا"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Select a file:"
+msgstr "حدد ملف:"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__model_object_field
+msgid ""
+"Select target field from the related document model.\n"
+"If it is a relationship field you will be able to select a target field at the destination of the relationship."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Select..."
+msgstr "يختار..."
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+msgid "Send"
+msgstr "يرسل"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+msgid "Send Document by Email"
+msgstr "إرسال المستند بالبريد الإلكتروني"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__financial_month__9
+msgid "September"
+msgstr "سبتمبر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__view_sequence
+msgid "Sequence Number"
+msgstr "رقم التسلسل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__is_seq
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__seq_req
+msgid "Sequence Required"
+msgstr "مطلوب تسلسل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__passport_type__service
+msgid "Service"
+msgstr "خدمة"
+
+#. module: ebs_fusion_documents
+#. openerp-web
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#, python-format
+msgid "Share this selection"
+msgstr "شارك هذا الاختيار"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__shareholder_agreement
+msgid "Shareholder Agreement"
+msgstr "اتفاقية المساهمين"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__aoa_partner_ids
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__shareholder_contact_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Shareholders"
+msgstr "المساهمين"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__show_ar_file
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__show_ar_file
+msgid "Show Arabic File"
+msgstr "عرض الملف العربي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__show_issue_date
+msgid "Show Issue Date"
+msgstr "إظهار تاريخ الإصدار"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__show_issue_expiry
+msgid "Show Issue Expiry"
+msgstr "إظهار انتهاء المشكلة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__show_issue_expiry_req
+msgid "Show Issue Expiry Req"
+msgstr "إظهار مشكلة انتهاء الصلاحية Req"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_cycle__signature
+msgid "Signature"
+msgstr "إمضاء"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__passport_type__special
+msgid "Special"
+msgstr "خاص"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__sponsor_id
+msgid "Sponsor ID"
+msgstr "هوية الكفيل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__sponsor_name
+msgid "Sponsor Name"
+msgstr "اسم الكفيل"
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/controller/portal.py:0
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__status
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+#, python-format
+msgid "Status"
+msgstr "حالة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__stay_period
+msgid "Stay Period in Months"
+msgstr "فترة الإقامة بالأشهر"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_street
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__street
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_building__street_id
+msgid "Street"
+msgstr "شارع"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_street_no
+msgid "Street No."
+msgstr "رقم الشارع."
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__sub_model_object_field
+msgid "Sub-field"
+msgstr "المجال الفرعي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__sub_object
+msgid "Sub-model"
+msgstr "النموذج الفرعي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__subject
+msgid "Subject"
+msgstr "موضوع"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.document_send_mail_wizard_form
+msgid "Subject..."
+msgstr "موضوع..."
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Submit"
+msgstr "يُقدِّم"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__subtype_id
+msgid "Subtype"
+msgstr "النوع الفرعي"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__tax_card
+msgid "Tax Card"
+msgstr "بطاقة ضريبية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cr_tax_reg_no
+msgid "Tax Reg. No."
+msgstr "التسجيل الضريبي. لا."
+
+#. module: ebs_fusion_documents
+#: code:addons/ebs_fusion_documents/wizard/send_mail_document_wizard.py:0
+#, python-format
+msgid "The email address of this %s partner has not been set "
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+msgid "There are currently no documents that are expired for your account."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+msgid ""
+"There are currently no documents that are going to be expired for your "
+"account."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+msgid ""
+"There are currently no documents uploaded for your\n"
+"                                        account in this folder."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__auto_delete
+msgid ""
+"This option permanently removes any track of email after it's been sent, "
+"including from the Technical menu in the Settings, in order to preserve "
+"storage space of your Odoo database."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+msgid "To be Expired"
+msgstr "على أن تنتهي صلاحيته"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_home_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_home_menu_documents_breadcrumb
+msgid "To be Expired Documents"
+msgstr "لتكون وثائق منتهية الصلاحية"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__commercial_license
+msgid "Trade License"
+msgstr "الاسم التجاري (عربي)"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Trade Name(Ar)"
+msgstr "الاسم التجاري (عربي)"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__message_type
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+msgid "Type"
+msgstr "يكتب"
+
+#. module: ebs_fusion_documents
+#. openerp-web
+#: code:addons/ebs_fusion_documents/static/src/xml/document_templates.xml:0
+#, python-format
+msgid "Un-archive"
+msgstr "إلغاء أرشفة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__unit
+msgid "Unit"
+msgstr "وحدة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__cl_unit_no
+msgid "Unit No."
+msgstr "رقم الوحدة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__university
+msgid "University"
+msgstr "جامعة"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.update_document_view_form
+msgid "Update"
+msgstr "تحديث"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_update_document_wizard_window
+#: model:ir.model,name:ebs_fusion_documents.model_update_document
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Update Document"
+msgstr "تحديث المستند"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_expired_docs
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.portal_my_renewal_docs
+msgid "Upload Document"
+msgstr "تحميل المستند"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Upload a new Document"
+msgstr "تحميل وثيقة جديدة"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.upload_document
+msgid "Upload new document"
+msgstr "تحميل وثيقة جديدة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__use_active_domain
+msgid "Use active domain"
+msgstr "استخدام المجال النشط"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_document_send_mail__template_id
+msgid "Use template"
+msgstr "استخدم القالب"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__version
+msgid "Version"
+msgstr "إصدار"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__ebs_document_type__meta_data_template__visa
+msgid "Visa"
+msgstr "تأشيرة"
+
+#. module: ebs_fusion_documents
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_documents.custom_documents_view
+msgid "Visa Metadata"
+msgstr "البيانات الوصفية للتأشيرة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__visa_ref_no
+msgid "Visa Reference Number"
+msgstr "الرقم المرجعي للتأشيرة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model,name:ebs_fusion_documents.model_ebs_visa_type
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__visa_type_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__visa_type
+msgid "Visa Type"
+msgstr "نوع الفيزا"
+
+#. module: ebs_fusion_documents
+#: model:ir.actions.act_window,name:ebs_fusion_documents.action_ebs_visa_type
+#: model:ir.ui.menu,name:ebs_fusion_documents.menu_ebs_visa_types
+msgid "Visa Types"
+msgstr "أنواع التأشيرات"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__visa_residence_permit
+msgid "Visa/Residence Permit"
+msgstr "تأشيرة / تصريح إقامة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__visit_visa
+msgid "Visit Visa"
+msgstr "تأشيرة زيارة"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__sub_model_object_field
+msgid ""
+"When a relationship field is selected as first field, this field lets you "
+"select the target field within the destination document model (sub-model)."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__sub_object
+msgid ""
+"When a relationship field is selected as first field, this field shows the "
+"document model the relationship goes to."
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,help:ebs_fusion_documents.field_document_send_mail__is_log
+msgid "Whether the message is an internal note (comment mode only)"
+msgstr ""
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__documents_document__residency_type__work
+msgid "Work Residence Permit"
+msgstr "تصريح إقامة العمل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields.selection,name:ebs_fusion_documents.selection__res_partner__address_type__work_sites
+msgid "Work Sites"
+msgstr "مواقع العمل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_document_type__folder_ids
+msgid "Workspace"
+msgstr "مساحة العمل"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__year_of_graduation
+msgid "Year Of Graduation"
+msgstr "سنة التخرج"
+
+#. module: ebs_fusion_documents
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_documents_document__zone_id
+#: model:ir.model.fields,field_description:ebs_fusion_documents.field_ebs_na_street__zone_id
+msgid "Zone"
+msgstr "منطقة"

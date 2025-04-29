@@ -1,0 +1,313 @@
+<odoo>
+    <data noupdate="0">
+                <!--        todo : structure type-->
+        <record id="structure_type_jbm" model="hr.payroll.structure.type">
+            <field name="name">JBM</field>
+            <field name="country_id" eval="False"/>
+            <field name="wage_type">monthly</field>
+        </record>
+        <!--        todo : structure -->
+        <record id="structure_worker_jbm_new" model="hr.payroll.structure">
+            <field name="name">JBM Worker Pay</field>
+            <field name="type_id" ref="structure_type_jbm"/>
+            <field name="country_id" eval="False"/>
+        </record>
+
+        <!--        todo : salary rules [ALW]-->
+
+ <record id="hr_salary_car_alw" model="hr.salary.rule">
+            <field name="name">Car Allowance</field>
+            <field name="code">CAR-ALW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.car_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_car_allowance(payslip,employee)</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+        <record id="salary_rule_end_of_basic_salary_bonus" model="hr.salary.rule">
+            <field name="name">End of Basic Salary Bonus</field>
+            <field name="code">EOBS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.end_of_basic_salary_bonus</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_eobs_allowance(payslip,employee)</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="salary_rule_monthly_incentive" model="hr.salary.rule">
+            <field name="name">Monthly Incentive</field>
+            <field name="code">MI</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.monthly_incentive</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_incentive_allowance(payslip,employee)</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="salary_rule_representative_monthly_allowance" model="hr.salary.rule">
+            <field name="name">Representative Monthly Allowance</field>
+            <field name="code">RMA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.representative_monthly_allowance</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_representative_allowance(payslip,employee)</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+
+        <record id="salary_rule_work_condition_allowance" model="hr.salary.rule">
+            <field name="name">Work Condition Allowance</field>
+            <field name="code">WCA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.work_condition_allowance</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_work_condition_allowance(payslip,employee)</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_salary_rule_social" model="hr.salary.rule">
+            <field name="name">Social Allowance</field>
+            <field name="code">SOCIAL</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.social_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_social_allowance(payslip,employee)</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_salary_rule_housing" model="hr.salary.rule">
+            <field name="name">Housing Allowance</field>
+            <field name="code">HOUSING</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.housing_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_housing_allowance(payslip,employee)</field>
+            <field name="sequence" eval="3"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_salary_rule_transport" model="hr.salary.rule">
+            <field name="name">Transport Allowance</field>
+            <field name="code">TRA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.transport_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_transportation_allowance(payslip,employee)</field>
+            <field name="sequence" eval="4"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_salary_rule_other" model="hr.salary.rule">
+            <field name="name">Other Allowance</field>
+            <field name="code">OTHER</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.other_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_other_allowance(payslip,employee)</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_salary_rule_mobile" model="hr.salary.rule">
+            <field name="name">Mobile Allowance</field>
+            <field name="code">MOBILE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.mobile_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_mobile_allowance(payslip,employee)</field>
+            <field name="sequence" eval="6"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_salary_rule_car_alw" model="hr.salary.rule">
+            <field name="name">Supervision Allowance</field>
+            <field name="code">SUPERVISION</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.supervision_alw</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_supervision_allowance(payslip,employee)</field>
+            <field name="sequence" eval="8"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_salary_rule_earning_settlement" model="hr.salary.rule">
+            <field name="name">Earning Settlements</field>
+            <field name="code">EARNING</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_earning_settlement(payslip,employee)</field>
+            <field name="sequence" eval="9"/>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_basic_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">BD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Basic Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_basic_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_other_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">OTHERD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Other Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_other_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_transportation_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">TRANSD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Transportation Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_transportation_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_housing_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">HOUSINGD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Housing Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_housing_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_mobile_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">MOBILED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Mobile Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_mobile_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_social_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">SOCIALD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Social Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_social_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_rule_car_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">CARD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Car Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_car_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_rule_supervision_deduction" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">SUPERVISIOND</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Supervision Deduction</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_supervision_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_rule_deduction_settlement" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">SETTLEDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Deduction Settlement</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_deduction_settlement(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+        <record id="salary_rule_end_of_basic_salary_deduction" model="hr.salary.rule">
+            <field name="name">EOBS Deduction</field>
+            <field name="code">EOBSDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.end_of_basic_salary_bonus</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_eobs_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="salary_rule_monthly_incentive_deduction" model="hr.salary.rule">
+            <field name="name">Monthly Incentive Deduction</field>
+            <field name="code">MIDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.monthly_incentive</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_incentive_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="salary_rule_representative_monthly_deduction" model="hr.salary.rule">
+            <field name="name">Representative Monthly Deduction</field>
+            <field name="code">RMADED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.representative_monthly_allowance</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_representative_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+
+        <record id="salary_rule_work_condition_deduction" model="hr.salary.rule">
+            <field name="name">Work Condition Deduction</field>
+            <field name="code">WCADED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+<!--            <field name="condition_python">result = contract.work_condition_allowance</field>-->
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_work_condition_deduction(payslip,employee)</field>
+            <field name="struct_id" ref="structure_worker_jbm_new"/>
+        </record>
+
+
+    </data>
+</odoo>

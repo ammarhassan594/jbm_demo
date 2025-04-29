@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <!--        <record id="basic_salary_allowance_element" model="hr.salary.allowance">-->
+        <!--            <field name="name">Basic Salary</field>-->
+        <!--        </record>-->
+
+        <record id="housing_allowance_element" model="hr.salary.allowance">
+            <field name="name">Housing Allowance</field>
+            <field name="allowance_type">housing_allowance</field>
+        </record>
+
+        <record id="transport_allowance_element" model="hr.salary.allowance">
+            <field name="name">Transport Allowance</field>
+            <field name="allowance_type">transport_allowance</field>
+        </record>
+
+        <record id="living_allowance_element" model="hr.salary.allowance">
+            <field name="name">Living Allowance</field>
+            <field name="allowance_type">living_allowance</field>
+        </record>
+
+        <record id="other_allowance_element" model="hr.salary.allowance">
+            <field name="name">Other Allowance</field>
+            <field name="allowance_type">other_allowance</field>
+        </record>
+
+        <record id="food_allowance_element" model="hr.salary.allowance">
+            <field name="name">Food Allowance</field>
+            <field name="allowance_type">food_allowance</field>
+        </record>
+
+        <record id="mobile_allowance_element" model="hr.salary.allowance">
+            <field name="name">Mobile Allowance</field>
+            <field name="allowance_type">mobile_allowance</field>
+        </record>
+
+        <record id="maximum_ticket_allowance_element" model="hr.salary.allowance">
+            <field name="name">Maximum Ticket Allowance</field>
+            <field name="allowance_type">maximum_ticket_allowance</field>
+        </record>
+
+    </data>
+</odoo>

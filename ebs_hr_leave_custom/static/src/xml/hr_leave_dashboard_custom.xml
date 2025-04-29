@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+        <t t-name="hr_holidays.dashboard.calendar.button">
+            <button class="btn btn-primary btn-time-off" type="button">
+                <span> Leave Request </span>
+            </button>
+            <button class="btn btn-secondary btn-allocation" type="button">
+                <t t-esc="request"/>
+            </button>
+        </t>
+</templates>

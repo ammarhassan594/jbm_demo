@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="real_estate_areas_tree" model="ir.ui.view">
+            <field name="name">Real Estate Areas</field>
+            <field name="model">ebspayroll.real.estate.area</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="value"/>
+                    <field name="name"/>
+                    <field name="district"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="real_estate_areas_form" model="ir.ui.view">
+            <field name="name">Real Estate Areas</field>
+            <field name="model">ebspayroll.real.estate.area</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="value"/>
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="district"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="real_estate_areas_window" model="ir.actions.act_window">
+            <field name="name">Real Estate Areas</field>
+            <field name="res_model">ebspayroll.real.estate.area</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

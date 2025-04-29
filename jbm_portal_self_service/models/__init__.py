@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-# from . import hr_payslipfrom . import hr_employeefrom . import approvalsfrom . import hr_leavefrom . import productfrom . import product_category

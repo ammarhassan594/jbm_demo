@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_color_combo_tree_view" model="ir.ui.view">
+            <field name="name">employee.color.combo.tree</field>
+            <field name="model">employee.color.combo</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Color Combos" editable="bottom">
+                    <field name="name"/>
+<!--                    <field name="nationality_id"/>-->
+                    <field name="group_id"/>
+                    <field name="subgroup_id"/>
+                    <field name="employment_type_id"/>
+                    <field name="leaver"/>
+                    <field name="default_color_combo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_color_combo_act_window" model="ir.actions.act_window">
+            <field name="name">Employee Color Combo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.color.combo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        <menuitem name="Employee Color Combo" id="employee_color_combo_menu" parent="hr.menu_human_resources_configuration" action="employee_color_combo_act_window"/>-->
+
+    </data>
+</odoo>

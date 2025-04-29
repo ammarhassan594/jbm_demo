@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gratuity_furniture_configuration_tree_view" model="ir.ui.view">
+            <field name="name">furniture.configuration.tree.view</field>
+            <field name="model">furniture.configuration</field>
+            <field name="arch" type="xml">
+                <tree string="Gratuity Furniture">
+                    <field name="name"/>
+                    <field name="from_year"/>
+                    <field name="to_year"/>
+                </tree>
+            </field>
+        </record>
+        <record id="gratuity_furniture_configuration_form_view" model="ir.ui.view">
+            <field name="name">furniture.configuration.form.view</field>
+            <field name="model">furniture.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Gratuity Furniture">
+                    <sheet>
+                        <field name="active" invisible="1"/>
+                        <field name="yr_from_flag" invisible="1"/>
+                        <field name="yr_to_flag" invisible="1"/>
+                        <widget name="web_ribbon" text="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group name="furniture_duration_details" string="Furniture Configuration">
+                            <group>
+                                <field name="from_year" attrs="{'required': [('yr_from_flag', '=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="to_year" attrs="{'required': [('yr_to_flag', '=', True)]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <div class="o_row o_row_readonly">
+                                <field name="percentage" class="oe_inline"/>
+                                <field name="percentage_twr" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

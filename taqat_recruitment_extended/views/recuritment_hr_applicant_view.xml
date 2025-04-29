@@ -1,0 +1,45 @@
+<odoo>
+
+    <record id="taqat_view_hr_applicant_form" model="ir.ui.view">
+        <field name="name">hr.applicant.form</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header//button[@name='create_employee_from_applicant']" position="before">
+
+
+                <button string="HR Employee Approve" name="action_hr_employee" type="object"
+                        attrs="{'invisible':['|',('applicant_state','!=','draft'),('employee_type','!=','fusion_employee')]}"
+                        groups="hr.group_hr_manager"/>
+
+                <button string="Department  Approve" name="action_department_employee"
+                        type="object"  attrs="{'invisible':['|',('applicant_state','!=','first_interview'),('employee_type','!=','fusion_employee')]}"
+                        groups="hr.group_hr_manager"/>
+
+                <button string="HR Manager Approve" name="action_hr_manager" type="object"
+                        attrs="{'invisible':['|',('applicant_state','!=','second_interview'),('employee_type','!=','fusion_employee')]}"
+                        groups="hr.group_hr_manager"/>
+
+                <button string="Operational Employee Approve" name="action_operational_employee" type="object"
+                        attrs="{'invisible':['|',('applicant_state','!=','draft'),('employee_type','!=','fos_employee')]}"
+                        groups="hr.group_hr_manager"/>
+
+                <button string="Operational Manager Approve" name="action_operational_manager" type="object"
+                        attrs="{'invisible':['|',('applicant_state','!=','first _interview'),('employee_type','!=','fos_employee')]}"
+                        groups="hr.group_hr_manager"/>
+
+
+                <button string="Refuse" name="action_manager_refuse" type="object"
+                        groups="hr.group_hr_manager"/>
+
+
+
+
+                <field name="applicant_state" invisible="1"/>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+

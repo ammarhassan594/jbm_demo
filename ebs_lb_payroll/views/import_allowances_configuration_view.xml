@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="ebspayroll_import_allowances_conf_tree" model="ir.ui.view">
+            <field name="name">Import Allowances Configuration</field>
+            <field name="model">ebspayroll.import.allowances.conf</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="ebspayroll_import_allowances_conf_form" model="ir.ui.view">
+            <field name="name">Import Allowances Conf</field>
+            <field name="model">ebspayroll.import.allowances.conf</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+
+                        </group>
+                        <notebook name="additional_element_conf_lines_form_notebook">
+                            <page name="additional_element_conf_lines_page" string="Lines">
+                                <field name="lines">
+                                    <tree>
+                                        <field name="conf_id" invisible="1"/>
+                                        <field name="label"/>
+                                        <field name="template"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group name="group_top">
+                                                <field name="label" required="1"/>
+                                                <field name="template" required="1"/>
+                                                <field name="additional_type" string="Additional Element Type"
+                                                       attrs="{'invisible': [('template', '!=', 'additional_element_type')]}"/>
+                                                <field name="conf_id" invisible="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <!--window -->
+        <record id="ebspayroll_import_allowances_conf_window" model="ir.actions.act_window">
+            <field name="name">Import Allowances Configuration </field>
+            <field name="res_model">ebspayroll.import.allowances.conf</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+    <!--    ebs crm service order steps form-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_order_steps_form">
+        <field name="name">ebs.crm.service.order.steps.Form</field>
+        <field name="model">ebs.crm.service.order.steps</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service order steps tree-->
+    <record id="view_ebs_crm_service_order_steps_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.service.order.steps.tree</field>
+        <field name="model">ebs.crm.service.order.steps</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service order steps action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_order_steps">
+        <field name="name">Service Order Steps</field>
+        <field name="res_model">ebs.crm.service.order.steps</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+</odoo>

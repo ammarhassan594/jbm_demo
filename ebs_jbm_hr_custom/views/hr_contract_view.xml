@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="jbm_hr_contract_form_view_inherit" model="ir.ui.view">
+            <field name="name">jbm.hr.contract.form.view.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <field name="department_id" position="after">
+                    <field name="scale_configuration_id" invisible="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

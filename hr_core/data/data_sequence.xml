@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--        <record id="sequence_job_code" model="ir.sequence">-->
+        <!--            <field name="name">Job Code</field>-->
+        <!--            <field name="code">job.code</field>-->
+        <!--            <field name="prefix">J</field>-->
+        <!--            <field name="padding">6</field>-->
+        <!--            <field name="number_next">1</field>-->
+        <!--            <field name="number_increment">1</field>-->
+        <!--            <field name="company_id"></field>-->
+        <!--        </record>-->
+
+        <record id="sequence_job_position" model="ir.sequence">
+            <field name="name">Job Position</field>
+            <field name="code">job.position</field>
+            <field name="prefix">P</field>
+            <field name="active">False</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id"></field>
+        </record>
+        <record id="sequence_group" model="ir.sequence">
+            <field name="name">Group Sequence</field>
+            <field name="code">business.unit</field>
+            <field name="prefix">BU</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id"></field>
+        </record>
+        <record id="sequence_department" model="ir.sequence">
+            <field name="name">Department Sequence</field>
+            <field name="code">business.department</field>
+            <field name="prefix">BD</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id"></field>
+        </record>
+        <record id="sequence_section" model="ir.sequence">
+            <field name="name">Section Sequence</field>
+            <field name="code">business.section</field>
+            <field name="prefix">BS</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id"></field>
+        </record>
+        <record id="sequence_subsection" model="ir.sequence">
+            <field name="name">Subsection Sequence</field>
+            <field name="code">sub.section</field>
+            <field name="prefix">SS</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id"></field>
+        </record>
+
+    </data>
+</odoo>

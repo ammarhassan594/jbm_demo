@@ -1,0 +1,68 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* public_alert_api
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-25 12:21+0000\n"
+"PO-Revision-Date: 2023-06-25 12:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__create_uid
+msgid "Created by"
+msgstr "تم إنشاؤها بواسطة"
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__id
+msgid "ID"
+msgstr ""
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: public_alert_api
+#: model:ir.actions.act_window,name:public_alert_api.public_alert_action
+#: model:ir.model,name:public_alert_api.model_public_alert
+#: model:ir.ui.menu,name:public_alert_api.menu_public_alert
+msgid "Public Alert"
+msgstr "إنذار عام"
+
+#. module: public_alert_api
+#: model:ir.model.fields,field_description:public_alert_api.field_public_alert__title
+msgid "Title"
+msgstr "لقب"

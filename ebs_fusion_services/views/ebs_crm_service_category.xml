@@ -1,0 +1,39 @@
+<odoo>
+    <!--    ebs crm services category form-->
+    <record model="ir.ui.view" id="view_ebs_crm_services_categories_form">
+        <field name="name">ebs.crm.services.categories.Form</field>
+        <field name="model">ebs.crm.service.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service categories tree-->
+    <record id="view_ebs_crm_services_categories_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.services.categories.tree</field>
+        <field name="model">ebs.crm.service.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service categories action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_categories">
+        <field name="name">Service Categories</field>
+        <field name="res_model">ebs.crm.service.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_allowance_request_user,allowance.request.group_user,model_allowance_request,base.group_user,1,1,1,1
+access_allowance_request_officer,allowance.request.group_hr_user,model_allowance_request,hr.group_hr_user,1,1,1,1
+access_allowance_request_manager,allowance.request,model_allowance_request,hr.group_hr_manager,1,1,1,1
+access_academic_year_user,academic.year.group_user,model_academic_year,base.group_user,1,1,1,1
+access_academic_year_officer,academic.year.group_hr_user,model_academic_year,hr.group_hr_user,1,1,1,1
+access_academic_year_manager,academic.year,model_academic_year,hr.group_hr_manager,1,1,1,1
+access_allowance_request_line,allowance.request.line,model_allowance_request_line,,1,1,1,1
+access_allowance_type,allowance.type,model_allowance_type,,1,1,1,1
+access_allowance_depreciation,allowance_depreciation,model_allowance_depreciation,,1,1,1,1
+access_education_allowance_line,education.allowance.line,model_education_allowance_line,,1,1,1,1

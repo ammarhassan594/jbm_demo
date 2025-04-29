@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+
+        <record id="employee_it_request_form_view" model="ir.ui.view">
+            <field name="name">employee.it.request.form.view</field>
+            <field name="model">it.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="show_description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_it_request_tree_view" model="ir.ui.view">
+            <field name="name">employee.it.request.tree.view</field>
+            <field name="model">it.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="show_description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="it_request_action" model="ir.actions.act_window">
+            <field name="name">IT Request</field>
+            <field name="res_model">it.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="it_request" name="IT Request"
+                  action="it_request_action" parent="employee_it_devices.it_root_menu"/>
+    </data>
+</odoo>

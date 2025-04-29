@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="settings_inherit_loan" model="ir.ui.view">
+        <field name="name">settings.loan</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr_payroll.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='hr_payroll_localization']" position="inside">
+                <div class="colhrac" style="margin-left:50px;">
+                    <label for="loan_installments" string="Loan Installments:"/>
+                    <field name="loan_installments" class="o_row d-flex"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+
+</odoo>

@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fields, api, _class RESPartnerBank(models.Model):    _inherit = "res.partner.bank"    manager_id = fields.Many2one(comodel_name="res.partner", string="Bank Account Manager",                                 domain="[('is_bank_acc_manager', '=', True)]")

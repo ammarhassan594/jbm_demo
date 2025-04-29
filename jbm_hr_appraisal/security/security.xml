@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="skills_objective_types_multi_company_rule" model="ir.rule">
+            <field name="name">Skills Objective Types multi-company</field>
+            <field ref="jbm_hr_appraisal.model_employee_skills_objective_types" name="model_id"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+
+        <!--Appraisal-->
+
+        <record id="jbm_hr_appraisal_users" model="ir.rule">
+            <field name="name">JBM Appraisal Users</field>
+            <field name="model_id" ref="hr_appraisal.model_hr_appraisal"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+        <record id="jbm_hr_appraisal_manager_users" model="ir.rule">
+            <field name="name">JBM Appraisal Manager only create and read</field>
+            <field name="model_id" ref="hr_appraisal.model_hr_appraisal"/>
+            <field name="domain_force">[('manager_ids','in', user.employee_ids.ids)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+
+        <record id="rule_of_jbm_appraisal_managers_read_write" model="ir.rule">
+            <field name="name">JBM Appraisal Manager read and write</field>
+            <field name="model_id" ref="hr_appraisal.model_hr_appraisal"/>
+            <field name="domain_force">[(1 , '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_general_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),
+                   (4,ref('jbm_group_access_right_extended.custom_hr_user')),
+                   ]"/>
+        </record>
+
+
+        <record id="rule_of_jbm_appraisal_managers_all_access" model="ir.rule">
+            <field name="name">JBM Appraisal Manager All Access</field>
+            <field name="model_id" ref="hr_appraisal.model_hr_appraisal"/>
+            <field name="domain_force">[(1 , '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_hr_manager'))]"/>
+        </record>
+
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'hr_appraisal'),'|', '|', '|', '|', ('name', '=', 'hr_appraisal.hr_appraisal_all_rule'), ('name', '=', 'hr_appraisal.hr_appraisal_emp_rule'), ('name', '=', 'hr_appraisal.hr_appraisal_implicit_rule'), ('name', '=', 'hr_appraisal.hr_appraisal_rule_base_user'), ('name', '=', 'hr_appraisal.hr_appraisal_comp_rule')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+<!--        <record id="hr_appraisal.hr_appraisal_all_rule" model="ir.rule">-->
+<!--            <field name="active" eval="False"/>-->
+<!--        </record>-->
+
+        <record id="hr_appraisal.hr_appraisal_emp_rule" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_appraisal.hr_appraisal_implicit_rule" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_appraisal.hr_appraisal_rule_base_user" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_appraisal.hr_appraisal_comp_rule" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'hr_appraisal'),'|', '|', '|', '|', ('name', '=', 'hr_appraisal_all_rule'), ('name', '=', 'hr_appraisal_emp_rule'), ('name', '=', 'hr_appraisal_implicit_rule'), ('name', '=', 'hr_appraisal_rule_base_user'), ('name', '=', 'hr_appraisal_comp_rule')]"/>
+            </function>
+            <value eval="{'noupdate': True}"/>
+        </function>
+
+    </data>
+</odoo>

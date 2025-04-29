@@ -1,0 +1,1052 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-13 09:39+0000\n"
+"PO-Revision-Date: 2023-02-13 09:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__meeting_count_tender
+msgid "# Meetings"
+msgstr "# اجتماعات"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tenders_form
+msgid ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count_tender', '&lt;', 2)]}\"> Meetings</span>\n"
+"                                    <span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count_tender', '&gt;', 1)]}\"> Meeting</span>"
+msgstr ""
+
+#. module: ebs_fusion_crm
+#: model:mail.template,body_html:ebs_fusion_crm.mail_template_stage_proposal_lead
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;\">\n"
+"                    <tr>\n"
+"                        <td align=\"center\">\n"
+"                            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: 24px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"                                <tbody>\n"
+"                                    <tr>\n"
+"                                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                                            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background-color: white; padding: 0; border-collapse:separate;\">\n"
+"                                                <tr>\n"
+"                                                    <td valign=\"middle\">\n"
+"                                                        <span style=\"font-size: 10px;\">Proposal</span>\n"
+"                                                        <br/>\n"
+"                                                    </td>\n"
+"                                                    <td valign=\"middle\" align=\"right\">\n"
+"                                                        <img t-attf-src=\"/logo.png?company={{ object.company_id.id }}\" style=\"padding: 0px; margin: 0px; height: 48px;\" t-att-alt=\"object.company_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\" style=\"text-align:center;\">\n"
+"                                                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </table>\n"
+"                                        </td>\n"
+"                                    </tr>\n"
+"                                    <tr>\n"
+"                                        <td style=\"min-width: 590px;\">\n"
+"                                            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                                                <tr>\n"
+"                                                    <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                                                        <div style=\"margin: 0px; padding: 0px;\">\n"
+"                                                            <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                                                                <p>Hello\n"
+"                                                                    <t t-out=\"object.partner_id.name if object.partner_id.id else object.partner_name\"/>\n"
+"\n"
+"                                                                </p>\n"
+"                                                                <br/>\n"
+"                                                                <br/>\n"
+"                                                                <t t-if=\"object.opportunity_type_service_mapping_ids\">\n"
+"                                                                    <div style=\"display:table;border: 1px solid black;\">\n"
+"                                                                        <div style=\"display:table-header-group;\">\n"
+"                                                                            <div class=\"col-12\" style=\"display:table-row;\">\n"
+"                                                                                <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                    <strong>Service</strong>\n"
+"                                                                                </div>\n"
+"                                                                                <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                    <strong>Service Option</strong>\n"
+"                                                                                </div>\n"
+"                                                                                <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                    <strong>Govt. Fees</strong>\n"
+"                                                                                </div>\n"
+"                                                                                <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                    <strong>Main Company Fees</strong>\n"
+"                                                                                </div>\n"
+"                                                                            </div>\n"
+"                                                                        </div>\n"
+"                                                                        <div style=\"display:table-row-group;\">\n"
+"                                                                            <t t-foreach=\"object.opportunity_type_service_mapping_ids\" t-as=\"line\">\n"
+"                                                                                <div class=\"col-12\" style=\"display:table-row;\">\n"
+"                                                                                    <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                        <t t-esc=\"line.service_id.name\"/>\n"
+"\n"
+"                                                                                    </div>\n"
+"                                                                                    <t t-if=\"line.service_option_id.name == 'new'\">\n"
+"                                                                                        <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                            New\n"
+"                                                                                        </div>\n"
+"                                                                                    </t>\n"
+"\n"
+"                                                                                    <t t-if=\"line.service_option_id.name == 'renew'\">\n"
+"                                                                                        <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                            Renew\n"
+"                                                                                        </div>\n"
+"                                                                                    </t>\n"
+"                                                                                    <t t-if=\"line.service_option_id.name == 'manage'\">\n"
+"                                                                                        <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                            Other\n"
+"                                                                                        </div>\n"
+"                                                                                    </t>\n"
+"                                                                                    <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                        <t t-esc=\"line.govt_fees\"/>\n"
+"                                                                                    </div>\n"
+"                                                                                    <div class=\"col-3\" style=\"display:table-cell;border: 1px solid black;\">\n"
+"                                                                                        <t t-esc=\"line.fusion_fees\"/>\n"
+"                                                                                    </div>\n"
+"                                                                                </div>\n"
+"                                                                            </t>\n"
+"                                                                        </div>\n"
+"                                                                    </div>\n"
+"                                                                </t>\n"
+"                                                                <br/>\n"
+"                                                                <p>This is your Proposal. Please confirm it.</p>\n"
+"                                                                <p>If you have any questions, please do not hesitate to\n"
+"                                                                    contact us.\n"
+"                                                                </p>\n"
+"                                                                <br/>\n"
+"\n"
+"                                                                Thank you,\n"
+"                                                                <br/>\n"
+"                                                                <t t-if=\"object.user_id\">\n"
+"                                                                    <p>--\n"
+"                                                                        <t t-esc=\"object.user_id.name\"/>\n"
+"                                                                    </p>\n"
+"                                                                </t>\n"
+"                                                            </p>\n"
+"                                                        </div>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                            </table>\n"
+"                                        </td>\n"
+"                                    </tr>\n"
+"                                    <tr>\n"
+"                                        <td align=\"center\" style=\"min-width: 590px; padding: 0 8px 0 8px; font-size:11px;\">\n"
+"                                            <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 4px 0px;\"/>\n"
+"                                            <b t-out=\"object.company_id.name or ''\"/>\n"
+"                                            <br/>\n"
+"                                            <div style=\"color: #999999;\">\n"
+"                                                <t t-out=\"object.company_id.phone or ''\"/>\n"
+"                                                <t t-if=\"object.company_id.email\">\n"
+"                                                    |\n"
+"                                                    <a t-attf-href=\"'mailto:%s' % {{ object.company_id.email }}\" style=\"text-decoration:none; color: #999999;\" t-out=\"object.company_id.email or ''\"/>\n"
+"                                                </t>\n"
+"                                                <t t-if=\"object.company_id.website\">\n"
+"                                                    |\n"
+"                                                    <a t-attf-href=\"'%s' % {{ object.company_id.website }}\" style=\"text-decoration:none; color: #999999;\" t-out=\"object.company_id.website or ''\"/>\n"
+"                                                </t>\n"
+"                                            </div>\n"
+"                                        </td>\n"
+"                                    </tr>\n"
+"                                </tbody>\n"
+"                            </table>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_mail_activity
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__opportunity_type__advisory
+msgid "Advisory"
+msgstr "استشاري"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__approx_cost
+msgid "Approx Cost"
+msgstr "التكلفة التقريبية"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__approx_profit
+msgid "Approx Profit"
+msgstr "الربح التقريبي"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__participating_tender
+msgid "Are we participating in the tender?"
+msgstr "هل نحن مشتركون في العطاء؟"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__state__award
+msgid "Awarded"
+msgstr "منحت"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__bank_guarantee
+msgid "Bank Guarantee"
+msgstr "ضمان بنكي"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__bank_name
+msgid "Bank Name"
+msgstr "اسم البنك"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__budget
+msgid "Budget"
+msgstr "ميزانية"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_submission_method__by_hand
+msgid "By Hand"
+msgstr "باليد"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_crm_stage
+msgid "CRM Stages"
+msgstr "مراحل إدارة علاقات العملاء "
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_calendar_event
+msgid "Calendar Event"
+msgstr "فعالية التقويم "
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__partner_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+msgid "Client"
+msgstr "عميل"
+
+#. module: ebs_fusion_crm
+#: code:addons/ebs_fusion_crm/models/crm_lead_custom.py:0
+#, python-format
+msgid "Client Is Not Active."
+msgstr "العميل غير نشط."
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__partner_name
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_crm_lead_filter_inherited
+msgid "Client Name"
+msgstr "اسم العميل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__close_date
+msgid "Closed Date"
+msgstr "تاريخ مغلق"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_stage__code
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__code
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.view_ebs_calendar_meeting_room_search
+msgid "Code"
+msgstr "شفرة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner__contact_industry_ids
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__contact_industry_ids
+msgid "Conatct Industries"
+msgstr "صناعات كوناتكت"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: ebs_fusion_crm
+#: model:ir.ui.menu,name:ebs_fusion_crm.ebs_calendar_configuration_menu
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_res_partner
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__contact_ids
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_client_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_res_partner_form
+msgid "Contact Industries"
+msgstr "صناعات الاتصال"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__contact_name
+msgid "Contact Name"
+msgstr "اسم جهة الاتصال"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__opportunity_type__corporate_services
+msgid "Corporate Services"
+msgstr "خدمات للشركات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__cost
+msgid "Cost"
+msgstr "يكلف"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+msgid "Create Client"
+msgstr "إنشاء عميل"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tenders_form
+msgid "Create Document"
+msgstr "إنشاء وثيقة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__date_published
+msgid "Date of Tender Publishing"
+msgstr "تاريخ نشر العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_type__deal
+msgid "Deal"
+msgstr "اتفاق"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__deal_sum
+msgid "Deal Sum"
+msgstr "مبلغ الصفقة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner__is_deliver_partner
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__is_deliver_partner
+msgid "Deliver Partner"
+msgstr "تسليم الشريك"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__delivery_partner_id
+msgid "Delivery Partner"
+msgstr "شريك التوصيل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tenders_form
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_ebs_calendar_meeting_room
+msgid "EBS Calender Meeting Room"
+msgstr "غرفة اجتماعات تقويم EBS"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_ebs_contact_industries
+msgid "EBS Contact Industries"
+msgstr "EBS Contact Industries"
+
+#. module: ebs_fusion_crm
+#: code:addons/ebs_fusion_crm/models/crm_lead_custom.py:0
+#, python-format
+msgid "Email Is Required To Send Proposal."
+msgstr "البريد الإلكتروني مطلوب لإرسال الاقتراح."
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "معالج تكوين رسالة البريد الإلكتروني"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_sales_dashboard_tree
+msgid "Entity Name"
+msgstr "اسم الكيان"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__event_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_calendar_meeting_room_form
+msgid "Events"
+msgstr "الأحداث"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_sales_dashboard_tree
+msgid "Expected Revenue Amount"
+msgstr "مبلغ الإيرادات المتوقعة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__formation_fee
+msgid "Formation Fees"
+msgstr "رسوم التكوين"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_purchase_value__free
+msgid "Free"
+msgstr "حر"
+
+#. module: ebs_fusion_crm
+#: code:addons/ebs_fusion_crm/models/crm_lead_custom.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+#, python-format
+msgid "Generate Contract"
+msgstr "توليد العقد"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_crm_lead_lost
+msgid "Get Lost Reason"
+msgstr "معرفة سبب الضياع "
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_of__global
+msgid "Global"
+msgstr "عالمي"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_of__government
+msgid "Government"
+msgstr "حكومة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Govt. Fees"
+msgstr "مشاريع سياحية. مصاريف"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_portal_wizard
+msgid "Grant Portal Access"
+msgstr "منح صلاحية الوصول لبوابة العملاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.actions.act_window,name:ebs_fusion_crm.partner_wizard_inherit_action
+msgid "Grant portal access"
+msgstr "منح الوصول إلى البوابة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.view_res_partner_industry_filter_inherited
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Hello"
+msgstr "مرحبًا"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_wining_probability__high
+msgid "High"
+msgstr "عالي"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__hubspot_id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_stage__hubspot_id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_mail_activity__hubspot_id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner__hubspot_id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__hubspot_id
+msgid "Hubspot ID"
+msgstr "معرف Hubspot"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_res_partner_industry
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__industry_id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__industry_id
+#: model:ir.ui.menu,name:ebs_fusion_crm.crm_lead_partner_industry_menu
+msgid "Industry"
+msgstr "مجال العمل"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.res_partner_kanban_inherited_view
+msgid "Industry:"
+msgstr "صناعة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_published_on__invitation
+msgid "Invitation"
+msgstr "دعوة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_stage__is_lost
+msgid "Is Lost Stage?"
+msgstr "هل المرحلة الضائعة؟"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__lead_document_count
+msgid "Lead Document Count"
+msgstr "عدد المستندات الرئيسية"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "عميل مهتم/فرصة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Lines for proposal"
+msgstr "خطوط للاقتراح"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,help:ebs_fusion_crm.field_crm_lead__partner_id
+msgid ""
+"Linked partner (optional). Usually created when converting the lead. You can"
+" find a partner by its Name, TIN, Email or Internal Reference."
+msgstr ""
+"الشريك المرتبط (اختياري). يُنشأ عادةً عند تحويل العميل المهتم. باستطاعتكم "
+"إيجاد الشريك عن طريق الاسم أو الرقم التعريفي لدافع الضرائب، أو البريد "
+"الإلكتروني، أو عن طريق مرجع داخلي. "
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__location
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.view_ebs_calendar_meeting_room_search
+msgid "Location"
+msgstr "موقع"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__state__lost
+msgid "Lost"
+msgstr "ضائع"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_wining_probability__low
+msgid "Low"
+msgstr "قليل"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Main Company Fees"
+msgstr "رسوم الشركة الرئيسية"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Manage"
+msgstr "يدير"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_wining_probability__medium
+msgid "Medium"
+msgstr "واسطة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__count_meeting
+msgid "Meeting"
+msgstr "مقابلة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.custom_calendar_event_search
+msgid "Meeting Room"
+msgstr "قاعة الاجتماعات"
+
+#. module: ebs_fusion_crm
+#: model:ir.actions.act_window,name:ebs_fusion_crm.ebs_calendar_meeting_room_action
+#: model:ir.ui.menu,name:ebs_fusion_crm.ebs_calendar_meeting_room_menu
+msgid "Meeting Rooms"
+msgstr "غرف الإجتماعات"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_calendar_meeting_room_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_client_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_supplier_form_extended
+msgid "Meetings"
+msgstr "الاجتماعات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_submission_method
+msgid "Method of Tender Submission"
+msgstr "طريقة تقديم العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__mobile
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+msgid "Mobile"
+msgstr "الهاتف المحمول"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_calendar_meeting_room__name
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.view_ebs_calendar_meeting_room_search
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "New"
+msgstr "جديد"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_published_on__news_paper
+msgid "News Paper"
+msgstr "جريدة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__participating_tender__no
+msgid "No"
+msgstr "لا"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__state__ongoing
+msgid "Ongoing"
+msgstr "جاري التنفيذ"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_submission_method__online
+msgid "Online"
+msgstr "متصل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner__opportunity_ids
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__opportunity_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_client_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_res_partner_crm_form_inherited
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_supplier_form_extended
+msgid "Opportunities"
+msgstr "الفرص"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__opportunity_type
+msgid "Opportunity Type"
+msgstr "نوع الفرصة"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Opportunity type"
+msgstr "نوع الفرصة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__state__other
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_of__other
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_published_on__other
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_submission_method__other
+msgid "Other"
+msgstr "آخر"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__owner_id
+msgid "Owner"
+msgstr "مالك"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner_industry__parent_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.view_res_partner_industry_filter_inherited
+msgid "Parent"
+msgstr "الأبوين"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__partner_id
+msgid "Partner"
+msgstr "شريك"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__partner_address_mobile
+msgid "Partner Contact Mobile"
+msgstr "الشريك الاتصال موبايل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__state__pipline
+msgid "Pipeline"
+msgstr "خط انابيب"
+
+#. module: ebs_fusion_crm
+#: code:addons/ebs_fusion_crm/models/crm_lead_custom.py:0
+#, python-format
+msgid "Please Activate All Contracts."
+msgstr "يرجى تفعيل جميع العقود."
+
+#. module: ebs_fusion_crm
+#: code:addons/ebs_fusion_crm/models/crm_lead_custom.py:0
+#, python-format
+msgid "Please Create Contract From Generate Contract Button."
+msgstr "الرجاء إنشاء عقد من إنشاء زر العقد."
+
+#. module: ebs_fusion_crm
+#: code:addons/ebs_fusion_crm/models/crm_lead_custom.py:0
+#, python-format
+msgid "Please Send Email To Client To Set This Stage."
+msgstr "يرجى إرسال بريد إلكتروني إلى العميل لضبط هذه المرحلة."
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_published_on__portal
+msgid "Portal"
+msgstr "منفذ"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_submission_method__post
+msgid "Post"
+msgstr "بريد"
+
+#. module: ebs_fusion_crm
+#: model:ir.actions.act_window,name:ebs_fusion_crm.crm_deal_quotation_customer
+#: model:ir.ui.menu,name:ebs_fusion_crm.menu_fusion_quotation_customer
+msgid "Potential Clients"
+msgstr "العملاء المحتملين"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_of__private
+msgid "Private"
+msgstr "خاص"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_stage__probability
+msgid "Probability"
+msgstr "احتمالا"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__opportunity_type__product_representation_opportunity
+msgid "Product Representation Opportunity"
+msgstr "فرصة تمثيل المنتج"
+
+#. module: ebs_fusion_crm
+#: model:ir.actions.report,name:ebs_fusion_crm.action_proposal_report1
+msgid "Proposal"
+msgstr "عرض"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__proposal_doc_id
+msgid "Proposal Document"
+msgstr "وثيقة الاقتراح"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_config_settings__proposal_email_temp_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.res_config_settings_view_form_inherit_proposal
+msgid "Proposal Email Template"
+msgstr "نموذج البريد الإلكتروني للمقترح"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_config_settings__proposal_report_action_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.res_config_settings_view_form_inherit_proposal
+msgid "Proposal Report Action"
+msgstr "إجراء تقرير الاقتراح"
+
+#. module: ebs_fusion_crm
+#: model:mail.template,subject:ebs_fusion_crm.mail_template_stage_proposal_lead
+msgid "Proposal {{object.name}}"
+msgstr "الاقتراح {{object.name}}"
+
+#. module: ebs_fusion_crm
+#: model:mail.template,name:ebs_fusion_crm.mail_template_stage_proposal_lead
+msgid "Proposal: Send by email"
+msgstr "الاقتراح: أرسل بالبريد الإلكتروني"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_purchase_value__qar
+msgid "QAR"
+msgstr "ثلج"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_published_on__reference
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__referred_by_id
+msgid "Referred by"
+msgstr "نسب من قبل"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_ebs_contact_industries__remain_budget
+msgid "Remaing Budget"
+msgstr "ميزانية متبقية"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Renew"
+msgstr "تجديد"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_calendar_event__room_id
+msgid "Room"
+msgstr "غرفة"
+
+#. module: ebs_fusion_crm
+#: model:ir.actions.act_window,name:ebs_fusion_crm.ebs_fusion_crm_sales_dashboard_action
+#: model:ir.ui.menu,name:ebs_fusion_crm.crm_sales_dashboard
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_sales_dashboard_tree
+msgid "Sales Dashboard"
+msgstr "لوحة المبيعات"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.view_ebs_calendar_meeting_room_search
+msgid "Search Meeting Room"
+msgstr "ابحث عن غرفة الاجتماعات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_of__semi_government
+msgid "Semi Government"
+msgstr "شبه حكومية"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_lead_form
+msgid "Send By Email"
+msgstr "ارسل بالبريد الإلكترونى"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Service"
+msgstr "خدمة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__service_fees_monthly
+msgid "Service Fees Monthly"
+msgstr "رسوم الخدمة شهريا"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Service Option"
+msgstr "خيار الخدمة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__show_contact_name
+msgid "Show Contact Name"
+msgstr "إظهار اسم جهة الاتصال"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__show_partner_name
+msgid "Show Partner Name"
+msgstr "إظهار اسم الشريك"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__stage_code
+msgid "Stage Code"
+msgstr "كود المرحلة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__state
+msgid "Status"
+msgstr "حالة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__sub_sectors_ids
+msgid "Sub-Sectors"
+msgstr "القطاعات الفرعية"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__marketing_subject_matter_expert_id
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner__is_subject_matter_expert
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__is_subject_matter_expert
+msgid "Subject Matter Expert"
+msgstr "خبير الموضوع"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_purchase_value__subscription
+msgid "Subscription"
+msgstr "الاشتراك"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_partner__target_client_ids
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__target_client_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_client_form_extended
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_res_partner_form
+msgid "Target Client"
+msgstr "العميل المستهدف"
+
+#. module: ebs_fusion_crm
+#: model:ir.actions.act_window,name:ebs_fusion_crm.action_ebs_fusion_tender
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_type__tender
+#: model:ir.ui.menu,name:ebs_fusion_crm.menu_fusion_tender
+msgid "Tender"
+msgstr "ليّن"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_bond_value
+msgid "Tender Bond Value"
+msgstr "قيمة سند العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_category
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tenders_form
+msgid "Tender Category"
+msgstr "فئة العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_comm_contact_person_desig
+msgid "Tender Committee Contact Person Designation"
+msgstr "تعيين مسؤول الاتصال بلجنة المناقصات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_comm_contact_person_eamil
+msgid "Tender Committee Contact Person Email"
+msgstr "البريد الإلكتروني للاتصال بلجنة المناقصات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_comm_contact_person_name
+msgid "Tender Committee Contact Person Name"
+msgstr "اسم مسؤول الاتصال بلجنة المناقصات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_comm_contact_person_phone
+msgid "Tender Committee Contact Person Phone"
+msgstr "هاتف مسؤول الاتصال بلجنة المناقصات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_description
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tenders_form
+msgid "Tender Description"
+msgstr "وصف العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_name
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tender_tree
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_tenders_form
+msgid "Tender Name"
+msgstr "اسم العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_no
+msgid "Tender Number"
+msgstr "رقم المناقصة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_of
+msgid "Tender Of"
+msgstr "مناقصة"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_opening_date
+msgid "Tender Opening Date"
+msgstr "تاريخ فتح العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_opening_location
+msgid "Tender Opening Location"
+msgstr "موقع فتح العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_organization_name
+msgid "Tender Organization Name"
+msgstr "اسم منظمة العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_published_on
+msgid "Tender Published On"
+msgstr "تم نشر المناقصة في"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_purchase_value
+msgid "Tender Purchase Value"
+msgstr "قيمة شراء العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_submission_before_date
+msgid "Tender Submission Before Date"
+msgstr "تقديم العطاء قبل التاريخ"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_type
+msgid "Tender Type"
+msgstr "نوع العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_value
+msgid "Tender Value"
+msgstr "قيمة العطاء"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_crm_lead__tender_wining_probability
+msgid "Tender Wining Probability"
+msgstr "العطاءات احتمالية الفوز"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "Thank You."
+msgstr "شكرًا لك."
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,help:ebs_fusion_crm.field_crm_lead__partner_name
+msgid ""
+"The name of the future partner company that will be created while converting"
+" the lead into opportunity"
+msgstr ""
+"اسم شركة الشريك المستقبلي التي سوف يتم إنشاؤها أثناء تحويل العميل المهتم إلى"
+" فرصة "
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.ebs_fusion_crm_sales_dashboard_tree
+msgid "Total Revenue Value"
+msgstr "إجمالي قيمة الإيرادات"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__tender_purchase_value__usd
+msgid "USD"
+msgstr "دولار أمريكي"
+
+#. module: ebs_fusion_crm
+#: model:ir.model,name:ebs_fusion_crm.model_res_users
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_portal_wizard__user_ids
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields,field_description:ebs_fusion_crm.field_res_users__write_capability_ids
+msgid "Write Capabilities CRM"
+msgstr "كتابة قدرات CRM"
+
+#. module: ebs_fusion_crm
+#: model:ir.model.fields.selection,name:ebs_fusion_crm.selection__crm_lead__participating_tender__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: ebs_fusion_crm
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_crm.proposal_report_template1
+msgid "are shown below."
+msgstr "موضحة أدناه."

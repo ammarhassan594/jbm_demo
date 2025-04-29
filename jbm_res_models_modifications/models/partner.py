@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fieldsclass RESPartner(models.Model):    _inherit = 'res.partner'    fax = fields.Char(string="Fax")

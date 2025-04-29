@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ebs_jbm_waqf_view_form" model="ir.ui.view">
+            <field name="name">ebs.jbm.waqf.view.form</field>
+            <field name="model">ebs.jbm.waqf</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="description"/>
+                                <field name="country_id"/>
+                                <field name="address"/>
+                                <field name="date"/>
+                                <field name="attachment_ids" widget="many2many_binary"/>
+                                <field name="type"/>
+                                <field name="in_conflict"/>
+                                <field name="size"/>
+                            </group>
+                            <group>
+                                <field name="owner_id"/>
+                                <field name="currency_id"/>
+                                <field name="amount"/>
+                                <field name="year"/>
+                                <field name="geolocation"/>
+                                <field name="property_manager"/>
+                                <field name="opening_date"/>
+                                <field name="conflict_reason"/>
+                                <field name="sequence"/>
+                                <field name="parent_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="ebs_jbm_waqf_view_tree" model="ir.ui.view">
+            <field name="name">eebs.jbm.waqf.view.tree</field>
+            <field name="model">ebs.jbm.waqf</field>
+            <field name="arch" type="xml">
+                <tree string="Waqf Screen">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="country_id"/>
+                    <field name="address"/>
+                    <field name="date"/>
+                    <field name="attachment_ids"/>
+                    <field name="type"/>
+                    <field name="in_conflict"/>
+                    <field name="size"/>
+                    <field name="owner_id"/>
+                    <field name="currency_id" optional="hide"/>
+                    <field name="amount"/>
+                    <field name="year"/>
+                    <field name="geolocation" optional="hide"/>
+                    <field name="property_manager" optional="hide"/>
+                    <field name="opening_date"/>
+                    <field name="conflict_reason" optional="hide"/>
+                    <field name="sequence"/>
+                    <field name="parent_id" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_ebs_jbm_waqf" model="ir.actions.act_window">
+            <field name="name">Waqf Screen</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ebs.jbm.waqf</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ebs_jbm_waqf_main_menu"
+                  name="Waqf Screen"
+                  parent="hr.menu_hr_employee_payroll"
+                  action="action_ebs_jbm_waqf"
+                  sequence="100"/>
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.dynamic.ooredoo_.integration</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Ooredoo Integration" string="Ooredoo Integration"
+                     data-key="dynamic_ooredoo_integration">
+                    <h2>Ooredoo Integration</h2>
+                    <div class="row mt16 o_settings_container" name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Set Customer Data For Integration With Ooredoo.">
+                            <div class="o_setting_right_pane">
+                                <field name="ooredoo_url"/>
+                                <div class="text-muted">
+                                    <label for="ooredoo_url" class="o_form_label">Ooredoo URL</label>
+                                    <br/>
+                                    Add URL To Integrate With Ooredoo SMS Service.
+                                </div>
+                            </div>
+
+
+                            <div class="o_setting_right_pane">
+                                <field name="ooredoo_customerID"/>
+                                <div class="text-muted">
+                                    <label for="ooredoo_customerID" class="o_form_label">Customer ID</label>
+                                    <br/>
+                                    Add Customer ID To Integrate With Ooredoo SMS Service.
+                                </div>
+                            </div>
+
+
+                            <div class="o_setting_right_pane">
+                                <field name="ooredoo_username"/>
+                                <div class="text-muted">
+                                    <label for="ooredoo_username" class="o_form_label">Username</label>
+                                    <br/>
+                                    Add Username To Integrate With Ooredoo SMS Service.
+                                </div>
+                            </div>
+
+                            <div class="o_setting_right_pane">
+                                <field name="ooredoo_password"/>
+                                <div class="text-muted">
+                                    <label for="ooredoo_password" class="o_form_label">Password</label>
+                                    <br/>
+                                    Add Password To Integrate With Ooredoo SMS Service.
+                                </div>
+                            </div>
+
+
+                            <div class="o_setting_right_pane">
+                                <field name="ooredo_originator"/>
+                                <div class="text-muted">
+                                    <label for="ooredo_originator" class="o_form_label">Originator</label>
+                                    <br/>
+                                    Add Originator.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

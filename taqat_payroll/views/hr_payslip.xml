@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="mail_act_payroll" model="mail.activity.type">
+        <field name="name">Payslip Run</field>
+        <field name="res_model">hr.payslip.run</field>
+    </record>
+
+      <record id="taqat_view_hr_payslip_by_employees_extended" model="ir.ui.view">
+        <field name="name">custom.hr.payslip.employees.view</field>
+        <field name="model">hr.payslip.employees</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_by_employees"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='structure_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+      </record>
+
+
+    <record id="custom_hr_payslip_run_view" model="ir.ui.view">
+        <field name="name">custom.hr.payslip.run.view</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="after">
+                 <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+
+            </xpath>
+            <xpath expr="//button[@name='action_validate']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="states">verify,approve,by_hr,by_finance,close</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_validate']" position="after">
+<!--                <button string="Approve" class="oe_highlight" name="direct_approved" type="object"-->
+<!--                        groups="ebs_lb_payroll.group_fos_payroll" states="draft,verify"/>-->
+<!--                <button string="HR Confirm" class="oe_highlight" name="action_hr_confirm" type="object"-->
+<!--                        groups="ebs_lb_payroll.group_payroll_hr" attrs="{'invisible': ['|',('state', '!=', 'approve'),('is_finance_approve', '=', True)]}"/>-->
+<!--                <button string="Finance Confirm" class="oe_highlight" name="action_finance_confirm" type="object"-->
+<!--                        groups="ebs_lb_payroll.group_finance_payroll_confirm" attrs="{'invisible': [('state', '!=', 'by_hr')]}"/>-->
+<!--                <button string="Director Approved" class="oe_highlight" name="director_approved" type="object"-->
+<!--                        groups="ebs_lb_payroll.group_director_payroll_confirm" attrs="{'invisible': [('state', '!=', 'by_finance')]}"/>-->
+<!--                <field name="state" widget="statusbar" statusbar_visible="draft,verify,close,paid"/>-->
+            </xpath>
+            <xpath expr="//header//field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,verify,close,paid"/>
+            </xpath>
+            <xpath expr="//field[@name='date_start']//.." position="after">
+<!--                <field name="employee_type" required="1"/>-->
+                <field name="is_finance_approve" invisible="1"/>
+
+            </xpath>
+            <xpath expr="//group[1]/group[2]" position="after">
+                <group>
+                        <label for="cust_off_date_from" string="Cut-Off Date"/>
+                         <div class="o_row">
+                               <field name="cust_off_date_from" class="oe_inline" attrs="{'readonly': [ ('state', 'not in', ['draft'])], 'required':[('state', 'in', ['draft'])]}"/> - <field name="cust_off_date_to" class="oe_inline" attrs="{'readonly': [ ('state', 'not in', ['draft'])], 'required':[('state', 'in', ['draft'])]}"/>
+                         </div>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_work_entry_contract_enterprise.menu_hr_payroll_root">
+        <field name="groups_id" eval="[(4,ref('hr_payroll.group_hr_payroll_user')),(4,ref('hr_payroll.group_hr_payroll_manager'))]"/>
+    </record>
+
+
+<!--    <record id="custom_hr_payslip_view" model="ir.ui.view">-->
+<!--        <field name="name">custom.hr.payslip.view</field>-->
+<!--        <field name="model">hr.payslip</field>-->
+<!--        <field name="inherit_id" ref="ebs_lb_payroll.custom_hr_payslip_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//button[@name='direct_approved']" position="attributes">-->
+<!--                <attribute name="groups">taqat_groups_access_rights_extended.group_operational_manager</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//button[@name='action_hr_confirm']" position="attributes">-->
+<!--                <attribute name="groups">taqat_groups_access_rights_extended.group_employability_manager</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//button[@name='action_finance_confirm']" position="attributes">-->
+<!--                <attribute name="groups">account.group_account_manager,ebs_lb_payroll.group_finance_payroll_confirm</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//button[@name='director_approved']" position="attributes">-->
+<!--                <attribute name="groups">ebs_lb_payroll.group_director_payroll_confirm</attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="ebs_lb_payroll.direct_approved_action_server" model="ir.actions.server">-->
+<!--        <field name="groups_id" eval="[(6,0, [ref('taqat_groups_access_rights_extended.group_operational_manager')])]"/>-->
+<!--    </record>-->
+<!--    <record id="ebs_lb_payroll.hr_confirm_approved_action_server" model="ir.actions.server">-->
+<!--        <field name="groups_id" eval="[(6,0, [ref('taqat_groups_access_rights_extended.group_employability_manager')])]"/>-->
+<!--    </record>-->
+<!--    <record id="ebs_lb_payroll.finance_confirm_approved_action_server" model="ir.actions.server">-->
+<!--        <field name="groups_id" eval="[(6,0, [ref('account.group_account_manager'),ref('ebs_lb_payroll.group_finance_payroll_confirm')])]"/>-->
+<!--    </record>-->
+<!--    <record id="ebs_lb_payroll.direct_confirm_approved_action_server" model="ir.actions.server">-->
+<!--        <field name="groups_id" eval="[(6,0, [ref('ebs_lb_payroll.group_director_payroll_confirm')])]"/>-->
+<!--    </record>-->
+
+</odoo>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--     See All Classified Employees   -->
+        <record id="ebs_hr_custom_see_classified_employee_rule" model="ir.rule">
+            <field name="name">user: Manage Classified Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[('is_classified', '=', True)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4, ref('ebs_hr_custom.group_user_manage_classified_employee'))]"/>
+        </record>
+        <!-- Invisible Classified Employees -->
+        <record id="ebs_hr_custom_invisible_classified_employee_rule" model="ir.rule">
+            <field name="name">user: Invisible Classified Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[('is_classified', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="active" eval="False"/>
+            <field name="groups" eval="[(4, ref('hr.group_hr_user'))]"/>
+        </record>
+<!--     I do not need now, I handle with the contract category   -->
+        <!-- Invisible Classified Contracts-->
+<!--        <record id="ebs_hr_custom_invisible_classified_contract_rule" model="ir.rule">-->
+<!--            <field name="name">user: Invisible Classified Contracts</field>-->
+<!--            <field name="model_id" ref="hr_contract.model_hr_contract"/>-->
+<!--            <field name="domain_force">[('is_classified', '=', False)]</field>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--            <field name="groups" eval="[(4, ref('hr.group_hr_user'))]"/>-->
+<!--        </record>-->
+        <!--See All Classified Contracts-->
+        <record id="ebs_hr_custom_see_classified_contract_rule" model="ir.rule">
+            <field name="name">user: Manage Classified Contracts</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[('is_classified', '=', True)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_user_manage_classified_employee'))]"/>
+        </record>
+        <!--     See Employee himself   -->
+        <record id="ebs_hr_custom_see_employee_himself" model="ir.rule">
+            <field name="name">See Employee Himself</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <!--     See In-House Employees   -->
+        <record id="ebs_hr_custom_see_in_house_employees" model="ir.rule">
+            <field name="name">Manage In-House Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">['|',('wassef_employee_type', '=', 'perm_in_house'),('signatory', '=', True)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_management_inhouse'))]"/>
+        </record>
+        <!--     See Staff Employees   -->
+        <record id="ebs_hr_custom_see_staff_employees" model="ir.rule">
+            <field name="name">Manage Staff Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">['|',('wassef_employee_type', '=', 'perm_staff'), ('signatory', '=', True)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_management_staff'))]"/>
+        </record>
+        <!--     See Temporary Employees   -->
+        <record id="ebs_hr_custom_see_temporary_employees" model="ir.rule">
+            <field name="name">Manage Temporary Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">['|',('wassef_employee_type', '=', 'temp'),('signatory', '=', True)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_management_temporary'))]"/>
+        </record>
+        <!--     See No Employees   -->
+        <record id="ebs_hr_custom_no_employees" model="ir.rule">
+            <field name="name">Hr Officer See No Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[('wassef_employee_type', '=', '')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('hr.group_hr_user'))]"/>
+        </record>
+        <!--     See All Employees   -->
+        <record id="ebs_hr_custom_all_employees" model="ir.rule">
+            <field name="name">Hr Manager See All Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('hr.group_hr_manager'))]"/>
+        </record>
+        <!--      See No Contracts  -->
+        <record id="ebs_hr_custom_no_contracts" model="ir.rule">
+            <field name="name">Hr Officer See No Contracts</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[('employee_id.wassef_employee_type', '=', '')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <!--     See In-House Contracts   -->
+        <record id="ebs_hr_custom_see_in_house_contracts" model="ir.rule">
+            <field name="name">Manage In-House Contracts</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[('employee_id.wassef_employee_type', '=', 'perm_in_house')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_management_inhouse'))]"/>
+        </record>
+        <!--     See Staff Contracts   -->
+        <record id="ebs_hr_custom_see_staff_contracts" model="ir.rule">
+            <field name="name">Manage Staff Contracts</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[
+                ('employee_id.wassef_employee_type', '=', 'perm_staff'),('is_classified', '=', False)]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_management_staff'))]"/>
+        </record>
+        <!--     See Temporary Contracts   -->
+        <record id="ebs_hr_custom_see_temporary_contracts" model="ir.rule">
+            <field name="name">Manage Temporary Contracts</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[('employee_id.wassef_employee_type', '=', 'temp')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('ebs_hr_custom.group_management_temporary'))]"/>
+        </record>
+        <!--     See All Contracts   -->
+        <record id="ebs_hr_custom_see_all_contracts" model="ir.rule">
+            <field name="name">Manage All Contracts</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('hr_contract.group_hr_contract_manager'))]"/>
+        </record>
+
+    </data>
+</odoo>

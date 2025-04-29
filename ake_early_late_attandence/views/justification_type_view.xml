@@ -1,0 +1,46 @@
+<odoo>
+
+    <record id="taqat_justification_type_tree" model="ir.ui.view">
+        <field name="name">justification.type.tree</field>
+        <field name="model">justification.type</field>
+        <field name="arch" type="xml">
+            <tree string="Justification Type" editable="bottom">
+                <field name="name"/>
+                <field name="operation"/>
+                <field name="category"/>
+                <field name="from_time" widget="float_time" attrs="{'required' : [('operation','=','between')],'readonly' : [('operation','=','lt')]}"/>
+                <field name="to_time" widget="float_time" attrs="{'required' : [('operation','=','between')],'readonly' : [('operation','=','gt')]}"/>
+<!--                <field name="duration"/>-->
+                <field name="affects_attendance"/>
+                <field name="daily_grace_period"/>
+                <field name="affects_casual_leave"/>
+                <field name="payroll_salary"/>
+                <field name="default_justification_type" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="taqat_justification_type_action" model="ir.actions.act_window">
+        <field name="name">Justification Type</field>
+        <field name="res_model">justification.type</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('taqat_justification_type_tree')}),
+                        ]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No attendance records found
+            </p>
+            <p>
+                The attendance records of your employees will be displayed here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="taqat_menu_justification_type_overview" name="Justification Type"
+              action="taqat_justification_type_action"
+              parent="ake_early_late_attandence.taqat_menu_hr_attendance_mainmenu" sequence="2"/>
+
+
+</odoo>

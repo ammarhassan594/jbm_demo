@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_send_sms,send_sms.send_sms,model_send_sms,,1,1,1,1
+access_send_sms_test,send_sms.send_sms_test,model_send_sms_test,,1,1,1,1
+access_send_sms_schedule,send_sms.send_sms_schedule,model_send_sms_schedule,,1,1,1,1

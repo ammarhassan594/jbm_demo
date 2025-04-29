@@ -1,0 +1,737 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_payscale_configuration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-25 11:03+0000\n"
+"PO-Revision-Date: 2023-06-25 11:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء اللازم"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "انشطه باستثناء الديكور"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_state
+msgid "Activity State"
+msgstr "حالة نشاط"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "ايقونه نوع النشاط"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__allocation_id
+msgid "Allocation"
+msgstr "توزيع"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Annual Air Ticket Allowance"
+msgstr "بدل تذاكر الطيران السنوي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__air_ticket_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__air_ticket_alw
+msgid "Annual Air Ticket Allowance "
+msgstr "بدل تذاكر الطيران السنوي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__annual_leaves
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Annual Leaves"
+msgstr "الإجازات السنوية"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__business_allowance
+msgid "BUSINESS/TRAINING TRIP All Countries"
+msgstr "رحلة الأعمال/التدريب في جميع البلدان"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__basic
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Basic"
+msgstr "أساسيات"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__basic_from
+msgid "Basic From"
+msgstr "الاساسيات من"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__basic_mid
+msgid "Basic Mid"
+msgstr "متوسط الاساسيات"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__basic_to
+msgid "Basic To"
+msgstr "الاساسيات الي"
+
+#. module: jbm_payscale_configuration
+#: code:addons/jbm_payscale_configuration/models/employee_payscale.py:0
+#, python-format
+msgid ""
+"Basic: basic lower limit (%s) shouldn't be higher than basic upper limit "
+"(%s)"
+msgstr "الحد الأدنى الأساسي (% s) لا ينبغي أن يكون أعلى من الحد الأعلى الأساسي"
+"(%s)"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__air_ticket_allowance__b
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__mobilisation_class__b
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__travel_class__b
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__hr_contract__air_ticket_alw__b
+msgid "Business"
+msgstr "الاعمال"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__business_alw
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Business Allowance"
+msgstr "بدل العمل"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__extra_amount
+msgid "Extra Amount"
+msgstr "مكافأة بدل نهاية المربوط"
+
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__car_alw
+msgid "Car Allowance"
+msgstr "بدل سيارة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__car_loan
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__car_loan
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Car Loan"
+msgstr "قرض سيارة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__child_allowance
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Child Allowance"
+msgstr "علاوة الأطفال"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__contract_id
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__contract_ids
+msgid "Contract"
+msgstr "عقد"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.view_contract_leave_type_form
+msgid "Contract Leave Type"
+msgstr "نوع الإجازة التعاقدية"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Contracts"
+msgstr "عقود"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__create_uid
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__create_date
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__currency_id
+msgid "Currency"
+msgstr "عمله"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__days
+msgid "Days"
+msgstr "ايام"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__car_alw_dept_director
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__mob_department_director
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__hr_job__level__director
+msgid "Department Director"
+msgstr "مدير قسم"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__car_alw_dept_manager
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__mob_department_manager
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__supervision_department_manager
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__hr_job__level__manager
+msgid "Department Manager"
+msgstr "مدير قسم"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__supervision_department_manager_ass
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__hr_job__level__assistant_manager
+msgid "Department Manager Assistant"
+msgstr "مساعد مدير قسم"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__display_name
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "EXPAT EMPLOYEES"
+msgstr "الموظفون الوافدون"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__air_ticket_allowance__e
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__mobilisation_class__e
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__travel_class__e
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__hr_contract__air_ticket_alw__e
+msgid "Economy"
+msgstr "اقتصادي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__education_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__education_alw
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Education Allowance"
+msgstr "بدل تعليم"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__emp_type_value
+msgid "Emp Type Value"
+msgstr "قيمة نوع EMP "
+
+#. module: jbm_payscale_configuration
+#: model:ir.model,name:jbm_payscale_configuration.model_hr_employee
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__employee_ids
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model,name:jbm_payscale_configuration.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__employee_payscale_domain
+msgid "Employee Payscale Domain"
+msgstr "مجال رواتب الموظفين"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__registration_number
+msgid "Employee no"
+msgstr "رقم الموظف"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_hr_contract__resource_calendar_id
+msgid "Employee's working schedule."
+msgstr "جدول عمل الموظف."
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__end_of_basic_salary_bonus
+msgid "End of Basic Salary Bonus"
+msgstr "نهايه مكافأه المرتب اﻷساسي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__gender__female
+msgid "Female"
+msgstr "انثي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__is_female
+msgid "Female ?"
+msgstr "انثي؟"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "خطوط أيقونة رائعة على سبيل المثال fa-tasks"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__furniture_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__furniture_alw
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Furniture Allowance"
+msgstr "بدل الأثاث"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__gender
+msgid "Gender"
+msgstr "النوع"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__name
+msgid "Grade"
+msgstr "درجة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__gross
+msgid "Gross Salary"
+msgstr "الراتب الإجمالي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Housing"
+msgstr "التسكين"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__housing_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__housing_alw
+msgid "Housing Allowance"
+msgstr "بدل سكن"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__id
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__id
+msgid "ID"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة تشير إلى نشاط استثنائي."
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_needaction
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ".في حالة التحقق، تتطلب الرسائل الجديدة انتباهك"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_has_error
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم التحقق، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_is_follower
+msgid "Is Follower"
+msgstr "هل هو متابع"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model,name:jbm_payscale_configuration.model_hr_job
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type____last_update
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__write_uid
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__write_date
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__leave_carry_forwards
+msgid "Leave Carry Forwards"
+msgstr "الاجازه تمضي للامام"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__leave_type
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__leave_type
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.hr_contract_view_form_inherit
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__leave_type_ids
+msgid "Leave Types"
+msgstr "انواع الاجازات"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__job_level
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_job__level
+msgid "Level"
+msgstr "مستوى"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__long_sick_leaves
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Long Sick Leaves"
+msgstr "اجازات مرضيه طويله المدي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "ملحق رئيسي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__employee_payscale__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__is_male
+msgid "Male ?"
+msgstr "ذكر؟"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__marriage_loan
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__marriage_loan
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Marriage Loan"
+msgstr "قرض زواج"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__is_married
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__is_married
+msgid "Married ?"
+msgstr "متزوج؟"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__medical_insurance
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Medical Insurance"
+msgstr "التأمين الطبي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__mobile_alw
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Mobile Allowance"
+msgstr "بدل الهاتف المحمول"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__mobilisation_class
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Mobilisation Class"
+msgstr "فئة العوده"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__mobilisation_allowance
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Mobilisation/ Repatriation/Shipping Allowance"
+msgstr " بدل الشحن/ العوده الي الوطن /العوده"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__mobilisation_alw
+msgid "Mobilization Allowance"
+msgstr "بدل العوده"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__monthly_incentive
+msgid "Monthly Incentive"
+msgstr "الحوافز الشهرية"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي ﻷنشطتي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد اﻷنشطه"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد اﻷخطاء"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__other_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__other_alw
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__supervision_alw
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Other Allowance"
+msgstr "بدلات أخري"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__car_alw_other
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__mob_other
+#: model:ir.model.fields.selection,name:jbm_payscale_configuration.selection__hr_job__level__others
+msgid "Others"
+msgstr "اخري"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.hr_contract_view_form_inherit
+msgid "Outside The Payscale"
+msgstr "خارج نطاق الدفع"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model,name:jbm_payscale_configuration.model_employee_payscale
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_contract_leave_type__payscale_id
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__payscale_id
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_employee__payscale_id
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Pay Scale"
+msgstr "جدول مرتبات"
+
+#. module: jbm_payscale_configuration
+#: model:ir.actions.act_window,name:jbm_payscale_configuration.employee_payscale_group_action
+#: model:ir.ui.menu,name:jbm_payscale_configuration.menu_permanent_payroll_group_view
+msgid "Payscale"
+msgstr "جدول مرتبات"
+
+#. module: jbm_payscale_configuration
+#: code:addons/jbm_payscale_configuration/models/employee_payscale.py:0
+#, python-format
+msgid "Please can not add the same leave type again."
+msgstr "الرجاء عدم إضافة نفس نوع الإجازة مرة أخرى."
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Private Car Allowance"
+msgstr "بدل السيارة الخاصه"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "QATARI NATIONALS"
+msgstr "مواطنين قطريين"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__is_qatari
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__is_qatari
+msgid "Qatari ?"
+msgstr "قطري؟"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__representative_monthly_allowance
+msgid "Representative Monthly Allowance"
+msgstr "بدل تمثيل شهري"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__resource_calendar_domain
+msgid "Resource Calendar Domain"
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ تسليم الرسائل القصيرة"
+
+#. module: jbm_payscale_configuration
+#: code:addons/jbm_payscale_configuration/models/employee_payscale.py:0
+#, python-format
+msgid ""
+"Salary Allowance : salary lower limit (%s) shouldn't be higher than salary "
+"upper limit (%s)"
+msgstr "بدل الراتب: لا ينبغي أن يكون الحد الأدنى للراتب (% s) أعلى من الحد الأعلى للراتب (% s)"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__short_sick_leaves
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Short Sick Leaves"
+msgstr "اجازات مرضيه قصيره اﻷجل"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Social"
+msgstr "اجتماعي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__social_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__social_alw
+msgid "Social Allowance "
+msgstr "العلاوة الاجتماعية"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__special
+msgid "Special"
+msgstr "خاص"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Supervision Allowance"
+msgstr "بدل الإشراف"
+
+#. module: jbm_payscale_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Total Salary"
+msgstr "إجمالي الراتب"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__total_salary_from
+msgid "Total Salary From"
+msgstr "اجمالي الراتب من"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__total_salary_to
+msgid "Total Salary To"
+msgstr "اجمالي الراتب الي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__transport_allowance
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__transport_alw
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Transport Allowance"
+msgstr "بدل النقل "
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__travel_class
+#: model_terms:ir.ui.view,arch_db:jbm_payscale_configuration.employee_payscale_group_form
+msgid "Travel Class"
+msgstr "درجة السفر"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__supervision_unit_director
+msgid "Unit Director"
+msgstr "مدير الوحدة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الغير مقروءه"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_employee_payscale__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,help:jbm_payscale_configuration.field_employee_payscale__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ الاتصال بالموقع الشبكي"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__work_condition_allowance
+msgid "Work Condition Allowance"
+msgstr "بدل ظروف العمل"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model.fields,field_description:jbm_payscale_configuration.field_hr_contract__resource_calendar_id
+msgid "Working Schedule"
+msgstr "جدول العمل"
+
+#. module: jbm_payscale_configuration
+#: model:ir.model,name:jbm_payscale_configuration.model_contract_leave_type
+msgid "contract.leave.type"
+msgstr ""

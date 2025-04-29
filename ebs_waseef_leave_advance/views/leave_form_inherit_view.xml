@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="hr_leave_inherit_form_view">
+        <field name="name">hr.leave.form.view</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_vacation_mngmt.hr_vacation_form_view"/>
+        <field name="arch" type="xml">
+            <header>
+                <field name="leave_count" invisible="1"/>
+                <button name="create_early_return" type="object"
+                        string="Create Early Return" groups="ohrms_overtime.group_hr_department_user"
+                        attrs="{'invisible': [ '|','|', ('leave_count', '>', 0), ('state','!=', 'validate'), ('is_legal','=', False)]}"
+                        class="oe_highlight"/>
+            </header>
+            <!--            <field name="holiday_status_id" position="after">-->
+            <!--                <div>-->
+            <!--                    <field name="leave_progress" widget="percentpie" class="oe_inline"/>-->
+
+            <!--                </div>-->
+            <!--            </field>-->
+            <xpath expr="//page[1]" position="after">
+                <!--                <page string="Leave Process Checklist" invisible="1" name="leave_process_checklist">-->
+                <!--                    <group>-->
+                <!--                        <group name="leave_checklist" string="Leave Checklist">-->
+                <!--                            <field name="leave_checklist" widget="many2many_checkboxes"/>-->
+                <!--                            <field name="is_legal" invisible="1"/>-->
+                <!--                        </group>-->
+                <!--                    </group>-->
+                <!--                </page>-->
+
+                <page string="Advance leave Payments" name="advance_payment_leave_in_house"
+                      attrs="{'invisible': ['|','|', ('is_legal','=', False), ('has_leave_advance','=', False),
+                                                      ('employee_type','=', 'perm_staff')]}">
+                    <group>
+                        <group>
+                            <field name="employee_type" invisible="1"/>
+                            <field name="pay_on"/>
+                            <!--                         attrs="{'readonly': [('state', 'not in', ['refuse', 'validate'])]}"     -->
+                            <field name="pay_off_for_staff" invisible="1"/>
+                            <field name="is_legal" invisible="1"/>
+                            <field name="has_leave_advance" invisible="1"/>
+                            <field name="approved_automatic" groups="base.group_no_one" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="payslip_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="wage" string="Basic Salary"/>
+                            <div>
+                                <field name="wage" class="oe_inline"/>
+                                -
+                                <field name="has_wage" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_wage" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="accommodation" string="Accommodation"/>
+                            <div>
+                                <field name="accommodation" class="oe_inline"/>
+                                -
+                                <field name="has_accommodation" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_accommodation" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="mobile_allowance" string="Mobile Allowance"/>
+                            <div>
+                                <field name="mobile_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_mobile_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+
+                        </group>
+                        <group>
+                            <field name="leave_mobile_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group attrs="{'invisible': [('food_alw_visible','=', False)]}">
+                        <group>
+                            <field name="food_alw_visible" invisible="1" string="Food-visibility"/>
+                            <label for="food_allowance" string="Food Allowance"/>
+                            <div>
+                                <field name="food_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_food_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_food_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="site_allowance" string="Site Allowance"/>
+                            <div>
+                                <field name="site_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_site_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_site_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="transport_allowance" string="Transport Allowance"/>
+                            <div>
+                                <field name="transport_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_transport_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_transport_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="other_allowance" string="Other Allowance"/>
+                            <div>
+                                <field name="other_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_other_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_other_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="uniform_allowance" string="Uniform Allowance"/>
+                            <div>
+                                <field name="uniform_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_uniform_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_uniform_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="total_amount"/>
+                    </group>
+                </page>
+
+                <page string="Advance leave Payments" name="advance_payment_leave_staff"
+                      attrs="{'invisible': ['|','|', ('is_legal','=', False), ('has_leave_advance','=', False),
+                                                      ('employee_type','=', 'perm_in_house')]}">
+                    <group>
+                        <group>
+                            <field name="employee_type" invisible="1"/>
+                            <field name="pay_on"/>
+                            <field name="pay_off_for_staff"/>
+                            <field name="is_legal" invisible="1"/>
+                            <field name="has_leave_advance" invisible="1"/>
+                        </group>
+                        <group>
+                            <!--                            <field name="payslip_id" readonly="1"/>-->
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="wage" string="Basic Salary"/>
+                            <div>
+                                <field name="wage" class="oe_inline"/>
+                                -
+                                <field name="has_wage" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_wage" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="accommodation" string="Accommodation"/>
+                            <div>
+                                <field name="accommodation" class="oe_inline"/>
+                                -
+                                <field name="has_accommodation" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_accommodation" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="mobile_allowance" string="Mobile Allowance"/>
+                            <div>
+                                <field name="mobile_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_mobile_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+
+                        </group>
+                        <group>
+                            <field name="leave_mobile_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="transport_allowance" string="Transport Allowance"/>
+                            <div>
+                                <field name="transport_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_transport_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_transport_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <label for="social_allowance" string="Social Allowance"/>
+                            <div>
+                                <field name="social_allowance" class="oe_inline"/>
+                                -
+                                <field name="has_social_allowance" nolabel="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="leave_social_allowance" class="oe_inline" readonly="1"/>
+                        </group>
+                    </group>
+
+
+                    <group>
+                        <field name="total_amount"/>
+                    </group>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_hr_leave_inherit_form_view_normal" model="ir.ui.view">
+        <field name="name">hr.leave.form.view.normal</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('alert-info')]" position="before">
+                <div name="button_box" class="oe_button_box">
+                    <button style="width:10%" string="Early Return" name="action_get_return_leave" type="object"
+                            class="oe_stat_button"
+                            icon="fa-mail-reply" attrs="{'invisible': [('leave_count', '=', 0)]}">
+                    </button>
+                    <field name="leave_count" invisible="1"/>
+                </div>
+            </xpath>
+            <xpath expr="//button[@name='action_refuse']" position="after">
+                <button name="action_cancel" string="Cancel" type="object" class="btn btn-secondary btn-sm mt8"
+                        groups="hr_holidays.group_hr_holidays_manager"
+                        attrs="{'invisible': [('state', 'in', ['cancel', 'refuse'])]}"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_refuse']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('state', 'in', ['cancel', 'validate', 'refuse']),
+                    ('is_manager', '=', False), ('leave_count', '>', 0)]}
+                </attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('can_reset', '=', False), ('state', 'not in', ['confirm',
+                    'refuse','cancel'])]}
+                </attribute>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="inherit_hr_leave_inherit_form_view_manager" model="ir.ui.view">
+        <field name="name">hr.leave.form.view.manager</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_refuse']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('state', 'in', ['cancel','validate']),
+                    ('is_manager', '=', False), ('leave_count', '>', 0)]}
+                </attribute>
+
+            </xpath>
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('can_reset', '=', False), ('state', 'not in', ['confirm',
+                    'refuse','cancel'])]}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="inherit_hr_leave_inherit_form_view" model="ir.ui.view">
+        <field name="name">hr.leave.form.view</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="ebs_waseef_leave_advance.hr_leave_inherit_form_view"/>
+        <field name="groups_id" eval="[(4, ref('hr_payroll.group_hr_payroll_user'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='advance_payment_leave_in_house']//field[@name='pay_on']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//page[@name='advance_payment_leave_staff']//field[@name='pay_on']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!--    <record model="ir.ui.view" id="hr_leave_inherit_tree_view">-->
+    <!--        <field name="name">hr.leave.tree.view</field>-->
+    <!--        <field name="model">hr.leave</field>-->
+    <!--        <field name="inherit_id" ref="hr_holidays.hr_leave_view_tree"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <field name="category_id" position="before">-->
+    <!--                <field name="leave_progress" widget="progressbar" optional="show"-->
+    <!--                       options="{'max_field': 'maximum_rate'}">-->
+    <!--                </field>-->
+    <!--            </field>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+</odoo>

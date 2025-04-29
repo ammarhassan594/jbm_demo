@@ -1,0 +1,1 @@
+<odoo>    <record id="hr_attendance.menu_hr_attendance_kiosk_no_user_mode" model="ir.ui.menu">        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>    </record></odoo>

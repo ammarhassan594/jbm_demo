@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="jbm_letter_certificate_salary_template">
+            <t t-call="web.html_container">
+                <t t-set="total_page" t-value="len(docs)"/>
+                <t t-set="page_number" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="o" t-value="o.with_context(lang=user.partner_id.lang)"/>
+                    <t t-set="o" t-value="o.sudo()"/>
+                    <t t-set="contract"
+                       t-value="o.get_employee_contract()"/>
+                    <t t-set="loan_lines" t-value="o.get_loan()"/>
+                    <t t-set="total_pension" t-value="o.get_pension_letter()"/>
+                    <t t-set="contract_elements"
+                       t-value="['wage', 'social_alw', 'housing_alw', 'monthly_incentive', 'work_condition_allowance',
+                                 'transport_alw', 'other_alw', 'mobile_alw', 'representative_monthly_allowance',
+                                 'supervision_alw', 'car_alw', 'end_of_basic_salary_bonus']"/>
+                    <t t-set="total" t-value="
+                            sum([contract[key] for key in contract_elements])
+                    "/>
+                    <t t-set="total_after_ded" t-value=" total - ( sum(loan_lines.mapped('amount')) + total_pension )"/>
+
+
+                    <t t-set="page_number" t-value="page_number + 1"/>
+                    <t t-call="web.basic_layout">
+                        <div class="page" style="direction: rtl; text-align: right!important;">
+                            <style>
+                                @font-face {
+                                font-family: 'DecoType';
+                                src: url(/jbm_letter_request/static/src/font/43-DecoType-Naskh-Variants.ttf)
+                                format('truetype');
+                                }
+                                @font-face {
+                                font-family: 'AdvertisingMedium';
+                                src: url(/jbm_letter_request/static/src/font/AdvertisingMedium-1.ttf)
+                                format('truetype');
+                                }
+                                @font-face {
+                                font-family: 'AdvertisingBold';
+                                src: url(/jbm_letter_request/static/src/font/AdvertisingBold.ttf) format('truetype');
+                                }
+                                <!--                                table {-->
+                                <!--                                border-collapse: separate;-->
+                                <!--                                width: 100%;-->
+                                <!--                                }-->
+
+                                <!--                                table, th, td {-->
+                                <!--                                border: 1px solid black;-->
+                                <!--                                }-->
+
+                                <!--                                th, td {-->
+                                <!--                                padding: 10px; /* Adjust the padding to control distance between cell content and-->
+                                <!--                                borders */-->
+                                <!--                                text-align: left;-->
+                                <!--                                }-->
+                            </style>
+
+                            <div class="header" style="">
+                                <div class="row">
+                                    <div class="col-12" style="padding: 0px !important">
+                                            <img src="/jbm_letter_request/static/src/img/header.jpg"
+                                                 style="height:120px;width:100%" alt="Letter Head"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <figcaption style="text-align:left;">
+                                <span style="font-family: AdvertisingMedium;">
+                                    الرقم :
+                                    <span t-esc="o.name_sequence"
+                                          style="font-family: AdvertisingMedium; "/>
+                                </span>
+                                <br/>
+                                <span style="font-family: AdvertisingMedium; margin-left: 57px;">
+                                    التاريخ :
+                                    <span t-esc="o.date" style="font-family: AdvertisingMedium; "/>
+                                </span>
+                            </figcaption>
+
+                            <table style="border:none !important; width:100%;font-size:16pt;line-height:1.8;">
+                                <tr style="border:none !important;">
+                                    <td width="75%"
+                                        style="border:none !important;direction: rtl;text-align:right;font-size:16pt;line-height:1.8;">
+                                        <span style="font-family: AdvertisingMedium;">
+                                            السادة/
+                                        </span>
+                                        <span t-esc="o.address_id.name" style="font-family: AdvertisingMedium;"/>
+                                    </td>
+                                    <td width="25%"
+                                        style="border:none !important;direction: rtl;text-align:right;  font-family: AdvertisingMedium;">
+                                        <span>
+                                            المحترمين
+                                        </span>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div style="font-size:14pt;line-height:1.8; font-family: DecoType;">
+                                <span align="right">
+                                    السلام عليكم ورحمة الله وبركاته
+                                </span>
+                            </div>
+                            <div align="center"
+                                 style="font-size:14pt;line-height:1.8;  font-family: AdvertisingMedium;">
+
+
+                                <span style=" border-bottom: 1px solid black;padding-bottom:-15px;">
+                                    <t t-if="o.employee_id.gender == 'female'">
+                                        الموضوع: شهادة راتب السيدة /
+                                    </t>
+                                    <t t-else="">
+                                        الموضوع: شهادة راتب السيد /
+                                    </t>
+                                </span>
+                                <span style="border-bottom: 1px solid black;padding-bottom:-15px;">
+                                    <t t-if="o.employee_id.arabic_name">
+                                        <t t-esc="o.employee_id.arabic_name"/>
+                                    </t>
+                                </span>
+
+
+                            </div>
+                            <div style="font-size:14pt;font-family: AdvertisingMedium;padding-left:50px;text-align: justify;">
+                                <span>
+                                    تشـهد مؤسسـة الشـيخ جاسـم بن محمد بن ثـاني للرعـايــة الاجتماعية بــأن
+                                </span>
+                                <span style="word-spacing:5px;">
+                                    <t t-if="o.employee_id.gender == 'female'">
+                                        السيدة
+                                    </t>
+                                    <t t-else="">
+                                        السيد
+                                    </t>
+                                </span>
+                                <t t-if="o.employee_id and o.employee_id.arabic_name">
+                                    <t t-esc="o.employee_id.arabic_name"/>
+                                </t>
+                                <span style="word-spacing:5px;">، بطاقة شخصية رقم</span>
+                                <span style="word-spacing:5px;">
+                                    <t t-if="o.employee_id and o.employee_id.employee_qid_number">
+                                        (<t t-esc="o.employee_id.employee_qid_number"/>)
+                                    </t>
+                                </span>
+                                <span style="word-spacing:5px;">
+                                    <t t-if="o.employee_id.gender == 'female'">
+                                        ، تعمل لديهـا بوظيفـة"
+                                    </t>
+                                    <t t-else="">
+                                        ، يعمـل لديهـا بوظيفـة"
+                                    </t>
+                                </span>
+                                <span style="word-spacing:5px;">
+                                    <t t-if="o.employee_id.job_id">
+                                        <t t-esc="o.employee_id.job_id.name"/>"
+                                    </t>
+                                </span>
+                                <span>اعتبارا ً من تاريخ</span>
+                                <t t-if="o.employee_id.joining_date">
+                                    <t t-esc="o.employee_id.joining_date.strftime('%d/%m/%Y')"/>
+                                </t>
+                                <span>
+                                    <t t-if="o.employee_id.gender == 'female'">
+                                        ولاتزال على رأس العمل حتى تاريخه،
+                                        وتتقاضى راتبا ً تفصيليا وفقا ً لما هو مبين أدناه:
+                                    </t>
+                                    <t t-else="">
+                                        ولايزال على رأس العمل حتى تاريخه،
+                                        ويتقاضى راتبا ً تفصيليا وفقا ً لما هو مبين أدناه:
+                                    </t>
+
+                                </span>
+
+                            </div>
+                            <!--                            <br/>-->
+                            <table width="100%"
+                                   style="border: 3px solid #504949; font-size:12pt;font-family: AdvertisingMedium;">
+                                <tr style="line-height:22px;border-bottom: 3px solid #504949;background-color:#d9d9d9;">
+                                    <td width="83%" style="border: 1px solid #504949; text-align:center">البيـــــــــان
+                                    </td>
+                                    <td width="20%" style="border: 3px solid #504949; text-align:center;">المبلغ / ريال
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.wage">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>الراتب الأساسي</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.wage"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.social_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>العلاوة الاجتماعية</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.social_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.housing_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل سكن</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.housing_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.transport_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل النقل</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.transport_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.other_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدلات أخرى</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.other_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.mobile_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل هاتف</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.mobile_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.supervision_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل إشراف</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.supervision_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.car_alw">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل استخدام سيارة خاصة</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.car_alw"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.end_of_basic_salary_bonus">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>مكافأة نهاية المربوط</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.end_of_basic_salary_bonus"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.monthly_incentive">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>الحوافز الشهرية</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.monthly_incentive"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.representative_monthly_allowance">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل تمثيل شهري</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.representative_monthly_allowance"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="line-height:30px" t-if="contract.work_condition_allowance">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>بدل ظروف العمل</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            <t t-esc="contract.work_condition_allowance"/>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr style="line-height:30px; border-top: 3px solid #504949;background-color:#d9d9d9;">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        إجمالي الراتب:
+                                        (
+                                        <span t-esc="o.number_to_word(total)"/>
+                                        )
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <b>
+                                            <t t-esc="'{0:,.0f}'.format(total)"/>
+                                            <!--                                            <t t-esc="total"/>-->
+                                        </b>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table width="100%"
+                                   t-if="loan_lines or total_pension "
+                                   style="border: 3px solid #504949; font-size:12pt;font-family: AdvertisingMedium; padding-top:3px">
+
+                                <tr style="line-height:22px" t-if="total_pension">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        <span>يخصم: قيمة اشتراكات هيئة التقاعد والتأمينات الاجتماعية</span>
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <span>
+                                            (
+                                            <t t-esc="round(total_pension,2)"/>
+                                            )
+                                        </span>
+                                    </td>
+                                </tr>
+                                <t t-foreach="loan_lines" t-as="loan_line">
+                                    <tr style="line-height:22px">
+                                        <td width="83%"
+                                            style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                            يخصم
+                                            <span t-esc="loan_line.loan_id.loan_type.name"/>
+                                            <!--                                            (-->
+                                            <!--                                            <span t-esc="loan_line.date.strftime('%d/%m/%Y')"/>-->
+                                            <!--                                            )-->
+                                        </td>
+                                        <td width="20%"
+                                            style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                            <span>
+                                                (
+                                                <t t-esc="round(loan_line.amount,2)"/>
+                                                )
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </t>
+
+                                <tr style="line-height:22px; border-top: 3px solid #504949;background-color:#d9d9d9;"
+                                    t-if="total_after_ded">
+                                    <td width="83%"
+                                        style="border: 1px solid #504949; text-align:right; padding-right:6px;">
+                                        صافى الراتب بعد الخصومات:
+                                        (
+                                        <span t-esc="o.number_to_word(total_after_ded)"/>
+                                        )
+                                    </td>
+                                    <td width="20%"
+                                        style="border: 1px solid #504949; text-align:center; border-right: 3px solid #504949;">
+                                        <b>
+                                            <t t-esc="'{0:,.0f}'.format(total_after_ded)"/>
+                                            <!--                                            <t t-esc="total_after_ded"/>-->
+                                        </b>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="font-size:14pt;font-family: AdvertisingMedium; line-height:2">
+                                <span style="word-spacing:5px;">
+                                    <t t-if="o.employee_id.gender == 'female'">
+                                        وقد أعطيت هذه الشهادة بناءً على طلبها، دون أدنى مسؤولية على المؤسسة.
+                                    </t>
+                                    <t t-else="">
+                                        وقد أعطيت هذه الشهادة بناءً على طلبه، دون أدنى مسؤولية على المؤسسة.
+                                    </t>
+
+                                </span>
+                            </div>
+                            <br/>
+                            <div class="text-center"
+                                 style="font-size:14pt;font-family: AdvertisingMedium;line-height:2">
+                                <span style="word-spacing:5px;">
+                                    وتفضلوا بقبول فائق الاحتــرام،
+                                </span>
+                            </div>
+                            <div style="display:inline-block; width:170px; height:150px; margin-right: 80px;">
+                                <t t-set="width"
+                                   t-value="o.env['ir.config_parameter'].get_param('jbm_letter_request.stamp_width')"/>
+                                <t t-set="height"
+                                   t-value="o.env['ir.config_parameter'].get_param('jbm_letter_request.stamp_height')"/>
+                                <img t-if="o.company_id.favicon"
+                                     t-att-src="image_data_uri(o.company_id.favicon)"
+                                     alt="Logo"
+                                     t-attf-style="width:#{( 96 * float(width))/2.54}px;
+                                         height:#{( 96 * float(height))/2.54}px;"/>
+                            </div>
+                            <div class="text-center" style="display:inline-block; width: 280px; height :200px;">
+                                <div class="text-center" style="margin-left: 15px;">
+                                    <t t-set="check_print_stamp"
+                                       t-value="o.env['ir.config_parameter'].get_param('jbm_letter_request.print_signature_stamp')"/>
+                                    <t t-if="check_print_stamp">
+                                        <div class="text-center">
+                                            <t t-set="width"
+                                               t-value="o.env['ir.config_parameter'].get_param('jbm_letter_request.signature_width')"/>
+                                            <t t-set="height"
+                                               t-value="o.env['ir.config_parameter'].get_param('jbm_letter_request.signature_height')"/>
+                                            <img t-if="o.signatory_id.signatory_image"
+                                                 t-att-src="image_data_uri(o.signatory_id.signatory_image)"
+                                                 alt="Logo"
+                                                 t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                        </div>
+                                    </t>
+                                </div>
+
+                                <div class="text-center" style="display:inline-block; width:200px; height:150px;
+                                        margin-left:230px; margin-right:30px;">
+                                    <div
+                                            style="font-size:14pt;font-family: AdvertisingMedium;line-height:2">
+                                        <span style="word-spacing:5px;">
+                                            <t t-if="o.signatory_id.arabic_name">
+                                                <t t-esc="o.signatory_id.arabic_name"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="o.signatory_id.name"/>
+                                            </t>
+                                        </span>
+                                    </div>
+                                    <div
+                                            style="font-size:14pt;font-family: AdvertisingMedium;line-height:2;">
+                                        <span style="word-spacing:5px;">
+                                            <t t-esc="o.signatory_id.job_id.name"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--                            <t t-set="check_print_stamp"-->
+                            <!--                               t-value="o.env['ir.config_parameter'].get_param('jbm_letter_request.print_signature_stamp')"/>-->
+
+                            <!--                            <div style="width:30%;float:left;" t-if="check_print_stamp">-->
+                            <!--                                <div style="float:left;">-->
+                            <!--                                    <table style="border:0px; margin:0px">-->
+                            <!--                                        <tr style="text-align:center;">-->
+                            <!--                                            <td>-->
+                            <!--                                                <img t-if="o.signatory_id.signatory_image"-->
+                            <!--                                                     t-att-src="image_data_uri(o.signatory_id.signatory_image)"-->
+                            <!--                                                     alt="Logo" style="width:150px; height:100px;"/>-->
+                            <!--                                            </td>-->
+                            <!--                                        </tr>-->
+                            <!--                                        <tr style="white-space: nowrap;text-align:center;">-->
+                            <!--                                            <td>-->
+                            <!--                                                <t t-if="o.signatory_id.arabic_name">-->
+                            <!--                                                    <p>-->
+                            <!--                                                        <strong>-->
+                            <!--                                                            <t t-esc="o.signatory_id.arabic_name"/>-->
+                            <!--                                                        </strong>-->
+                            <!--                                                    </p>-->
+                            <!--                                                </t>-->
+                            <!--                                                <t t-if="not o.signatory_id.arabic_name">-->
+                            <!--                                                    <p>-->
+                            <!--                                                        <strong>-->
+                            <!--                                                            <t t-esc="o.with_context(lang='ar_001').signatory_id.name"/>-->
+                            <!--                                                        </strong>-->
+                            <!--                                                    </p>-->
+                            <!--                                                </t>-->
+
+                            <!--                                            </td>-->
+                            <!--                                        </tr>-->
+
+                            <!--                                        <tr style="white-space: nowrap;">-->
+                            <!--                                            <td>-->
+                            <!--                                                <p>-->
+                            <!--                                                    <strong>-->
+                            <!--                                                        <t t-esc="o.signatory_id.job_id.name"/>-->
+                            <!--                                                    </strong>-->
+                            <!--                                                </p>-->
+                            <!--                                            </td>-->
+                            <!--                                        </tr>-->
+
+                            <!--                                    </table>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+
+                            <!--                            <div t-if="check_print_stamp"-->
+                            <!--                                 style="width:30%;float:left;margin-right:200px;margin-left:100px;">-->
+                            <!--                                <div align="left">-->
+                            <!--                                    <img t-if="o.company_id.favicon"-->
+                            <!--                                         t-att-src="image_data_uri(o.company_id.favicon)" alt="stamp"-->
+                            <!--                                         style="height:150px;width:150px;"/>-->
+
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+
+
+                            <div class="footer">
+                                <div align="right">
+                                    <b dir="rtl">ملاحظة: (صلاحية هذه الشهادة لمدة ثلاثة أشهر)</b>
+                                </div>
+                                <div class="row">
+                                    <img t-attf-src="/jbm_letter_request/static/src/img/footer.jpg" alt="footer"
+                                         style="padding-left:5px;height:80px;width:100%;"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

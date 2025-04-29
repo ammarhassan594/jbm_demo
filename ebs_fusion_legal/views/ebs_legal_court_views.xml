@@ -1,0 +1,39 @@
+<odoo>
+    <!--    ebs legal court form-->
+    <record model="ir.ui.view" id="view_ebs_legal_court_form">
+        <field name="name">ebs.legal.court.Form</field>
+        <field name="model">ebs.legal.court</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal court tree-->
+    <record id="view_ebs_legal_court_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.court.tree</field>
+        <field name="model">ebs.legal.court</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal court action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_court">
+        <field name="name">Legal Court</field>
+        <field name="res_model">ebs.legal.court</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_court" name="Courts"
+               parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_court" sequence="6"/>
+
+</odoo>

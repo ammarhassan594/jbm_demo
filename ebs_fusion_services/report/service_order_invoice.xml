@@ -1,0 +1,223 @@
+<odoo>
+
+    <template id="account.report_invoice_with_payments">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="ebs_fusion_services.fos_service_order_invoice_template"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="fos_service_order_invoice_template">
+        <t t-call="web.basic_layout">
+            <t t-set="o" t-value="o"/>
+            <div class="page">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-12">
+                            <img t-if="o.company_id.company_report_header"
+                                 t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                 style="width:100%" alt="Letter Head"/>
+
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div>
+                    <table class="table table-sm table-borderless" style="border:1px solid #dee2e6; margin-bottom: 0">
+                        <tbody>
+                            <tr class="text-center">
+                                <td colspan="4" style="font-size: 25px;">
+                                    <strong>INVOICE</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="width:50%">Invoice To:</td>
+                                <td>Invoice No.:</td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="o.name"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="width:50%">
+                                    <strong>
+                                        <t t-esc="o.partner_id.name"/>
+                                    </strong>
+                                </td>
+
+                                <td>Invoice Date:</td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="o.invoice_date.strftime('%d/%m/%Y')"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <t t-if="o.partner_id.child_ids and o.partner_id.child_ids[0].address_type == 'national_address'">
+                                <t t-set="address" t-value="o.partner_id.child_ids"/>
+
+                            </t>
+                            <tr>
+                                <td colspan="2" style="width:50%">
+                                    <span t-if="address">Address .:</span>
+                                    <t t-if="address"
+                                       t-esc="str(address.floor_room_no) +', '+ address.street +', '+ address.street2 +', '+ address.city +', '+ address.state_id.name if address.state_id else ''+', '+ address.country_id.name if address.country_id else ''"/>
+                                </td>
+                                <td>Service Order No.:</td>
+                                <td>
+                                    <strong>
+                                        <t t-esc="o.service_process_id.name"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered" style="margin-bottom: 0">
+                        <thead>
+                            <th t-if="o.company_id.company_code != 'FME'" style="width:5%;">Qty</th>
+                            <th style="width:55%;">Details</th>
+                            <th t-if="o.company_id.company_code != 'FME'">Unit Price (<t t-esc="o.currency_id.name"/>)
+                            </th>
+                            <th>Amount
+                                (<t t-esc="o.currency_id.name"/>)
+                            </th>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <tr>
+                                    <td t-if="o.company_id.company_code != 'FME'">
+                                        <t t-esc="line.quantity"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.name"/>
+                                    </td>
+                                    <td t-if="o.company_id.company_code != 'FME'">
+                                        <t t-esc="'{:,}'.format(line.price_unit)"/>
+
+                                    </td>
+                                    <td>
+                                        <t t-esc="'{:,}'.format(round(line.price_subtotal, 2))"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <t t-if="o.company_id.company_code != 'FME'">
+                                    <td colspan="3" class="text-right">Net Amount</td>
+                                </t>
+                                <t t-else="">
+                                    <td class="text-right">Net Amount</td>
+                                </t>
+                                <td>
+                                    <t t-esc="'{:,}'.format(o.amount_total)"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Amount In Words:
+                                    <strong>
+                                        <t t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
+                                        Only.
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-borderless"
+                           style="border:1px solid #dee2e6; margin-bottom: 0;line-height:1;">
+                        <tbody>
+
+                            <tr/>
+                            <tr>
+                                <td colspan="2">
+                                    <strong>Bank Details :</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Account Name</td>
+                                <td>:
+                                    <t t-esc="o.partner_bank_id.partner_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Account No.</td>
+                                <td>:
+                                    <t t-esc="o.partner_bank_id.acc_number"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Bank Name</td>
+                                <td>:
+                                    <t t-esc="o.partner_bank_id.bank_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Branch Name</td>
+                                <td>:
+                                    <t t-esc="o.partner_bank_id.branch"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">Swift Code</td>
+                                <td>:
+                                    <t t-esc="o.partner_bank_id.swift_code"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%">IBAN</td>
+                                <td>:
+                                    <t t-esc="o.partner_bank_id.iban_no"/>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <t t-if="o.note">
+                        <table class="table table-sm table-borderless"
+                               style="border:1px solid #dee2e6; margin-bottom: 0">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 20%;">Memo</td>
+                                    <td>:
+                                        <t t-esc="o.note"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                    <table class="table table-sm table-borderless" style="border:1px solid #dee2e6">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        This invoice and the amount shown herein will be considered as correct and
+                                        accepted by you aniess advice to the cantrary, is delivered within 10 days
+                                        succeeding the invoice date. and please consider that any bank charges that you
+                                        incur are bome by you in full
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <img t-if="o.company_id.company_report_footer"
+                                 t-att-src="image_data_uri(o.company_id.company_report_footer)"
+                                 style="width:100%" alt="Letter Foot"/>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br/>
+            <br/>
+        </t>
+    </template>
+
+
+</odoo>

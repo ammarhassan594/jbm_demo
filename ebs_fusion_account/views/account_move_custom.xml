@@ -1,0 +1,224 @@
+<odoo>
+    <record id="account_payment_custom_view" model="ir.ui.view">
+        <field name="name">account.payment.view</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header/button[@name='action_draft']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('state', 'not in', ('posted', 'cancel')),('is_payment_read_access','=',True)]}</attribute>
+            </xpath>
+             <xpath expr="//form/header/button[@name='action_post']" position="after">
+                 <button name="confirm_proforma_inv" string="Confirm Proforma Invoice"
+                            attrs="{'invisible': ['|',('is_payment_read_access','=',True),'|',('is_proforma','=',False),('payment_sequence','!=',False)]}" type="object"/>
+             </xpath>
+            <xpath expr="//form/header/button[@name='action_cancel']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('state', '=', 'draft'),('is_payment_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form/header/button[@name='mark_as_sent']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', '|', ('state', '!=', 'posted'), ('is_move_sent', '=', True), ('payment_method_code', '!=', 'manual'),('is_payment_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form/header/button[@name='unmark_as_sent']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', '|', ('state', '!=', 'posted'), ('is_move_sent', '=', False), ('payment_method_code', '!=', 'manual'),('is_payment_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form/header/field[@name='state']" position="attributes">
+                <attribute name="statusbar_visible">draft,posted,reconciled,cancelled</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_type']" position="after">
+                <field name="is_payment_read_access" invisible="1"/>
+                <field name="apply_withholding_tax" invisible="1"/>
+                <field name="withholding_tax_id" invisible="1"/>
+                <field name="payed_by_fusion" invisible="1"/>
+                <field name="bill_amount" invisible="1"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <notebook attrs="{'invisible' : [(('is_proforma','=',False))]}">
+                    <page string="Proforma lines">
+                        <field name="proforma_ids">
+                            <tree editable="bottom">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="quantity"/>
+                                <field name="rate" required="1" widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="description" required="1"/>
+                                <field name="employee_ids" widget="many2many_tags"
+                                       context="{'proforma_partner_id' : parent.partner_id}" options="{'no_create':True,'no_create_edit':True}"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+
+            <field name="journal_id" position="after">
+                <field name="withholding_tax_move_id" readonly="1"
+                       attrs="{'invisible': [('apply_withholding_tax', '=', False)]}"/>
+                <field name="analytic_account" attrs="{'readonly':[('state','!=','draft')]}"/>
+                <field name="is_post_dated_check" attrs="{'readonly': [('state', '!=', 'draft')]}" invisible="context.get('action_invoice_register_payment', False)"/>
+                <field name="is_proforma" attrs="{'readonly': [('state', '!=', 'draft')]}"  invisible="context.get('action_invoice_register_payment', False)"/>
+                <field name="payment_sequence" readonly="1"/>
+            </field>
+
+            <xpath expr="/form/sheet//group/field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="desc" attrs="{'readonly': [('state','!=','draft')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_move_custom_view" model="ir.ui.view">
+        <field name="name">account.move.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_reference" position="after">
+                <field name="opening_balance_entry" attrs="{'invisible': [('move_type', '!=', 'entry')]}"/>
+            </field>
+            <field name="journal_id" position="attributes">
+                <attribute name="domain">[('type', '=?', invoice_filter_type_domain), ('company_id', '=', company_id)]
+                </attribute>
+            </field>
+            <xpath expr="//sheet/group/group[@id='header_left_group']/field[@name='partner_id']" position="attributes">
+                <attribute name="domain">['|', ('is_customer','=',True),('is_vendor','=',True)]</attribute>
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field name="is_invoice_read_access" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//form//header//button[@name='action_post'][1]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|', '|',('state', '!=', 'draft'), ('auto_post', '=', True), ('move_type', '!=', 'entry'),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='action_post'][2]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', '|', '|', ('state', '!=', 'draft'), ('auto_post', '=', True), ('move_type', '=', 'entry'), ('display_inactive_currency_warning','=',True),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='action_invoice_sent'][1]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|', '|', ('state', '!=', 'posted'), ('is_move_sent', '=', True), ('move_type', 'not in', ('out_invoice', 'out_refund')),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='action_invoice_sent'][2]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', '|', ('state', '!=', 'posted'), ('is_move_sent', '=', False), ('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='action_register_payment']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|', ('state', '!=', 'posted'), ('payment_state', 'not in', ('not_paid', 'partial')), ('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}
+                </attribute>
+                <attribute name="context">{'dont_redirect_to_payments': True,'action_invoice_register_payment':True}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='preview_invoice']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('move_type', 'not in', ('out_invoice', 'out_refund')),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+             <xpath expr="//form//header//button[@name='%(account.action_view_account_move_reversal)d']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('move_type', '!=', 'entry'), '|', ('state', '!=', 'posted'), ('payment_state', '=', 'reversed'),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+             <xpath expr="//form//header//button[@name='%(account.action_view_account_move_reversal)d']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('move_type', 'not in', ('out_invoice', 'in_invoice')), ('state', '!=', 'posted'),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='button_cancel'][1]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|','|', ('id', '=', False), ('state', '!=', 'draft'),('move_type', '!=', 'entry'),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+             <xpath expr="//form//header//button[@name='button_cancel'][1]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|','|', ('id', '=', False), ('state', '!=', 'draft'),('move_type', '==', 'entry'),('is_invoice_read_access','=',True)]}</attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='button_draft']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('show_reset_to_draft_button', '=', False),('is_invoice_read_access','=',True)]}
+                </attribute>
+            </xpath>
+            <xpath expr="//form//header//button[@name='button_set_checked']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('to_check', '=', False),('is_invoice_read_access','=',True)]}
+                </attribute>
+            </xpath>
+
+
+
+            <!--Invoice Lines field inherit-->
+            <xpath expr="/form/sheet//group/div/field[@name='invoice_payment_term_id']" position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='product_id']" position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='account_id']" position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='analytic_account_id']" position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+
+            <!--Journal Items field inherit-->
+            <xpath expr="/form/sheet/notebook/page/field[@name='invoice_line_ids']/tree/field[@name='account_id']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field[@name='line_ids']/tree/field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field[@name='line_ids']/tree/field[@name='tax_tag_ids']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+
+            <!--Other Info field inherit-->
+            <xpath expr="//notebook/page[@name='other_info']//group/field[@name='invoice_user_id']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='other_info']//group/field[@name='invoice_incoterm_id']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='other_info']//group/field[@name='fiscal_position_id']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='other_info']//group/field[@name='partner_bank_id']"
+                   position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+
+
+            <xpath expr="//notebook/page[@id='other_tab']/group" position="inside">
+                <group string="Turnover">
+                    <field name="turnover_id" options="{'no_create':True,'no_create_edit':True}"/>
+                </group>
+            </xpath>
+
+            <field name="ref" position="after">
+                <field name="apply_withholding_tax" invisible="1"/>
+                <field name="withholding_tax_id"
+                       attrs="{'invisible': ['|', ('apply_withholding_tax', '=', False), ('move_type', '!=', 'in_invoice')], 'readonly': [('state', '!=', 'draft')], 'required': [('apply_withholding_tax', '=', True)]}"/>
+                <field name="withholding_tax_journal_entry" readonly="1"
+                       attrs="{'invisible': ['|', ('apply_withholding_tax', '=', False), ('move_type', '!=', 'in_invoice')]}"/>
+                <field name="payed_by_fusion"
+                       attrs="{'invisible': ['|', ('apply_withholding_tax', '=', False), ('move_type', '!=', 'in_invoice')], 'readonly': [('state', '!=', 'draft')]}"/>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="view_move_line_tree_inherit" model="ir.ui.view">
+        <field name="name">account.move.line.tree.inherit</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="amount_currency" position="attributes">
+                <attribute name="sum">Total</attribute>
+                <!--                <field name="amount_currency" sum="Total" groups="base.group_multi_currency" optional="hide"/>-->
+            </field>
+        </field>
+    </record>
+
+    <record id="account_payment_custom_search_view" model="ir.ui.view">
+        <field name="name">account.payment.search.view</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_search"/>
+        <field name="arch" type="xml">
+            <filter name="transfers_filter" position="after">
+                <separator/>
+                <filter string="Proforma" name="proforma_filter" domain="[('is_proforma', '=', True)]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
+</odoo>

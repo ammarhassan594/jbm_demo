@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="eligible_for_promotion_form_view" model="ir.ui.view">
+            <field name="name">eligible.for.promotion.form.view</field>
+            <field name="model">eligible.for.promotion</field>
+            <field name="arch" type="xml">
+                <form string="Eligible For Promotion">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="current_grade"/>
+                            </group>
+                            <group>
+                                <field name="new_grade"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eligible_for_promotion_tree_view" model="ir.ui.view">
+            <field name="name">eligible.for.promotion.rules.tree.view</field>
+            <field name="model">eligible.for.promotion</field>
+            <field name="arch" type="xml">
+                <tree string="Eligible Form Promotion">
+                    <field name="employee_id"/>
+                    <field name="current_grade"/>
+                    <field name="new_grade"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="eligible_for_promotion_action" model="ir.actions.act_window">
+            <field name="name">Eligible For Promotion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">eligible.for.promotion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Eligible For Promotion" id="eligible_for_promotion"
+                  sequence="1"
+                  action="eligible_for_promotion_action"
+                  parent="employee_promotion_menu"
+                  groups="hr.group_hr_manager,jbm_group_access_right_extended.custom_group_shared_service_manager"
+        />
+    </data>
+</odoo>

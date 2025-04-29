@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="excellence_board_form_view">
+            <field name="name">excellence.board.form</field>
+            <field name="model">excellence.board</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="issue_date"/>
+                                <field name="file_name_attachment" invisible="1"/>
+                                <field name="attachment" widget="binary" filename="file_name_attachment"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="excellence_board_tree_view" model="ir.ui.view">
+            <field name="name">excellence.board.tree</field>
+            <field name="model">excellence.board</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="issue_date"/>
+                    <field name="file_name_attachment" invisible="1"/>
+                    <field name="attachment" widget="binary" filename="file_name_attachment"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="excellence_board_action" model="ir.actions.act_window">
+            <field name="name">Excellence Board</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">excellence.board</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Excellence Board" id="excellence_board_menu" parent="hr.menu_hr_root" action="excellence_board_action"/>
+
+    </data>
+</odoo>

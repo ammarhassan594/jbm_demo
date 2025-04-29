@@ -1,0 +1,39 @@
+<odoo>
+
+    <record id="view_attendance_tree_inherit_jbm" model="ir.ui.view">
+        <field name="name">hr.attendance.form.view.custom_jbm</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='worked_hours']" position="after">
+                <field name="check_in_record_id" readonly="1" invisible="1"/>
+                <field name="check_out_record_id" readonly="1" invisible="1"/>
+                <field name="attend_record_log_check_in_id" readonly="1" invisible="1"/>
+                <field name="attend_record_log_check_out_id" readonly="1" invisible="1"/>
+                <field name="is_late_check_in" invisible="1"/>
+                <field name="is_early_check_out" invisible="1"/>
+                <field name="attendance_status" invisible="1"/>
+                <field name="attendance_status_early" invisible="1"/>
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-danger">attendance_status == 'rejected' and attendance_status_early != 'rejected'</attribute>
+                <attribute name="decoration-muted">attendance_status == 'rejected' and attendance_status_early == 'rejected'</attribute>
+                <attribute name="decoration-warning">attendance_status != 'rejected' and attendance_status_early == 'rejected'
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="attendance_record_log_form_view_inherit" model="ir.ui.view">
+        <field name="name">jbm.hr.attendance.form.view.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='check_out']" position="after">
+                <field name="check_in_record_id" readonly="1" invisible="1"/>
+                <field name="check_out_record_id" readonly="1" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

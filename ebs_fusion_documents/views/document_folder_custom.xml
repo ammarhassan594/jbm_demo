@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <record id="custom_document_folder_view" model="ir.ui.view">
+            <field name="name">custom.documents.folder.view</field>
+            <field name="model">documents.folder</field>
+            <field name="inherit_id" ref="documents.folder_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='parent_folder_id']" position="attributes">
+                    <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page//group/field[@name='group_ids']" position="attributes">
+                    <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page//group/field[@name='read_group_ids']" position="attributes">
+                    <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='parent_folder_id']" position="after">
+                    <field name="is_default_folder"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_folder_id']" position="attributes">
+                    <attribute name="string">Parent Folder</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="document_custom_folder_tree">
+            <field name="name">documents.custom.folder.tree</field>
+            <field name="model">documents.folder</field>
+            <field name="inherit_id" ref="documents.folder_view_tree"/>
+            <field name="priority">16</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//tree//field[@name='facet_ids']" position="after">
+                     <field name="is_default_folder"/>
+                    <field name="level"/>
+                </xpath>
+                 <xpath expr="//tree//field[@name='display_name']" position="attributes">
+                     <attribute name="string">Folder</attribute>
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="document_share_view_tree">
+            <field name="name">documents.custom.share.view.tree</field>
+            <field name="model">documents.share</field>
+            <field name="inherit_id" ref="documents.share_view_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                 <xpath expr="//tree//field[@name='folder_id']" position="attributes">
+                     <attribute name="string">Folder</attribute>
+                </xpath>
+            </field>
+        </record>
+           <record model="ir.ui.view" id="document_share_view_form">
+            <field name="name">documents.custom.share.view.form</field>
+            <field name="model">documents.share</field>
+            <field name="inherit_id" ref="documents.share_view_form"/>
+
+
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='folder_id']" position="attributes">
+                     <attribute name="string">Folder</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="documents.folder_action" model="ir.actions.act_window">
+            <field name="name">Folders</field>
+         </record>
+
+
+    </data>
+</odoo>

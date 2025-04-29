@@ -1,0 +1,2156 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_approvals
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 09:03+0000\n"
+"PO-Revision-Date: 2023-01-23 09:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "(To be filled by Destination Head of Department)"
+msgstr "(تملأ من قبل رئيس قسم الوجهة)"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "(To be filled by Releasing Head of Department)"
+msgstr "(يتم ملؤها من قبل رئيس القسم المفوض)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__f_3dx_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__f_3dx_source
+msgid "3DX Account"
+msgstr "3DX حساب"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_3dx_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_3dx_destination
+msgid "3DX Account (Destination)"
+msgstr "3DX (وجهة) حساب"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_3dx_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_3dx_source
+msgid "3DX Account (Source)"
+msgstr "3DX الحساب (المصدر)"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":الادارة / القسم"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":البطاقة رقم الشخصية"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":الدرجة الوظيفية"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":الراتب الاساسي"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":الرقم الوظيفي"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":القسط الشهري"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":المسمى الوظيفي"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":الموافقة"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":تاريخ التعيين"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":عدم الموافقة"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":قيمة السلفة"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":مدة الي عداد"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ":نوع السلفة"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"color: #990000;\">مالحظة:</span>\n"
+"                                <span>\n"
+"                                    تسدد قيمة السلفة على أقساط شهرية خالل مدة ال تزيد على أربع سنوات أو نهاية مدة اخلدمة\n"
+"                                    أيهما أقرب.\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span style=\"color:#785838;\">\n"
+"                            __________________________________\n"
+"                        </span>\n"
+"                        <span style=\"padding-left:5px;\">\n"
+"                            :توقيع مقدم الطلب\n"
+"                        </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"color:#785838;\">_________________________________________\n"
+"                                </span>\n"
+"                                <span>:توقيع مقدمــع الطلب</span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span style=\"color:white\">\n"
+"                                    إقــــــــرار\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span style=\"color:white;\">\n"
+"                                    بياناتالموظف\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"color:white;font-weight: bold;\">\n"
+"                                    إقــــــــرار\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"color:white;font-weight: bold;\">\n"
+"                                    الســـلفة الســـابقة إن وجدت\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"color:white;font-weight: bold;\">\n"
+"                                    بياناتالموظف\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span style=\"padding-left: 1px;\">الموافقة</span>\n"
+"                                <i class=\"fa fa-square-o\" aria-hidden=\"true\" style=\"color:#785838!important;line-height: 1px;font-size: 23px;\"/>\n"
+"                                <span style=\"padding-left:30px!important;\">عدمالموافقة</span>\n"
+"                                <i class=\"fa fa-check-square\" aria-hidden=\"true\" style=\"color:#785838!important;line-height: 1px;font-size: 23px;padding-left: 20px;\"/>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid "<span style=\"padding-left:7px;\">من</span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"padding-right:5px;\">\n"
+"                                    السلفة السابقة\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"padding-right:5px;\">\n"
+"                                    القسط\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"padding-right:5px;\">\n"
+"                                    القيمة\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"padding-right:5px;\">\n"
+"                                    تاريخ منحها\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"padding-right:5px;\">\n"
+"                                    عدد الأقساط\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"padding-right:5px;\">\n"
+"                                    قيمة الأقساط المتبقية\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"text-color:solid #785838;\">\n"
+"                                ____________________________________________________________________________________________&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                            </span>\n"
+"\n"
+"                            <span>\n"
+"                                :على أن يبدأ السداد من راتب شهر\n"
+"                            </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid ""
+"<span style=\"text-color:solid #785838;\">_______________________</span>&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                            <span>\n"
+"                                :أقر أنا املوقع أدناه مبوافقتي على خصم قيمة السلفة املذكورة من راتبي على أقساط شهرية\n"
+"                                وذلك\n"
+"                                ملدة\n"
+"                            </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    إسمالموظف\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    اجلنسية:\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    الإدارة/ القسم\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    الراتبالأساسي\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    الرقمالوظيفي\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    المسمىالوظيفي\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    تاريخالتعيين\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    خاصبإدارة املؤســــســــة\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                                    قيمةالبدل\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>\n"
+"                            مستحقاتلديهــا.\n"
+"                        </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid ""
+"<span>أقـر أنـا املوقـع أدنـاه مبوافقتـي علـى اسـتهالك بـدل األثـاث املذكـور أعـاه بنسـبة %25\n"
+"                            منـه عـن كل سـنة وأنـه يف حـال إنتهـاء خدمتـي قبـل انقضـاء ً أربـع سـنوات مـن تاريـخ حصولـي\n"
+"                            علـى هـذا البـدل، ألتـزم بسـداد املتبقـي منـه يف حينهـا ويجـوز للمؤسسـة اسـترداده منـي نقـدا\n"
+"                            ً أو خصمـا مـن\n"
+"                        </span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid "<span>اعتماد</span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid "<span>شؤوناملوظفني</span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid "<span>مسؤولالشؤون اإلدارية</span>"
+msgstr ""
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__f_3dx_destination__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__f_3dx_source__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__sap_destination__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__sap_source__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__shared_folder_status_destination__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__shared_folder_status_source__yes
+msgid "Active"
+msgstr "نشيط"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_mail_activity
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__approval_type__advance_payment
+msgid "Advance Payment"
+msgstr "دفعه مقدمه"
+
+#. module: hr_approvals
+#: model:approval.category,name:hr_approvals.approval_category_data_advance_payment
+msgid "Advance Payment Application"
+msgstr "طلب الدفع المسبق"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__advance_payment_type
+msgid "Advance Payment Type"
+msgstr "نوع الدفع المسبق"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__all_approved
+msgid "All Approved"
+msgstr "كل المعتمدة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__contract_subgroups
+msgid "Allowed Contract Subgroups"
+msgstr "مجموعات العقد الفرعية المسموح بها"
+
+#. module: hr_approvals
+#: model:ir.model.fields,help:hr_approvals.field_approval_category__approval_type
+#: model:ir.model.fields,help:hr_approvals.field_approval_request__category_approval_type
+msgid ""
+"Allows you to define which documents you would like to create once the "
+"request has been approved"
+msgstr ""
+"يتيح لك تحديد أي المستندات ترغب في إنشائها بمجرد أن تتم الموافقة على الطلب "
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__approval_id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__approval_id
+msgid "Approval"
+msgstr "موافقة"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_category
+msgid "Approval Category"
+msgstr "فئة الموافقة "
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__approval_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__approval_date
+msgid "Approval Date"
+msgstr "تاريخ الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_eligible
+msgid "Approval Eligible"
+msgstr "الموافقة مؤهلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__approval_job_line_ids
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Approval Job"
+msgstr "وظيفة الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_job_lines
+msgid "Approval Job Lines"
+msgstr "خطوط عمل الموافقة"
+
+#. module: hr_approvals
+#: model:ir.module.category,name:hr_approvals.module_category_manager_human_resources_approvals
+msgid "Approval Manager"
+msgstr "مدير الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_reject_reason
+msgid "Approval Reject Reason"
+msgstr "سبب رفض الموافقة"
+
+#. module: hr_approvals
+#: model:ir.actions.report,name:hr_approvals.approvals_action
+msgid "Approval Report"
+msgstr "تقرير الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_request
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation__related_approval
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__approval_request_id
+msgid "Approval Request"
+msgstr "طلب موافقة "
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__approval_request_id
+msgid "Approval Request ID"
+msgstr "معرف طلب الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_sequence
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__approval_sequence
+msgid "Approval Sequence"
+msgstr "تسلسل الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__approval_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__category_approval_type
+msgid "Approval Type"
+msgstr "نوع الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__request_status__approved
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_approval_approver
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__user_id
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Approver"
+msgstr "مُعتَمِد "
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__approver_category
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__approver_category
+msgid "Approver Category"
+msgstr "فئة الموافق"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__approver_type
+msgid "Approver Type"
+msgstr "نوع الموافق"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__approver_ids
+msgid "Approvers"
+msgstr "المُعتمِدين "
+
+#. module: hr_approvals
+#: model:ir.model.fields,help:hr_approvals.field_approval_category__is_head_department_approver
+#: model:ir.model.fields,help:hr_approvals.field_approval_request__is_head_department_approver
+msgid "Automatically add the Head Of Department as approver on the request."
+msgstr "إضافة رئيس القسم تلقائيًا كموافق على الطلب."
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__can_see
+msgid "Can See"
+msgstr "استطيع ان اري"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__can_see_eligible
+msgid "Can See Eligible"
+msgstr "يمكن رؤية المؤهلين"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__can_see_eligible_not_stored
+msgid "Can See Eligible Not Stored"
+msgstr "يمكن رؤية المؤهل غير المخزن"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__can_see_false
+msgid "Can See False"
+msgstr "يمكن أن ترى خطأ"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__request_status__cancel
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_eligible_form
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_rejection_form
+#: model_terms:ir.ui.view,arch_db:hr_approvals.create_transfer_event_view_form
+msgid "Cancel"
+msgstr "إلغاء "
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__eligible_rehire_comment
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_eligible_rehire_comment
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__eligible_rehire_comment
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_related_contract
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_related_contract
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__contract_type__contract
+msgid "Contract"
+msgstr "لمدة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_contract_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_contract_type
+msgid "Contract Type"
+msgstr "نوع العقد"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__employee_type_destination__contractor
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__employee_type_source__contractor
+msgid "Contractor"
+msgstr "مقاول"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_cost_center
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__cost_center
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__cost_center_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__cost_center_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_cost_center
+msgid "Cost Center"
+msgstr "مركز التكلفة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_cost_center_destination
+msgid "Cost Center (Destination)"
+msgstr "مركز التكلفة (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_cost_center_source
+msgid "Cost Center (Source)"
+msgstr "(مصدر) مركز التكلفة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.create_transfer_event_view_form
+msgid "Create Appraisals"
+msgstr "إنشاء التقييمات"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__can_create_job
+msgid "Create Job"
+msgstr "خلق وظيفة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Create Job Position"
+msgstr "خلق الوظيفة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__can_create_resign
+msgid "Create Resign"
+msgstr "خلق استقالة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Create Resignation"
+msgstr "خلق استقالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__can_create_transfer
+msgid "Create Transfer"
+msgstr "إنشاء تحويل"
+
+#. module: hr_approvals
+#: model:ir.actions.act_window,name:hr_approvals.create_transfer_event_view_action
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_approvals.create_transfer_event_view_form
+msgid "Create Transfer Events"
+msgstr "إنشاء أحداث التحويل"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_create_transfer_event
+msgid "Create Transfer Events wizard"
+msgstr "معالج إنشاء أحداث التحويل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__created_job_position
+msgid "Created Job Position"
+msgstr "الوظيفة التي تم إنشاؤها"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__create_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__create_date
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_department
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__department
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__department_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__department_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_department
+msgid "Department"
+msgstr "قسم"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_department_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_department_destination
+msgid "Department (Destination)"
+msgstr "القسم (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_department_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_department_source
+msgid "Department (Source)"
+msgstr "القسم (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__description
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__description
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__description
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Destination Department"
+msgstr "قسم الوجهة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__display_name
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__requirer_document
+msgid "Documents"
+msgstr "المستندات"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_eligible_form
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_rejection_form
+msgid "Done"
+msgstr "فعله"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_approver__approver_type__dynamic
+msgid "Dynamic Approver"
+msgstr "الموافق الديناميكي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation__start_date
+msgid "Effective Resignation Date"
+msgstr "تاريخ نفاذ الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__eligible_rehire
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__eligible_rehire_selection
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_eligible_rehire
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__eligible_rehire
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__name
+msgid "Eligible for Rehire"
+msgstr "ممنوع للايجار"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_related_employee_id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_related_employee_id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__request_employee_id
+msgid "Employee"
+msgstr "موظف"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_employee_fusion_id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__employee_fusion_id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_employee_fusion_id
+msgid "Employee Main Company ID"
+msgstr "رقم تعريف الموظف الرئيسي للشركة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_employee_transferred
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__employee_transferred
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_employee_transferred
+msgid "Employee Transferred"
+msgstr "الموظف المنقول"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__employee_type_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__employee_type_source
+msgid "Employee Type"
+msgstr "نوع موظف"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_employee_type_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_cost_center_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_employee_type_destination
+msgid "Employee Type (Destination)"
+msgstr "نوع الموظف (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_employee_type_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_cost_center_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_employee_type_source
+msgid "Employee Type (Source)"
+msgstr "نوع الموظف (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__is_head_department_approver
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__is_head_department_approver
+msgid "Employee's Head Of Department"
+msgstr "رئيس قسم الموظف"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_employment_status
+msgid "Employment Status"
+msgstr "الحالة الوظيفية"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__event_reason_id
+msgid "Event Reason"
+msgstr "سبب الحدث"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__event_type_id
+msgid "Event Type"
+msgstr "نوع الحدث"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__transfers
+msgid "Events"
+msgstr "الأحداث"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_starting_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_starting_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__start_date
+msgid "Expected Starting Date"
+msgstr "تاريخ البدء المتوقع"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__can_extend_resign
+msgid "Extend Resign"
+msgstr "تمديد الاستقالة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Extend Resignation"
+msgstr "تمديد الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__extend_till
+msgid "Extend Till"
+msgstr "تمتد حتى"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__vacancy_type__external
+msgid "External"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_category_view_form_inherit
+msgid "Fields"
+msgstr "مجالات"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__transfer_from_date
+msgid "From Date"
+msgstr "من التاريخ"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__approval_type__furniture_allowance
+msgid "Furniture Allowance"
+msgstr "بدل أثاث"
+
+#. module: hr_approvals
+#: model:approval.category,name:hr_approvals.approval_category_data_furniture_allowance
+msgid "Furniture Allowance Request"
+msgstr "طلب بدل أثاث"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Generate installment"
+msgstr "توليد القسط"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_grade
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__grade
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_grade
+msgid "Grade"
+msgstr "رتبة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_group
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__group
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__group_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__group_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_group
+msgid "Group"
+msgstr "مجموعة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_group_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_group_destination
+msgid "Group (Destination)"
+msgstr "المجموعة (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_group_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_group_source
+msgid "Group (Source)"
+msgstr "مجموعة (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_hr_resignation_extension_reason
+msgid "HR Registration Extension Reason"
+msgstr "سبب تمديد تسجيل الموارد البشرية"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_hr_resignation_reason
+msgid "HR Registration Reason"
+msgstr "سبب تسجيل الموارد البشرية"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_hr_resignation
+msgid "HR Resignation"
+msgstr "استقالة الموارد البشرية"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_hr_transfer_reason
+msgid "HR Transfer Reason"
+msgstr "سبب نقل الموارد البشرية"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_employee
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_employee
+msgid "Has Employee"
+msgstr "لديها موظف"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__is_head_department_approver
+msgid "Head of Department Approver"
+msgstr "رئيس القسم المعتمد"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__id
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__id
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__id
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__id
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__id
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "IT Requirements"
+msgstr "متطلبات تكنولوجيا المعلومات"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__f_3dx_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__f_3dx_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__sap_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__sap_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__shared_folder_status_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__shared_folder_status_source__no
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__installment_amount
+msgid "Installment amount"
+msgstr "تقسيط المبلغ"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__vacancy_type__internal
+msgid "Internal"
+msgstr "داخلي"
+
+#. module: hr_approvals
+#: model:ir.actions.act_window,name:hr_approvals.internal_transfer_reason_act_window
+#: model:ir.ui.menu,name:hr_approvals.internal_transfer_reason_menu
+#: model_terms:ir.ui.view,arch_db:hr_approvals.internal_transfer_reason_tree_view
+msgid "Internal Transfer Reasons"
+msgstr "أسباب التحويل الداخلي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__is_termination_extend_request
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__is_termination_extend_request
+msgid "Is Extend Termination Request"
+msgstr "هو تمديد طلب الإنهاء"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__is_internal_transfer_request
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__is_internal_transfer_request
+msgid "Is Internal Transfer Request"
+msgstr "هو طلب تحويل داخلي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__is_paid
+msgid "Is Paid"
+msgstr "مدفوع"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_sap_event_type__is_related_transfer
+msgid "Is Related to Transfer"
+msgstr "مرتبط بالتحويل؟"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__is_requisition_request
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__is_requisition_request
+msgid "Is Requisition Request"
+msgstr "هو استولى طلب"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__is_termination_req
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__is_termination_request
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__is_termination_request
+msgid "Is Termination Request"
+msgstr "هو طلب إنهاء"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__job_id
+msgid "Job"
+msgstr "مهنة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_desc
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_desc
+msgid "Job Desc"
+msgstr "تفاصيل العمل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_desc
+msgid "Job Description"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_grade_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_grade_source
+msgid "Job Grade"
+msgstr "درجة الوظيفة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_grade_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_grade_destination
+msgid "Job Grade (Destination)"
+msgstr "الدرجة الوظيفية (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_grade_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_grade_source
+msgid "Job Grade (Source)"
+msgstr "الدرجة الوظيفية (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_hr_job
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_position
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_position
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_position
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_title
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_title
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_title
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_title_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__job_title_source
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_job__requisition_job_title
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_title_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_title_destination
+msgid "Job Title (Destination)"
+msgstr "المسمى الوظيفي (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_job_title_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_job_title_source
+msgid "Job Title (Source)"
+msgstr "المسمى الوظيفي (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__jobs
+msgid "Jobs"
+msgstr "المسمى"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__reason
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Justification"
+msgstr "التبرير"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason____last_update
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__write_uid
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__write_date
+#: model:ir.model.fields,field_description:hr_approvals.field_payment_installment__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__resignation_date
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation__end_date
+msgid "Last Working Date"
+msgstr "تاريخ آخر عمل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__line_manager_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__line_manager_source
+msgid "Line Manager"
+msgstr "المدير المباشر"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_line_manager_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_line_manager_destination
+msgid "Line Manager (Destination)"
+msgstr "المدير المباشر (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_line_manager_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_line_manager_source
+msgid "Line Manager (Source)"
+msgstr "المدير المباشر (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_fusion_id
+msgid "Main Company ID"
+msgstr "معرف الشركة الرئيسي"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager
+msgid "Manager Approvals"
+msgstr "موافقات المدير"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager_advance_salary
+msgid "Manager Approvals - Create Advance Salary"
+msgstr "موافقات المدير - إنشاء راتب مقدم"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager_bank_change
+msgid "Manager Approvals - Create Bank Changes"
+msgstr "موافقات المدير - إنشاء تغييرات بنكية"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager_housing_loan
+msgid "Manager Approvals - Create Housing Loans"
+msgstr "موافقات المدير - إنشاء قروض الإسكان"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager_job_position
+msgid "Manager Approvals - Create Job Position"
+msgstr "موافقات المدير - إنشاء منصب وظيفي"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager_resignation
+msgid "Manager Approvals - Create Resignation"
+msgstr "موافقات المدير - إنشاء استقالة"
+
+#. module: hr_approvals
+#: model:res.groups,name:hr_approvals.group_approval_category_manager_transfer
+msgid "Manager Approvals - Create Transfer Events"
+msgstr "موافقات المدير - إنشاء أحداث التحويل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__is_manager_approver
+msgid "Manager Approver"
+msgstr "موافق مدير"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__managers_only
+msgid "Managers only"
+msgstr "المدراء فقط"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_category_view_form_inherit
+msgid "Manpower"
+msgstr "القوى العاملة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_search_form_custom
+msgid "My Approvals to Review"
+msgstr "موافقاتي على المراجعة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_extension_reason__name
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_resignation_reason__name
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_transfer_reason__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_employee_id
+msgid "Name of the hiring Subsidiary"
+msgstr "اسم"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__requisition_type__new
+msgid "New Requirement"
+msgstr "شرط جديد"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_approver__eligible_rehire_selection__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_approver__replacement_position__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_date__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_internal_transfer_request__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_requisition_request__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_termination_extend_request__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_termination_request__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_eligible__eligible_rehire__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_eligible__replacement_position__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__replacement_position__no
+msgid "No"
+msgstr "رقم"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_job_lines__no_of_employees
+msgid "No of employees"
+msgstr "عدد الموظفين"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__no_of_installment
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "No of installment"
+msgstr "رقم القسط"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_3dx_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_3dx_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_contract_type__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_eligible_rehire__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_eligible_rehire_comment__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_fusion_id__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_transferred__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_type_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_type_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_grade__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_desc__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_grade_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_grade_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_position__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_line_manager_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_line_manager_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_notice_period__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_remarks__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_personal_email__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_personal_phone_no__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_contract__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_employee_id__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_manager__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_oc__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_time_hired__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_warnings__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_replacement_employee_id__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_replacement_position__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_requisition_period_type__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_requisition_type__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_extension_reason__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_reason__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_sap_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_sap_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_status_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_status_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_starting_date__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_transfer_reason__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_transfer_type__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_vacancy_type__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_working_shift_destination__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_working_shift_source__no
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__requirer_document__no
+msgid "None"
+msgstr "لا أحد"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_notice_period
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_notice_period
+msgid "Notice Period"
+msgstr "فترة إشعار"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__notice_period
+msgid "Notice Period (Days)"
+msgstr "فترة الإخطار (أيام)"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__contract_type__open
+msgid "Open"
+msgstr "يفتح"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_3dx_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_3dx_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_contract_type__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_eligible_rehire__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_eligible_rehire_comment__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_fusion_id__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_transferred__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_type_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_type_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_grade__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_desc__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_grade_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_grade_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_position__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_line_manager_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_line_manager_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_notice_period__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_remarks__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_personal_email__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_personal_phone_no__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_contract__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_employee_id__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_manager__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_oc__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_time_hired__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_warnings__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_replacement_employee_id__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_replacement_position__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_requisition_period_type__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_requisition_type__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_extension_reason__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_reason__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_sap_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_sap_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_status_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_status_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_starting_date__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection_source__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_transfer_reason__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_transfer_type__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_vacancy_type__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_working_shift_destination__optional
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_working_shift_source__optional
+msgid "Optional"
+msgstr "اختياري"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__other_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__other_source
+msgid "Other"
+msgstr "آخر"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_other_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_other_destination
+msgid "Other (Destination)"
+msgstr "أخرى (وجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_other_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_other_source
+msgid "Other (Source)"
+msgstr "اخر (مصدر )"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_other_remarks
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_other_remarks
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__other_remarks
+msgid "Other Remarks"
+msgstr "ملاحظات أخرى"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__payment_installment_ids
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Payment Installment"
+msgstr "تقسيط السداد"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__employee_type_destination__permanent
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__employee_type_source__permanent
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__requisition_period_type__new
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__transfer_type__permanent
+msgid "Permanent"
+msgstr "دائم"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_personal_email
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_personal_email
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__personal_email
+msgid "Personal Email"
+msgstr "البريد الإلكتروني الشخصي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_personal_phone_no
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_personal_phone_no
+msgid "Personal Phone No"
+msgstr "رقم الهاتف الشخصي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__personal_phone_no
+msgid "Personal Phone Number"
+msgstr "رقم الهاتف الشخصي"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "Please set Eligible for Rehire before Approving"
+msgstr "يرجى تعيين مؤهل لإعادة التوظيف قبل الموافقة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__previous_advance_payment
+msgid "Previous Advance Payment"
+msgstr "الدفعة المسبقة السابقة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_resign_date
+msgid "Previous Last Working Date"
+msgstr "تاريخ آخر عمل سابق"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_resign_request
+msgid "Previous Resignation Request"
+msgstr "طلب استقالة سابقة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Print"
+msgstr "مطبعة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__read_only_approval
+msgid "Read Only Approval"
+msgstr "قراءة الموافقة فقط"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__read_only_user
+msgid "Read Only User"
+msgstr "قراءة المستخدم فقط"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__request_status__refused
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: hr_approvals
+#: model:ir.actions.act_window,name:hr_approvals.open_reject_reason_action
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__reject_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_reject_reason__name
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_create_transfer_event__related_approval
+msgid "Related Approval"
+msgstr "الموافقة ذات الصلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__related_category
+msgid "Related Category"
+msgstr "الفئة ذات الصلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_contract
+msgid "Related Contract"
+msgstr "عقد ذو صلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__direct_employee_id
+msgid "Related Employee"
+msgstr "الموظف المرتبط"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_job
+msgid "Related Jobs"
+msgstr "الوظائف ذات الصلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_related_manager
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_related_manager
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_manager
+msgid "Related Manager"
+msgstr "مدير ذو صلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__has_eligible_rehire
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__has_eligible_rehire_comment
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_related_oc
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_eligible_rehire
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_eligible_rehire_comment
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_related_oc
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_oc
+msgid "Related OC"
+msgstr "OC ذات الصلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_job__related_requisition
+msgid "Related Requisition"
+msgstr "طلب ذات صلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_related_time_hired
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_related_time_hired
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_time_hired
+msgid "Related Tenure of Experience"
+msgstr "مدة الخبرة ذات الصلة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_related_warnings
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_related_warnings
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_warnings
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Related Warnings"
+msgstr "تحذيرات ذات صلة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Releasing Department"
+msgstr "قسم الإفراج"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__requisition_type__replace
+msgid "Replacement"
+msgstr "إستبدال"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_replacement_employee_id
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_replacement_employee_id
+msgid "Replacement Report"
+msgstr ""
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__replacement_position
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_replacement_position
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_eligible__replacement_position
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_replacement_position
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__replacement_position
+msgid "Replacement of the Position"
+msgstr "استبدال الوظيفة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__replacement_employee_id
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_job__replacement_employee_id
+msgid "Replacing (Employee)"
+msgstr "استبدال (موظف)"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Request Approval Date"
+msgstr "تاريخ الموافقة على الطلب"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "Request Rejected by . Rejection Reason: "
+msgstr "طلب مرفوض من قبل. سبب الرفض:"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__request_status
+msgid "Request Status"
+msgstr "حالة الطلب "
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_3dx_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_3dx_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_contract_type__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_cost_center_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_department_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_eligible_rehire__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_eligible_rehire_comment__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_fusion_id__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_transferred__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_type_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_employee_type_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_grade__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_group_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_desc__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_grade_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_grade_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_position__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_job_title_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_line_manager_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_line_manager_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_notice_period__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_remarks__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_other_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_personal_email__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_personal_phone_no__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_contract__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_employee_id__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_manager__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_oc__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_time_hired__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_related_warnings__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_replacement_employee_id__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_replacement_position__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_requisition_period_type__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_requisition_type__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_extension_reason__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_reason__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_sap_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_sap_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_section_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_status_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_shared_folder_status_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_starting_date__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_subsection_source__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_transfer_reason__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_transfer_type__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_vacancy_type__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_working_shift_destination__required
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_working_shift_source__required
+msgid "Required"
+msgstr "مطلوب"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Required Experience, Qualifications & Skills"
+msgstr "الخبرة والمؤهلات والمهارات المطلوبة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.view_hr_job_form_inherited_approval
+msgid "Requisition"
+msgstr "طلب"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__requisition_period_type
+msgid "Requisition Period"
+msgstr "فترة الطلب"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_requisition_period_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_requisition_period_type
+msgid "Requisition Period Type"
+msgstr "نوع فترة الطلب"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_requisition_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_requisition_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__requisition_type
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_job__requisition_type
+msgid "Requisition Type"
+msgstr "نوع الطلب"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.hr_contract_job_offer_view_form_inherit
+msgid "Resign Request"
+msgstr "طلب الاستقالة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_category_view_form_inherit
+msgid "Resignation"
+msgstr "تسجيل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_resignation_date
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_resignation_date
+msgid "Resignation Date"
+msgstr "تاريخ الاستقالة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.resignation_extension_reason_tree_view
+msgid "Resignation Exntension Reasons"
+msgstr "أسباب تمديد الاستقالة"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_category_view_form_inherit
+msgid "Resignation Extension"
+msgstr "تمديد الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_resignation_extension_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_resignation_extension_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__resignation_extension_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__resignation_extension_reason_text
+msgid "Resignation Extension Reason"
+msgstr "سبب تمديد الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.actions.act_window,name:hr_approvals.resignation_extension_reason_act_window
+#: model:ir.ui.menu,name:hr_approvals.resignation_extension_reason_menu
+msgid "Resignation Extension Reasons"
+msgstr "أسباب تمديد الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_resignation_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_resignation_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__resignation_reason
+msgid "Resignation Reason"
+msgstr "سبب الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.actions.act_window,name:hr_approvals.resignation_reason_act_window
+#: model:ir.ui.menu,name:hr_approvals.resignation_reason_menu
+#: model_terms:ir.ui.view,arch_db:hr_approvals.resignation_reason_tree_view
+msgid "Resignation Reasons"
+msgstr "أسباب الاستقالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__resignations
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__resignations_ext
+msgid "Resignations"
+msgstr "استقالات"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__sap_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__sap_source
+msgid "SAP Account"
+msgstr "حساب SAP"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_sap_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_sap_destination
+msgid "SAP Account (Destination)"
+msgstr "حساب SAP (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_sap_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_sap_source
+msgid "SAP Account (Source)"
+msgstr "حساب SAP (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_sap_event_type
+msgid "SAP Event Type"
+msgstr "نوع حدث SAP"
+
+#. module: hr_approvals
+#: model:ir.model.constraint,message:hr_approvals.constraint_approval_approver__unique_approver
+msgid "Same Approvers for the same Approval is not allowed"
+msgstr "الموافقون أنفسهم لنفس الموافقة غير مسموح بها"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_section
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_section
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__section
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__section_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__section_source
+msgid "Section"
+msgstr "قسم"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_section_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_section_destination
+msgid "Section (Destination)"
+msgstr "قسم (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_section_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_section_source
+msgid "Section (Source)"
+msgstr "قسم (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__sequence
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_sequence__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: hr_approvals
+#: model:ir.actions.act_window,name:hr_approvals.open_eligible_action
+msgid "Set Eligible"
+msgstr "تعيين مؤهل"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Set Eligible for Rehire and Replacement"
+msgstr "تعيين مؤهل للتجديد والاستبدال"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__shared_folder_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__shared_folder_source
+msgid "Shared Folder Path"
+msgstr "مسار المجلد المشترك"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_shared_folder_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_shared_folder_destination
+msgid "Shared Folder Path (Destination)"
+msgstr "مسار المجلد المشترك"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_shared_folder_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_shared_folder_source
+msgid "Shared Folder Path(Source)"
+msgstr "مسار المجلد المشترك (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__shared_folder_status_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__shared_folder_status_source
+msgid "Shared Folder Status"
+msgstr "حالة المجلد المشترك"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_shared_folder_status_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_shared_folder_status_source
+msgid "Shared Folder Status (Source)"
+msgstr "حالة المجلد المشترك (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_shared_folder_status_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_shared_folder_status_destination
+msgid "Shared Folder Status(Destination)"
+msgstr "حالة المجلد المشترك (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_approver__signature
+msgid "Signature"
+msgstr "إمضاء"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_approver__approver_type__static
+msgid "Static Approver"
+msgstr "موافق ثابت"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__status
+msgid "Status"
+msgstr "حالة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__subsection_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__subsection_source
+msgid "SubSection"
+msgstr "القسم الفرعي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_subsection_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_subsection_destination
+msgid "SubSection (Destination)"
+msgstr "القسم الفرعي (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_subsection_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_subsection_source
+msgid "SubSection (Source)"
+msgstr "القسم الفرعي (المصدر)"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Submit"
+msgstr "يُقدِّم"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__request_status__pending
+msgid "Submitted"
+msgstr "تم الإرسال"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_subsection
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_subsection
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__subsection
+msgid "Subsection"
+msgstr "القسم الفرعي"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__related_system_id
+msgid "System ID"
+msgstr "معرف النظام"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__requisition_period_type__temporary
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__transfer_type__temporary
+msgid "Temporary"
+msgstr "مؤقت"
+
+#. module: hr_approvals
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager_advance_salary
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager_bank_change
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager_housing_loan
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager_job_position
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager_resignation
+#: model:res.groups,comment:hr_approvals.group_approval_category_manager_transfer
+msgid "The user will be able to see approvals created by himself."
+msgstr "سيتمكن المستخدم من رؤية الموافقات التي أنشأها بنفسه."
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__transfer_to_date
+msgid "To Date"
+msgstr "ان يذهب في موعد"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_category_view_kanban_inherit
+msgid "To Review:"
+msgstr "للمراجعة:"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__request_status__new
+msgid "To Submit"
+msgstr "للإرسال"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_category_view_form_inherit
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_transfer_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_transfer_reason
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__transfer_reason
+msgid "Transfer Reason"
+msgstr "سبب التحويل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_transfer_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_transfer_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__transfer_type
+msgid "Transfer Type"
+msgstr "نوع التحويل"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__request_status__under_approval
+msgid "Under Approval"
+msgstr "تحت موافقة"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__approval_type__update_job
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approval_request_view_form_inherit
+msgid "Update Job"
+msgstr "تحديث الوظيفة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__vacancy_type
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_job__vacancy_type
+msgid "Vacancy Process Type"
+msgstr "نوع عملية الوظيفة الشاغرة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_vacancy_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__contract_type
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_vacancy_type
+#: model:ir.model.fields,field_description:hr_approvals.field_hr_job__contract_type
+msgid "Vacancy Type"
+msgstr "نوع الوظيفة الشاغرة"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__working_shift_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__working_shift_source
+msgid "Working Shift"
+msgstr "وردية العمل"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_working_shift_destination
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_working_shift_destination
+msgid "Working Shift (Destination)"
+msgstr "وردية العمل (الوجهة)"
+
+#. module: hr_approvals
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_category__has_working_shift_source
+#: model:ir.model.fields,field_description:hr_approvals.field_approval_request__has_working_shift_source
+msgid "Working Shift (Source)"
+msgstr "وردية العمل (المصدر)"
+
+#. module: hr_approvals
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_approver__eligible_rehire_selection__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_approver__replacement_position__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__has_resignation_date__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_internal_transfer_request__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_requisition_request__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_termination_extend_request__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_category__is_termination_request__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_eligible__eligible_rehire__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_eligible__replacement_position__yes
+#: model:ir.model.fields.selection,name:hr_approvals.selection__approval_request__replacement_position__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You Can not add Multiple approve with 'To Approve' Status."
+msgstr "لا يمكنك إضافة موافقة متعددة مع حالة الموافقة."
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You already have one Resignation Submitted or Approved"
+msgstr "لديك بالفعل استقالة واحدة تم تقديمها أو الموافقة عليها"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You have to add at least %s approvers to confirm your request."
+msgstr ""
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You have to attach at least one document."
+msgstr "يجب عليك إرفاق وثيقة واحدة على الأقل."
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You must choose a Department related to the Employee's Department: "
+msgstr "يجب عليك اختيار إدارة مرتبطة بقسم الموظفين:"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You must choose a Group related to the Employee's Group: "
+msgstr "يجب عليك اختيار مجموعة مرتبطة بمجموعة الموظفين:"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You must choose a Section related to the Employee's Section: "
+msgstr "يجب عليك اختيار قسم متعلق بقسم الموظفين:"
+
+#. module: hr_approvals
+#: code:addons/hr_approvals/models/approval_request.py:0
+#: code:addons/hr_approvals/models/approval_request.py:0
+#, python-format
+msgid "You must choose a Subsection related to the Employee's Subsection: "
+msgstr "يجب عليك اختيار قسم فرعي متعلق بقسم الموظف الفرعي:"
+
+#. module: hr_approvals
+#: model:ir.module.category,description:hr_approvals.module_category_manager_human_resources_approvals
+msgid "manager you manage your approvals."
+msgstr "مدير تدير موافقاتك."
+
+#. module: hr_approvals
+#: model:ir.model,name:hr_approvals.model_payment_installment
+msgid "payment.installment"
+msgstr "الدفع بالتقسيط"
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid "إسم الموظف:"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid "اإلعتماد"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid "خاص بإدارة الشؤون الإدارية والمالية"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid "شؤون املوظفني"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid "مسؤول الشؤون اإلدارية"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.approvals_request_report
+msgid "نموذج طلب بدل أثاث"
+msgstr ""
+
+#. module: hr_approvals
+#: model_terms:ir.ui.view,arch_db:hr_approvals.advance_payment_approval_request_report
+msgid "نموذج طلب سلفة بضمان الراتب"
+msgstr ""

@@ -1,0 +1,11 @@
+<odoo>
+
+    <record model="ir.ui.menu" id="account.menu_finance_payables">
+        <field name="name">Suppliers</field>
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_account_supplier">
+        <field name="name">Suppliers</field>
+    </record>
+
+</odoo>

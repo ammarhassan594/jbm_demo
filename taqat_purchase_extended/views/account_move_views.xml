@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="account_move_form_inherit_custom" model="ir.ui.view">
+            <field name="name">account.move.form.inherit.custom</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[@name='button_box']" position="before">
+
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_purchase" class="oe_stat_button" icon="fa-pencil-square-o" attrs="{'invisible':[('purchase_count', '=', 0)]}">
+                            <field name="purchase_count" widget="statinfo" string="Purchase Orders"/>
+                            <field name="purchase_id" invisible="1"/>
+                        </button>
+                    </div>
+
+
+<!--                    <div class="oe_button_box" name="button_box">-->
+<!--                        <button type="object" name="action_view_purchase"-->
+<!--                                class="oe_stat_button"-->
+<!--                                icon="fa-pencil-square-o" attrs="{'invisible': [ ('purchase_count', '=', 0)]}" >-->
+<!--                        </button>-->
+<!--                        <field string="Purchase Orders" name="purchase_count" widget="statinfo" />-->
+
+<!--                    </div>-->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

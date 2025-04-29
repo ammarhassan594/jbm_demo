@@ -1,0 +1,236 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_dynamic_approval_role
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 12:48+0000\n"
+"PO-Revision-Date: 2023-02-08 12:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model,name:base_dynamic_approval_role.model_dynamic_approval_mixin
+msgid "Advanced Approval Mixin"
+msgstr "الموافقة المتقدمة Mixin"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__automatic_approval
+msgid "Applicable for Dynamic Approval"
+msgstr "ينطبق على الموافقة الديناميكية"
+
+#. module: base_dynamic_approval_role
+#: model:ir.actions.act_window,name:base_dynamic_approval_role.dynamic_approval_role_action
+#: model:ir.model,name:base_dynamic_approval_role.model_dynamic_approval_role
+msgid "Approval Role"
+msgstr "دور الموافقة"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model,name:base_dynamic_approval_role.model_dynamic_approval_level
+msgid "Approval level"
+msgstr "مستوى الموافقة"
+
+#. module: base_dynamic_approval_role
+#: model_terms:ir.actions.act_window,help:base_dynamic_approval_role.dynamic_approval_role_action
+msgid ""
+"Approval role is a used to advanced set user for any document you have based on customization in each\n"
+"                document."
+msgstr ""
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_level__role_id
+msgid "Approver Role"
+msgstr "دور الموافق"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__user_id
+msgid "Default User"
+msgstr "المستخدم الافتراضي"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__user_ids
+msgid "Default Users"
+msgstr "المستخدمون الافتراضيون"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__description
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval_role.role_distribution_view_from
+msgid "Description"
+msgstr "وصف"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__distribution_id
+msgid "Distribution"
+msgstr "توزيع"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__id
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__id
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields.selection,name:base_dynamic_approval_role.selection__role_distribution__related_to__leave
+msgid "Leave"
+msgstr "يترك"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__line_ids
+msgid "Line"
+msgstr "خط"
+
+#. module: base_dynamic_approval_role
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval_role.role_distribution_view_from
+msgid "Lines"
+msgstr "خطوط"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields.selection,name:base_dynamic_approval_role.selection__role_distribution__related_to__manpower
+msgid "Manpower Transfer"
+msgstr "نقل القوى العاملة"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__name
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: base_dynamic_approval_role
+#: code:addons/base_dynamic_approval_role/models/dynamic_approval_role.py:0
+#, python-format
+msgid "No user assigned to role %s in approval %s!"
+msgstr "لم يتم تعيين أي مستخدم للدور٪ s في الموافقة٪ s!"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model,name:base_dynamic_approval_role.model_project_project
+msgid "Project"
+msgstr "المشروع"
+
+#. module: base_dynamic_approval_role
+#: model_terms:ir.actions.act_window,help:base_dynamic_approval_role.dynamic_approval_role_action
+msgid "Register a approval role"
+msgstr "سجل دور الموافقة"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution_line__role_id
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval_role.dynamic_approval_role_form
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval_role.dynamic_approval_role_tree
+msgid "Role"
+msgstr "دور"
+
+#. module: base_dynamic_approval_role
+#: model:ir.actions.act_window,name:base_dynamic_approval_role.role_distribution_actions_window
+#: model:ir.model,name:base_dynamic_approval_role.model_role_distribution
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_mixin__role_distribution_id
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_project_project__role_distribution
+#: model:ir.ui.menu,name:base_dynamic_approval_role.role_distribution_menu
+msgid "Role Distribution"
+msgstr "توزيع الدور"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model,name:base_dynamic_approval_role.model_role_distribution_line
+msgid "Role Distribution Line"
+msgstr "خط توزيع الدور"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.constraint,message:base_dynamic_approval_role.constraint_role_distribution_line_role_distribution_uniq
+msgid "Role must be unique per Distribution Record !"
+msgstr "يجب أن يكون الدور فريدًا لكل سجل توزيع!"
+
+#. module: base_dynamic_approval_role
+#: model:ir.ui.menu,name:base_dynamic_approval_role.dynamic_approval_role_menu
+msgid "Roles"
+msgstr "الأدوار"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_role_distribution__related_to
+msgid "Scope"
+msgstr "نِطَاق"
+
+#. module: base_dynamic_approval_role
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval_role.dynamic_approval_role_search
+msgid "Search Role"
+msgstr "دور البحث"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model.fields,field_description:base_dynamic_approval_role.field_dynamic_approval_role__short_code
+msgid "Short Code"
+msgstr "رمز قصير"
+
+#. module: base_dynamic_approval_role
+#: model:ir.model,name:base_dynamic_approval_role.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: base_dynamic_approval_role
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval_role.role_distribution_view_from
+msgid "Title"
+msgstr "عنوان"
+
+#. module: base_dynamic_approval_role
+#: code:addons/base_dynamic_approval_role/models/dynamic_approval_level.py:0
+#, python-format
+msgid ""
+"User is high priority than role.\n"
+"If you choose both of them, system will ignore role!"
+msgstr ""
+
+#. module: base_dynamic_approval_role
+#: code:addons/base_dynamic_approval_role/models/dynamic_approval_level.py:0
+#, python-format
+msgid "Warning"
+msgstr "تحذير"

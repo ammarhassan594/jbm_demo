@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+
+        <record id="approval_product_line_view_tree_inherit" model="ir.ui.view">
+            <field name="name">approval.product.line.view.tree.inherit</field>
+            <field name="model">approval.product.line</field>
+            <field name="inherit_id" ref="approvals.approval_product_line_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="is_available"
+                           groups="!base_portal_user.group_user_portal,
+                           !jbm_portal_self_service.group_self_service_manager,
+                           !jbm_portal_self_service.group_self_service_user"
+                           force_save="1"/>
+                    <field name="location_id"
+                           attrs="{
+                           'readonly':['|', ('is_available','=', False),('parent.request_status','not in',('new', 'pending','under_approval'))],
+                            'required':[('is_available','=', True)]}"
+                           groups="jbm_group_access_right_extended.custom_group_inventory_manager"
+                           force_save="1"
+                    />
+                    <field name="dest_location_id"
+                           attrs="{
+                           'readonly':['|', ('is_available','=', False),('parent.request_status','not in',('new', 'pending','under_approval'))],
+                            'required':[('is_available','=', True)]}"
+                           groups="jbm_group_access_right_extended.custom_group_inventory_manager"
+                           force_save="1"/>
+                    <field name="picking_type_id"
+                           attrs="{
+                           'readonly':['|', ('is_available','=', False),('parent.request_status','not in',('new', 'pending','under_approval'))],
+                            'required':[('is_available','=', True)]}"
+                           groups="jbm_group_access_right_extended.custom_group_inventory_manager"
+                           force_save="1"/>
+                    <field name="virtual_available"
+                           groups="!base_portal_user.group_user_portal,
+                           !jbm_portal_self_service.group_self_service_manager,
+                           !jbm_portal_self_service.group_self_service_user"
+                           force_save="1"/>
+                    <field name="is_finance_manager" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                    <attribute name="attrs">{
+                        'readonly':[('parent.request_status','not in',('new', 'pending'))],
+                        'required': [('parent.has_product', '=', 'required')]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="attrs">{
+                        'readonly':[('parent.request_status','not in',('new', 'pending'))]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='quantity']" position="attributes">
+                    <attribute name="attrs">{
+                        'column_invisible': [('parent.has_quantity', '=', 'no')],
+                        'required':[('parent.has_quantity', '=', 'required'), ('parent.request_status', '!=', 'new')],
+                        'readonly':[('parent.request_status','not in',('new', 'pending'))]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='product_uom_id']" position="attributes">
+                    <attribute name="attrs">{
+                        'readonly':[('parent.request_status','not in',('new', 'pending'))]}
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

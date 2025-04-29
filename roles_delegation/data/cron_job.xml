@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id="ir_cron_automatic_role_delegation" model="ir.cron">
+        <field name="name">Automatic Role Delegation</field>
+        <field name="model_id" ref="roles_delegation.model_roles_delegation"/>
+        <field name="state">code</field>
+        <field name="code">model.delete_role_delegation()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=0)).strftime('%Y-%m-%d 01:00:00')"/>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

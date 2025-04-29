@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_world_airport_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-25 10:48+0000\n"
+"PO-Revision-Date: 2023-06-25 10:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_hr_contract__airport_id
+msgid "Airport"
+msgstr "مطار"
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__name
+msgid "City/Airport"
+msgstr "المدينة/المطار"
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__country
+msgid "Country"
+msgstr "دولة"
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.model,name:jbm_world_airport_list.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__code
+msgid "IATA code"
+msgstr "كود IATA"
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__id
+msgid "ID"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.model.fields,field_description:jbm_world_airport_list.field_world_airport__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: jbm_world_airport_list
+#: model:ir.actions.act_window,name:jbm_world_airport_list.world_airport_act_window
+msgid "World Airports"
+msgstr "مطارات العالم"
+
+#. module: jbm_world_airport_list
+#: model:ir.model,name:jbm_world_airport_list.model_world_airport
+#: model:ir.ui.menu,name:jbm_world_airport_list.world_airport_menu
+msgid "World Airports List"
+msgstr "قائمة المطارات العالمية"

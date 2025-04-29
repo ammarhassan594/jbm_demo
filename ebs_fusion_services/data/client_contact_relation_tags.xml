@@ -1,0 +1,53 @@
+<odoo>
+    <data noupdate="0">
+        <record id="client_contact_primary" model="client.contact.relation.tags">
+            <field name="name">Primary Contact</field>
+        </record>
+        <record id="client_contact_secondary" model="client.contact.relation.tags">
+            <field name="name">Secondary Contact</field>
+        </record>
+        <record id="client_contact_deliver_partner" model="client.contact.relation.tags">
+            <field name="name">Deliver Partner</field>
+        </record>
+        <record id="client_contact_manager_cr" model="client.contact.relation.tags">
+            <field name="name">Manager CR</field>
+        </record>
+        <record id="client_contact_manager_cl" model="client.contact.relation.tags">
+            <field name="name">Manager CL</field>
+        </record>
+        <record id="client_contact_manager_ec" model="client.contact.relation.tags">
+            <field name="name">Manager EC</field>
+        </record>
+        <record id="client_contact_client_finance_ac" model="client.contact.relation.tags">
+            <field name="name">Client Finance/Accounts</field>
+        </record>
+        <record id="client_contact_shareholder" model="client.contact.relation.tags">
+            <field name="name">Shareholder</field>
+        </record>
+        <record id="client_contact_authorised_signatory" model="client.contact.relation.tags">
+            <field name="name">Authorised Signatory</field>
+        </record>
+        <record id="client_contact_legal_contact" model="client.contact.relation.tags">
+            <field name="name">Legal Contact</field>
+        </record>
+        <record id="client_contact_auditor_contact" model="client.contact.relation.tags">
+            <field name="name">Auditor Contact</field>
+        </record>
+        <record id="client_contact_general_manager" model="client.contact.relation.tags">
+            <field name="name">General Manager</field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="contract_client_contacts_cron" model="ir.cron">
+            <field name="name">Delete False Contract Related Contact Lines</field>
+            <field name="model_id" ref="model_contract_client_contacts"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_delete_records()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+    </data>
+</odoo>

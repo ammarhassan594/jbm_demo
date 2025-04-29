@@ -1,0 +1,218 @@
+<odoo>
+
+    <template id="hr_payroll.report_payslip">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+
+                <t t-call="web.basic_layout">
+                    <div class="page justify-context-center" style="margin:3px;">
+                        <div class="text-center">
+                            <img class="pos-receipt-logo" width="300" height="150"
+                                 t-attf-src='../../web/image/res.company/{{o.employee_id.company_id.id}}/logo'
+                                 alt="Logo"/>
+                        </div>
+                        <div class="border row border-dark mx-4 mt-4" style="background-color:#D3D3D3;">
+                            <div class="text-center col-12">
+                                <h1 class="py-2 ">PAYSLIP</h1>
+                            </div>
+                        </div>
+                        <div class="border-left row border-right mx-4 border-bottom border-dark ">
+                            <div class="col-12 text-center">
+                                <strong class="py-1 ">
+                                    <span t-esc="o.date_from.strftime('%B')"/>
+                                    <span t-esc="(o.date_from.replace(day=1) - datetime.timedelta(days=1)).year"/>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="border-left border-right border-bottom row border-dark mx-4">
+                            <div class="border-right border-dark col-6">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Name :
+                                            <span t-field="o.employee_id"/>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Joining Date :
+                                            <t t-if="o.partner_parent_id.abbreviation == 'QA'">
+                                                <span t-if="o.employee_id.entry_date" t-esc="(o.employee_id.entry_date + datetime.timedelta(days=1)).strftime('%d/%m/%Y')"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-if="o.employee_id.joining_date" t-esc="o.employee_id.joining_date.strftime('%d/%m/%Y')"/>
+                                            </t>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Position :
+                                            <span t-esc="o.contract_id.job_id.name"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Department :
+                                            <span t-esc="o.contract_id.department.name"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Pay Period :
+                                            <span t-esc="o.date_from.strftime('%b')"/>
+                                            <span t-esc="o.date_from.day"/>
+                                            to
+                                            <span t-esc="o.date_to.strftime('%b')"/>
+                                            <span t-esc="o.date_to.day"/>,
+                                            <span t-esc="o.date_to.year"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Total Days :
+                                            <span t-esc="(o.date_to - o.date_from).days + 1"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-left row border-right border-bottom border-dark mx-4">
+                            <div class="col-12 text-center">
+                                <strong class="py-1 ">Salary Breakdown</strong>
+                            </div>
+                        </div>
+                        <div class="border-left row border-right border-bottom border-dark mx-4">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.line_ids.filtered(lambda rec: rec.amount != 0 and rec.salary_rule_id.appears_on_payslip == True)"
+                                        t-as="line">
+                                        <td>
+                                            <span t-field="line.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.amount"/>
+                                        </td>
+
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row border-left border-right border-bottom bg-dark mx-4">
+                            <div class="col-6 text-white text-center">
+                            </div>
+                            <div class="col-6 text-white text-center">
+                                <strong>Remaining Salary To Be Paid</strong>
+                            </div>
+                        </div>
+
+                        <div class="border-left row border-right border-bottom border-dark mx-4 mb-4">
+                            <div class="col-6 ">
+                                <div>Note :
+                                    <t t-esc="o.payslip_comments"/>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row border-left border-bottom border-dark "
+                                     style="background-color:#D3D3D3">
+                                    <div class="col text-center">
+                                        <h1 class="py-3">QAR
+                                            <span t-esc="'{:,}'.format(sum(o.line_ids.filtered(lambda rec: rec.code == 'NET').mapped('total')))"/>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div class="row border-left border-dark " style="background-color:#D3D3D3">
+                                    <div class="col text-center">
+                                        <span class="py-1">
+                                            <span t-esc="o.number_to_word(str(sum(o.line_ids.filtered(lambda rec: rec.code == 'NET').mapped('total'))).split('.')[0])"/>
+                                            <span t-esc="o.employee_id.company_id.currency_id.currency_unit_label"></span>
+                                            And
+                                            <span t-esc="o.number_to_word(str(sum(o.line_ids.filtered(lambda rec: rec.code == 'NET').mapped('total'))).split('.')[1])"/>
+                                            <span t-esc="o.employee_id.company_id.currency_id.currency_subunit_label"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row border-left border-dark text-center">
+                                    <span class="py-1 d-print-none">Nothing to show</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 ml-3" style="page-break-inside: avoid;">
+                            <div class="row">
+                                <div class="col">
+                                    <span>Approved by:</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-left:85px">
+                                <div class="col-6 ">
+                                    <img class="pos-receipt-logo" width="150" height="75" t-if="o.hr_approver_id"
+                                         t-attf-src="data:image/*;base64, #{o.hr_approver_id.sudo().sign_signature}"
+                                         alt="o.hr_approver_id.name"/>
+                                    <div class="border-top border-dark mt-3 mb-1" style="width:50%"></div>
+                                    <strong class="font-weight-bold">HR Manager</strong>
+                                </div>
+                                <div class="col-6">
+                                    <img class="pos-receipt-logo" width="150" height="75" t-if="o.finance_approver_id"
+                                         t-attf-src="data:image/*;base64,{{o.finance_approver_id.sudo().sign_signature}}"
+                                         alt="o.hr_approver_id.name"/>
+                                    <div class="border-top border-dark mt-3 mb-1" style="width:50%"></div>
+                                    <strong class="font-weight-bold">Finance Department</strong>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col">
+                                    <span>Employee Signature:</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span>Date Received:</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <record id="paperformat_report_payslip" model="report.paperformat">
+        <field name="name">Payslip</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="hr_payroll.action_report_payslip" model="ir.actions.report">
+        <field name="paperformat_id" ref="ebs_lb_payroll.paperformat_report_payslip"/>
+    </record>
+
+</odoo>

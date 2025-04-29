@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="ir_cron_absent_employee" model="ir.cron">
+            <field name="name">Get Absent Employees</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=12, minute=00, second=00))"/>
+            <field name="model_id" ref="employee_absence_notification.model_hr_employee"/>
+            <field name="code">model.get_employees_absences()</field>
+            <field name="state">code</field>
+        </record>
+    </data>
+</odoo>

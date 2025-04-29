@@ -1,0 +1,81 @@
+<odoo>
+
+    <template id="proposal_report_template1">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <p>Hello
+                            <t t-if="o.partner_id">
+                                <span>
+                                    <t t-esc="o.partner_id.name"/>
+                                </span>
+                            </t>
+                            <t t-else="">
+                                <span>
+                                    <t t-esc="o.partner_name"/>
+                                </span>
+                            </t>
+                        </p>
+                        <br/>
+                        <p>Lines for proposal
+                            <span>
+                                <t t-esc="o.name"/>
+                            </span>
+                            are shown below.
+                        </p>
+                        <br/>
+                        <table class="table table-bordered">
+                            <thead>
+                                <th>Opportunity type</th>
+                                <th>Service</th>
+                                <th>Service Option</th>
+                                <th>Govt. Fees</th>
+                                <th>Main Company Fees</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.opportunity_type_service_mapping_ids" t-as="line">
+                                    <tr>
+
+                                        <td>
+                                            <t t-esc="line.service_id.name"/>
+                                        </td>
+                                        <t t-if="line.service_option_id.name == 'new'">
+                                            <td>New</td>
+                                        </t>
+                                        <t t-if="line.service_option_id.name == 'renew'">
+                                            <td>Renew</td>
+                                        </t>
+                                        <t t-if="line.service_option_id.name == 'manage'">
+                                            <td>Manage</td>
+                                        </t>
+                                        <td>
+                                            <t t-esc="line.govt_fees"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.fusion_fees"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <p>Thank You.</p>
+                        <p>
+                            <t t-esc="o.user_id.name"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report id="action_proposal_report1"
+            model="crm.lead"
+            string="Proposal"
+            report_type="qweb-pdf"
+            name="ebs_fusion_crm.proposal_report_template1"
+            file="ebs_fusion_crm.proposal_report_template1"/>
+
+</odoo>

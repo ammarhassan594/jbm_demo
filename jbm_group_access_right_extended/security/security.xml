@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.module.category" id="jbm_access_right_groups">
+            <field name="name">JBM Manager Groups</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="group_timeOff_manager" model="res.groups">
+            <field name="name">JBM Time Off Manager</field>
+            <field name="category_id" ref="jbm_group_access_right_extended.jbm_access_right_groups"/>
+        </record>
+
+        <record id="custom_jbm_group_attendance_manager" model="res.groups">
+            <field name="name">JBM Attendance Manager</field>
+            <field name="category_id" ref="jbm_group_access_right_extended.jbm_access_right_groups"/>
+        </record>
+
+        <!--        <record id="rule_of_jbm_attendance_manager" model="ir.rule">-->
+        <!--            <field name="name">JBM Attendance Manager</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id.id', 'child_of', user.employee_id.id)]</field>-->
+        <!--            <field name="perm_read" eval="1"/>-->
+        <!--            <field name="perm_write" eval="1"/>-->
+        <!--            <field name="perm_create" eval="1"/>-->
+        <!--            <field name="perm_unlink" eval="1"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'))]"/>-->
+        <!--        </record>-->
+
+
+        <record id="group_payroll_outsourced" model="res.groups">
+            <field name="name">Payroll Outsourced</field>
+            <field name="category_id" ref="jbm_group_access_right_extended.jbm_access_right_groups"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_contract_custom.group_access_other_employee_contract'))]"/>
+        </record>
+
+        <record id="jbm_payroll_only_outsourced" model="ir.rule">
+            <field name="name">payroll only Outsourced</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('jbm_group_access_right_extended.group_payroll_outsourced'))]"/>
+        </record>
+
+        <record id="group_crm_manager" model="res.groups">
+            <field name="name">CRM Manager</field>
+            <field name="category_id" ref="jbm_group_access_right_extended.jbm_access_right_groups"/>
+        </record>
+        <record id="jbm_crm_manager_rule" model="ir.rule">
+            <field name="name">CRM Manager</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="domain_force">['|',('user_id', '=',user.id),('user_id.partner_id.parent_id',
+                'child_of',user.partner_id.id)]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('jbm_group_access_right_extended.group_crm_manager'))]"/>
+        </record>
+
+        <record id="custom_group_inventory_manager" model="res.groups">
+            <field name="name">Inventory manager Role</field>
+        </record>
+        <record id="group_inventory_manager_role" model="res.users.role">
+            <field name="name">Inventory Manager</field>
+            <field name="group_id" eval="ref('custom_group_inventory_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('utm.menu_link_tracker_root')),(4, ref('website.menu_website_configuration')),(4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4, ref('event.event_main_menu')),(4,ref('event.menu_event_event'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('hr.group_hr_manager'),ref('hr_attendance.group_hr_attendance'),ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('stock.group_stock_manager'),ref('approvals.group_approval_manager'),ref('sales_team.group_sale_salesman'),ref('sale_stock.group_display_incoterm'),ref('base.group_partner_manager'),ref('im_livechat.im_livechat_group_manager'),ref('documents.group_documents_manager'),ref('fleet.fleet_group_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('planning.group_planning_manager')])]"/>
+        </record>
+
+
+        <record id="custom_group_operational_manager" model="res.groups">
+            <field name="name">Operational manager Role</field>
+        </record>
+        <record id="group_operational_employee_role" model="res.users.role">
+            <field name="name">Operational Employee</field>
+            <field name="group_id" eval="ref('custom_group_operational_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('utm.menu_link_tracker_root')),(4, ref('website.menu_website_configuration')),(4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4, ref('event.event_main_menu')),(4,ref('event.menu_event_event'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('ebs_lb_payroll.group_fos_payroll'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('hr_contract.group_hr_contract_manager'),ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('jbm_group_access_right_extended.group_payroll_outsourced'),ref('sales_team.group_sale_salesman'),ref('base.group_partner_manager'),ref('hr_attendance.group_hr_attendance'),ref('im_livechat.im_livechat_group_manager'),ref('documents.group_documents_manager'),ref('planning.group_planning_manager'),ref('approvals.group_approval_user'),ref('jbm_group_access_right_extended.group_crm_manager'),ref('ebs_lb_payroll.group_fos_payroll'),ref('hr_contract_custom.group_access_fusion_employee_contract')])]"/>
+        </record>
+
+
+        <record id="custom_group_shared_service_manager" model="res.groups">
+            <field name="name">Shared Services manager Role</field>
+        </record>
+        <record id="shared_services_manager" model="res.users.role">
+            <field name="name">Shared Services Manager</field>
+            <field name="group_id" eval="ref('custom_group_shared_service_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('utm.menu_link_tracker_root')),(4, ref('website.menu_website_configuration')),(4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4, ref('event.event_main_menu')),(4,ref('event.menu_event_event'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('hr_attendance.group_hr_attendance_manager'),ref('account.group_account_manager'),ref('stock.group_stock_manager'),ref('ebs_lb_payroll.group_fos_payroll'),ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('jbm_group_access_right_extended.group_payroll_outsourced'),ref('approvals.group_approval_manager'),ref('sales_team.group_sale_manager'),ref('base.group_partner_manager'), ref('im_livechat.im_livechat_group_manager'),ref('documents.group_documents_manager'),ref('hr_appraisal.group_hr_appraisal_manager'), ref('project.group_project_manager'),ref('survey.group_survey_manager'),ref('social.group_social_manager'),ref('planning.group_planning_user'), ref('hr_contract_custom.group_access_other_employee_contract'),ref('hr_contract.group_hr_contract_manager'),ref('hr_attendance.group_hr_attendance'),ref('purchase.group_purchase_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'), ref('hr_payroll.group_hr_payroll_manager')])]"/>
+        </record>
+
+        <record id="custom_group_self_service_user" model="res.groups">
+            <field name="name">Self Service User Role</field>
+        </record>
+        <record id="group_self_service_user_role" model="res.users.role">
+            <field name="name">Self Service User</field>
+            <field name="group_id" eval="ref('custom_group_self_service_user')"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('approvals.group_approval_user')])]"/>
+        </record>
+
+
+        <record id="custom_group_hr_employee_manager" model="res.groups">
+            <field name="name">HR Employee Role</field>
+        </record>
+        <record id="group_hr_employee_role" model="res.users.role">
+            <field name="name">HR Employee</field>
+            <field name="group_id" eval="ref('custom_group_hr_employee_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('social.menu_social_global'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('approvals.group_approval_manager'),ref('base.group_partner_manager'),ref('hr_attendance.group_hr_attendance_manager'),ref('im_livechat.im_livechat_group_manager'),ref('documents.group_documents_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('survey.group_survey_manager'),ref('hr_recruitment.group_hr_recruitment_manager'),ref('website.group_website_designer'),ref('planning.group_planning_manager'),ref('hr_holidays.group_hr_holidays_manager'),ref('sales_team.group_sale_salesman')])]"/>
+        </record>
+
+
+        <record id="custom_hr_user" model="res.groups">
+            <field name="name">HR User Role</field>
+        </record>
+        <record id="custom_hr_user_role" model="res.users.role">
+            <field name="name">HR User</field>
+            <field name="group_id" eval="ref('custom_hr_user')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('survey.menu_surveys')),(4,ref('fleet.menu_root')),(4,ref('hr_recruitment.menu_hr_recruitment_root')),(4,ref('ebs_fusion_contacts.contact_menu')),(4,ref('planning.planning_menu_root')),(4,ref('website.menu_website_configuration')),(4,ref('ebs_fusion_contacts.menu_companies')),(4,ref('ebs_fusion_contacts.menu_suppliers')),(4,ref('ebs_fusion_contacts.menu_clients_review')),(4,ref('ebs_fusion_contacts.res_partner_menu_clients')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('social.menu_social_global'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('fleet.fleet_group_user'),ref('hr_recruitment.group_hr_recruitment_user'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('approvals.group_approval_manager'),ref('base.group_partner_manager'),ref('hr_attendance.group_hr_attendance_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('hr_holidays.group_hr_holidays_manager')])]"/>
+        </record>
+
+        <record id="custom_hr_manager" model="res.groups">
+            <field name="name">HR Manager Role</field>
+        </record>
+        <record id="custom_hr_manager_role" model="res.users.role">
+            <field name="name">HR Manager</field>
+            <field name="group_id" eval="ref('custom_hr_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('stock.menu_stock_root')),(4,ref('survey.menu_surveys')),(4,ref('fleet.menu_root')),(4,ref('hr_recruitment.menu_hr_recruitment_root')),(4,ref('ebs_fusion_contacts.contact_menu')),(4,ref('planning.planning_menu_root')),(4,ref('website.menu_website_configuration')),(4,ref('ebs_fusion_contacts.menu_companies')),(4,ref('ebs_fusion_contacts.menu_clients_review')),(4,ref('ebs_fusion_contacts.res_partner_menu_clients')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('social.menu_social_global'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_manager'),ref('fleet.fleet_group_user'),ref('hr_recruitment.group_hr_recruitment_user'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('approvals.group_approval_manager'),ref('base.group_partner_manager'),ref('hr_attendance.group_hr_attendance_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('hr_holidays.group_hr_holidays_manager')])]"/>
+        </record>
+
+        <record id="custom_sales_manager_manager" model="res.groups">
+            <field name="name">Sales Manager Role</field>
+        </record>
+        <record id="group_sales_manager_role" model="res.users.role">
+            <field name="name">Sales Manager</field>
+            <field name="group_id" eval="ref('custom_sales_manager_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('jbm_group_access_right_extended.group_crm_manager'),ref('approvals.group_approval_manager'),ref('sales_team.group_sale_salesman'),ref('base.group_partner_manager'),ref('hr_attendance.group_hr_attendance'),ref('im_livechat.im_livechat_group_manager'),ref('documents.group_documents_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('project.group_project_manager'),ref('planning.group_planning_manager')])]"/>
+        </record>
+
+        <record id="custom_accounting_manager" model="res.groups">
+            <field name="name">Accounting Manager Role</field>
+        </record>
+
+        <record id="custom_accounting_manager_role" model="res.users.role">
+            <field name="name">Accounting Manager</field>
+            <field name="group_id" eval="ref('custom_accounting_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_user'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('sales_team.group_sale_salesman'),ref('purchase.group_purchase_user'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('hr_holidays.group_hr_holidays_user')])]"/>
+        </record>
+
+        <record id="custom_accounting_auditor_manager" model="res.groups">
+            <field name="name">Auditor Role</field>
+        </record>
+
+        <record id="custom_accounting_auditor_role" model="res.users.role">
+            <field name="name">Auditor</field>
+            <field name="group_id" eval="ref('custom_accounting_auditor_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_user'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('sales_team.group_sale_salesman'),ref('purchase.group_purchase_user'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager')])]"/>
+        </record>
+
+        <record id="custom_accountant_role_manager" model="res.groups">
+            <field name="name">Accountant Role</field>
+        </record>
+
+        <record id="accountant_role" model="res.users.role">
+            <field name="name">Accountant</field>
+            <field name="group_id" eval="ref('custom_accountant_role_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_user'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('sales_team.group_sale_salesman'),ref('purchase.group_purchase_user'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager'), ref('base.group_partner_manager')])]"/>
+        </record>
+
+        <record id="procurement_user_role" model="res.groups">
+            <field name="name">Procurement User Role</field>
+        </record>
+
+        <record id="jbm_procurement_user_role" model="res.users.role">
+            <field name="name">Procurement User</field>
+            <field name="group_id" eval="ref('procurement_user_role')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('account.menu_finance_configuration')),(4,ref('account.menu_finance_reports')),(4,ref('account.menu_finance_entries')),(4,ref('account.menu_board_journal_1')),(4,ref('hr_payroll.menu_hr_payslip_run')),(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('base.group_partner_manager'),ref('stock.group_stock_multi_locations'),ref('sales_team.group_sale_manager'),ref('purchase.group_purchase_manager'),ref('stock.group_stock_manager'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager')])]"/>
+        </record>
+
+        <record id="custom_procurement_manager" model="res.groups">
+            <field name="name">Procurement manager Role</field>
+        </record>
+
+        <record id="custom_procurement_manager_role" model="res.users.role">
+            <field name="name">Procurement manager</field>
+            <field name="group_id" eval="ref('custom_procurement_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('account.menu_finance_configuration')),(4,ref('account.menu_finance_reports')),(4,ref('account.menu_finance_entries')),(4,ref('account.menu_board_journal_1')),(4,ref('hr_payroll.menu_hr_payslip_run')),(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('base.group_partner_manager'),ref('stock.group_stock_multi_locations'),ref('sales_team.group_sale_manager'),ref('purchase.group_purchase_manager'),ref('stock.group_stock_manager'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager')])]"/>
+        </record>
+
+        <record id="custom_general_manager_representative" model="res.groups">
+            <field name="name">General manager Representative Role</field>
+        </record>
+
+        <record id="custom_general_manager_representative_role" model="res.users.role">
+            <field name="name">General manager Representative</field>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('utm.menu_link_tracker_root')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('crm.crm_menu_root')),(4,ref('purchase.menu_procurement_management_supplier_name')),(4,ref('account.menu_account_supplier')),(4,ref('ebs_fusion_contacts.menu_suppliers')),(4,ref('account.product_product_menu_purchasable')),(4,ref('account.product_product_menu_sellable')),(4,ref('approvals.approvals_menu_product')),(4,ref('purchase.menu_purchase_products')),(4,ref('sale.product_menu_catalog')),(4,ref('stock.menu_stock_inventory_control')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('hr_recruitment.menu_hr_recruitment_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="group_id" eval="ref('custom_general_manager_representative')"/>
+            <field name="implied_ids"
+                   eval="[(6, 0,[ref('stock.group_stock_user'),ref('hr.group_hr_manager'),ref('hr_recruitment.group_hr_recruitment_user'),ref('account.group_account_readonly'),ref('purchase.group_purchase_user'),ref('hr_payroll.group_hr_payroll_manager'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('approvals.group_approval_user'),ref('base.group_partner_manager'),ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('im_livechat.im_livechat_group_manager'), ref('documents.group_documents_manager'),ref('survey.group_survey_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('planning.group_planning_manager'), ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('sales_team.group_sale_salesman')]),ref('hr_holidays.group_hr_holidays_user')]"/>
+        </record>
+
+        <record id="custom_financial_manager" model="res.groups">
+            <field name="name">Financial Manager Role</field>
+        </record>
+
+        <record id="custom_financial_manager_role" model="res.users.role">
+            <field name="name">Financial Manager</field>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr.hr_menu_hr_reports')),(4,ref('hr.menu_hr_reporting_timesheet')),(4,ref('hr.menu_hr_department_kanban')),(4,ref('hr.menu_hr_employee_payroll')),(4,ref('utm.menu_link_tracker_root')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('crm.crm_menu_root')),(4,ref('purchase.menu_procurement_management_supplier_name')),(4,ref('account.menu_account_supplier')),(4,ref('ebs_fusion_contacts.menu_suppliers')),(4,ref('account.product_product_menu_purchasable')),(4,ref('account.product_product_menu_sellable')),(4,ref('approvals.approvals_menu_product')),(4,ref('purchase.menu_purchase_products')),(4,ref('sale.product_menu_catalog')),(4,ref('stock.menu_stock_inventory_control')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('hr_recruitment.menu_hr_recruitment_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="group_id" eval="ref('custom_financial_manager')"/>
+            <field name="implied_ids"
+                   eval="[(6, 0,[ref('hr.group_hr_manager'),ref('hr_recruitment.group_hr_recruitment_user'),ref('account.group_account_manager'),ref('purchase.group_purchase_user'),ref('hr_payroll.group_hr_payroll_manager'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('approvals.group_approval_user'),ref('base.group_partner_manager'),ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('im_livechat.im_livechat_group_manager'), ref('documents.group_documents_manager'),ref('survey.group_survey_manager'),ref('planning.group_planning_manager'), ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('sales_team.group_sale_salesman')])]"/>
+        </record>
+
+        <record id="custom_general_manager" model="res.groups">
+            <field name="name">General manager Role</field>
+        </record>
+
+        <record id="custom_general_manager_role" model="res.users.role">
+            <field name="name">General manager</field>
+            <field name="group_id" eval="ref('custom_general_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('utm.menu_link_tracker_root')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('crm.crm_menu_root')),(4,ref('purchase.menu_procurement_management_supplier_name')),(4,ref('account.menu_account_supplier')),(4,ref('ebs_fusion_contacts.menu_suppliers')),(4,ref('account.product_product_menu_purchasable')),(4,ref('account.product_product_menu_sellable')),(4,ref('approvals.approvals_menu_product')),(4,ref('purchase.menu_purchase_products')),(4,ref('sale.product_menu_catalog')),(4,ref('stock.menu_stock_inventory_control')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('hr_recruitment.menu_hr_recruitment_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0,[ref('stock.group_stock_user'),ref('hr.group_hr_manager'),ref('hr_recruitment.group_hr_recruitment_user'),ref('account.group_account_readonly'),ref('purchase.group_purchase_user'),ref('hr_payroll.group_hr_payroll_manager'),ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('approvals.group_approval_user'),ref('base.group_partner_manager'),ref('jbm_group_access_right_extended.custom_jbm_group_attendance_manager'),ref('im_livechat.im_livechat_group_manager'), ref('documents.group_documents_manager'),ref('survey.group_survey_manager'),ref('hr_appraisal.group_hr_appraisal_manager'),ref('planning.group_planning_manager'), ref('jbm_group_access_right_extended.group_timeOff_manager'),ref('sales_team.group_sale_salesman'),ref('hr_holidays.group_hr_holidays_user')])]"/>
+        </record>
+
+        <record id="custom_committee_user" model="res.groups">
+            <field name="name">Committee user Role</field>
+        </record>
+
+        <record id="custom_committee_user_role" model="res.users.role">
+            <field name="name">Committee user</field>
+            <field name="group_id" eval="ref('custom_committee_user')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_payroll.menu_hr_payslip_run')),(4,ref('account_accountant.menu_accounting')),(4,ref('planning.planning_menu_root')),(4,ref('contacts.menu_contacts')),(4,ref('ebs_fusion_contacts.contact_menu')),(4,ref('ebs_fusion_contacts.menu_suppliers')),(4,ref('ebs_fusion_contacts.menu_companies')),(4,ref('ebs_fusion_contacts.res_partner_menu_clients')),(4,ref('ebs_fusion_contacts.menu_clients_review')),(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager')])]"/>
+        </record>
+
+        <record id="custom_committee_leader" model="res.groups">
+            <field name="name">Committee Leader Role</field>
+        </record>
+
+        <record id="custom_committee_leader_role" model="res.users.role">
+            <field name="name">Committee Leader</field>
+            <field name="group_id" eval="ref('custom_committee_leader')"/>
+            <field name="menu_items_ids"
+                   eval="[(4,ref('hr_payroll.menu_hr_payslip_run')),(4,ref('account_accountant.menu_accounting')),(4,ref('planning.planning_menu_root')),(4,ref('contacts.menu_contacts')),(4,ref('ebs_fusion_contacts.contact_menu')),(4,ref('ebs_fusion_contacts.menu_suppliers')),(4,ref('ebs_fusion_contacts.menu_companies')),(4,ref('ebs_fusion_contacts.res_partner_menu_clients')),(4,ref('ebs_fusion_contacts.menu_clients_review')),(4,ref('hr_holidays.menu_hr_holidays_approvals')),(4,ref('hr_attendance.menu_hr_attendance_my_attendances')),(4,ref('hr_attendance.menu_hr_attendance_kiosk_no_user_mode')),(4,ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')),(4,ref('hr_payroll.menu_hr_payroll_employees_root')),(4,ref('hr_recruitment.menu_hr_job_position_config')),(4, ref('hr.menu_hr_root')),(4, ref('hr_contract.hr_menu_contract_history')),(4, ref('utm.menu_link_tracker_root')),(4,ref('event.menu_event_event')),(4,ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('hr_contract_custom.group_access_fusion_employee_contract'),ref('hr_contract_custom.group_access_other_employee_contract'),ref('ebs_lb_payroll.group_director_payroll_confirm'),ref('ebs_lb_payroll.group_finance_payroll_confirm'),ref('ebs_lb_payroll.group_payroll_hr'),ref('ebs_lb_payroll.group_fusion_payroll'),ref('ebs_lb_payroll.group_fos_payroll'),ref('ebs_fusion_hr_employee.group_access_client_employee'),ref('ebs_fusion_hr_employee.group_access_fusion_employee'),ref('ebs_fusion_hr_employee.group_access_other_employee'),ref('hr_attendance.group_hr_attendance'),ref('account.group_account_manager'),ref('hr.group_hr_manager'),ref('hr_payroll.group_hr_payroll_manager'),ref('jbm_group_access_right_extended.group_timeOff_manager')])]"/>
+        </record>
+
+        <record id="ir_rule_of_sale_order_for_read_only" model="ir.rule">
+            <field name="name">JBM read only sale order rule</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="domain_force">[('partner_id','!=',False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+        <record id="ir_rule_of_sale_order_for_read_only_test" model="ir.rule">
+            <field name="name">JBM read only sale order rule test</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="domain_force">[('partner_id','=',False)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+        <record id="jbm_read_only_purchase_order_custom_rule" model="ir.rule">
+            <field name="name">JBM read only purchase order rule</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="perm_read" eval="True"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+        <record id="jbm_read_only_purchase_order_custom_rule_1" model="ir.rule">
+            <field name="name">JBM read only purchase order rule1</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="domain_force">[('partner_id','=',False)]</field>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="perm_read" eval="False"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+        <!--        <record id="hr_attendance_rule_of_read_only" model="ir.rule">-->
+        <!--            <field name="name">Hr Attendance rule of read only</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id', '!=', False)]</field>-->
+        <!--            <field name="perm_read" eval="1"/>-->
+        <!--            <field name="perm_write" eval="0"/>-->
+        <!--            <field name="perm_create" eval="0"/>-->
+        <!--            <field name="perm_unlink" eval="0"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_committee_leader')),(4,ref('jbm_group_access_right_extended.custom_committee_user')),(4,ref('jbm_group_access_right_extended.procurement_user_role')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>-->
+        <!--        </record>-->
+        <!--        <record id="hr_attendance_rule_of_read_only_test" model="ir.rule">-->
+        <!--            <field name="name">Hr Attendance reverse rule of read only test</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id', '=', False)]</field>-->
+        <!--            <field name="perm_read" eval="0"/>-->
+        <!--            <field name="perm_write" eval="1"/>-->
+        <!--            <field name="perm_create" eval="1"/>-->
+        <!--            <field name="perm_unlink" eval="1"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_committee_leader')),(4,ref('jbm_group_access_right_extended.custom_committee_user')),(4,ref('jbm_group_access_right_extended.procurement_user_role')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>-->
+        <!--        </record>-->
+
+        <record id="jbm_rule_of_read_only_vendor_bill" model="ir.rule">
+            <field name="name">JBM read only vendor bill</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('move_type', '=', 'in_invoice')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_journal_entry" model="ir.rule">
+            <field name="name">JBM rule for journal entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('move_type', '=', 'entry')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_others_move_types" model="ir.rule">
+            <field name="name">JBM rule for Other move types</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('move_type', 'not in', ['entry','in_invoice'])]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_rule_for_only_and_his_child_approval_request" model="ir.rule">
+            <field name="name">JBM Record Rule For own and child approval request</field>
+            <field ref="approvals.model_approval_request" name="model_id"/>
+            <field name="domain_force">['|', '|', ('request_owner_id','=',user.id), ('request_owner_id.employee_ids',
+                'child_of', user.employee_ids.child_ids.ids) , ('approver_ids.user_id.id', '=', user.id)]
+            </field>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+            <field name="groups"
+                   eval="[
+                   (4,ref('jbm_group_access_right_extended.custom_hr_user')),
+                   (4,ref('jbm_group_access_right_extended.custom_committee_leader')),
+                   (4,ref('jbm_group_access_right_extended.custom_committee_user')),
+                   (4,ref('jbm_group_access_right_extended.custom_procurement_manager')),
+                   (4,ref('jbm_group_access_right_extended.procurement_user_role')),
+                   (4,ref('jbm_group_access_right_extended.custom_accounting_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+
+        </record>
+
+
+        <record id="jbm_rule_of_payslip_batch_for_write_and_read" model="ir.rule">
+            <field name="name">jbm rule of payslip batch for write and read</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip_run"/>
+            <field name="domain_force">[('name', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_payslip_batch_for_write_and_read" model="ir.rule">
+            <field name="name">jbm reverse rule of payslip batch for write and read</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip_run"/>
+            <field name="domain_force">[('name', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+
+        <record id="jbm_rule_of_payslip_batch_for_only_read" model="ir.rule">
+            <field name="name">jbm rule of payslip batch for only read</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip_run"/>
+            <field name="domain_force">[('name', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_payslip_batch_for_only_read" model="ir.rule">
+            <field name="name">jbm reverse rule of payslip batch for only read</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip_run"/>
+            <field name="domain_force">[('name', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager'))]"/>
+        </record>
+
+
+        <record id="jbm_rule_of_hr_payslip_for_read" model="ir.rule">
+            <field name="name">jbm rule of hr payslip for read</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="domain_force">[('employee_id', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_committee_leader')),(4,ref('jbm_group_access_right_extended.custom_committee_user')),(4,ref('jbm_group_access_right_extended.custom_procurement_manager')),(4,ref('jbm_group_access_right_extended.procurement_user_role')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_hr_payslip_for_read" model="ir.rule">
+            <field name="name">jbm reverse rule of hr payslip for read</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="domain_force">[('employee_id', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_committee_leader')),(4,ref('jbm_group_access_right_extended.custom_committee_user')),(4,ref('jbm_group_access_right_extended.custom_procurement_manager')),(4,ref('jbm_group_access_right_extended.procurement_user_role')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="see_all_payslips_rule" model="ir.rule">
+            <field name="name">See All Payslips Rule Manager</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager'))]"/>
+        </record>
+
+
+        <record id="jbm_rule_of_stock_picking_for_read" model="ir.rule">
+            <field name="name">jbm rule of stock picking for read</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="domain_force">[('name', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_stock_picking_for_read" model="ir.rule">
+            <field name="name">jbm reverse rule of stock picking for read</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="domain_force">[('name', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_product_template_for_read" model="ir.rule">
+            <field name="name">jbm rule of product template for read</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="domain_force">[('categ_id', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_product_template_for_read" model="ir.rule">
+            <field name="name">jbm reverse rule of product template for read</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="domain_force">[('categ_id', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+
+        <record id="jbm_rule_of_product_product_for_read" model="ir.rule">
+            <field name="name">jbm rule of product product for read</field>
+            <field name="model_id" ref="product.model_product_product"/>
+            <field name="domain_force">[('categ_id', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_product_product_for_read" model="ir.rule">
+            <field name="name">jbm reverse rule of product product for read</field>
+            <field name="model_id" ref="product.model_product_product"/>
+            <field name="domain_force">[('categ_id', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_account_payment_for_read_write" model="ir.rule">
+            <field name="name">jbm rule of account payment for read and write</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('move_id', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_account_payment_for_read_write" model="ir.rule">
+            <field name="name">jbm reverse rule of account payment for read and write</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('move_id', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_account_payment_for_read" model="ir.rule">
+            <field name="name">jbm rule of account payment for read</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('move_id', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_procurement_manager')),(4,ref('jbm_group_access_right_extended.procurement_user_role'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_account_payment_for_read" model="ir.rule">
+            <field name="name">jbm reverse rule of account payment for read</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('move_id', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_procurement_manager')),(4,ref('jbm_group_access_right_extended.procurement_user_role'))]"/>
+        </record>
+
+
+        <record id="rule_of_access_others_move_types" model="ir.rule">
+            <field name="name">JBM rule for access others move types</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('move_type', '!=', 'in_invoice')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager'))]"/>
+        </record>
+
+        <!--        <record id="rule_of_jbm_attendance_manager_only_read" model="ir.rule">-->
+        <!--            <field name="name">JBM Attendance Manager only read</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id.id', 'child_of', user.employee_id.id)]</field>-->
+        <!--            <field name="perm_read" eval="1"/>-->
+        <!--            <field name="perm_write" eval="0"/>-->
+        <!--            <field name="perm_create" eval="0"/>-->
+        <!--            <field name="perm_unlink" eval="0"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_procurement_manager'))]"/>-->
+        <!--        </record>-->
+
+
+        <!--        <record id="rule_reverse_of_jbm_attendance_manager_only_read" model="ir.rule">-->
+        <!--            <field name="name">Reveres rule of JBM Attendance Manager only read</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id', '=', False)]</field>-->
+        <!--            <field name="perm_read" eval="1"/>-->
+        <!--            <field name="perm_write" eval="1"/>-->
+        <!--            <field name="perm_create" eval="1"/>-->
+        <!--            <field name="perm_unlink" eval="1"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),(4,ref('jbm_group_access_right_extended.custom_procurement_manager'))]"/>-->
+        <!--        </record>-->
+
+        <record id="ir_rule_of_sale_order_for_read_and_write" model="ir.rule">
+            <field name="name">JBM sale order rule for read and write</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="domain_force">[('partner_id','!=',False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+        <record id="jbm_reveres_rule_of_sale_order_for_read_and_write" model="ir.rule">
+            <field name="name">JBM reverse rule of sale order read and write</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="domain_force">[('partner_id','=',False)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+        <record id="ir_rule_of_purchase_order_for_read_and_write" model="ir.rule">
+            <field name="name">JBM purchase order rule for read and write</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+        <record id="jbm_reveres_rule_of_purchase_order_for_read_and_write" model="ir.rule">
+            <field name="name">JBM reverse rule of purchase order read and write</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="domain_force">[('partner_id','=',False)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+
+        <record id="jbm_rule_of_read_and_write_vendor_bill" model="ir.rule">
+            <field name="name">JBM rule vendor bill for read and write</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('move_type', '=', 'in_invoice')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_read_only_journal_entry" model="ir.rule">
+            <field name="name">JBM rule journal entry only read</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('move_type', '=', 'entry')]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+
+        <record id="jbm_rule_of_create_and_read_approval_request" model="ir.rule">
+            <field name="name">JBM rule of create and read approval request</field>
+            <field name="model_id" ref="approvals.model_approval_request"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+        <record id="jbm_reverse_rule_of_create_and_read_approval_request" model="ir.rule">
+            <field name="name">JBM reverse rule of create and read approval request</field>
+            <field name="model_id" ref="approvals.model_approval_request"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_read_only_job" model="ir.rule">
+            <field name="name">JBM rule of read only job</field>
+            <field name="model_id" ref="hr.model_hr_job"/>
+            <field name="domain_force">[('state','=',False)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+        <record id="jbm_rule_of_read_only_contract" model="ir.rule">
+            <field name="name">JBM rule of read only contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[('employee_id.employee_type','!=',False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+
+        <record id="jbm_reverse_rule_of_read_only_contract" model="ir.rule">
+            <field name="name">JBM reverse rule of read only contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">[('employee_id.employee_type','=',False)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+
+        <record id="rule_stock_picking_for_read_write" model="ir.rule">
+            <field name="name">rule of stock picking for read and write</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="domain_force">[('name', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+        <record id="reverse_rule_stock_picking_for_read_write" model="ir.rule">
+            <field name="name">reverse rule of stock picking for read and write</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="domain_force">[('name', '=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))]"/>
+        </record>
+
+
+        <record id="rule_budget_for_read_write" model="ir.rule">
+            <field name="name">rule of budget for read and write</field>
+            <field name="model_id" ref="account_budget.model_crossovered_budget"/>
+            <field name="domain_force">[('name', '!=', False)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager'))]"/>
+        </record>
+
+        <record id="reverse_rule_budget_for_read_write" model="ir.rule">
+            <field name="name">reverse rule of budget for read and write</field>
+            <field name="model_id" ref="account_budget.model_crossovered_budget"/>
+            <field name="domain_force">[('name', '=', False)]</field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_financial_manager'))]"/>
+        </record>
+
+
+        <!--        <record id="hr_attendance_rule_of_read_and_write" model="ir.rule">-->
+        <!--            <field name="name">Hr Attendance rule of read and write</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id', '!=', False)]</field>-->
+        <!--            <field name="perm_read" eval="1"/>-->
+        <!--            <field name="perm_write" eval="1"/>-->
+        <!--            <field name="perm_create" eval="0"/>-->
+        <!--            <field name="perm_unlink" eval="0"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_committee_leader')),(4,ref('jbm_group_access_right_extended.custom_committee_user')),(4,ref('jbm_group_access_right_extended.procurement_user_role')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>-->
+        <!--        </record>-->
+        <!--        <record id="reverse_rule_of_attendance_read_and_write" model="ir.rule">-->
+        <!--            <field name="name">reverse rule of attendance read and write</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[('employee_id', '=', False)]</field>-->
+        <!--            <field name="perm_read" eval="0"/>-->
+        <!--            <field name="perm_write" eval="1"/>-->
+        <!--            <field name="perm_create" eval="1"/>-->
+        <!--            <field name="perm_unlink" eval="1"/>-->
+        <!--            <field name="groups"-->
+        <!--                   eval="[(4,ref('jbm_group_access_right_extended.custom_general_manager')),(4,ref('jbm_group_access_right_extended.custom_financial_manager')),(4,ref('jbm_group_access_right_extended.custom_committee_leader')),(4,ref('jbm_group_access_right_extended.custom_committee_user')),(4,ref('jbm_group_access_right_extended.procurement_user_role')),(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),(4,ref('jbm_group_access_right_extended.custom_accountant_role_manager')),(4,ref('jbm_group_access_right_extended.custom_accounting_auditor_manager'))]"/>-->
+        <!--        </record>-->
+
+
+        <!--        <record id="manager_user_see_all_attenance_rule" model="ir.rule">-->
+        <!--            <field name="name">Hr Attendance See All Attendance Manager Rule</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">[(1, '=', 1)]</field>-->
+        <!--            <field name="perm_read" eval="True"/>-->
+        <!--            <field name="perm_create" eval="False"/>-->
+        <!--            <field name="perm_write" eval="False"/>-->
+        <!--            <field name="perm_unlink" eval="False"/>-->
+        <!--            <field name="groups" eval="[-->
+        <!--            (4,ref('jbm_group_access_right_extended.custom_accounting_manager')),-->
+        <!--            (4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),-->
+        <!--            (4,ref('jbm_group_access_right_extended.custom_general_manager')),-->
+        <!--            (4,ref('jbm_group_access_right_extended.custom_general_manager_representative'))-->
+        <!--            ]"/>-->
+        <!--        </record>-->
+
+        <!--        <record id="base_user_see_own_attenance_rule" model="ir.rule">-->
+        <!--            <field name="name">Hr Attendance See Own Attendance User Rule</field>-->
+        <!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+        <!--            <field name="domain_force">['|',-->
+        <!--                ('employee_id.parent_id.user_id','=',user.id),-->
+        <!--                ('employee_id.user_id', '=', user.id)]-->
+        <!--            </field>-->
+        <!--            <field name="perm_read" eval="True"/>-->
+        <!--            <field name="perm_create" eval="False"/>-->
+        <!--            <field name="perm_write" eval="False"/>-->
+        <!--            <field name="perm_unlink" eval="False"/>-->
+        <!--            <field name="groups" eval="[(4,ref('base.group_user'))]"/>-->
+        <!--        </record>-->
+        <!--     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   Employee >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   -->
+        <record id="jbm_hr_employee_users" model="ir.rule">
+            <field name="name">JBM Employee Users</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+        <record id="jbm_hr_employee_manager_users" model="ir.rule">
+            <field name="name">JBM Employee Manager only create and read</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[('id','child_of',user.employee_id.child_ids.ids)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+
+        <record id="rule_of_jbm_employee_managers_read_write" model="ir.rule">
+            <field name="name">JBM Employee Manager read and write</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[(1 , '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_general_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),
+                   (4,ref('jbm_group_access_right_extended.custom_hr_user')),
+                   ]"/>
+        </record>
+
+
+        <record id="rule_of_jbm_employee_managers_all_access" model="ir.rule">
+            <field name="name">JBM Employee Manager All Access</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[(1 , '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_hr_manager'))]"/>
+        </record>
+
+        <!--     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   Leaves >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   -->
+        <record id="jbm_hr_leave_users" model="ir.rule">
+            <field name="name">JBM leave Users</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+        <record id="jbm_hr_leave_manager_users" model="ir.rule">
+            <field name="name">JBM leave Manager only create and read</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="domain_force">
+                ['|',('employee_id','child_of',user.employee_ids.child_ids.ids),('employee_ids','child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+
+        <record id="rule_of_jbm_leave_managers_read_write" model="ir.rule">
+            <field name="name">JBM leave Manager read and write</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="domain_force">[(1 , '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_accounting_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_general_manager')),
+                   (4,ref('jbm_group_access_right_extended.custom_general_manager_representative')),
+                   (4,ref('jbm_group_access_right_extended.custom_hr_user')),
+                   ]"/>
+        </record>
+
+
+        <record id="rule_of_jbm_leave_managers_all_access" model="ir.rule">
+            <field name="name">JBM leave Manager All Access</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="domain_force">[(1 , '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups"
+                   eval="[(4,ref('jbm_group_access_right_extended.custom_group_shared_service_manager')),(4,ref('jbm_group_access_right_extended.custom_hr_manager'))]"/>
+        </record>
+
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'hr_holidays'),'|', '|', '|', '|', '|', '|', '|', ('name', '=', 'hr_leave_rule_manager'), ('name', '=', 'hr_leave_rule_officer_update'), ('name', '=', 'hr_leave_rule_user_read'), ('name', '=', 'hr_leave_rule_responsible_update'), ('name', '=', 'hr_leave_rule_responsible_read'), ('name', '=', 'hr_leave_rule_employee_unlink'), ('name', '=', 'hr_leave_rule_employee_update'), ('name', '=', 'hr_leave_rule_employee')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+        <record id="hr_holidays.hr_leave_rule_manager" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_officer_update" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_user_read" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_responsible_update" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_responsible_read" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_employee_unlink" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_employee_update" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="hr_holidays.hr_leave_rule_employee" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'hr_holidays'),'|', '|', '|', '|', '|', '|', '|', ('name', '=', 'hr_leave_rule_manager'), ('name', '=', 'hr_leave_rule_officer_update'), ('name', '=', 'hr_leave_rule_user_read'), ('name', '=', 'hr_leave_rule_responsible_update'), ('name', '=', 'hr_leave_rule_responsible_read'), ('name', '=', 'hr_leave_rule_employee_unlink'), ('name', '=', 'hr_leave_rule_employee_update'), ('name', '=', 'hr_leave_rule_employee')]"/>
+            </function>
+            <value eval="{'noupdate': True}"/>
+        </function>
+
+
+    </data>
+</odoo>

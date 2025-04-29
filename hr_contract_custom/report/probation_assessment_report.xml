@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="probation_assessment"
+                model="trial.period"
+                string="Probation Assessment"
+                report_type="qweb-pdf"
+                name="hr_contract_custom.probation_assessment_report"
+                file="hr_contract_custom.probation_assessment_report"
+                print_report_name="'Probation Assessment - '+(object.related_employee.name if object.related_employee.name else '')"
+                attachment="'Probation Assessment - '+(object.related_employee.name if object.related_employee.name else '')+'.pdf'"
+
+
+        />
+
+        <template id="probation_assessment_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.report_probation_assessment_document"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_probation_assessment_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <br/>
+                    <br/>
+                    <div id="title">
+                        <h2>
+                            <span style="font-weight: 800;">Probationary Period Assessment Form for</span>
+                            <!--                        <span t-if="o.name != '/'" t-field="o.name"/>-->
+                        </h2>
+                    </div>
+                    <br/>
+                    <div id="employee_information" class="row m32" style="background: lightgray; font-weight: 800;">
+                        <p style="margin-left: 5px">Employee Information</p>
+                    </div>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Last Name</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.lastname"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>First Name</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.firstname"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>System ID</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.system_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Title</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.contract_id.job_title.name"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Line Manager 1</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.parent_id.name"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Line Manager 2</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.parent_id.parent_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Joining Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_employee.contract_id.date_start"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Department</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.related_employee.department_id.complete_name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div id="lm1_information" class="row m32" style="background: lightgray; font-weight: 800;">
+                        <p style="margin-left: 5px">LM1 End of Probation Period Assessment</p>
+                    </div>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Does the employee have a positive attitude towards his/her work and
+                                            team/project members?
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.l1_question_1"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Do you have any concerns regarding the Employee's performance in his/her
+                                            role so far?
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.l1_question_2"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div id="lm2_information" class="row m32" style="background: lightgray; font-weight: 800;">
+                        <p style="margin-left: 5px">LM2 End of Probation Period Recommendations</p>
+                    </div>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Please select your option to confirm / extension / termination of an
+                                            employee based on the employee's probation period performance.
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.l2_decision == 'confirm'">
+                                            <span>Confirm Employment</span>
+                                        </t>
+                                        <t t-if="o.l2_decision == 'extend'">
+                                            <span>Extend Probation</span>
+                                        </t>
+                                        <t t-if="o.l2_decision == 'terminate'">
+                                            <span>Terminate Employee</span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Additional Comments or Training Recommendations
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.l2_justification"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div id="lm2_information" class="row m32" style="background: lightgray; font-weight: 800;">
+                        <p style="margin-left: 5px">Employee relations confirmation on Probation</p>
+                    </div>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Employee Master Data Updated</span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Employee Probation From Generated</span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div id="lm2_information" class="row m32" style="background: lightgray; font-weight: 800;">
+                        <p style="margin-left: 5px">Overall Comments</p>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dynamic_approval_role_internal,access.dynamic.approval.role.internal,base_dynamic_approval_role.model_dynamic_approval_role,base.group_user,1,0,0,0
+access_dynamic_approval_role_user,access.dynamic.approval.role.user,base_dynamic_approval_role.model_dynamic_approval_role,base_dynamic_approval.dynamic_approval_admin_group,1,1,1,1
+access_role_distribution,access_role_distribution,base_dynamic_approval_role.model_role_distribution,,1,1,1,1
+access_role_distribution_project,access_role_distribution_project,base_dynamic_approval_role.model_project_project,,1,1,1,1
+access_role_distribution_line,access_role_distribution_line,base_dynamic_approval_role.model_role_distribution_line,,1,1,1,1

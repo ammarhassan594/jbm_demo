@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="contact_relation_type_tree" model="ir.ui.view">
+            <field name="name">Contact Relation Type Tree</field>
+            <field name="model">contact.relation.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <!--window -->
+        <record id="contact_relation_type_window" model="ir.actions.act_window">
+            <field name="name">Contact Relation Type</field>
+            <field name="res_model">contact.relation.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!--menu -->
+        <menuitem
+                id="contact_relation_type_view_menu"
+                name="Contact Relation Types"
+                action="contact_relation_type_window"
+                parent="contacts.res_partner_menu_config"
+                sequence="2"
+        />
+
+
+    </data>
+</odoo>

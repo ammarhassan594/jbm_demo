@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="jbm_view_account_payment_form_inherit" model="ir.ui.view">
+            <field name="name">jbm.view.account.payment.form.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="ebs_jbm_account_custom.view_account_payment_form_inherit_custom"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='case_number']" position="after">
+                    <field name="purpose_of_transfer"
+                           attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

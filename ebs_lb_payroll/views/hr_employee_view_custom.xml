@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+
+
+        <record id="custom_hr_employee_view" model="ir.ui.view">
+            <field name="name">custom_hr_employee_view</field>
+            <field name="model">hr.employee</field>
+            <field name="priority">32</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button id="hr_eos_amount" class="oe_stat_button" attrs="{'invisible': [('hr_presence_state', '!=', 'present')]}" icon="fa-money">
+                        <div class="o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="eos_amount"/>
+                            </span>
+                            <span class="o_stat_text">End of Service Amount</span>
+                        </div>
+                    </button>
+                </xpath>
+                <page name="hr_settings" position="after">
+                    <page name="end_of_service" string="End of Service" groups="hr_contract_custom.group_access_fusion_employee_contract"
+                          attrs="{'invisible':[('employee_type','!=','fusion_employee')]}">
+                        <group>
+                            <group>
+                                <field name="eos_amount"/>
+                                <field name="eos_taken_amount" string="Partial Gratuity"/>
+                            </group>
+                            <field name="eos_ids" readonly="1"/>
+                        </group>
+                    </page>
+                    <page name="end_of_service" string="End of Service" groups="hr_contract_custom.group_access_other_employee_contract"
+                          attrs="{'invisible':[('employee_type','!=','fos_employee')]}">
+                        <group>
+                            <group>
+                                <field name="eos_amount"/>
+                                <field name="eos_taken_amount" string="Partial Gratuity"/>
+                            </group>
+                            <field name="eos_ids" readonly="1"/>
+                        </group>
+                    </page>
+<!--                    <page name="salary_info" attrs="{'invisible':[('employee_type','!=','fusion_employee')]}"-->
+<!--                          string="Salary Information" groups="hr_contract_custom.group_access_fusion_employee_contract">-->
+<!--                        <group string="Total Figures">-->
+<!--                            <group>-->
+<!--                                <field name="wage_type"/>-->
+<!--                                <field name="emp_wage"/>-->
+<!--                                <field name="emp_accommodation"/>-->
+<!--                                <field name="emp_transport_allowance"/>-->
+<!--                                <field name="emp_living_allowance"/>-->
+<!--                                <field name="emp_other_allowance"/>-->
+<!--                                <field name="emp_food_allowance"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="emp_package"/>-->
+<!--                                <field name="emp_maximum_ticket_allowance"/>-->
+<!--                                <field name="emp_eligible_after"/>-->
+<!--                                <field name="emp_eligible_every_year"/>-->
+<!--                                <field name="private_medical_insurance"/>-->
+<!--                                <field name="air_ticket_deposit"/>-->
+<!--                                <field name="workmen_compensation"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                    </page>-->
+<!--                    <page name="salary_info" attrs="{'invisible':[('employee_type','!=','fos_employee')]}"-->
+<!--                          string="Salary Information" groups="hr_contract_custom.group_access_other_employee_contract">-->
+<!--                        <group string="Total Figures">-->
+<!--                            <group>-->
+<!--                                <field name="wage_type"/>-->
+<!--                                <field name="emp_wage"/>-->
+<!--                                <field name="emp_accommodation"/>-->
+<!--                                <field name="emp_transport_allowance"/>-->
+<!--                                <field name="emp_living_allowance"/>-->
+<!--                                <field name="emp_other_allowance"/>-->
+<!--                                <field name="emp_food_allowance"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="emp_package"/>-->
+<!--                                <field name="emp_maximum_ticket_allowance"/>-->
+<!--                                <field name="emp_eligible_after"/>-->
+<!--                                <field name="emp_eligible_every_year"/>-->
+<!--                                <field name="private_medical_insurance"/>-->
+<!--                                <field name="air_ticket_deposit"/>-->
+<!--                                <field name="workmen_compensation"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                    </page>-->
+                </page>
+
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_budget_preparation","budget.preparation","model_budget_preparation",,1,1,1,1
+"access_budget_preparation_line","budget.preparation.line","model_budget_preparation_line",,1,1,1,1

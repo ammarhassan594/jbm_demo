@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="outsourced_employee_report_wizard_form" model="ir.ui.view">
+        <field name="name">outsourced.employee.report.wizard.form</field>
+        <field name="model">outsourced.employee.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="report_template" required="1"/>
+                    <field name="binary_data" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="button_confirm" string="Confirm" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="outsourced_employee_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Outsourced Employee Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">outsourced.employee.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="outsourced_employee_report_wizard_menu" name="Outsourced Employee Report"
+              parent="hr.hr_menu_hr_reports"
+              action="ebs_fusion_hr_employee.outsourced_employee_report_wizard_action" sequence="5"/>
+
+</odoo>

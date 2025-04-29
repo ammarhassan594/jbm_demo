@@ -1,0 +1,22 @@
+<odoo>
+    <record id="send_notification_to_applicant" model="mail.template">
+        <field name="name">Send notification to applicant</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="email_from"></field>
+        <field name="email_to"></field>
+        <field name="subject">Job Application</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hello ${object.name},
+                    <br/>
+                    <br/>
+                    Application is created
+                    <br/>
+                    If you have queries feel free to ask.
+                </p>
+            </div>
+        </field>
+        <field name="auto_delete">0</field>
+    </record>
+</odoo>

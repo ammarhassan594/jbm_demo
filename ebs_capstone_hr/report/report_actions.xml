@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+
+<!--        <record id="working_certificate_action" model="ir.actions.server">-->
+<!--            <field name="name">Working Certificate</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--&lt;!&ndash;                record.report_type = 'working_certificate'&ndash;&gt;-->
+<!--                action = record.print_letters()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="letter_to_embassy_action" model="ir.actions.server">-->
+<!--            <field name="name">Letter To Embassy</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.letter_to_embassy()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="warning_letter_action" model="ir.actions.server">-->
+<!--            <field name="name">Warning Letter</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.warning_letter()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="employement_and_salary_certificate_action" model="ir.actions.server">-->
+<!--            <field name="name">Employment And Salary Certificate</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.employement_and_salary_certificate()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="open_bank_account_action" model="ir.actions.server">-->
+<!--            <field name="name">Open Bank Account</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.open_bank_account()-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+<!--        <record id="memo_template_action" model="ir.actions.server">-->
+<!--            <field name="name">Memo</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.memo_template()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="liquor_permit_action" model="ir.actions.server">-->
+<!--            <field name="name">Liquor Permit</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.liquor_permit()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="company_assets_action" model="ir.actions.server">-->
+<!--            <field name="name">Company Assets</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">form</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = record.company_assets()-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+    </data>
+
+</odoo>

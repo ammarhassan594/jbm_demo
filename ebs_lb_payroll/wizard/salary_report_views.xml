@@ -1,0 +1,44 @@
+<odoo>
+    <record id="salary_report_form" model="ir.ui.view">
+        <field name="name">salary.report.form</field>
+        <field name="model">ebs.salary.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                        <field name="company_id"/>
+                    </group>
+                    <group>
+                        <field name="employee_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="company_id"/>
+                                <field name="department_id"/>
+                                <field name="job_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="file" filename="name" string="Download Report" attrs="{'invisible': [('file','=',False)]}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight"  attrs="{'invisible': ['!',('file','=',False)]}"/>
+                    <button special="cancel" string="Cancel" icon="fa-times-circle" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="salary_report_wizard" model="ir.actions.act_window">
+        <field name="name">Salary Report</field>
+        <field name="res_model">ebs.salary.report.wizard</field>
+<!--			<field name="view_type">form</field>-->
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="salary_report_form"/>
+    </record>
+</odoo>

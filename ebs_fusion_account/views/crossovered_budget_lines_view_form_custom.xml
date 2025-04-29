@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+
+        <record id="budget_lines_view_tree" model="ir.ui.view">
+            <field name="name">budget.lines.view.tree</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="is_above_budget and planned_amount &gt; 0"
+                      decoration-danger="is_above_budget and planned_amount &lt; 0">
+
+                    <field name="crossovered_budget_id"/>
+                    <field name="general_budget_id"/>
+                    <field name="budgetary_position_type"/>
+                    <field name="account_ids" widget="many2many_tags" optional="show"/>
+                    <field name="analytic_account_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+
+<!--                    <field name="paid_date" optional="hide"/>-->
+                    <field name="currency_id" invisible="1"/>
+                    <field name="planned_amount" sum="Planned Amount"/>
+                    <field name="practical_amount" sum="Practical Amount"/>
+                    <field name="amount_of_reservation" sum="Reservation Amount"/>
+                    <!--<field name="exceed_margin" optional="show"/>
+                    <field name="exceed_margin_finance" optional="show"/>-->
+                    <field name="percentage" widget="percentage" optional="show"/>
+                    <field name="type_of_budget"/>
+
+                    <button type="object" name="action_open_budget_entries" string="Entries..."
+                            icon="fa-arrow-circle-o-right"/>
+                    <field name="is_above_budget" invisible="1"/>
+                    <field name="crossovered_budget_state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="budget_lines_view_form" model="ir.ui.view">
+            <field name="name">budget.lines.view.form</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="crossovered_budget_id"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="general_budget_id"/>
+                                <field name="account_ids" widget="many2many_tags" />
+                                <field name="planned_amount"/>
+                                <field name="practical_amount"/>
+                                <field name="amount_of_reservation"/>
+                                <!--<field name="exceed_margin"/>
+                                <field name="exceed_margin_finance"/>-->
+                                <field name="analytic_account_id"
+                                       groups="analytic.group_analytic_accounting"/>
+                            </group>
+                            <group>
+                                <label for="date_from" string="Period"/>
+                                <div>
+                                    <field name="date_from" class="oe_inline"/>
+                                    -
+                                    <field name="date_to" class="oe_inline"/>
+                                </div>
+                                <field name="paid_date" optional="hide" groups="base.group_no_one"/>
+                                <field name="budgetary_position_type"/>
+                                <field name="type_of_budget"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="budget_lines_view_search" model="ir.ui.view">
+            <field name="name">budget.lines.view.search</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='crossovered_budget_id']" position="after">
+                    <field name="general_budget_id"/>
+                </xpath>
+                 <xpath expr="//search/filter[@name='filter_not_cancelled']" position="after">
+
+                     <filter name="budget_draft" string="Draft Plan"
+                             domain="[('crossovered_budget_state','=','draft')]"/>
+
+                     <filter name="budget_cancel" string="Cancelled Plan"
+                             domain="[('crossovered_budget_state','=','cancel')]"/>
+
+                     <filter name="budget_confirm" string="Confirmed Plan"
+                             domain="[('crossovered_budget_state','=','confirm')]"/>
+
+                     <filter name="budget_validate" string="Validated Plan"
+                             domain="[('crossovered_budget_state','=','validate')]"/>
+
+                     <filter name="budget_done" string="Done Plan"
+                             domain="[('crossovered_budget_state','=','done')]"/>
+
+
+
+                     <separator />
+
+                     <filter name="remove_zero_amount" string="Remove Zero Amounts"
+                             domain="[('planned_amount','!=',0.0)]"/>
+                     <separator />
+                     <filter name="remove_zero_amount_paid" string="Remove Zero Paid Amounts"
+                             />
+                </xpath>
+
+
+
+                <xpath expr="//search/filter[@name='filter_not_cancelled']" position="replace">
+
+                </xpath>
+                <xpath expr="//search/group/filter[@name='group_crossevered_budgdet_id']" position="after">
+                    <filter string="Analytic Account" name="analytic_account"
+                                context="{'group_by': 'analytic_account_id'}"/>
+                        <filter string="General Budget" name="general_budget"
+                                context="{'group_by': 'general_budget_id'}"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record id='custom_budget_lines_action_view' model='ir.actions.act_window'>
+            <field name="name">Budget Lines</field>
+            <field name="res_model">crossovered.budget.lines</field>
+            <field name="context">{
+                'search_default_remove_zero_amount_paid':1,
+                'search_default_budget_validate':1}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        account.menu_finance_entries_management-->
+<!--        61-->
+
+        <menuitem id="custom_budget_lines_menu"
+            name="Budget Lines"
+            parent="account.menu_finance_entries_management"
+            action="ebs_fusion_account.custom_budget_lines_action_view"
+            sequence="61"/>
+
+    </data>
+</odoo>
+
+

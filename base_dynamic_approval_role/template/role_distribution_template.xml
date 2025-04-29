@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="role_distribution_template">
+        <group>
+            <field name="role_distribution_id" options="{'no_create':True,'no_edit':True,'no_open':True}"
+            groups="hr.group_hr_user, hr_holidays.group_hr_holidays_user"
+             invisible="1"/>
+        </group>
+    </template>
+
+</odoo>

@@ -1,0 +1,407 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * matco_loan_management
+#
+# Translators:
+# Mervat Mosaad, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 02:07+0000\n"
+"PO-Revision-Date: 2016-12-17 02:07+0000\n"
+"Last-Translator: SaFi J. <safi2266@gmail.com>, 2016\n"
+"Language-Team: Arabic (https://www.transifex.com/oca/teams/23907/ar/)\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__loan_type
+msgid "Loan Type"
+msgstr "نوع القرض"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__date
+msgid "Date"
+msgstr "التاريخ"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__department_id
+msgid "Department"
+msgstr "القسم"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__job_position
+msgid "Job Position"
+msgstr "الوظيفه"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__loan_amount
+msgid "Loan Amount"
+msgstr "قيمه القرض"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__paid_amount
+msgid "Payable Amount"
+msgstr "المبلغ المستحق"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__installment
+msgid "No Of Installmentst"
+msgstr "عدد الأقساط"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__payment_date
+msgid "Installment Start Date"
+msgstr "تاريخ بدء التقسيط"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__first_paid_amount
+msgid "First Paid Amount"
+msgstr "المبلغ المدفوع لأول مرة"
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Installments"
+msgstr "الدفعات"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_line__date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_line__paid
+msgid "Paid"
+msgstr "تم الدفع؟"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_line__amount
+msgid "Amount"
+msgstr "القيمه"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__total_amount
+msgid "Total Amount"
+msgstr "اجمالي القيمه"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__total_paid_amount
+msgid "Total Paid Amount"
+msgstr "اجمالي القيمه المدفوعه"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__balance_amount
+msgid "Balance Amount"
+msgstr "القيمه المتبقيه"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__balance_amount
+msgid "Balance Amount"
+msgstr "القيمه المتبقيه"
+
+
+#. module: matco_loan_management
+#: model:ir.actions.act_window,name:matco_loan_management.act_hr_employee_loan_request
+#: model:ir.actions.act_window,name:matco_loan_management.action_hr_loan_request
+#: model:ir.ui.menu,name:matco_loan_management.menu_hr_loan_request
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.view_loan_request_search_form
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_view_kanban
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_tree_view
+msgid "Request for Loan"
+msgstr "طلب قرض"
+
+
+#. module: matco_loan_management
+#: model:ir.ui.menu,name:matco_loan_management.menu_base_hr_loan_request
+msgid "Loan"
+msgstr "القرض"
+
+#. module: matco_loan_management
+#: model:ir.ui.menu,name:matco_loan_management.menu_hr_loans_and_advances
+msgid "Loans &amp; Advances"
+msgstr "القروض والسلف"
+
+
+#. module: matco_loan_management
+#: model:ir.ui.menu,name:matco_loan_management.menu_hr_loan_type
+msgid "Loan Type"
+msgstr "نوع القرض"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__waiting_approval_1
+msgid "Submitted"
+msgstr "انتظار"
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__first_approve
+msgid "First Approved"
+msgstr "الموافقة الأولى"
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__approve
+msgid "Second Approved"
+msgstr "الموافقة الثانيه"
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__paid
+msgid "Paid"
+msgstr "تم الدفع"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__settle
+msgid "Settled"
+msgstr "تم التسويه"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__refuse
+msgid "Refused"
+msgstr "رفض"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan__state__cancel
+msgid "Canceled"
+msgstr "اغلاق"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Compute Installment"
+msgstr "حساب الدفعات"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Submit"
+msgstr "ارسل"
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Set To Draft"
+msgstr "ارجاع الي مسوده"
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "First Approve"
+msgstr "موافقه اولي"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Second Approve"
+msgstr "موافقه ثانيه"
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Paid"
+msgstr "ادفع"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Refuse"
+msgstr "ارفض"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Cancel"
+msgstr "اغلق"
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Loan Settle"
+msgstr "تسويه القرض"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_form_view
+msgid "Loan Settled"
+msgstr "تم تسويه القرض"
+
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_tree_view
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__name
+msgid "Loan Name"
+msgstr "اسم القرض"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__state
+msgid "State"
+msgstr "الحاله"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan__payment_date_of_loan
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: matco_loan_management
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_type_tree_view
+#: model_terms:ir.ui.view,arch_db:matco_loan_management.hr_loan_type_form_view
+#: model:ir.actions.act_window,name:matco_loan_management.action_hr_loan_type
+msgid "Loan Type"
+msgstr "نوع القرض"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__name
+msgid "Loan Type Name"
+msgstr "اسم نوع القرض"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__purpose_code
+msgid "Purpose Code"
+msgstr "الكود"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__sponsor_ids
+msgid "Sponsorship"
+msgstr "الرعاة"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__allowed_for
+msgid "Allowed For"
+msgstr "مسموح ل"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__num_of_installments
+msgid "(Qatar) Numbers of Installments"
+msgstr "عدد الاقساط (قطري)"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__non_qatar_num_of_installments
+msgid "(Non Qatar) Numbers of Installments"
+msgstr "عدد الاقساط (للغير قطري)"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__marriage_loan
+msgid "Marriage Loan"
+msgstr "قرض زواج"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__car_loan
+msgid "Car Loan"
+msgstr "قرض سياره"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__personal_loan
+msgid "Personal Loan"
+msgstr "قرض شخصي"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__good_will_loan
+msgid "Good Will Loan"
+msgstr "قرض حسن النية"
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__years_to_pass
+msgid "Years To Pass"
+msgstr "عدد السنوات لامكانيه طلب قرض جديد"
+
+
+#. module: matco_loan_management
+#: code:addons/matco_loan_management/models/hr_loan.py:0
+#, python-format
+msgid "Amount must be less than %s"
+msgstr "يجب أن يكون المبلغ أقل من"
+
+#. module: matco_loan_management
+#: code:addons/matco_loan_management/models/hr_loan_type.py:0
+#, python-format
+msgid "Amount should be greater than zero"
+msgstr "يجب أن يكون المبلغ أكبر من الصفر"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan_type__loan_amount_configuration__max_amount
+msgid "Max Amount"
+msgstr "الحد الاقصى للمبلغ"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__multiplier_amount
+msgid "Multiplier Amount"
+msgstr "المبلغ المضاف"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields,field_description:matco_loan_management.field_hr_loan_type__loan_amount_configuration
+msgid "Amount Configuration"
+msgstr "اختيار حسبه المبلغ"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan_type__loan_amount_configuration__max_amount
+msgid "Max Amount"
+msgstr "الحد الاقصى"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan_type__loan_amount_configuration__m_salary_element
+msgid "Multiplier, salary element"
+msgstr "المضاعف ، عنصر الراتب"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan_type__allowed_for__qatari
+msgid "Qatari"
+msgstr "قطري"
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan_type__allowed_for__not_qatari
+msgid "Not Qatari"
+msgstr "غير قطري"
+
+
+#. module: matco_loan_management
+#: model:ir.model.fields.selection,name:matco_loan_management.selection__hr_loan_type__allowed_for__both
+msgid "Both"
+msgstr "كلاهما"

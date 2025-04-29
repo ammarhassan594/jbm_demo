@@ -1,0 +1,281 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_jbm_account_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 09:17+0000\n"
+"PO-Revision-Date: 2023-02-08 09:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_analytic_account__account_ids
+msgid "Accounts"
+msgstr "حسابات"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model,name:ebs_jbm_account_custom.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__approve_requester_id
+msgid "Approve Requester"
+msgstr "مقدم طلب الموافقة"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__case_number
+msgid "Case Number"
+msgstr "رقم القضية"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__dynamic_approval_id
+msgid "Dynamic Approval"
+msgstr "الموافقة الديناميكية"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr "مجموعة الموافقة الديناميكية المعلقة"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr "طلب الموافقة الديناميكي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونات Font awesome، مثال: fa-tasks "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_needaction
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_has_error
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr "هو طالب الموافقة الديناميكي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "نهاية الوقت المعين للنشاط"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__need_validation
+msgid "Need Validation"
+msgstr "تحتاج التحقق"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي حدث التقويم"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__next_review
+msgid "Next Review"
+msgstr "المراجعة القادمة"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model,name:ebs_jbm_account_custom.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__role_distribution_id
+msgid "Role Distribution"
+msgstr "توزيع الدور"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__state_from_name
+msgid "State From Name"
+msgstr "الدولة من الاسم"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل. "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل غير المقروءة "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__validated
+msgid "Validated"
+msgstr "تم التحقق من صحتها"
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,field_description:ebs_jbm_account_custom.field_account_payment__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني "
+
+#. module: ebs_jbm_account_custom
+#: model:ir.model.fields,help:ebs_jbm_account_custom.field_account_payment__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني "

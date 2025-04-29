@@ -1,0 +1,100 @@
+<odoo>
+    <!--    ebs crm pricelist_line tree-->
+    <record model="ir.ui.view" id="view_ebs_crm_pricelist_line_tree">
+        <field name="name">ebs.crm.pricelist.line.tree</field>
+        <field name="model">ebs.crm.pricelist.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0" delete="0">
+                <field name="pricelist_id"/>
+                <field name="pricelist_category_id"/>
+                <field name="service_ids" widget="many2many"/>
+                <field name="authority_id"/>
+                <field name="govt_product_id"/>
+                <field name="govt_fees"/>
+                <field name="fusion_product_id"/>
+                <field name="fusion_fees"/>
+                <field name="company_id"/>
+                <field name="show_in_portal"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    ebs crm pricelist line form-->
+    <record model="ir.ui.view" id="view_ebs_crm_pricelist_line_form_dashboard">
+        <field name="name">ebs.crm.pricelist.line.Form</field>
+        <field name="model">ebs.crm.pricelist.line</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="pricelist_id" invisible="0" readonly="1"/>
+                            <field name="name" required="1"/>
+                            <field name="pricelist_category_id" options="{'no_create': True, 'no_create_edit':True}" required="1" />
+                            <field name="company_id" invisible="0"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="govt_product_id"/>
+                            <field name="govt_fees"/>
+                            <field name="govt_urgent_fees"/>
+                        </group>
+                        <group>
+                            <field name="fusion_product_id"/>
+                            <field name="fusion_fees"/>
+                            <field name="fusion_urgent_fees"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="service_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}" />
+                        </group>
+                        <group>
+                            <field name="show_in_portal"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="comments"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    ebs crm pricelist line search-->
+    <record id="view_ebs_crm_pricelist_line_search" model="ir.ui.view">
+        <field name="name">ebs.crm.pricelist.line.search</field>
+        <field name="model">ebs.crm.pricelist.line</field>
+        <field name="arch" type="xml">
+            <search string="Pricelist Lines">
+                <field name="pricelist_id"/>
+                <field name="pricelist_category_id"/>
+                <field name="service_ids" widget="many2many"/>
+                <field name="authority_id"/>
+                <field name="govt_product_id"/>
+                <field name="fusion_product_id"/>
+                <field name="name"/>
+                <group expand="0" string="Group By">
+                    <filter string="Pricelist" name="pricelist" context="{'group_by': 'pricelist_id'}"/>
+                    <filter string="Pricelist Category" name="pricelist_category" context="{'group_by': 'pricelist_category_id'}"/>
+                </group>
+            </search>
+         </field>
+    </record>
+
+    <record id="ebs_fusion_crm_pricelist_line_action" model="ir.actions.act_window">
+        <field name="name">Pricelist Lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.crm.pricelist.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="ebs_fusion_services.view_ebs_crm_pricelist_line_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_ebs_crm_pricelist_line_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_ebs_crm_pricelist_line_form_dashboard')})]"/>
+    </record>
+
+
+
+</odoo>

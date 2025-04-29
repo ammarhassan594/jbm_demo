@@ -1,0 +1,155 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="ebs_mod_end_of_service_payment_request_tree" model="ir.ui.view">
+            <field name="name">ebs.mod.end.of.service.payment.request.tree</field>
+            <field name="model">ebs.mod.end.of.service.payment.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="request_date"/>
+                    <field name="partial_eos"/>
+                    <field name="net_payment"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ebs_mod_end_of_service_payment_request_form" model="ir.ui.view">
+            <field name="name">ebs.mod.end.of.service.payment.request.form</field>
+            <field name="model">ebs.mod.end.of.service.payment.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="submit" type="object" string="Submit"
+                                class="oe_highlight"
+                                states="draft"/>
+
+
+                        <button name="manager_approve" type="object" string="Manager Approve"
+                                class="oe_highlight" groups="account.group_account_user"
+                                states="submitted"
+                        />
+
+                        <button name="reset_to_draft" type="object" string="Reset to draft"
+                                class="oe_highlight" groups="ebs_lb_payroll.group_payroll_hr"
+                                states="finance_approve,hr_approve,submitted"
+                        />
+<!--                        <button name="journal_entry" type="object" string="Create Journal Entry"-->
+<!--                                class="oe_highlight" groups="account.group_account_user"-->
+
+<!--                                attrs="{'invisible': ['|',('journal_entries_count', '!=', 0),('state','!=','finance_approve')]}"-->
+<!--                        />-->
+                        <button name="hr_approve" type="object" string="HR Approve"
+                                class="oe_highlight"
+                                states="finance_approve"
+                        />
+                        <field name="state" widget="statusbar" readonly="1"/>
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="employee_id"
+                                       attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                                <field name="request_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="payment_date" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="partial_eos" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="paid_leaves_days" force_save="1"
+                                       attrs="{'invisible': [('partial_eos', '=', True)]}"/>
+
+                                <field name="amount_to_request" invisible="1"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+
+                            </group>
+                            <group>
+                                <field name="method"/>
+                                <field name="joining_date" readonly="1" force_save="1"/>
+                                <field name="contract_date" readonly="1" force_save="1"/>
+                                <field name="monthly_salary" readonly="1" force_save="1"/>
+                                <field name="number_of_days_worked" readonly="1" force_save="1"/>
+                                <field name="daily_rate" force_save="1"/>
+                                <field name="eos_config_id" invisible="1"/>
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page name="other_entitlements" string="Other Entitlements">
+                                <field name="other_entitlements_ids" context="{'eos_config_id':eos_config_id}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="type" options="{'no_create': True,'no_create_edit':True}"/>
+                                        <field name="label" invisible="1"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="payslips" string="Payslips" attrs="{'invisible': [('partial_eos', '=', True)]}">
+
+                                    <field name="payslip_ids" options="{'no_create': True}"
+                                           attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                        <tree edit="0" >
+                                            <field name="number"/>
+                                            <field name="employee_id"/>
+                                            <field name="payslip_run_id"/>
+                                            <field name="date_from"/>
+                                            <field name="date_to"/>
+                                            <field name="basic_wage"/>
+                                            <field name="state"/>
+                                            <field name="company_id"/>
+                                        </tree>
+                                    </field>
+
+                            </page>
+                            <page name="totals" string="Totals">
+                                <group>
+                                    <group>
+                                        <field name="payslip_totals" attrs="{'invisible': [('partial_eos', '=', True)]}" readonly="1" force_save="1"/>
+                                        <field name="remaining_end_of_service_amount" force_save='True'/>
+                                        <field name="eos_taken_amount" string="Partial Gratuity Amount" readonly="1" force_save="1"/>
+                                        <field name="net_gratuity_amount"/>
+                                        <field name="paid_leaves_amount" force_save="1" string="Paid Leaves Amount"
+                                               attrs="{'invisible': [('partial_eos', '=', True)]}"/>
+                                    </group>
+                                    <group>
+
+                                        <field name="other_entitlements_amount" readonly="1" force_save="1"/>
+                                        <field name="net_payment" force_save="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+                  <record id="ebs_mod_end_of_service_payment_request_search" model="ir.ui.view">
+                    <field name="name">ebs.mod.end.of.service.payment.request.search</field>
+                    <field name="model">ebs.mod.end.of.service.payment.request</field>
+                    <field name="arch" type="xml">
+                        <search string="Search">
+                            <field name="employee_id"/>
+                            <field name="state"/>
+                            <group expand="0" name="group_by" string="Group By">
+                                <filter name="type_group_employee" string="Employee"  context="{'group_by': 'employee_id'}"/>
+                                <filter name="type_group_state" string="Status"  context="{'group_by': 'state'}"/>
+                            </group>
+                        </search>
+                    </field>
+                </record>
+
+
+        <!--window -->
+        <record id="ebs_mod_end_of_service_payment_request_action" model="ir.actions.act_window">
+            <field name="name">End Of Service Payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ebs.mod.end.of.service.payment.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

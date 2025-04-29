@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="experience_certificate_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page" dir="RTL">
+                        <html>
+                            <head>
+                                <style>
+                                    body {
+                                    font-size: 17px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div align="right">
+                                    <strong class="col-auto mw-100">
+                                        <span>التاريخ:</span>
+                                        <span style="padding-right:10px;" t-field="o.date"/><br/>
+                                        <span>رقم الاشاره : م ب / ش م / 000 / 2021 /0000</span><br/>
+                                    </strong>
+                                </div><br/>
+
+                                <div align="center">
+                                    <strong class="col-auto mw-100">
+                                        <span style=" border-bottom:1px solid black;" >شهادة خبرة</span>
+                                    </strong>
+                                </div><br/>
+
+                                <div align="right" >
+                                    <p class="col-auto mw-100">
+                                        <span>تشهد شركة وصيف ( احدى الشركات الشقيقة لبروة العقارية) بأن الموظف / </span>
+                                        <span t-field="o.employee_id.name"/>
+                                        <span style="padding-right:2px;">ويحمل بطاقة شخصية رقم  </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.qid_doc_number"/>
+                                        <span style="padding-right:2px;">وجواز رقم  </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.passport_doc_number"/>
+                                        <span> عمل لديها إعتبارا من تاريخ : </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.joining_date"/>
+                                        <span style="padding-right:2px;"> وكان يعمل بالشركة بوظيفة </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.job_title"/>
+                                        <span style="padding-right:5px;">وقد كان حسن السيرة والسلوك. </span>
+                                    </p>
+                                    <p class="col-auto mw-100">
+                                        وقد أعطيت لها هذه الشهادة بناء على طلبها دون أدنى مسؤولية على الشركة.
+                                    </p>
+                                </div><br/><br/><br/>
+
+                                <div align="left">
+                                    <strong class="col-auto mw-100">
+                                        <p style="padding-left:60px">حصة أحمد الخاجة</p>
+                                        <p> مدير إدارة الموارد البشرية والشؤون الأدارية </p>
+                                    </strong>
+                                </div><br/>
+
+                           </body>
+                        </html>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

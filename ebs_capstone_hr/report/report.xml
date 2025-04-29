@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Noc For Family -->
+        <record id="noc_family_letter_report" model="ir.actions.report">
+            <field name="name">NOC For Family</field>
+            <field name="model">ebs.hr.letter.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ebs_capstone_hr.noc_family_template</field>
+            <field name="report_file">ebs_capstone_hr.report_noc_family_template</field>
+            <field name="print_report_name">object.employee_id.name</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- Salary Transfer -->
+        <record id="salary_transfer_report" model="ir.actions.report">
+            <field name="name">Salary Transfer</field>
+            <field name="model">ebs.hr.letter.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ebs_capstone_hr.salary_transfer_template</field>
+            <field name="report_file">ebs_capstone_hr.report_salary_transfer_template</field>
+            <field name="print_report_name">object.employee_id.name</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+        <!-- Experience Certificate -->
+        <record id="experience_certificate_report" model="ir.actions.report">
+            <field name="name">Experience Certificate</field>
+            <field name="model">ebs.hr.letter.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ebs_capstone_hr.experience_certificate_template</field>
+            <field name="report_file">ebs_capstone_hr.report_experience_certificate_template</field>
+            <field name="print_report_name">object.employee_id.name</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+        <!-- Gross Salary -->
+        <record id="gross_salary_report" model="ir.actions.report">
+            <field name="name">Gross Salary</field>
+            <field name="model">ebs.hr.letter.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ebs_capstone_hr.gross_salary_template</field>
+            <field name="report_file">ebs_capstone_hr.report_gross_salary_template</field>
+            <field name="print_report_name">object.employee_id.name</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!--Salary Certificate-->
+        <record id="salary_certificate_report" model="ir.actions.report">
+            <field name="name">Salary Certificate</field>
+            <field name="model">ebs.hr.letter.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ebs_capstone_hr.salary_certificate_template</field>
+            <field name="report_file">ebs_capstone_hr.report_salary_certificate_template</field>
+            <field name="print_report_name">object.employee_id.name</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

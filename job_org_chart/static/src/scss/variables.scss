@@ -1,0 +1,14 @@
+$o-job-org-chart-bg: white;
+$o-job-org-chart-border-color: $o-brand-secondary;
+
+$o-job-org-chart-entry-v-gap: 6px;
+$o-job-org-chart-entry-pic-size: 46px;
+$o-job-org-chart-entry-line-w: 1px;
+$o-job-org-chart-entry-border-color: darken($o-job-org-chart-bg, 25%);
+
+// MIXINS
+@mixin o-job-org-chart-line {
+    content: '';
+    background-color: $o-job-org-chart-bg;
+    border: 0px solid $o-job-org-chart-entry-border-color;
+}

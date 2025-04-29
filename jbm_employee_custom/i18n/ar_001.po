@@ -1,0 +1,492 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_employee_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-06 07:28+0000\n"
+"PO-Revision-Date: 2024-08-06 07:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__probation__0d
+msgid "0 Months"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__probation__90d
+msgid "3 Months"
+msgstr "3 شهور"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__probation__180d
+msgid "6 Months"
+msgstr "6 شهور"
+
+#. module: jbm_employee_custom
+#: code:addons/jbm_employee_custom/models/res_partner_bank.py:0
+#, python-format
+msgid "Account Number must be unique"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.constraint,message:jbm_employee_custom.constraint_res_partner_bank_unique_number
+msgid "Account Number must be unique SQL"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__status__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__actual_duty
+msgid "Actual Duty"
+msgstr "الواجب الفعلي"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_res_company__applied_on_date
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_res_config_settings__applied_on_date
+msgid "Applied Date"
+msgstr "تاريخ التطبيق"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_department__arabic_name
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "الحسابات البنكية"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.import_data_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__emp_children_ids
+msgid "Children's"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__contract_duration
+msgid "Contract Duration"
+msgstr "مدة العقد"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__contract_status
+msgid "Contract Status"
+msgstr "حاله العقد"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__data_file
+msgid "Data File"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_hr_department
+msgid "Department"
+msgstr "القسم"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Dependent"
+msgstr "الأشخاص المعاليين"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Dependent Info"
+msgstr "معلومات الأشخاص المعاليين"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_department__directorate
+msgid "Directorate"
+msgstr " أدارة"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__marital__divorced
+msgid "Divorced"
+msgstr "مطلق"
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_hr_employee
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_account_setup_bank_manual_config__employee_id
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_res_partner_bank__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: jbm_employee_custom
+#: model:ir.ui.menu,name:jbm_employee_custom.menu_employee_bank
+msgid "Employee Bank"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_account_setup_bank_manual_config__employee_number
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__registration_number
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_res_partner_bank__employee_number
+msgid "Employee no"
+msgstr "رقم الموظف"
+
+#. module: jbm_employee_custom
+#: code:addons/jbm_employee_custom/models/res_partner_bank.py:0
+#, python-format
+msgid "Employees Bank Account"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.actions.server,name:jbm_employee_custom.employee_bank_menu
+msgid "Employees Bank View"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__is_end_probation_period
+msgid "End Probation Period"
+msgstr "فترة الاختبار النهائية"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__partner_parent_id_fos
+msgid "FOS Client/ FOS Company"
+msgstr "عميل FOS / شركة FOS"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__file_name
+msgid "Filename"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_duration__five
+msgid "Five"
+msgstr "خمسه"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_duration__four
+msgid "Four"
+msgstr "اربعه"
+
+#. module: jbm_employee_custom
+#: model:ir.actions.server,name:jbm_employee_custom.ir_cron_get_actual_duty_ir_actions_server
+#: model:ir.cron,cron_name:jbm_employee_custom.ir_cron_get_actual_duty
+#: model:ir.cron,name:jbm_employee_custom.ir_cron_get_actual_duty
+msgid "Get Actual Duty"
+msgstr "الحصول علي الواجب الفعلي"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Hamad Card Info"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__id
+msgid "ID"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.import_data_wizard_form
+msgid "Import"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:res.groups,name:jbm_employee_custom.group_import_bank_account
+msgid "Import Bank Account"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.actions.act_window,name:jbm_employee_custom.action_import_data_wizard
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.import_data_wizard_form
+msgid "Import Data"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.ui.menu,name:jbm_employee_custom.menu_bank_account
+msgid "Import Employee Bank"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__import_bank_account__type__employee_bank
+msgid "Import Employees Bank Accounts"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_department__is_directorate
+msgid "Is Directorate"
+msgstr "هل أدارة"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_leave_type__actual_days_calculated
+msgid "Is calculated in actual days?"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__joining_date
+msgid "Joining Date"
+msgstr "تاريخ الانضمام"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__last_updated_actual_duty
+msgid "Last Actual Duty"
+msgstr "اخر واجب فعلي"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_hr_leave_type
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__line_manager_id
+msgid "Line 2 Manager"
+msgstr "مدير الخط 2"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_department__line_manager_id
+msgid "Line Manager 2"
+msgstr " مدير الخط 2"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Location"
+msgstr "الموقع"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__marital
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_status__married
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__marital__married
+msgid "Married"
+msgstr "متزوج"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_leave_type__max_allowed_days
+msgid "Max Allowed Days"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__status__on_vacation
+msgid "On Vacation"
+msgstr "في إجازة"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__sponsorship_type__on_the_company
+msgid "On the company"
+msgstr "في الشركه"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__sponsorship_type__on_the_familly
+msgid "On the familly"
+msgstr "في العائله"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_duration__one
+msgid "One"
+msgstr "واحد"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__type
+msgid "Operation"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Organization"
+msgstr "منظمة"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Organization Chart"
+msgstr "الهيكل التنظيمي"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__out_of_attendance
+msgid "Out Of Attendance"
+msgstr "خارج الحضور"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Passport Info"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: code:addons/jbm_employee_custom/wizard/import_bank_account.py:0
+#, python-format
+msgid "Please Select the XLSX file"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: code:addons/jbm_employee_custom/models/hr_employee.py:0
+#, python-format
+msgid "Please assign Applied on date in employee setting to proceed"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__actual_duty_manual
+msgid "Previous Actual Duty"
+msgstr "الواجب الفعلي السابق"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__probation
+msgid "Probation"
+msgstr "تحت الاختبار"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__probation_date
+msgid "Probation Date"
+msgstr "تاريخ الاختبار"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "QID Info"
+msgstr "معلومات التعريف القطري"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__status__resigned
+msgid "Resigned"
+msgstr "استقالة"
+
+#. module: jbm_employee_custom
+#: model_terms:ir.ui.view,arch_db:jbm_employee_custom.view_employee_form
+msgid "Schedule"
+msgstr "جدول"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_status__single
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__marital__single
+msgid "Single"
+msgstr "اعزب"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__sponsor
+msgid "Sponsor"
+msgstr "كفيل"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__sponsorship_type
+msgid "Sponsorship Type"
+msgstr "نوع الرعاية"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__status
+msgid "Status"
+msgstr "الحاله"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__supervisor
+msgid "Supervisor"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__status__suspended
+msgid "Suspended"
+msgstr "معلق"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_import_bank_account__temp_file
+msgid "Temp File"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__status__terminated
+msgid "Terminated"
+msgstr "إنهاء"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__status__terminated_w_reason
+msgid "Terminated with Reason"
+msgstr "انتهى مع سبب"
+
+#. module: jbm_employee_custom
+#: model:res.groups,comment:jbm_employee_custom.group_import_bank_account
+msgid "The user will be able to Import Data Related to employees."
+msgstr ""
+
+#. module: jbm_employee_custom
+#: code:addons/jbm_employee_custom/wizard/import_bank_account.py:0
+#, python-format
+msgid "This Employee(s) ( %s ) does/do not exist"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_duration__three
+msgid "Three"
+msgstr "ثلاثه"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_duration__two
+msgid "Two"
+msgstr "اثنان"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__contract_duration__open-ended
+msgid "Unlimited"
+msgstr "غير محدود"
+
+#. module: jbm_employee_custom
+#: code:addons/jbm_employee_custom/wizard/import_bank_account.py:0
+#, python-format
+msgid "Unsupported file format, Import only supports XLSX"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields.selection,name:jbm_employee_custom.selection__hr_employee__marital__widower
+msgid "Widower"
+msgstr "ارمل"
+
+#. module: jbm_employee_custom
+#: model:ir.model.fields,field_description:jbm_employee_custom.field_hr_employee__number_of_years_work
+msgid "Yrs w/ JBM"
+msgstr ""
+
+#. module: jbm_employee_custom
+#: model:ir.model,name:jbm_employee_custom.model_import_bank_account
+msgid "import.bank.account"
+msgstr ""

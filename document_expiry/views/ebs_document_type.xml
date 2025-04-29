@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="ebs_document_type_form_view_inherit" model="ir.ui.view">
+            <field name="name">ebs.document.type.form.view.inherit</field>
+            <field name="model">ebs.document.type</field>
+            <field name="inherit_id" ref="ebs_fusion_documents.view_ebs_document_type_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_services']" position="after">
+
+                    <label for="notify_before" string="Notify Before"/>
+                    <div class="o_row">
+                        <field name="notify_before"/>
+                        <label for="notify_before" string="days"/>
+                    </div>
+
+                    <field name="mail_template_id" domain="[('model_id.model', '=', 'documents.document')]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

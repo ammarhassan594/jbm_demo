@@ -1,0 +1,687 @@
+<odoo>
+    <!--    ebs crm proposal form-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_form">
+        <field name="name">ebs.crm.proposal.Form</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="open_send_mail_wizard" type="object" class="oe_highlight" string="Send By Email"/>
+                    <button name="%(ebs_fusion_documents.document_button_action)d"
+                            string="Create Document"
+                            type="action" class="oe_stat_button"
+                            icon="fa-file"
+                            context="{
+                    'default_lead_id': lead_id,
+                    'default_proposal_id': id,
+                    'default_partner_id': contact_id,
+                    'default_res_id': id,
+                    'default_res_model': context.get('active_model'),
+                    'hide_field': 1,
+                    }"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+
+                    <button name="confirm_contract" type="object" string="Confirm"
+                            attrs="{'invisible':['|', ('state', '!=', 'draft'), '|', ('type','!=','proposal'), ('submitted_by_client', '=', False)]}"
+                            class="oe_highlight"/>
+
+
+                    <button name="%(ebs_fusion_services.action_view_advance_payment_contract_inv)d" type="action"
+                            string="Generate Invoice"
+                            attrs="{'invisible':['|',('state','!=','active'),('is_invoiced','=',True)]}"
+                            class="oe_highlight" context="{'wizard':True}"/>
+
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_contract" type="object" class="oe_stat_button"
+                                icon="fa-file" string="Contract" attrs="{'invisible':[('type', '!=', 'agreement')]}"/>
+                        <button name="action_created_invoice" type="object" class="oe_stat_button"
+                                icon="fa-pencil-square-o" groups="account.group_account_invoice"
+                                attrs="{'invisible':['|', ('type', '!=', 'proposal'), ('invoice_count', '=', 0)]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="invoice_count"/>
+                                </span>
+                                <span class="o_stat_text">Invoices</span>
+                            </div>
+                        </button>
+
+                        <button class="oe_stat_button" type="object" name="get_payments"
+                                icon="fa-usd" attrs="{'invisible':[('payments_count', '=', 0)]}">
+                            <field string="Payments" style="width: 140px;" name="payments_count" widget="statinfo"/>
+                        </button>
+
+                        <button class="oe_stat_button" type="object" style="width: 174px;" name="get_deferred_revenue"
+                                icon="fa-money" invisible="1">
+                            <field string="Deferred Revenues" name="deferred_revenues_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_document"
+                                icon="fa-files-o">
+                            <field string="Documents" name="document_count" widget="statinfo"/>
+                        </button>
+
+
+                    </div>
+
+                    <label for="contract_no" string="Contract Number" attrs="{'invisible':[('type','!=','proposal')]}"/>
+                    <label for="contract_no" string="Proposal Number"
+                           attrs="{'invisible':[('type','!=','agreement')]}"/>
+                    <field name="contract_no" nolabel="1" attrs="{'readonly':[('type','=','proposal')]}"/>
+                    <br/>
+                    <label for="contract_type" string="Contract Type"/>
+                    <field name="contract_type" widget="radio"/>
+                    <group>
+                        <group>
+                            <field name="is_invoiced" invisible="1"/>
+                            <field name="invoice_count" invisible="1"/>
+                            <field name="company_id" options="{'no_create':True,'no_create_edit':True}"
+                                   attrs="{'readonly':[('state','=','active')], 'invisible':[('type','!=','proposal')], 'required':[('type','=','proposal')]}"/>
+                            <field name="proposal_company_ids" options="{'no_create_edit':True}" widget="many2many_tags"
+                                   attrs="{'readonly':[('state','=','active')], 'invisible':[('type','!=','agreement')], 'required':[('type','=','agreement')]}"/>
+                            <field name="type" readonly="1" invisible="1"/>
+                            <field name="date" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="start_date" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="duration" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="end_date" attrs="{'readonly':[('state','=','active')]}"/>
+
+                            <field name="fme" invisible="1"/>
+                            <field name="fss" invisible="1"/>
+                            <field name="fos" invisible="1"/>
+
+
+                            <field name="invoice_month_list" invisible="1"/>
+                            <field name="payment_terms_id" attrs="{'readonly':[('state','=','active')]}"
+                                   options="{'no_create': True, 'no_create_edit':True}"/>
+
+
+                            <field name="mode_of_payment" invisible="1" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="payment_comments" attrs="{'readonly':[('state','=','active')]}"/>
+
+                        </group>
+                        <group>
+                            <field name="lead_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="contact_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   attrs="{'readonly':[('state','=','active')]}"
+                                   context="{'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form'}"/>
+                            <field name="company_currency_id" attrs="{'readonly':[('state','=','active')]}"
+                                   options="{'no_create': True, 'no_create_edit':True}"/>
+
+                            <field name="real_revenue" invisible="1"
+                                   attrs="{'invisible':[('type','!=','proposal')], 'readonly':[('state','=','active')]}"/>
+                            <field name="invoice_id" invisible="1"/>
+                            <field name="share_capital_amount" invisible="1" attrs="{'invisible':[('fme','=',False)]}"/>
+                            <field name="shareholding_percentage" invisible="1" widget="percentage"
+                                   attrs="{'invisible':[('fme','=',False)]}"/>
+                            <field name="profit_share_percentage" invisible="1" widget="percentage"
+                                   attrs="{'invisible':[('fme','=',False)]}"/>
+                            <field name="submitted_by_client"
+                                   attrs="{'invisible':[('type','!=','proposal')], 'readonly':[('state','=','active')]}"/>
+                            <field name="client_finance_id" options="{'no_create': 1}"
+                                   attrs="{'readonly':[('state','=','active')]}"
+                                   domain="[('client_contact_rel_ids.client_id', '=', contact_id)]"/>
+                            <field name="email" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="further_info" invisible="1" attrs="{'readonly':[('state','=','active')]}"/>
+                        </group>
+                    </group>
+                    <group>
+
+                        <group>
+
+                            <field name="number_of_individuals" invisible="1"
+                                   attrs="{'invisible':[('fos','=',False)], 'readonly':[('state','=','active')]}"/>
+                        </group>
+                    </group>
+                    <group string="FOS" invisible="1"
+                           attrs="{'invisible':[('fos','=',False)], 'readonly':[('state','=','active')]}">
+                        <group>
+                            <field name="Obligations_service_provider" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="transfer_personnel_employment" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="general_description" attrs="{'readonly':[('state','=','active')]}"/>
+                        </group>
+                        <group>
+
+                            <field name="deposit_amount" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="insurance_amount" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="penalty_amount" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="penalty_amount_total_words" invisible="1"/>
+                            <field name="complaint_response_time" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="complaint_response_word" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="FME" invisible="1" attrs="{'invisible':[('fme','=',False)]}">
+                        <group>
+                            <field name="annual_payment" attrs="{'readonly':[('state','=','active')]}"/>
+                        </group>
+
+                    </group>
+                    <group string="FSS" invisible="1" attrs="{'invisible':[('fss','=',False)]}">
+                        <group>
+                            <field name="total_service_fee" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="total_service_fee_word" readonly="1" force_save="1" invisible="1"/>
+                            <field name="monthly_service_fee" attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="monthly_service_fee_word" readonly="1" force_save="1" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="advance_payment_amount_percentage"
+                                   attrs="{'readonly':[('state','=','active')]}"/>
+                            <field name="advance_payment_amount_percentage_in_word" readonly="1" force_save="1"
+                                   invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="general_description_of_the_services" invisible="1"
+                               attrs="{'invisible':[('fos','=',False)], 'readonly':[('state','=','active')]}"/>
+                    </group>
+
+                    <notebook>
+
+
+                        <page string="Lines">
+                            <field name="proposal_lines" attrs="{'readonly':[('state','=','active')]}">
+                                <tree create="1" editable="bottom">
+
+                                    <field name="add_service_process" invisible="1"/>
+                                    <field name="service_id" required="1"
+                                           options="{'no_create':True,'no_create_edit':1}"
+                                           domain="[('state', '=', 'ready')]"/>
+                                    <field name="service_option_id"
+                                           options="{'no_create':True,'no_create_edit':1}"
+                                           domain="[('service_id', '=', service_id), ('company_id', '=', parent.company_id)]"/>
+
+                                    <field name="govt_fees"/>
+
+                                    <field name="fusion_fees"/>
+
+                                    <field name="quantity"/>
+                                    <field name="service_process_count"/>
+                                    <field name="prop_state" invisible="1"/>
+
+                                    <button name="action_create_service_process" string="Create Service Order"
+                                            type="object"
+                                            icon="fa-plus" options="{&quot;warn&quot;: true}"
+                                            attrs="{'invisible':[('prop_state','!=','active')]}"/>
+                                    <button name="action_show_service_process" string="Show Service Orders"
+                                            type="object"
+                                            icon="fa-list" options="{&quot;warn&quot;: true}"
+                                            attrs="{'invisible':[('service_process_count','=','0')]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Related Contacts" attrs="{'invisible':[('type','!=','proposal')]}">
+                            <field name="related_contact_ids" force_save="1">
+                                <tree editable="bottom">
+                                    <field name="contract_id" invisible="1"/>
+                                    <field name="partner_id"/>
+                                    <field name="relation_tag_ids" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                        <page string="FOS Fees Structure" attrs="{'invisible': [('fos', '=', False)]}">
+                            <field name="fos_fee_structure_ids" attrs="{'readonly':[('state','=','active')]}">
+                                <tree editable="bottom">
+                                    <field name="number_employees"/>
+                                    <field name="job_position"/>
+                                    <field name="gender"/>
+                                    <field name="visa_type"/>
+                                    <field name="nationality_id"/>
+                                    <field name="labor_quota_id" options="{'no_create':True,'no_create_edit': 1}"/>
+                                    <field name="fee_person_month"/>
+                                    <field name="status" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Monthly Salary Breakdown" attrs="{'invisible': [('fos', '=', False)]}">
+                            <field name="salary_structure_ids" attrs="{'readonly':[('state','=','active')]}">
+                                <tree editable="bottom">
+                                    <field name="annual_salary" readonly="1"/>
+                                    <field name="monthly_salary" readonly="1"/>
+                                    <field name="monthly_gross"/>
+                                    <field name="housing_allowance"/>
+                                    <field name="transportation_allowance"/>
+                                    <field name="other_allowance"/>
+                                    <field name="eos_gratuity" force_save="1"/>
+                                    <field name="eos_monthly_fee" force_save="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Work Permit Issuance" invisible="1" attrs="{'invisible': [('fos', '=', False)]}">
+                            <field name="permit_issuance_ids" attrs="{'readonly':[('state','=','active')]}">
+                                <tree editable="bottom">
+                                    <field name="issuance_fees"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Fees"
+                              attrs="{'invisible':[('fss','=',False), ('fme', '=', False), ('fos','=',False)]}">
+                            <group attrs="{'readonly':[('state','=','active')],'invisible':[('fme','=',False)]}">
+                                <group>
+                                    <field name="turnover"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="service_fee_per_employee" attrs="{'invisible':[('fos','=',False)]}"/>
+                            </group>
+
+                            <field name="contract_fees_ids" context="{'default_fss':fss,'default_fme':fme}"
+                                   attrs="{'readonly':[('state','=','active')]}">
+                                <tree editable="bottom">
+                                    <field name="fusion_fees_id" options="{'no_create':True,'no_create_edit': 1}"/>
+                                    <field name="type" invisible="1" force_save="1"/>
+                                    <field name="label"/>
+                                    <field name="amount"/>
+                                    <field name="invoice_period"/>
+                                    <field name="next_invoice_date" readonly="1"/>
+                                    <field name="invoiced_amount" force_save="1"/>
+                                    <field name="remaining_amount" force_save="1"/>
+
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="fusion_fees_id"/>
+                                                <field name="label"/>
+                                                <field name="next_invoice_date" readonly="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="type" force_save="1"/>
+                                                <field name="invoice_period"/>
+                                                <field name="amount"/>
+                                                <field name="invoiced_amount" force_save="1"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Invoices" attrs="{'invisible': [('type', '=', 'proforma')]}">
+                                                <field name="invoice_ids" readonly="1"/>
+                                            </page>
+                                            <page string="Payments" attrs="{'invisible': [('type', '!=', 'proforma')]}">
+                                                <field name="payment_ids" readonly="1"/>
+                                            </page>
+                                        </notebook>
+                                    </sheet>
+                                </form>
+                            </field>
+
+
+                        </page>
+                        <page string="Employees" attrs="{'invisible':[('fos','=',False)]}">
+                            <field name="fos_employee_ids"
+                                   context="{'client_id': contact_id, 'default_partner_parent_id':contact_id, 'proposal_id': id}">
+                                <tree>
+                                    <field name="employee_name" invisible="0"/>
+                                    <field name="name" invisible="0"/>
+                                    <field name="arrival_date" invisible="1"/>
+                                    <field name="cancelled_date" invisible="1"/>
+                                    <field name="nationality_id"/>
+                                    <field name="job_id"/>
+                                    <field name="gender"/>
+                                    <field name="proposal_id" invisible="1"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm proposal tree-->
+    <record id="view_ebs_crm_proposal_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.tree</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <field name="contract_no" string="Proposal Number"/>
+                <field name="real_revenue"/>
+                <field name="lead_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ebs_crm_contract_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.contract.tree</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <field name="contract_no" string="Contract Number"/>
+                <field name="lead_id"/>
+                <field name="company_id"/>
+                <field name="date"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="payment_terms_id"/>
+                <field name="contact_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Inherited account payment form view to add contractid-->
+    <record id="view_payment_form3_inherit" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="contract_id" attrs="{'invisible': [('contract_id', '=', False)]}"/>
+                <field name="contract_fees_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!--ebs crm proposal action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_proposal">
+        <field name="name">Contracts</field>
+        <field name="res_model">ebs.crm.proposal</field>
+
+        <field name="view_mode">tree,form,pivot,calendar,graph</field>
+        <field name="domain">[('type','=','proposal')]</field>
+        <field name="view_id" ref="ebs_fusion_services.view_ebs_crm_contract_tree"/>
+        <field name="context">{'default_type':'proposal'}</field>
+    </record>
+
+    <!--ebs crm agreement action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_agreement">
+        <field name="name">Proposals</field>
+        <field name="res_model">ebs.crm.proposal</field>
+
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type','=','agreement')]</field>
+        <field name="view_id" ref="ebs_fusion_services.view_ebs_crm_proposal_tree"/>
+        <field name="context">{'default_type':'agreement'}</field>
+    </record>
+
+
+    <record id="view_crm_proposal_search" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.search</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="lead_id"/>
+                <field name="contact_id"/>
+                <separator/>
+                <filter string="FME" name="contract_type" domain="[('contract_type', '=', 'fme')]"/>
+                <filter string="FSS" name="contract_type" domain="[('contract_type', '=', 'fss')]"/>
+                <filter string="FOS" name="contract_type" domain="[('contract_type', '=', 'fos')]"/>
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_pivot">
+        <field name="name">ebs.crm.proposal.pivot</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="date" type="col"/>
+                <field name="start_date" type="row"/>
+                <field name="end_date" type="row"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="view_ebs_crm_proposal_graph" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.graph</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="contract_no"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </graph>
+        </field>
+    </record>
+    <record id="ebs_crm_proposal_calendar" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.calendar</field>
+        <field name="model">ebs.crm.proposal</field>
+        <field name="arch" type="xml">
+            <calendar string="Contract" mode="month" color="contract_no" date_start="start_date">
+                <field name="contract_no"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!--    ebs crm proposal line form-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_line_form">
+        <field name="name">ebs.crm.proposal.line.Form</field>
+        <field name="model">ebs.crm.proposal.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+
+                            <field name="service_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="service_option_id"/>
+                            <field name="service_template_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        </group>
+                        <group>
+
+                            <field name="quantity"/>
+                            <field name="service_process_count"/>
+
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="govt_fees"/>
+                        </group>
+                        <group>
+                            <field name="fusion_fees"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm proposal line tree-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_line_tree">
+        <field name="name">ebs.crm.proposal.line.tree</field>
+        <field name="model">ebs.crm.proposal.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+
+                <field name="add_service_process" invisible="1"/>
+                <field name="service_id"/>
+                <field name="service_option_id"/>
+                <field name="service_template_id"/>
+                <field name="govt_fees"/>
+                <field name="fusion_fees"/>
+                <field name="quantity"/>
+                <field name="service_process_count"/>
+                <field name="prop_state" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    ebs crm employee line form-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_employee_line_form">
+        <field name="name">ebs.crm.proposal.employee.line.Form</field>
+        <field name="model">ebs.crm.proposal.employee.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <button type="object" class="oe_highlight"
+                            name="create_employee"
+                            attrs="{'invisible': ['|',('proposal_state', '!=', 'active'),('name','!=',False)]}"
+                            string="Create Employee"
+                            colspan="2" context="{'contract_employee':id, 'set_partner_parent_id':partner_parent_id}"
+                    />
+                    <group>
+                        <group>
+                            <field name="proposal_state" invisible="1"/>
+                            <field name="contact_id" invisible="1"/>
+                            <field name="partner_parent_id" invisible="1"/>
+                            <field name="employee_name"/>
+                            <field name="name" invisible="0" options="{'no_create_edit': 1}"/>
+                            <field name="employee_state" string="Employee Status"/>
+                            <field name="arrival_date" invisible="1"/>
+                            <field name="cancelled_date" invisible="1"/>
+                            <field name="nationality_id" options="{'no_create_edit': 1}"/>
+                            <field name="job_id" options="{'no_create_edit': 1}"/>
+                            <field name="gender"/>
+
+                            <field name="labor_quota_id"
+                                   options="{'no_create_edit': True}"/>
+                            <field name="expiry_date"/>
+                            <field name="lq_is_expired"/>
+                            <field name="default_line_available" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="contract_id" attrs="{'invisible':[('name','=',False)]}"
+                                   options="{'no_create_edit': 1}"/>
+                            <field name="total_salary_package"/>
+                            <field name="monthly_eos"/>
+                            <field name="monthly_service_fees"/>
+                            <field name="food_allowance"/>
+                            <field name="other_allowance"/>
+                            <field name="service_fees"/>
+                            <field name="structure_type_id" options="{'no_create_edit': 1}"/>
+                        </group>
+                    </group>
+                    <notebook invisible="1">
+                        <page string="Monthly Fees" invisible="1">
+                            <field name="monthly_fee_ids">
+                                <tree editable="bottom">
+                                    <field name="name" domain="[('one_time','=',False)]"/>
+                                    <field name="amount"/>
+                                    <field name="one_time" invisible="1"/>
+                                    <field name="fme" invisible="1"/>
+                                    <field name="fss" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="One-Time Fees" invisible="1">
+                            <field name="one_time_fee_ids">
+                                <tree editable="bottom">
+                                    <field name="name" domain="[('one_time','=',True)]"/>
+                                    <field name="total_amount"/>
+                                    <field name="amount" invisible="1"/>
+                                    <field name="remaining_amount"/>
+                                    <field name="one_time" invisible="1"/>
+                                    <field name="employee_name"/>
+                                    <field name="fme" invisible="1"/>
+                                    <field name="fss" invisible="1"/>
+
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm employee onetime fee form-->
+    <record model="ir.ui.view" id="view_ebs_crm_employee_onetime_fee_form">
+        <field name="name">ebs.crm.employee.onetime.fee.Form</field>
+        <field name="model">ebs.crm.employee.onetime.fees</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="total_amount"/>
+                            <field name="remaining_amount"/>
+                            <field name="one_time" invisible="1"/>
+                            <field name="fme" invisible="1"/>
+                            <field name="fss" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Payments">
+                            <field name="invoice_line_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="move_id"/>
+                                    <field name="price_subtotal"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    ebs crm employee monthly fee form-->
+    <record model="ir.ui.view" id="view_ebs_crm_employee_monthly_fee_form">
+        <field name="name">ebs.crm.employee.monthly.fee.Form</field>
+        <field name="model">ebs.crm.employee.monthly.fees</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="total_amount"/>
+                            <field name="remaining_amount"/>
+                            <field name="one_time" invisible="1"/>
+                            <field name="fme" invisible="1"/>
+                            <field name="fss" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Payments">
+                            <field name="invoice_line_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="move_id"/>
+                                    <field name="price_subtotal"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs res currency inherited-->
+    <record id="currency_form_view_inherit" model="ir.ui.view">
+        <field name="name">res.currency.view.inherit</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="currency_word"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="company_form_view_inherit" model="ir.ui.view">
+        <field name="name">res.company.view.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="favicon" position="after">
+                <field name="company_code"/>
+            </field>
+            <xpath expr="//group[@name='social_media']" position="after">
+                <group string="Report">
+                    <field name="company_report_header" widget="image"/>
+                    <field name="company_report_footer" widget="image"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

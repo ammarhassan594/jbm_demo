@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="emergency_contact_view_tree">
+            <field name="name">Emergency.Contact.Tree</field>
+            <field name="model">emergency.contact</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="emergency_contact_relation"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="emergency_contact_view_form">
+            <field name="name">Emergency.Contact.Form</field>
+            <field name="model">emergency.contact</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group col="2">
+                                <field name="name" required="1"/>
+                                <field name="phone" required="1"/>
+                                <field name="emergency_contact_relation" required="1"/>
+                                <field name="employee_id" options="{'no_open': True}" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="emergency_contact_window" model="ir.actions.act_window">
+            <field name="name">Emergency Contact</field>
+            <field name="res_model">emergency.contact</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_emergency_contact"
+                name="Emergency Contact"
+                parent="hr.menu_human_resources_configuration"
+                sequence="8"
+                action="emergency_contact_window"/>
+
+    </data>
+</odoo>

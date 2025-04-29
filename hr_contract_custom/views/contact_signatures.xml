@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="position_signatures_tree">
+            <field name="name">contract_signature_tree</field>
+            <field name="model">hr.contract.signature</field>
+            <field name="arch" type="xml">
+                <tree editable="top" default_order="create_date desc">
+                    <field name="hr_contract_id"/>
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="signature" widget="signature"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="contract_signature_view_search" model="ir.ui.view">
+            <field name="name">contract_signature_search</field>
+            <field name="model">hr.contract.signature</field>
+            <field name="arch" type="xml">
+                <search string="Signatures">
+                    <filter string="Pending Signatures" name="pending_signatures" domain="[('signature', '=', False)]"/>
+                    <filter string="All Signatures" name="all_signatures" domain="[('signature', '!=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="contract_signatures_window_id">
+            <field name="name">contract_signature_window</field>
+            <field name="res_model">hr.contract.signature</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_pending_signatures":1}</field>
+            <field name="domain">[('name', '=', uid)]</field>
+        </record>
+
+<!--        <menuitem name="Contract Signatures" id="contract_signatures_id" parent="hr.menu_hr_employee_payroll"-->
+<!--                  action="contract_signatures_window_id" sequence="7" groups="base.user_admin"/>-->
+    </data>
+</odoo>

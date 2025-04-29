@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="ir_action_employee_send_sms" model="ir.actions.server">
+            <field name="name">Role Delegation Server Action</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="roles_delegation.model_roles_delegation"/>
+            <field name="binding_model_id" ref="model_roles_delegation"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.roles_delegations()
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,92 @@
+<odoo>
+    <data>
+
+        <record id="ebs_payroll_expense_transfer_form" model="ir.ui.view">
+            <field name="name">ebs.payroll.expense.transfer</field>
+            <field name="model">ebs.payroll.expense.transfer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Expense Transfer Lines">
+                                <field name="transfer_lines_ids" editable="bottom"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+         <record id="ebs_payroll_expense_transfer_lines_form" model="ir.ui.view">
+            <field name="name">ebs.payroll.expense.transfer.lines</field>
+            <field name="model">ebs.payroll.expense.transfer.lines</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="expense_transfer_id" invisible="1"/>
+                                <field name="company_id"/>
+                                <field name="main_expense_account" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+
+                            </group>
+                            <group>
+                                <field name="from_account_ids" widget="many2many_tags" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+                                <field name="close_account_id" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+                                <field name="journal_id" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+
+        <record id="ebs_payroll_expense_transfer_tree" model="ir.ui.view">
+            <field name="name">ebs.payroll.expense.transfer</field>
+            <field name="model">ebs.payroll.expense.transfer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ebs_payroll_expense_transfer_lines_tree" model="ir.ui.view">
+            <field name="name">ebs.payroll.expense.transfer.line</field>
+            <field name="model">ebs.payroll.expense.transfer.lines</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="company_id"/>
+                    <field name="from_account_ids" widget="many2many_tags" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+                    <field name="close_account_id" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+                    <field name="main_expense_account" domain="[('company_id', '=', company_id),('company_id','!=',False)]"/>
+                    <field name="journal_id" domain="[('company_id', '=', company_id),('company_id','!=',False)]" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="ebs_payroll_expense_transfer_window" model="ir.actions.act_window">
+            <field name="name"> Payroll Expense Transfer</field>
+            <field name="res_model">ebs.payroll.expense.transfer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="expense_transfer_menu" name="Expense Transfer" sequence="514"
+                  action="ebs_payroll_expense_transfer_window" parent="hr_payroll.menu_hr_salary_configuration"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+<t t-name="SelfServiceDashboardMain">
+    <div class="oh_dashboards">
+
+        <div class="container-fluid o_hr_dashboard" style="position: static;">
+            <div class="row main-section" style="margin-left: 0px;">
+                <div class="col-2 hr_service">
+                    <div class="oh-card administrative_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-user-circle-o"/>-->
+                                    <img src="/jbm_portal_self_service/static/src/img/hr.png"
+                                    style="height:70px;width:70px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">خدمات الموارد البشرية</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 management_service">
+                    <div class="oh-card administrative_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-list-alt" aria-hidden="true"/>-->
+                                    <img src="/jbm_portal_self_service/static/src/img/service.png"
+                                    style="height:70px;width:70px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">خدمات الشؤون الإدارية</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 it_service">
+                    <div class="oh-card administrative_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-usb" aria-hidden="true"/>-->
+                                    <img src="/jbm_portal_self_service/static/src/img/it.png"
+                                    style="height:70px;width:70px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">خدمات نظم المعلومات</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</t>
+
+</templates>
+

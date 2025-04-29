@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="training_course_form_view" model="ir.ui.view">
+            <field name="name">training.course.form</field>
+            <field name="model">training.course</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Course Name" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+
+                            <group>
+                                <field name="location"/>
+                                <field name="remarks"/>
+                            </group>
+                            <group>
+
+                                    <field name="category_id" />
+                                    <field name="product_id"  domain="[('categ_id', '=', category_id)]"/>
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="training_course_tree_view" model="ir.ui.view">
+            <field name="name">training.course.tree</field>
+            <field name="model">training.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="location"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="training_course_act_window" model="ir.actions.act_window">
+            <field name="name">Training Course</field>
+            <field name="res_model">training.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Trainings" id="trainings_menu" parent="hr.menu_hr_root" />
+
+        <menuitem name="Training Course" id="training_course_menu" parent="trainings_menu" action="training_course_act_window"/>
+
+    </data>
+</odoo>

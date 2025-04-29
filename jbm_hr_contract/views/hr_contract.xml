@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_hr_contract_form">
+            <field name="name">hr.contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='other']" position="attributes">
+                        <attributes name="invisible">1</attributes>
+                </xpath>
+                <xpath expr="//page[@name='information']/group[last()]" position="after">
+                    <group>
+                        <field name="ticket_type_alw"/>
+                        <!--                    <field name="amount" attrs="{'invisible': [('ticket_type_alw','!=','ticket_ALW')]}"/>-->
+                        <field name="ticket_allowance" readonly="1"/>
+                    </group>
+                    <group name="employee_dependants_fair" string="Dependents Fair"
+                           attrs="{'invisible':[('ticket_type_alw', '!=', 'ticket_ALW')]}">
+                        <field name="adult_fare" readonly="1"/>
+                        <field name="child_fare" readonly="1"/>
+                        <field name="infant_fare" readonly="1"/>
+                        <field name="number_of_children_allowed"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

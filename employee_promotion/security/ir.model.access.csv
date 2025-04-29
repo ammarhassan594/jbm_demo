@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_promotion_hr_manager,access.employee.promotion.employee.hr.manager,model_employee_promotion,hr.group_hr_manager,1,1,1,1
+access_employee_promotion_payroll_manager,access.employee.promotion.employee.payroll.manager,model_employee_promotion,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_employee_promotion_promotion_officer,access.employee.promotion.employee.promotion.officer,model_employee_promotion,employee_promotion.group_promotion_officer,1,1,1,1
+access_employee_promotion_internal_user,access.employee.promotion.employee.internal.user,model_employee_promotion,base.group_user,1,0,0,0
+
+access_promotion_rules,access.promotion.rules,model_promotion_rules,,1,1,1,1
+access_eligible_for_promotion,access.eligible.for.promotion,model_eligible_for_promotion,,1,0,0,0
+access_payscale_scheduled_raise,access_payscale_scheduled_raise,model_payscale_scheduled_raise,,1,1,1,1

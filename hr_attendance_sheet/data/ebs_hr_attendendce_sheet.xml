@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="category_leave" model="hr.salary.rule.category">
+            <field name="name">Leave</field>
+            <field name="code">Leave</field>
+        </record>
+        <!--        todo : structure type-->
+        <record id="structure_type_wassef" model="hr.payroll.structure.type">
+            <field name="name">Wassef</field>
+            <field name="country_id" eval="False"/>
+            <field name="wage_type">monthly</field>
+        </record>
+        <!--        todo : structure -->
+        <record id="structure_worker_wassef" model="hr.payroll.structure">
+            <field name="name">Wassef Worker Pay</field>
+            <field name="type_id" ref="structure_type_wassef"/>
+<!--            <field name="regular_pay" eval="True"/>-->
+            <field name="country_id" eval="False"/>
+        </record>
+        <!--        todo : salary rules [ALW]-->
+        <record id="hr_salary_rule_worker_accomm_wassef" model="hr.salary.rule">
+            <field name="name">Accommodation Allowance</field>
+            <field name="code">ACCOMM</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.ACCOMM</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.ACCOMM.amount</field>
+            <field name="sequence" eval="2"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_tra_wassef" model="hr.salary.rule">
+            <field name="name">Transportation Allowance</field>
+            <field name="code">TRA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.TRA</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.TRA.amount</field>
+            <field name="sequence" eval="3"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_food_wassef" model="hr.salary.rule">
+            <field name="name">Food Allowance</field>
+            <field name="code">FOOD</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.FOOD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.FOOD.amount</field>
+            <field name="sequence" eval="4"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_site_wassef" model="hr.salary.rule">
+            <field name="name">Site Allowance</field>
+            <field name="code">Site</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.Site</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.Site.amount</field>
+            <field name="sequence" eval="5"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_mobile_wassef" model="hr.salary.rule">
+            <field name="name">Mobile Allowance</field>
+            <field name="code">MOBILE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.MOBILE</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.MOBILE.amount</field>
+            <field name="sequence" eval="6"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_other_wassef" model="hr.salary.rule">
+            <field name="name">Other Allowance</field>
+            <field name="code">OTHER</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.OTHER</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OTHER.amount</field>
+            <field name="sequence" eval="7"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_staff_social_wassef" model="hr.salary.rule">
+            <field name="name">Social Allowance</field>
+            <field name="code">SOCIAL</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.SOCIAL</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.SOCIAL.amount</field>
+            <field name="sequence" eval="7"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_ticket_wassef" model="hr.salary.rule">
+            <field name="name">Ticket Allowance</field>
+            <field name="code">TICKET</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.TICKET</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.TICKET.amount</field>
+            <field name="sequence" eval="8"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_laundry_wassef" model="hr.salary.rule">
+            <field name="name">Laundry Allowance</field>
+            <field name="code">LAUNDRY</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LAUNDRY</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LAUNDRY.amount</field>
+            <field name="sequence" eval="9"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_earning_wassef" model="hr.salary.rule">
+            <field name="name">Earning Settlements</field>
+            <field name="code">EARNING</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.EARNING</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.EARNING.amount</field>
+            <field name="sequence" eval="10"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_overtime_wassef" model="hr.salary.rule">
+            <field name="name">Overtime Allowance</field>
+            <field name="code">OVERTIME</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.OVERTIME</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OVERTIME.amount</field>
+            <field name="sequence" eval="11"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_leave_wassef" model="hr.salary.rule">
+            <field name="name">Leave Advance</field>
+            <field name="code">LEAVE</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LEAVE</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LEAVE.amount</field>
+            <field name="sequence" eval="12"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_special_wassef" model="hr.salary.rule">
+            <field name="name">Special Allowance</field>
+            <field name="code">sp</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.sp</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.sp.amount</field>
+            <field name="sequence" eval="13"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_furniture_wassef" model="hr.salary.rule">
+            <field name="name">Furniture Allowance</field>
+            <field name="code">FURNITURE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.FURNITURE</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.FURNITURE.amount</field>
+            <field name="sequence" eval="13"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_fot_wassef" model="hr.salary.rule">
+            <field name="name">Fixed Overtime</field>
+            <field name="code">FOT</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.FOT</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.FOT.amount</field>
+            <field name="sequence" eval="14"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_ot100_wassef" model="hr.salary.rule">
+            <field name="name">Overtime</field>
+            <field name="code">OT100</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.OT100</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OT100.amount</field>
+            <field name="sequence" eval="15"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <!-- Allowance -->
+        <!-- Leave Advance Wage -->
+        <record id="hr_salary_rule_worker_leave_advance_wage" model="hr.salary.rule">
+            <field name="name">Leave Advance Wage</field>
+            <field name="code">LADW</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADW.amount</field>
+            <field name="sequence" eval="100"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Accommodation	-->
+        <record id="hr_salary_rule_worker_leave_advance_accomd" model="hr.salary.rule">
+            <field name="name">Leave Advance Accommodation</field>
+            <field name="code">LADACM</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADACM</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADACM.amount</field>
+            <field name="sequence" eval="101"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_mob_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Mobile Allowance</field>
+            <field name="code">LADMO</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADMO</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADMO.amount</field>
+            <field name="sequence" eval="102"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_food_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Food Allowance</field>
+            <field name="code">LADFDW</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADFDW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADFDW.amount</field>
+            <field name="sequence" eval="103"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_site_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Site Allowance</field>
+            <field name="code">LADSTW</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADSTW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADSTW.amount</field>
+            <field name="sequence" eval="104"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_site_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Transport Allowance</field>
+            <field name="code">LADTRW</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADTRW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADTRW.amount</field>
+            <field name="sequence" eval="105"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_other_alw" model="hr.salary.rule">
+            <field name="name">Leave Advance Other Allowance</field>
+            <field name="code">LADOTHW</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADOTHW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADOTHW.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_uniform_alw" model="hr.salary.rule">
+            <field name="name">Leave Advance Uniform Allowance</field>
+            <field name="code">LADUNIFORM</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADUNIFORM</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADUNIFORM.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_social_alw" model="hr.salary.rule">
+            <field name="name">Leave Advance Social Allowance</field>
+            <field name="code">LADSOC</field>
+            <field name="category_id" ref="hr_attendance_sheet.category_leave"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADSOC</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADSOC.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+                <!--        todo : salary rules [DED]-->
+        <record id="hr_salary_rule_worker_leave_advance_wage_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Wage Deduction</field>
+            <field name="code">LADWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADWD.amount</field>
+            <field name="sequence" eval="100"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_accomd_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Accommodation Deduction</field>
+            <field name="code">LADACMD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADACMD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADACMD.amount</field>
+            <field name="sequence" eval="101"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_mob_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Mobile Deduction</field>
+            <field name="code">LADMOD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADMOD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADMOD.amount</field>
+            <field name="sequence" eval="102"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_food_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Food Deduction</field>
+            <field name="code">LADFDWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADFDWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADFDWD.amount</field>
+            <field name="sequence" eval="103"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_site_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Site Deduction</field>
+            <field name="code">LADSTWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADSTWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADSTWD.amount</field>
+            <field name="sequence" eval="104"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_site_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Transport Deduction</field>
+            <field name="code">LADTRWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADTRWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADTRWD.amount</field>
+            <field name="sequence" eval="105"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_other_alw_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Other Deduction</field>
+            <field name="code">LADOTHWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADOTHWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADOTHWD.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_uniform_alw_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Uniform Deduction</field>
+            <field name="code">LADUNID</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADUNID</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADUNID.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_leave_advance_soc_alw_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Social Deduction</field>
+            <field name="code">LADSOCD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADSOCD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADSOCD.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_basicded_wassef" model="hr.salary.rule">
+            <field name="name">Basic Ded</field>
+            <field name="code">BASICDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.BASICDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.BASICDED.amount</field>
+            <field name="sequence" eval="16"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_otherded_wassef" model="hr.salary.rule">
+            <field name="name">Other Ded</field>
+            <field name="code">OTHERDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.OTHERDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OTHERDED.amount</field>
+            <field name="sequence" eval="17"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_staffhotelded_wassef" model="hr.salary.rule">
+            <field name="name">Staff Hotel Accom</field>
+            <field name="code">STAFFHOTELDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.STAFFHOTELDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.STAFFHOTELDED.amount</field>
+            <field name="sequence" eval="18"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_loanded_wassef" model="hr.salary.rule">
+            <field name="name">Car Loan</field>
+            <field name="code">LOANDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LOANDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LOANDED.amount</field>
+            <field name="sequence" eval="19"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+         <record id="hr_salary_rule_marriage_loanded_wassef" model="hr.salary.rule">
+            <field name="name">Marriage Loan</field>
+            <field name="code">MARLOANDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.MARLOANDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.MARLOANDED.amount</field>
+            <field name="sequence" eval="19"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_transded_wassef" model="hr.salary.rule">
+            <field name="name">Transport Ded</field>
+            <field name="code">TRANSDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.TRANSDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.TRANSDED.amount</field>
+            <field name="sequence" eval="20"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_accommded_wassef" model="hr.salary.rule">
+            <field name="name">Accommodation Ded</field>
+            <field name="code">ACCOMMDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.ACCOMMDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.ACCOMMDED.amount</field>
+            <field name="sequence" eval="21"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_mobileded_wassef" model="hr.salary.rule">
+            <field name="name">Mobile Ded</field>
+            <field name="code">MOBILEDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.MOBILEDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.MOBILEDED.amount</field>
+            <field name="sequence" eval="21"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_uniformded_wassef" model="hr.salary.rule">
+            <field name="name">Laundry Ded</field>
+            <field name="code">UNIFORMDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.UNIFORMDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.UNIFORMDED.amount</field>
+            <field name="sequence" eval="21"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+
+        <record id="hr_salary_rule_worker_socialded_wassef" model="hr.salary.rule">
+            <field name="name">Social Ded</field>
+            <field name="code">SOCIALDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.SOCIALDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.SOCIALDED.amount</field>
+            <field name="sequence" eval="21"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_siteded_wassef" model="hr.salary.rule">
+            <field name="name">Site Ded</field>
+            <field name="code">SITEDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.SITEDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.SITEDED.amount</field>
+            <field name="sequence" eval="22"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_overtded_wassef" model="hr.salary.rule">
+            <field name="name">Over Time Ded</field>
+            <field name="code">OVERTDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.OVERTDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OVERTDED.amount</field>
+            <field name="sequence" eval="23"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_settleded_wassef" model="hr.salary.rule">
+            <field name="name">Deduction Settlements</field>
+            <field name="code">SETTLEDED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.SETTLEDED</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.SETTLEDED.amount</field>
+            <field name="sequence" eval="24"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_lo_wassef" model="hr.salary.rule">
+            <field name="name">Loan</field>
+            <field name="code">LO</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LO</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LO.amount</field>
+            <field name="sequence" eval="25"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_leave_advance_pay_wassef" model="hr.salary.rule">
+            <field name="name">Leave Advance Payment</field>
+            <field name="code">LAP</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LAP</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LAP.amount</field>
+            <field name="sequence" eval="26"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <record id="hr_salary_rule_worker_pe_wassef" model="hr.salary.rule">
+            <field name="name">Pension Employee</field>
+            <field name="code">PE</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.PE</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.PE.amount</field>
+            <field name="sequence" eval="26"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+
+          <!--        todo: salary rules [COMP]-->
+        <record id="hr_salary_rule_worker_per_wassef" model="hr.salary.rule">
+            <field name="name">Pension Employer</field>
+            <field name="code">PER</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.PER</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.PER.amount</field>
+            <field name="sequence" eval="27"/>
+            <field name="struct_id" ref="structure_worker_wassef"/>
+        </record>
+        <!--        todo: inputs-->
+        <!--         'hr.payslip.input.type'-->
+        <record id="other_input_basic_ref" model="hr.payslip.input.type">
+            <field name="name">Basic</field>
+            <field name="code">BASIC</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_accomm_ref" model="hr.payslip.input.type">
+            <field name="name">Accommodation Allowance</field>
+            <field name="code">ACCOMM</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_tra_ref" model="hr.payslip.input.type">
+            <field name="name">Transportation Allowance</field>
+            <field name="code">TRA</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_food_ref" model="hr.payslip.input.type">
+            <field name="name">Food Allowance</field>
+            <field name="code">FOOD</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_site_ref" model="hr.payslip.input.type">
+            <field name="name">Site Allowance</field>
+            <field name="code">Site</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_mobile_ref" model="hr.payslip.input.type">
+            <field name="name">Mobile Allowance</field>
+            <field name="code">MOBILE</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_other_ref" model="hr.payslip.input.type">
+            <field name="name">Other Allowance</field>
+            <field name="code">OTHER</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_social_ref" model="hr.payslip.input.type">
+            <field name="name">Social Allowance</field>
+            <field name="code">SOCIAL</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_ticket_ref" model="hr.payslip.input.type">
+            <field name="name">Ticket Allowance</field>
+            <field name="code">TICKET</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_laundry_ref" model="hr.payslip.input.type">
+            <field name="name">Laundry Allowance</field>
+            <field name="code">LAUNDRY</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_earning_ref" model="hr.payslip.input.type">
+            <field name="name">Earning Settlements</field>
+            <field name="code">EARNING</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_overtime_ref" model="hr.payslip.input.type">
+            <field name="name">Overtime Allowance</field>
+            <field name="code">OVERTIME</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_leave_ref" model="hr.payslip.input.type">
+            <field name="name">Leave Advance</field>
+            <field name="code">LEAVE</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_special_ref" model="hr.payslip.input.type">
+            <field name="name">Special Allowance</field>
+            <field name="code">sp</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_furniture_ref" model="hr.payslip.input.type">
+            <field name="name">Furniture Allowance</field>
+            <field name="code">FURNITURE</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_fot_ref" model="hr.payslip.input.type">
+            <field name="name">Fixed Overtime</field>
+            <field name="code">FOT</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_ot100_ref" model="hr.payslip.input.type">
+            <field name="name">Overtime</field>
+            <field name="code">OT100</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+         <!--Allowance-->
+        <!-- Leave Advance Wage -->
+        <record id="hr_payslip_other_input_advance_rule_wage" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Wage</field>
+            <field name="code">LADW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Accommodation	-->
+        <record id="hr_payslip_other_input_advance_rule_accomd" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Accommodation</field>
+            <field name="code">LADACM</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_payslip_other_input_advance_rule_mob_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Mobile Allowance</field>
+            <field name="code">LADMO</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Food Allowance	-->
+        <record id="hr_payslip_other_input_advance_rule_food_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Food Allowance</field>
+            <field name="code">LADFDW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Site Allowance -->
+        <record id="hr_payslip_other_input_advance_rule_site_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Site Allowance</field>
+            <field name="code">LADSTW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Transport Allowance -->
+        <record id="hr_payslip_other_input_advance_rule_transport_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Transport Allowance</field>
+            <field name="code">LADTRW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Other Allowance -->
+        <record id="hr_payslip_other_input_advance_rule_other_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Other Allowance</field>
+            <field name="code">LADOTHW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <record id="hr_payslip_other_input_advance_rule_uniform_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Uniform Allowance</field>
+            <field name="code">LADUNIFORM</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+
+        <record id="hr_payslip_other_input_advance_rule_social_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Social Allowance</field>
+            <field name="code">LADSOC</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!-- Deduction -->
+        <!-- Leave Advance Wage Deduction-->
+        <record id="hr_payslip_other_input_advance_rule_wage_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Wage Deduction</field>
+            <field name="code">LADWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Deduction	-->
+        <record id="hr_payslip_other_input_advance_rule_accomd_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Accommodation Deduction</field>
+            <field name="code">LADACMD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Mobile Deduction	-->
+        <record id="hr_payslip_other_input_advance_rule_mob_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Mobile Allowance Deduction</field>
+            <field name="code">LADMOD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Food Deduction	-->
+        <record id="hr_payslip_other_input_advance_rule_food_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Food Allowance Deduction</field>
+            <field name="code">LADFDWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Site Deduction -->
+        <record id="hr_payslip_other_input_advance_rule_site_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Site Allowance Deduction</field>
+            <field name="code">LADSTWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Transport Deduction -->
+        <record id="hr_payslip_other_input_advance_rule_transport_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Transport Allowance Deduction</field>
+            <field name="code">LADTRWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Other Deduction -->
+        <record id="hr_payslip_other_input_advance_rule_other_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Other Allowance Deduction</field>
+            <field name="code">LADOTHWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <record id="hr_payslip_other_input_advance_rule_social_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Social Allowance Deduction</field>
+            <field name="code">LADUNID</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <record id="hr_payslip_other_input_advance_rule_uniform_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Uniform Allowance Deduction</field>
+            <field name="code">LADSOCD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+
+        <record id="other_input_basicded_ref" model="hr.payslip.input.type">
+            <field name="name">Basic Ded</field>
+            <field name="code">BASICDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_otherded_ref" model="hr.payslip.input.type">
+            <field name="name">Other Ded</field>
+            <field name="code">OTHERDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_staffhotelded_ref" model="hr.payslip.input.type">
+            <field name="name">Staff Hotel Accom</field>
+            <field name="code">STAFFHOTELDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_loanded_ref" model="hr.payslip.input.type">
+            <field name="name">Car Loan</field>
+            <field name="code">LOANDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_marriageded_ref" model="hr.payslip.input.type">
+            <field name="name">Marriage Loan</field>
+            <field name="code">MARLOANDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_transded_ref" model="hr.payslip.input.type">
+            <field name="name">Transport Ded</field>
+            <field name="code">TRANSDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_accommded_ref" model="hr.payslip.input.type">
+            <field name="name">Accommodation Ded</field>
+            <field name="code">ACCOMMDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_mobileded_ref" model="hr.payslip.input.type">
+            <field name="name">Mobile Ded</field>
+            <field name="code">MOBILEDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+
+        <record id="other_input_uniformded_ref" model="hr.payslip.input.type">
+            <field name="name">Laundry Ded</field>
+            <field name="code">UNIFORMDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_socialded_ref" model="hr.payslip.input.type">
+            <field name="name">Social Ded</field>
+            <field name="code">SOCIALDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_siteded_ref" model="hr.payslip.input.type">
+            <field name="name">Site Ded</field>
+            <field name="code">SITEDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_overtded_ref" model="hr.payslip.input.type">
+            <field name="name">Over Time Ded</field>
+            <field name="code">OVERTDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_settleded_ref" model="hr.payslip.input.type">
+            <field name="name">Deduction Settlements</field>
+            <field name="code">SETTLEDED</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_lo_ref" model="hr.payslip.input.type">
+            <field name="name">Loan</field>
+            <field name="code">LO</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_leave_advance_ded_ref" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Payment</field>
+            <field name="code">LAP</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_pe_ref" model="hr.payslip.input.type">
+            <field name="name">Pension Employee</field>
+            <field name="code">PE</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+        <record id="other_input_per_ref" model="hr.payslip.input.type">
+            <field name="name">Pension Employer</field>
+            <field name="code">PER</field>
+            <field name="struct_ids" eval="[(4, ref('structure_worker_wassef'))]"/>
+        </record>
+
+    </data>
+</odoo>

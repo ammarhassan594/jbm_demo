@@ -1,0 +1,504 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_recruitment_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 06:55+0000\n"
+"PO-Revision-Date: 2023-01-23 06:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_recruitment_custom
+#: code:addons/hr_recruitment_custom/models/hr_recruitment.py:0
+#, python-format
+msgid "%s, You have been assigned to the Interview Panel of %s"
+msgstr "%s, لقد تم تكليفك بلوحة المقابلة الخاصة بـ %s"
+
+#. module: hr_recruitment_custom
+#: model:mail.template,body_html:hr_recruitment_custom.send_notification_to_applicant
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    Hello ${object.name},\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    Application is created\n"
+"                    <br/>\n"
+"                    If you have queries feel free to ask.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    أهلا ${object.name},\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    تم إنشاء التطبيق\n"
+"                    <br/>\n"
+"                    إذا كان لديك استفسارات فلا تتردد في طرحها.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "<span class=\"o_stat_text\">Offers</span>"
+msgstr "<span class=\"o_stat_text\">عروض</span>"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.report_applicant_photo
+msgid ""
+"<span>Applicant Photo</span>\n"
+"                            <br/>"
+msgstr ""
+"<span>صورة مقدم الطلب</span>\n"
+"                            <br/>"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__age
+msgid "Age"
+msgstr "عمر"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Answer related job question"
+msgstr "أجب عن أسئلة الوظيفة ذات الصلة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__other_offers
+msgid "Any other Interviews or Offers ?"
+msgstr "أي مقابلات أو عروض أخرى؟"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_applicant
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__related_applicant
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_contract__applicant_id
+msgid "Applicant"
+msgstr "المتقدم"
+
+#. module: hr_recruitment_custom
+#: model:ir.actions.report,name:hr_recruitment_custom.applicant_photo
+msgid "Applicant Photo"
+msgstr "صورة مقدم الطلب"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__can_start_interview
+msgid "Can Start Interview"
+msgstr "يمكن أن تبدأ المقابلة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__related_children
+msgid "Children"
+msgstr "أطفال"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__name
+msgid "Children Name"
+msgstr "اسم الأبناء"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,help:hr_recruitment_custom.field_hr_applicant_survey__related_survey
+msgid ""
+"Choose an interview form for this job position and you will be able to "
+"print/answer this interview from all applicants who apply for this job"
+msgstr ""
+"اختر نموذج مقابلة لهذا المنصب وستكون قادرًا على ذلك "
+"اطبع / أجب على هذه المقابلة من جميع المتقدمين الذين يتقدمون لهذه الوظيفة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__related_create_employee
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_stage__create_employee
+msgid "Create Employee"
+msgstr "إنشاء موظف"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__user_id
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__create_uid
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__create_date
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__currency
+msgid "Currency"
+msgstr "عملة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__current_employer
+msgid "Current Employer"
+msgstr "صاحب العمل الحالي"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__current_salary
+msgid "Current Salary"
+msgstr "الراتب الحالي"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__current_user
+msgid "Current User"
+msgstr "المستخدم الحالي"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__current_location
+msgid "Current location"
+msgstr "الموقع الحالي"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__currently_employed
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Currently Employed"
+msgstr "يعمل حاليا"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__date_of_birth
+msgid "Date Of Birth"
+msgstr "تاريخ الولادة"
+
+#. module: hr_recruitment_custom
+#: model:ir.actions.act_window,name:hr_recruitment_custom.hr_job_default_signature_act_window
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_job_default_signature_tree_view
+msgid "Default Signatures"
+msgstr "التوقيعات الافتراضية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__display_name
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant__marital_status__divorced
+msgid "Divorced"
+msgstr "مطلقة"
+
+#. module: hr_recruitment_custom
+#: model:ir.actions.act_window,name:hr_recruitment_custom.hr_recruitment_education_action
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__education_id
+#: model:ir.ui.menu,name:hr_recruitment_custom.menu_hr_recruitment_education
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_recruitment_education_tree
+msgid "Education"
+msgstr "تعليم"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__educational_background
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Educational Background"
+msgstr "خلفية تعليمية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__availability
+msgid "Effective Start Date"
+msgstr "تاريخ البدء الفعلي"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant__gender__female
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant_children__gender__female
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Female"
+msgstr "أنثى"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__gender
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__gender
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Gender"
+msgstr "جنس تذكير أو تأنيث"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__related_generate_contract
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_stage__generate_contract
+msgid "Generate Contract"
+msgstr "توليد العقد"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_applicant_survey
+msgid "HR Applicant Survey"
+msgstr "استبيان المتقدم للموارد البشرية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__hiring_date
+msgid "Hiring Confirmation Date"
+msgstr "تاريخ تأكيد التوظيف"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_applicant_children
+msgid "Hr Applicant Children "
+msgstr "الأطفال المتقدمين للموارد البشرية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_job_default_signature
+msgid "Hr Job Default Signature"
+msgstr "التوقيع الافتراضي لوظيفة الموارد البشرية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_recruitment_education
+msgid "Hr Recruitment Education"
+msgstr "تعليم توظيف الموارد البشرية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__id
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__id
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__id
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__image_1920
+msgid "Image 1920"
+msgstr "صورة 1920"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__panel_ids
+#: model:mail.activity.type,name:hr_recruitment_custom.activity_interview_panel
+msgid "Interview Panel"
+msgstr "الأشخاص الذين يجرون المقابلة"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Interviews"
+msgstr "المقابلات"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.job_custom_tree_inherit
+msgid "Job"
+msgstr "مهنة"
+
+#. module: hr_recruitment_custom
+#: model:mail.template,subject:hr_recruitment_custom.send_notification_to_applicant
+msgid "Job Application"
+msgstr "طلب وظيفي"
+
+#. module: hr_recruitment_custom
+#: model:ir.ui.menu,name:hr_recruitment_custom.hr_job_default_signature_menu
+msgid "Job Positions Default Signatures"
+msgstr "التوقيعات الافتراضية للمناصب الوظيفية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature____last_update
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__last_position
+msgid "Last Position"
+msgstr "المركز الأخير"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__write_uid
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_children__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__write_date
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant__gender__male
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant_children__gender__male
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Male"
+msgstr "ذكر"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__marital_status
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant__marital_status__married
+msgid "Married"
+msgstr "متزوج"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_education__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__national_service
+msgid "National Service Completed"
+msgstr "اكتملت الخدمة الوطنية"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "National Services"
+msgstr "الخدمات الوطنية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__nationality
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Nationality (Country)"
+msgstr "بلد الجنسية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__nationality_name
+msgid "Nationality Name"
+msgstr "اسم الجنسية"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__notice_period
+msgid "Notice Period (Days)"
+msgstr "فترة الإخطار (أيام)"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Other Interviews or Offers"
+msgstr "مقابلات أو عروض أخرى"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Print interview report"
+msgstr "طباعة تقرير المقابلة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__proposed_contracts
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Proposed Contracts"
+msgstr "العقود المقترحة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__proposed_contracts_count
+msgid "Proposed Contracts Count"
+msgstr "عدد العقود المقترحة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model,name:hr_recruitment_custom.model_hr_recruitment_stage
+msgid "Recruitment Stages"
+msgstr "مراحل التوظيف "
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__related_applicant
+msgid "Related Applicant"
+msgstr "مقدم الطلب ذو الصلة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__response_id
+msgid "Response"
+msgstr "إجابة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__response_ids
+msgid "Responses"
+msgstr "استجابات"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Select Gender ..."
+msgstr "حدد نوع الجنس ..."
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_jobs_apply
+msgid "Select Nationality ..."
+msgstr "اختر الجنسية ..."
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_applicant_view_form_inherit
+msgid "Send Email"
+msgstr "ارسل بريد الكتروني"
+
+#. module: hr_recruitment_custom
+#: model:mail.template,name:hr_recruitment_custom.send_notification_to_applicant
+msgid "Send notification to applicant"
+msgstr "إرسال إخطار إلى مقدم الطلب"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant__marital_status__single
+msgid "Single"
+msgstr "أعزب"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__related_start_interview
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_recruitment_stage__start_interview
+msgid "Start Interview"
+msgstr "ابدأ المقابلة"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant_survey__related_survey
+msgid "Survey"
+msgstr "استعراض"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,help:hr_recruitment_custom.field_hr_applicant__availability
+msgid "The date at which the applicant will be available to start working"
+msgstr "التاريخ الذي بإمكان المتقدم بدء العمل فيه. "
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,help:hr_recruitment_custom.field_hr_applicant__nationality_name
+msgid "The full name of the country."
+msgstr "الاسم الكامل للبلد."
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__total_years_of_exp
+msgid "Total Years of Exp"
+msgstr "مجموع سنوات الخبره"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_job_default_signature__name
+msgid "User"
+msgstr "المستعمل"
+
+#. module: hr_recruitment_custom
+#: model_terms:ir.ui.view,arch_db:hr_recruitment_custom.hr_job_website_custom_inherit
+msgid "Website Desc"
+msgstr "وصف الموقع"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields.selection,name:hr_recruitment_custom.selection__hr_applicant__marital_status__widower
+msgid "Widower"
+msgstr "أرمل"
+
+#. module: hr_recruitment_custom
+#: model:ir.model.fields,field_description:hr_recruitment_custom.field_hr_applicant__willing_relocate
+msgid "Willing to Relocate"
+msgstr "على استعداد للانتقال"
+
+#. module: hr_recruitment_custom
+#: model:mail.activity.type,summary:hr_recruitment_custom.activity_interview_panel
+msgid "You were added to an interview panel"
+msgstr "تمت إضافتك إلى لوحة المقابلة"
+
+#. module: hr_recruitment_custom
+#: model:ir.actions.report,print_report_name:hr_recruitment_custom.applicant_photo
+msgid "object.name"
+msgstr "موضوع. اسم"

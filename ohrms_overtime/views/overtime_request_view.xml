@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_overtime_req" model="ir.sequence">
+            <field name="name">Overtime Sequencer</field>
+            <field name="code">hr.overtime</field>
+            <field name="prefix">OVT-</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">5</field>
+        </record>
+    </data>
+    <data>
+        <!-- Views -->
+        <!-- Form View -->
+        <record id="hr_overtime_form_view" model="ir.ui.view">
+            <field name="name">Time In Lieu</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <form string="Overtime Request">
+                    <header>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="f_approve,approved"/>
+                        <button name="submit_to_f" string="Submit To Finance"
+                                type="object" class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="approve" string="Approve" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'f_approve')]}"
+                                groups="hr_holidays.group_hr_holidays_user"/>
+                        <button name="second_approve" string="Second Approval" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'second_approve')]}"
+                                groups="hr_holidays.group_hr_holidays_user"/>
+                        <button name="third_approve" string="Third Approval" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'third_approve')]}"
+                                groups="hr_holidays.group_hr_holidays_user"/>
+                        <button name="fourth_approve" string="Fourth Approval" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'fourth_approve')]}"
+                                groups="hr_holidays.group_hr_holidays_user"/>
+                        <button name="fifth_approve" string="Fifth Approval" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'fifth_approve'), ('overtime_category', '!=', 'technical')]}"
+                                groups="hr_holidays.group_hr_holidays_user"/>
+                        <button name="sixth_approve" string="Sixth Approval" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'sixth_approve'), ('overtime_category', '!=', 'technical')]}"
+                                groups="hr_holidays.group_hr_holidays_user"/>
+                        <button name="reject" string="Refuse" type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': ['|',('state', 'in', ['submit_to_f', 'refused', 'approve']),('current_user_boolean', '=', True)]}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" required="0"
+                                       placeholder="Reference ...."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_number" string="Employee Number"/>
+                                <field name='employee_id'
+                                       options="{'no_quick_create': True, 'no_open': True, 'no_create_edit' : True}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='department_id'/>
+                                <field name='job_id'/>
+                                <field name='manager_id'/>
+                                <field name="duration_type"/>
+                                <field name="overtime_types"/>
+                                <field name="current_user_boolean"
+                                       invisible="1"/>
+                                <field name="overtime_category"
+                                       invisible="1"/>
+                            </group>
+                            <group>
+                                <field name='current_user' invisible="1"/>
+                                <field name="project_id"/>
+                                <field name="contract_id"/>
+                                <field name='attchd_copy'
+                                       filename="attchd_copy_name"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='type'/>
+                                <field name='holiday_status_id'
+                                       attrs="{'invisible': [('type', '=', 'cash')], 'required': [('type', '=', 'leave')]}"/>
+                                <field name='date_validated' invisible="1" force_save="1"/>
+                                <field name='date_f_approve' invisible="1" force_save="1"/>
+                                <field name='date_second_approve' invisible="1" force_save="1"/>
+                                <field name='date_third_approve' invisible="1" force_save="1"/>
+                                <field name='date_fourth_approve' invisible="1" force_save="1"/>
+                                <field name='date_fifth_approve' invisible="1" force_save="1"/>
+                                <field name='date_sixth_approve' invisible="1" force_save="1"/>
+                                <field name='last_approval_date' invisible="1" force_save="1"/>
+                                <field name='overtime_type_id' groups="hr.group_hr_user" attrs="{'readonly': [('state', '!=', 'f_approve')],
+                                 'invisible': [('state', '=', 'draft')], 'required': [('state', '=', 'f_approve')]}"/>
+                                <field name="cash_hrs_amount" force_save="1"
+                                       attrs="{'invisible': ['|','|',('state', '=', 'draft'),('type','!=', 'cash'),('duration_type','!=','hours')]}"/>
+                                <field name="cash_day_amount" force_save="1"
+                                       attrs="{'invisible': ['|','|',('state', '=', 'draft'),('type','!=', 'cash'),('duration_type','!=','days')]}"/>
+                                <field name="attchd_copy_name" invisible="1"/>
+                                <field name="leave_id"
+                                       attrs="{'invisible': [('leave_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="overtime_date"
+                                       class="oe_inline"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date_from" required="1"
+                                       class="oe_inline"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date_to" required="1"
+                                       class="oe_inline"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="days_no_tmp" string="Hours"
+                                       attrs="{'invisible': [('duration_type', '=', 'days')]}"/>
+                                <field name="days_no_tmp" string="Days"
+                                       attrs="{'invisible': [('duration_type', '=', 'hours')]}"/>
+                                <field name="payslip_paid" readonly="1" attrs="{'invisible': [('type','!=', 'cash')]}"
+                                       widget="toggle_button" groups="hr.group_hr_manager"/>
+                                <field name="days_no" readonly="1"
+                                       invisible="1"/>
+                            </group>
+                            <group>
+                                <div>
+                                    <separator string="Public Holiday"/>
+                                    <field name="public_holiday"
+                                           force_save="1"/>
+                                </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Overtime Dates" invisible="0">
+                                <field name="overtime_lines">
+                                    <tree string="Overtimes" default_order="date asc" editable="bottom" create="1"
+                                          edit="1" delete="0">
+                                        <field name="date" readonly="0"/>
+                                        <field name="overtime_type" readonly="0"/>
+                                        <!--                                        <field name="project_id" readonly="1"/>-->
+                                        <field name="hours" widget="float_time" sum="Quantity" />
+                                        <field name="paid"/>
+                                    </tree>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2">
+                                    <field name="days_no_tmp" string="Total Hours"/>
+                                    <field name="t_normal_hours" string="Total Normal Hours"/>
+                                    <field name="t_special_hours" string="Total Special Hours"/>
+                                </group>
+                                <div class="oe_clear"/>
+                            </page>
+                            <page string="Work Description" name="work_description" invisible="1">
+                                <group>
+                                    <field name="ot_remarks"/>
+                                    <field name="desc"
+                                           attrs="{'readonly': [('state', '!=', 'draft')]}" invisible="1"/>
+                                </group>
+                            </page>
+                            <page string="Attendance" invisible="1">
+                                <field name="attendance_ids" readonly="1"/>
+                            </page>
+                            <page string="Work Schedule" invisible="1">
+                                <field name="work_schedule" readonly="1"/>
+                            </page>
+                            <page string="Global Leaves" invisible="1">
+                                <field name="global_leaves"/>
+                            </page>
+                        </notebook>
+
+                        <!--                        <group string="Refuse Reason"-->
+                        <!--                               attrs="{'invisible': [('cancel_reason', '=', False)]}">-->
+                        <!--                            <field name="cancel_reason" readonly="1"/>-->
+                        <!--                        </group>-->
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                    <!--                    <div class="oe_chatter">-->
+                    <!--                        <field name="message_follower_ids"-->
+                    <!--                               widget="mail_followers"-->
+                    <!--                               groups="base.group_user"/>-->
+                    <!--                        <field name="message_ids" widget="mail_thread"/>-->
+                    <!--                    </div>-->
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="hr_overtime_tree_view" model="ir.ui.view">
+            <field name="name">Overtime</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime Request">
+                    <field name="employee_number" string="Employee Number"/>
+                    <field name="employee_id"/>
+                    <field name="project_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="days_no_tmp"/>
+                    <field name="state"/>
+                    <!-- <field name='last_approval_date'/>
+                    <field name='date_validated'/>
+                    <field name="type" invisible="1"/>
+                    <field name="payslip_paid" groups="hr.group_hr_manager" readonly="1"
+                           attrs="{'invisible': [('type','!=', 'cash')]}" widget="toggle_button"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- kanban view of  model-->
+        <record id="hr_overtime_kanban" model="ir.ui.view">
+            <field name="name">HR Overtime Kanban</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" create="0">
+                    <field name="name"/>
+                    <field name="employee_number" string="Employee Number"/>
+                    <field name="employee_id"/>
+                    <field name="project_id"/>
+                    <field name="overtime_category"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click container">
+                                <div class="row no-gutters">
+                                    <div class="col-10">
+                                        <strong class="o_kanban_record_title">
+                                            <t t-esc="record.employee_id.value"/>
+                                        </strong>
+                                        <div class="text-muted o_kanban_record_subtitle">
+                                            <t t-esc="record.project_id.value"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col-12">
+                                        <strong>State:</strong>
+                                        <span class="text-muted">
+                                            <t t-esc="record.state.value"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Actions -->
+        <!-- overtime -->
+        <record id="hr_overtime_action" model="ir.actions.act_window">
+            <field name="name">Overtime Request</field>
+            <field name="res_model">hr.overtime</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">[('employee_id.user_id','=',uid)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create new Pre Approval Overtime Request.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- MenuItems -->
+        <menuitem id="overtime_submenu" name="Overtime Request"
+                  groups="base.group_user" web_icon="ohrms_overtime,static/description/overtime_icon.png"/>
+        <menuitem id="overtime" name="Overtime Request"
+                  parent="overtime_submenu"
+                  action="hr_overtime_action"
+                  groups="base.group_user"/>
+
+
+    </data>
+</odoo>

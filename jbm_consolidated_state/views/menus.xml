@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+
+        <menuitem id="consolidated_state_menu" name="Consolidated State" groups="base.group_erp_manager"
+                  action="consolidated_state_action"/>
+    </data>
+</odoo>

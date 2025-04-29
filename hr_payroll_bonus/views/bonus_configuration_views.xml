@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+
+        <record id="bonus_configuration_form_view" model="ir.ui.view">
+            <field name="name">bonus.configuration.form.view</field>
+            <field name="model">bonus.configuration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                            <label for="number_of_days_from" string="Number Of Days "/>
+
+                        <group>
+                            <div>
+                                <label for="number_of_days_from" string="From: "/>
+                                <field name="number_of_days_from" class="oe_inline" colspan="4"/>
+                                <label for="number_of_days_to" string="To: " class="oe_inline" style="margin-left:20px; margin-right:20px;"/>
+                                <field name="number_of_days_to" class="oe_inline" colspan="4"/>
+                            </div>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="bonus_month"/>
+                                <field name="bonus_type"/>
+                                <field name="allowed_for"/>
+                            </group>
+                        </group>
+
+
+                        <group>
+                            <group>
+                                <field name="percentage" widget="percentage"
+                                       attrs="{'invisible': [('bonus_type','!=','percentage')]}"/>
+                                <field name="amount" attrs="{'invisible': [('bonus_type','!=','fixed_amount')]}"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bonus_configuration_tree_view" model="ir.ui.view">
+            <field name="name">bonus.configuration.tree.view</field>
+            <field name="model">bonus.configuration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="number_of_days_from"/>
+                    <field name="number_of_days_to"/>
+                    <field name="bonus_month"/>
+                    <field name="bonus_type"/>
+                    <field name="amount"/>
+                    <field name="percentage" widget="percentage"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="bonus_configuration_action" model="ir.actions.act_window">
+            <field name="name">Bonus Configuration</field>
+            <field name="res_model">bonus.configuration</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="bonus_configuration_menu" name="Bonus Configuration"
+                  action="bonus_configuration_action" parent="hr_payroll.menu_hr_salary_configuration"/>
+    </data>
+</odoo>

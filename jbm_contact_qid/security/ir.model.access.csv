@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jbm_contact_qid_jbm_contact_qid,jbm_contact_qid.jbm_contact_qid,model_jbm_contact_qid_jbm_contact_qid,base.group_user,1,1,1,1

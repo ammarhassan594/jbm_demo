@@ -1,0 +1,48 @@
+<odoo>
+    <!--    ebs crm services activity form-->
+    <record model="ir.ui.view" id="view_ebs_crm_services_activity_form">
+        <field name="name">ebs.crm.services.activity.Form</field>
+        <field name="model">ebs.crm.service.activity</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Required In Documents" name="in_documents">
+                            <field name="in_documents" options="{'no_create': True,'no_create_edit':True}" />
+                        </page>
+                         <page string="Required Out Documents" name="out_documents">
+                            <field name="out_documents" options="{'no_create': True,'no_create_edit':True}" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service activity tree-->
+    <record id="view_ebs_crm_services_activity_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.services.activity.tree</field>
+        <field name="model">ebs.crm.service.activity</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="in_documents"/>
+                <field name="out_documents"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service activity action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_activity">
+        <field name="name">Service Stages</field>
+        <field name="res_model">ebs.crm.service.activity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

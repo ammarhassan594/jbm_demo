@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="return_attendance_to_confirm_action_server" model="ir.actions.server">
+            <field name="name">Return Attendance To Confirm</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_attendance_sheet"/>
+            <field name="binding_model_id" ref="model_hr_attendance_sheet"/>
+            <field name="groups_id" eval="[(4,ref('base.group_system'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                records.return_attendance_to_confirm()
+            </field>
+        </record>
+
+        <record id="justification_history_log_tree_view" model="ir.ui.view">
+            <field name="name">Justification History Log</field>
+            <field name="model">hr.attendance.sheet</field>
+            <field name="arch" type="xml">
+                <tree string="Justification History Log" create="0" edit="0" delete="0">
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="check_in" widget="float_time"
+                                       sum="Check In"/>
+                    <field name="check_out" widget="float_time"
+                                       sum="Check Out"/>
+                    <field name="early_check_out" widget="float_time"
+                                       sum="Early Check Out"/>
+                    <field name="late_check_in" widget="float_time"
+                                       sum="Late Check In"/>
+                    <field name="attendance_state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_justification_history_log" model="ir.actions.act_window">
+            <field name="name">Justification History Log</field>
+            <field name="res_model">hr.attendance.sheet</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem
+                id="menu_justification_history_log"
+                name="Justification History Log"
+                parent="ake_early_late_attandence.taqat_menu_hr_attendance_mainmenu"
+                action="action_justification_history_log"/>
+
+        <menuitem id="hr_attendance.menu_hr_attendance_view_attendances" name="Attendances"
+                  parent="hr_attendance.menu_hr_attendance_root" sequence="10"
+                  groups="hr_attendance.group_hr_attendance_user"/>
+        <menuitem id="submenu_hr_attendance_view_attendances" name="Attendance Row Data"
+                  parent="hr_attendance.menu_hr_attendance_view_attendances" sequence="10"
+                  groups="hr_attendance.group_hr_attendance_user" action="hr_attendance.hr_attendance_action"/>
+    </data>
+</odoo>

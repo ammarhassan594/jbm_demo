@@ -1,0 +1,43 @@
+<odoo>
+    <!--    ebs crm services groups line form-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_groups_line_form">
+        <field name="name">ebs.crm.service.groups.line.Form</field>
+        <field name="model">ebs.crm.service.groups.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="sequence" readonly="1" force_save="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="services_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service groups line tree-->
+    <record id="view_ebs_crm_service_groups_line_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.service.groups.line.tree</field>
+        <field name="model">ebs.crm.service.groups.line</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" readonly="1" force_save="1"/>
+                <field name="services_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service groups line action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_groupsline">
+        <field name="name">Service Group Line</field>
+        <field name="res_model">ebs.crm.service.groups.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

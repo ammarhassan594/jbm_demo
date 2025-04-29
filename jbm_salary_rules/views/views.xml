@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="jbm_salary_rules.list">
+      <field name="name">jbm_salary_rules list</field>
+      <field name="model">jbm_salary_rules.jbm_salary_rules</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="jbm_salary_rules.action_window">
+      <field name="name">jbm_salary_rules window</field>
+      <field name="res_model">jbm_salary_rules.jbm_salary_rules</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="jbm_salary_rules.action_server">
+      <field name="name">jbm_salary_rules server</field>
+      <field name="model_id" ref="model_jbm_salary_rules_jbm_salary_rules"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="jbm_salary_rules" id="jbm_salary_rules.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="jbm_salary_rules.menu_1" parent="jbm_salary_rules.menu_root"/>
+    <menuitem name="Menu 2" id="jbm_salary_rules.menu_2" parent="jbm_salary_rules.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="jbm_salary_rules.menu_1_list" parent="jbm_salary_rules.menu_1"
+              action="jbm_salary_rules.action_window"/>
+    <menuitem name="Server to list" id="jbm_salary_rules" parent="jbm_salary_rules.menu_2"
+              action="jbm_salary_rules.action_server"/>
+-->
+  </data>
+</odoo>

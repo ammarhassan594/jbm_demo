@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+
+        <record id="purchase_order_asset_custom" model="ir.ui.view">
+            <field name="name">purchase.order.asset.custom</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="asset_number" invisible="True"/>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_see_asset" type="object" class="oe_stat_button"
+                            attrs="{'invisible':[('asset_number','=',0)]}" icon="fa-id-card-o">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="asset_number"/>
+                            </span>
+                            <span class="o_stat_text">Assets</span>
+                        </div>
+                    </button>
+                </xpath>
+
+                <xpath expr="//button[@name='button_unlock']" position="after">
+                    <button name="open_create_asset_wiz"
+                            string="Create Asset"
+                            type="object" class="oe_highlight"
+                            attrs="{'invisible':[('state','not in',('purchase','done'))]}"
+                    />
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='qty_invoiced']" position="after">
+                    <field name="asset_created_nb"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group[1]/field[@name='qty_received_method']"
+                       position="before">
+                    <field name="asset_created_nb"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

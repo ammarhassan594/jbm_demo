@@ -1,0 +1,1137 @@
+body {
+	margin:  0;
+}
+.page-content {
+	width: 100%;
+	margin:  0 auto;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	-o-justify-content: center;
+	-ms-justify-content: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	background: #383a4f;
+	flex-direction: column;
+	-o-flex-direction: column;
+	-ms-flex-direction: column;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+}
+.wizard-heading {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    padding-top: 85px;
+    padding-bottom: 55px;
+}
+.wizard-v6-content   {
+	width: 910px;
+	box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-o-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	margin: 0 0 90px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+}
+.wizard-v6-content .wizard-form {
+	width: 100%;
+	background: #525575;
+	border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.form-register .steps {
+	padding:  35px 35px 20px;
+}
+.form-register .steps ul {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -o-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    width: 100%;
+}
+.form-register .steps li,
+.form-register .steps li.current {
+	outline: none;
+	-o-outline: none;
+    -ms-outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: relative;
+    width: 33.33%;
+    margin-right: 20px;
+
+}
+.form-register .steps li:last-child {
+	margin-right: 0;
+}
+.form-register .steps li .current-info {
+	display: none;
+}
+.form-register .steps li a {
+	text-decoration: none;
+	outline: none;
+	-o-outline: none;
+    -ms-outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+}
+.select_row_background_color{
+    background-color: #E0E0E0;
+}
+.form-register .steps li a .title {
+	display: flex;
+	display: -webkit-flex;
+}
+.form-register .steps li a .title .step-icon {
+    position: relative;
+    outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    /*box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.14);*/
+    -o-box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.14);
+    -ms-box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.14);
+    font-size: 14px;
+    padding: 7px 14px;
+    margin: 0;
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 25px;
+    background: #cdcdcd;
+    color: black;
+    font-family: 'Montserrat-Regular';
+
+}
+.form-register .steps li a .step-icon span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.form-register .steps li.current a .step-icon,
+.form-register .steps li.current a:active .step-icon,
+.form-register .steps li.done a .step-icon,
+.form-register .steps li.done a:active .step-icon {
+	background: #b79854;
+	color: white;
+	font-family: 'Montserrat-Bold';
+}
+.form-register .steps li.current a .step-text {
+    font-family: 'Montserrat-Bold';
+}
+.form-register .steps li a .step-text {
+	color: #333;
+	font-size: 14px;
+	font-weight: 400;
+	padding-top: 18px;
+	padding-left: 10px;
+	margin: auto;
+	margin-left: 0px !important;
+}
+.form-register .content .card {
+    border-radius: none !important;
+    border: none !important;
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.12);
+}
+.form-register .content .card .card-header{
+    font-family: 'Montserrat-Bold';
+    color: #201747;
+    font-size: 16px;
+    background-color: white !important;
+}
+.form-register .content .card .card-header:first-child{
+        border-radius: none !important;
+}
+.form-register .content .card .card-body .card-title{
+    font-family: "Montserrat-Bold";
+    color: #201747;
+    font-size: 16px;
+}
+.form-register .content {
+	padding:  0 35px;
+}
+.form-register .content h2 {
+	display: none;
+}
+.form-register .content .row{
+    padding-left:18px;
+    padding-right:18px;
+}
+.inner .form-heading {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	-o-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.inner .form-heading h3 {
+	font-weight: 700;
+	font-size: 30px;
+	color: #fff;
+	margin: 0;
+    padding: 0 0 35px;
+}
+.inner .form-heading span {
+	font-weight: 400;
+	font-size: 18px;
+	color: #ccc;
+}
+.inner .form-row {
+    display: flex;
+    margin: 0 -15px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.inner .form-row .form-row-inner {
+    position: relative;
+}
+.inner .form-row .form-holder {
+    width: 50%;
+    padding: 0 15px;
+    position: relative;
+}
+.inner .form-row .form-holder.form-holder-2 {
+	width: 100%;
+	position: relative;
+}
+.inner .form-row .form-holder .label {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    transform-origin: 0 0;
+    transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+}
+.inner .form-row .form-holder label.special-label {
+    display: block;
+    float: none;
+    padding-right: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.inner .form-row .form-holder label.special-label-1 {
+	font-weight: 600;
+	font-size: 14px;
+	color: #55e8d5;
+}
+.inner .form-images {
+    margin-bottom: 20px;
+}
+.inner .form-row .form-holder input,
+.inner .form-row .form-holder select {
+    width: 100%;
+    padding: 11.5px 20px;
+    border: none;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    background: transparent;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(255,255,255,0.3);
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+.inner .form-row .form-holder .form-control:focus + .label, 
+.inner .form-row .form-holder .form-control:valid + .label {
+    transform: translateY(-34px) scale(0.9);
+    -moz-transform: translateY(-34px) scale(0.9);
+    -webkit-transform: translateY(-34px) scale(0.9);
+    -o-transform: translateY(-34px) scale(0.9);
+    -ms-transform: translateY(-34px) scale(0.9);
+    color: #55e8d5;
+}
+input::placeholder {
+    color: #fff;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #fff;
+}
+input::-ms-input-placeholder { /* Microsoft Edge */
+   color: #fff;
+}
+.inner .form-row .form-holder select {
+    background: #fff url('../images/wizard_v6_icon.png') no-repeat scroll;
+    background-position: right 16px center;
+    z-index: 1;
+    cursor: pointer;
+    color: #666;
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+}
+.inner .form-row .form-holder select#room,
+.inner .form-row .form-holder #day,
+.inner .form-row .form-holder select#time {
+	background: transparent;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(255,255,255,0.3);
+    color: #fff;
+    position: relative;
+    background: 0 0;
+    z-index: 1;
+    cursor: poiter;
+}
+.inner .form-row .form-holder .select-btn {
+    z-index: 0;
+    position: absolute;
+    top: 54.5%;
+    right: 6%;
+    font-size: 19px;
+    cursor: pointer;
+    color: #fff;
+}
+.inner .form-row .form-holder.form-holder-2 .select-btn {
+	right: 3.5%;
+}
+.inner .form-row.form-row-date .form-holder select {
+	float: none;
+    width: 12.4%;
+    margin-right: 20px;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.inner .form-row.form-row-date .form-holder select#year {
+	width: 13.6%;
+}
+.inner .form-row .form-holder select option {
+	background: #fff;
+	color: #666;
+}
+.icon{
+cursor: pointer;
+}
+.inner .form-row .form-holder .ui-datepicker-trigger {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 19px;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 54.5%;
+    outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+}
+.inner .form-row.table-responsive {
+    border: none;
+}
+.inner .table-responsive .table {
+	width: 100%;
+}
+.inner .table-responsive tbody {
+	text-align: left;
+}
+.inner .table-responsive tr.space-row {
+    display: block;
+}
+.inner .table-responsive tbody th {
+	display: block;
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.5);
+	padding-bottom: 0;
+}
+.inner .table-responsive tbody td {
+	color: #55e8d5;
+	font-size: 18px;
+	font-weight: 700;
+	padding-bottom: 25px;
+}
+.form-register .actions {
+	padding: 0 45px 45px;
+	float:right;
+}
+.actions ul {
+	list-style: none;
+	padding-left: 0;
+    margin: 40px 0 0;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+}
+.actions ul li.disabled,
+.actions ul li:first-child {
+	display: none;
+}
+.actions ul li a, #submit_button{
+	padding: 0;
+    border: none;
+    display: inline-flex;
+    height: 48px;
+    width: 184px;
+    justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -o-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: #b79854;
+    cursor: pointer;
+    border-radius: 0px !important;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.actions ul li:hover, #submit_button:hover {
+	color: black;
+}
+.actions ul li a {
+	color: #fff;
+	text-decoration: none;
+    padding: 11px 55px;
+}
+.contract-info-message{
+    height: 120px;
+    background: #efefef;
+    display: flex;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.contract-info-message .text{
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+}
+.contract-info-message .icon span i{
+    font-size: 80px;
+    padding: 30px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+	.wizard-v6-content {
+		width: 90%;
+	}
+	.form-register .steps li a .title {
+		flex-direction: column;
+		-o-flex-direction: column;
+		-ms-flex-direction: column;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		align-items: center;
+		-o-align-items: center;
+		-ms-align-items: center;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+	}
+/*	.form-register .steps li a .title .step-icon {
+		border-top-left-radius: 0;
+    	border-bottom-left-radius: 0;
+	}*/
+	.form-register .steps li a .step-text {
+		padding-bottom: 20px;
+		padding-left: 0;
+	}
+	.inner .form-row.form-row-date .form-holder select,
+	.inner .form-row.form-row-date .form-holder select#year {
+		width: 25%;
+	}
+}
+@media only screen and (min-width: 575px) and (max-width: 767px){
+/*@media screen and (max-width: 767px) {*/
+    .sidebar{
+    width: auto !important;
+    position: unset;
+    display: block !important;
+  }
+  .d-flex {
+        display: unset !important;
+    }
+    #contract_info_active .d-flex{
+        display: flex !important;
+    }
+    #accordionUser .row .form-group,#accordionUpdate .row .form-group,#accordionLicense .row .form-group{
+    width: 50% !important;
+  }
+  .commercial_registration_form.col-7,.commercial_license_form.col-7,.establishment_card_form.col-7{
+        flex: unset !important;
+        max-width: unset !important;
+    }
+    .commercial_registration_form .row .form-group,#national_address .card-body .row .form-group ,.contract-info-form .row .form-group
+    {
+        width:47% !important;
+    }
+  div  #contract_qid_document{
+    width: 47% !important;
+  }
+  .contract-info-form .row .form-group{
+        width: 47% !important;
+  }
+}
+
+@media screen and (max-width: 575px) {
+    .oe_website_login_container .row,.mobile_no_confirmation,.otp_input{
+        justify-content: center;
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+    }
+    .no_docs_message{
+        margin-top: 42px !important;
+    }
+    .reset-info{
+        margin-left:0%;
+        display:flex;
+        width: 100%;
+    }
+    .login_input_field,.oe_login_buttons a,#resend_otp{
+            margin-left: 0% !important;
+    }
+    .oe_login_buttons{
+        justify-content: center;
+        display: flex;
+    }
+    .invoice_table {
+        display: block !important
+    }
+    .oe_website_login_container .d-flex{
+        display:flex !important;
+    }
+    .text_color {
+        margin-left: 0pc;
+     }
+    .document .o_portal_search_panel{
+            float: left !important;
+            width: 51% !important;
+            margin-top: 2px !important;
+            margin-left: 20px;
+            margin-bottom: 4px;
+    }
+    .request_services_table_class .o_portal_search_panel,.employee_table_class .o_portal_search_panel,.oe_website_login_container .row .form-group,.login_input_field{
+            width: 50% !important   ;
+    }
+    #request_service .card-header,#request_service .card-body .card-title{
+        font-size:14px;
+    }
+    #request_service .card-body .row{
+        font-size:12px;
+    }
+    .o_portal_messages_container {
+        margin-right: unset !important;
+    }
+    #summary .card-header,#summary .card-body .card-title{
+        font-size:14px;
+    }
+    #summary .card-body .row{
+        font-size:12px;
+    }
+	.form-register .steps {
+	    padding: 35px 30px 20px;
+	}
+	.form-register .steps li a .title .step-icon {
+		padding:  20px;
+		font-size: 20px;
+		padding:  14px;
+		font-size: 14px;
+	}
+	.Add-Document, .Add-Document3, .Add-Document4 {
+	        width: 58px !important;
+            height: 66px !important;
+            margin: 0px 52px 12px !important;
+	}
+	.drop_zone, .drop_zone3, .drop_zone4 {
+        width: 175px !important;
+        height: 241px !important;
+        padding: 56px 15px !important;
+    }
+    .form-register .content .row{
+            padding-right: 00px !important;
+    }
+     #manager_in_charge_passport_document,#contract_passport_document,#primary_in_charge_passport_document,#qid_document_extra_contact,#passport_document_extra_contact,#manager_in_charge_qid_document,#primary_in_charge_qid_document,#contract_qid,#contract_qid_document{
+        margin-bottom: 20px !important;
+    }
+    .commercial_license_form .form-group{
+        width:85% !important;
+    }
+    .establishment_card_form .form-group{
+        width: 100% !important;
+    }
+    .commercial_registration_form.col-7,.commercial_license_form.col-7,.establishment_card_form.col-7{
+        flex: unset !important;
+        max-width: unset !important;
+    }
+    #contact_person_search,#activity_search{
+        width: 30%;
+    }
+    #collapseOneContract14 .card-body .validate_section .row .form-group,.validate_section .row .form-group,.qid_section .row .form-group,.passport_section .row .form-group{
+        width:90% !important;
+        margin-right: 18px;
+    }
+
+    .commercial_registration_form .row .form-group,#national_address .card-body .row .form-group ,.contract-info-form .row .form-group
+    {
+        width:100% !important;
+    }
+    #contract_info_active .d-flex{
+        display: flex !important;
+    }
+    #contract_text{
+        font-size:13px !important;
+    }
+    .Drag-and-drop-document {
+        width: 140px !important;
+        font-size: 11px !important;
+    }
+	.form-register .steps ul{
+	    display:block;
+	        /*min-width: 15%;
+            width: 10%;*/
+	}
+	.form-register .steps li,.form-register .steps li.current{
+	    width:25%;
+	    float:left;
+	    margin-right: 0px !important;
+}
+}
+	.form-register .steps li a .step-text{
+        font-size: 11px !important;
+	}
+	.form-register .content {
+		padding: 0 30px;
+	}
+	.inner .form-heading span {
+		display: none;
+	}
+	.inner .form-images {
+		display: none;
+	}
+	.inner .form-row {
+		flex-direction: column;
+		-o-flex-direction: column;
+		-ms-flex-direction: column;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		margin: 0;
+	}
+	.inner .form-row .form-holder {
+		width: 100%;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	.inner .form-row.form-row-date .form-holder select,
+	.inner .form-row.form-row-date .form-holder select#year {
+	    float: none;
+	    width: 100%;
+	    margin-bottom: 20px;
+	    margin-right: 0;
+	    display: block;
+	}
+	.inner .form-row .form-holder .ui-datepicker-trigger {
+		right: 0;
+	}
+	.inner .form-row .form-holder .select-btn {
+		right: 2%;
+	}
+	
+}
+
+.form-control:focus{
+    border-color: none !important;
+    box-shadow: none !important;
+}
+.drop_zone, .drop_zone3, .drop_zone4 {
+  width: 334px;
+  height: 365px;
+  margin: 20px 00px 20px 20px;
+  padding: 112px 59px;
+  border: solid 0.5px #cdcdcd;
+  background-color: #ffffff;
+}
+.file_zone, .file_zone3 , .file_zone4 {
+  width: 334px;
+  height: 365px;
+  margin: 20px 00px 20px 20px;
+  padding: 15px 59px;
+  border: solid 0.5px #cdcdcd;
+  background-color: #ffffff;
+
+}
+.drop_zone_over{
+ background-color: #F0F0F0;
+}
+
+.commercial_registration_form, .commercial_license_form, .establishment_card_form {
+    padding-left: 20px !important;
+    margin-top: 20px !important;
+    width: 100%;
+}
+#commercial_registration .card-title{
+    margin-bottom: 20px !important;
+}
+.input_form {
+    margin-bottom: 29px !important;
+    width: 150% !important;
+}
+.modal{
+    font-family: 'Montserrat';
+}
+.Partners {
+  width: 72px;
+  height: 19px;
+  margin: 14px 282px 20px 1px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747;
+}
+.Partner-1 {
+  width: 73px;
+  height: 19px;
+  margin: 20px 281px 6px 20px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747;
+}
+
+.Add-new-partner {
+  width: 123px;
+  height: 18px;
+  margin: -18px 0 19px 17px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #b79854;
+}
+.plus_icon {
+  width: 14px;
+  height: 14px;
+  margin: 2px 8px 2px 0;
+  object-fit: contain;
+}
+
+.Managers {
+  width: 83px;
+  height: 19px;
+  margin: 0 271px 20px 0;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747;
+}
+
+.Add-new-manager {
+  width: 134px;
+  height: 18px;
+  margin: -18px 0 19px -9px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #b79854 !important;
+}
+
+.Business-activities {
+  width: 155px;
+  height: 19px;
+  margin: 20px 199px 20px 0;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747 ;
+}
+
+.Add-new-activity {
+  width: 121px;
+  height: 18px;
+  margin: -18px 0 19px -7px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #b79854 !important;
+
+}
+
+
+.Add-Document, .Add-Document3, .Add-Document4 {
+  width: 70px;
+  height: 80px;
+  margin: 0 73px 19px;
+  object-fit: contain;
+}
+
+.Drag-and-drop-document {
+  width: 216px;
+  height: 42px;
+  margin: 2px 0 0;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #262626;
+}
+
+.Drag-and-drop-document .text-style-1 {
+  font-weight: 600;
+  color: #b79854;
+}
+.column-space-right{
+margin-right:4pc;
+}
+.column-space-left{
+margin-left:6pc;
+}
+.input-150-width{
+width:150%;
+}
+.input-130-width{
+width:130%;
+}
+.margin-right-12{
+margin-right:12px;
+}
+.margin-right-20{
+margin-right:12px;
+}
+.input-align-top{
+margin-top:-20px;
+}
+.card-title {
+    margin-bottom: 29px !important;
+}
+.form-select {
+    border: none;
+}
+.card-title-collapse{
+   margin-bottom: -29px !important;
+}
+#fileelem, #fileelem3 , #fileelem4   {
+  display: none;
+}
+.file_label{
+    color: #b79854 !important;
+    text-decoration: underline;
+    cursor:pointer;
+}
+form label {
+    font-weight:100;
+}
+.error {
+    color:red;
+}
+.width-48{
+    width:48%;
+}
+.width-47{
+    width:47%;
+}
+.form-group {
+    margin-bottom: 29px !important;
+}
+
+.service_box {
+    min-height:60px;
+    border: solid 0.5px #cdcdcd;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 12px;
+    color:#aaaaaa;
+}
+.service_catalog_form .row{
+    margin-bottom: 20px;
+}
+.service_catalog_form .card-title {
+    margin-bottom: 20px !important;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #b79854;
+  background-color: #b79854;
+}
+#form-register select {
+    font-family:'Montserrat';
+}
+.summary_card{
+    margin-bottom: 20px;
+}
+#summary .card-title{
+    margin-bottom: 12px !important;
+    margin-top: 30px;
+}
+#summary .row{
+    padding-left: 0px !important;
+}
+#summary .table{
+    margin-left: 15px;
+}
+#summary{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+.partner-name{
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'Montserrat-SemiBold';
+    color: #201747;
+}
+.fields{
+    margin-bottom: 8px;
+}
+.fields-data{
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0px !important;
+}
+/* for asterisk */
+.required-field::after {
+    content: "*";
+    color: red;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    width: 30%;
+    margin-left: 35%;
+    text-align: center;
+}
+
+.search_table {
+   width:100%;
+  overflow-x:scroll;
+
+}
+.not-allowed {
+     cursor: not-allowed !important;
+}
+.button_disabled{
+  pointer-events: none;
+}
+.read_only_field {
+ margin-top: -14px;
+ margin-left: 15px;
+ padding-bottom: 10px;
+
+}
+.btn-custom-search{
+    color: #FFFFFF !important;
+    background-color: #b79854 !important;
+    border-radius: 0 !important;
+    border-color: none !important;
+    width:188px;
+    margin-top:30px;
+}
+.table_body_contact_person {
+    font-family:'Montserrat-Regular';
+}
+.table_body_contact_authorizer{
+    font-family:'Montserrat-Regular';
+}
+/*.mb64{
+    width:80%;
+}*/
+
+.contact_table td, .contact_table th{
+    word-wrap: break-word;
+    max-width: 155px !important;
+}
+.primary_contact_table td, .primary_contact_table th{
+    word-wrap: break-word;
+    max-width: 155px !important;
+    font-family: 'Montserrat';
+}
+.partner_table td, .partner_table th{
+    word-wrap: break-word;
+    max-width: 155px !important;
+    font-family: 'Montserrat-Regular';
+}
+.table_activity{
+font-family: 'Montserrat-Regular';
+}
+
+.summary_table td, .commercial_reg_table td{
+    padding: 0px !important;
+}
+.brown_color_text{
+    color: #b79854;
+    font-family: 'Montserrat-Bold';
+}
+.contract_number{
+    font-family: 'Montserrat-Bold';
+}
+.loader {
+  border: 6px solid #b79854;
+  border-radius: 50%;
+  border-top: 6px solid white;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin:0 auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ui-state-default.ui-state-active{
+    background: #b79854 !important;
+    color: white;
+}
+.ui-state-default{
+    border: 1px solid #ffffff !important;
+    background: #ffffff !important;
+    font-weight: normal;
+    color: #454545;
+}
+.ui-widget-header {
+    border: 1px solid #ffffff !important;
+    background: #ffffff !important;
+    color: #333333 !important;
+    font-weight: bold !important;
+}
+#employee_page{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#employee_page .card-title{
+    font-family: "Montserrat-Bold";
+    color: #201747;
+    font-size: 16px;
+    margin-bottom: 12px !important;
+    margin-top: 30px !important;
+}
+#employee_page .card-body{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#employee_page .row {
+    padding-left: 0px !important;
+}
+#employee_page .table {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+.margin-right-accordion{
+   margin-right:229px;
+}

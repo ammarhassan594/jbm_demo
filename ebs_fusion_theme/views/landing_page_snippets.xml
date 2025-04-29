@@ -1,0 +1,8 @@
+<odoo>
+    <template id="fusion_contactus_form" name="Contact Form (Opportunity)" inherit_id="website_crm.contactus_form"
+              customize_show="True">
+        <xpath expr="//form" position="inside">
+            <input type="hidden" name="service_type"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="car_loan_type" model="hr.loan.type">
+            <field name="name">Car Loan</field>
+            <field name="car_loan">True</field>
+        </record>
+        <record id="personal_loan_type" model="hr.loan.type">
+            <field name="name">Personal Loan</field>
+            <field name="personal_loan">True</field>
+        </record>
+        <record id="marriage_loan_type" model="hr.loan.type">
+            <field name="name">Marriage Loan</field>
+            <field name="marriage_loan">True</field>
+        </record>
+        <record id="good_will_loan_type" model="hr.loan.type">
+            <field name="name">Good Will Loan</field>
+            <field name="good_will_loan">True</field>
+        </record>
+
+    </data>
+</odoo>

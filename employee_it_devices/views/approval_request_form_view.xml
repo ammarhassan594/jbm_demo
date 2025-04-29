@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+        <record id="it_inherit_approval_request_view_form" model="ir.ui.view">
+            <field name="name">inherit.approval.request</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='request_employee_id']" position="after">
+                    <field name="is_it_device" invisible="1"/>
+                    <field name="is_it_request" invisible="1"/>
+                    <field name="is_it_access_right" invisible="1"/>
+                    <field name="show_description" invisible="1"/>
+                    <field name="it_devices_id" widget="many2many_tags"
+                           attrs="{'invisible': [('is_it_device', '!=', True)]}"/>
+                    <field name="it_request_id" widget="many2many_tags"
+                           attrs="{'invisible': [('is_it_request', '!=', True)]}"/>
+                    <field name="it_access_right_id" widget="many2many_tags"
+                           attrs="{'invisible': [('is_it_access_right', '!=', True)]}"/>
+                    <field name="it_description" attrs="{'invisible': [('show_description', '!=', True)]}"/>
+                </xpath>
+<!--                <xpath expr="//button[@name='action_get_attachment_view']" position="after">-->
+<!--                    <button type="object" string="Purchase Request" class="btn btn-primary btn-sm"-->
+<!--                            name="open_purchase_request" context="{'category_id':'active_id'}"/>-->
+<!--                </xpath>-->
+
+<!--                <xpath expr="//page[@name='approvers']" position="after">-->
+<!--                    <page name="pr_other_information" string="Other Information"-->
+<!--                          attrs="{'invisible':[('approval_request_id', '=', False)]}">-->
+<!--                        <group>-->
+<!--                            <field name="approval_request_id"/>-->
+<!--                            <field name="requester_id" attrs="{'invisible': [('approval_type', '!=', 'purchase')]}"/>-->
+<!--                            <field name="approved_purchase_order_id" attrs="{'invisible': [('approval_type', '!=', 'attendance')]}"/>-->
+<!--                        </group>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+
+    </data>
+</odoo>

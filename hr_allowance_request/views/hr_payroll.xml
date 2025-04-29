@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_payslip_form_inherit_view_one" model="ir.ui.view">
+        <field name="name">hr.payslip.inherit.form.one</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="ebs_lb_payroll.custom_hr_payslip_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='in_leave']" position="replace">
+                <field name="allowance_request_ids" widget="many2many_tags" readonly="1"/>
+           </xpath>
+        </field>
+    </record>
+</odoo>

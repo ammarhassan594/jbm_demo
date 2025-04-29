@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="purchase_requisition_form_view_inherit" model="ir.ui.view">
+            <field name="name">purchase.requisition.form.view.inherit</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='products']" position="after">
+                    <page name="text" string="Description">
+                        <group>
+                            <field name="contract_description"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_employee_promotion_search" model="ir.ui.view">
+            <field name="name">view.employee.promotion.search</field>
+            <field name="model">employee.promotion</field>
+            <field name="arch" type="xml">
+                <search string="Employee Promotion Search">
+                    <field name="arabic_name" string="Arabic Name"
+                           filter_domain="[('arabic_name', 'ilike', self)]"
+                    />
+                    <field name="english_name" string="English name"
+                           filter_domain="[('english_name', 'ilike', self)]"/>
+                    <field name="name"/>
+                    <field name="employee_number"/>
+                    <field name="job_id"/>
+                    <field name="department_id"/>
+                    <field name="manager_id"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="employee_promotion_form_view" model="ir.ui.view">
+            <field name="name">employee.promotion.form.view</field>
+            <field name="model">employee.promotion</field>
+            <field name="arch" type="xml">
+                <form string="Employee Promotion">
+                    <header>
+                        <button string="Submit" name="action_submit" states="draft" type="object"
+                                class="btn oe_read_only"/>
+
+                        <button string="Set To Draft" name="action_draft" states="submit" type="object"
+                                class="btn oe_read_only"/>
+                        <!--                        <button string="Confirm" name="action_confirm" states="submit" type="object"-->
+                        <!--                                class="btn oe_read_only"/>-->
+                        <!--                        <button string="Approve" name="action_approve_by_hr" states="confirm" type="object"-->
+                        <!--                                class="oe_highlight oe_read_only"/>-->
+                        <button string="Approve By HR" name="action_approve" states="hr_approve" type="object"
+                                class="oe_highlight oe_read_only" groups="employee_promotion.group_promotion_manager"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,submit,approve"/>
+                    </header>
+                    <sheet>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group string="Basic Info">
+                            <group>
+                                <field name="company_id" invisible="1"/>
+                                <field name="employee_id" options="{'no_open': True}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="arabic_name" invisible="1"/>
+                                <field name="english_name" invisible="1"/>
+                                <field name="employee_number" string="Employee Number"/>
+                                <!--                                <field name="employee_id_domain" invisible="1"/>-->
+
+                                <field name="manager_id"/>
+                                <field name="line_manager_id"/>
+                                <field name="department_id"/>
+                                <field name="contract_status_old" force_save="1" readonly="1"/>
+                                <field name="exceptional_promotion"/>
+                            </group>
+                            <group>
+                                <field name="job_id"/>
+                                <field name="is_expired_contract" invisible="1"/>
+                                <field name="number_of_months_differance" invisible="1"/>
+                                <field name="contract_id" force_save="1"/>
+                                <field name="is_get_adjustment" invisible="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="OLd Group">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="old_payscale_id" force_save="1"
+                                />
+                            </group>
+                            <group string="New Group">
+                                <field name="payscale_id_domain" invisible="1"/>
+                                <field name="is_married" invisible="1"/>
+                                <field name="is_qatari" invisible="1"/>
+                                <!--                                <field name="is_gcc_country" invisible="1"/>-->
+                                <!--                                <field name="is_classified" invisible="1"/>-->
+                                <field name="contract_status_new" force_save="1" required="1"/>
+                                <field name="new_payscale_id"
+                                       domain="payscale_id_domain"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}" force_save="1"
+                                       string="New Group"/>
+                                <field name="date_start"/>
+                                <field name="new_contract_id"/>
+                                <field name="new_job_id"/>
+                                <field name="payment_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <!--                                <field name="promotion_rule_id" readonly="1"/>-->
+                                <!--                                <field name="payscale_scheduled_raise_id" readonly="1"/>-->
+                            </group>
+                            <group>
+                                <field name="promotion_rule_id" readonly="1"/>
+                                <field name="payscale_scheduled_raise_id" readonly="1"/>
+                            </group>
+
+                            <!--                            <group string="New Contract">-->
+                            <!--                                <field name="contract_status_new" force_save="1" required="1"/>-->
+                            <!--                                <field name="date_start"/>-->
+                            <!--                                <field name="payment_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+                            <!--                            </group>-->
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <!-- Fields For In House Employee -->
+                            <page string="Old Salary Info" name="payroll_group_old_salary">
+                                <group string="Salary Info">
+                                    <group>
+                                        <field name="wage_old" string="Basic Salary"/>
+                                        <field name="housing_old" string="Housing Allowance"/>
+                                        <field name="mobile_allowance_old" string="Mobile Allowance"/>
+                                        <field name="transport_allowance_old" string="Transport Allowance"/>
+                                        <field name="other_allowance_old" string="Other Allowance"/>
+                                        <field name="social_alw_old" string="Social Allowance"/>
+                                        <field name="car_alw_old" string="Car Allowance	"/>
+                                        <field name="supervision_alw_old" string="Supervision Allowance	"/>
+                                        <field name="gross_salary_old" string="Gross Salary	"/>
+                                        <field name="ticket_allowance_old" string="Ticket Allowance"/>
+                                        <field name="mobilisation_allowance_for_permanent_staff_old"
+                                               string="Mobilization Allowance	"/>
+                                        <field name="car_loan_for_permanent_staff_old" string="Car Loan"/>
+                                        <field name="marriage_loan_for_permanent_staff_old" string="Marriage Loan"/>
+                                        <field name="furniture_allowance_for_permanent_staff_old"
+                                               string="Furniture Allowance"/>
+                                        <field name="education_allowance_for_permanent_staff_old"
+                                               string="Education Allowance"/>
+                                        <field name="business_allowance_non_gulf_old" string="Business Allowance"/>
+                                    </group>
+                                    <group>
+                                        <field name="adult_fare_old" string="Adult Fare"/>
+                                        <field name="child_fare_old" string="Child Fare"/>
+                                        <field name="infant_fare_old" string="Infant Fare"/>
+                                        <field name="number_of_children_allowed_old"
+                                               string="Number of allowed dependents"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="New Salary Info" name="payroll_group_new_salary">
+                                <group string="Salary Info">
+                                    <group>
+                                        <field name="wage_new" string="Basic Salary"/>
+                                        <field name="housing_new"/>
+                                        <field name="mobile_allowance_new"/>
+                                        <field name="transport_allowance_new"/>
+                                        <field name="other_allowance_new"/>
+                                        <field name="social_alw_new"/>
+                                        <field name="car_alw_new"/>
+                                        <field name="supervision_alw_new"/>
+                                        <field name="end_of_basic_salary_bonus" attrs="{'invisible': [('new_contract_id', '=', False)]}"/>
+                                        <field name="gross_salary_new"/>
+                                        <field name="ticket_allowance_new"/>
+                                        <field name="mobilisation_allowance"/>
+                                        <field name="car_loan"/>
+                                        <field name="marriage_loan_for_permanent_staff_new"/>
+                                        <field name="furniture_allowance"/>
+                                        <field name="education_allowance"/>
+                                        <field name="business_allowance"/>
+
+                                    </group>
+                                    <group>
+                                        <field name="adult_fare_new"/>
+                                        <field name="child_fare_new"/>
+                                        <field name="infant_fare_new"/>
+                                        <field name="number_of_children_allowed_new"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_promotion_tree_view" model="ir.ui.view">
+            <field name="name">employee.promotion.tree.view</field>
+            <field name="model">employee.promotion</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Promotion">
+                    <field name="name"/>
+                    <field name="employee_number"/>
+                    <field name="employee_id"/>
+                    <field name="job_id"/>
+                    <field name="department_id"/>
+                    <field name="manager_id"/>
+                    <field name="state"/>
+                    <field name="import_from_file" invisible="1"/>
+                    <field name="arabic_name" optional="hide"/>
+                    <field name="english_name" optional="hide"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_promotion_action" model="ir.actions.act_window">
+            <field name="name">Employee Promotion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.promotion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Employee Promotion" id="employee_promotion_menu"
+                  sequence="30"
+                  action="employee_promotion_action" groups="employee_promotion.group_promotion_officer"/>
+
+
+        <record model="ir.actions.server" id="action_remove_employee_promotion">
+            <field name="name">Remove Employee Promotion</field>
+            <field name="model_id" ref="employee_promotion.model_employee_promotion"/>
+            <field name="binding_model_id" ref="employee_promotion.model_employee_promotion"/>
+            <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_remove_employee_promotion()
+            </field>
+        </record>
+
+    </data>
+</odoo>

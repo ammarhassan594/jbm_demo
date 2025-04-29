@@ -1,0 +1,169 @@
+<odoo>
+    <data>
+        <!--tree view of  model-->
+        <record id="payroll_group_tree" model="ir.ui.view">
+            <field name="name">Payroll Group Tree</field>
+            <field name="model">employee.payroll.group</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="employee_ids"/>
+                    <field name="contract_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form view of  model-->
+        <record id="payroll_group_form" model="ir.ui.view">
+            <field name="name">Payroll Group Form</field>
+            <field name="model">employee.payroll.group</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="fixed_food_allowance"/>
+                            <field name="l_a_food_alw"/>
+                        </group>
+                        <notebook>
+                            <page string="Pay Scale" groups="hr_payroll.group_hr_payroll_user">
+                                <group>
+                                    <label for="basic_from" string="Basic"/>
+                                    <div>
+                                        <field name="basic_from" class="oe_inline"/>
+                                        -
+                                        <field name="basic_to" class="oe_inline"/>
+
+                                    </div>
+
+                                    <label for="accommodation_from" string="Accommodation"/>
+                                    <div>
+                                        <field name="accommodation_from" class="oe_inline"/>
+                                        -
+                                        <field name="accommodation_to" class="oe_inline"/>
+                                        can be provided by the company
+                                        <field name="provided_1"/>
+                                    </div>
+
+                                    <label for="transportation_from" string="Transportation"/>
+                                    <div>
+                                        <field name="transportation_from" class="oe_inline"/>
+                                        -
+                                        <field name="transportation_to" class="oe_inline"/>
+                                        - can be provided by the company
+                                        <field name="provided_2"/>
+                                    </div>
+
+                                    <label for="food_from" string="Food"/>
+                                    <div>
+                                        <field name="food_from" class="oe_inline"/>
+                                        -
+                                        <field name="food_to" class="oe_inline"/>
+                                        - can be provided by the company
+                                        <field name="provided_3"/>
+                                    </div>
+
+                                    <label for="site_from" string="Site"/>
+                                    <div>
+                                        <field name="site_from" class="oe_inline"/>
+                                        -
+                                        <field name="site_to" class="oe_inline"/>
+                                    </div>
+
+                                    <label for="uniform" string="Uniform"/>
+                                    <div>
+                                        <field name="uniform" class="oe_inline"/>
+                                        -
+                                        <span class="oe_inline">can be provided by the company</span>
+                                        <field name="uniform_provided"/>
+                                    </div>
+
+                                    <label for="total_salary_from" string="Total Salary"/>
+                                    <div>
+                                        <field name="total_salary_from" class="oe_inline"/>
+                                        -
+                                        <field name="total_salary_to" class="oe_inline"/>
+                                    </div>
+<!--                                    <label for="annual_leaves" string="Annual Leaves"/>-->
+<!--                                    <div>-->
+<!--                                        <field name="annual_leaves" class="oe_inline"/>-->
+<!--                                    </div>-->
+<!--                                    <label for="long_sick_leaves" string="Long Sick Leaves"/>-->
+<!--                                    <div>-->
+<!--                                        <field name="long_sick_leaves" class="oe_inline"/>-->
+<!--                                    </div>-->
+<!--                                    <label for="short_sick_leaves" string="Short Sick Leaves"/>-->
+<!--                                    <div>-->
+<!--                                        <field name="short_sick_leaves" class="oe_inline"/>-->
+<!--                                    </div>-->
+                                </group>
+                            </page>
+                            <page name="leave_types" string="Leave Type">
+                                <group name="leave_types">
+                                    <field name="leave_type_ids">
+                                        <tree editable="bottom">
+                                            <field name="leave_type"/>
+                                            <field name="days"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <field name="leave_type"/>
+                                                <field name="days"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Employees">
+                                <group>
+                                    <field name="employee_ids" readonly="1">
+                                        <tree>
+                                            <field name="registration_number"/>
+                                            <field name="name"/>
+                                            <field name="work_email"/>
+                                            <field name="department_id"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Contracts">
+                                <group>
+                                    <field name="contract_ids" readonly="1">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="employee_id"/>
+                                            <field name="job_id"/>
+                                            <field name="resource_calendar_id"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="payroll_group" model="ir.actions.act_window">
+            <field name="name">Groups</field>
+            <field name="res_model">employee.payroll.group</field>
+            <field name="view_mode">tree,form</field>
+            <field name="usage">menu</field>
+        </record>
+
+        <menuitem
+                id="menu_payroll_group_view"
+                name="Groups"
+                parent="hr.menu_human_resources_configuration"
+                sequence="5"
+                action="payroll_group"/>
+    </data>
+</odoo>

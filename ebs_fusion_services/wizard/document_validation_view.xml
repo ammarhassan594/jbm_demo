@@ -1,0 +1,52 @@
+<odoo>
+    <record id="document_validation_wizard_form" model="ir.ui.view">
+        <field name="name">document.validation.wizard.form</field>
+        <field name="model">document.validation.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <span>Please upload required documents for this workflow.</span>
+                    <group>
+                        <field name="in_document_count" invisible="1"/>
+                        <field name="out_document_count" invisible="1"/>
+                        <field name="in_document_ids" attrs="{'invisible':[('in_document_count','=',0)]}">
+                            <tree editable="top" decoration-success="name != False" create="0">
+                                <field name="doc_type_id" options="{'no_create': True,'no_create_edit':True}"/>
+                                <field name="name" options="{'no_create': True,'no_create_edit':True}"
+                                context="{'service_order_type': context.get('service_order_type'), 'document_type_id':doc_type_id,
+                                            'employee': context.get('employee'), 'partner': context.get('partner')}"
+                                />
+                                <button name="upload_file" icon="fa-upload" type="object"
+                                        attrs="{'invisible':[('name','!=',False)]}"/>
+                                <button name="access_content" icon="fa-download" type="object"/>
+                                <button name="preview_document" icon="fa-eye" type="object"/>
+                            </tree>
+                        </field>
+                        <field name="out_document_ids" attrs="{'invisible':[('out_document_count','=',0)]}">
+                            <tree editable="top" decoration-success="name != False" create="0">
+                                <field name="doc_type_id" options="{'no_create': True,'no_create_edit':True}"/>
+                                <field name="name" options="{'no_create': True,'no_create_edit':True}"/>
+                                <button name="upload_file" icon="fa-upload" type="object"
+                                        attrs="{'invisible':[('name','!=',False)]}"/>
+                                <button name="access_content" icon="fa-download" type="object"/>
+                                <button name="preview_document" icon="fa-eye" type="object"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_save" string="Save" type="object" class="oe_highlight"/>
+                    <button class="btn-secondary" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="document_validation_wizard_action" model="ir.actions.act_window">
+        <field name="name">Document Validation</field>
+        <field name="res_model">document.validation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="document_validation_wizard_form"/>
+    </record>
+</odoo>

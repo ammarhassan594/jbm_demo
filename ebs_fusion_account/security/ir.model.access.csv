@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ebs_monthly_budget_line,ebs_monthly_budget_line,model_ebs_monthly_budget_line,account.group_account_user,1,1,1,1
+access_ebs_turnover,ebs_turnover,model_ebs_turnover,,1,1,1,1
+access_account_move_custom,account_move_custom,model_account_move,ebs_fusion_account.group_access_invoice_read,1,0,0,0
+access_account_payment_custom,account_payment_custom,model_account_payment,ebs_fusion_account.group_access_invoice_read,1,0,0,0
+access_ebs_proforma_lines,ebs_proforma_lines,model_ebs_proforma_lines,base.group_user,1,1,1,1
+
+access_account_budget_post,ebs_account_budget_post,model_account_budget_post,,1,1,1,1
+access_ebs_budget_transfer,ebs_fusion_account.access_ebs_budget_transfer,model_ebs_budget_transfer,base.group_user,1,1,1,1

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="salary_certificate_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page" dir="RTL">
+                        <html>
+                            <head>
+                                <style>
+                                    body {
+                                    font-size: 17px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div align="right">
+                                    <strong class="col-auto mw-100">
+                                        <span>التاريخ:</span>
+                                        <span style="padding-right:10px;" t-field="o.date"/><br/>
+                                        <span>رقم الاشاره : م ب / ش م / 000 / 2021 /0000</span><br/>
+                                    </strong>
+                                </div><br/>
+
+                                <div align="right">
+                                    <strong class="col-auto mw-100">
+                                        <span>الساده /  </span>
+                                        <span style="padding-right:5px;" t-field="o.addressed_to"/><br/>
+                                        <span>المحترم</span>
+                                        <span>الدوحـــــــة - قطــــــــــر</span>
+                                    </strong><br/><br/>
+                                </div><br/><br/>
+
+                                <div align="center">
+                                    <strong class="col-auto mw-100">
+                                        <span style=" border-bottom:1px solid black;" >الموضوع / شهادة راتب</span>
+                                    </strong>
+                                </div><br/>
+
+                                <div align="right" >
+                                    <p class="col-auto mw-100">
+                                        <span>تشهد شركة وصيف وهي احدى الشركات التابعة لبروة العقارية بأن السيد/ </span>
+                                        <span t-field="o.employee_id.name"/>
+                                        <span style="padding-right:5px;">,</span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.country_id.name"/>
+                                        <span style="padding-right:2px;"> موظف رقم </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.id"/>
+                                        <span style="padding-right:2px;">ويحمل بطاقة شخصية رقم  </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.qid_doc_number"/>
+                                        <span>يعمل لدينا ابتداءً من تاريخ : </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.joining_date"/>
+                                        <span style="padding-right:2px;">ويتقاضى راتب وقدره </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.contract_id.gross_salary"/>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.contract_id.num_word"/>
+                                        <span style="padding-right:2px;">حسب الجدول الاتي. </span>
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <table style="margin-right:200px" width="50%">
+                                        <tr>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <b>الراتب الاساسي</b>
+                                            </td>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <t  t-esc="o.employee_id.contract_id.wage"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <b>علاوه أجتماعيه</b>
+                                            </td>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <t  t-esc="o.employee_id.contract_id.accommodation"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <b>بدل سكن</b>
+                                            </td>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <t  t-esc="o.employee_id.contract_id.site_allowance"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <b>بدل انتقال</b>
+                                            </td>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <t  t-esc="o.employee_id.contract_id.transport_allowance"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <b>بدل هاتف</b>
+                                            </td>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <t  t-esc="o.employee_id.contract_id.mobile_allowance"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <b>الإجمالي</b>
+                                            </td>
+                                            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000"
+                                                height="17" align="center" valign="middle">
+                                                <t  t-esc="o.employee_id.contract_id.gross_salary"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div><br/>
+
+                                <div align="right">
+                                    <p>
+                                        <span>وقد اعطيت له هذه الشهادة بناءً على طلبه لتقديمه إلى</span>
+                                        <span style="padding-right:5px;" t-field="o.type"/>
+                                        <span style="padding-right:5px;">ودون أدنى مسئوليه على الشركه</span>
+                                    </p>
+                                </div><br/>
+                                <div align="center">
+                                       وتفضلوا بقبول فائق التقدير والاحترام ،،،
+                                </div><br/><br/><br/>
+
+                                <div align="left">
+                                    <strong class="col-auto mw-100">
+                                        <p style="padding-left:30px">خليفة سلمان المهندي</p>
+                                        <p>مدير قطاع الخدمات المساندة</p>
+                                    </strong>
+                                </div><br/>
+
+                           </body>
+                        </html>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

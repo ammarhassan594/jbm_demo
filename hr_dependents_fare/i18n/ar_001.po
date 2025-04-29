@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_dependents_fare
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-25 10:24+0000\n"
+"PO-Revision-Date: 2023-06-25 10:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__adult_fare
+msgid "Adult Fare"
+msgstr "تذكرة البالغين"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields.selection,name:hr_dependents_fare.selection__dependents_fares__travel_class__b
+msgid "Business"
+msgstr "الأعمال التجارية"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__child_fare
+msgid "Child Fare"
+msgstr "أجرة الطفل"
+
+#. module: hr_dependents_fare
+#: model_terms:ir.actions.act_window,help:hr_dependents_fare.dependents_fares_action
+msgid "Click to create a Dependent's Fare"
+msgstr "انقر لإنشاء رسوم التابعين"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: hr_dependents_fare
+#: model:ir.actions.act_window,name:hr_dependents_fare.dependents_fares_action
+#: model:ir.model,name:hr_dependents_fare.model_dependents_fares
+msgid "Dependents Fares"
+msgstr "رسوم تزكره التابعين"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__airport_id
+msgid "Destination"
+msgstr "وجهة"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields.selection,name:hr_dependents_fare.selection__dependents_fares__travel_class__e
+msgid "Economy"
+msgstr "درجه اقتصادي"
+
+#. module: hr_dependents_fare
+#: model:ir.ui.menu,name:hr_dependents_fare.dependents_fares
+msgid "Fares"
+msgstr "أسعار"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__infant_fare
+msgid "Infant Fare"
+msgstr "أجرة الرضع"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__travel_class
+msgid "Travel Class"
+msgstr "درجة السفر"
+
+#. module: hr_dependents_fare
+#: model:ir.model.fields,field_description:hr_dependents_fare.field_dependents_fares__year
+msgid "Year"
+msgstr "سنه"

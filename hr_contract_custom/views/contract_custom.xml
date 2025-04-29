@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="contract_custom_form_inherit" model="ir.ui.view">
+            <field name="name">contract.custom.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="domain">['|',('employee_type','=','fusion_employee'),('employee_type','=','fos_employee')]</attribute>
+                </xpath>
+
+<!--                <xpath expr="//group[@name='salary']" position="attributes">-->
+<!--                    <attribute name="string">Total Figures</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='date_start']" position="attributes">
+                    <attribute name="string">Contract Date</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_start']" position="before">
+                    <field name="e_contract_document_date"/>
+                </xpath>
+                <xpath expr="//field[@name='date_start']" position="after">
+                    <field name="contract_validity"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="string">Main Company</attribute>
+                </xpath>
+
+
+
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="contract_signatures_tree">
+            <field name="name">contract_signatures_tree</field>
+            <field name="model">hr.contract.signature</field>
+            <field name="arch" type="xml">
+                <tree editable="top" create="0" delete="false" default_order="sequence asc">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="signature" widget="signature"/>
+                </tree>
+            </field>
+        </record>
+
+            <record id="contract_history_custom_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.history.form.inherit</field>
+            <field name="model">hr.contract.history</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_history_view_form"/>
+            <field name="arch" type="xml">
+                <field name="resource_calendar_id" position="after">
+                    <field name="employee_type"/>
+                </field>
+            </field>
+            </record>
+
+    </data>
+</odoo>

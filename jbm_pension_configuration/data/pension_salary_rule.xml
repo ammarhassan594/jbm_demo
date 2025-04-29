@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_salary_rule_pension_employee" model="hr.salary.rule">
+            <field name="name">Pension Employee</field>
+            <field name="code">PE</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result =-payslip.env['hr.payslip'].get_emp_pensions(payslip,employee,'PE',BASIC,BD,MOBILE,MOBILED,HOUSING,HOUSINGD,TRA,TRANSD,SOCIAL,SOCIALD)
+            </field>
+            <field name="sequence" eval="26"/>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_salary_rule_pension_employer" model="hr.salary.rule">
+            <field name="name">Pension Employer</field>
+            <field name="code">PER</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result =-payslip.env['hr.payslip'].get_emp_pensions(payslip,employee,'PER',BASIC,BD,MOBILE,MOBILED,HOUSING,HOUSINGD,TRA,TRANSD,SOCIAL,SOCIALD)
+            </field>
+            <field name="sequence" eval="27"/>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+    </data>
+</odoo>

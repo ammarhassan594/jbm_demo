@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="gross_salary_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page" dir="RTL">
+                        <html>
+                            <head>
+                                <style>
+                                    body {
+                                    font-size: 14px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div align="right">
+                                    <strong class="col-auto mw-100">
+                                        <span>التاريخ:</span>
+                                        <span style="padding-right:10px;" t-field="o.date"/><br/>
+                                        <span>رقم الاشاره : م ب / ش م / 000 / 2021 /0000</span><br/>
+                                    </strong>
+                                </div><br/>
+
+                                <div align="center">
+                                    <strong class="col-auto mw-100">
+                                        <span style=" border-bottom:1px solid black; font-size: 15px;" >الى من يهمه الأمر</span>
+                                    </strong>
+                                </div><br/>
+
+                                <div align="right" >
+                                    <p class="col-auto mw-100">
+                                        <span>تشهد شركة وصيف ( احدى الشركات الشقيقة لبروة العقارية) بأن الموظف / </span>
+                                        <span t-field="o.employee_id.name"/>
+                                        <span style="padding-right:2px;">ويحمل بطاقة شخصية رقم  </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.qid_doc_number"/>
+                                        <span> يعمل لديها إعتبارا من تاريخ : </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.joining_date"/>
+                                        <span style="padding-right:2px;">بوظيفة </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.job_title"/>
+                                        <span style="padding-right:2px;">ويتقاضى راتب وقدره </span>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.contract_id.gross_salary"/>
+                                        <span style="padding-right:5px;" t-field="o.employee_id.contract_id.num_word"/>
+                                        <span style="padding-right:2px;">ولا يزال علي رأس عمله.</span>
+                                    </p>
+                                    <p class="col-auto mw-100">
+                                       وقد أعطيت له هذه الشهادة بناءً على طلبه لتقديمها لمن يهمه الأمر ودون أدنى مسؤولية على الشركة.
+                                    </p>
+                                </div><br/>
+
+                                <div align="center">
+                                    وتفضلوا بقبول فائق التقدير و الإحترام
+                                </div><br/><br/><br/>
+
+                                <div align="left">
+                                    <strong class="col-auto mw-100">
+                                        <p style="padding-left:30px">خليفة سلمان المهندي</p>
+                                        <p> مدير قطاع الخدمات المساندة </p>
+                                    </strong>
+                                </div><br/>
+
+                           </body>
+                        </html>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

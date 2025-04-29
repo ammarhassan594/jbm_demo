@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="jbm_notification_justification_attendance_form_view_inherit" model="ir.ui.view">
+            <field name="name">jbm.notification.justification.attendance.form.view.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="ake_early_late_attandence.jbm_hr_attendance_form_view_inherit"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='is_early_check_out_hour_added']" position="after">
+                    <field name="last_late_in_time" invisible="1" readonly="1" />
+                    <field name="last_early_out_time" invisible="1" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="jbm_notification_attendance_view_attendance_tree" model="ir.ui.view">
+            <field name="name">jbm.notification.attendance.view.attendance.tree</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="ake_early_late_attandence.taqat_view_attendance_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='is_early_check_out_hour_added']" position="before">
+                    <field name="last_late_in_time" invisible="1" readonly="1" />
+                    <field name="last_early_out_time" invisible="1" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

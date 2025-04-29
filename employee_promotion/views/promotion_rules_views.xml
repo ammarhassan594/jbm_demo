@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <record id="promotion_rules_form_view" model="ir.ui.view">
+            <field name="name">promotion.rules.form.view</field>
+            <field name="model">promotion.rules</field>
+            <field name="arch" type="xml">
+                <form string="Employee Promotion">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="from_grade_id"/>
+                            </group>
+                            <group>
+                                <field name="to_grade_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="degree_id"/>
+                                <field name="number_of_actual_work_days"/>
+                                <field name="extra_amount"/>
+                                <field name="contract_marital_status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="promotion-rules_tree_view" model="ir.ui.view">
+            <field name="name">promotion.rules.tree.view</field>
+            <field name="model">promotion.rules</field>
+            <field name="arch" type="xml">
+                <tree string="Promotion Rules">
+                    <field name="from_grade_id"/>
+                    <field name="to_grade_id"/>
+                    <field name="degree_id"/>
+                    <field name="number_of_actual_work_days"/>
+                    <field name="contract_marital_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="promotion_rules_action" model="ir.actions.act_window">
+            <field name="name">Promotion Rules</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">promotion.rules</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Promotion Rules" id="promotion_rules_menu"
+                  sequence="1"
+                  action="promotion_rules_action"
+                  parent="employee_promotion_menu"
+                  groups="hr.group_hr_manager,jbm_group_access_right_extended.custom_group_shared_service_manager"
+        />
+    </data>
+</odoo>

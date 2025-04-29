@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="governorate_1" model="ebspayroll.governorate">
+            <field name="value">1</field>
+            <field name="name">بيروت</field>
+        </record>
+        <record id="governorate_2" model="ebspayroll.governorate">
+            <field name="value">2</field>
+            <field name="name">جبل لبنان</field>
+        </record>
+        <record id="governorate_3" model="ebspayroll.governorate">
+            <field name="value">3</field>
+            <field name="name">الشمال</field>
+        </record>
+        <record id="governorate_4" model="ebspayroll.governorate">
+            <field name="value">4</field>
+            <field name="name">الجنوب</field>
+        </record>
+        <record id="governorate_5" model="ebspayroll.governorate">
+            <field name="value">5</field>
+            <field name="name">البقاع</field>
+        </record>
+        <record id="governorate_6" model="ebspayroll.governorate">
+            <field name="value">6</field>
+            <field name="name">النبطية</field>
+        </record>
+        <record id="governorate_7" model="ebspayroll.governorate">
+            <field name="value">7</field>
+            <field name="name">عكار</field>
+        </record>
+        <record id="governorate_8" model="ebspayroll.governorate">
+            <field name="value">8</field>
+            <field name="name">بعلبك - الهرمل</field>
+        </record>
+
+    </data>
+</odoo>

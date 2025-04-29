@@ -1,0 +1,665 @@
+<odoo>
+    <template id="report_jbm_hr_contract_report_template">
+        <t t-call="web.basic_layout">
+            <!--        <div class="header">-->
+            <!--            <img src="/ebs_jbm_hr_custom/static/src/img/header.jpg"-->
+            <!--                 style="padding-left:5px;height:147px;width: 820px;"/>-->
+            <!--        </div>-->
+            <div class="page" style="direction: rtl;">
+                <html>
+
+                    <style type="text/css">
+                        body{
+                        font-family: 'Lateef', serif;
+                        font-size:20px;
+                        }
+                        td{
+                        border-right: 1px solid #785838!important;
+                        border-left: 1px solid #785838!important;
+                        border-bottom: 1px solid #785838!important;
+                        }
+                        .custom_td{
+                        text-align: right!important;
+                        }
+                    </style>
+                    <body>
+                        <img src="/hr_contract_custom/static/src/img/sc_header.jpg"
+                             style="padding-left:5px;height:147px;width: 820px;"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table class="table" style="border: 1px solid #785838!important;">
+                            <tr>
+                                <td style="color: black;text-align: center; width: 50%" colspan="4">
+                                    عقـــد توظيف للقطريين
+                                </td>
+                                <td style="color: black;text-align: center; width: 50%" colspan="4">
+                                    Employment Contract for Qatari's
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4">
+                                    حرر في يوم
+                                    <t t-esc="o.date_start.strftime('%d/%m/%Y')"/>
+                                    الموافق بين كل من :
+                                </td>
+                                <td style="color: black; width: 50%" colspan="4">
+                                    :This contract written on
+                                    <t t-esc="o.date_start.strftime('%d/%m/%Y')"/>
+                                    between
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    <b>مؤسسة الشيخ جاسم بن محمد بن ثاني للرعاية الإجتماعية</b>
+                                    ، ومقـرها مدينـة الدوحـة بدولـة قطر، ويمثلها في هذا العقد
+                                    <t t-esc="o.employee_id.parent_id.arabic_name"/>
+                                    المدير العام (طرف أول)
+                                </td>
+                                <td style="color: black; width: 50%; direction:ltr!important;" colspan="4"
+                                    class="text-justify">
+                                    1. <b>Sheikh Jasim Bin Mohamed Bin Thani Social Welfare Foundation</b>(JBM
+                                    Foundation),
+                                    which is seated in Doha city - the State of Qatar, duly represented by
+                                    <t t-esc="o.employee_id.parent_id.name"/>
+                                    *The General Manager, hereinafter referred to as
+                                    (<b>First Party</b>)..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    السيد/
+                                    <t t-esc="o.employee_id.arabic_name"/>
+                                    الجنسية/ قطري رقـم البطاقة الشخصية :
+                                    <t t-esc="o.employee_id.qid_no"/>
+                                    ،ومحـل إقامتـه الأصـلي الدوحة – قطر ،وتاريخ ميلاده:
+                                    <t t-if="o.employee_id.birthday">
+                                        <t t-esc="o.employee_id.birthday.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                    (طرف ثاني)
+                                </td>
+                                <td style="color: black; width: 50%;direction:ltr!important;" colspan="4"
+                                    class="text-justify">
+                                    2. <t t-esc="o.employee_id.name"/>
+                                    Nationality :Qatari, ID No<t t-esc="o.employee_id.qid_no"/>, Original place of
+                                    residence Doha – Qatar, Date of birth :
+                                    <t t-if="o.employee_id.birthday">
+                                        <t t-esc="o.employee_id.birthday.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                    Hereinafter referred to as the (Second Party).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4">
+                                    العنوان :
+                                </td>
+                                <td style="color: black; width: 50%" colspan="4">
+                                    <u>:Address</u>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right;" colspan="2">
+                                    الدولة : قطر
+                                </td>
+                                <td style="color: black;text-align: right;">
+                                    المدينة : الدوحة
+                                </td>
+                                <td style="color: black;text-align: right;" width="10%">
+                                </td>
+                                <td style="color: black;text-align: left;" width="12%">
+                                </td>
+                                <td style="color: black;text-align: left;">
+                                    City: Doha
+                                </td>
+                                <td style="color: black;text-align: left;">
+                                    QATAR
+                                </td>
+                                <td style="color: black;text-align: left;">
+                                    :Country
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right;" colspan="2">
+                                    المنطقة: **
+                                </td>
+                                <td style="color: black;text-align: right;">
+                                    الشارع :***
+                                </td>
+                                <td/>
+                                <td/>
+                                <td style="color: black;text-align: left;">
+                                    Street:948
+                                </td>
+                                <td style="color: black;text-align: left;" colspan="2">
+                                    Region: 78
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right;" colspan="2">
+                                    رقم المــنزل Bldg n
+                                </td>
+                                <td style="color: black;text-align: right;" colspan="2">
+                                    الرمز البريدي :
+                                </td>
+                                <td/>
+                                <td>
+                                    :.House No
+                                </td>
+                                <td>****</td>
+                                <td>:Postal code</td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right;" colspan="2">
+                                    هاتف نقال: ********
+                                </td>
+                                <td style="color: black;text-align: right;">
+                                    هاتــف المنزل :
+                                </td>
+                                <td/>
+                                <td/>
+                                <td>
+                                    :House
+                                </td>
+                                <td>******</td>
+                                <td>:Tel. mob</td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right;" colspan="2">
+                                    هاتف آخـر :
+                                </td>
+                                <td style="color: black;text-align: right;">
+                                    فاكــــس :
+                                </td>
+                                <td/>
+                                <td/>
+                                <td>
+                                    :Fax
+                                </td>
+                                <td></td>
+                                <td>:Other Tel</td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    بريد إلكتروني************
+                                    <br/>
+                                    و حيث ان الطرف الأول يرغب في توظيف الطرف الثاني، لذا فقد اتفق الطرفان على أن
+                                    يعمل
+                                    الطرف الثاني لدى الطرف الأول وفقا لما يلي:
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4" class="text-justify">
+                                    E-mail ***********
+                                    <br/>
+                                    Whereas the First Party intends to employ the Second Party, the two parties
+                                    hereby
+                                    agree that the Second Party works for the First Party according to the
+                                    following:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4"/>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4"/>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    <center>مادة (1)</center>
+                                    يعين الطرف الأول الطرف الثاني للعمل لديه بــوظيفــة "<t t-esc="o.job_id.name"/>"
+                                    ،
+                                    على الدرجة المالية
+                                    <t t-esc="o.job_grade.name"/>
+                                    ، بــراتـب أساسي و قــــدره (<t t-esc="o.wage"/>) ريال قطري، يصرف في نهاية كل
+                                    شهر
+                                    ميلادي، اعتبارا من تاريخ مباشرة العمل.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article ( 1 )</center>
+                                    The First Party hereby appoints the Second Party in the position of “<t
+                                        t-esc="o.job_id.name"/>” on the financial grade*
+                                    <t t-esc="o.job_grade.name"/>
+                                    - class in consideration of a basic salary equal to Qr (
+                                    <t t-esc="o.wage"/>
+                                    ) payable at the end of every calendar month effective from the date of
+                                    embarkation.
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    ويكون تعديل وظيفة ودرجة وراتب الطرف الثاني وفقاً لأحكام لائحة الموارد البشرية
+                                    للمؤسسة، دون الحاجة لتعديل أحكام هذا العقد.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4" class="text-justify">
+                                    The position, grade and salary of the Second party could be amended in
+                                    accordance
+                                    with the provisions of the JBM Foundation Human Resources Regulation without the
+                                    need to amend the provisions of this Contract.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    <center>مادة (2)</center>
+                                    مدة العقد سنة ميلادية تبدأ من تاريخ مباشرة الطرف الثاني للعمل لدى الطرف الأول،
+                                    ويتجدد تلقائيا من سنة الى أخرى ما لم يخطر أحد الطرفين الآخر كتابة برغبته في
+                                    انهاء
+                                    العقد قبل نهايته بثلاثين يوما على الأقل .
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (2)</center>
+                                    The duration of the contract is one calendar year, starting from the date on
+                                    which
+                                    the Second Party shall commence working for the First Party and shall be
+                                    renewable,
+                                    automatically, from year to year, unless one of the parties notifies the other
+                                    in
+                                    writing of his/her intention to terminate the contract, provided that such
+                                    notice
+                                    shall be given at least Thirty days prior to the date of the intended
+                                    termination
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    <center>مادة (3)</center>
+                                    يقضي الطرف الثاني المعين لأول مرة فترة اختبار مدتها ثلاثة أشهر قابلة للتجديد
+                                    لمدة
+                                    مماثلة تبدأ من تاريخ مباشرة العمل، يتم خلالها تقدير مدى صلاحيته ، فاذا ثبت عدم
+                                    صلاحيته انهيت خدمته. و يجوز للطرف الثاني طلب انهاء خدمته خلال فترة الاختبار
+                                    باخطار
+                                    كتابي للطرف الأول مدته خمسة عشر يوما على الأقل سابقة على تاريخ ترك العمل.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (3)</center>
+                                    The Second party, who is appointed for the first time, shall be on probation for
+                                    a
+                                    period of three months, renewable for a similar period, effective from the date
+                                    of
+                                    embarkation. During such period, the Second Party’s fitness for work shall be
+                                    assessed, If it is proved that the Second Party does not fit for work, his
+                                    service
+                                    shall be terminated,The Second Party may terminate his service during the
+                                    probation
+                                    period by a written notice, which shall be given to the First Party fifteen days
+                                    at
+                                    least prior to the date of leaving the work.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4" class="text-justify">
+                                    <center>مادة (4)</center>
+                                    فيما لم يرد بشأنه نص خاص في هذا العقد، يستحق الطرف الثاني العلاوات والبدلات
+                                    والمزايا
+                                    الوظيفية الأخرى المقررة في لائحة الموارد البشرية للمؤسسة.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article ( 4 )</center>
+                                    Provisions not contained in this contract, the Second Party deserve the
+                                    increments
+                                    and other related benefits prescribed in the JBM Foundation Human Resources
+                                    Regulation.
+                                </td>
+                            </tr>
+                            <!--                            <t t-set="total_leave_days"-->
+                            <!--                               t-value="sum(request.env['hr.leave'].sudo().search([('date_from','>=',o.date_start),('date_to','<=',o.date_end),('employee_id','=',o.employee_id.id),('state','=','validate')]).mapped('number_of_days'))"/>-->
+                            <t t-set="total_leave_days"
+                               t-value="sum(o.env['hr.leave'].sudo().search([('date_from','&gt;=',o.date_start),('date_to','&lt;=',o.date_end),('employee_id','=',o.employee_id.id),('state','=','validate')]).mapped('number_of_days'))"/>
+                            <tr style="border-bottom: none;">
+                                <td style="color: black;text-align: right; width: 50%;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (5)</center>
+                                    يستحق الطرف الثاني سنوياً إجازة دورية براتب إجمالي مدتها (<t
+                                        t-esc="total_leave_days"/>) يوماً،
+                                    وفقاً لشروط وأحكام لائحة الموارد البشرية للمؤسسة، كما يستحق الإجازات الأخرى
+                                    الواردة
+                                    في اللائحة المشار إليها وفقاً للضوابط والمدد المقررة فيها.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article( 5 )</center>
+                                    The Second Party shall be entitled to an annual leave with total salary, the
+                                    period
+                                    of which shall be determined for leaves allowed*) days according to the terms
+                                    and
+                                    provisions of JBM Foundation Human Resources Regulation. The Second party shall
+                                    also
+                                    deserve the other leaves provided for by the said Regulation in accordance with
+                                    the
+                                    conditions and time limits specified therein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-bottom: none !important;border-top: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (6)</center>
+                                    يوفر الطرف الأول الرعاية الطبية للطرف الثاني وأفراد عائلته وفقاً لسياسة التأمين
+                                    الصحي المعمول بها في المؤسسة ووفقاً للائحة الموارد البشرية للمؤسسة.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (6)</center>
+                                    The first Party shall provide the second party and his family with medical care
+                                    in
+                                    accordance with the health insurance policy adopted by the JBM Foundation, and
+                                    according to the Human Resources Regulations.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (7)</center>
+                                    يتعين على الطرف الثاني ، خلال فتــرة تعاقده وبعد انتهاء التعاقـــد ، عدم افشاء
+                                    أو
+                                    استغلال أيــة معلومات ســرية تعود للطــرف الأول أو الجهات التي عمل فيها ، بموجب
+                                    هذا
+                                    العقد أو أي عقد سابق ، كما يتعهد بالمحافظة التامة على سرية المعلومات، وأن يبذل
+                                    في
+                                    ذلك عناية الشخص العادي.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (7)</center>
+                                    During the period of the contract and thereafter, the Second Party shall not
+                                    disclose or use any confidential information belonging to the First Party or
+                                    such
+                                    information that has come to the Second Party’s knowledge in the course of
+                                    employment, pursuant to this contract or any previous contract. The Second Party
+                                    shall also, undertake to maintain full confidentiality of such information, and
+                                    exert the reasonable person standard of care.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (8)</center>
+                                    يستحق الطرف الثاني عند انتهاء خدمته مكافأة نهاية خدمة وفقاً لأحكام لائحة الموارد
+                                    البشرية للمؤسسة، وبشرط قضاء سنة، على الأقل في الخدمة.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (8)</center>
+                                    The Second Party shall be entitled to end of service gratuity at the end of
+                                    his/her
+                                    service in accordance with the provisions of the JBM Foundation Human Resource
+                                    Regulation, subject to spending one year. At least, in service.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (9)</center>
+                                    يستحق الطرف الثاني رسوم تعليم لأبنائه ممن لا تتجاوز أعمارهم الثامنة عشر وبحد
+                                    أقصى
+                                    (100,000) ريال قطرى وبشرط تقديم الفواتير الأصلية .
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (9)</center>
+                                    The second Party shall be entitled to tuition fees for his/her children under 18
+                                    years old with maximum limit of QR.(100,000), according submision of original
+                                    invoices.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (10)</center>
+                                    تكون الاخطارات الصادرة بموجب هذا العقد كتابة وتسلم للطرف الآخر ، و يجوز للطرف
+                                    الأول
+                                    استخدام وسائل الاتصال الحديثة لاخطار الطرف الثاني بكل ما يتعلق بهذا العقد .
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (10)</center>
+                                    The notices issued under this contract shall be in writing and shall be
+                                    delivered to
+                                    the other party. The First Party may use the modern means of communication to
+                                    notify
+                                    the Second Party of all matters pertinent to this contract.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (11)</center>
+                                    يلتزم الطرف الثاني باخطار الطرف الأول بأي تغيير يطرأ على عنوانه المبين بمقدمة
+                                    هذا
+                                    العقد في موعد أقصاه أسبوع من تاريخ التغيير .
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (11)</center>
+                                    The Second Party undertakes to notify the First Party of any change that may
+                                    occur
+                                    in his/her address as stated in this contract, within a period not exceeding one
+                                    week from the date of such change.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (12)</center>
+                                    يحق لأي من الطرفين إنهاء العقد في أي وقت، وذلك بإخطار كتابي سابق على انتهائه
+                                    بثلاثين
+                                    يوماً على الأقل.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (12)</center>
+                                    Either party is entitled to terminate the contract, at any time, by written
+                                    notification in at least (30) days prior to the termination.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (13)</center>
+                                    تطبق لائحة الموارد البشرية للمؤسسة في كل ما لم يرد بشأنه نص خاص في هذا العقد،
+                                    وتعتبر
+                                    أحكامها مكمّلة لهذا العقد فيما لا يتعارض مع أحكامه.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (13)</center>
+                                    JBM Foundation Human Resources Regulation shall apply to all such matters in
+                                    respect
+                                    of which there are no special provision provided in this contract, the
+                                    provisions of
+                                    the Regulation are complementary to this contract to the extent that they are
+                                    not in
+                                    conflict with the provisions of the contract.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (14)</center>
+                                    تختص المحاكم القطرية دون غيرها ، بالفصل في أي نزاع قد ينشأ بين الطرفين بشأن
+                                    تفسير أو
+                                    تنفيذ بنود هذا العقد.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (14)</center>
+                                    The Qatari courts shall be exclusively competent to hear any dispute that may
+                                    arise
+                                    between the parties regarding the interpretation or execution of this contract.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>مادة (15)</center>
+                                    حرر هذا العقد من نسختين أصليتين متطابقتين باللغتين العربية والانجليزية، وفي حالة
+                                    وجود تعارض بين النصين يطبق النص المحرر باللغة العربية، تسلّم الطرف الثاني
+                                    إحداهما
+                                    واحتفظ الطرف الأول بالأخرى للعمل بموجبها.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;border-bottom: none !important;"
+                                    colspan="4" class="text-justify">
+                                    <center>Article (15)</center>
+                                    This contract is made in two identical original copies, in both Arabic and
+                                    English
+                                    languages. However, in the event of discrepancy between the two versions, the
+                                    Arabic
+                                    text shall prevail. One copy shall be provided to the Second Party, whereas the
+                                    other one shall be maintained by the First Party to act upon
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%;border-top: none !important;"
+                                    colspan="4" class="text-justify">
+                                    إقراراً بما تقدّم، وقع الطرفان على هذا العقد في التاريخ المحدد بديباجته.
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;border-top: none !important;"
+                                    colspan="4" class="text-justify">
+                                    In recognition of the foregoing, the parties signed this contract on the date
+                                    specified in its preamble.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: black;text-align: right; width: 50%" colspan="4">
+                                    <table class="table" style="border: 1px solid #785838!important;">
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <u>الطرف الأول</u>
+                                            </td>
+                                            <td width="2%"></td>
+                                            <td>
+                                                <u>الطرف الثاني</u>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>التوقيع :</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>الاسـم :</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td></td>
+                                            <td>المدير العام</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>مكان التعاقد:</td>
+                                            <td colspan="3">
+                                                <u style="border-bottom: 1px dotted #000;text-decoration: none;">
+                                                    الدوحة - قطر
+                                                </u>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="color: black;text-align: left; width: 50%;direction:ltr!important;"
+                                    colspan="4">
+                                    <table class="table" style="border: 1px solid #785838!important;">
+                                        <tr>
+                                            <td>
+                                                <u>Second Party</u>
+                                            </td>
+                                            <td width="2%"></td>
+                                            <td>
+                                                <u>First Party</u>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>:Signature</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td colspan="2">:Name</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">Place of contracting :
+                                                <u style="border-bottom: 1px dotted #000;text-decoration: none;">Doha -
+                                                    Qatar
+                                                </u>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </body>
+                </html>
+            </div>
+            <div class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="text-center">
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        <h4>
+                            <b>
+                                <span class="topage"/>
+                                /
+                                <span class="page"/>
+                            </b>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="report_jbm_main_template_hr_contract_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="hr_contract_custom.report_jbm_hr_contract_report"/>
+            </t>
+        </t>
+    </template>
+    <record id="paper_format_hr_contract_jbm" model="report.paperformat">
+        <field name="name">Hr Contract report Paper format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="report_jbm_hr_contract_report"
+            model="hr.contract"
+            string="Contract Qataris Report"
+            report_type="qweb-pdf"
+            name="hr_contract_custom.report_jbm_main_template_hr_contract_report"
+            file="hr_contract_custom.report_jbm_main_template_hr_contract_report"
+            menu="True"
+            print_report_name="'Hr Contract report'"
+            paperformat="hr_contract_custom.paper_format_hr_contract_jbm"
+
+    />
+</odoo>

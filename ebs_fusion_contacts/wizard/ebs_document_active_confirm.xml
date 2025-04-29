@@ -1,0 +1,20 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_ebs_document_active_confirm_form">
+        <field name="name">ebs.document.active.confirm.Form</field>
+        <field name="model">ebs.document.active.confirm</field>
+        <field name="arch" type="xml">
+            <form string="Document has Expired">
+                <div>Document has expired Please confirm to Proceed!</div>
+                <field name='document_id' invisible='1'/>
+                <field name='partner_id' invisible='1'/>
+                <field name='field_name' invisible='1'/>
+                <footer>
+                    <button name="confirm" string="Confirm" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+</odoo>

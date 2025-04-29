@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_approvals" model="report.paperformat">
+            <field name="name">Approvals</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="approvals_action"
+                model="approval.request"
+                string="Approval Report"
+                report_type="qweb-pdf"
+                name="hr_approvals.approvals_report"
+                file="hr_approvals.approvals_report"
+                paperformat="hr_approvals.paperformat_approvals"
+                menu="False"
+        />
+
+        <template id="approvals_report">
+            <t t-call="web.html_container">
+                <t t-set="total_page" t-value="len(docs)"/>
+                <t t-set="page_number" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="page_number" t-value="page_number + 1"/>
+                    <t t-if="o.category_approval_type == 'furniture_allowance'">
+                        <t t-call="hr_approvals.approvals_request_report"/>
+                    </t>
+                    <t t-else="">
+                        <t t-call="hr_approvals.advance_payment_approval_request_report"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="approvals_request_report">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <img src="/hr_approvals/static/src/img/sc_header.jpg"
+                         style="padding-left:5px;height:147px;width:100%;"/>
+                    <br/>
+                    <br/>
+                    <div style="font-size:24px; text-align:center;">
+                        <h4 style="color:#5e0b05;font-weight: bold;">
+                            نموذج طلب بدل أثاث
+                        </h4>
+                    </div>
+                    <br/>
+                    <table style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;" width="100%">
+                        <tr style="background-color:#785838">
+                            <td colspan="2" style="text-align:center">
+                                <span style="color:white;">
+                                    بياناتالموظف
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838; text-align:right;">
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px">
+                                <span>
+                                    <t t-esc="o.request_employee_id.nationality_id.name"/>
+                                </span>
+                                <span>
+                                    اجلنسية:
+                                </span>
+                            </td>
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-esc="o.request_employee_id.name"/>
+                                </span>
+                                <span>
+                                    إسمالموظف
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="text-align:right;">
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-esc="o.request_employee_id.department_id.name"/>
+                                </span>
+                                <span>
+                                    الإدارة/ القسم
+                                </span>
+                            </td>
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-esc="o.request_employee_id.sequence"/>
+                                </span>
+                                <span>
+                                    الرقمالوظيفي
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="text-align:right;">
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-if="o.request_employee_id.joining_date">
+                                        <t t-esc="o.request_employee_id.joining_date.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </span>
+                                <span>
+                                    تاريخالتعيين
+                                </span>
+                            </td>
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-esc="o.request_employee_id.job_id.name"/>
+                                </span>
+                                <span>
+                                    المسمىالوظيفي
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="text-align:right;">
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-esc="o.amount"/>
+                                </span>
+                                <span>
+                                    قيمةالبدل
+                                </span>
+                            </td>
+                            <td style="border-right: 1px solid #785838; border-top: 1px solid #785838; padding-right:10px;">
+                                <span>
+                                    <t t-if="o.request_employee_id.active_contract">
+                                        <t t-esc="o.request_employee_id.active_contract.wage"/>
+                                    </t>
+                                </span>
+                                <span>
+                                    الراتبالأساسي
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table style="border: 1px solid #785838; line-height:30px; background-color:#785838; text-align:center;"
+                           width="100%">
+                        <tr>
+                            <td>
+                                <span style="color:white">
+                                    إقــــــــرار
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <br/>
+                    <div class="text-right">
+                        <span>أقـر أنـا املوقـع أدنـاه مبوافقتـي علـى اسـتهالك بـدل األثـاث املذكـور أعـاه بنسـبة %25
+                            منـه عـن كل سـنة وأنـه يف حـال إنتهـاء خدمتـي قبـل انقضـاء ً أربـع سـنوات مـن تاريـخ حصولـي
+                            علـى هـذا البـدل، ألتـزم بسـداد املتبقـي منـه يف حينهـا ويجـوز للمؤسسـة اسـترداده منـي نقـدا
+                            ً أو خصمـا مـن
+                        </span>
+                    </div>
+                    <div style="text-align:right">
+                        <span>
+                            مستحقاتلديهــا.
+                        </span>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div>
+                        <span style="color:#785838;">
+                            __________________________________
+                        </span>
+                        <span style="padding-left:5px;">
+                            :توقيع مقدم الطلب
+                        </span>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <table style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;" width="100%">
+                        <tr style="background-color:#785838;text-align:center">
+                            <td colspan="3" width="33.33%" style="color:white">
+                                <span>
+                                    خاصبإدارة املؤســــســــة
+                                </span>
+                            </td>
+                            <td width="33.33%"></td>
+                            <td width="33.33%"></td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;text-align:center">
+                            <td width="33.33%"></td>
+                            <td>
+                                <span style="padding-left: 1px;">الموافقة</span>
+                                <i class="fa fa-square-o" aria-hidden="true"
+                                   style="color:#785838!important;line-height: 1px;font-size: 23px;"></i>
+                                <span style="padding-left:30px!important;">عدمالموافقة</span>
+                                <i class="fa fa-check-square" aria-hidden="true"
+                                   style="color:#785838!important;line-height: 1px;font-size: 23px;padding-left: 20px;"></i>
+
+                            </td>
+                            <td width="33.33%"></td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838; text-align:center">
+                            <td width="33.33%" style="border-right: 1px solid #785838;">
+                                <span>اعتماد</span>
+                            </td>
+                            <td width="33.33%" style="border-right: 1px solid #785838;">
+                                <span>مسؤولالشؤون اإلدارية</span>
+                            </td>
+                            <td width="33.33%" style="border-right: 1px solid #785838;">
+                                <span>شؤوناملوظفني</span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;" height="80px">
+                            <td width="33.33%" style="border-right: 1px solid #785838;"></td>
+                            <td width="33.33%" style="border-right: 1px solid #785838;"></td>
+                            <td width="33.33%" style="border-right: 1px solid #785838;"></td>
+                        </tr>
+                        <tr>
+                            <td width="33.33%" style="border-right: 1px solid #785838;"></td>
+                            <td width="33.33%" style="border-right: 1px solid #785838;"></td>
+                            <td width="33.33%" style="border-right: 1px solid #785838;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row footer">
+                    <table>
+                        <tr>
+                            <td>
+                                <span t-esc="total_page" style="font-size:10px!important;"/>
+                            </td>
+                            <td>
+                                <span style="padding-left:7px;">من</span>
+                            </td>
+                            <td>
+                                <span t-esc="page_number"
+                                      style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+        <template id="advance_payment_approval_request_report">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <img src="/hr_approvals/static/src/img/sc_header.jpg"
+                         style="padding-left:5px;height:147px;width:100%;"/>
+                    <br/>
+                    <br/>
+                    <div style="font-size:24px; text-align:center;">
+                        <h4 style="color:#5e0b05;font-weight: bold;">
+                            نموذج طلب سلفة بضمان الراتب
+                        </h4>
+                    </div>
+                    <br/>
+                    <table style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;" width="100%">
+                        <tr style="background-color:#785838">
+                            <td colspan="2" style="text-align:center">
+                                <span style="color:white;font-weight: bold;">
+                                    بياناتالموظف
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:right">
+                                <span style="padding-right:5px;">
+
+                                    إسم الموظف:
+                                    <t t-esc="o.request_employee_id.arabic_name"/>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;" width="100%">
+                            <td style="text-align:right" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.request_employee_id.department_id.name"/>
+                                    :الادارة / القسم
+                                </span>
+                            </td>
+                            <td style="text-align:right;border-left: 1px solid #785838;" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.request_employee_id.sequence"/>
+                                    :الرقم الوظيفي
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;" width="100%">
+                            <td style="text-align:right" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.request_employee_id.active_contract.job_grade.name"/>
+                                    :الدرجة الوظيفية
+                                </span>
+                            </td>
+                            <td style="text-align:right;border-left: 1px solid #785838;" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.request_employee_id.job_id.name"/>
+                                    :المسمى الوظيفي
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;" width="100%">
+                            <td style="text-align:right" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.request_employee_id.joining_date">
+                                        <t t-esc="o.request_employee_id.joining_date.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                    :تاريخ التعيين
+                                </span>
+                            </td>
+                            <td style="text-align:right;border-left: 1px solid #785838;" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.request_employee_id.active_contract.wage"/>
+                                    :الراتب الاساسي
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;" width="100%">
+                            <td style="text-align:right" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.amount"/>
+                                    :قيمة السلفة
+                                </span>
+                            </td>
+                            <td style="text-align:right;border-left: 1px solid #785838;" width="50%">
+                                <span style="padding-right:5px;">
+                                    <t t-esc="o.advance_payment_type"/>
+                                    :نوع السلفة
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;" width="100%">
+                        <tr style="background-color:#785838">
+                            <td colspan="6" style="text-align:center">
+                                <span style="color:white;font-weight: bold;">
+                                    الســـلفة الســـابقة إن وجدت
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;" width="100%">
+                            <td style="text-align:center" width="16.66%">
+                                <span style="padding-right:5px;">
+                                    عدد الأقساط
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;" width="16.66%">
+                                <span style="padding-right:5px;">
+                                    قيمة الأقساط المتبقية
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;" width="16.66%">
+                                <span style="padding-right:5px;">
+                                    تاريخ منحها
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;" width="16.66%">
+                                <span style="padding-right:5px;">
+                                    القسط
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;" width="16.66%">
+                                <span style="padding-right:5px;">
+                                    القيمة
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;" width="16.70%">
+                                <span style="padding-right:5px;">
+                                    السلفة السابقة
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;height: 32px;" width="100%">
+                            <td style="text-align:center">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.previous_advance_payment">
+                                        <t t-esc="o.previous_advance_payment.no_of_installment"/>
+                                    </t>
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.previous_advance_payment">
+                                        <t t-esc="sum(o.previous_advance_payment.payment_installment_ids.filtered(lambda s: not s.is_paid).mapped('installment_amount'))"/>
+                                    </t>
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.previous_advance_payment and o.approval_date">
+                                        <t t-esc="o.approval_date.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.previous_advance_payment">
+                                        <t t-esc="o.previous_advance_payment.amount/o.previous_advance_payment.no_of_installment"/>
+                                    </t>
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.previous_advance_payment">
+                                        <t t-esc="o.previous_advance_payment.amount/o.previous_advance_payment.no_of_installment"/>
+                                    </t>
+                                </span>
+                            </td>
+                            <td style="text-align:center;border-left: 1px solid #785838;">
+                                <span style="padding-right:5px;">
+                                    <t t-if="o.previous_advance_payment">
+                                        <t t-esc="o.previous_advance_payment.amount"/>
+                                    </t>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 1px solid #785838;height: 32px;" width="100%">
+                            <td></td>
+                            <td style="text-align:center;border-left: 1px solid #785838;"></td>
+                            <td style="text-align:center;border-left: 1px solid #785838;"></td>
+                            <td style="text-align:center;border-left: 1px solid #785838;"></td>
+                            <td style="text-align:center;border-left: 1px solid #785838;"></td>
+                            <td style="text-align:center;border-left: 1px solid #785838;"></td>
+                        </tr>
+                    </table>
+                    <br/>
+
+                    <table style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;" width="100%">
+                        <tr style="background-color:#785838">
+                            <td colspan="6" style="text-align:center">
+                                <span style="color:white;font-weight: bold;">
+                                    إقــــــــرار
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table width="100%">
+                        <tr width="100%">
+                            <span style="text-color:solid #785838;">_______________________</span>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                            <span>
+                                :أقر أنا املوقع أدناه مبوافقتي على خصم قيمة السلفة املذكورة من راتبي على أقساط شهرية
+                                وذلك
+                                ملدة
+                            </span>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table width="100%">
+                        <tr width="100%">
+                            <span style="text-color:solid #785838;">
+                                ____________________________________________________________________________________________&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                            </span>
+
+                            <span>
+                                :على أن يبدأ السداد من راتب شهر
+                            </span>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table width="100%">
+                        <tr width="100%">
+                            <td style="text-align:right!important;">
+                                <span style="color: #990000;">مالحظة:</span>
+                                <span>
+                                    تسدد قيمة السلفة على أقساط شهرية خالل مدة ال تزيد على أربع سنوات أو نهاية مدة اخلدمة
+                                    أيهما أقرب.
+                                </span>
+
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <br/>
+                    <table width="100%">
+                        <tr>
+                            <td width="50%">
+                                <span style="color:#785838;">_________________________________________
+                                </span>
+                                <span>:توقيع مقدمــع الطلب</span>
+                            </td>
+                            <td style="border-bottom: 1px solid #785838;" width="30%">
+                                <span>
+                                    <center>
+                                        <t t-esc="o.request_employee_id.qid_no"/>
+                                    </center>
+                                </span>
+                            </td>
+                            <td width="20%">:البطاقة رقم الشخصية</td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <table style="border: 1px solid #785838!important;" width="100%">
+                        <tr style="background-color: #785838!important;line-height:30px;">
+                            <td colspan="6" style="color: white;text-align: center;font-weight: bold;">
+                                خاص بإدارة الشؤون الإدارية والمالية
+                            </td>
+                        </tr>
+                        <tr style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;">
+                            <td style="padding-right:5px;border-right: 1px solid #785838;width:50%;text-align: right!important;"
+                                colspan="3">
+                                :عدم الموافقة
+                            </td>
+                            <td colspan="3"
+                                style="padding-right:5px;border-right: 1px solid #785838;width:50%;text-align: right!important;">
+                                :الموافقة
+                            </td>
+
+                        </tr>
+                        <tr style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;">
+                            <td colspan="3"
+                                style="padding-right:5px;border-right: 1px solid #785838;width:50%;text-align: right!important;">
+                                <t t-esc="o.no_of_installment"/>:مدة الي عداد
+
+                            </td>
+                            <td style="padding-right:5px;border-right: 1px solid #785838;width:50%;text-align: right!important;"
+                                colspan="3">
+                                <t t-if="o.amount > 0 and o.no_of_installment > 0">
+                                    <t t-esc="o.amount/o.no_of_installment"/>
+                                </t>
+                                :القسط الشهري
+                            </td>
+                        </tr>
+                        <tr style="border: 1px solid #785838; line-height:30px; background-color: #f2f2f2;">
+                            <td colspan="2" style="border-right: 1px solid #785838;text-align: right!important;">
+                                <center style="font-weight: bold;color: #2b2727;">اإلعتماد</center>
+                            </td>
+                            <td colspan="2" style="border-right: 1px solid #785838;text-align: right!important;"
+                                width="34%">
+                                <center style="font-weight: bold;color: #2b2727;">مسؤول الشؤون اإلدارية
+                                </center>
+                            </td>
+                            <td colspan="2" style="border-right: 1px solid #785838;text-align: right!important;"
+                                width="33%">
+                                <center style="font-weight: bold;color: #2b2727;">شؤون املوظفني
+                                </center>
+                            </td>
+                        </tr>
+                        <tr style="border: 1px solid #785838; line-height:60px; background-color: #f2f2f2;">
+                            <td colspan="2" width="33%" style="border-right: 1px solid #785838;">
+                                <br/>
+                            </td>
+                            <td colspan="2" width="34%" style="border-right: 1px solid #785838;">
+                                <br/>
+                            </td>
+                            <td colspan="2" style="border-right: 1px solid #785838;">
+                                <br/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row footer">
+                    <table>
+                        <tr>
+                            <td>
+                                <span t-esc="total_page" style="font-size:10px!important;"/>
+                            </td>
+                            <td>
+                                <span style="padding-left:7px;">من</span>
+                            </td>
+                            <td>
+                                <span t-esc="page_number"
+                                      style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

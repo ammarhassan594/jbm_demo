@@ -1,0 +1,13 @@
+<odoo>
+    <record id="custom_project_project_view" model="ir.ui.view">
+        <field name="name">project.project.view</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="role_distribution"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

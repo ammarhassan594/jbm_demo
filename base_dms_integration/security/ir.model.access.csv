@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+base_access_dms_integration,base.access.dms.integration,model_dms_integration,base.group_user,1,1,1,1
+base_access_status_values,base.access.status.values,model_status_values,base.group_user,1,1,1,0
+base_access_dms_fields,base.access.dms.fields,model_dms_fields,base.group_user,1,1,1,1
+base_access_dms_temporary,base.access.dms.temporary,model_dms_temporary,base.group_user,1,1,1,0
+base_access_dms_content_type,base.access.dms.content.type,model_dms_content_type,base.group_user,1,1,1,0
+base_access_dms_model_condition,base.access.dms.model.condition,model_dms_model_condition,base.group_user,1,1,1,1

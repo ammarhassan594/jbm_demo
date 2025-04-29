@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.view.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="accommodation_api" invisible="1"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="accommodation" string="Accommodation Details" attrs="{'invisible': [('accommodation_api', '!=', True)]}">
+                    <group>
+                        <group>
+                            <field name="case_ref_no" readonly="1"/>
+                            <field name="case_name" readonly="1"/>
+                            <field name="case_qid" readonly="1"/>
+                            <field name="person_no" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="start_date" readonly="1"/>
+                            <field name="end_date" readonly="1"/>
+                            <field name="region" readonly="1"/>
+                            <field name="rooms_no" readonly="1"/>
+                            <field name="case_attachment_id" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

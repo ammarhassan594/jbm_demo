@@ -1,0 +1,136 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* taqat_config_extended
+# 	* taqat_groups_access_rights_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 07:08+0000\n"
+"PO-Revision-Date: 2023-01-23 07:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.res_config_settings_view_form_inherit
+msgid "<span class=\"o_form_label\">Consumable Products:</span>"
+msgstr "<span class=\"o_form_label\">المنتجات الاستهلاكية:</span>"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.res_config_settings_view_form_inherit
+msgid "<span class=\"o_form_label\">Service Products:</span>"
+msgstr "<span class=\"o_form_label\">منتجات الخدمة:</span>"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.res_config_settings_view_form_inherit
+msgid "<span class=\"o_form_label\">Storable Products:</span>"
+msgstr "<span class=\"o_form_label\">المنتجات القابلة للتخزين:</span>"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__is_active_budget
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__is_active_budget
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.taqat_custom_res_config_settings_view
+msgid "Active Budget"
+msgstr "الميزانية النشطة"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__is_active_budget_preparation
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__is_active_budget_preparation
+msgid "Active Budget Preparation"
+msgstr "الإعداد النشط للميزانية"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.taqat_custom_res_config_settings_view
+msgid "Active Preparation Budget"
+msgstr "ميزانية التحضير النشط"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.taqat_custom_res_config_settings_view
+msgid "Budget"
+msgstr "الدخل"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.taqat_custom_res_config_settings_view
+msgid "Budget Preparation"
+msgstr "إعداد الميزانية"
+
+#. module: taqat_config_extended
+#: model:ir.model,name:taqat_config_extended.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: taqat_config_extended
+#: model:ir.model,name:taqat_config_extended.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.res_config_settings_view_form_inherit
+msgid "Default Product Accounts"
+msgstr "حسابات المنتج الافتراضية"
+
+#. module: taqat_groups_access_rights_extended
+#: model:res.groups,name:taqat_groups_access_rights_extended.group_employability_manager
+msgid "Employability Manager"
+msgstr "مدير التوظيف"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.res_config_settings_view_form_inherit
+msgid "Expense Account"
+msgstr "حساب المصاريف"
+
+#. module: taqat_config_extended
+#: model_terms:ir.ui.view,arch_db:taqat_config_extended.res_config_settings_view_form_inherit
+msgid "Income Account"
+msgstr "حساب الدخل"
+
+#. module: taqat_groups_access_rights_extended
+#: model:res.groups,name:taqat_groups_access_rights_extended.group_operational_employee
+msgid "Operational Employee"
+msgstr "موظف تشغيلي"
+
+#. module: taqat_groups_access_rights_extended
+#: model:res.groups,name:taqat_groups_access_rights_extended.group_operational_manager
+msgid "Operational Manager"
+msgstr "مدير تنفيذي"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__product_cons_account_expense_id
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__product_cons_account_expense_id
+msgid "Product Cons Account Expense"
+msgstr "حساب سلبيات المنتج"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__product_cons_account_income_id
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__product_cons_account_income_id
+msgid "Product Cons Account Income"
+msgstr "دخل حساب سلبيات المنتج"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__product_service_account_expense_id
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__product_service_account_expense_id
+msgid "Product Service Account Expense"
+msgstr "حساب خدمة المنتج"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__product_service_account_income_id
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__product_service_account_income_id
+msgid "Product Service Account Income"
+msgstr "دخل حساب خدمة المنتج"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__product_storable_account_expense_id
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__product_storable_account_expense_id
+msgid "Product Storable Account Expense"
+msgstr "حساب حساب المنتج القابل للتخزين"
+
+#. module: taqat_config_extended
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_company__product_storable_account_income_id
+#: model:ir.model.fields,field_description:taqat_config_extended.field_res_config_settings__product_storable_account_income_id
+msgid "Product Storable Account Income"
+msgstr "دخل حساب المنتج القابل للتخزين"

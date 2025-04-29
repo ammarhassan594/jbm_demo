@@ -1,0 +1,1346 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_allowance_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-30 13:22+0000\n"
+"PO-Revision-Date: 2024-05-30 13:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_allowance_request
+#: model:mail.template,body_html:hr_allowance_request.mail_template_send_notification_of_allowance_request
+msgid ""
+"\n"
+"                 <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                 Hello, <br/> <br/>\n"
+"               <p>The Allowance request of <b>#${object.name or ''}</b> for the employee <b> ${object.employee_id.name or ''} </b> has been sent to you for your approval. Its basic details are as follows:  </p>\n"
+"                <br/>\n"
+"                 <table style=\"width:100%\" border=\"5\">\n"
+"                 <tr>\n"
+"                    <td colspan=\"5\" style=\"background-color: #875A7B;color:white;\"> <center>Allowance Request Detail</center> </td>\n"
+"                 </tr>\n"
+"                % if object.employee_id:\n"
+"                <tr>\n"
+"                     <td colspan=\"2\">Requester Name</td>\n"
+"                     <td colspan=\"3\"><strong><a>${object.employee_id.name or ''}</a></strong></td>\n"
+"                </tr>\n"
+"                 %endif\n"
+"                 % if object.employee_id.department_id:\n"
+"                 <tr>\n"
+"                    <td colspan=\"2\">Department</td>\n"
+"                    <td colspan=\"3\"><strong><a>${object.employee_id.department_id.name or ''}</a></strong></td>\n"
+"                </tr>\n"
+"                 %endif\n"
+"                % if object.create_date:\n"
+"                <tr>\n"
+"                    <td colspan=\"2\">Requested Date</td>\n"
+"                    <td colspan=\"3\"><strong><a>${ctx['create_date']|safe}</a></strong></td>\n"
+"                </tr>\n"
+"                 %endif\n"
+"                </table>\n"
+"                 <br/>\n"
+"                 <div style=\"margin: 0px; padding: 0px;\">\n"
+"                        You can check the more details by clicking on the below link.\n"
+"                        <div style=\"margin: 16px 0px 16px 0px;\">\n"
+"                            <a href=\"${object.get_url()}\"\n"
+"                                target=\"_blank\"\n"
+"                                style=\"background-color: #875a7b; text-decoration: none; color: #fff; padding: 8px 16px 8px 16px; border-radius: 5px;\">#${object.name or ''}</a>\n"
+"                        </div>\n"
+"                    </div> <br/> Thank You<br/>\n"
+"                <br/></p> \n"
+"            "
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_type_form_view
+msgid "&lt;="
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "<span class=\"o_stat_text\">Allowances</span>"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_employee_payscale_form_inherit
+msgid ""
+"<span class=\"oe_inline\">\n"
+"                                * Basic Salary\n"
+"                            </span>"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.act_hr_employee_academic_year
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__academic_id
+#: model:ir.ui.menu,name:hr_allowance_request.menu_academic_year
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.academic_year_form_view
+msgid "Academic Year"
+msgstr "السنة الدراسية"
+
+#. module: hr_allowance_request
+#: model:ir.model.constraint,message:hr_allowance_request.constraint_academic_year_name_uniq
+msgid "Academic Year Name must be unique !"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.academic_year_tree_view
+msgid "Academic year"
+msgstr "السنة الدراسية"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__active
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__active
+msgid "Active"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__adult_fare
+msgid "Adult Fare"
+msgstr "السعر للبالغين"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_type_form_view
+msgid "Adult Fare Age >"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__adult_fare_age_from
+msgid "Adult fare age from"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Adult fare age from must be less than Adult fare age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__adult_fare_age_to
+msgid "Adult fare age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Adult fare age to must be less than Age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__age_from
+msgid "Age From"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__age_to
+msgid "Age To"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Air Ticket Class"
+msgstr "فئة التذكرة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__airport_id
+msgid "Airport"
+msgstr "المطار"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__allowance_id
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Allowance"
+msgstr "بدل"
+
+#. module: hr_allowance_request
+#: model:ir.module.category,name:hr_allowance_request.module_category_allowance
+#: model:mail.activity.type,name:hr_allowance_request.mail_act_allowance_approval
+msgid "Allowance Approval"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.module.category,description:hr_allowance_request.module_category_allowance
+msgid "Allowance Category Approval"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_hr_employee__count_allowance
+msgid "Allowance Count"
+msgstr "طلب بدل"
+
+#. module: hr_allowance_request
+#: model:res.groups,name:hr_allowance_request.group_allowance_first_approval
+msgid "Allowance First Approval"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Allowance Lines"
+msgstr "المعالين"
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__allowance_request_id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_hr_employee__allowance_request_ids
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Allowance Request"
+msgstr "طلب بدل"
+
+#. module: hr_allowance_request
+#: model:mail.template,subject:hr_allowance_request.mail_template_send_notification_of_allowance_request
+msgid ""
+"Allowance Request #${object.name or ''} Submitted To\n"
+"                ${ctx.get('allowance_approval_state')}\n"
+"            "
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.wizard_allowance_request_form
+msgid "Allowance Request Report"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:mail.template,name:hr_allowance_request.mail_template_send_notification_of_allowance_request
+msgid "Allowance Request Submitted To ${ctx.get('allowance_approval_state')}"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_hr_payslip__allowance_request_ids
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_tree_view
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_employee_form_allowance_request_inherit
+msgid "Allowance Requests"
+msgstr "طلبات البدل"
+
+#. module: hr_allowance_request
+#: model:res.groups,name:hr_allowance_request.group_allowance_second_approval
+msgid "Allowance Second Approval"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:res.groups,name:hr_allowance_request.group_allowance_draft
+msgid "Allowance Set To Draft"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.allowance_type_act_window
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__allowance_type
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__allowance_type_ids
+#: model:ir.ui.menu,name:hr_allowance_request.allowance_type_menu
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_type_form_view
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Allowance Type"
+msgstr "نوع البدل"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__allowance_line
+msgid "Allowance line"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__allowance_id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__allowance_id
+msgid "Allowance_id"
+msgstr "بدل"
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.act_hr_employee_allowance_request
+#: model:ir.ui.menu,name:hr_allowance_request.menu_allowance_requests
+msgid "Allowances"
+msgstr "بدلات/علاوات"
+
+#. module: hr_allowance_request
+#: model:ir.ui.menu,name:hr_allowance_request.base_menu_allowance_requests
+msgid "Allowances Request"
+msgstr "طلب بدلات/علاوات"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__depreciation_line
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Amortization"
+msgstr "استهلاك"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__amortized_balance
+msgid "Amortized Balance"
+msgstr "الرصيد المستهلك"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__amount
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__amount
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request_line__amount
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Amount"
+msgstr "القيمه"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__air_ticket_allowance
+msgid "Annual Air Ticket Allowance "
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.server,name:hr_allowance_request.action_server_allowance_approve
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_view_kanban
+msgid "Approve"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__approved_amount
+msgid "Approved Amount"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__4
+msgid "April"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.academic_year_search
+msgid "Archived"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_ir_attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__invoice_attachments
+msgid "Attachments"
+msgstr "مرفق"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__8
+msgid "August"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__automatic_leave_allowance
+msgid "Automatic Leave Allowance"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_business_training_trip_allowance
+msgid "BUSINESS/TRAINING Trip Allowance"
+msgstr "بدل رحلة عمل / تدريب"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__balance
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.wizard_allowance_request_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:res.groups,name:hr_allowance_request.group_allowance_cancel
+msgid "Cancel Allowance"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__canceled
+msgid "Cancelled"
+msgstr "اغلاق"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__child_fare
+msgid "Child Fare"
+msgstr "السعر لغير البالغين"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_type_form_view
+msgid "Child Fare Age >"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__child_fare_age_from
+msgid "Child fare age from"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Child fare age from must be less than Child fare age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__child_fare_age_to
+msgid "Child fare age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Child fare age to must be less than Adult fare age from"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__children_count
+msgid "Children Count"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__code
+msgid "Code"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.constraint,message:hr_allowance_request.constraint_allowance_type_code_u_code
+msgid "Code Already exists !"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__company_id
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__company_id
+msgid "Company"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__confirmed
+msgid "Confirmed"
+msgstr "انتظار"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__created_automatically
+msgid "Created Automatically"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__create_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__create_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__currency_id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__currency_id
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_depreciation__currency_id
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__currency_id
+msgid "Currency"
+msgstr "العمله"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__date
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__date
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request_line__date
+msgid "Date of the payment"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__12
+msgid "December"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__count_dependants_note
+msgid "Dependants"
+msgstr "المعالين"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__dependent_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__dependent_id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__dependent_id
+msgid "Dependent"
+msgstr "المعالي"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__emp_child
+msgid "Dependents"
+msgstr "المعالين"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__destination
+msgid "Destination"
+msgstr "الوجهة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__display_airport_info
+msgid "Display Airports Info"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__display_name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__end_date
+msgid "END Date"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_EOSB_advance_allowance
+msgid "EOSB Advance Allowance"
+msgstr "سلفة من حساب مكافأة نهاية الخدمة"
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_education_allowance
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__education_allowance_ids
+msgid "Education Allowance"
+msgstr "بدل تعليم"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__effective_date
+msgid "Effective Date"
+msgstr "التاريخ الفعلي"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__eligible_amount
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__eligible_amount
+msgid "Eligible Amount"
+msgstr "المبلغ المؤهل"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_view_kanban
+msgid "Eligible Amount:"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__eligible_dependent
+msgid "Eligible Dependent"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_hr_employee
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__employee_id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__employee_id
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_dependent__employee_id
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_tree_view
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__employee_number
+msgid "Employee no"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__enable_payslip
+msgid "Enable In Payslip"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__end_date
+msgid "End Time"
+msgstr "تاريخ الإنتهاء"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_employee_payscale__leave_allowance_factor
+msgid "Factor"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__2
+msgid "February"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__final_approve_date
+msgid "Final Approve Date"
+msgstr "تاريخ اخر موافقه"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_view_kanban
+msgid ""
+"First\n"
+"                                            Approve"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__first_approved
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "First Approval"
+msgstr "الموافقه الاولي"
+
+#. module: hr_allowance_request
+#: model:ir.actions.server,name:hr_allowance_request.action_server_allowance_first_approve
+msgid "First Approve"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_furniture_alw
+msgid "Furniture Allowance"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_hr_employee__furniture_allowance_created
+msgid "Furniture Allowance Created"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__furniture_difference
+msgid "Furniture Difference"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_furniture_maintenance_allowance
+msgid "Furniture Maintenance Allowance"
+msgstr "علاوة صيانة أثاث"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Future Activities"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__gender
+msgid "Gender"
+msgstr "نوع الجنس"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.wizard_allowance_request_form
+msgid "Generate"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.action_generate_excel_allowance_request
+#: model:ir.actions.server,name:hr_allowance_request.action_generate_allowance_report
+#: model:ir.ui.menu,name:hr_allowance_request.allowance_request_wizard
+msgid "Generate Allowance Report"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.report,name:hr_allowance_request.action_allowance_request_xlsx_report
+msgid "Generate Allowance Request XLSX Report"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Group By"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:res.groups,name:hr_allowance_request.hr_employee_approved_amount
+msgid "HR Allowance Request Approved Amount"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__id
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_needaction
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_has_error
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__include_loan
+msgid "Include Loans"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__infant_fare
+msgid "Infant Fare"
+msgstr "السعر للاطفال"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_type_form_view
+msgid "Infant Fare Age >"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__infant_fare_age_from
+msgid "Infant fare age from"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Infant fare age from must be bigger than Age from"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Infant fare age from must be less than Infant fare age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__infant_fare_age_to
+msgid "Infant fare age to"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Infant fare age to must be less than Child fare age from"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_allowance_request_line
+msgid "Installment Line"
+msgstr ""
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/wizard/allowance_wizard.py:0
+#, python-format
+msgid "Invalid start date"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__invoice_number
+msgid "Invoice Number"
+msgstr "رقم الفاتورة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__is_created_by_script
+msgid "Is Created By Script"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__is_imported
+msgid "Is Imported"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__1
+msgid "January"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__7
+msgid "July"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__6
+msgid "June"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type____last_update
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__write_uid
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_dependent__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_depreciation__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__write_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Late Activities"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.server,name:hr_allowance_request.ir_cron_leave_allowance_ir_actions_server
+#: model:ir.cron,cron_name:hr_allowance_request.ir_cron_leave_allowance
+#: model:ir.cron,name:hr_allowance_request.ir_cron_leave_allowance
+msgid "Leave Ticket Allowance"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_maintenance_alw
+msgid "Maintenance Allowance"
+msgstr "بدل صيانة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__3
+msgid "March"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__marital
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__5
+msgid "May"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_mobilization_allowance
+msgid "Mobilization Allowance"
+msgstr "بدل انتقال الى دولة العمل لأول مرة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__month
+msgid "Month"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "My Requests"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__name
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__name
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_tree_view
+msgid "Name"
+msgstr "اﻷسم"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__country_id
+msgid "Nationality"
+msgstr "الجنسيه"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__no_dependent
+msgid "No Dependent"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__note
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Note"
+msgstr "الملاحظات"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__11
+msgid "November"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_employee_payscale__number_of_dependent
+msgid "Number Of Dependents"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__num_of_months
+msgid "Number Of Months"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__10
+msgid "October"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.actions.server,name:hr_allowance_request.act_allowance_paid_action
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__paid
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Paid"
+msgstr "تم الدفع"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__paid_seperator
+msgid "Paid Separator"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__parent
+msgid "Parent"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__pay
+msgid "Pay"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_employee_payscale
+msgid "Pay Scale"
+msgstr "جدول مرتبات"
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__payment_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.payment_lines_action
+#: model:ir.ui.menu,name:hr_allowance_request.payment_lines_menu
+msgid "Payment Lines"
+msgstr "المدفوعات"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Payment lines"
+msgstr "المدفوعات"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__u_code
+msgid "Purpose Code"
+msgstr "رمز الغرض"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_employee_payscale_form_inherit
+msgid "Qatar Leave Allowance"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:res.country,name:hr_allowance_request.qd
+msgid "Qatari Document Holder"
+msgstr "حامل الوثيقة القطرية"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_line__ref
+msgid "Ref"
+msgstr "مرجع"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_view_kanban
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__refused
+msgid "Refused"
+msgstr "رفض"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__remaining_amount
+msgid "Remaining Amount"
+msgstr "المبلغ المتبقي"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__remaining_unamortized_balance
+msgid "Remaining Unamortized Balance"
+msgstr "الرصيد المتبقي غير المستهلك"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.action_allowance_request_request
+msgid "Request for Allowance"
+msgstr "طلب البدل"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__requested_amount
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__requested_amount
+msgid "Requested Amount"
+msgstr "المبلغ المطلوب"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ تسليم الرسائل القصيرة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__approved
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Second Approval"
+msgstr "الموافقه الثانيه"
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_allowance_type
+msgid "Selection many2one field in allowance request"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_type__month__9
+msgid "September"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Set To Draft"
+msgstr "ارسال الي المسوده"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Show all records which has next action date is before today"
+msgstr "أظهر جميع السجلات التي لها تاريخ العمل التالي قبل اليوم"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__sponsor_ids
+msgid "Sponsorship"
+msgstr "رعاية"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_academic_year__start_date
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request_wizard__start_date
+msgid "Start Date"
+msgstr "تاريخ بدء"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__start_date
+msgid "Start Time"
+msgstr "وقت بد"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__state
+msgid "State"
+msgstr "الحاله"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Status"
+msgstr "الحاله"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.actions.act_window,help:hr_allowance_request.allowance_type_act_window
+msgid "There is no examples click here to add new ModelTitle."
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:hr.salary.rule,name:hr_allowance_request.hr_rule_ticket_alw
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_employee_payscale_form_inherit
+msgid "Ticket Allowance"
+msgstr "بدل التذاكر"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_hr_employee__ticket_allowance_created
+msgid "Ticket Allowance Created"
+msgstr "إنشاء بدل التذاكر"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__ticket_leave_id
+msgid "Ticket Leave"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_type_form_view
+msgid "Title"
+msgstr "اللقب"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.view_allowance_request_search_form
+msgid "Today Activities"
+msgstr "نشاطات اليوم"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__total_balance
+msgid "Total Balance"
+msgstr "الرصيد الإجمالي"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__total_collected
+msgid "Total Collected"
+msgstr "مجموع المبالغ المحصلة"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_type__total_days_in_year
+msgid "Total Days In Year"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__total_dependent
+msgid "Total Dependent"
+msgstr "مجموع المعالين"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__total_requested_amount
+msgid "Total Requested Amount"
+msgstr "إجمالي المبلغ المطلوب"
+
+#. module: hr_allowance_request
+#: code:addons/hr_allowance_request/models/allowance_type.py:0
+#, python-format
+msgid "Total days in year must be greater than 1"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءه"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__user_id
+msgid "User"
+msgstr "مستخدم"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,help:hr_allowance_request.field_allowance_request__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ اتصالات الموقع"
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_academic_year
+msgid "academic.year"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_allowance_dependent
+msgid "allowance.dependent"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_allowance_request_wizard
+msgid "allowance.request.wizard"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_education_allowance_line__dependent_id_domain
+msgid "dependent_id_domain"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_education_allowance_line
+msgid "education.allowance.line"
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_allowance_depreciation
+msgid ""
+"lines depends on eligible amount and number of months in allowance type "
+msgstr ""
+
+#. module: hr_allowance_request
+#: model:ir.model,name:hr_allowance_request.model_report_hr_allowance_request_request_allowance_xlsx_report
+msgid "report.hr_allowance_request.request_allowance_xlsx_report"
+msgstr ""

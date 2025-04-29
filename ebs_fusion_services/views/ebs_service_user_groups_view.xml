@@ -1,0 +1,50 @@
+<odoo>
+    <!--    ebs services user groups form-->
+    <record model="ir.ui.view" id="view_ebs_service_user_groups_form">
+        <field name="name">ebs.services.user.groupForm</field>
+        <field name="model">ebs.services.user.group</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+
+                            <field name="manager_user_id" options="{'no_create':True,'no_create_edit': 1}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="service_user_group" string="Services">
+                            <field name="user_ids">
+                                <tree editable="bottom">
+
+                                    <field name="employee_user_id" options="{'no_create':True,'no_create_edit': 1}"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs service user groups tree-->
+    <record id="view_ebs_service_user_groups_tree" model="ir.ui.view">
+        <field name="name">ebs.services.user.group.tree</field>
+        <field name="model">ebs.services.user.group</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="manager_user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service groups action-->
+    <record model="ir.actions.act_window" id="action_ebs_service_user_groups">
+        <field name="name">Service User Group</field>
+        <field name="res_model">ebs.services.user.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

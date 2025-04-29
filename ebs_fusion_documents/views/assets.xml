@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Assets: scss, css, js -->
+    <template id="assets_front" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/ebs_fusion_documents/static/src/js/portal.js"></script>
+
+            <link rel="stylesheet" type="css" href="/ebs_fusion_documents/static/src/css/document.css"/>
+        </xpath>
+    </template>
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/ebs_fusion_documents/static/src/js/document_custom.js"></script>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_documents/static/src/css/document.css"/>
+        </xpath>
+    </template>
+</odoo>

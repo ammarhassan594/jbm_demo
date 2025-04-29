@@ -1,0 +1,12 @@
+<odoo>
+    <record id="custom_hr_payslip_view_for_sponsor" model="ir.ui.view">
+            <field name="name">custom.hr.payslip.view.sponsor</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="ebs_lb_payroll.custom_hr_payslip_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="emp_sponsor"/>
+                </field>
+            </field>
+    </record>
+</odoo>

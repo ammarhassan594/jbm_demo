@@ -1,0 +1,123 @@
+<odoo>
+    <!--    ebs crm service process tree-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_process_tree">
+        <field name="name">ebs.crm.proposal.process.tree</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <tree default_order='service_order_date desc'>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="proposal_id" string="Contract"/>
+                <field name="client_id"/>
+                <field name="service_id"/>
+                <field name="service_code"/>
+                <field name="day_to_complete"/>
+                <field name="partner_id" string="Service Beneficiary" invisible="1"/>
+                <field name="service_order_date"/>
+                <field name="description"/>
+                <field name="status"/>
+                <field name="start_date" optional="hide"/>
+                <field name="due_date" optional="hide"/>
+                <field name="end_date" optional="hide"/>
+                <field name="is_invoiced" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ebs_crm_service_process_graph" model="ir.ui.view">
+        <field name="name">ebs.crm.service.process.graph</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="name"/>
+                <field name="fusion_fees" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--    ebs crm service process search-->
+    <record id="view_ebs_crm_proposal_process_search" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.process.search</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <search string="Service Orders">
+
+                <field name="pricelist_category_id"/>
+                <field name="pricelist_line_id"/>
+                <field name="proposal_id"/>
+                <field name="service_id"/>
+                <field name="service_order_type"/>
+                <field name="status"/>
+                <field name="parent_id"/>
+                <field name="client_id"/>
+                <filter string="Sub Service" name="sub_service" domain="[('is_sub_service','=',True)]"/>
+                <filter string="Group Service" name="is_group" domain="[('is_group_related', '=', True)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="status" context="{'group_by': 'status'}"/>
+
+
+                    <filter string="Contract" name="contract" context="{'group_by': 'proposal_id'}"/>
+
+                    <filter string="Service" name="service" context="{'group_by': 'service_id'}"/>
+                    <filter string="Client" name="client" context="{'group_by':'client_id'}"/>
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="ebs_service_order_view_activity" model="ir.ui.view">
+        <field name="name">ebs.crm.service.process.activity</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <activity string="EBS Service Order">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" display="full"/>
+                            <field name="client_id" display="full" muted="1"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+
+    <record id="view_ebs_crm_proposal_process_pivot" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.process.pivot</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="partner_id" string="Service Beneficiary" type="row"/>
+                <field name="service_order_date" type="col"/>
+                <field name="govt_fees" type="measure"/>
+                <field name="fusion_fees" type="measure"/>
+                <field name="status" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="ebs_fusion_crm_proposal_process_action" model="ir.actions.act_window">
+        <field name="name">Service Order Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.crm.service.process</field>
+        <field name="view_mode">tree,form,pivot,graph,activity</field>
+        <field name="domain">[]</field>
+        <field name="search_view_id" ref="ebs_fusion_services.view_ebs_crm_proposal_process_search"/>
+        <field name="view_id" ref="ebs_fusion_services.view_ebs_crm_proposal_process_tree"/>
+    </record>
+
+    <record id="ebs_fusion_crm_sub_proposal_process_action" model="ir.actions.act_window">
+        <field name="name">Sub Service Order Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.crm.service.process</field>
+        <field name="view_mode">tree,form,pivot,graph,activity</field>
+        <field name="domain">[('is_group_related', '=', True)]</field>
+        <field name="search_view_id" ref="ebs_fusion_services.view_ebs_crm_proposal_process_search"/>
+        <field name="view_id" ref="ebs_fusion_services.view_ebs_crm_proposal_process_tree"/>
+    </record>
+
+
+</odoo>

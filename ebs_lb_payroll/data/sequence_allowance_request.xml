@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+        <record id="sequence_allowance_request" model="ir.sequence">
+            <field name="name">Allowance Request</field>
+            <field name="code">ebs.payroll.allowance.request</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">AR</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+             <field eval="False" name="company_id"/>
+        </record>
+    </data>
+</odoo>

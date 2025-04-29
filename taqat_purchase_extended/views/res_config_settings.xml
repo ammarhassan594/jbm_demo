@@ -1,0 +1,97 @@
+<odoo>
+
+    <record id="res_config_settings_view_form_purchase" model="ir.ui.view">
+        <field name="name">custom.res.config.settings.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority">50</field>
+        <field name="inherit_id" ref="purchase_stock.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='request_vendor_setting_container']" position="after">
+                <h2>Terms And Condition</h2>
+                <div class="row mt16 o_settings_container" name="Purchase_terms_conf">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="purchase_terms_condition_en" string="In English"/>
+                            <field name="purchase_terms_condition_en"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="purchase_terms_condition_ar" string="In Arabic"/>
+                            <field name="purchase_terms_condition_ar"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h2>Note Terms</h2>
+                <div class="row mt16 o_settings_container" name="Purchase_note_terms">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="purchase_note_en" string="In English"/>
+                            <field name="purchase_note_en"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="purchase_note_ar" string="In Arabic"/>
+                            <field name="purchase_note_ar"/>
+                        </div>
+                    </div>
+                </div>
+                <h2>Stamp And Signature</h2>
+                <div class="row mt16 o_settings_container"
+                     name="pincode_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="purchase_stamp_width" class="o_light_label">Stamp Width (cm)</label>
+                                <field name="purchase_stamp_width"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="purchase_stamp_height" class="o_light_label">Stamp Height (cm)
+                                </label>
+                                <field name="purchase_stamp_height"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container"
+                     name="pincode_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="purchase_signature_width" class="o_light_label">Signature Width (cm)</label>
+                                <field name="purchase_signature_width"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="purchase_signature_height" class="o_light_label">Signature Height (cm)
+                                </label>
+                                <field name="purchase_signature_height"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

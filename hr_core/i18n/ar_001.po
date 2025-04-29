@@ -1,0 +1,449 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 07:32+0000\n"
+"PO-Revision-Date: 2023-01-23 07:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__active
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__active
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_compensation__state__active
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_job__position_status__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__amount
+msgid "Amount"
+msgstr "مقدار"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__arabic_name
+#: model:ir.model.fields,field_description:hr_core.field_job_title__arabic_name
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__code
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__code
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__code
+#: model:ir.model.fields,field_description:hr_core.field_hr_department__code
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__code
+msgid "Code"
+msgstr "رمز"
+
+#. module: hr_core
+#: model:ir.actions.act_window,name:hr_core.hr_compensation_action_window
+#: model_terms:ir.ui.view,arch_db:hr_core.view_hr_job_form_inherited
+msgid "Compensations"
+msgstr "تعويض"
+
+#. module: hr_core
+#: model:ir.actions.act_window,name:hr_core.hr_compensation_component_action_window
+msgid "Compensations Component"
+msgstr "مكون التعويضات"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__component_description
+msgid "Component Description"
+msgstr "مكون التعويضات"
+
+#. module: hr_core
+#: model:ir.actions.act_window,name:hr_core.action_hr_cost_center
+#: model:ir.model,name:hr_core.model_hr_cost_center
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__cost_center
+msgid "Cost Center"
+msgstr "كلف المركز"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__create_uid
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__create_uid
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__create_uid
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__create_uid
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__create_uid
+#: model:ir.model.fields,field_description:hr_core.field_job_title__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__create_date
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__create_date
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__create_date
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__create_date
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__create_date
+#: model:ir.model.fields,field_description:hr_core.field_job_title__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__currency
+msgid "Currency"
+msgstr "عملة"
+
+#. module: hr_core
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_compensation__period__daily
+msgid "Daily"
+msgstr "يوميًا"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_hr_department
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__department_id
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_department__type__bd
+msgid "Department"
+msgstr "القسم"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__display_name
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__display_name
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__display_name
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__display_name
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__display_name
+#: model:ir.model.fields,field_description:hr_core.field_job_title__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_department__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__frequency
+msgid "Frequency"
+msgstr "تكرر"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__from_date
+msgid "From Date"
+msgstr "من التاريخ"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__is_government
+msgid "Government"
+msgstr "حكومة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__grade_date
+msgid "Grade Date"
+msgstr "تاريخ التقدير"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__group
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_department__type__bu
+msgid "Group"
+msgstr "مجموعة"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_hr_compensation
+msgid "Hr Compensation"
+msgstr "تعويض الموارد البشرية"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_hr_compensation_pay_component
+msgid "Hr Compensation Pay Component"
+msgstr "مكون دفع تعويضات الموارد البشرية"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_hr_isco_code
+msgid "Hr Isco Code"
+msgstr "كود الموارد البشرية isco"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_job_title
+msgid "Hr Job Title"
+msgstr "المسمى الوظيفي للموارد البشرية"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__id
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__id
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__id
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__id
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__id
+#: model:ir.model.fields,field_description:hr_core.field_job_title__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: hr_core
+#: model:ir.actions.act_window,name:hr_core.hr_isco_code_action_window
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__isco_code
+msgid "ISCO Code"
+msgstr "كود ISCO"
+
+#. module: hr_core
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_compensation__state__inactive
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_job__position_status__inactive
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__panel_ids
+msgid "Interview Panel"
+msgstr "جدول المقابلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__is_payroll
+msgid "Is Payroll Element"
+msgstr "هو عنصر الرواتب"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_job_grade
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__job_grade
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__name
+msgid "Job Grade"
+msgstr "درجة الوظيفة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__level
+msgid "Job Grade Level"
+msgstr "مستوى الدرجة الوظيفية"
+
+#. module: hr_core
+#: model:ir.actions.act_window,name:hr_core.job_grade_action_window
+msgid "Job Grades"
+msgstr "الدرجات الوظيفية"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_hr_job
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__name
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: hr_core
+#: model:ir.actions.act_window,name:hr_core.job_title_action_window
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__job_title
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_core
+#: model:ir.ui.menu,name:hr_core.job_title_menu
+msgid "Job title"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__name
+msgid "Label"
+msgstr "مُلصَق"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation____last_update
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component____last_update
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center____last_update
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code____last_update
+#: model:ir.model.fields,field_description:hr_core.field_job_grade____last_update
+#: model:ir.model.fields,field_description:hr_core.field_job_title____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__write_uid
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__write_uid
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__write_uid
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__write_uid
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__write_uid
+#: model:ir.model.fields,field_description:hr_core.field_job_title__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__write_date
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__write_date
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__write_date
+#: model:ir.model.fields,field_description:hr_core.field_hr_isco_code__write_date
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__write_date
+#: model:ir.model.fields,field_description:hr_core.field_job_title__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_core
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_compensation__period__monthly
+msgid "Monthly"
+msgstr "شهريا"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation_pay_component__name
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__name
+#: model:ir.model.fields,field_description:hr_core.field_job_title__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: hr_core
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_job__state__open
+msgid "Not Recruiting"
+msgstr "لا توظيف"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__notice_period
+msgid "Notice Period (Days)"
+msgstr "فترة الإخطار (أيام)"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__name
+msgid "Pay Component"
+msgstr "مكون الدفع"
+
+#. module: hr_core
+#: model:ir.model.constraint,message:hr_core.constraint_hr_compensation_uniq_components_contract
+msgid "Pay Component must be unique per Contract"
+msgstr "يجب أن يكون مكون الدفع فريدًا لكل عقد"
+
+#. module: hr_core
+#: code:addons/hr_core/models/hr_core.py:0
+#, python-format
+msgid "Pay Component must be unique per Contract!"
+msgstr "يجب أن يكون مكون الدفع فريدًا لكل عقد!"
+
+#. module: hr_core
+#: model:ir.model.constraint,message:hr_core.constraint_hr_compensation_uniq_components_position
+msgid "Pay Component must be unique per Job Position"
+msgstr "يجب أن يكون مكون الدفع فريدًا لكل وظيفة"
+
+#. module: hr_core
+#: code:addons/hr_core/models/hr_core.py:0
+#, python-format
+msgid "Pay Component must be unique per Job Position!"
+msgstr "يجب أن يكون مكون الدفع فريدًا لكل وظيفة!"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__period
+msgid "Period"
+msgstr "فترة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__position_status
+msgid "Position Status"
+msgstr "حالة الموقف"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__probation_period
+msgid "Probation Period (Days)"
+msgstr "فترة الاختبار (أيام)"
+
+#. module: hr_core
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_job__state__recruit
+msgid "Recruitment in Progress"
+msgstr "عملية التوظيف جارية"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_contract__related_compensation
+msgid "Related Compensation"
+msgstr "التعويضات ذات الصلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__related_compensations
+#: model:ir.model.fields,field_description:hr_core.field_job_grade__related_compensations
+msgid "Related Compensations"
+msgstr "التعويضات ذات الصلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__related_contract
+msgid "Related Contract"
+msgstr "عقد ذو صلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_cost_center__related_department
+msgid "Related Department"
+msgstr "الإدارة ذات الصلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__related_job_position
+msgid "Related Job"
+msgstr "وظيفة ذات صلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__related_jobs
+msgid "Related Jobs"
+msgstr "الوظائف ذات الصلة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__default_manager
+msgid "Reporting To"
+msgstr "تقديم التقارير إلى"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__section
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_department__type__bs
+msgid "Section"
+msgstr "قسم"
+
+#. module: hr_core
+#: model:ir.model.fields,help:hr_core.field_hr_job__state
+msgid ""
+"Set whether the recruitment process is open or closed for this job position."
+msgstr "حدد ما إذا كانت عملية التوظيف مفتوحة أو مغلقة لهذا المنصب الوظيفي."
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_department__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__state
+msgid "State"
+msgstr "ولاية"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_job__subsection
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_department__type__ss
+msgid "Subsection"
+msgstr "القسم الفرعي"
+
+#. module: hr_core
+#: model:ir.model.constraint,message:hr_core.constraint_hr_job_name_company_uniq
+msgid "The name of the job position must be unique per department in company!"
+msgstr "يجب أن يكون اسم الوظيفة فريدًا لكل قسم في الشركة!"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__to_date
+msgid "To Date"
+msgstr "ان يذهب في موعد"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_department__type
+msgid "Type"
+msgstr "يكتب"
+
+#. module: hr_core
+#: model:ir.model,name:hr_core.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: hr_core
+#: model:ir.model.fields,field_description:hr_core.field_hr_compensation__value
+msgid "Value (If not Payroll)"
+msgstr "القيمة (إن لم يكن جدول الرواتب)"
+
+#. module: hr_core
+#: model:ir.model.fields.selection,name:hr_core.selection__hr_compensation__period__yearly
+msgid "Yearly"
+msgstr "سنوي"
+
+#. module: hr_core
+#: model_terms:ir.ui.view,arch_db:hr_core.hr_compensation_tree
+msgid "amount_total"
+msgstr "المبلغ الإجمالي"

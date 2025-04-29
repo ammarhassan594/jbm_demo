@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+
+        <!--Import Wizard View-->
+        <record id="custom_report_wizard_form" model="ir.ui.view">
+            <field name="name">Custom Report Form View</field>
+            <field name="model">custom.reports</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Reports">
+                    <group>
+                        <group>
+                            <field name="report_type"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="from_date" attrs="{'required': [('report_type','=', 'employee_info_as_date')],
+                                                        'invisible': [('report_type','not in', ['employee_info_as_date',
+                                                        'leave_balance'])]}"/>
+                        </group>
+                        <group invisible="1">
+                            <field name="to_date"
+                                   attrs="{'invisible': [('report_type','not in', ['employee_end', 'leave_balance'])]}"/>
+                        </group>
+<!--                        <group attrs="{'invisible': [('report_type','not in', ['employee_end'])]}">-->
+<!--                            <field name="to_date"-->
+<!--                                   attrs="{'invisible': [('report_type','not in', ['employee_end', 'leave_balance'])]}"/>-->
+<!--                        </group>-->
+                    </group>
+                    <group>
+                        <h5>Category</h5>
+                    </group>
+                    <group name="category">
+                        <group>
+                            <field name="in_house_employee"/>
+                        </group>
+                        <group>
+                            <field name="staff_employee"/>
+                        </group>
+                        <group>
+                            <field name="temporary_employee"
+                                   attrs="{'invisible': [('report_type','=', 'leave_balance')]}"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="print_report" class="oe_highlight" string="Export" type="object"/>
+                        <button string="Cancel" class="oe_highlight" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+                name="Reports"
+                id="action_custom_report_wizard"
+                res_model="custom.reports"
+                view_mode="form"
+                target="new"
+        />
+
+        <menuitem id="menu_custom_reports" name="Custom Reports" action="action_custom_report_wizard"
+                  parent="hr.hr_menu_hr_reports"
+                  groups="hr.group_hr_user"
+                  sequence="100"/>
+    </data>
+</odoo>

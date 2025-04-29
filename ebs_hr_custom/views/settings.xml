@@ -1,0 +1,53 @@
+<odoo>
+    <record id="general_settings_view_inherti" model="ir.ui.view">
+        <field name="name">ebs.settings.employee</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']/div/div[2]" position="after">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <group>
+                            <field name='company_stamp' widget='image' class="w-auto pl-1 font-weight-bold"/>
+                        </group>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <group>
+                            <field name='company_domain' widget="many2many_tags"/>
+                        </group>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+<!--    <record id="ebs_employee_settings_inherit" model="ir.ui.view">-->
+<!--        <field name="name">ebs.settings.employee</field>-->
+<!--        <field name="model">res.config.settings</field>-->
+<!--        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//div[hasclass('settings')]" position="inside">-->
+<!--                <div class="col-12 col-lg-6 o_setting_box">-->
+<!--                    <div class="o_setting_left_pane">-->
+<!--&lt;!&ndash;                        <h3>Upload Company Stamp</h3>&ndash;&gt;-->
+<!--                        <group>-->
+<!--                            <field name="company_stamp" widget='image' width="100px" height="100px"/>-->
+<!--                        </group>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div class="o_setting_right_pane">&ndash;&gt;-->
+<!--&lt;!&ndash;                            &ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--&lt;!&ndash;                <h2>Upload Company Stamp</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="row mt16 o_settings_container">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-12 col-lg-6 o_setting_box" title="Allow employees to update their own data.">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="o_setting_left_pane">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <field name="company_stamp" widget='image'/>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+</odoo>

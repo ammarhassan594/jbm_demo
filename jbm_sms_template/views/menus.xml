@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+
+        <menuitem id="jbm_sms_template_menu" name="JBM SMS"
+                  action="jbm_sms_template.jbm_sms_template_action"/>
+    </data>
+</odoo>

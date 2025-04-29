@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+
+        <record id="ebs_fusion_res_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="show_in_letter_request"/>
+                </field>
+
+            </field>
+        </record>
+    </data>
+</odoo>

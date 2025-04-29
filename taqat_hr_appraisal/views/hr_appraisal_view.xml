@@ -1,0 +1,55 @@
+<odoo>
+
+
+    <record model="ir.ui.menu" id="hr_appraisal.menu_hr_appraisal_root">
+        <field name="groups_id"
+               eval="[(4,ref('hr_appraisal.group_hr_appraisal_manager')),(4,ref('hr_appraisal.group_hr_appraisal_user'))]"/>
+    </record>
+    <data>
+        <record id="jbm_hr_appraisal_custom_inherit_form_view" model="ir.ui.view">
+            <field name="name">jbm.hr.appraisal.custom.inherit.form.view</field>
+            <field name="model">hr.appraisal</field>
+            <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_close']" position="after">
+                    <field name="description"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Others" name="others">
+                        <group>
+                            <field name="hr_appraisal_warning_ids">
+                                <tree editable="bottom">
+                                    <field name="warning_description"/>
+                                    <field name="warning_date"/>
+                                    <field name="warning_reason"/>
+                                    <field name="warning_type"/>
+                                </tree>
+                            </field>
+                            <field name="hr_appraisal_description_ids">
+                                <tree editable="bottom">
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                            <field name="hr_appraisal_note_ids">
+                                <tree editable="bottom">
+                                    <field name="hr_notes"/>
+                                    <field name="score"/>
+                                    <field name="training_date"/>
+                                    <field name="training_time"/>
+                                    <field name="training_place"/>
+                                    <field name="training_course"/>
+                                    <field name="training_name"/>
+                                    <field name="appraisal_description"/>
+                                    <field name="description"/>
+                                    <field name="subject"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+
+</odoo>

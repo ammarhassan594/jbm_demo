@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="mail_template_of_absent_employees" model="mail.template">
+            <field name="name">Notification for Today's absent employees</field>
+            <field name="subject">إشعار غياب</field>
+            <field name="email_from">{{(object.company_id.email)}}</field>
+            <field name="email_to">{{ctx['email_to']}}</field>
+            <field name="model_id" ref="employee_absence_notification.model_hr_employee"/>
+            <field name="auto_delete" eval="False"/>
+<!--            <field name="body_html" type="html">-->
+<!--                <div style="margin: 0px; padding: 0px;" dir="ltr" lang="en">-->
+<!--                    <t t-set="direct_manager" t-value="ctx.get('direct_manager', [])"/>-->
+<!--                    <p>السيد/-->
+<!--                        <span style="padding-right:5px" t-field="direct_manager.arabic_name"/>-->
+<!--                    </p>-->
+
+
+<!--                    <span dir="rtl">-->
+<!--                        تم تسجيل غياب للموظفيين التاليين عن الدوام بتاريخ-->
+<!--                    </span>-->
+<!--                    <span dir="rtl">-->
+<!--                        <t t-out="ctx.get('time')"/>-->
+<!--                    </span>-->
+<!--                    <div>-->
+<!--                        <t t-set="absence_employees" t-value="ctx.get('absence_employees', [])"/>-->
+
+<!--                        <ul>-->
+<!--                            <span t-foreach="absence_employees" t-as="employee">-->
+<!--                                <li>-->
+<!--                                    <t t-if="employee.arabic_name">-->
+<!--                                        <span t-field="employee.arabic_name"/>-->
+<!--                                    </t>-->
+<!--                                    <t t-else="">-->
+<!--                                        <span t-field="employee.name"/>-->
+<!--                                    </t>-->
+<!--                                </li>-->
+<!--                            </span>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+
+<!--                    <br/>-->
+
+<!--                </div>-->
+<!--            </field>-->
+        </record>
+
+        <record id="absence_notify_hr_manager" model="mail.template">
+            <field name="name">HR Managers Absence E-mail</field>
+            <field name="model_id" ref="employee_absence_notification.model_hr_employee"/>
+        </record>
+
+    </data>
+</odoo>

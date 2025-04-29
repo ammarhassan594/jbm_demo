@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record id="check_template_tree" model="ir.ui.view">
+            <field name="name">check_template_tree</field>
+            <field name="model">ebs.checks.templates</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="bank_id"/>
+                    <field name="account_for_post_checks"/>
+<!--                    <field name="padding"/>-->
+<!--                    <field name="sequence"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="check_template_form" model="ir.ui.view">
+            <field name="name">check_template_form</field>
+            <field name="model">ebs.checks.templates</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="bank_id"/>
+<!--                            <field name="logo" widget="image"/>-->
+                        </group>
+                        <group>
+<!--                            <field name="padding"/>-->
+<!--                            <field name="sequence"/>-->
+                            <field name="account_for_post_checks"/>
+<!--                            <field name="template"/>-->
+                        </group>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="check_template_search" model="ir.ui.view">
+            <field name="name">check_template_search</field>
+            <field name="model">ebs.checks.templates</field>
+            <field name="arch" type="xml">
+                <search string="Search Orders">
+                    <field name="name"/>
+                    <field name="bank_id"/>
+                </search>
+
+            </field>
+        </record>
+
+        <record id='check_template_window' model='ir.actions.act_window'>
+            <field name="name">Check Template</field>
+            <field name="res_model">ebs.checks.templates</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

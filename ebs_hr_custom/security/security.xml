@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_new_joiner_notification">
+            <field name="name">New Joiner Notification</field>
+            <field name="description">New Joiner Notification :</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="group_it_department" model="res.groups">
+            <field name="name">IT Department</field>
+            <field name="category_id" ref="module_category_new_joiner_notification"/>
+        </record>
+        <record id="group_gs_department" model="res.groups">
+            <field name="name">GS Department</field>
+            <field name="category_id" ref="module_category_new_joiner_notification"/>
+        </record>
+        <record id="group_hse_department" model="res.groups">
+            <field name="name">HSE Department</field>
+            <field name="category_id" ref="module_category_new_joiner_notification"/>
+        </record>
+
+        <record id="group_user_to_edit_employees" model="res.groups">
+            <field name="name">Access To Edit Employee Profile</field>
+        </record>
+
+        <record id="group_user_to_edit_employee_contract" model="res.groups">
+            <field name="name">Access To Edit Employee Contract</field>
+        </record>
+        <record id="group_user_to_edit_employee_contract" model="res.groups">
+            <field name="name">Access To Edit Employee Contract</field>
+        </record>
+        <record id="group_user_to_confirm_employee" model="res.groups">
+            <field name="name">Access To Confirm Employee</field>
+        </record>
+        <record id="group_user_manage_classified_employee" model="res.groups">
+            <field name="name">Manage Classified Employees</field>
+        </record>
+
+        <!-- Employee Management Categories -->
+        <record model="ir.module.category" id="module_category_employee_management">
+            <field name="name">Employee Management</field>
+            <field name="description">Employee Management Categories</field>
+            <field name="sequence">47</field>
+        </record>
+
+        <record id="group_management_inhouse" model="res.groups">
+            <field name="name">In-House Employee</field>
+            <field name="category_id" ref="module_category_employee_management"/>
+        </record>
+
+        <record id="group_management_staff" model="res.groups">
+            <field name="name">Staff Employee</field>
+            <field name="category_id" ref="module_category_employee_management"/>
+        </record>
+
+        <record id="group_management_temporary" model="res.groups">
+            <field name="name">Temporary Employee</field>
+            <field name="category_id" ref="module_category_employee_management"/>
+        </record>
+
+        <record id="group_employee_manager" model="res.groups">
+            <field name="name">Employee Manager</field>
+        </record>
+
+    </data>
+
+</odoo>

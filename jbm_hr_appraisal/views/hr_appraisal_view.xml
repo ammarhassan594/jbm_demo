@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="inherit_view_hr_appraisal_form" model="ir.ui.view">
+            <field name="name">inherit.view.hr.appraisal.form</field>
+            <field name="model">hr.appraisal</field>
+            <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">new,manager_approve,pending,done</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='date_close']" position="after">
+                    <field name="recommendation"
+                           attrs="{'invisible': [('state', '=', 'new')], 'readonly': [('state', 'in', ('pending', 'done', 'cancel'))]}"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_back']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <!--                    <attribute name="groups">-->
+                    <!--                        base.group_system,jbm_group_access_right_extended.custom_hr_manager,jbm_group_access_right_extended.custom_group_shared_service_manager-->
+                    <!--                    </attribute>-->
+                </xpath>
+                <xpath expr="//field[@name='manager_ids']" position="attributes">
+                    <attribute name="groups">
+                        base.group_system,
+                        jbm_group_access_right_extended.custom_procurement_manager,jbm_group_access_right_extended.custom_group_shared_service_manager,jbm_group_access_right_extended.custom_hr_manager,jbm_group_access_right_extended.custom_hr_user,jbm_group_access_right_extended.custom_general_manager_representative,jbm_group_access_right_extended.custom_general_manager,jbm_group_access_right_extended.custom_accounting_manager
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_send_appraisal_request']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_send_appraisal_request']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible' : &quot;['|', ('state','!=','new'), ('employee_user_id', '!=', uid)]&quot;}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="after">
+                    <button name="action_manager_confirm" string="Confirm" type="object" class="btn btn-primary"
+                            attrs="{'invisible': &quot;['|', ('state', '!=', 'manager_approve'), ('manager_user_ids', 'not in', uid)]&quot;}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_back']" position="after">
+                    <button name="action_print_appraisal_report" string="Print" type="object" class="btn btn-primary"
+                            attrs="{'invisible': [('state','not in',('done', 'cancel'))]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='date_close']" position="attributes">
+                    <attribute name="string">Appraisal Deadline</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_close']" position="before">
+                    <field name="appraisal_start_date" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='description']" position="after">
+                    <field name="approved_by_id" readonly="1"/>
+                    <field name="approved_in" readonly="1"/>
+                    <field name="in_probation"/>
+                </xpath>
+
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="job_id"/>
+                    <field name="job_code" readonly="0"/>
+                    <field name="appraisal_batch_id" readonly="1"/>
+                    <field name="appraisal_employee_grade" readonly="1"/>
+                    <field name="appraisal_overall_grade" attrs="{'readonly':[('appraisal_batch_id','!=',False)]}"/>
+                    <field name="appraisal_current_grade"/>
+                </xpath>
+
+                <xpath expr="//page[@name='appraisal']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[3]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[4]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[2]" position="after">
+                    <page name="appraisal_skills_lines" string="Skills and Objectives Evaluation">
+                        <field name="available_skill_ids" invisible="1"/>
+                        <field name="approver_user_ids" invisible="1"/>
+                        <field name="appraisal_skill_line_ids" force_save="1"
+                               attrs="{'readonly': [('state', '=', 'done')]}">
+                            <tree editable="bottom" delete="0">
+                                <field name="appraisal_id" invisible="1"/>
+                                <field name="from_job_position" readonly="1" invisible="1"/>
+                                <field name="skill_id" domain="[('id', 'in', parent.available_skill_ids)]"
+                                       context="{
+                                                'from_hr_appraisal': True,
+                                                'default_limit': 200,
+                                                'skill_appraisal': parent.appraisal_skill_line_ids,
+                                                'skill_appraisal_id': appraisal_id
+                                             }"
+                                       options="{'no_create': True,'no_edit':True}"
+                                       attrs="{'readonly': [('from_job_position', '=', True)]}"
+                                />
+                                <field name="description" force_save="1"
+                                       attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                <field name="employee_grade" sum="Total"/>
+                                <field name="approve_grade" sum="Total"
+                                       attrs="{'invisible': &quot;[('parent.manager_user_ids', 'not in', uid), ('parent.approver_user_ids', 'not in', uid)]&quot;}"/>
+                                <field name="employee_notes" invisible="1"/>
+                                <field name="manager_notes" invisible="1"/>
+                                <field name="overall_grade" force_save="1" sum="Total"
+                                       attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                <!--                                <field name="overall_grade" force_save="1" optional="hide"-->
+                                <!--                                       attrs="{'readonly': [('from_job_position', '=', True)],-->
+                                <!--                                       'invisible': &quot;[('parent.manager_user_ids', 'not in', uid), ('parent.approver_user_ids', 'not in', uid)]&quot;}"/>-->
+                                <field name="score" optional="hide"
+                                       attrs="{'invisible': &quot;[('parent.manager_user_ids', 'not in', uid), ('parent.approver_user_ids', 'not in', uid)]&quot;}"/>
+                                <field name="total_score" force_save="1" optional="hide"
+                                       attrs="{'readonly': [('from_job_position', '=', True)],
+                                       'invisible': &quot;[('parent.manager_user_ids', 'not in', uid), ('parent.approver_user_ids', 'not in', uid)]&quot;}"/>
+                                <field name="skill_type_id" options="{'no_create': True,'no_edit':True}" optional="hide"
+                                       readonly="1" force_save="1"/>
+                                <button type="object" name="delete_skill_line"
+                                        icon="fa-trash-o"
+                                        aria-label="Delete" attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                            </tree>
+                            <form delete="0">
+                                <group>
+                                    <field name="appraisal_id" invisible="1"/>
+                                    <field name="from_job_position" readonly="1" invisible="1"/>
+                                    <field name="skill_id" domain="[('id', 'in', parent.available_skill_ids)]"
+                                           context="{
+                                                'from_hr_appraisal': True,
+                                                'default_limit': 200,
+                                                'skill_appraisal': parent.appraisal_skill_line_ids,
+                                                'skill_appraisal_id': appraisal_id
+                                             }"
+                                           options="{'no_create': True,'no_edit':True}"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"
+                                    />
+                                    <field name="description" force_save="1"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                    <field name="employee_grade"/>
+                                    <field name="approve_grade" attrs="{'readonly': [('parent.state', '=', 'new')]}"/>
+                                    <field name="employee_notes" invisible="1"/>
+                                    <field name="manager_notes" invisible="1"/>
+                                    <field name="overall_grade" force_save="1"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                    <field name="score"/>
+                                    <field name="total_score" force_save="1"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                    <field name="skill_type_id" options="{'no_create': True,'no_edit':True}"
+                                           readonly="1" force_save="1"/>
+                                    <!--                                    <button type="object" name="delete_skill_line"-->
+                                    <!--                                            icon="fa-trash-o"-->
+                                    <!--                                            aria-label="Delete"-->
+                                    <!--                                            attrs="{'readonly': [('from_job_position', '=', True)]}"/>-->
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                    <page name="appraisal_skills_lines_types" string="Skill Types Evaluations">
+                        <field name="appraisal_skill_type_line_ids" force_save="1"
+                               attrs="{'readonly': [('state', '=', 'done')]}">
+                            <tree editable="bottom" delete="0">
+                                <field name="from_job_position" invisible="1"/>
+                                <field name="appraisal_id" invisible="1"/>
+                                <field name="skill_type_id"
+                                       attrs="{'readonly': [('from_job_position', '=', True)]}"
+                                       options="{'no_create': True,'no_edit':True}"
+                                       context="{'appraisal_skill_type_line': parent.appraisal_skill_type_line_ids, 'default_limit': 200,
+                                       'skill_type_appraisal_id':appraisal_id}"/>
+                                <field name="grade"/>
+                                <field name="overall_grade" attrs="{'readonly': [('from_job_position', '=', True)]}"
+                                       sum="Total"/>
+                                <field name="score"/>
+                                <field name="overall_score" sum="Total"
+                                       attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                <button type="object" name="delete_skill_type_line"
+                                        icon="fa-trash-o"
+                                        aria-label="Delete" attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                            </tree>
+                            <form delete="0">
+                                <group>
+                                    <field name="from_job_position" invisible="1"/>
+                                    <field name="appraisal_id" invisible="1"/>
+                                    <field name="skill_type_id"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"
+                                           options="{'no_create': True,'no_edit':True}"
+                                           context="{'appraisal_skill_type_line': parent.appraisal_skill_type_line_ids, 'default_limit': 200,
+                                           'skill_type_appraisal_id':appraisal_id}"/>
+                                    <field name="grade"/>
+                                    <field name="overall_grade"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                    <field name="score"/>
+                                    <field name="overall_score"
+                                           attrs="{'readonly': [('from_job_position', '=', True)]}"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="inherit_hr_appraisal_form_view_primary" model="ir.ui.view">
+            <field name="name">inherit.hr.appraisal.form.view.primary</field>
+            <field name="model">hr.appraisal</field>
+            <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_form"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="inherit_hr_appraisal_tree_view_primary" model="ir.ui.view">
+            <field name="name">inherit.hr.appraisal.tree.view.primary</field>
+            <field name="model">hr.appraisal</field>
+            <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_hr_appraisal_primary" model="ir.actions.act_window">
+            <field name="name">My Appraisals</field>
+            <field name="res_model">hr.appraisal</field>
+            <field name="view_mode">form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),(0, 0, {'view_mode': 'tree', 'view_id': ref('jbm_hr_appraisal.inherit_hr_appraisal_tree_view_primary')}),
+               (0, 0, {'view_mode': 'form', 'view_id': ref('jbm_hr_appraisal.inherit_hr_appraisal_form_view_primary')})]"/>
+        </record>
+    </data>
+</odoo>

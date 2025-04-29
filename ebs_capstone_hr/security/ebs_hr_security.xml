@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ebs_hr_document_comp_rule" model="ir.rule">
+            <field name="name">HR Documents multi company rule</field>
+            <field name="model_id" ref="model_ebs_hr_document"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="hr_ebs_hr_document_rule_hr_manager" model="ir.rule">
+            <field name="name">HR Documents officer: full access</field>
+            <field name="model_id" ref="model_ebs_hr_document"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('hr.group_hr_user'))]"/>
+        </record>
+        <record id="ebs_hr_document_rule_base_user" model="ir.rule">
+            <field name="name">user: modify own HR Documents only</field>
+            <field name="model_id" ref="model_ebs_hr_document"/>
+            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id),
+                                        ('employee_id', '=', user.employee_id.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
+        <record id="ebs_hr_letter_request_comp_rule" model="ir.rule">
+            <field name="name">Letter Request multi company rule</field>
+            <field name="model_id" ref="model_ebs_hr_letter_request"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="hr_ebs_hr_letter_request_rule_hr_manager" model="ir.rule">
+            <field name="name">letter request officer: full access</field>
+            <field name="model_id" ref="model_ebs_hr_letter_request"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('hr.group_hr_manager'))]"/>
+        </record>
+
+        <record id="ebs_hr_letter_request_rule_base_user" model="ir.rule">
+            <field name="name">user: modify own requests only</field>
+            <field name="model_id" ref="model_ebs_hr_letter_request"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+        <record id="ebs_hr_letter_request_rule_hr_employee" model="ir.rule">
+            <field name="name">officer: modify own requests only or requests that he is signatory</field>
+            <field name="model_id" ref="model_ebs_hr_letter_request"/>
+            <field name="domain_force">['|', ('employee_id.user_id', '=', user.id),
+                                        ('signatory_id.user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('hr.group_hr_user'))]"/>
+        </record>
+        <record id="hr_employee_rule_base_user" model="ir.rule">
+            <field name="name">Read own data on Employee View</field>
+            <field name="model_id" ref="hr.model_hr_employee_public"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+        <record id="hr_employee_rule_officer" model="ir.rule">
+            <field name="name">see all employee data from officer</field>
+            <field name="model_id" ref="hr.model_hr_employee_public"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4,ref('hr.group_hr_user'))]"/>
+        </record>
+        <record id="hr_contract_rule_hr_employee_internal_user" model="ir.rule">
+            <field name="name">Read own contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="domain_force">['|',('employee_id.user_id', '=', user.id), ('employee_id.parent_id.user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+<!--    Disbale this rule for     -->
+<!--        <record id="hr_contract_rule_hr_employee_officer" model="ir.rule">-->
+<!--            <field name="name">see all contracts from officer</field>-->
+<!--            <field name="model_id" ref="hr_contract.model_hr_contract"/>-->
+<!--            <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--            <field name="groups" eval="[(4,ref('hr.group_hr_user'))]"/>-->
+<!--        </record>-->
+    </data>
+</odoo>

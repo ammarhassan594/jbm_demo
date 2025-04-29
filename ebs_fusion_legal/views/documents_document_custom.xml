@@ -1,0 +1,19 @@
+<odoo>
+    <record model="ir.ui.view" id="documents_custom_legal_search">
+        <field name="name">documents.custom.legal.search</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="case_id"/>
+            </field>
+            <xpath expr="//group/filter[@name='owner']" position="after">
+                <filter name="case" string="Legal Case" domain="[]" context="{'group_by':'case_id'}"/>
+            </xpath>
+            <field name="res_model" position="after">
+                <field name="document_type_categ_id" string="Document Category" groupby="document_type_categ_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

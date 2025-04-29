@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="additional_elements_types_tree" model="ir.ui.view">
+            <field name="name">Additional Elements Types</field>
+            <field name="model">ebspayroll.additional.element.types</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code" invisible="True"/>
+                    <field name="name"/>
+                    <field name="type"/>
+<!--                    <field name="recurring"/>-->
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <!--Form views -->
+        <record id="additional_elements_types_form" model="ir.ui.view">
+            <field name="name">Additional Elements Types</field>
+            <field name="model">ebspayroll.additional.element.types</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="code"/>
+                                <field name="name"/>
+                                <field name="type"/>
+<!--                                <field name="recurring"/>-->
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                        <group name="group_down">
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--window -->
+        <record id="additional_elements_types_window" model="ir.actions.act_window">
+            <field name="name">Additional Elements Types</field>
+            <field name="res_model">ebspayroll.additional.element.types</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

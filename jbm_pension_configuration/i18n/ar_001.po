@@ -1,0 +1,186 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_pension_configuration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-11 19:53+0000\n"
+"PO-Revision-Date: 2023-06-11 19:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__applied_on_date
+msgid "Applied on Date: "
+msgstr "تم تطبيقه في التاريخ"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__code
+msgid "Code"
+msgstr "الرقم"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.constraint,message:jbm_pension_configuration.constraint_pension_config_country_unique
+msgid "Country must be unique"
+msgstr "يجب أن يكون البلد فريدًا"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: jbm_pension_configuration
+#: model:ir.model,name:jbm_pension_configuration.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_basic
+msgid "Employee Basic %"
+msgstr "النسبة المئوية الأساسية للموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_housing
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_housing
+msgid "Employee Housing %"
+msgstr "النسبة المئوية سكن للموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_max_limit
+msgid "Employee Max Limit"
+msgstr "الحد الأقصى للموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_mobile
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_mobile
+msgid "Employee Mobile %"
+msgstr "النسبة المئوية لتليفون المحمول للموظف"
+
+#. module: jbm_pension_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_pension_configuration.pension_config_form_view
+msgid "Employee Pension"
+msgstr "تقاعد الموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_social
+msgid "Employee Social %"
+msgstr "النسبة المئوية للاجتماعي للموظف"
+
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_transport
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_transport
+msgid "Employee Transport %"
+msgstr "النسبة المئوية لنقل للموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_basic
+msgid "Employer Basic %"
+msgstr "النسبة المئوية الأساسية للموظف"
+
+#. module: jbm_pension_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_pension_configuration.pension_config_form_view
+msgid "Employer Pension"
+msgstr "تقاعد الموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_social
+msgid "Employer Social %"
+msgstr "النسبة المئوية للاجتماعي للموظف"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__id
+msgid "ID"
+msgstr ""
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: jbm_pension_configuration
+#: model_terms:ir.ui.view,arch_db:jbm_pension_configuration.pension_config_form_view
+msgid "Limit"
+msgstr "حد"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_hr_employee__out_of_pension
+msgid "Out Of Pension"
+msgstr "خارج التقاعد"
+
+#. module: jbm_pension_configuration
+#: model:ir.model,name:jbm_pension_configuration.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: jbm_pension_configuration
+#: model:ir.actions.act_window,name:jbm_pension_configuration.pension_configuration_action
+#: model:ir.model,name:jbm_pension_configuration.model_pension_config
+#: model:ir.ui.menu,name:jbm_pension_configuration.pension_configuration_menu
+#: model_terms:ir.ui.view,arch_db:jbm_pension_configuration.pension_config_form_view
+#: model_terms:ir.ui.view,arch_db:jbm_pension_configuration.pension_config_tree_view
+msgid "Pension Configuration"
+msgstr " تهيئه المعاشات التقاعدية "
+
+
+#. module: jbm_pension_configuration
+#: model:hr.salary.rule,name:jbm_pension_configuration.hr_salary_rule_pension_employee
+msgid "Pension Employee"
+msgstr "موظف متقاعد"
+
+#. module: jbm_pension_configuration
+#: model:hr.salary.rule,name:jbm_pension_configuration.hr_salary_rule_pension_employer
+msgid "Pension Employer"
+msgstr "موظف متقاعد"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,help:jbm_pension_configuration.field_pension_config__code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr "يمكنك استخدام هذا الحقل للبحث السريع"
+
+#. module: jbm_pension_configuration
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_basic_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_housing_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_mobile_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_social_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employee_transport_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_basic_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_housing_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_mobile_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_social_limit
+#: model:ir.model.fields,field_description:jbm_pension_configuration.field_pension_config__employer_transport_limit
+msgid "limit"
+msgstr "حد"

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_bank_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.bank.form</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"/>
+            <!--            <field name="priority" eval="8"/>-->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='acc_holder_name']" position="replace">
+                    <field name="employee_id" options="{'no_create':True, 'no_open': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="employee_bank_tree" model="ir.ui.view">
+            <field name="name">Employee Bank Tree</field>
+            <field name="model">res.partner.bank</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="replace">
+                    <tree create="1" edit="1" import="1">
+                        <field name="partner_id"/>
+                        <field name="acc_number"/>
+                        <field name="bank_id"/>
+                        <field name="bank_name"/>
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.server" id="employee_bank_menu">
+            <field name="name">Employees Bank View</field>
+            <field name="model_id" ref="base.model_res_partner_bank"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_get_employees_bank()</field>
+        </record>
+
+        <menuitem id="menu_employee_bank" name="Employee Bank" action="employee_bank_menu"
+                  parent="hr.menu_human_resources_configuration"
+                  groups="hr.group_hr_user"
+                  sequence="9"/>
+    </data>
+</odoo>

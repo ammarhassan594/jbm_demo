@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_background_header
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 05:42+0000\n"
+"PO-Revision-Date: 2023-01-23 05:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_background_header
+#: model:ir.model.fields,field_description:web_background_header.field_res_company__background_color_picker
+msgid "Background Color Picker"
+msgstr "منتقي لون الخلفية"
+
+#. module: web_background_header
+#: model:ir.model,name:web_background_header.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: web_background_header
+#: model:ir.model.fields,field_description:web_background_header.field_res_company__header_color_picker
+msgid "Header Color Picker"
+msgstr "منتقي لون الرأس"

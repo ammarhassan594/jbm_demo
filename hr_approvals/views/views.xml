@@ -1,0 +1,759 @@
+<odoo>
+    <data>
+
+        <record id="approval_category_approver_view_tree" model="ir.ui.view">
+            <field name="name">approval.category.approver.group.from</field>
+            <field name="model">approval.category.approver</field>
+            <field name="inherit_id" ref="approvals.approval_category_approver_view_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="approve_type"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('approve_type', '=', 'user')], 'invisible': [('approve_type', '!=', 'user')]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="group_id" attrs="{'required': [('approve_type', '=', 'group')], 'invisible':  [('approve_type', '!=', 'group')]}"/>
+                    <field name="date_deadline_after"/>
+
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="approval_category_view_kanban_inherit" model="ir.ui.view">
+            <field name="name">approval.category.view.kanban</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="inside">
+                    <field name="can_see" invisible="1"/>
+                    <field name="can_see_false" invisible="1"/>
+                </xpath>
+                <xpath expr="//kanban[1]/templates[1]//field[@name='name']" position="after">
+                    <field name="can_see" invisible="1"/>
+                    <field name="can_see_false" invisible="1"/>
+                </xpath>
+                <!-- add by Bhavesh Jadav 14/10/2020-->
+                <xpath expr="//button[2]" position="replace">
+                    <button type="object" class="btn btn-sm btn-secondary float-right" name="call_to_review_action" groups="approvals.group_approval_user">To Review:
+                        <field name="request_to_validate_count"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- explicit list view definition -->
+        <record id="approval_category_view_form_inherit" model="ir.ui.view">
+            <field name="name">approval.category.view.form</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+            <field name="arch" type="xml">
+                <field name="description" position="after">
+                    <field name="managers_only"/>
+                    <field name="can_see" invisible="1"/>
+                    <field name="can_see_false" invisible="1"/>
+                    <field name="contract_subgroups" widget="many2many_tags"/>
+                    <field name="is_requisition_request" widget="radio" options="{'horizontal': true}"/>
+                </field>
+                <!--                <field name="is_manager_approver" position="before">-->
+                <!--                    <field name="is_head_department_approver"/>-->
+                <!--                </field>-->
+                <field name="approval_minimum" position="after">
+                    <field name="approval_sequence">
+                        <tree editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="approve_type"/>
+                            <field name="user_id" attrs="{'required': [('approve_type', '=', 'user')], 'invisible':  [('approve_type', '!=', 'user')]}"/>
+                            <field name="group_id" attrs="{'required': [('approve_type', '=', 'group')], 'invisible':  [('approve_type', '!=', 'group')]}"/>
+                            <field name="date_deadline_after" force_save="1"/>
+                            <field name="approver_category"/>
+                            <field name="is_manager_approver"/>
+                        </tree>
+                    </field>
+                </field>
+
+                <field name="requirer_document" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <!--                <field name="has_related_contract" position="attributes">-->
+                <!--                    <attribute name="invisible">1</attribute>-->
+                <!--                </field>-->
+                <field name="has_partner" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <field name="has_date" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <field name="has_period" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <!--                 <field name="has_item" position="attributes">-->
+                <!--                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>-->
+                <!--                </field>-->
+                <field name="has_amount" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <field name="has_reference" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <field name="has_payment_method" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+                <field name="has_location" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_requisition_request', '=', 'yes')]}</attribute>
+                </field>
+
+                <xpath expr="//page[@name='options']" position="after">
+                    <page string="Manpower" name="manpower_fields" attrs="{'invisible': [('is_requisition_request', '=', 'no')]}">
+                        <!--                        <label for="is_requisition_request"/>-->
+                        <!--                        <field name="is_requisition_request" widget="radio" options="{'horizontal': true}"/>-->
+                        <!--                        <h3 style="text-decoration: underline;" colspan="2">Fields</h3>-->
+                        <group string="Fields">
+                            <field name="has_employee" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_vacancy_type" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                            <field name="has_job_title" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_group" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                            <field name="has_department" widget="radio" options="{'horizontal': true}" invisible="0"/>
+                            <field name="has_section" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                            <field name="has_subsection" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                            <field name="has_job_desc" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_replacement_employee_id" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                            <field name="has_contract_type" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                            <field name="has_requisition_type" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_requisition_period_type" widget="radio" options="{'horizontal': true}"/>
+                            <!--                            <field name="has_qty" widget="radio" options="{'horizontal': true}"/>-->
+                            <field name="has_starting_date" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_other_remarks" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_cost_center" widget="radio" options="{'horizontal': true}" invisible="1"/>
+
+                        </group>
+                    </page>
+                    <page string="Resignation" name="resignation_fields" invisible="1">
+                        <label for="is_termination_request"/>
+                        <field name="is_termination_request" widget="radio" options="{'horizontal': true}"/>
+                        <h3 style="text-decoration: underline;" colspan="2">Fields</h3>
+                        <group>
+                            <field name="has_resignation_date" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_grade" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_related_manager" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_related_oc" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_eligible_rehire" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_eligible_rehire_comment" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_related_time_hired" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_related_warnings" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_notice_period" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_job_position" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_personal_phone_no" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_personal_email" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_resignation_reason" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_replacement_position" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                    </page>
+                    <page string="Resignation Extension" name="resignation_extension_fields" invisible="1">
+                        <label for="is_termination_extend_request"/>
+                        <field name="is_termination_extend_request" widget="radio" options="{'horizontal': true}"/>
+                        <h3 style="text-decoration: underline;" colspan="2">Fields</h3>
+                        <group>
+                            <field name="has_resignation_extension_reason" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                    </page>
+                    <page string="Transfer" name="transfer_fields" invisible="1">
+                        <label for="is_internal_transfer_request"/>
+                        <field name="is_internal_transfer_request" widget="radio" options="{'horizontal': true}"/>
+                        <h3 style="text-decoration: underline;" colspan="2">Fields</h3>
+                        <group>
+                            <field name="has_employee_transferred" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_employee_fusion_id" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_transfer_type" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_transfer_reason" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_employee_type_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_employee_type_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_cost_center_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_cost_center_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_sap_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_sap_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_3dx_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_3dx_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_shared_folder_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_shared_folder_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_shared_folder_status_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_shared_folder_status_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_other_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_other_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_job_title_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_job_title_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_line_manager_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_line_manager_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_group_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_group_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_department_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_department_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_section_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_section_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_subsection_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_subsection_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_job_grade_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_job_grade_destination" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_working_shift_source" widget="radio" options="{'horizontal': true}"/>
+                            <field name="has_working_shift_destination" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <field name="requirer_document" position="before">
+                    <field name="has_request_type" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_related_employee_id" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_related_contract" widget="radio" options="{'horizontal': true}" invisible="1"/>
+                </field>
+                <field name="has_location" position="after">
+                    <field name="has_leave_type" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_leave_request_date" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_leave_amount" widget="radio" options="{'horizontal': true}"/>
+                </field>
+
+            </field>
+        </record>
+        <record id="approval_rejection_form" model="ir.ui.view">
+            <field name="name">approval.rejection.form</field>
+            <field name="model">approval.reject.reason</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="on_done_action" string="Done" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="approval_eligible_form" model="ir.ui.view">
+            <field name="name">approval.eligible.form</field>
+            <field name="model">approval.eligible</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="replacement_position" required="1"/>
+                            <field name="eligible_rehire" required="1"/>
+                            <field name="eligible_rehire_comment" attrs="{'required': [('eligible_rehire', '==', 'no')]}"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="on_done_action" string="Done" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_reject_reason_action" model="ir.actions.act_window">
+            <field name="name">Rejection Reason</field>
+            <field name="res_model">approval.reject.reason</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="approval_rejection_form"/>
+            <field name="target">new</field>
+            <field name="context">{'default_approval_id' : active_id}</field>
+        </record>
+        <record id="open_eligible_action" model="ir.actions.act_window">
+            <field name="name">Set Eligible</field>
+            <field name="res_model">approval.eligible</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="approval_eligible_form"/>
+            <field name="target">new</field>
+            <field name="context">{'default_approval_id' : active_id}</field>
+        </record>
+        <record id="approval_request_view_form_inherit" model="ir.ui.view">
+            <field name="name">approval.request.view.form</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="update_employee_in_job" string="Update Job" type="object" attrs="{'invisible':['|', '|',('category_approval_type','!=','update_job'), ('job_updated', '=', True),'&amp;',('category_approval_type','=','update_job'),('request_status','!=','approved')]}" class="btn-primary"/>
+                    <button name="print_approval_request" string="Print" type="object" attrs="{'invisible':[('category_approval_type','not in',['advance_payment','furniture_allowance'])]}" class="btn-primary"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="request_type_id" options="{'no_create': True,'no_create_edit':True, 'no_open': True}" attrs="{'invisible':[('has_request_type','==','no')], 'required': [('has_request_type','==','required')]}"/>
+                </xpath>
+
+                <!--                Leave Fields Section-->
+                <xpath expr="//field[@name='company_id']" position="before">
+                    <field name="holiday_request_unit" invisible="1"/>
+                    <field name="holiday_type_id" options="{'no_create': True,'no_create_edit':True, 'no_open': True}" attrs="{'invisible':[('has_leave_type','==','no')], 'required': [('has_leave_type','==','required')]}"/>
+                    <field name="leave_request_date" options="{'no_create': True,'no_create_edit':True, 'no_open': True}" attrs="{'invisible':[('has_leave_request_date','==','no')], 'required': [('has_leave_request_date','==','required')]}"/>
+                    <label for="leave_request_amount" string="Duration" attrs="{'invisible':['|', ('has_leave_amount','==','no'), ('holiday_request_unit','==','half_day')]}"/>
+                    <div class="o_row" attrs="{'invisible':['|', ('has_leave_amount','==','no'), ('holiday_request_unit','==','half_day')]}">
+                        <field name="leave_request_amount" nolabel="1" class="oe_inline" attrs="{'required': [('holiday_request_unit','!=','half_day'), ('has_leave_amount','==','required')]}"/>
+                        <span attrs="{'invisible':[('holiday_request_unit','!=','day')]}">
+                            Days
+                        </span>
+                        <span attrs="{'invisible':[('holiday_request_unit','!=','hour')]}">
+                            Hours
+                        </span>
+                    </div>
+                    <field name="request_date_from_period" attrs="{'invisible':['|', ('has_leave_amount','==','no'), ('holiday_request_unit','!=','half_day')], 'required': [('has_leave_amount','==','required'), ('holiday_request_unit','==','half_day')]}"/>
+                </xpath>
+
+
+                <xpath expr="//page[@name='products']" position="after">
+                    <page name="approval_job_lines" string="Approval Job" attrs="{'invisible' : [('category_approval_type','!=','update_job')]}">
+                        <field name="approval_job_line_ids">
+                            <tree editable="bottom">
+                                <field name="job_id"/>
+                                <field name="description"/>
+                                <field name="no_of_employees"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="payment_installment" string="Payment Installment" attrs="{'invisible' : [('category_approval_type','!=','advance_payment')]}">
+                        <field name="payment_installment_ids" nolable="1">
+                            <tree editable="bottom" create="0">
+                                <field name="installment_amount" readonly="1"/>
+                                <field name="is_paid"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                </xpath>
+                <xpath expr="//button[@name='action_refuse']" position="replace">
+                    <button name="%(open_reject_reason_action)d" string="Refuse" type="action" attrs="{'invisible':[('user_status','!=','pending')]}"/>
+                    <button name="%(open_eligible_action)d" string="Set Eligible for Rehire and Replacement" type="action" attrs="{'invisible':['|', ('user_status','!=','pending'), ('is_termination_request','!=', 'yes')]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="replace">
+                    <button name="action_confirm" string="Submit" type="object" attrs="{'invisible':[('request_status','!=','new')]}" class="btn-primary oe_read_only"/>
+                </xpath>
+
+                <xpath expr="//field[@name='request_owner_id']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='request_owner_id']" position="after">
+                    <field name="direct_employee_id" invisible="1"/>
+                    <field name="category_approval_type" invisible="1"/>
+                    <field name="job_updated" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+
+
+                <xpath expr="//page[@name='description']" position="replace">
+                    <page string="Justification" name="description">
+                        <field name="reason" required="1" string="Justification"/>
+                    </page>
+                    <page string="Related Warnings" attrs="{'invisible':[('has_related_warnings','==','no')]}">
+                        <field name="related_warnings" options="{'no_open': True}" attrs="{'invisible':[('has_related_warnings','==','no')], 'required': [('has_related_warnings','==','required')]}" readonly="1" force_save="1"/>
+                    </page>
+                </xpath>
+                <field name="quantity" position="after">
+                    <field name="other_remarks" attrs="{'invisible':[('has_other_remarks','==','no')], 'required': [('has_other_remarks','==','required')]}"/>
+
+                </field>
+
+                <field name="partner_id" position="after">
+                    <field name="read_only_approval" invisible="1"/>
+                    <field name="is_requisition_request" invisible="1"/>
+                    <field name="is_termination_request" invisible="1"/>
+                    <field name="is_termination_extend_request" invisible="1"/>
+                    <field name="is_internal_transfer_request" invisible="1"/>
+                    <field name="can_create_job" invisible="1"/>
+                    <field name="can_create_resign" invisible="1"/>
+                    <field name="can_extend_resign" invisible="1"/>
+                    <field name="can_create_transfer" invisible="1"/>
+                    <field name="has_vacancy_type" invisible="1"/>
+                    <field name="has_job_desc" invisible="1"/>
+                    <field name="has_replacement_employee_id" invisible="1"/>
+                    <field name="has_contract_type" invisible="1"/>
+                    <field name="has_requisition_type" invisible="1"/>
+                    <field name="has_requisition_period_type" invisible="1"/>
+                    <field name="has_starting_date" invisible="1"/>
+                    <field name="has_other_remarks" invisible="1"/>
+                    <field name="has_job_title" invisible="1"/>
+                    <field name="has_group" invisible="1"/>
+                    <field name="has_department" invisible="1"/>
+                    <field name="has_section" invisible="1"/>
+                    <field name="has_subsection" invisible="1"/>
+                    <field name="has_related_employee_id" invisible="1"/>
+                    <field name="has_request_type" invisible="1"/>
+                    <field name="has_leave_type" invisible="1"/>
+                    <field name="has_leave_request_date" invisible="1"/>
+                    <field name="has_leave_amount" invisible="1"/>
+                    <field name="has_related_contract" invisible="1"/>
+                    <field name="has_grade" invisible="1"/>
+                    <field name="has_related_manager" invisible="1"/>
+                    <field name="has_related_oc" invisible="1"/>
+                    <field name="has_related_time_hired" invisible="1"/>
+                    <field name="has_related_warnings" invisible="1"/>
+                    <field name="has_notice_period" invisible="1"/>
+                    <field name="has_job_position" invisible="1"/>
+                    <field name="has_resignation_date" invisible="1"/>
+                    <field name="has_cost_center" invisible="1"/>
+                    <field name="has_personal_phone_no" invisible="1"/>
+                    <field name="has_personal_email" invisible="1"/>
+                    <field name="has_replacement_position" invisible="1"/>
+                    <field name="has_resignation_reason" invisible="1"/>
+                    <field name="has_resignation_extension_reason" invisible="1"/>
+                    <field name="has_eligible_rehire" invisible="1"/>
+                    <field name="has_eligible_rehire_comment" invisible="1"/>
+                    <field name="can_see_eligible" invisible="1"/>
+                    <field name="can_see_eligible_not_stored" invisible="1"/>
+                    <field name="has_employee_transferred" invisible="1"/>
+                    <field name="has_employee_fusion_id" invisible="1"/>
+                    <field name="has_transfer_type" invisible="1"/>
+                    <field name="has_transfer_reason" invisible="1"/>
+                    <field name="has_employee_type_source" invisible="1"/>
+                    <field name="has_employee_type_destination" invisible="1"/>
+                    <field name="has_cost_center_source" invisible="1"/>
+                    <field name="has_cost_center_destination" invisible="1"/>
+                    <field name="has_sap_source" invisible="1"/>
+                    <field name="has_sap_destination" invisible="1"/>
+                    <field name="has_3dx_source" invisible="1"/>
+                    <field name="has_3dx_destination" invisible="1"/>
+                    <field name="has_shared_folder_source" invisible="1"/>
+                    <field name="has_shared_folder_destination" invisible="1"/>
+                    <field name="has_shared_folder_status_source" invisible="1"/>
+                    <field name="has_shared_folder_status_destination" invisible="1"/>
+                    <field name="has_other_source" invisible="1"/>
+                    <field name="has_other_destination" invisible="1"/>
+                    <field name="has_job_title_source" invisible="1"/>
+                    <field name="has_job_title_destination" invisible="1"/>
+                    <field name="has_line_manager_source" invisible="1"/>
+                    <field name="has_line_manager_destination" invisible="1"/>
+                    <field name="has_group_source" invisible="1"/>
+                    <field name="has_group_destination" invisible="1"/>
+                    <field name="has_department_source" invisible="1"/>
+                    <field name="has_department_destination" invisible="1"/>
+                    <field name="has_section_source" invisible="1"/>
+                    <field name="has_section_destination" invisible="1"/>
+                    <field name="has_subsection_source" invisible="1"/>
+                    <field name="has_subsection_destination" invisible="1"/>
+                    <field name="has_job_grade_source" invisible="1"/>
+                    <field name="has_job_grade_destination" invisible="1"/>
+                    <field name="has_working_shift_source" invisible="1"/>
+                    <field name="has_working_shift_destination" invisible="1"/>
+                    <field name="has_employee" invisible="1"/>
+
+                    <field name="vacancy_type" attrs="{'invisible':[('has_vacancy_type','==','no')], 'required': [('has_vacancy_type','==','required')]}"/>
+                    <field name="related_employee_id" attrs="{'invisible':[('has_related_employee_id','==','no')], 'required': [('has_related_employee_id','==','required')]}"/>
+                    <field name="related_resign_request" domain="[('state','=','active')]" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('is_termination_extend_request','==','no')], 'required': [('is_termination_extend_request','==','yes')]}"/>
+                    <field name="related_resign_date" attrs="{'invisible':[('is_termination_extend_request','==','no')], 'required': [('is_termination_extend_request','==','yes')]}"/>
+                    <field name="related_fusion_id" attrs="{'invisible':[('is_termination_request','==','no')]}"/>
+                    <field name="related_system_id" attrs="{'invisible':[('is_termination_request','==','no')]}"/>
+                    <field name="related_employment_status" attrs="{'invisible':[('is_termination_request','==','no')]}"/>
+                    <field name="extend_till" attrs="{'invisible':[('is_termination_extend_request','==','no')], 'required': [('is_termination_extend_request','==','yes')]}"/>
+                    <field name="related_contract" attrs="{'invisible':[('has_related_contract','==','no')], 'required': [('has_related_contract','==','required')] ,'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="request_employee_id" attrs="{'invisible':[('has_employee','=','no')], 'required': [('has_employee','=','required')]}"/>
+                    <field name="advance_payment_type" attrs="{'invisible':['|',('category_approval_type','=',False),('category_approval_type','!=','advance_payment')]}"/>
+                    <label for="no_of_installment" string="No of installment" attrs="{'invisible':['|',('category_approval_type','=',False),('category_approval_type','!=','advance_payment')]}"/>
+                    <div class="oe_inline" attrs="{'invisible':['|',('category_approval_type','=',False),('category_approval_type','!=','advance_payment')]}">
+                        <field name="no_of_installment" nolable="1" attrs="{'invisible':['|',('category_approval_type','=',False),('category_approval_type','!=','advance_payment')]}"/>
+                        <button name="generate_installment" string="Generate installment" class="btn btn-primary" type="object"/>
+                    </div>
+                    <field name="create_date" string="Creation Date"/>
+                    <field name="approval_date" string="Request Approval Date"/>
+                    <field name="previous_advance_payment" attrs="{'invisible':['|',('category_approval_type','=',False),('category_approval_type','!=','advance_payment')]}"/>
+                    <field name="resignation_date" attrs="{'invisible':[('has_resignation_date','==','no')], 'required': [('has_resignation_date','==','required')]}"/>
+                    <field name="job_position" options="{'no_open': True}" attrs="{'invisible':[('has_job_position','==','no')], 'required': [('has_job_position','==','required')] , 'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="job_title" attrs="{'invisible':[('has_job_title','==','no')], 'required': [('has_job_title','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="grade" options="{'no_open': True}" attrs="{'invisible':[('has_grade','==','no')], 'required': [('has_grade','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="related_manager" options="{'no_open': True}" attrs="{'invisible':[('has_related_manager','==','no')], 'required': [('has_related_manager','==','required')]}" readonly="1" force_save="1"/>
+                    <field name="related_oc" options="{'no_open': True}" attrs="{'invisible':[('has_related_oc','==','no')], 'required': [('has_related_oc','==','required')]}" readonly="1" force_save="1"/>
+                    <field name="related_time_hired" options="{'no_open': True}" attrs="{'invisible':[('has_related_time_hired','==','no')], 'required': [('has_related_time_hired','==','required')]}" readonly="1" force_save="1"/>
+
+
+                    <field name="notice_period" attrs="{'invisible':[('has_notice_period','==','no')], 'required': [('has_notice_period','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="group" attrs="{'invisible':[('has_group','==','no')], 'required': [('has_group','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="department" attrs="{'invisible':[('has_department','==','no')], 'required': [('has_department','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="section" attrs="{'invisible':[('has_section','==','no')], 'required': [('has_section','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="subsection" attrs="{'invisible':[('has_subsection','==','no')], 'required': [('has_subsection','==','required')],'readonly':[('is_termination_request','=','yes')]}"/>
+                    <field name="contract_type" attrs="{'invisible':[('has_contract_type','==','no')], 'required': [('has_contract_type','==','required')]}"/>
+                    <field name="requisition_type" attrs="{'invisible':[('has_requisition_type','==','no')], 'required': [('has_requisition_type','==','required')]}"/>
+                    <field name="requisition_period_type" attrs="{'invisible':[('has_requisition_period_type','==','no')], 'required': [('has_requisition_period_type','==','required')]}"/>
+                    <field name="start_date" attrs="{'invisible':[('has_starting_date','==','no')], 'required': [('has_starting_date','==','required')]}"/>
+                    <field name="replacement_employee_id" attrs="{'invisible':['|',('has_replacement_employee_id','==','no'),('requisition_type','!=','replace')], 'required': [('has_replacement_employee_id','==','required'),('requisition_type','==','replace')]}"/>
+                    <field name="cost_center" attrs="{'invisible':[('has_cost_center','==','no')], 'required': [('has_cost_center','==','required')]}"/>
+                    <field name="personal_phone_no" attrs="{'invisible':[('has_personal_phone_no','==','no')], 'required': [('has_personal_phone_no','==','required')]}"/>
+                    <field name="personal_email" attrs="{'invisible':[('has_personal_email','==','no')], 'required': [('has_personal_email','==','required')]}"/>
+                    <field name="replacement_position" attrs="{'invisible':[('has_replacement_position','==','no')], 'required': [('has_replacement_position','==','required')]}"/>
+                    <field name="resignation_reason" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_resignation_reason','==','no')], 'required': [('has_resignation_reason','==','required')]}"/>
+                    <!--                    <field name="resignation_extension_reason"-->
+                    <!-- attrs="{'invisible':[('has_resignation_extension_reason','==','no')], 'required': [('has_resignation_extension_reason','==','required')]}"/>-->
+                    <field name="resignation_extension_reason_text" attrs="{'invisible':[('has_resignation_extension_reason','==','no')], 'required': [('has_resignation_extension_reason','==','required')]}"/>
+
+                    <!--                    internal transfer fields-->
+                    <field name="employee_transferred" attrs="{'invisible':[('has_employee_transferred','==','no')], 'required': [('has_employee_transferred','==','required')]}"/>
+                    <field name="employee_fusion_id" readonly="1" force_save="1" attrs="{'invisible':[('has_employee_fusion_id','==','no')], 'required': [('has_employee_fusion_id','==','required')]}"/>
+                    <field name="transfer_type" attrs="{'invisible':[('has_transfer_type','==','no')], 'required': [('has_transfer_type','==','required')]}"/>
+                    <field name="transfer_from_date" attrs="{'invisible':[('has_employee_transferred','==','no')], 'required': [('has_transfer_type','==','required')]}"/>
+                    <field name="transfer_to_date" attrs="{'invisible':[('transfer_type','!=','temporary')], 'required': [('transfer_type','==','temporary')]}"/>
+                    <field name="transfer_reason" attrs="{'invisible':[('has_transfer_reason','==','no')], 'required': [('has_transfer_reason','==','required')]}"/>
+
+
+                </field>
+
+                <xpath expr="//sheet/group" position="after">
+                    <group attrs="{'invisible':[('is_internal_transfer_request','==','no')]}">
+                        <group>
+                            <h3 style="text-decoration: underline" colspan="2">Releasing Department</h3>
+                            <h6 colspan="2">(To be filled by Releasing Head of Department)</h6>
+                            <field name="employee_type_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_employee_type_source','==','no')], 'required': [('has_employee_type_source','==','required')]}"/>
+                            <field name="cost_center_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_cost_center_source','==','no')], 'required': [('has_cost_center_source','==','required')]}"/>
+                            <field name="job_title_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_job_title_source','==','no')], 'required': [('has_job_title_source','==','required')]}"/>
+                            <field name="line_manager_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_line_manager_source','==','no')], 'required': [('has_line_manager_source','==','required')]}"/>
+                            <field name="group_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_group_source','==','no')], 'required': [('has_group_source','==','required')]}"/>
+                            <field name="department_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_department_source','==','no')], 'required': [('has_department_source','==','required')]}"/>
+                            <field name="section_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_section_source','==','no')], 'required': [('has_section_source','==','required')]}"/>
+                            <field name="subsection_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_subsection_source','==','no')], 'required': [('has_subsection_source','==','required')]}"/>
+                            <field name="job_grade_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_job_grade_source','==','no')], 'required': [('has_job_grade_source','==','required')]}"/>
+                            <field name="working_shift_source" readonly="1" force_save="1" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_working_shift_source','==','no')], 'required': [('has_working_shift_source','==','required')]}"/>
+                        </group>
+                        <group>
+                            <h3 style="text-decoration: underline" colspan="2">Destination Department</h3>
+                            <h6 colspan="2">(To be filled by Destination Head of Department)</h6>
+                            <field name="employee_type_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_employee_type_destination','==','no')], 'required': [('has_employee_type_destination','==','required')]}"/>
+                            <field name="cost_center_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_cost_center_destination','==','no')], 'required': [('has_cost_center_destination','==','required')]}"/>
+                            <field name="job_title_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_job_title_destination','==','no')], 'required': [('has_job_title_destination','==','required')]}"/>
+                            <field name="line_manager_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_line_manager_destination','==','no')], 'required': [('has_line_manager_destination','==','required')]}"/>
+
+                            <field name="group_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_group_destination','==','no')], 'required': [('has_group_destination','==','required')]}"/>
+                            <field name="department_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_department_destination','==','no')], 'required': [('has_department_destination','==','required')]}"/>
+                            <field name="section_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_section_destination','==','no')], 'required': [('has_section_destination','==','required')]}"/>
+                            <field name="subsection_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_subsection_destination','==','no')], 'required': [('has_subsection_destination','==','required')]}"/>
+                            <field name="job_grade_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_job_grade_destination','==','no')], 'required': [('has_job_grade_destination','==','required')]}"/>
+                            <field name="working_shift_destination" options="{'no_create': True, 'no_open': True,'no_edit': True}" attrs="{'invisible':[('has_working_shift_destination','==','no')], 'required': [('has_working_shift_destination','==','required')]}"/>
+                        </group>
+                    </group>
+                    <!--                    <h3 style="" colspan="2">Accesses to be Filled by Current Designation</h3>-->
+                    <group attrs="{'invisible':[('is_internal_transfer_request','==','no')]}">
+                        <h3 style="text-decoration: underline" colspan="2">IT Requirements</h3>
+                        <group>
+                            <h3 style="text-decoration: underline" colspan="2">Releasing Department</h3>
+                            <h6 colspan="2">(To be filled by Releasing Head of Department)</h6>
+
+                            <field name="sap_source" attrs="{'invisible':[('has_sap_source','==','no')], 'required': [('has_sap_source','==','required')]}"/>
+                            <field name="f_3dx_source" attrs="{'invisible':[('has_3dx_source','==','no')], 'required': [('has_3dx_source','==','required')]}"/>
+                            <field name="shared_folder_status_source" attrs="{'invisible':[('has_shared_folder_status_source','==','no')], 'required': [('has_shared_folder_status_source','==','required')]}"/>
+                            <field name="shared_folder_source" attrs="{'invisible':[('has_shared_folder_source','==','no')], 'required': [('has_shared_folder_source','==','required')]}"/>
+                            <field name="other_source" attrs="{'invisible':[('has_other_source','==','no')], 'required': [('has_other_source','==','required')]}"/>
+                        </group>
+                        <group>
+                            <h3 style="text-decoration: underline" colspan="2">Destination Department</h3>
+                            <h6 colspan="2">(To be filled by Destination Head of Department)</h6>
+
+                            <field name="sap_destination" attrs="{'invisible':[('has_sap_destination','==','no')], 'required': [('has_sap_destination','==','required')]}"/>
+                            <field name="f_3dx_destination" attrs="{'invisible':[('has_3dx_destination','==','no')], 'required': [('has_3dx_destination','==','required')]}"/>
+                            <field name="shared_folder_status_destination" attrs="{'invisible':[('has_shared_folder_status_destination','==','no')], 'required': [('has_shared_folder_status_destination','==','required')]}"/>
+                            <field name="shared_folder_destination" attrs="{'invisible':[('has_shared_folder_destination','==','no')], 'required': [('has_shared_folder_destination','==','required')]}"/>
+                            <field name="other_destination" attrs="{'invisible':[('has_other_destination','==','no')], 'required': [('has_other_destination','==','required')]}"/>
+                        </group>
+                    </group>
+                </xpath>
+
+                <button name="action_confirm" position="after">
+                    <field name="all_approved" invisible="1"/>
+                    <field name="resignations" invisible="1"/>
+                    <field name="jobs" invisible="1"/>
+                    <field name="transfers" invisible="1"/>
+                    <field name="resignations_ext" invisible="1"/>
+                    <button name="create_job_position" string="Create Job Position" type="object" attrs="{'invisible':['|','|',['can_create_job','==',False], ['all_approved','==',False], ['jobs','!=',[]]]}" groups="hr_approvals.group_approval_category_manager_job_position" class="btn-primary"/>
+                    <button name="create_resignation" string="Create Resignation" type="object" attrs="{'invisible':['|','|',['can_create_resign','==',False], ['all_approved','==',False], ['resignations','!=',[]]]}" groups="hr_approvals.group_approval_category_manager_resignation" class="btn-primary"/>
+                    <button name="extend_resignation" string="Extend Resignation" type="object" attrs="{'invisible':['|','|',['can_extend_resign','==',False], ['all_approved','==',False], ['resignations_ext','!=',[]]]}" groups="hr_approvals.group_approval_category_manager_resignation" class="btn-primary"/>
+                    <button name="open_create_transfer_wizard" string="Create Transfer Events" type="object" attrs="{'invisible':['|','|',['can_create_transfer','==',False], ['all_approved','==',False], ['transfers','!=',[]]]}" groups="hr_approvals.group_approval_category_manager_transfer" class="btn-primary"/>
+                </button>
+
+                <field name="approver_ids" position="replace">
+                    <field name="read_only_user" invisible="1"/>
+                    <!-- attrs="{'readonly':[('read_only_user','=',True)]}"-->
+                    <field name="approver_ids" mode="tree,kanban" readonly="1" force_save="1">
+                        <tree editable="bottom" decoration-success="status=='approved'" decoration-warning="status=='pending'" decoration-danger="status=='refused'">
+                            <field name="existing_request_user_ids" invisible="1"/>
+                            <field name="can_edit" invisible="1"/>
+                            <field name="has_eligible_rehire" invisible="1"/>
+                            <field name="has_eligible_rehire_comment" invisible="1"/>
+                            <field name="is_termination_req" invisible="1"/>
+                            <field name="sequence"/>
+                            <field name="approve_type" attrs="{'readonly':[('status','!=','new')]}" invisible="1"/>
+                            <field name="user_id" string="Approver" attrs="{'required': [('approve_type', '=', 'user')], 'invisible':  [('approve_type', '!=', 'user')], 'readonly':[('status','!=','new')]}" force_save="1"/>
+                            <field name="group_id" attrs="{'required': [('approve_type', '=', 'group')], 'invisible':  [('approve_type', '!=', 'group')], 'readonly':[('status','!=','new')]}"/>
+                            <field name="action_user_id" readonly="1"/>
+                            <field name="required" attrs="{'readonly': [('can_edit', '=', False)]}" force_save="1" invisible="1"/>
+                            <field name="approver_category" invisible="1" attrs="{'readonly':[('status','!=','new')]}"/>
+                            <field name="signature" invisible="1"/>
+                            <field name="date_deadline_after" force_save="1" invisible="1"/>
+                            <field name="approval_date"/>
+                            <field name="status" readonly="0" invisible="1"/>
+                            <field name="reject_reason" readonly="1" force_save="1" invisible="1"/>
+                            <field name="replacement_position" attrs="{'column_invisible':['|',('parent.has_eligible_rehire','==','no'),('parent.can_see_eligible','=', False)], 'required': [('has_eligible_rehire','==','required')], 'readonly': [('is_termination_req','==','no')]}"/>
+                            <field name="eligible_rehire_selection" attrs="{'column_invisible':['|',('parent.has_eligible_rehire','==','no'),('parent.can_see_eligible','=', False)], 'required': [('has_eligible_rehire','==','required')], 'readonly': [('is_termination_req','==','no')]}"/>
+                            <field name="eligible_rehire_comment" attrs="{'column_invisible':['|',('parent.has_eligible_rehire_comment','==','no'),('parent.can_see_eligible','=', False)], 'required': [('has_eligible_rehire_comment','==','required')], 'readonly': [('is_termination_req','==','no')]}"/>
+                            <field name="company_id" invisible="1"/>
+
+                        </tree>
+                        <kanban class="o_kanban_mobile">
+                            <field name="user_id"/>
+                            <field name="status"/>
+                            <field name="company_id" invisible="1"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div class="oe_kanban_card oe_kanban_global_click">
+                                        <div class="o_kanban_content">
+                                            <t t-esc="record.user_id.value"/>
+                                            <t t-if="record.status.raw_value">
+                                                <t t-set="classname" t-value="{'approved': 'badge-success', 'pending': 'badge-warning', 'refused': 'badge-danger'}[record.status.raw_value] || 'badge-light'"/>
+                                                <span t-esc="record.status.raw_value" t-attf-class="float-right badge-pill {{ classname }}"/>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <form create="0" edit="0" delete="0">
+                            <group>
+                                <field name="user_id" readonly="1" options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="existing_request_user_ids" invisible="1"/>
+                            </group>
+                        </form>
+                    </field>
+                </field>
+
+
+                <page name="description" position="before">
+                    <page name="job_description" string="Required Experience, Qualifications &#38; Skills" attrs="{'invisible':[('has_job_desc','==','no')]}">
+                        <field name="job_desc" attrs="{'invisible':[('has_job_desc','==','no')], 'required': [('has_job_desc','==','required')]}"/>
+
+                    </page>
+                </page>
+            </field>
+        </record>
+
+
+        <record id="view_hr_job_form_inherited_approval" model="ir.ui.view">
+            <field name="name">hr.job.form.inherited.approval</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+
+                <group position="after">
+                    <group string="Requisition">
+                        <field name="related_requisition"/>
+                        <field name="requisition_job_title"/>
+                        <field name="vacancy_type"/>
+                        <field name="contract_type"/>
+                        <field name="requisition_type"/>
+                        <field name="replacement_employee_id" attrs="{'invisible':[('requisition_type','!=','replace')]}"/>
+
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="approval_request_tree">
+            <field name="name">approval_request_tree</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='request_status']" position="after">
+                    <field name="create_date"/>
+                    <field name="approval_date"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_resign_form_inherit" model="ir.ui.view">
+            <field name="name">hr.resignation.form.inherit</field>
+            <field name="model">hr.resignation</field>
+            <field name="inherit_id" ref="hr_contract_custom.view_resign_form"/>
+            <field name="arch" type="xml">
+                <field name="related_contract" position="after">
+                    <field name="related_approval" readonly="1"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_resign_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.resignation.tree.inherit</field>
+            <field name="model">hr.resignation</field>
+            <field name="inherit_id" ref="hr_contract_custom.view_resign_tree"/>
+            <field name="arch" type="xml">
+                <field name="related_contract" position="after">
+                    <field name="related_approval"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </field>
+            </field>
+        </record>
+
+
+        <!--        <record id="hr_contract_job_offer_view_form_inherit" model="ir.ui.view">-->
+        <!--            <field name="name">hr.contract.form.inherit</field>-->
+        <!--            <field name="model">hr.contract</field>-->
+        <!--            <field name="inherit_id" ref="hr_contract_custom.hr_contract_job_offer_view_form"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <field name="related_resign_request" position="replace">-->
+        <!--                    <field name="related_resign_request">-->
+        <!--                        <tree string="Resign Request">-->
+        <!--                            <field name="name"/>-->
+        <!--                            <field name="start_date"/>-->
+        <!--                            <field name="end_date"/>-->
+        <!--                            <field name="state"/>-->
+        <!--                        </tree>-->
+        <!--                    </field>-->
+        <!--                </field>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record model="ir.ui.view" id="approval_search_form_custom">
+            <field name="name">approval_search_form_custom</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_search_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='filter_approvals_to_review']" position="replace">
+                    <filter string="My Approvals to Review" name="filter_approvals_to_review" domain="[('approver_ids.user_id', '=', uid), ('request_status', 'in', ['pending','under_approval'])]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record model="ir.ui.view" id="approval_user_form">-->
+        <!--            <field name="name">approval_user_form</field>-->
+        <!--            <field name="model">res.users</field>-->
+        <!--            <field name="inherit_id" ref="approvals.res_users_view_form"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//button[1]" position="replace">-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="approvals.approval_request_action_to_review" model="ir.actions.act_window">
+            <field name="name">Approvals to Review</field>
+            <field name="res_model">approval.request</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">['&amp;',('approver_ids.user_id','=',uid),('request_status','in',['pending','under_approval','approved','refused','cancel'])]</field>
+            <field name="context">{'search_default_filter_approvals_to_review': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No new approvals to review
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="approvals.approvals_approval_menu_all" parent="approvals.approvals_menu_manager" name="All Approvals" action="approvals.approval_request_action_all" sequence="20" />
+
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_advance_payment_inv" model="ir.ui.view">
+        <field name="name">Invoice Orders</field>
+        <field name="model">ebs.advance.payment.inv</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="remaining_govt" invisible="context.get('proforma') or context.get('full')"/>
+                            <field name="govt_fees" attrs="{'invisible':['|',('remaining_govt','&lt;',0),('remaining_govt','=',0)]}" readonly="context.get('full')"/>
+                            <field name="govt_analytic_account" attrs="{'invisible':['|',('remaining_govt','&lt;',0),('remaining_govt','=',0)]}" invisible="context.get('proforma') or context.get('full')"/>
+                        </group>
+                        <group>
+                            <field name="remaining_fusion" invisible="context.get('proforma') or context.get('full')"/>
+                            <field name="fusion_fees" attrs="{'invisible':['|',('remaining_fusion','&lt;',0),('remaining_fusion','=',0)]}" readonly="context.get('full')"/>
+                            <field name="fusion_analytic_account" attrs="{'invisible':['|',('remaining_fusion','&lt;',0),('remaining_fusion','=',0)]}" invisible="context.get('proforma') or context.get('full')" />
+                        </group>
+                        <group>
+                            <field name="remaining_additional" invisible="context.get('proforma') or context.get('full')"/>
+                            <field name="additional_fees" attrs="{'invisible':['|',('remaining_additional','&lt;',0),('remaining_additional','=',0)]}" invisible="context.get('proforma')" readonly="context.get('full')"/>
+                            <field name="additional_analytic_account" attrs="{'invisible':['|',('remaining_additional','&lt;',0),('remaining_additional','=',0)]}" invisible="context.get('proforma') or context.get('full')"/>
+                            <field name="remaining_payments" invisible="context.get('proforma')"/>
+                        </group>
+                        <group>
+                            <label for="discount" invisible="context.get('proforma')" />
+                            <div style="text-align:left;" invisible="context.get('proforma')" >
+                                <field name="discount" class="oe_inline"/>
+                                <span>%</span>
+                            </div>
+                            <field name="invoice_date" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight" invisible="context.get('proforma')"/>
+                    <button name="confirm_proforma_button" string="Confirm" type="object" class="oe_highlight" invisible="context.get('invoices')" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_advance_payment_inv" model="ir.actions.act_window">
+        <field name="name">Create invoices</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.advance.payment.inv</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <!-- TODO: check if we need this -->
+
+    </record>
+
+</odoo>

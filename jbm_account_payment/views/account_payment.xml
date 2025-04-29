@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="payment_view_form_custom_inherit" model="ir.ui.view">
+            <field name="name">account.payment.form.view.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="ebs_account_postchecks.payment_view_form_custom"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_post_dated_check']" position="after">
+                    <field name="type"
+                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

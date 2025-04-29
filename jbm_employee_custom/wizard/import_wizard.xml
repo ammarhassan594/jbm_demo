@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+        <!--Special Group For Import-->
+        <record id="group_import_bank_account" model="res.groups">
+            <field name="name">Import Bank Account</field>
+            <field name="comment">The user will be able to Import Data Related to employees.</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="jbm_group_access_right_extended.custom_group_shared_service_manager" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('group_import_bank_account'))]"/>
+        </record>
+
+        <!--Import Wizard View-->
+        <record id="import_data_wizard_form" model="ir.ui.view">
+            <field name="name">Import Data View</field>
+            <field name="model">import.bank.account</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Data">
+                    <group>
+                        <field name="data_file" nolabel="1" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                        <newline/>
+                        <group>
+                            <field name="type"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="import_file" class="oe_highlight" string="Import" type="object"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_import_data_wizard" model="ir.actions.act_window">
+            <field name="name">Import Data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.bank.account</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_bank_account" name="Import Employee Bank" action="action_import_data_wizard"
+                  parent="hr.menu_human_resources_configuration" groups="group_import_bank_account"
+                  sequence="8"/>
+    </data>
+</odoo>

@@ -1,0 +1,199 @@
+<odoo>
+    <data>
+
+
+        <record id="custom_hr_employee_view_inherit" model="ir.ui.view">
+            <field name="name">custom.hr.employee.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='address_home_id']" position="replace">
+                    <field name="address_home_id"
+                           context="{'show_address': 1,'default_type': 'private','form_view_ref': 'base.res_partner_view_form_private'}"
+                           options="{&quot;always_reload&quot;: True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="custom_hr_salary_rule_view" model="ir.ui.view">
+            <field name="name">custom.hr.salary.rule.view</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='struct_id']" position="after">
+                    <field name="template"/>
+                    <field name="leave_type_id" attrs="{'invisible': [('template', '!=','timeoff')]}"/>
+                    <field name="type" attrs="{'invisible': [('template', '!=','eos_other_entitlement')]}"/>
+                    <field name="related_element_type" attrs="{'invisible': [('template', '!=', 'AE')]}"
+                           options="{'no_create_edit': True}"/>
+                    <field name="allowance_type_id"
+                           attrs="{'invisible': [('template', 'not in', ['arap','rap','aap'])]}"
+                           options="{'no_create_edit': True}"/>
+                </xpath>
+                <xpath expr="//field[@name='appears_on_payslip']" position="after">
+                    <field name="istaxable" invisible="True"/>
+                </xpath>
+                <xpath expr="//field[@name='analytic_account_id']" position="after">
+                    <field name="product_id"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="hr_salary_rule_list_inherit" model="ir.ui.view">
+            <field name="name">hr.salary.rule.tree.inherit</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list"/>
+            <field name="arch" type="xml">
+                <field name="struct_id" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="custom_hr_salary_rule_category_view" model="ir.ui.view">
+            <field name="name">custom.hr.salary.rule.category.view</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_category_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="is_deduction"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="payroll_custom_address_view" model="ir.ui.view">
+            <field name="name">payroll.custom.address.view</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="400"/>
+            <field name="inherit_id" ref="base.res_partner_view_form_private"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='div_address']//..//.." position="replace">
+                    <group>
+                        <field name="country_id" class="o_address_country"
+                               options='{"no_open": True, "no_create": True}'/>
+                        <field name="address_zone" class="o_address_street"/>
+                        <field name="address_street" class="o_address_street"/>
+                        <field name="address_building" class="o_address_street"/>
+                        <field name="street" class="o_address_street"/>
+                        <field name="street2" class="o_address_street"/>
+                        <field name="building"/>
+                        <field name="floor"/>
+
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="before">
+                    <field name="po_box"/>
+                </xpath>
+                <xpath expr="//field[@name='mobile']" position="after">
+                    <field name="fax" widget="phone"/>
+                </xpath>
+                <xpath expr="//field[@name='po_box']" position="before">
+                    <field name="area"/>
+                </xpath>
+
+            </field>
+        </record>
+<!--From Here-->
+        <record id="payroll_custom_payroll_structure_view" model="ir.ui.view">
+            <field name="name">payroll.custom.payroll.structure.view</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_employee_grade_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='unpaid_work_entry_type_ids']//.." position="replace">
+                </xpath>
+                <xpath expr="//page[@name='other_input']" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+<!--To Here-->
+        <record id="hr_employee_leave_holidays_view_form2_inherited" model="ir.ui.view">
+            <field name="name">hr.employee.timeoff.smartbutton.inherited.view.form2</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_holidays.view_employee_form_leave_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_time_off_dashboard'][2]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('employee_type','=','client_employee'),('is_absent', '=',
+                        False)]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_time_off_dashboard'][2]//div//span[hasclass('o_stat_text')]"
+                       position="replace">
+                    <span class="o_stat_text">
+                        Leaves
+                    </span>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_employee_payroll_view_form2_inherited" model="ir.ui.view">
+            <field name="name">hr.employee.payslip.smartbutton.inherited.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_payroll.payroll_hr_employee_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name=%(hr_payroll.act_hr_employee_payslip_list)d]" position="replace">
+                    <button name="%(hr_payroll.act_hr_employee_payslip_list)d"
+                            class="oe_stat_button"
+                            icon="fa-money" type="action"
+                            attrs="{'invisible':[('employee_type','!=','fusion_employee')]}"
+                            groups="hr_contract_custom.group_access_fusion_employee_contract">
+                        <field name="payslip_count" widget="statinfo" string="Payslips"/>
+                    </button>
+                    <button name="%(hr_payroll.act_hr_employee_payslip_list)d"
+                            class="oe_stat_button"
+                            icon="fa-money" type="action" attrs="{'invisible':[('employee_type','!=','fos_employee')]}"
+                            groups="hr_contract_custom.group_access_other_employee_contract">
+                        <field name="payslip_count" widget="statinfo" string="Payslips"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="hr_payroll.view_hr_payslip_by_employees" model="ir.ui.view">
+            <field name="name">hr_payroll_payslip_employees</field>
+            <field name="model">hr.payslip.employees</field>
+            <field name="arch" type="xml">
+                <form string="Payslips by Employees">
+                    <field name="company_id" invisible="1"/>
+                    <group>
+                        <span colspan="4" nolabel="1">This wizard will generate payslips for all selected employee(s)
+                            based on the dates and credit note specified on Payslips Run.
+                        </span>
+                    </group>
+                    <group colspan="2">
+                        <separator string="Salary Structure" colspan="2"/>
+                        <newline/>
+                        <span class="text-muted">Set a specific structure if you wish to make an extra payslip (eg: End
+                            of the year bonus). If you leave this field empty, a regular payslip will be generated for
+                            all the selected employees, based on their contracts configuration.
+                        </span>
+                        <field name="structure_id" nolabel="1"/>
+                    </group>
+                    <group colspan="4">
+                        <separator string="Employees" colspan="4"/>
+                        <newline/>
+                        <field name="employee_ids" nolabel="1">
+                            <tree>
+                                <field name="name"/>
+                                <field name="company_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button icon="fa-cogs" string="Generate" name="compute_sheet" type="object"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

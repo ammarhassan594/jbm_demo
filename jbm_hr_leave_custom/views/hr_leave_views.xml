@@ -1,0 +1,52 @@
+<odoo>
+
+    <record id="hr_leave_form_view_inherit" model="ir.ui.view">
+        <field name="name">hr.leave.form.view.inherit</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+
+                <field name="validation_document_after" invisible="1"/>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="jbm_group_access_right_extended.hr_holiday_leave_to_approve_view_form_managers" model="ir.ui.view">
+        <field name="name">hr.leave.inherit.form.custom</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id"
+               ref="jbm_group_access_right_extended.hr_holiday_leave_to_approve_view_form_inherit_custom"/>
+        <field name="groups_id"
+               eval="[(6, 0, [ref('base.group_erp_manager'), ref('hr.group_hr_user')])]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@id='label_dates']" position="before">
+                <field name="employee_ids"
+                       attrs="{
+                        'required': [('holiday_type', '=', 'employee'), ('state', 'in', ('draft', 'cancel', 'refuse'))],
+                        'invisible': ['|', ('holiday_type', '!=', 'employee'), '&amp;', ('state', '=', 'validate'), ('employee_id', '!=', False)],
+                        }" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hr_leave_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.leave.remove.payslip_state.form</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_payroll_holidays.hr_leave_view_form_inherit"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='payslip_state']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>

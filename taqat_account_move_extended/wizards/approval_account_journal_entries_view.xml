@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+        <record id="account_journal_entries_approval_views" model="ir.ui.view">
+          <field name="name">account.journal.entries.approval.form</field>
+          <field name="model">account.journal.entries.approval</field>
+          <field name="arch" type="xml">
+            <form string="Account Journal Entries Approval" >
+                <h3>
+                </h3>
+                <br/>
+                <h5>
+                    Are you sure you want to post accounts: <field name="account_account_name" readonly="1"/>?
+                </h5>
+                <footer>
+                    <button name="confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+          </field>
+       </record>
+
+ 
+       <record id="action_account_journal_entries_approval" model="ir.actions.act_window">
+          <field name="name">Account Journal Entries Approval</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">account.journal.entries.approval</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+       </record>
+ </odoo>

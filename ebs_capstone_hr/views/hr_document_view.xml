@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="document_view_tree">
+            <field name="name">Document.Tree</field>
+            <field name="model">ebs.hr.document</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="document_type"/>
+                    <field name="state"/>
+                    <field name="issue_date"/>
+                    <field name="issue_place"/>
+                    <field name="expiration_date"/>
+                    <field name="child_id"/>
+                    <field name="employee_id"/>
+                    <!--                    <field name="emp_projects"/>-->
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="document_view_form">
+            <field name="name">Document.Form</field>
+            <field name="model">ebs.hr.document</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group col="2">
+                                <field name="name" required="1"/>
+                                <field name="document_type" required="1"/>
+                                <field name="state" required="1"/>
+                                <field name="issue_place"/>
+<!--                                <field name="emp_projects" force_save="1"/>-->
+                                <field name="company_id" groups="base.group_multi_company" invisible="1"/>
+                            </group>
+
+                            <group col="2">
+                                <field name="expiration_date"/>
+                                <field name="issue_date"/>
+                                <field name="is_hr_user" invisible="1"/>
+                                <field name="current_user" invisible="1"/>
+                                <field name="employee_id" options="{'no_open': True}"
+                                       attrs="{'readonly': [('is_hr_user', '!=', True)]}"/>
+                                <field name="hide" invisible="1"/>
+                                <field name="employee_id_domain" invisible="1"/>
+                                <field name="child_id" attrs="{'invisible': [('hide', '=', True )]}"
+                                       domain="employee_id_domain"
+                                       options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                                <field name="attachment_ids" widget="many2many_binary"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="document_view_search">
+            <field name="name">Document.Search</field>
+            <field name="model">ebs.hr.document</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="employee_id"/>
+                    <field name="document_type"/>
+                    <field name="name"/>
+                    <filter name="document_type_qid" string="QID Documents" domain="[('document_type', '=', 'QID')]"/>
+                    <filter name="document_type_passport" string="Passport Documents"
+                            domain="[('document_type', '=', 'Passport')]"/>
+                    <group string="Group By">
+                        <filter name="groupby_employee_id" string="Employee" context="{'group_by': 'employee_id'}"/>
+                        <filter name="groupby_document_type" string="Document Type"
+                                context="{'group_by': 'document_type'}"/>
+                        <filter name="groupby_state" string="Status" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="document_window" model="ir.actions.act_window">
+            <field name="name">Hr Documents</field>
+            <field name="res_model">ebs.hr.document</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_skills_objective_types,access.employee.skills.objective.types,model_employee_skills_objective_types,,1,1,1,1
+access_employee_skills_objectives,access.employee.skills.objectives,model_employee_skills_objectives,,1,1,1,1
+access_hr_jobs_skills_lines,access.hr.jobs.skills.lines,model_hr_jobs_skills_lines,,1,1,1,1
+access_hr_job_skill_type_lines,access.hr.job.skill.type.lines,model_hr_job_skill_type_lines,,1,1,1,1
+access_hr_appraisal_batch,access.hr.appraisal.batch,model_hr_appraisal_batch,,1,1,1,1
+access_appraisal_batch_skill_type,access.appraisal.batch.skill.type,model_appraisal_batch_skill_type,,1,1,1,1
+access_hr_appraisal_skill_lines,access.hr.appraisal.skill.lines,model_hr_appraisal_skill_lines,,1,1,1,1
+access_hr_appraisal_skill_type_lines,access.hr.appraisal.skill.type.lines,model_hr_appraisal_skill_type_lines,,1,1,1,1

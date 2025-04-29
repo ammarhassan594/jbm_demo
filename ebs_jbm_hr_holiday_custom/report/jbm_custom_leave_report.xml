@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_jbm_sick_leave_report">
+        <t t-call="web.basic_layout">
+            <t t-set="page_no" t-value="0"/>
+            <div class="page" style="direction: rtl;">
+                <html>
+
+                    <style type="text/css">
+                        body{
+                        font-family: 'Lateef', serif;
+                        font-size:20px;
+                        }
+                        <!--                        .table tr-->
+                        <!--                        {-->
+                        <!--                        line-height:5px!important;-->
+                        <!--                        }-->
+                        td{
+                        padding:5px!important;
+                        border-right: 1px solid #785838!important;
+                        border-left: 1px solid #785838!important;
+                        border-bottom: 1px solid #785838!important;
+                        }
+                        .custom_td{
+                        text-align: right!important;
+                        }
+                    </style>
+                    <body>
+                        <img src="/ebs_jbm_hr_holiday_custom/static/src/img/header.jpg"
+                             style="padding-left:5px;height:147px;width: 820px;"/>
+                        <br/>
+                        <h3 style="text-align:center!important;color:#5e0b05;font-weight: bold;">
+                            نموذج طلب إجازة عارضة
+                        </h3>
+                        <table class="table" style="border: 1px solid #785838!important;">
+                            <tr style="background-color: #785838!important;">
+                                <td colspan="2" style="color: white;text-align: center;">يعبأ بواسطة
+                                    الموظف
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td">تاريخ تقدمي الطلب:
+                                    <t t-esc="o.create_date.strftime('%d/%m/%Y')"/>
+                                </td>
+                                <td class="custom_td">
+                                    تاريخ التعيني:
+                                    <t t-if="o.approval_date">
+                                        <t t-esc="o.approval_date.date().strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td colspan="2" class="custom_td">
+                                    الإسم الكامل:
+                                    <t t-if="o.employee_id and o.employee_id.arabic_name">
+                                        <t t-esc="o.employee_id.arabic_name"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td">
+                                    الوظيفة:
+                                    <t t-if="o.employee_id.job_id">
+                                        <t t-esc="o.employee_id.job_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td">الرقم الوظيفي:
+                                    <t t-esc="o.employee_id.registration_number"/>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td">
+                                    الإدارة:
+                                    <t t-if="o.employee_id.department_id">
+                                        <t t-esc="o.employee_id.department_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td">الدرجة الوظيفية:
+                                    <t t-if="o.employee_id.contract_id and o.employee_id.contract_id.payscale_id">
+                                        <t t-esc="o.employee_id.contract_id.payscale_id.display_name"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td">
+                                    العنوان أثناء الإجازة:
+                                    <t t-esc="o.address_during_leave"/>
+                                </td>
+                                <td class="custom_td">رقم الهاتف أثناء الإجازة:
+                                    <t t-esc="o.phone_number_on_leave"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <!--                        <table width="100%" border="0" style="font-size:20px;">-->
+                        <!--                            <tr>-->
+                        <!--                                <td style="border:0px!important;"></td>-->
+                        <!--                                <td style="border:0px!important;">-->
+                        <!--                                    <t t-esc="o.number_of_days"/>-->
+                        <!--                                </td>-->
+                        <!--                                <td style="border:0px!important;"></td>-->
+                        <!--                                <td style="border:0px!important;">-->
+                        <!--                                    <center>-->
+                        <!--                                        <t t-esc="o.date_from.strftime('%d/%m/%Y')"/>-->
+                        <!--                                    </center>-->
+                        <!--                                </td>-->
+                        <!--                                <td style="border:0px!important;"></td>-->
+                        <!--                                <td style="border:0px!important;">-->
+                        <!--                                    <center>-->
+                        <!--                                        <t t-esc="o.date_to.strftime('%d/%m/%Y')"/>-->
+                        <!--                                    </center>-->
+                        <!--                                </td>-->
+                        <!--                            </tr>-->
+                        <!--                            <tr>-->
+                        <!--                                <td style="border:0px!important;padding:5px!important;">أرجو الموافقة على احتساب مدة-->
+                        <!--                                </td>-->
+                        <!--                                <td style="border:0px!important;padding:5px!important;">______</td>-->
+                        <!--                                <td style="border:0px!important;padding:5px!important;">يـــــوم، للفتـــــرة من:</td>-->
+                        <!--                                <td style="border:0px!important;padding:5px!important;">-->
+                        <!--                                    ________________________________-->
+                        <!--                                </td>-->
+                        <!--                                <td style="border:0px!important;padding:5px!important;">إلـــــــــى</td>-->
+                        <!--                                <td style="border:0px!important;padding:5px!important;">-->
+                        <!--                                    ________________________________-->
+                        <!--                                </td>-->
+                        <!--                            </tr>-->
+                        <!--                        </table>-->
+                        <p style="text-align:center;">
+                            أرجو الموافقة على احتساب مدة :
+                            <t t-esc="o.number_of_days"/>
+                            يوم، للفترة من
+                            <t t-esc="o.date_from.strftime('%d/%m/%Y')"/>
+                            إلى
+                            <t t-esc="o.date_to.strftime('%d/%m/%Y')"/>
+                        </p>
+                        <div class="row" style="font-size:20px;padding-top:5px;text-align:right;">
+                            <div class="col-12">
+                                <span>إجازة عارضة، حيث أني تغيبت خلالها عن العمل
+                                    ألسباب خاصة..
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align:right;">
+                            <div class="col-12">
+                                <span>وتفضلوا بقبول فائق الاحترام</span>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+
+                        <table style="width:100%;" border="0">
+                            <tr>
+                                <td style="border:0px!important;text-align:center!important;" width="25%">توقيع مقدم
+                                    الطلب:
+                                </td>
+                                <td style="border:0px!important;text-align:right!important; vertical-align: middle;"
+                                    width="25%">
+                                    ________________________
+                                </td>
+
+                                <td style="border:0px!important; text-align:center!important;" width="25%">
+                                    توقيــــع مدير الإدارة:
+                                </td>
+                                <td style="border:0px!important; text-align:right!important;vertical-align: middle;"
+                                    width="25%">
+                                    ________________________
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <t t-set="taken_leave"
+                           t-value="request.env['hr.leave'].sudo().search_count([('holiday_status_id.is_sick_leave','=',True),('employee_id','=',o.employee_id.id)])"/>
+                        <t t-set="total_sick_leave_balance"
+                           t-value="sum(request.env['hr.leave.allocation'].sudo().search([('holiday_status_id.is_sick_leave','=',True),('employee_id','=',o.employee_id.id),('state','=','validate')]).mapped('number_of_days'))"/>
+                        <t t-set="sick_leave_balance_left"
+                           t-value="total_sick_leave_balance - taken_leave"/>
+                        <table class="table"
+                               style="border: 1px solid #785838!important;margin-bottom: 0rem !important">
+                            <tr style="background-color: #785838!important;">
+                                <td colspan="6" style="color: white;text-align: center;">يعبأ بواسطة الموارد
+                                    البشرية
+                                </td>
+                            </tr>
+                            <tr style="width:100%;background-color: #dfd7cf!important;">
+                                <td colspan="3" class="custom_td" style="width:50%">مدة الإجازة العارضة في
+                                    السنة
+                                    <span>(<t t-esc="total_sick_leave_balance"/>)
+                                    </span>
+                                    مدة
+                                </td>
+                                <td class="custom_td" style="width:50%" colspan="3">
+                                    الإجازة العارضة المستنفذة يوم
+                                    <span>(<t t-esc="taken_leave"/>)
+                                    </span>
+                                    مدة
+
+                                </td>
+                            </tr>
+                            <tr style="width:100%;background-color: #dfd7cf!important;">
+                                <td colspan="3" class="custom_td"
+                                    style="width:50% text-align:right!important;">
+                                    مدة الإجـازة العــارضة المطلوبة
+                                    <span>(<t t-esc="o.number_of_days"/>)
+                                    </span>
+                                    مدة
+                                </td>
+                                <td style="width:50%" class="custom_td" colspan="3">رصيـــد الإجازة العارضة
+                                    المتبقي
+                                    <span>(<t t-esc="sick_leave_balance_left"/>)
+                                    </span>
+                                    مدة
+                                </td>
+                            </tr>
+                            <tr style="width:100%;background-color: #dfd7cf!important;">
+                                <td colspan="2" class="custom_td" width="33%">
+                                    <center>شؤون الموظفني
+                                    </center>
+                                </td>
+                                <td colspan="2" class="custom_td" width="34%">
+                                    <center>مسؤول الشؤون الإدارية
+                                    </center>
+                                </td>
+                                <td colspan="2" class="custom_td">
+                                    <center>الإعتماد</center>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center; line-height:50px!important;">
+                                <td colspan="2" class="custom_td" width="33%">
+                                    <br/>
+                                </td>
+                                <td colspan="2" class="custom_td" width="34%">
+                                    <br/>
+                                </td>
+                                <td colspan="2" class="custom_td">
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </body>
+                </html>
+                <t t-set='page_no' t-value='page_no + 1'/>
+            </div>
+        </t>
+    </template>
+    <template id="report_jbm_leave_report">
+        <t t-call="web.basic_layout">
+            <div class="page" style="direction: rtl;">
+                <html>
+
+                    <style type="text/css">
+                        body{
+                        font-family: 'Lateef', serif;
+                        font-size:18px!important;
+                        }
+                        <!--                        .table tr-->
+                        <!--                        {-->
+                        <!--&lt;!&ndash;                        line-height:5px!important;&ndash;&gt;-->
+                        <!--                        }-->
+                        td{
+                        padding:5px!important;
+                        border-right: 1px solid #785838!important;
+                        border-left: 1px solid #785838!important;
+                        border-bottom: 1px solid #785838!important;
+                        }
+                        .custom_td{
+                        text-align: right!important;
+                        }
+                    </style>
+                    <body>
+                        <img t-if="o.holiday_status_id.company_id.company_report_header"
+                             t-att-src="image_data_uri(o.holiday_status_id.company_id.company_report_header)" alt="header"
+                             style="padding-left:5px;height:147px;width: 820px;"/>
+                        <!--                        <img src="/ebs_jbm_hr_holiday_custom/static/src/img/header.jpg"-->
+                        <!--                             style="padding-left:5px;height:147px;width: 820px;"/>-->
+                        <br/>
+                        <h3 style="text-align:center!important;color:#5e0b05;font-weight: bold;">
+                            نموذج طلب إجازة خاصة / دورية
+                        </h3>
+                        <table class="table" style="border: 1px solid #785838!important;">
+                            <tr style="background-color: #785838!important;">
+                                <td colspan="12" style="color: white;text-align: center;">يعبأ بواسطة
+                                    الموظف المختص
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td colspan="6" class="custom_td">
+                                    الاسم الكامل:
+                                    <t t-if="o.employee_id and o.employee_id.arabic_name">
+                                        <t t-esc="o.employee_id.arabic_name"/>
+                                    </t>
+                                </td>
+                                <td colspan="6" class="custom_td">تاريخ تقديم الطلب:
+                                    <t t-esc="o.create_date.strftime('%d/%m/%Y')"/>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td colspan="6" class="custom_td">
+                                    الرقم الوظيفي :
+                                    <t t-esc="o.employee_id.registration_number"/>
+                                </td>
+                                <td colspan="6" class="custom_td">
+                                    الإدارة:
+                                    <t t-if="o.employee_id.department_id">
+                                        <t t-esc="o.employee_id.department_id.name"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td" colspan="6">
+                                    الوظيفة:
+                                    <t t-if="o.employee_id.job_id">
+                                        <t t-esc="o.employee_id.job_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td" colspan="6">الدرجة الوظيفية:
+                                    <t t-if="o.employee_id.contract_id and o.employee_id.contract_id.payscale_id">
+                                        <t t-esc="o.employee_id.contract_id.payscale_id.display_name"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td" colspan="6">
+                                    نوع الإجازة:
+                                    <t t-if="o.holiday_status_id">
+                                        <t t-esc="o.holiday_status_id.name"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td" colspan="6">
+                                    بداية الإجازة:
+                                    <t t-if="o.date_from">
+                                        <t t-esc="o.date_from.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+                                <td class="custom_td" colspan="6">
+                                    نهاية الإجازة:
+                                    <t t-if="o.date_to">
+                                        <t t-esc="o.date_to.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td" colspan="6">عدد أيام الإجازة:
+                                    <t t-if="o.number_of_days">
+                                        <t t-esc="o.number_of_days"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;">
+
+                                <td class="custom_td" colspan="4"><input type="checkbox"
+                                                                         id="test_1"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;منحة
+                                    الإجازة
+                                </td>
+                                <td class="custom_td" colspan="4"
+                                    style="text-align:left!important;padding-left:100px!important;"><input
+                                        type="checkbox"
+                                        id="test_2"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;تذاكر
+                                    السفر
+                                </td>
+                                <td class="custom_td" colspan="4" style="text-align:left!important;">
+                                    <input type="checkbox"
+                                           id="checkbox104_anything_you_give"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                    بدل تذاكر السفر
+
+                                </td>
+
+                            </tr>
+                        </table>
+
+                        <table width="100%">
+                            <tr>
+                                <td width="30%"
+                                    style="padding-right:3px;text-align:right;border:0px !important;">توقيع
+                                    طالب
+                                    الإجازة:
+                                </td>
+                                <td width="35%"
+                                    style="text-align:right!important;color: #785838!important;border:0px !important">
+                                    ______________________________________________
+                                </td>
+                                <td width="35%" style="border:0px !important"></td>
+                            </tr>
+                        </table>
+
+                        <table class="table" style="border: 1px solid #785838!important;">
+                            <tr style="background-color: #785838!important;">
+                                <td colspan="2" style="color: white;text-align: center;">
+                                    يعبأ بواسطة الرئيس المباشر
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td colspan="2" class="custom_td">
+                                    <center>
+                                        <input type="checkbox" checked="True" id="test_1"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        مـــوافـــق
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;" width="100%">
+                                <td class="custom_td" width="50%">
+                                    إعتباراً من:
+                                    <t t-esc="o.date_from.strftime('%d/%m/%Y')"/>
+                                </td>
+                                <td class="custom_td" width="50%">
+                                    وحتى:
+                                    <t t-if="o.date_to">
+                                        <t t-esc="o.date_to.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;" width="100%">
+                                <td class="custom_td" width="50%">البديل:
+                                    &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                    <span style="padding-right:10px;">
+                                        <input type="checkbox" checked="true"/>
+                                    </span>
+                                    <span style="padding-right:10px;" width="50%">
+                                        يحتاج
+                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        <span style="padding-right:10px;">
+                                            <input type="checkbox"/> &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        </span>
+                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        لا يحتاج
+
+                                    </span>
+                                </td>
+                                <td class="custom_td"></td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;" width="100%">
+                                <td class="custom_td" width="50%">
+                                    القائم بالعمل أثناء الإجازة:
+                                    <t t-esc="o.replacement_resource_id"
+                                       t-if="o.replacement_resource_id"/>
+                                </td>
+                                <td class="custom_td" width="50%">
+                                    التوقيع:
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;" width="100%">
+                                <td class="custom_td" width="50%">
+                                    العهدة المدرجة:
+                                    <t t-esc="o._get_employee_custody()"/>
+
+                                </td>
+                                <td class="custom_td" width="50%">
+                                    يتم تسليمها لـ:
+                                    <t t-esc="o.replacement_resource_id"
+                                       t-if="o.replacement_resource_id"/>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;" width="100%">
+                                <td class="custom_td" width="50%">
+                                    الرئيس المباشر:
+                                    <t t-esc="o.employee_id.parent_id.arabic_name"
+                                       t-if="o.employee_id.parent_id.arabic_name"/>
+                                </td>
+                                <td class="custom_td" width="50%">
+                                    التوقيع:
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td colspan="2" class="custom_td">
+                                    <center>
+                                        <input type="checkbox"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        غير مـــوافـــق
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td colspan="2" class="custom_td">
+                                    الأسباب:
+                                    <br/>
+                                    <span>1-</span>
+                                    <br/>
+                                    <span>2-</span>
+                                    <br/>
+                                    <span>3-</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <t t-set="total_balance"
+                           t-value="sum(request.env['hr.leave.allocation'].sudo().search([('employee_id','=',o.employee_id.id),('state','=','validate')]).mapped('number_of_days'))"/>
+                        <t t-set="total_leave_days"
+                           t-value="sum(request.env['hr.leave.allocation'].sudo().search([('employee_id','=',o.employee_id.id),('state','=','validate')]).mapped('leaves_taken'))"/>
+                        <t t-set="balance_left" t-value="total_balance - total_leave_days"/>
+                        <table class="table" style="border: 1px solid #785838!important;">
+                            <tr style="background-color: #785838!important;">
+                                <td colspan="3" style="color: white;text-align: center;">
+                                    يعبأ بواسطة الموارد البشرية
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td class="custom_td">
+                                    تاريخ بداية الخدمة:
+                                    <t t-if="o.employee_id.contract_id">
+                                        <t t-esc="o.employee_id.contract_id.first_contract_date.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td">
+                                    تاريخ آخر إجازة:
+                                    <t t-esc="o._get_last_leave_date()"/>
+
+                                </td>
+
+                                <td class="custom_td">
+                                    رصيد الإجازات:
+                                    <t t-esc="'%.2f'%(o.remaining_balance) "/>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td class="custom_td">
+                                    عدد الايام الممنوحة:
+                                    <t t-if="o.number_of_days">
+                                        <t t-esc="o.number_of_days"/>
+                                    </t>
+                                </td>
+                                <td class="custom_td">
+                                    تاريخ بدايةالإجازة:
+                                    <t t-if="o.date_from">
+                                        <t t-esc="o.date_from.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+
+                                <td class="custom_td">
+                                    تاريخ نهاية الإجازة:
+                                    <t t-if="o.date_to">
+                                        <t t-esc="o.date_to.strftime('%d/%m/%Y')"/>
+                                    </t>
+                                </td>
+                            </tr>
+
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td class="custom_td" colspan="3">
+                                    الرصيد المتبقي بعد القيام بالإجازة:
+                                    <t t-esc="'%.2f'%(o.remaining_balance - o.number_of_days)"/>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center;">
+                                <td class="custom_td">
+                                    <center>
+                                        شؤون الموظفين
+                                    </center>
+                                </td>
+                                <td class="custom_td">
+                                    <center>
+                                        مسؤول الشؤون الإدارية
+                                    </center>
+                                </td>
+
+                                <td class="custom_td">
+                                    <center>
+                                        الاعتماد
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #dfd7cf!important;text-align:center; line-height:50px!important;">
+                                <td class="custom_td">
+                                    <br/>
+                                </td>
+                                <td class="custom_td">
+                                    <br/>
+                                </td>
+                                <td class="custom_td">
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </body>
+                </html>
+
+            </div>
+
+
+        </t>
+    </template>
+
+    <template id="report_jbm_main_template_leave_report">
+        <t t-call="web.html_container">
+            <t t-set="total_page" t-value="len(docs)"/>
+            <t t-set="page_number" t-value="0"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-set="o" t-value="o.with_context(lang='ar_001')"/>
+                <t t-set="page_number" t-value="page_number + 1"/>
+                <t t-if="o.holiday_status_id.is_sick_leave">
+                    <t t-call="ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report"/>
+                </t>
+                <t t-else="">
+                    <t t-call="ebs_jbm_hr_holiday_custom.report_jbm_leave_report"/>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="paper_format_leave_custom_jbm" model="report.paperformat">
+        <field name="name">Leave report Paper format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">60</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="report_jbm_custom_leave_report"
+            model="hr.leave"
+            string="Leave Report"
+            report_type="qweb-pdf"
+            name="ebs_jbm_hr_holiday_custom.report_jbm_main_template_leave_report"
+            file="ebs_jbm_hr_holiday_custom.report_jbm_main_template_leave_report"
+            menu="True"
+            print_report_name="'Leave report'"
+            paperformat="ebs_jbm_hr_holiday_custom.paper_format_leave_custom_jbm"
+
+    />
+</odoo>

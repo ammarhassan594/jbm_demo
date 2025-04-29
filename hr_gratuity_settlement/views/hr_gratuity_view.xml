@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_gratuity_tree" model="ir.ui.view">
+            <field name="name">hr.gratuity.tree</field>
+            <field name="model">hr.gratuity</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Gratuity" default_order="name desc">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="employee_joining_date"/>
+                    <field name="employee_gratuity_years"/>
+                    <field name="employee_basic_salary" widget="monetary"/>
+                    <field name="employee_contract_type"/>
+                    <field name="total_amount_working_days_no_store" widget="monetary"/>
+                    <field name="state"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="hr_contract_form_inherit_wage" model="ir.ui.view">-->
+<!--            <field name="name">hr.contract.view.form.inherit.wage</field>-->
+<!--            <field name="model">hr.contract</field>-->
+<!--            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='job_id']" position="before">-->
+<!--                    <field name="currency_id" invisible="1"/>-->
+<!--                    <field name="company_country_id" invisible="1"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='information']" position="attributes">-->
+<!--                    <attribute name="attrs">{'invisible': [('wage_type', '=', 'hourly')]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='information']" position="after">-->
+<!--                    <page string="Salary Information" name="information_salary_hourly"-->
+<!--                          attrs="{'invisible': [('wage_type', '!=', 'hourly')]}">-->
+<!--&lt;!&ndash;                        <group name="main_info_hourly">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <group name="salary_and_advantages_hourly" string="Hourly Advantages in Cash">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <field name="wage_type"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <label for="wage"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="o_row" name="wage">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="hourly_wage" nolabel="1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <span>/ hour</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                &lt;!&ndash;                                <field name="advantages" nolabel="1" placeholder="Advantages..." colspan="2"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                &lt;!&ndash;                                       invisible="1"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            </group>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </group>&ndash;&gt;-->
+<!--                    </page>-->
+<!--                </xpath>-->
+<!--&lt;!&ndash;                <xpath expr="//label[@for='wage']" position="before">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <field name="wage_type"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </xpath>&ndash;&gt;-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="employee_gratuity_form" model="ir.ui.view">
+            <field name="name">hr.gratuity.form</field>
+            <field name="model">hr.gratuity</field>
+            <field name="arch" type="xml">
+                <form string="Employee Gratuity">
+                    <header>
+                        <button name="print" string="Final Settlement" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', '!=', 'first_approve')]}"/>
+                        <button name="submit_request" string="Submit" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', '!=', 'draft')]}"/>
+                        <button name="first_approve_request" string="First Approve" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', '!=', 'submit')]}"
+                                groups="hr_gratuity_settlement.group_gratuity_first_approval"/>
+                        <button name="approved_request" string="Approve" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', '!=', 'first_approve')]}"
+                                groups="hr_gratuity_settlement.group_gratuity_second_approval"/>
+                        <button name="action_paid" string="Paid" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', '!=', 'approve')]}"
+                                groups="account.group_account_manager"/>
+                        <button name="cancel_request" string="Cancel" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', 'in', ['draft','approve','first_approve','cancel', 'paid'])]}"
+                                groups="account.group_account_manager"/>
+                        <button name="set_to_draft" string="Set to draft" type="object" class="btn-primary"
+                                attrs="{'invisible' : [('state', 'in', ['draft','approve','first_approve','submit', 'paid'])]}"
+                                groups="account.group_account_manager"/>
+                        <!--                        <button name="create_payslip" string="Create Payslip" type="object" class="btn-primary"/>-->
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,submit,first_approve,approve,paid"/>
+                    </header>
+                    <sheet>
+                        <!--                        <div name="button_box" class="oe_button_box">-->
+                        <!--                            <button class="oe_stat_button" type="object" name="get_payslips"-->
+                        <!--                                    icon="fa-usd">-->
+                        <!--                                <field string="Payslip" name="payslip_count" widget="statinfo"/>-->
+                        <!--                            </button>-->
+                        <!--                        </div>-->
+                        <widget name="web_ribbon" text="Paid" bg_color="bg-success"
+                                attrs="{'invisible': [('state', '!=', 'paid')]}"/>
+                        <widget name="web_ribbon" text="Approved" bg_color="bg-success"
+                                attrs="{'invisible': [('state', '!=', 'approve')]}"/>
+                        <widget name="web_ribbon" text="Canceled" bg_color="bg-danger"
+                                attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" readonly="1"/>
+                            </h2>
+                            <label for="employee_id" string="Employee Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="employee_id" string="Employee Name" placeholder="Employee"
+                                       attrs="{'readonly':[('state','!=','draft')]}"
+                                       options="{'no_create': True, 'no_open': True}" required="True"/>
+                            </h1>
+                        </div>
+                        <group col="2" colspan="6">
+                            <group string="Employee Details">
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="employee_contract_type" force_save="1"/>
+                                <field name="employee_joining_date" force_save="1"/>
+                                <field name="effective_date" force_save="1"/>
+                                <field name="termination_type" force_save="1"/>
+                                <field name="wage_type" invisible="1"/>
+                                <label for="employee_basic_salary" string="Basic Salary"/>
+                                <div class="o_row" name="employee_basic_salary">
+                                    <field name="employee_basic_salary" widget="monetary" nolabel="1" force_save="1"/>
+                                    <span attrs="{'invisible': [('wage_type', '=', 'hourly')]}">/ month</span>
+                                    <span attrs="{'invisible': [('wage_type', '!=', 'hourly')]}">/ hour</span>
+                                </div>
+                                <field name="gross_salary" force_save="1"/>
+                                <field name="status"/>
+                            </group>
+                            <group string="Employee Working Details">
+                                <label for="total_working_years"/>
+                                <div name="total_working_years">
+                                    <field name="total_working_years" force_save="1"/>
+                                    <span>years</span>
+                                </div>
+                                <label for="total_working_days"/>
+                                <div name="total_working_days">
+                                    <field name="total_working_days" force_save="1"/>
+                                    <span>days</span>
+                                </div>
+                                <label for="employee_probation_days"/>
+                                <div name="employee_probation_days">
+                                    <field name="employee_probation_days"/>
+                                    <span style="padding-right:50px;">days</span>
+                                    <field name="is_employee_probation_years" force_save="1" nolabel="1"/>
+                                </div>
+                                <label for="employee_gratuity_years"/>
+                                <div name="employee_gratuity_years">
+                                    <field name="employee_gratuity_years" force_save="1"/>
+                                    <span>years</span>
+                                </div>
+                                <field name="salary_rate" force_save="1"/>
+                                <field name="total_amount_working_days_no_store"/>
+                                <field name="employee_gratuity_amount" invisible="1"/>
+                            </group>
+                            <group string="Gratuity Addition">
+                                <label for="leave_balance_days"/>
+                                <div name="leave_balance_days">
+                                    <field name="leave_balance_days" force_save="1"/>
+                                    <span>days</span>
+                                </div>
+                                <field name="leave_salary_rate" force_save="1"/>
+                                <field name="leaves_amount" force_save="1"/>
+                                <field name="ticket_entitlement" force_save="1"/>
+                                <field name="ticket_to_home"/>
+                                <label for="notice_period"/>
+                                <div name="notice_period">
+                                    <field name="notice_period"/>
+                                    <span style="padding-right:50px;"/>
+                                    <field name="is_notice_period" force_save="1" nolabel="1"/>
+                                </div>
+                                <field name="total_notice_pay" force_save="1"
+                                       attrs="{'invisible': [('is_notice_period', '=', False)]}"/>
+                                <field name="other_additions" force_save="1"/>
+                                <field name="addition_remarks" force_save="1"/>
+                                <field name="total_amount_pay" force_save="1"/>
+                            </group>
+                            <group string="Gratuity Deduction">
+                                <field name="any_material" force_save="1"/>
+                                <field name="advance_salary" force_save="1"/>
+                                <field name="notice_period_deduction" force_save="1"/>
+                                <field name="misc_deduction" force_save="1"/>
+                                <field name="other_deductions" force_save="1"/>
+                                <field name="eosb_advance_deduction" force_save="1"/>
+                                <field name="furniture_deduction" force_save="1"/>
+                                <field name="loan_deduction" force_save="1"/>
+                                <field name="ticket_deduction" force_save="1"/>
+                                <field name="deduction_remarks" force_save="1"/>
+                                <field name="total_amount_deduction" force_save="1"/>
+                            </group>
+                            <group string="Gratuity Details">
+                                <!--                                <field name="employee_gratuity_configuration" force_save="1"/>-->
+                                <field name="employee_gratuity_duration" force_save="1"/>
+                            </group>
+                            <group string="Amount">
+                                <field name="total_amount_final_settlement" widget="monetary" force_save="1"/>
+                            </group>
+                            <group string="Final Settlement">
+                                <field name="mode_final_settlement"/>
+                                <field name="ref_final_settlement"
+                                       attrs="{'invisible': [('mode_final_settlement', 'not in', ['cheque', 'bank_transfer'])]}"/>
+                                <field name="total_amount_final_settlement" string="Amount"/>
+                                <field name="date_final_settlement"
+                                       attrs="{'invisible': [('mode_final_settlement', 'not in', ['cheque', 'bank_transfer'])]}"/>
+                            </group>
+                            <group string="Attachment">
+                                <field name="attachment_ids" force_save="1" widget="many2many_binary"/>
+                            </group>
+                            <!--                            <group string="Account Details" invisible="1">-->
+                            <!--                                <field string="Journal" name="hr_gratuity_journal"/>-->
+                            <!--                                <field string="Credit Account" name="hr_gratuity_credit_account"/>-->
+                            <!--                                <field string="Debit Account" name="hr_gratuity_debit_account"/>-->
+                            <!--                            </group>-->
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_employee_gratuity" model="ir.actions.act_window">
+            <field name="name">Gratuity Settlement</field>
+            <field name="res_model">hr.gratuity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="act_gratuity_report_action" model="ir.actions.server">
+            <field name="name">Generate Report</field>
+            <field name="model_id" ref="hr_gratuity_settlement.model_hr_gratuity"/>
+            <field name="binding_model_id" ref="hr_gratuity_settlement.model_hr_gratuity"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_generate_gratuity_report()
+            </field>
+        </record>
+        <record id="hr_gratuity_filter_view" model="ir.ui.view">
+            <field name="name">hr.gratuity.search</field>
+            <field name="model">hr.gratuity</field>
+            <field name="arch" type="xml">
+                <search string="Employee">
+                    <field name="employee_id"
+                           filter_domain="['|',('employee_id.registration_number', 'ilike', self),('employee_id.name', 'ilike', self)]"/>
+
+                </search>
+            </field>
+        </record>
+
+
+        <menuitem id="main_menu_hr_resignation" name="End of Service" sequence="71"
+                  parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
+                  groups="hr.group_hr_user"/>
+        <menuitem id="menu_hr_gratuity" name="Gratuity Settlement" parent="main_menu_hr_resignation"
+                  action="action_employee_gratuity" sequence="1" groups="hr.group_hr_user"/>
+
+
+        <report
+                id="action_report_final_settlement"
+                model="hr.gratuity"
+                string="Final Settlement"
+                report_type="qweb-pdf"
+                name="hr_gratuity_settlement.report_final_settlement"
+                file="hr_gratuity_settlement.report_final_settlement"
+                menu="True"
+        />
+        <report
+                id="action_report_final_settlement_windows"
+                model="hr.gratuity"
+                string="Final Settlement Win"
+                report_type="qweb-pdf"
+                name="hr_gratuity_settlement.report_final_settlement_windows"
+                file="hr_gratuity_settlement.report_final_settlement_windows"
+                menu="True"
+        />
+    </data>
+</odoo>

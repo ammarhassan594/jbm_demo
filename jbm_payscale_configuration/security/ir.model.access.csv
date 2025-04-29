@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_payscale_access_employee_payscale,employee_payscale.employee_payscale,model_employee_payscale,base.group_user,1,1,1,1
+access_contract_leave_type_base,contract_leave_type.contract_leave_type,model_contract_leave_type,base.group_user,1,0,0,0
+access_contract_leave_type_hr,contract_leave_type.contract_leave_type,model_contract_leave_type,hr.group_hr_user,1,1,1,1
+

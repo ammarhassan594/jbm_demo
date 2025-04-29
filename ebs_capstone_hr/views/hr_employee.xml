@@ -1,0 +1,118 @@
+<odoo>
+    <data>
+
+        <record id="ebs_inherit_employee_action" model="ir.actions.act_window">
+            <field name="res_model">hr.employee</field>
+            <field name="name">All Employees</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+        </record>
+
+        <record model="ir.ui.view" id="ebs_hr_employee_custom_form">
+            <field name="name">ebs.hr.employee.custom.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="priority">32</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="leave_manager_id" options="{'no_open': True, 'no_create_edit': True}"
+                           string="Leave Manager"/>
+                    <field name="is_manager"/>
+                    <field name="signatory"/>
+                    <field name="signatory_image" widget="image" class="image_class" height="30"/>
+                </xpath>
+                <xpath expr="//group[@name='payroll_group']" position="inside">
+                    <field name="joining_date"/>
+                    <field name="probation" force-save="1"/>
+                    <field name="probation_date"/>
+                    <field name="is_end_probation_period" readonly="1" invisible="1"/>
+                    <field name="number_of_years_work"/>
+                    <field name="contract_duration"/>
+                </xpath>
+<!--                <field name='job_id' position="before">-->
+                <!--                    <field name="joining_date"/>-->
+                <!--                    <field name="probation" force-save="1"/>-->
+                <!--                    <field name="probation_date"/>-->
+                <!--                    <field name="is_end_probation_period" readonly="1" invisible="1"/>-->
+                <!--                    <field name="number_of_years_work"/>-->
+                <!--                    <field name="contract_duration"/>-->
+                <!--                </field>-->
+                <field name="identification_id" position="attributes">
+                </field>
+                <field name="visa_no" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="visa_expire" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <xpath expr="//field[@name='identification_id']" position="before">
+                    <field name="ikama" invisible="1"/>
+                </xpath>
+                <field name="permit_no" position="replace">
+                    <field name="work_permit"/>
+                    <field name="permit_no" attrs="{'invisible': [('work_permit', '=', False)]}"/>
+                    <field name="permit_expire" attrs="{'invisible': [('work_permit', '=', False)]}"/>
+                </field>
+
+<!--                <xpath expr="//field[@name='bank_account_id']" position="after">-->
+<!--                        <field name="sponsorship_type" required="0"/>-->
+<!--                        <field name="waseef_sponsor" required="0"/>-->
+<!--                </xpath>-->
+
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="status"/>
+                </xpath>
+
+                <xpath expr="//field[@name='phone']" position="before">
+                    <field name="extension"/>
+
+                </xpath>
+
+                <xpath expr="//field[@name='km_home_work']" position="after">
+                    <field name="owns_car"/>
+                </xpath>
+
+                <xpath expr="//field[@name='bank_account_id']" position="after">
+                    <field name="bank_account_type"/>
+                    <field name="sim_card" string="Mobile"/>
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="before">
+                    <field name="bank_name"/>
+                </xpath>
+
+                <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                    <button name="custom_open_document" class="oe_stat_button"
+                            icon="fa-file" type="object">
+                        <field name="waseef_document_count" string="Documents" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ebs_hr_employee_public_custom_form">
+            <field name="name">ebs.hr.employee.public.custom.form</field>
+            <field name="model">hr.employee.public</field>
+            <field name="inherit_id" ref="hr.hr_employee_public_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="signatory"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_employee_tree_inherit_add_columns">
+            <field name="name">ebs.hr.employee.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="registration_number" string="Employee Number"/>
+                </field>
+
+            </field>
+        </record>
+        <!--        <record id="hr_contract.hr_employee_view_kanban" model="ir.ui.view">-->
+        <!--            <field name="groups_id" eval="[(4,ref('hr.group_hr_user'))]"/>-->
+        <!--        </record>-->
+
+    </data>
+</odoo>

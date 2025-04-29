@@ -1,0 +1,108 @@
+<odoo>
+    <record id="custom_documents_view_services" model="ir.ui.view">
+        <field name="name">custom.documents.view.services</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_form"/>
+        <field name="arch" type="xml">
+            <field name="owner_id" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+            <field name="type" position="after">
+                <field name="is_user_owner" invisible="1"/>
+                <field name="is_user_receiver" invisible="1"/>
+            </field>
+            <xpath expr="//page[@name='related_to']" position="inside">
+                <group>
+                    <field name="proposal_id" readonly="1" />
+                    <field name="service_id" readonly="1" attrs="{'invisible':[('service_id','=',False)]}"/>
+                    <field name="service_process_id" readonly="1" attrs="{'invisible':[('service_process_id','=',False)]}"/>
+                </group>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button type="action" name="%(transfer_document_wizard)d" attrs="{'invisible':[('is_user_owner','=',False)]}" string="Transfer Document"/>
+                <button type="object" name="receive_doc" attrs="{'invisible':[('is_user_receiver','=',False)]}" string="Receive Document"/>
+            </xpath>
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button name="action_show_transfer_log" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text">Transfer Log</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+     <record id="custom_documents_search_view_services" model="ir.ui.view">
+        <field name="name">custom.documents.view.services</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_search"/>
+        <field name="arch" type="xml">
+            <field name="name">
+                <field name="service_process_id"/>
+            </field>
+        </field>
+     </record>
+
+
+
+    <!--    ebs transfer document log form-->
+    <record model="ir.ui.view" id="view_ebs_transfer_document_log_form">
+        <field name="name">ebs.transfer.document.log.Form</field>
+        <field name="model">ebs.transfer.document.log</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="transfer_date"/>
+                            <field name="sender" options="{'no_create': True, 'no_create_edit':True}" />
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="receiver" options="{'no_create': True, 'no_create_edit':True}" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs transfer document log tree-->
+    <record id="view_ebs_transfer_document_log_tree" model="ir.ui.view">
+        <field name="name">ebs.transfer.document.log.tree</field>
+        <field name="model">ebs.transfer.document.log</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="document_id"/>
+                <field name="transfer_date"/>
+                <field name="sender"/>
+                <field name="receiver"/>
+                <field name="description"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_transfer_document_log_search" model="ir.ui.view">
+        <field name="name">ebs.transfer.document.log.search</field>
+        <field name="model">ebs.transfer.document.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="document_id"/>
+            </search>
+        </field>
+    </record>
+
+
+    <!--ebs transfer document log action-->
+    <record model="ir.actions.act_window" id="action_ebs_transfer_document_log">
+        <field name="name">Transfer Document Log</field>
+        <field name="res_model">ebs.transfer.document.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'document_id':active_id}</field>
+    </record>
+
+</odoo>

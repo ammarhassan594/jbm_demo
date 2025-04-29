@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_job_default_signature_tree_view" model="ir.ui.view">
+            <field name="name">hr.job.default.signature.tree</field>
+            <field name="model">hr.job.default.signature</field>
+            <field name="arch" type="xml">
+                <tree string="Default Signatures" editable="bottom">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_job_default_signature_act_window" model="ir.actions.act_window">
+            <field name="name">Default Signatures</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.job.default.signature</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem name="Job Positions Default Signatures" id="hr_job_default_signature_menu"
+                  parent="hr_recruitment.menu_hr_recruitment_configuration"
+                  action="hr_job_default_signature_act_window" sequence="11"/>
+
+    </data>
+</odoo>

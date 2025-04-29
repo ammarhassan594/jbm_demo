@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+         <record id="cnss_1" model="ebspayroll.cnss">
+            <field name="name">CNSS</field>
+            <field name="fromdate">1900-01-01</field>
+            <field name="todate">2099-01-01</field>
+            <field name="wife_amount">60000</field>
+            <field name="child_amount">33000</field>
+            <field name="illness_user_limit">2500000</field>
+            <field name="illness_user_percentage">3</field>
+            <field name="illness_limit">2500000</field>
+            <field name="illness_percentage">8</field>
+            <field name="end_of_service_limit">0</field>
+            <field name="end_of_service_percentage">8.5</field>
+            <field name="family_limit">1500000</field>
+            <field name="family_percentage">6</field>
+            <field name="currency" ref="base.LBP"/>
+        </record>
+    </data>
+</odoo>

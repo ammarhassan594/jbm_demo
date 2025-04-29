@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_job_offer" model="report.paperformat">
+            <field name="name">Job Offer</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">50</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="contract_job_offer"
+                model="hr.contract"
+                string="Contract Job Offer"
+                report_type="qweb-pdf"
+                name="hr_contract_custom.job_offer_report"
+                file="hr_contract_custom.job_offer_report"
+                print_report_name="object.name"
+                attachment="(object.company_id.name)+' Job Offer - '+(object.job_id.job_title.name if object.job_id.job_title else '')+'.pdf'"
+                paperformat="hr_contract_custom.paperformat_job_offer"
+
+        />
+
+
+        <template id="job_offer_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.report_job_offer_document"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_job_offer_document">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page" style="line-height: 1.3">
+                    <div class="header">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <img t-if="o.company_id.company_report_header" t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                 style="width:100%" alt="Letter Head"/>
+<!--                                <img src="/hr_contract_custom/static/src/img/Sa_header.png" class="img-fluid"/>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <h3>
+                            <u>
+                                <span>Private &amp; Confidential</span>
+                            </u>
+                        </h3>
+                    </div>
+                    <table class="table table-borderless table-sm font-weight-bold">
+                        <tbody>
+                            <tr>
+                                <td style="width: 10%;">Date :</td>
+                                <td class="text-left">
+                                    <t t-esc="datetime.date.today()"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;">Ref. No. :</td>
+                                <td class="text-left">
+                                    <t t-esc="o.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;">To :</td>
+                                <td class="text-left">
+                                    <t t-esc="o.applicant_id.partner_name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;">Subject :</td>
+                                <td class="text-left">EMPLOYMENT OFFER LETTER</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <p class="font-weight-bold">Dear
+                            <span>
+                                <t t-esc="o.applicant_id.partner_name"/>
+                            </span>
+                            ,
+                        </p>
+                        <p style="margin-bottom: 0px">
+                            We refer to your recent meeting and discussion with our management and after careful
+                            review
+                            of your qualification and work experience, we are delighted to offer you the post of
+                            <span>
+                                <b>
+                                    <t t-esc="o.job_id.name"/>
+                                </b>
+                            </span>
+                            .
+                        </p>
+                        <p>
+                            We will shortly offer you a formal contract of employment for completion, which will set
+                            out
+                            your terms &amp; conditions along with detailed job description which gives you more
+                            details
+                            about your daily tasks and responsibilities. In the meantime, this letter contains the
+                            key
+                            terms of our job offer:
+                        </p>
+                    </div>
+                    <table class="table table-bordered table-sm" style="border: 2px solid black">
+                        <tbody>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Position</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <b>
+                                        <t t-esc="o.job_id.name"/>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Reporting Line</b>
+                                </td>
+                                <td style="border: 1px solid black">You will be reporting direct to
+                                    <span>
+                                        <b>
+                                            <t t-esc="o.manager_id.name"/>
+                                        </b>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Probationary Period</b>
+                                </td>
+                                <td style="border: 1px solid black">(06) Six Months</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Commencement Date</b>
+                                </td>
+                                <td style="border: 1px solid black">After completion of visa and all government
+                                    requirements as per Qatar Labour Law
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Gross Monthly Salary</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.wage + o.accommodation + o.transport_allowance"/>/-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Basic Salary</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.wage"/>/-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Accommodation Allowance</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.accommodation"/>/-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Transportation Allowance</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.transport_allowance"/>/-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Other Allowance</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.food_allowance + o.mobile_allowance"/>/-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Salary Revision</b>
+                                </td>
+                                <td style="border: 1px solid black">Upon completion of six months of probationary
+                                    period
+                                    and based on performance evaluation, your salary will be reviewed. If you are
+                                    successfully completed the probation period with a satisfactory performance
+                                    results;
+                                    your gross monthly salary will be revised to be
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.wage + o.accommodation + o.transport_allowance"/>/- Salary breakdown is
+                                    as
+                                    follows: Basic salary is
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.wage"/>/-, Housing allowance of
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.accommodation"/>/- and transportation
+                                    allowance
+                                    <t t-esc="o.currency_id.name"/>
+                                    <t t-esc="o.transport_allowance"/>/-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Medical Insurance</b>
+                                </td>
+                                <td style="border: 1px solid black">Local Medical Insurance coverage will be
+                                    provided by
+                                    the company to employee only upon successful completion of the probation period.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Leave Entitlement</b>
+                                </td>
+                                <td style="border: 1px solid black">Leave entitlement is 24 working days per year
+                                    (pro
+                                    rata in the first year) and 8 official holidays as per Qatar Labour Law.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Airfare Reimbursement</b>
+                                </td>
+                                <td style="border: 1px solid black">Annual airfare reimbursement value up to
+                                    <span>
+                                        <b>
+                                            <t t-esc="o.currency_id.name"/>
+                                        </b>
+                                    </span>
+                                    <span>
+                                        <b>
+                                            <t t-esc="o.maximum_ticket_allowance"/>
+                                        </b>
+                                    </span>
+                                    will be given each year provided to utilize ticket(s) to/from the nearest
+                                    international airport of origin to Qatar.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Duration of Contract</b>
+                                </td>
+                                <td style="border: 1px solid black">Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>End of Service</b>
+                                </td>
+                                <td style="border: 1px solid black">As per Qatar Labour Law</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Duty Hours</b>
+                                </td>
+                                <td style="border: 1px solid black">Your normal working days will be Sunday to
+                                    Wednesday
+                                    8.30 am to 5.30 pm and Thursday from 8.30 am till 4.30 pm with 60 minutes for
+                                    daily
+                                    lunch break.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Performance Bonus</b>
+                                </td>
+                                <td style="border: 1px solid black">Will be as per company’s policies and procedures
+                                    depending on employee’s performance. Bonus distribution is at company’s
+                                    discretion.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #b79854; border: 1px solid black; width: 23%;">
+                                    <b>Other Employment Conditions</b>
+                                </td>
+                                <td style="border: 1px solid black">
+                                    <ul style="padding-left: 20px">
+                                        <li>You will be initially employed on six-months probationary period, during
+                                            which time the contract can be terminated by one-month notice period on
+                                            either side. After that and till completion of two years, your notice
+                                            period
+                                            will run as follows:
+                                            <ol type="1">
+                                                <li>The company giving you one-month notice in writing to terminate
+                                                    your
+                                                    employment.
+                                                </li>
+                                                <li>You are required to give the Company one-month notice in writing
+                                                    to
+                                                    terminate your employment.
+                                                </li>
+                                                <li>Once completed two years of continues employment then all above
+                                                    notice periods will be two-months.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>Upon giving notice of termination, you will be required to work until
+                                            your
+                                            notice period has been completed. All unused annual leave balance will
+                                            be
+                                            paid until the last working date.
+                                        </li>
+                                        <li>Any change in any benefit mentioned in this offer will be based on
+                                            performance evaluation and KPIs achievement as per company policies and
+                                            procedures.
+                                        </li>
+                                        <li>Over-time for junior and mid-level staff will be considered <strong>only
+                                        </strong> after
+                                            getting prior approval from head of department and HR department.
+                                        </li>
+                                        <li>All verbal commitments &amp; promises during the pre-employment period
+                                            will
+                                            not be considered if they are not written in the signed job offer.
+                                        </li>
+                                        <li>If the employee terminates the employment contract (resigns) on his own
+                                            before the completion of two years of continues employment period, the
+                                            company reserves the right to claim the costs of all training provided
+                                            for
+                                            which the company has incurred costs on pro rata basis from employee
+                                            joining
+                                            date.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <p>This job offer is subject to completion of visa and all government requirements as per Qatar
+                            Labour Law.
+                        </p>
+                        <p>The role will be challenging but extremely rewarding and we look forward to work with you in
+                            this regard. We would be grateful if you could confirm receipt of this offer letter. To
+                            indicate your acceptance of this offer, please sign <u>on both pages</u> and return it to us.
+                            If you have any queries regarding this offer, please do not hesitate to contact HR
+                            department. This offer is valid for 3 working days from the date of issuing it.
+                        </p>
+                        <p style="margin-bottom: 0px">Yours sincerely,</p>
+                        <p style="margin-bottom: 0px">
+                            <strong>Riyadh Al Abdallah</strong>
+                        </p>
+                        <p>
+                            <strong>HR &amp; ADMIN Manager</strong>
+                        </p>
+                    </div>
+                    <div class="container" style="border: 2px solid black">
+                        <p style="margin-bottom: 0px">
+                            <strong>For the selected applicant:</strong>
+                        </p>
+                        <p>
+                            I accepted this offer of Employment on the terms stated above. I confirmed that I will not
+                            back out/cancel/withdraw after I affirmed my signature and dated below. Should I back
+                            out/cancel/withdraw, during the processing of my visa, sponsorship transfer, work permit,
+                            travel booking, …etc. I understand the penalties/charges occurred and I am obliged to pay
+                            them.
+                        </p>
+                        <br/>
+                        <div class="row font-weight-bold">
+                            <div class="col-6">
+                                <t t-esc="o.applicant_id.partner_name"/>
+                                <p>Date:</p>
+                            </div>
+                            <div class="col-6">
+                                <span>Signature:</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <img t-if="o.company_id.company_report_footer" t-att-src="image_data_uri(o.company_id.company_report_footer)"
+                                 style="width:100%" alt="Letter Foot"/>
+<!--                                <img src="/hr_contract_custom/static/src/img/sa_1footer.png" class="img-fluid"/>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

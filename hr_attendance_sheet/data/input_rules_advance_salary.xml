@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!--Allowance-->
+        <!-- Leave Advance Wage -->
+        <record id="hr_payslip_other_input_advance_rule_wage" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Wage</field>
+            <field name="code">LADW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Accommodation	-->
+        <record id="hr_payslip_other_input_advance_rule_accomd" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Accommodation</field>
+            <field name="code">LADACM</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_payslip_other_input_advance_rule_mob_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Mobile Allowance</field>
+            <field name="code">LADMO</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Food Allowance	-->
+        <record id="hr_payslip_other_input_advance_rule_food_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Food Allowance</field>
+            <field name="code">LADFDW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Site Allowance -->
+        <record id="hr_payslip_other_input_advance_rule_site_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Site Allowance</field>
+            <field name="code">LADSTW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Transport Allowance -->
+        <record id="hr_payslip_other_input_advance_rule_transport_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Transport Allowance</field>
+            <field name="code">LADTRW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Other Allowance -->
+        <record id="hr_payslip_other_input_advance_rule_other_allow" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Other Allowance</field>
+            <field name="code">LADOTHW</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!-- Deduction -->
+        <!-- Leave Advance Wage Deduction-->
+        <record id="hr_payslip_other_input_advance_rule_wage_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Wage Deduction</field>
+            <field name="code">LADWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Deduction	-->
+        <record id="hr_payslip_other_input_advance_rule_accomd_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Accommodation Deduction</field>
+            <field name="code">LADACMD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Mobile Deduction	-->
+        <record id="hr_payslip_other_input_advance_rule_mob_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Mobile Allowance Deduction</field>
+            <field name="code">LADMOD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Food Deduction	-->
+        <record id="hr_payslip_other_input_advance_rule_food_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Food Allowance Deduction</field>
+            <field name="code">LADFDWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Site Deduction -->
+        <record id="hr_payslip_other_input_advance_rule_site_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Site Allowance Deduction</field>
+            <field name="code">LADSTWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Transport Deduction -->
+        <record id="hr_payslip_other_input_advance_rule_transport_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Transport Allowance Deduction</field>
+            <field name="code">LADTRWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+        <!--Leave Advance Other Deduction -->
+        <record id="hr_payslip_other_input_advance_rule_other_ded" model="hr.payslip.input.type">
+            <field name="name">Leave Advance Other Allowance Deduction</field>
+            <field name="code">LADOTHWD</field>
+            <field name="struct_ids" eval="[(4, ref('hr_attendance_sheet.structure_worker_wassef'))]"/>
+        </record>
+
+    </data>
+</odoo>

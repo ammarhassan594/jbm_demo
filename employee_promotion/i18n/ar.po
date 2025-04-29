@@ -1,0 +1,513 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * employee_promotion
+#
+# Translators:
+# Mervat Mosaad, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 02:07+0000\n"
+"PO-Revision-Date: 2016-12-17 02:07+0000\n"
+"Last-Translator: SaFi J. <safi2266@gmail.com>, 2016\n"
+"Language-Team: Arabic (https://www.transifex.com/oca/teams/23907/ar/)\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_promotion_rules__from_grade_id
+msgid "From Grade"
+msgstr "من الدرجة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_promotion_rules__to_grade_id
+msgid "To Grade"
+msgstr "الي الدرجة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_promotion_rules__degree_id
+msgid "Degree"
+msgstr "الدرجة"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_promotion_rules__number_of_actual_work_days
+msgid "Number Of Actual Work Days"
+msgstr "عدد أيام العمل الفعلية"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_promotion_rules__contract_marital_status
+msgid "Contract Marital Status"
+msgstr "الحالة الاجتماعية التعاقدية"
+
+
+#. module: employee_promotion
+#: model:ir.actions.act_window,name:employee_promotion.promotion_rules_action
+msgid "Promotion Rules"
+msgstr "قواعد الترقيات"
+
+#. module: employee_promotion
+#: model:ir.ui.menu,name:employee_promotion.promotion_rules_menu
+msgid "Promotion Rules"
+msgstr "قواعد الترقيات"
+
+
+#. module: employee_promotion
+#: model:ir.actions.act_window,name:employee_promotion.employee_promotion_action
+msgid "Employee Promotion"
+msgstr "ترقية الموظفين"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Basic Info"
+msgstr "معلومات أساسية"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.inherit_employee_view_add_promotion
+msgid "Promotions"
+msgstr "ترقيات"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__job_id
+msgid "Job Position"
+msgstr "وظيفة"
+
+
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Employee Number"
+msgstr "  رقم الموظف "
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__department_id
+msgid "Department"
+msgstr "القسم"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__contract_status_old
+msgid "Current Contract Status"
+msgstr "حالة العقد الحالي"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__exceptional_promotion
+msgid "Exceptional Promotion"
+msgstr "ترقية استثنائية"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__contract_id
+msgid "Old Contract"
+msgstr "العقد القديم"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "OLd Group"
+msgstr " المجموعة القديمة "
+
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "New Group"
+msgstr " المجموعة الحديثة "
+
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "New Contract"
+msgstr " عقد جديد "
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__old_payscale_id
+msgid "Old Group"
+msgstr "المجموعة القديمة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__contract_status_new
+msgid "Contract Status New"
+msgstr "حالة العقد جديد"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__date_start
+msgid "Effective Date"
+msgstr "التاريخ الفعلي"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__new_contract_id
+msgid "New Contract"
+msgstr "عقد جديد"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__payment_date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields.selection,name:employee_promotion.selection__employee_promotion__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields.selection,name:employee_promotion.selection__employee_promotion__state__submit
+msgid "Submit"
+msgstr "انتظار"
+
+#. module: employee_promotion
+#: model:ir.model.fields.selection,name:employee_promotion.selection__employee_promotion__state__confirm
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: employee_promotion
+#: model:ir.model.fields.selection,name:employee_promotion.selection__employee_promotion__state__hr_approve
+msgid "Approved"
+msgstr "موافقه"
+
+#. module: employee_promotion
+#: model:ir.model.fields.selection,name:employee_promotion.selection__employee_promotion__state__approve
+msgid "Approved By HR"
+msgstr "موافقه من الموارد البشرية"
+
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Description"
+msgstr " الوصف "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Old Salary Info"
+msgstr " معلومات الراتب القديمة "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Salary Info"
+msgstr " معلومات الراتب  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Basic Salary"
+msgstr " الراتب الأساسي  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Housing Allowance"
+msgstr " بدل سكن  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Mobile Allowance"
+msgstr " بدل الهاتف المحمول  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Transport Allowance"
+msgstr " بدل النقل  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Other Allowance"
+msgstr " بدلات أخرى  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Social Allowance"
+msgstr " بدلات أجتماعية  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Car Allowance"
+msgstr " بدل سيارة  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Supervision Allowance"
+msgstr " بدل الإشراف  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Gross Salary"
+msgstr " الراتب الإجمالي  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Ticket Allowance"
+msgstr "بدل التذاكر  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Mobilization Allowance"
+msgstr "بدل تعبئة  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Car Loan"
+msgstr "قرض سيارة  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Marriage Loan"
+msgstr "قرض زواج  "
+
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Furniture Allowance"
+msgstr "بدل الأثاث  "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Education Allowance"
+msgstr "بدل التعليم "
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Business Allowance"
+msgstr "بدل العمل"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Adult Fare"
+msgstr "تذكرة البالغين"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Child Fare"
+msgstr "تذكرة الطفل"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Infant Fare"
+msgstr "تذكرة الرضع"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "Number of allowed dependents"
+msgstr "عدد المعالين المسموح بهم"
+
+#. module: employee_promotion
+#: model_terms:ir.ui.view,arch_db:employee_promotion.employee_promotion_form_view
+msgid "New Salary Info"
+msgstr "معلومات الراتب الجديد"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__wage_new
+msgid "Basic Salary"
+msgstr "الراتب الأساسي"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__housing_new
+msgid "Housing"
+msgstr "بدل سكن"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__mobile_allowance_new
+msgid "Mobile Allowance"
+msgstr "بدل الهاتف المحمول"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__transport_allowance_new
+msgid "Transport Allowance"
+msgstr "بدل النقل"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__other_allowance_new
+msgid "Other Allowance"
+msgstr "بدلات أخرى"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__social_alw_new
+msgid "Social Allowance"
+msgstr "بدلات أجتماعية"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__car_alw_new
+msgid "Car Allowance"
+msgstr "بدل سيارة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__supervision_alw_new
+msgid "Supervision Allowance"
+msgstr "بدل الإشراف"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__gross_salary_new
+msgid "Gross Salary"
+msgstr "الراتب الإجمالي"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__ticket_allowance_new
+msgid "Ticket Allowance"
+msgstr "بدل التذاكر"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__mobilisation_allowance
+msgid "Mobilisation/ Repatriation/Shipping Allowance"
+msgstr "بدل التعبئة/العوده/الشحن"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__car_loan
+msgid "Car Loan"
+msgstr "قرض سيارة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__marriage_loan_for_permanent_staff_new
+msgid "Marriage Loan"
+msgstr "قرض زواج"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__furniture_allowance
+msgid "Furniture Allowance"
+msgstr "بدل الأثاث"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__education_allowance
+msgid "Education Allowance"
+msgstr "بدل التعليم"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__business_allowance
+msgid "BUSINESS/TRAINING TRIP GCC"
+msgstr "رحلة العمل/التدريب"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__adult_fare_new
+msgid "Adult Fare"
+msgstr "تذكرة البالغين"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__child_fare_new
+msgid "Child Fare"
+msgstr "تذكرة الطفل"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__infant_fare_new
+msgid "Infant Fare"
+msgstr "تذكرة الرضع"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__number_of_children_allowed_new
+msgid "Number of allowed dependents"
+msgstr "عدد المعالين المسموح بهم"
+
+
+#. module: employee_promotion
+#: model:ir.ui.menu,name:employee_promotion.employee_promotion_menu
+msgid "Employee Promotion"
+msgstr "ترقية الموظفين"
+
+#. module: employee_promotion
+#: model:ir.ui.menu,name:employee_promotion.eligible_for_promotion
+msgid "Eligible For Promotion"
+msgstr "المؤهلين للترقية"
+
+#. module: employee_promotion
+#: model:ir.actions.act_window,name:employee_promotion.eligible_for_promotion_action
+msgid "Eligible For Promotion"
+msgstr "المؤهلين للترقية"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_eligible_for_promotion__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_eligible_for_promotion__current_grade
+msgid "Current Grade"
+msgstr "الدرجة الحاليه"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_eligible_for_promotion__new_grade
+msgid "New Grade"
+msgstr "الدرجة الجديدة"
+
+#. module: employee_promotion
+#: model:ir.ui.menu,name:employee_promotion.payscale_scheduled_rais_menu
+msgid "Payscale Scheduled Raise"
+msgstr "جدول زياده الرواتب"
+
+
+
+#. module: employee_promotion
+#: model:ir.actions.act_window,name:employee_promotion.payscale_scheduled_rais_action
+msgid "Payscale Scheduled Raise"
+msgstr "جدول زياده الرواتب"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_payscale_scheduled_raise__name
+msgid "Description"
+msgstr "الوصف"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_payscale_scheduled_raise__payscale_id
+msgid "Payscale"
+msgstr "جدول الرواتب"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_payscale_scheduled_raise__fixed_amount
+msgid "Fixed Amount"
+msgstr "قيمه ثابتة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_payscale_scheduled_raise__percentage
+msgid "Percentage"
+msgstr "نسبة"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_payscale_scheduled_raise__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_payscale_scheduled_raise__actual_days
+msgid "Actual Days"
+msgstr "الايام الفعلية"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__name
+msgid "Promotion Name"
+msgstr "اسم الترقيه"
+
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_employee_promotion__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: employee_promotion
+#: model:ir.model.fields,field_description:employee_promotion.field_hr_employee__degree_id
+msgid "Degree"
+msgstr "الدرجة"
+
+

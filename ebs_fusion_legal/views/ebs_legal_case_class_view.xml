@@ -1,0 +1,82 @@
+<odoo>
+    <!--    ebs legal case class form-->
+    <record model="ir.ui.view" id="view_ebs_legal_case_class_form">
+        <field name="name">ebs.legal.case.class.Form</field>
+        <field name="model">ebs.legal.case.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="arabic_name"/>
+                        <field name="case_type_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal case class tree-->
+    <record id="view_ebs_legal_case_class_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.case.class.tree</field>
+        <field name="model">ebs.legal.case.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="arabic_name"/>
+                <field name="case_type_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal case class action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_case_class">
+        <field name="name">Legal Case Classification</field>
+        <field name="res_model">ebs.legal.case.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_class" name="Case Classification"
+              parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_case_class" sequence="7"/>
+
+    <!--    ebs legal case class form-->
+    <record model="ir.ui.view" id="view_ebs_legal_case_partial_class_form">
+        <field name="name">ebs.legal.case.partial.class.Form</field>
+        <field name="model">ebs.legal.case.partial.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="arabic_name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal case class tree-->
+    <record id="view_ebs_legal_case_partial_class_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.case.partial.class.tree</field>
+        <field name="model">ebs.legal.case.partial.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="arabic_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs legal case class action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_case_partial_class">
+        <field name="name">Legal Case Partial Classification</field>
+        <field name="res_model">ebs.legal.case.partial.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_partial_class" name="Case Partial Classification"
+              parent="menu_ebs_legal_case_config" action="ebs_fusion_legal.action_ebs_legal_case_partial_class" sequence="8"/>
+
+</odoo>

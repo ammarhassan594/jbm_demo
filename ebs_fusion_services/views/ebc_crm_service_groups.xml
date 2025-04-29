@@ -1,0 +1,46 @@
+<odoo>
+    <!--    ebs crm services groups form-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_groups_form">
+        <field name="name">ebs.crm.service.groups.Form</field>
+        <field name="model">ebs.crm.service.groups</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="service_group" string="Services">
+                            <field name="group_line_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service groups tree-->
+    <record id="view_ebs_crm_service_groups_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.service.groups.tree</field>
+        <field name="model">ebs.crm.service.groups</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service groups action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_groups">
+        <field name="name">Service Group</field>
+        <field name="res_model">ebs.crm.service.groups</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

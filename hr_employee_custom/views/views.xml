@@ -1,0 +1,915 @@
+<odoo>
+    <data>
+        <record id="hr.hr_employee_print_badge" model="ir.actions.report">
+            <field name="groups_id" eval="[(4, ref('base.user_admin'))]"/>
+
+        </record>
+
+
+        <record id="resume_line_view_form_inherited" model="ir.ui.view">
+            <field name="name">hr.resume.line.form.inherited</field>
+            <field name="model">hr.resume.line</field>
+            <field name="inherit_id" ref="hr_skills.resume_line_view_form"/>
+            <field name="arch" type="xml">
+                <group position="inside">
+                    <field name="related_line_type" invisible="1"/>
+                    <group attrs="{'invisible': [('related_line_type', '!=', 'edu')]}">
+                        <field name="education_level"/>
+                        <field name="institute_name"/>
+                        <field name="major_subject"/>
+                        <field name="educational_status"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+                    <group attrs="{'invisible': [('related_line_type', '!=', 'exp')]}">
+                        <field name="company_name"/>
+                        <field name="type_business"/>
+                        <field name="job_title"/>
+                        <field name="work_city"/>
+                        <field name="work_country"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+
+                </group>
+            </field>
+        </record>
+
+        <record id="ebs_fusion_contacts_form_extended" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority">49</field>
+            <field name="inherit_id" ref="ebs_fusion_contacts.view_partner_client_form"/>
+            <field name="arch" type="xml">
+                <div id="client_button_box" position="inside">
+                    <!--                    <button class="oe_stat_button" type="object" name="action_see_employee"  string="HR"  icon="fa-file-text-o"/>-->
+                    <!--                    <button class="oe_stat_button" type="object" name="action_see_employee_attendance"  string="Attendance" icon="fa-clock-o"/>-->
+                </div>
+
+                <xpath expr="//page[@name='hr']//button[@name='view_budgets']" position="before">
+                    <button class="oe_highlight ml-2 mb-2" type="object" name="action_see_employee" string="Employees"
+                            icon="fa-file-text-o"
+                            attrs="{'invisible':[('company_partner','=',False)]}"/>
+                </xpath>
+                <xpath expr="//page[@name='accounts']//button[@name='open_partner_ledger']" position="before">
+                    <button class="oe_highlight ml-2 mb-2" type="object" name="view_penalty"
+                            string="Penalty" icon="fa-file-text-o"
+                            attrs="{'invisible':[('company_partner','=',False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Inherited kanban view to add assignment field-->
+        <record id="hr_employee_view_kanban_inherited_client" model="ir.ui.view">
+            <field name="name">hr.employee.view.kanban.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="arch" type="xml">
+
+                <data>
+                    <xpath expr="//ul" position="inside">
+                        <li t-if="record.employee_check_in.raw_value" class="o_force_ltr">
+                            <strong>Check IN :</strong>
+                            <field name="employee_check_in" class="oe_inline" />
+                        </li>
+                        <li t-if="record.employee_check_out.raw_value" class="o_force_ltr">
+                            <strong>Check OUT :</strong>
+                            <field name="employee_check_out" class="oe_inline"/>
+                        </li>
+
+                    </xpath>
+                    <xpath expr="//field[hasclass('o_kanban_image_fill_left')]" position="replace">
+                        <div class="o_kanban_image_fill_left o_kanban_image_full"
+                             t-attf-style="background-image: url(#{kanban_image('hr.employee', 'image_128', record.id.raw_value)})"
+                             role="img"/>
+                    </xpath>
+
+                    <xpath expr="//field[@name='name']" position="replace">
+                        <field name="is_arabic_session" invisible="1"/>
+                        <span attrs="{'invisible': [('is_arabic_session', '=', False)]}">
+                            <field name="arabic_name"/>
+                        </span>
+                        <span attrs="{'invisible': [('is_arabic_session', '!=', False)]}">
+                            <field name="name"/>
+                        </span>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="taqat_hr_employee_list_inherited" model="ir.ui.view">
+            <field name="name">hr.employee.list.view.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath position="before" expr="//field[@name='name']">
+                    <field name="arabic_name"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="custom_contacts_view_employee" model="ir.ui.view">
+            <field name="name">custom.contacts.view.employee</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='parent_id'][last()]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="job_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_clients_review_tree_inherit" model="ir.ui.view">
+            <field name="name">res.partner.clients.review.tree.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="ebs_fusion_contacts.view_clients_review_tree"/>
+            <field name="arch" type="xml">
+                <field name="client_state" position="before">
+                    <field name="total_service_fees" optional="hide"/>
+                    <field name="total_salary_package" optional="hide"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clients_review_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.clients.review.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="ebs_fusion_contacts.view_clients_review_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='document_page']" position="after">
+                    <page name="hr" string="HR">
+                        <notebook>
+                            <page name="employees" string="Employees">
+                                <notebook>
+                                    <page name="employee" string="Client Employee">
+                                        <button name="open_employee_list"
+                                                icon="fa-tasks"
+                                                type="object" class="oe_highlight mb-2"/>
+                                        <button name="%(hr_employee_custom.employee_button_action)d"
+                                                string="Create Employee"
+                                                type="action" class="oe_highlight ml-2 mb-2"
+                                                context="{
+                                'default_partner_parent_id':id,
+                                'default_employee_type': 'client_employee',
+                                }"/>
+                                        <field name="client_employee_ids"
+                                               context="{'default_employee_type': 'client_employee',
+                                           'tree_view_ref':'ebs_fusion_hr_employee.outsourced_employee_client_list_view'}">
+                                        </field>
+
+                                    </page>
+                                    <page string="Outsourced Employee">
+                                        <group>
+                                            <group>
+                                                <field name="prorata_method"/>
+                                                <field name="has_grading_system"/>
+                                                <field name="total_service_fees"/>
+                                                <field name="total_salary_package"/>
+                                            </group>
+                                        </group>
+                                        <button name="open_outsourced_employee_list"
+                                                icon="fa-tasks"
+                                                type="object" class="oe_highlight mb-2"/>
+                                        <button name="%(hr_employee_custom.employee_button_action)d"
+                                                string="Create Outsourced Employee"
+                                                type="action" class="oe_highlight ml-2 mb-2"
+                                                context="{
+                                    'default_partner_parent_id':id,
+                                    'default_employee_type':'fos_employee',
+                                    }"/>
+                                        <field name="fos_employee_ids"
+                                               context="{'default_employee_type': 'fos_employee',
+                                    'tree_view_ref':'ebs_fusion_hr_employee.outsourced_employee_client_list_view'}">
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </page>
+                            <page name="operations" string="Operations">
+                                <group>
+                                    <group string="MADLSA">
+                                        <field name="madlsa_username"/>
+                                        <field name="madlsa_password"/>
+                                        <field name="madlsa_email"/>
+                                        <field name="madlsa_phone"/>
+                                        <field name="madlsa_electricity"/>
+                                        <field name="madlsa_water"/>
+
+                                    </group>
+                                    <group string="Medical Commision">
+                                        <field name="med_com_password"/>
+                                        <field name="med_com_phone"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_employee_form_custom" model="ir.ui.view">
+            <field name="name">hr.employee.form.custom</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="priority">32</field>
+            <field name="arch" type="xml">
+
+                <header position="inside">
+                    <field name="id_generated" invisible="1"/>
+                    <!--                    <button string="Generate ID" class="btn btn-primary" type="object"-->
+                    <!--                            name="open_approve_employee_wizard"-->
+                    <!--                            attrs="{'invisible': [('id_generated','=',True)]}" groups="base.user_admin"/>-->
+                    <button string="Approve" class="btn btn-primary" type="object" name="state_approve"
+                            attrs="{'invisible': [('state','=', 'approved')]}"/>
+                    <button string="Reject" class="btn btn-primary" type="object" name="log_and_reject"
+                            attrs="{'invisible': [('state','=', 'reject')]}"/>
+                    <button string="Set Pending" class="btn btn-primary" type="object" name="state_pending"
+                            attrs="{'invisible': [('state','=', 'pending')]}"/>
+                    <button string="Link Partner" class="btn btn-primary" type="object" name="link_partner"
+                            attrs="{'invisible': [('user_partner_id','!=', False)]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="contacts_dependent" string="Family"
+                            icon="fa-tasks"/>
+                </div>
+
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="options">{'no_quick_create':True,'no_create_edit':True,'no_open': True}</attribute>
+                    <!--                    <attribute name="attrs">{'invisible':[('employee_type','=','fos_employee')]}</attribute>-->
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="before">
+                    <field name="outsourced_status" attrs="{'invisible': [('employee_type', '!=', 'fos_employee')]}"/>
+                    <field name="absconding_report_no"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'sponsored_absconding')]}"/>
+                    <field name="transfer_no"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'sponsored_Transferring_out')]}"/>
+                    <field name="end_of_notice_period"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'sponsored_Transferring_out')]}"/>
+                    <field name="release_of_responsibility_date"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'sponsored_Transferring_out')]}"
+                           readonly="1"/>
+                    <field name="date_of_transfer_completion"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'transferred_out')]}"/>
+                    <field name="work_permit_no"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'work_permit')]}"/>
+                    <field name="date_of_cancellation"
+                           attrs="{'invisible': [('outsourced_status', '!=', 'cancelled')]}"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Outsourced Status Log" name="outsourced_status_log"
+                          attrs="{'invisible': [('employee_type', '!=', 'fos_employee')]}">
+                        <field name="outsourced_status_log_ids" readonly="1">
+                            <tree default_order="create_date desc">
+                                <field name="outsourced_status"/>
+                                <field name="created_by"/>
+                                <field name="create_date" string="Date Of Modification"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='job_id']" position="attributes">
+                    <attribute name="options">{'no_quick_create':True,'no_create_edit':True,'no_open': True}</attribute>
+                </xpath>
+                <!--                <xpath expr="//field[@name='job_id']" position="attributes">-->
+                <!--                    <attribute name="string">Designation</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='parent_id'][last()]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+
+                <xpath expr="//page[@name='hr_settings']//field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('employee_type','=','client_employee')]}</attribute>
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_id'][last()]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+                </xpath>
+                <!--                <xpath expr="//field[@name='company_id']" position="attributes">-->
+                <!--                    <attribute name="attrs">{'invisible': [('employee_type','=','client_employee')]}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//group[@name='payroll_group']" position="inside">
+                    <field name="department_id"/>
+                    <!--                    <field name="qid_job_position_id"/>-->
+                    <field name="has_grading_system" invisible="1"/>
+                    <field name="grade" attrs="{'invisible':['|',('employee_type','!=','fos_employee'),
+                        ('has_grading_system','=',False)]}"/>
+
+
+                    <!--                    <field name="category_ids" widget="many2many_tags"/>-->
+                    <!--                    <field name="qid_name" required="1"/>-->
+                    <!--                    <field name="passport_name" required="1"/>-->
+                    <field name="parent_id"
+                           attrs="{'readonly': [('read_only_user_role','=',True)]}"/>
+                    <!--                    <field name="joining_date"/>-->
+                    <field name="contract_start_date"/>
+                    <field name="time_hired"/>
+                    <field name="time_hired_in_no"/>
+                    <field name="gender"/>
+                    <field name="nationality_id"/>
+                    <field name="nationality_birth" invisible="1"/>
+                    <field name="is_wps"/>
+                    <field name="is_labor" attrs="{'invisible': [('employee_type', '!=', 'fusion_employee')]}"/>
+                </xpath>
+                <!--                <xpath expr="//field[@name='job_id']" position="after">-->
+                <!--                    <field name="department_id"/>-->
+                <!--                    &lt;!&ndash;                    <field name="qid_job_position_id"/>&ndash;&gt;-->
+                <!--                    <field name="has_grading_system" invisible="1"/>-->
+                <!--                    <field name="grade" attrs="{'invisible':['|',('employee_type','!=','fos_employee'),-->
+                <!--                        ('has_grading_system','=',False)]}"/>-->
+
+
+                <!--                    &lt;!&ndash;                    <field name="category_ids" widget="many2many_tags"/>&ndash;&gt;-->
+                <!--                    &lt;!&ndash;                    <field name="qid_name" required="1"/>&ndash;&gt;-->
+                <!--                    &lt;!&ndash;                    <field name="passport_name" required="1"/>&ndash;&gt;-->
+                <!--                    <field name="parent_id"-->
+                <!--                           attrs="{'readonly': [('read_only_user_role','=',True)]}"/>-->
+                <!--                    &lt;!&ndash;                    <field name="joining_date"/>&ndash;&gt;-->
+                <!--                    <field name="contract_start_date"/>-->
+                <!--                    <field name="time_hired"/>-->
+                <!--                    <field name="time_hired_in_no"/>-->
+                <!--                    <field name="gender"/>-->
+                <!--                    <field name="nationality_id"/>-->
+                <!--                    <field name="nationality_birth" invisible="1"/>-->
+                <!--                    <field name="is_wps"/>-->
+                <!--                    <field name="is_labor" attrs="{'invisible': [('employee_type', '!=', 'fusion_employee')]}"/>-->
+                <!--                </xpath>-->
+
+                <field name="category_ids" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <!--                <field name="mobile_phone" position="attributes">-->
+                <!--                    <attribute name="invisible">1</attribute>-->
+                <!--                </field>-->
+
+                <field name="work_phone" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="work_email" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </field>
+                <!--                <field name="work_location" position="attributes">-->
+                <!--                    <attribute name="invisible">1</attribute>-->
+                <!--                </field>-->
+
+
+                <!--<xpath expr="//page[@name='public']//field[@name='work_phone']" position="before">
+                    <field name="contract_employment_type"/>
+                </xpath>-->
+                <field name="mobile_phone" position="before">
+
+                    <field name="is_contract_access" invisible="1"/>
+                    <field name="read_only_user_role" invisible="1"/>
+                    <field name="invisible_user_role" invisible="1"/>
+                    <field name="all_model_read_only" invisible="1"/>
+                    <!--                    <field name="title" invisible="1"/>-->
+                    <!--                    <field name="name" string="Name(English)" placeholder="Name" invisible="1"/>-->
+                    <!--                    <field name="arabic_name" string="Name(Arabic)" placeholder="الاسم" invisible="1"/>-->
+                    <!--&lt;!&ndash;                    <field name="qid_name"/>&ndash;&gt;-->
+                    <!--&lt;!&ndash;                <field name="passport_name"/>&ndash;&gt;-->
+                    <!--                    <field name="reference" invisible="1"/>-->
+                    <field name="employee_type" readonly="1" invisible="1"/>
+
+                    <field name="contract_employment_type" invisible="1"
+                           attrs="{'readonly':[('read_only_user_role','=',True)]}"
+                           options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+
+
+                    <field name="lang" invisible="1" options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                </field>
+
+                <field name="phone" position="after">
+                    <field name="country_id" string="Country *"/>
+                    <field name="state_id"/>
+                    <field name="city"/>
+                    <field name="street"/>
+                    <field name="po_box" string="PO-Box *"/>
+                </field>
+
+                <field name="gender" position="after">
+
+                    <field name="mothers_name" attrs="{'invisible': [('employee_type','=','fos_employee')]}"/>
+                    <field name="arabic_mothers_name"
+                           attrs="{'invisible': [('employee_type','!=','fusion_employee')]}"/>
+                </field>
+
+                <xpath expr="//field[@name='address_home_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='private_email']" position="attributes">
+                    <attribute name="string">Personal Email *</attribute>
+                    <attribute name="readonly">0</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state_id']" position="attributes">
+                    <attribute name="string">City *</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_phone']" position="attributes">
+                    <attribute name="string">Business Phone No</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="attributes">
+                    <attribute name="string">Personal Phone No</attribute>
+                </xpath>
+                <xpath expr="//field[@name='city']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='identification_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='passport_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']//field[@name='marital']/.." position="attributes">
+                    <attribute name="attrs">{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']//field[@name='marital']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']//field[@name='certificate']/.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']//field[@name='children']/.." position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']//group[@name='has_work_permit']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='has_work_permit']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='departure']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='%(hr.plan_wizard_action)d']" position="attributes">
+                    <attribute name="groups">base.user_admin</attribute>
+                </xpath>
+
+                <!--                <page name="hr_settings" position="attributes">-->
+                <!--                    <attribute name="groups">base.user_admin</attribute>-->
+                <!--                </page>-->
+
+                <xpath expr="//field[@name='tz']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='address_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='resource_calendar_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//group[@name='departure']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//group[@name='managers']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('employee_type','!=','fusion_employee')]}</attribute>
+                </xpath>
+                <!--                <xpath expr="//page[@name='hr_settings']" position="attributes">-->
+                <!--                    <attribute name="attrs">{'invisible':[('employee_type','!=','fusion_employee')]}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//page[@name='hr_settings']" position="attributes">-->
+                    <attribute name="attrs">{'invisible':[('employee_type','=','client_employee')]}</attribute>
+                </xpath>
+                <!--                <xpath expr="//field[@name='parent_id']" position="attributes">-->
+                <!--                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='work_email']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <!--                <xpath expr="//field[@name='work_location']" position="attributes">-->
+                <!--                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='work_phone']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+
+
+                <xpath expr="//page[@name='personal_information']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('invisible_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']/group/group" position="attributes">
+                    <attribute name="attrs">{'invisible': [('invisible_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='public']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('invisible_user_role','=',True)]}</attribute>
+                </xpath>
+
+
+                <xpath expr="//field[@name='birthday']" position="attributes">
+                    <attribute name="string">Date of Birth *</attribute>
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='place_of_birth']" position="attributes">
+                    <attribute name="string">Place of Birth *</attribute>
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='country_of_birth']" position="attributes">
+                    <attribute name="string">Country of Birth *</attribute>
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='gender']" position="attributes">
+                    <attribute name="string">Gender *</attribute>
+                    <attribute name="attrs">{'readonly': [('read_only_user_role','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='country_id']" position="attributes">
+                    <attribute name="string">Country *</attribute>
+                </xpath>
+
+                <page name="personal_information" position="after">
+                    <page name="dependent" string="Dependendts" invisible="1"
+                          attrs="{'invisible':['|',('invisible_user_role','=',True),('employee_type','=','client_employee')]}">
+                        <field name="dependents" context="{'default_related_employee':id}">
+                            <tree>
+                                <field name="name"/>
+                                <field name="contact_relation_type_id"/>
+                                <field name="state"/>
+                                <button name="state_approve" icon="fa-check" class="btn-alert" type="object"
+                                        attrs="{'invisible': [('state','=', 'approved')]}" groups="base.user_admin"/>
+                            </tree>
+
+                        </field>
+                    </page>
+                    <page name="housings" string="Housings" invisible="1">
+                        <field name="housing_ids" context="{'default_employee_id':id}">
+                            <tree>
+                                <!--                                <field name="housing_category_id"/>-->
+                                <field name="housing_location" invisible="1"/>
+                                <field name="city_id"/>
+                                <field name="emirate_text"/>
+                                <field name="housing_residential_type"/>
+                                <field name="housing_ownership"/>
+                                <!--                                <field name="housing_utility_bill"/>-->
+                                <!--                                <field name="related_declaration_form"/>-->
+                                <!--                                <field name="related_lease_contract"/>-->
+                                <field name="yearly_rent_value"/>
+                                <field name="wage" invisible="1"/>
+                                <field name="tawtheeq_number"/>
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="notices" string="Warnings"
+                          attrs="{'invisible':['|',('invisible_user_role','=',True),('employee_type','=','client_employee')]}">
+                        <field name="notice_ids" context="{'default_related_employee':id}"
+                               attrs="{'readonly':[('read_only_user_role','=',True)],'invisible': [('invisible_user_role','=',True)]}"/>
+                    </page>
+                    <page name="events" string="Events" invisible="1">
+                        <field name="employee_event_ids" context="{'default_employee_id':id}">
+                            <tree context="{'default_employee_id':id}" delete="0">
+                                <field name="name"/>
+                                <field name="event_reason"/>
+                                <field name="start_date" widget="date"/>
+                                <!--                                <field name="end_date"/>-->
+                                <field name="update_info"/>
+                                <field name="is_triggered" readonly="1"/>
+                                <field name="is_processed" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                                <field name="create_date" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+
+
+                </page>
+                <!--                <xpath expr="//page[1]" position="attributes">-->
+                <!--                    <attribute name="attrs">{"invisible":[("employee_type","=","client_employee")]}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//page[@name='hr_settings']//field[@name='user_id']" position="before">
+                    <button string="Create User" class="btn btn-primary" type="action"
+                            name="%(hr_employee_custom.link_employee_user_wizard_action)d"
+                            attrs='{"invisible":["|", ("employee_type","=","client_employee"), ("user_id","!=",False)]}'/>
+                </xpath>
+                <field name="bank_account_id" position="attributes">
+                    <attribute name="attrs">{'invisible': []}</attribute>
+                    <attribute name="context">{'default_partner_id': user_partner_id, 'default_employee_id':
+                        active_id}
+                    </attribute>
+                    <!--                    <attribute name="options">{'no_create': True,'no_create_edit':True}</attribute>-->
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_housing_form">
+            <field name="name">Hr Housing Form</field>
+            <field name="model">hr.housing</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Approve" class="btn btn-primary" type="object" name="state_approve"
+                                attrs="{'invisible': [('state','=', 'approved')]}"/>
+                        <button string="Refuse" class="btn btn-primary" type="object" name="state_refuse"
+                                attrs="{'invisible': [('state','=', 'refuse')]}"/>
+                        <button string="Set Pending" class="btn btn-primary" type="object" name="state_pending"
+                                attrs="{'invisible': [('state','=', 'pending')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <!--                            <field name="housing_category_id"/>-->
+                            <field name="housing_location" invisible="1"/>
+                            <field name="city_id"/>
+                            <field name="emirate_text"/>
+                            <field name="housing_residential_type"/>
+                            <field name="employee_id" invisible="1"/>
+                            <field name="housing_ownership"/>
+                            <!--                            <field name="housing_utility_bill"-->
+                            <!--                                   attrs="{'required':[('housing_residential_type','in',('own','rel','ren'))]}"/>-->
+                            <field name="from_date"/>
+                            <field name="to_date"/>
+                            <!--                            <button name="update_default_attachments" type="object" string="Update Required Attachments"-->
+                            <!--                                    class="btn btn-secondary"/>-->
+                            <field name="attached_documents">
+                                <tree editable="top" create="0">
+                                    <field name="name" options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                    <field name="attachment_ids" widget="many2many_binary"/>
+                                </tree>
+                            </field>
+                            <!--                            <field name="related_declaration_form" domain="[('related_employee', '=', employee_id)]"-->
+                            <!--                                   attrs="{'required':[('housing_residential_type','in',('own','rel','nre'))],'invisible':[('housing_residential_type','=','ren')]}"/>-->
+                            <!--                            <field name="related_lease_contract" domain="[('res_id', '=', 25), (-->
+                            <!--                                            'res_model', '=', 'hr_employee')]"-->
+                            <!--                                   attrs="{'required':[('housing_residential_type','=','ren')],'invisible':[('housing_residential_type','!=','ren')]}"/>-->
+                            <field name="yearly_rent_value"
+                                   attrs="{'invisible':[('housing_residential_type','!=','ren')]}"/>
+                            <field name="wage" invisible="1"/>
+                            <field name="tawtheeq_number"
+                                   attrs="{'required':[('wage','>=',25000),('housing_residential_type','=','ren')],'invisible':[('housing_residential_type','!=','ren')]}"/>
+                            <hr/>
+                            <field name="refuse_reason"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_housing_tree">
+            <field name="name">Hr Housing Tree</field>
+            <field name="model">hr.housing</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="fusion_id"/>
+                    <field name="housing_location" invisible="1"/>
+                    <field name="city_id"/>
+                    <field name="emirate_text"/>
+                    <field name="housing_residential_type"/>
+                    <field name="housing_ownership"/>
+                    <!--                    <field name="housing_utility_bill"/>-->
+                    <!--                    <field name="related_declaration_form"/>-->
+                    <!--                    <field name="related_lease_contract"/>-->
+                    <field name="yearly_rent_value"/>
+                    <field name="wage" invisible="1"/>
+                    <field name="tawtheeq_number"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_housing_action_window">
+            <field name="name">Housing</field>
+            <field name="res_model">hr.housing</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        <menuitem name="Housing" id="hr_contract_custom.hr_housing_menu"-->
+        <!--                  parent="hr.menu_hr_employee_payroll"-->
+        <!--                  action="hr_employee_custom.hr_housing_action_window" groups="base.user_admin"/>-->
+
+        <record model="ir.ui.view" id="hr_housing_type_tree">
+            <field name="name">Hr Housing File Type Tree</field>
+            <field name="model">hr.housing.type</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>
+                    <field name="nre"/>
+                    <field name="own"/>
+                    <field name="rel"/>
+                    <field name="ren"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="hr_housing_type_action_window">
+            <field name="name">Housing File Type</field>
+            <field name="res_model">hr.housing.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="hr_notice_form">
+            <field name="name">Hr Notice Form</field>
+            <field name="model">hr.notice</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <!--                        <button string="Sign" class="btn btn-primary" type="object" name="action_signed"-->
+                        <!--                                attrs="{'invisible': [('state','=', 'signed')]}" group="hr.group_hr_user"/>-->
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type_offence"
+                                       options="{'no_open': True,'no_edit': True}" required="1"/>
+                                <field name="date_offence" required="1"/>
+                                <field name="date_report_offence" required="1"/>
+                                <field name="date_issuing" required="1"/>
+                                <field name="total_days" required="1"/>
+                                <field name="reason" required="1"/>
+                                <field name="attachment_ids" widget="many2many_binary" required="1"/>
+                            </group>
+                            <group>
+                                <field name="name" readonly="1" force_save="1"/>
+                                <field name="related_employee" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                <field name="related_fusion_id" invisible="1" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                <field name="related_system_id" invisible="1" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+
+                                <field name="related_manager" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                <field name="related_department" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True} "/>
+                                <field name="related_job_title" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                <field name="user_id" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_open': True,'no_edit': True}"/>
+                                <field name="create_date"/>
+                            </group>
+                        </group>
+                        <!--                        <group>-->
+                        <!--                            -->
+                        <!--                            &lt;!&ndash;                            <field name="description" placeholder="Description ..."/>&ndash;&gt;-->
+                        <!--                        </group>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_notice_tree">
+            <field name="name">Hr Notice Tree</field>
+            <field name="model">hr.notice</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="related_employee"/>
+                    <!--                    <field name="related_fusion_id"/>-->
+                    <!--                    <field name="related_system_id"/>-->
+                    <field name="type_offence"/>
+                    <field name="related_manager"/>
+                    <field name="related_department"/>
+                    <field name="related_job_title"/>
+                    <field name="user_id"/>
+                    <field name="create_date"/>
+                    <field name="reason"/>
+                    <field name="date_issuing"/>
+                    <field name="date_offence"/>
+                    <field name="date_report_offence"/>
+                    <field name="total_days"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_notice_action_window">
+            <field name="name">Warnings</field>
+            <field name="res_model">hr.notice</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        <menuitem name="Warnings" id="hr_contract_custom.hr_notice_menu"-->
+        <!--                  parent="hr.menu_hr_employee_payroll"-->
+        <!--                  action="hr_employee_custom.hr_notice_action_window" groups="base.user_admin"/>-->
+
+        <record model="ir.actions.act_window" id="hr_notice_offences_action_window">
+            <field name="name">Warning Types</field>
+            <field name="res_model">hr.notice.offences</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Warning Types" id="hr_employee_custom.hr_notice_offences_menu"
+                  parent="hr.menu_human_resources_configuration"
+                  action="hr_employee_custom.hr_notice_offences_action_window"/>
+
+
+        <record model="ir.actions.act_window" id="hr_employee_skills_action_window">
+            <field name="name">Employee Skills</field>
+            <field name="res_model">hr.employee.skill</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--        <menuitem name="Employee Skills" id="hr_employee_custom.hr_employee_skills_menu"-->
+        <!--                  parent="hr.menu_hr_employee_payroll"-->
+        <!--                  action="hr_employee_custom.hr_employee_skills_action_window" groups="base.user_admin"/>-->
+
+
+        <record id="action_hr_contract_employment_type" model="ir.actions.act_window">
+            <field name="name">Employment Type</field>
+            <field name="res_model">hr.contract.employment.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        <menuitem name="Employment Type" id="hr_employee_custom.hr_contract_employment_type_menu"-->
+        <!--                  parent="hr.menu_human_resources_configuration"-->
+        <!--                  action="hr_employee_custom.action_hr_contract_employment_type"/>-->
+
+        <record id="open_view_fusion_employees" model="ir.actions.server">
+            <field name="name">Employees</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">action = env.get('hr.employee').open_employee_view()</field>
+        </record>
+
+        <record model="ir.ui.view" id="employee_mail_template_form">
+            <field name="name">employee.mail.compose.message.sale.onboarding.sample.quotation.form</field>
+            <field name="model">mail.compose.message</field>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='template_id']" position="attributes">
+                    <attribute name="options">{'no_quick_create':True,'no_create_edit':True,'no_open': True}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record model="ir.ui.view" id="user_custom_form">-->
+        <!--            <field name="name">user.custom.form</field>-->
+        <!--            <field name="model">res.users</field>-->
+        <!--            <field name="inherit_id" ref="hr.res_users_view_form_profile"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//page[@name='personal_information']" position="attributes">-->
+        <!--                    <attribute name="invisible">1</attribute>-->
+        <!--                </xpath>-->
+        <!--                <xpath expr="//page[@name='hr_settings']" position="attributes">-->
+        <!--                    <attribute name="invisible">1</attribute>-->
+        <!--                </xpath>-->
+        <!--                <xpath expr="//page[@name='public']" position="attributes">-->
+        <!--                    <attribute name="invisible">1</attribute>-->
+        <!--                </xpath>-->
+        <!--                <xpath expr="//notebook/page[3]" position="attributes">-->
+        <!--                    <attribute name="invisible">1</attribute>-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+
+        <record id="hr_contract_view_form_inherit" model="ir.ui.view">
+            <field name="name">contract.custom.form.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="partner_parent_id"/>
+                    <field name="sponsored_company_id"/>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="employee_type"/>
+                </xpath>
+                <page name="trial_period" position="attributes">
+                    <attribute name="attrs">{'invisible': [('employee_type', '=', 'fos_employee')]}</attribute>
+                </page>
+                <page name="resign_request" position="attributes">
+                    <attribute name="attrs">{'invisible': [('employee_type', '=', 'fos_employee')]}</attribute>
+                </page>
+                <page name="required_signature" position="attributes">
+                    <attribute name="attrs">{'invisible': [('employee_type', '=', 'fos_employee')]}</attribute>
+                </page>
+            </field>
+        </record>
+
+
+    </data>
+
+</odoo>

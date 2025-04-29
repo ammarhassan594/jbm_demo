@@ -1,0 +1,173 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_employee_event_tree">
+            <field name="name">employee.event.tree.view</field>
+            <field name="model">employee.event</field>
+            <field name="arch" type="xml">
+                <tree string="Events">
+                    <field name="employee_id"/>
+                    <field name="event_type"/>
+                    <field name="effective_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_employee_event_form">
+            <field name="name">employee.event.form.view</field>
+            <field name="model">employee.event</field>
+            <field name="arch" type="xml">
+                <form string="Events" delete="0" duplicate="0">
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" status="confirm"
+                                class="oe_highlight oe_read_only"
+                                attrs="{'invisible': [('state','in',['confirm', 'approve', 'cancel'])]}"/>
+                        <button name="action_cancel" type="object" string="Cancel" status="cancel"
+                                class="oe_highlight oe_read_only"
+                                attrs="{'invisible': [('state','in',['confirm', 'approve', 'cancel'])]}"
+                                confirm="Are you sure you want to cancel this record"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="employee_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="event_type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="effective_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <group attrs="{'invisible': [('event_type','!=','update_employee')]}">
+                            <group>
+                                <field name="name" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="registration_number" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="name_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="registration_number" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="registration_number_previous"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="employee_type" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="mobile_phone" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="work_phone" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="work_email" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="permanent_staff_employee" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="permanent_staff_employee_previous"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="main_project" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="termination_date" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="termination_reason" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="sponsor" insvisible="1" required="0"/>
+                                <field name="sponsorship_type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="department_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="main_project_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="termination_date" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="termination_reason" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="sponsor" invisible="1" required="0"/>
+                                <field name="sponsor_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="sponsorship_type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="sponsorship_type_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="department_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="department_id_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="joining_date" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="probation" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="probation_date" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="number_of_years_work" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="contract_duration" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="job_id" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="profession_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="country_id" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="gender" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="birthday" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="marital" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="marital_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="contract_status" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="contract_status_previous" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible': [('event_type','!=','update_contract')]}">
+                            <group>
+                                <field name="registration_number" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="registration_number_previous"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="contract_department_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="contract_permanent_staff_employee"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_staff')]}"
+                                       invisible="1"/>
+                                <field name="contract_permanent_inhouse_employee"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_in_house')]}"
+                                       invisible="1"/>
+                                <field name="structure_type_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="contract_job_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="airport_name" attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                                <field name="contract_type_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="contract_date_start" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="contract_date_end" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="trial_date_end" attrs="{'readonly':[('state','!=','draft')]}"
+                                       invisible="1"/>
+                                <field name="resource_calendar_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="permanent_staff_employee"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_staff')]}"/>
+                                <field name="payroll_group"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_in_house')]}"/>
+                                <field name="resource_calendar_id_previous"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="permanent_staff_employee"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_staff')]}"/>
+                                <field name="permanent_staff_employee_previous"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_staff')]}"/>
+                                <field name="payroll_group"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_in_house')]}"/>
+                                <field name="payroll_group_previous"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('employee_type','!=','perm_in_house')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_view_employee_event" model="ir.actions.act_window">
+            <field name="name">Employee Event</field>
+            <field name="res_model">employee.event</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_employee_event"
+                name="Employee Event"
+                action="open_view_employee_event"
+                parent="hr.menu_hr_root"
+                sequence="4"
+                groups="hr.group_hr_manager"
+        />
+
+        <record id="ir_cron_employee_event" model="ir.cron">
+            <field name="name">Employee Event</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_employee_event"/>
+            <field name="code">model._update_employee_event_auto()</field>
+            <field name="state">code</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,158 @@
+/*=====================Default Odoo Class===========================*/
+/*
+.o_home_menu .o_home_menu_scrollable{
+align-items:flex-start;
+margin-left: 0%
+}
+.o_home_menu .o_home_menu_scrollable .o_apps .o_app.o_menuitem{
+    margin-right: 0% !important;
+
+}
+.o_home_menu .o_home_menu_scrollable .o_apps{
+    max-width: 100% !important;
+}
+.o_home_menu.o_search_hidden .o_home_menu_scrollable > div:first-child{
+justify-content:center
+}
+*/
+
+.o_home_menu .o_home_menu_scrollable{
+    background-image: url('/jbm_portal_self_service/static/src/img/custom_icon.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+/*=====================Dashboard Class===========================*/
+
+.oh_dashboards{
+    background-color: rgb(250, 249, 246) !important;
+    width:100%;
+    height:100%;
+}
+
+.oh-card h4 {
+    font-size: 1.1rem;
+}
+
+.stat-content {
+    display: inline-block;
+    width: 66%;
+}
+.stat-icon{
+    display: inline-block;
+}
+
+.stat-widget-one .stat-icon {
+    vertical-align: top;
+    margin: auto;
+    width: 100%;
+    color: #01c490;
+}
+
+.stat-widget-one .stat-icon i {
+  font-size: 30px;
+  font-weight: 900;
+  display: inline-block;
+  color: #01c490;}
+
+.stat-widget-one .stat-text {
+    font-size: 14px;
+    color: #868e96;
+    font-weight: bold;
+}
+
+.container-fluid.o_hr_dashboard {
+    padding: 0px !important;
+    position: absolute;
+    top: 20%;
+}
+.oh-card {
+
+    padding-top: 0px;
+    padding: 0px;
+    margin-bottom: 1.5rem;
+    border-radius: 0px;
+    box-shadow: none;
+    background: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+
+}
+.oh-card:hover {
+
+    transform: translateY(-2px) translateZ(0) !important;
+    box-shadow: 0 10px 10px 0 rgba(62, 57, 107, 0.12), 0 0 0 transparent !important;
+}
+.stat-widget-one .stat-text {
+
+    font-size: 14px;
+    color: #ff8762;
+    margin-top: 2.3rem;
+    margin-left: 1rem;
+
+}
+.stat-widget-one .stat-digit {
+
+    font-size: 17px;
+    color: #000;
+    margin-left: 1rem;
+    padding-left: 26px;
+
+}
+
+.stat-widget-one .stat-icon i {
+
+    font-size: 25px;
+    font-weight: 900;
+    display: inline-block;
+
+}
+.stat-widget-one {
+
+    background-color: white;
+    text-align: inherit !important;
+
+}
+.stat-widget-one {
+    width: 100%;
+}
+.oh-card {
+    margin: 0;
+        margin-bottom: 0px;
+    margin-bottom: 0px;
+    background: rgb(250, 249, 246);
+    padding-bottom: 7px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+    box-shadow: 0 10px 40px 0 rgba(62,57,107,0.07), 0 2px 9px 0 rgba(62,57,107,0.06);
+}
+.stat-widget-one {
+    background: none;
+}
+.stat-widget-one .stat-icon {
+    text-align: center;
+    padding-top: 9px;
+    color:rgba(7,29,73,1);
+}
+.stat-content {
+    width: 100%;
+    color: #fff !important;
+}
+.stat-widget-one .stat-text {
+    margin: 0;
+    text-align: center;
+    width: 100% !important;
+    padding: 0;
+    color:rgba(7,29,73,1);
+}
+.stat-widget-one .stat-icon .fa {
+    font-size: 50px;
+}
+.stat-widget-one .stat-icon .fa {
+    font-size: 50px;
+    margin: 0px;
+    box-shadow: none;
+    color:rgba(7,29,73,1);
+}
+.dashboard_card{
+    margin-top: 1.5%;
+}

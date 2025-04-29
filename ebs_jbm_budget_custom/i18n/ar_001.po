@@ -1,0 +1,420 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_jbm_budget_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 09:15+0000\n"
+"PO-Revision-Date: 2023-02-08 09:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__analytic_account_id
+msgid "Analytic Account"
+msgstr "حساب تحليلي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__approve_requester_id
+msgid "Approve Requester"
+msgstr "مقدم طلب الموافقة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_budget_custom.selection__budget_preparation__state__validate1
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__approved_amount
+msgid "Approved Amount"
+msgstr "المبلغ المعتمد"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.actions.act_window,name:ebs_jbm_budget_custom.action_budget_preparation
+#: model:ir.model,name:ebs_jbm_budget_custom.model_budget_preparation
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__budget_preparation_id
+#: model:ir.ui.menu,name:ebs_jbm_budget_custom.menu_budget_preparation
+msgid "Budget Preparation"
+msgstr "إعداد الميزانية"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model,name:ebs_jbm_budget_custom.model_budget_preparation_line
+msgid "Budget Preparation Line"
+msgstr "خط إعداد الميزانية"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__budget_preparation_lines
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_budget_custom.budget_preparation_form_view
+msgid "Budget Preparation Lines"
+msgstr "خطوط اعداد الموازنة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__budget_position_id
+msgid "Budget position"
+msgstr "وضع الميزانية"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_budget_custom.selection__budget_preparation__state__cancel
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_budget_custom.budget_preparation_form_view
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__company_ids
+msgid "Companies"
+msgstr "شركات"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_budget_custom.selection__budget_preparation__state__confirm
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__create_uid
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__create_date
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__currency_id
+msgid "Currency"
+msgstr "عملة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__department
+msgid "Department"
+msgstr "قسم"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__display_name
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields.selection,name:ebs_jbm_budget_custom.selection__budget_preparation__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__dynamic_approval_id
+msgid "Dynamic Approval"
+msgstr "الموافقة الديناميكية"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr "مجموعة الموافقة الديناميكية المعلقة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr "مجموعة الموافقة الديناميكية المعلقة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__from_date
+msgid "From Date"
+msgstr "من التاريخ"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__id
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء."
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_needaction
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_has_error
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr "هو طالب الموافقة الديناميكي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__is_department_manager
+msgid "Is department manager"
+msgstr "مدير قسم"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation____last_update
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__write_uid
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__write_date
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__need_validation
+msgid "Need Validation"
+msgstr "تحتاج التحقق"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي حدث التقويم"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__next_review
+msgid "Next Review"
+msgstr "المراجعة القادمة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation_line__planned_amount
+msgid "Planned Amount"
+msgstr "المبلغ المخطط"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__user_id
+msgid "Responsible"
+msgstr "مسؤول"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__activity_user_id
+msgid "Responsible User"
+msgstr "مستخدم مسؤول"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__role_distribution_id
+msgid "Role Distribution"
+msgstr "توزيع الدور"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__state_from_name
+msgid "State From Name"
+msgstr "الدولة من الاسم"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__state
+msgid "Status"
+msgstr "حالة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__to_date
+msgid "To Date"
+msgstr "ان يذهب في موعد"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: ebs_jbm_budget_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_budget_custom.budget_preparation_form_view
+msgid "Validate"
+msgstr "تحقق"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__validated
+#: model:ir.model.fields.selection,name:ebs_jbm_budget_custom.selection__budget_preparation__state__validate
+msgid "Validated"
+msgstr "تم التحقق من صحتها"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,field_description:ebs_jbm_budget_custom.field_budget_preparation__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ebs_jbm_budget_custom
+#: model:ir.model.fields,help:ebs_jbm_budget_custom.field_budget_preparation__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"

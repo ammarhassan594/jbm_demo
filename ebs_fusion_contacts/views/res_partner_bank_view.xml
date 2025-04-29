@@ -1,0 +1,52 @@
+<odoo>
+    <record id="ebs_res_partner_bank_custom_view" model="ir.ui.view">
+        <field name="name">custom.contact.res.partner.bank.view</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="attributes">
+                <attribute name="domain">[]</attribute>
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="bank_bic" readonly="1"/>
+                <field name="swift_code"/>
+            </field>
+            <field name="acc_holder_name" position="after">
+                <field name="branch"/>
+                <field name="opened_since"/>
+            </field>
+            <xpath expr="/form/sheet//group/field[@name='bank_id']" position="attributes">
+                <attribute name="options">{'no_create':True,'no_create_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="comments"/>
+                </group>
+                <group>
+                    <field name="furthur_instruction" invisible="1"/>
+                </group>
+                <group>
+                    <field name="bank_details_home_country" invisible="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ebs_res_bank_custom_view" model="ir.ui.view">
+        <field name="name">custom.res.bank.view</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="furthur_instruction"/>
+                </group>
+                <group>
+                    <field name="bank_details_home_country"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

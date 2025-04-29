@@ -1,0 +1,250 @@
+<odoo>
+    <!--    ebs crm proposal workflow tree-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_workflow_tree">
+        <field name="name">ebs.crm.proposal.workflow.tree</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="arch" type="xml">
+            <tree default_order="create_date desc" create="0">
+                <field name="stage_id" invisible="1"/>
+                <field name="process_char"/>
+                <field name="output_char"/>
+                <field name="service_process_id"/>
+                <field name="proposal_id" invisible="1"/>
+                <field name="partner_id" invisible="1"/>
+                <field name="pricelist_id" invisible="1"/>
+                <field name="pricelist_line_id" invisible="1"/>
+                <field name="service_id"/>
+                <field name="service_template_id" invisible="1"/>
+
+                <field name="assigned_to"/>
+                <field name="related_service_order_type" string="Target Audience"/>
+                <field name="related_client_id" string="Client"/>
+                <field name="related_employee_id" string="Employee" optional="hide"/>
+                <field name="related_dependent_id" string="Dependent" optional="hide"/>
+                <field name="related_partner_id" string="Visitor" optional="hide"/>
+
+                <field name="status"/>
+                <field name="create_date" optional="hide"/>
+                <field name="start_date"/>
+                <field name="due_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    ebs crm proposal workflow search-->
+    <record id="view_ebs_crm_proposal_workflow_search" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.workflow.search</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="arch" type="xml">
+            <search string="Service Orders">
+                <field name="stage_id"/>
+                <field name="assigned_to"/>
+
+                <field name="name"/>
+                <field name="output"/>
+                <field name="proposal_id"/>
+                <field name="partner_id"/>
+                <field name="pricelist_id"/>
+                <field name="pricelist_line_id"/>
+                <field name="service_id"/>
+                <field name="service_template_id"/>
+
+                <field name="replacement_id"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="status" context="{'group_by': 'status'}"/>
+
+                    <filter string="Stage" name="stage_id" context="{'group_by': 'stage_id'}"/>
+                    <filter string="Contact" name="partner_id" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Contracts" name="proposal_id" context="{'group_by': 'proposal_id'}"/>
+                    <filter string="Pricelist" name="pricelist_id" context="{'group_by': 'pricelist_id'}"/>
+                    <filter string="Pricelist Line" name="pricelist_line_id"
+                            context="{'group_by': 'pricelist_line_id'}"/>
+                    <filter string="Service" name="service_id" context="{'group_by': 'service_id'}"/>
+                    <filter string="Service Template" name="service_template_id"
+                            context="{'group_by': 'service_template_id'}"/>
+
+                    <filter string="Replacement Department" name="replacement_id"
+                            context="{'group_by': 'replacement_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="ebs_crm_proposal_workflow_line_kanban_view" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.workflow.line.kanban</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+
+            <kanban class="o_res_partner_kanban" default_group_by="status" create="0">
+                <field name="status"/>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="service_process_id"/>
+                <field name="related_client_id"/>
+                <field name="related_partner_id"/>
+                <field name="related_employee_id"/>
+                <field name="related_dependent_id"/>
+                <field name="related_service_order_type"/>
+                <field name="related_service_id"/>
+                <field name="partner_id"/>
+                <field name="service_id"/>
+                <field name="stage_id"/>
+                <field name="assigned_to"/>
+
+                <field name="start_date"/>
+                <field name="due_date"/>
+                <field name="end_date"/>
+                <field name="activity_ids"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <div t-if="record.service_process_id">
+                                    <strong>Service Order:</strong>
+                                    <t t-esc="record.service_process_id.value"/>
+                                </div>
+                                <div t-if="record.related_service_id">
+                                    <strong>Service Name:</strong>
+                                    <t t-esc="record.related_service_id.value"/>
+                                </div>
+                                <div>
+                                    <t t-esc="record.related_service_order_type.raw_value"/>
+                                </div>
+                                <div t-if="record.related_service_order_type">
+                                    <strong>Target Audience :</strong>
+                                    <t t-esc="record.related_service_order_type.value"/>
+                                </div>
+                                <div t-if="record.related_service_order_type.raw_value == 'visitor'">
+                                    <strong>Contact:</strong>
+                                    <t t-esc="record.related_partner_id.value"/>
+                                </div>
+                                <div t-if="record.related_service_order_type.raw_value == 'company' or record.related_service_order_type.raw_value == 'employee' or record.related_service_order_type.raw_value == 'dependent'">
+                                    <strong>Client:</strong>
+                                    <t t-esc="record.related_client_id.value"/>
+                                </div>
+                                <div t-if="record.related_service_order_type.raw_value == 'employee' or record.related_service_order_type.raw_value == 'dependent'">
+                                    <strong>Employee:</strong>
+                                    <t t-esc="record.related_employee_id.value"/>
+                                </div>
+                                <div t-if="record.related_service_order_type.raw_value == 'dependent'">
+                                    <strong>Dependent:</strong>
+                                    <t t-esc="record.related_dependent_id.value"/>
+                                </div>
+                                <div class="mt-1" t-if="record.start_date">
+                                    <strong>Start Date:</strong>
+                                    <t t-esc="record.start_date.value"/>
+                                </div>
+                                <div t-if="record.due_date">
+                                    <strong>Due Date:</strong>
+                                    <t t-esc="record.due_date.value"/>
+                                </div>
+                                <div t-if="record.end_date.value">
+                                    <strong>End Date:</strong>
+                                    <t t-esc="record.end_date.value"/>
+                                </div>
+                                <div t-if="record.name">
+                                    <strong>process:</strong>
+                                    <t t-esc="record.name.value"/>
+                                </div>
+
+                                <div t-if="record.assigned_to">
+                                    <strong>User:</strong>
+                                    <t t-esc="record.assigned_to.value"/>
+                                </div>
+
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="ebs_crm_proposal_workflow_line_pivot_view" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.workflow.line.pivot</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="partner_id" type="row"/>
+                <field name="service_process_id" type="col"/>
+                <field name="status" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+
+    <record id="ebs_crm_proposal_workflow_line_graph_view" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.workflow.line.graph</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="arch" type="xml">
+            <graph>
+
+                <field name="partner_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="ebs_crm_proposal_workflow_line_view_activity" model="ir.ui.view">
+        <field name="name">ebs.crm.proposal.workflow.line.activity</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="arch" type="xml">
+            <activity string="EBS Proposal Workflow Lines">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="service_process_id" display="full"/>
+                            <field name="sequence" display="full" muted="1"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+    <record id="ebs_fusion_crm_proposal_workflow_action" model="ir.actions.act_window">
+        <field name="name">Service Order Workflow</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.crm.proposal.workflow.line</field>
+        <field name="view_mode">kanban,tree,pivot,graph,form,activity</field>
+        <field name="domain">[('assigned_to','=',uid)]</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="ebs_fusion_services.view_ebs_crm_proposal_workflow_search"/>
+        <field name="view_id" ref="ebs_fusion_services.ebs_crm_proposal_workflow_line_kanban_view"/>
+    </record>
+
+    <record id="ebs_fusion_crm_proposal_workflow_action_admin_users" model="ir.actions.server">
+        <field name="name">Service Order Workflow</field>
+        <field name="model_id" ref="model_ebs_crm_proposal_workflow_line"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.open_closed()
+        </field>
+    </record>
+
+    <act_window id="update_workflow_user_action"
+                name="Assign Workflows"
+                binding_model="ebs.crm.proposal.workflow.line"
+                binding_views="list,form"
+                res_model="assign.workflows.wizard"
+                view_mode="form" target="new"
+                context="{'default_workflow_ids': [(6, 0, active_ids)]}"
+                groups="ebs_fusion_services.group_fusion_workflow_manager"/>
+
+    <act_window id="update_workflow_status"
+                name="Workflow Status"
+                binding_model="ebs.crm.proposal.workflow.line"
+                binding_views="list,form"
+                res_model="ebs.wf.status.wiz"
+                view_mode="form" target="new"
+                context="{'default_workflow_ids': [(6, 0, active_ids)]}"
+    />
+
+</odoo>

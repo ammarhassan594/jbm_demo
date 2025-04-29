@@ -1,0 +1,59 @@
+<odoo>
+    <!--    ebs labor quota  form-->
+    <record model="ir.ui.view" id="view_ebs_service_rules_form">
+        <field name="name">ebs.service.rules.Form</field>
+        <field name="model">ebs.service.rules</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="server_action_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <field name="err_msg"/>
+                    </group>
+                    <notebook>
+                        <page string="Filteres">
+                            <field name="filter_ids">
+                                <tree>
+                                    <field name="target_model"/>
+                                    <field name="filter"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="target_model" options="{'no_create': True, 'no_create_edit':True}"/>
+                                            <field name="filter" widget="domain" options="{'model': 'target_model'}"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs labor quota tree-->
+    <record id="view_ebs_service_rules_tree" model="ir.ui.view">
+        <field name="name">ebs.service.rules.tree</field>
+        <field name="model">ebs.service.rules</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="server_action_id"/>
+                <field name="err_msg"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs labor quota action-->
+    <record model="ir.actions.act_window" id="action_ebs_service_rules">
+        <field name="name">Service Rules</field>
+        <field name="res_model">ebs.service.rules</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_ebs_service_rules" name="Service Rules" sequence="10"
+              parent="ebs_fusion_services.service_menu_config" action="ebs_fusion_services.action_ebs_service_rules"/>
+
+</odoo>

@@ -1,0 +1,589 @@
+<odoo>
+    <!--    ebs crm service process form-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_process_form">
+        <field name="name">ebs.crm.service.process.Form</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="fetch_workflows" type="object" string="Fetch Workflows" class="oe_highlight"
+                            groups="ebs_fusion_services.group_services_manager"
+                            attrs="{'invisible': [('status', '!=', 'draft')]}"/>
+
+
+                    <button name="create_multipart_proforma_invoices" string="Create Proforma Invoice"
+                            type="object" class="btn-primary" groups="ebs_fusion_services.group_service_order_manager"
+                            attrs="{'invisible': ['|',('status', '!=', 'draft'),('is_sub_service','=',True)]}"
+                            context="{'proforma':True}"/>
+                    <button name="create_multipart_invoices" string="Create Draft Invoice"
+                            type="object" class="btn-primary" groups="ebs_fusion_services.group_service_order_manager"
+                            attrs="{'invisible': ['|',('status', '=', 'draft'),('is_sub_service','=',True)]}"
+                            context="{'invoices':True}"/>
+
+                    <button name="action_start" type="object" string="Start" class="oe_highlight"
+                            groups="ebs_fusion_services.group_services_manager"
+                            attrs="{'invisible': [('status', '!=', 'draft')]}"/>
+                    <field name="status" widget="statusbar" clickable='1'/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_created_invoice" type="object" class="oe_stat_button"
+                                icon="fa-pencil-square-o"
+                                attrs="{'invisible':[('is_sub_service','=',True)]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="invoice_count"/>
+                                </span>
+                                <span class="o_stat_text">Invoices</span>
+                            </div>
+                        </button>
+                        <button name="action_created_proforma_payment" type="object" class="oe_stat_button"
+                                icon="fa-pencil-square-o"
+                                attrs="{'invisible':[('is_sub_service','=',True)]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="payment_count"/>
+                                </span>
+                                <span class="o_stat_text">Proforma Invoices</span>
+                            </div>
+                        </button>
+                        <button name="get_workflows" type="object" class="oe_stat_button"
+                                icon="fa-align-left">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="workflow_count"/>
+                                </span>
+                                <span class="o_stat_text">Workflows</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="name" string="SO Sequence"/>
+                            <field name="service_order_type" required="1"/>
+                            <field name="target_audience" invisible="1"/>
+                            <field name="is_sub_service" invisible="1"/>
+                            <field name="category_ids" invisible="1"/>
+                            <field name="is_group_related" invisible="1"/>
+
+
+                            <field name="client_id"
+                                   domain="[('related_company_ids', 'in', company_id),('is_customer', '=', True),('is_company', '=', True), ('parent_id', '=', False)]"
+                                   attrs="{'invisible':[('service_order_type','=','visitor')],'required':[('service_order_type','!=','visitor')]}"
+                                   options="{'no_create': True, 'no_create_edit':True}"
+                                   context="{'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form'}"/>
+                            <field name="partner_id" string="Service Beneficiary"
+                                   attrs="{'readonly':[('completed','=',True)],'required':[('proposal_id','=',False),('service_order_type','=','visitor')], 'invisible':[('service_order_type','!=','visitor')]}"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="employee_id" context="{'client_id': client_id}"
+                                   domain="[('partner_parent_id', '=', client_id)]"
+                                   options="{'no_create': True,'no_create_edit':True}"
+                                   attrs="{'invisible':[('service_order_type','not in',['employee','dependent'])],'required':[('service_order_type','=','employee')]}"/>
+                            <field name="employee_partner_id" invisible="1"/>
+                            <field name="dependent_id" options="{'no_create_edit': 1, 'no_create': 1}"
+                                   context="{'employee_partner_id': employee_partner_id}"
+                                   domain="[('parent_id', '=', context.get('employee_partner_id') or 0)]"
+                                   attrs="{'invisible':[('service_order_type','!=','dependent')],'required':[('service_order_type','=','dependent')]}"/>
+
+
+                            <field name="proposal_id" options="{'no_create': True,'no_create_edit':True}"
+                                   string="Contract"
+                                   domain="[('contact_id', '=', client_id), ('company_id', '=', company_id)]"/>
+
+
+                            <field name="service_id"
+                                   attrs="{'readonly':[('completed','=',True)]}"
+                                   options="{'no_create': True,'no_create_edit':True}"
+                                   domain="[('target_audience','=',target_audience)]"
+                            />
+                            <field name="option_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   domain="[('service_id','=',service_id or 0),('company_id', '=', company_id or 0)]"/>
+                            <field name="description"/>
+                            <field name="is_labor_quota" invisible="0"/>
+                            <field name="contract_id" invisible="1"/>
+                            <field name="fos_employee_id" invisible="1"/>
+
+                            <field name="govt_fees" attrs="{'readonly':[('completed','=',True)]}"/>
+                            <field name="govt_invoiced" readonly="1"
+                                   attrs="{'invisible':[('is_sub_service','=',True)]}"/>
+
+
+                            <field name="service_type" invisible="1" widget="radio"/>
+                            <field name="labor_quota_status"
+                                   attrs="{'invisible': [('is_labor_quota', '=', False)]}"/>
+                            <field name="assigned_user_id" options="{'no_create': 1, 'no_create_edit': 1}"/>
+
+                        </group>
+                        <group>
+                            <field name="completed" invisible="1"/>
+                            <field name="service_order_date" attrs="{'readonly':[('completed','=',True)]}"/>
+
+                            <field name="company_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="start_date" readonly="1"/>
+                            <field name="day_to_complete"/>
+                            <field name="due_date" attrs="{'readonly':[('completed','=',True)]}"/>
+                            <field name="end_date" attrs="{'readonly':[('completed','=',True)]}"/>
+                            <field name="is_invoiced" attrs="{'invisible':[('is_sub_service','=',True)]}"/>
+                            <field name="is_urgent"/>
+                            <field name="urgent_text" decoration-danger="is_urgent" nolabel="1" readonly="1"
+                                   attrs="{'invisible': [('is_urgent', '=', False)]}" style="font-weight: bold;"/>
+                            <field name="fusion_fees" attrs="{'readonly':[('completed','=',True)]}"/>
+                            <label for="discount"/>
+                            <div style="text-align:left;">
+                                <field name="discount" class="oe_inline"/>
+                                <span>%</span>
+                            </div>
+                            <field name="fusion_invoiced" readonly="1"
+                                   attrs="{'invisible':[('is_sub_service','=',True)]}"/>
+
+                            <field name="fusion_fees_net" readonly="1" force_save="1"/>
+                            <field name="is_extra_order" invisible="1"/>
+                            <field name="option_name" invisible="1"/>
+                            <field name="generated_from_portal" invisible="1" readonly="1"/>
+                            <field name="sub_service_count" invisible="1"/>
+                            <field name="actual_days_to_complete" invisible="1"
+                                   attrs="{'invisible':[('status','!=','closed')]}"
+                                   readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Workflow">
+                            <button name="assign_user" type="object" string="Assign User" class="oe_highlight"
+                                    groups="ebs_fusion_services.group_fusion_workflow_manager"/>
+                            <field name="proposal_workflow_line_ids" attrs="{'readonly':[('completed','=',True)]}"
+                                   context="{'default_service_process_id':id,'default_is_show':True}">
+                                <tree create="1" default_order="sequence">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="process_char"/>
+                                    <field name="output_char"/>
+                                    <field name="assigned_to"/>
+
+                                    <field name="replacement_id" optional="hide"/>
+
+                                    <field name="due_date" optional="hide"/>
+                                    <field name="start_date" optional="hide"/>
+                                    <field name="end_date" optional="hide"/>
+
+                                    <field name="status"/>
+                                    <field name="dependant_workflow_ids" widget="many2many_tags" invisible="1"/>
+
+                                    <field name="assigned_to" options="{'no_create': True, 'no_create_edit':True}"
+                                           optional="hide"/>
+
+                                    <button name="action_show_workflows_line" string="Show Workflow"
+                                            type="object"
+                                            icon="fa-list" options="{&quot;warn&quot;: true}"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="In Documents">
+
+                            <field name="in_document_ids" attrs="{'readonly':[('completed','=',True)]}">
+                                <tree editable="top" decoration-success="name != False">
+                                    <field name="doc_type_id" options="{'no_create': True}" readonly="0"/>
+                                    <field name="employee_id" invisible="1"/>
+                                    <field name="name" options="{'no_create': True,'no_create_edit':True}" context="{'service_order_type': parent.service_order_type, 'document_type_id':doc_type_id,
+                                            'employee': parent.employee_id, 'partner': parent.client_id}"/>
+
+                                    <button name="upload_file" icon="fa-upload" type="object"
+                                            attrs="{'invisible':[('name','!=',False)]}"/>
+                                    <button name="access_content" icon="fa-download" type="object"
+                                            attrs="{'invisible':[('name','=',False)]}"/>
+                                    <button name="preview_document" icon="fa-eye" type="object"
+                                            attrs="{'invisible':[('name','=',False)]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Out Documents">
+
+                            <field name="out_document_ids" attrs="{'readonly':[('completed','=',True)]}">
+                                <tree editable="top" decoration-success="name != False">
+                                    <field name="doc_type_id" options="{'no_create': True}" readonly="0"/>
+                                    <field name="employee_id" invisible="1"/>
+                                    <field name="name" options="{'no_create': True,'no_create_edit':True}"
+                                           domain="[('partner_id','=',parent.partner_id), ('employee_id', '=', parent.employee_id),('document_type_id','=',doc_type_id)]"/>
+
+                                    <button name="upload_file" icon="fa-upload" type="object"
+                                            attrs="{'invisible':[('name','!=',False)]}"/>
+                                    <button name="access_content" icon="fa-download" type="object"
+                                            attrs="{'invisible':[('name','=',False)]}"/>
+                                    <button name="preview_document" icon="fa-eye" type="object"
+                                            attrs="{'invisible':[('name','=',False)]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Sub Service" attrs="{'invisible':[('is_group_related','=',False)]}">
+                            <field name="sub_service_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="parent_id"/>
+                                    <field name="proposal_id" string="Contract"/>
+                                    <field name="client_id"/>
+                                    <field name="service_id"/>
+                                    <field name="service_code"/>
+                                    <field name="day_to_complete"/>
+
+                                    <field name="service_order_date"/>
+                                    <field name="status"/>
+                                    <field name="start_date" optional="hide"/>
+                                    <field name="due_date" optional="hide"/>
+                                    <field name="end_date" optional="hide"/>
+                                    <field name="is_invoiced" optional="hide"/>
+                                    <button name="action_show_sub_service_process" string="Show Sub Service Order"
+                                            type="object"
+                                            icon="fa-list" options="{&quot;warn&quot;: true}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Additional Fees" attrs="{'invisible':[('is_sub_service','=',True)]}">
+                            <field name="additional_expenses" attrs="{'readonly':[('completed','=',True)]}">
+                                <tree editable="top">
+                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    <field name="amount"/>
+                                    <field name="type"/>
+                                    <field name="is_invoiced"/>
+                                    <field name="receipt"/>
+                                    <field name="amount_invoiced" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Workflow Payments" attrs="{'invisible':[('is_sub_service','=',True)]}">
+                            <field name="workflow_payment_ids" readonly="1">
+                                <tree>
+                                    <field name="product_id"/>
+                                    <field name="date"/>
+                                    <field name="credit_card_id"/>
+                                    <field name="file_to_payment" widget="binary"/>
+                                    <field name="is_invoiced" readonly="1"/>
+
+                                    <field name="amount"/>
+                                    <field name="move_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Labor Quota"
+                              attrs="{'invisible':[('is_labor_quota', '=', False)]}">
+                            <group>
+                                <group>
+                                    <field name="request_no"/>
+                                    <field name="request_type"/>
+                                    <field name="labor_quota_expiry_date" readonly="1"
+                                           attrs="{'invisible':[('option_name', '!=', 'renew')]}"/>
+
+                                </group>
+                                <group>
+                                    <field name="request_date"/>
+                                    <field name="new_labor_quota_id" readonly="1"
+                                           attrs="{'invisible': ['|', ('option_name', '!=', 'new'), ('new_labor_quota_id', '=', False)]}"/>
+                                    <field name="labor_quota_id"
+                                           attrs="{'readonly':[('option_name', 'not in', ['renew', 'manage'])], 'invisible': [('option_name', '=', 'new')]}"
+                                           context="{'labor_option': option_name, 'client_id': client_id}"/>
+                                </group>
+                            </group>
+                            <group string="Request Lines" attrs="{'invisible':[('option_name', '!=', 'new')]}">
+                                <field name="requeste_line_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="nationality_id"/>
+                                        <field name="job_id"/>
+                                        <field name="gender"/>
+                                        <field name="qty"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group attrs="{'invisible':['|', ('option_name', '=', 'manage'), ('labor_quota_status', 'in', ['under_process', 'rejected'])]}">
+                                <group>
+                                    <field name="labor_quota_app_no"
+                                           attrs="{'required':[('is_labor_quota', '=', True), ('option_name', '=', 'new'), ('labor_quota_status', '=', 'approved')], 'invisible':[('option_name', '=', 'renew')]}"/>
+                                    <field name="lq_new_expiry_date"/>
+                                </group>
+                                <group>
+                                    <field name="labor_quota_app_date"
+                                           attrs="{'invisible':[('option_name', '=', 'renew')]}"/>
+                                </group>
+                            </group>
+                            <group string="Approved Lines"
+                                   attrs="{'invisible':['|', ('option_name', 'in', ['renew', 'manage']), ('labor_quota_status', 'in', ['under_process', 'rejected'])]}">
+                                <group>
+                                    <button name="add_requested_lines" type="object"
+                                            string="Add Lines" class="oe_highlight"
+                                            attrs="{'invisible': [('option_name', '!=', 'new'), ('labor_quota_status', 'in', ['under_process', 'rejected'])]}"/>
+                                </group>
+                                <field name="labor_quota_line_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="ref_no"/>
+                                        <field name="nationality_id"/>
+                                        <field name="job_id"/>
+                                        <field name="gender"/>
+                                        <field name="qty"/>
+                                        <field name="is_approved"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group string="Update Labor Quota" attrs="{'invisible':[('option_name', '!=', 'manage')]}">
+                                <group>
+                                    <button name="%(ebs_fusion_services.action_view_update_lq_lines_wizard)d"
+                                            type="action" string="Add Lines" class="oe_highlight"
+                                            context="{'labor_quota_id': labor_quota_id, 'request_type': request_type}"/>
+                                </group>
+                                <field name="manage_labor_quota_line_ids" nolabel="1"
+                                       context="{'request_type': request_type}">
+                                    <tree editable="bottom">
+                                        <field name="labor_quota_line_id" invisible="1"/>
+                                        <field name="labor_quota_subline_id"
+                                               domain="[('line_id','=',labor_quota_line_id), ('status', '=', 'booked')]"
+                                               invisible="1"/>
+
+                                        <field name="ref_no"/>
+                                        <field name="nationality_id"/>
+                                        <field name="job_id"/>
+                                        <field name="gender"/>
+                                        <field name="status"
+                                               attrs="{'column_invisible': [('parent.request_type', '!=', 'release')]}"/>
+                                        <field name="employee_id"
+                                               attrs="{'column_invisible': [('parent.request_type', '!=', 'release')]}"/>
+                                        <field name="is_approved"/>
+
+                                        <field name="qty"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service process tree-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_process_tree">
+        <field name="name">ebs.crm.service.process.tree</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <tree create="0">
+                <field name="name"/>
+                <field name="proposal_id" attrs="{'invisible':[('proposal_id','=',False)]}" string="Contract"/>
+
+                <field name="service_id"/>
+                <field name="service_template_id"/>
+                <field name="status"/>
+                <field name="service_order_date"/>
+                <field name="is_invoiced"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    ebs crm service process search-->
+    <record id="view_ebs_crm_service_process_search" model="ir.ui.view">
+        <field name="name">ebs.crm.service.process.search</field>
+        <field name="model">ebs.crm.service.process</field>
+        <field name="arch" type="xml">
+            <search string="Service Orders">
+
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="status" context="{'group_by': 'status'}"/>
+                    <filter string="Contracts" name="proposal_id" context="{'group_by': 'proposal_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--    ebs crm proposal workflow form-->
+    <record model="ir.ui.view" id="view_ebs_crm_proposal_workflow_form">
+        <field name="name">ebs.crm.proposal.workflow.Form</field>
+        <field name="model">ebs.crm.proposal.workflow.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status" widget="statusbar"/>
+                    <button name="start_workflow" class="oe_highlight"
+                            attrs="{'invisible':[('status','!=','draft')]}"
+                            type="object" string="Start"/>
+                    <button name="complete_workflow" class="oe_highlight"
+                            attrs="{'invisible':[('status','in',[False,'draft','returned','completed','cancelled'])]}"
+                            type="object" string="Complete"/>
+                    <button name="put_onhold" class="oe_highlight"
+                            attrs="{'invisible':[('status','not in',['ongoing'])]}"
+
+                            type="object" string="ONHOLD"/>
+                    <button name="returned_workflow" class="oe_highlight"
+                            attrs="{'invisible':[('status','not in',['ongoing','onhold',])]}"
+
+                            type="object" string="RETURNED"/>
+                    <button name="cancelled_workflow" class="oe_highlight"
+                            attrs="{'invisible':[('status','not in',['draft','ongoing','onhold','returned'])]}"
+
+                            type="object" string="CANCELLED"/>
+                    <button name="set_draft_workflow" class="oe_highlight"
+                            groups="ebs_fusion_services.group_fusion_activity_admin"
+                            attrs="{'invisible':[('status','in',['draft','completed','ongoing','onhold'])]}"
+                            type="object" string="Set to Draft"/>
+                </header>
+                <sheet>
+                    <button name="%(ebs_fusion_services.return_to_previous_wizard)d" class="oe_highlight"
+                            attrs="{'invisible':[('status','!=','ongoing')]}"
+                            type="action" string="Return"/>
+                    <button name="upload_document" class="oe_highlight ml-2" type="object" string="Upload document"
+                            attrs="{'invisible':[('status','=','completed')]}"/>
+                    <group>
+                        <group>
+                            <field name="name" attrs="{'readonly':[('readonly','=',True)]}"/>
+                            <field name="process_char" invisible="1"/>
+
+                            <field name="output_char" invisible="1"/>
+                            <field name="stage_id" options="{'no_create': True,'no_create_edit':True}"
+                                   attrs="{'readonly':[('readonly','=',True)]}"/>
+
+
+                            <field name="required_in_docs" widget="many2many_tags"
+                                   context="{'service_process_id': service_process_id, 'in_docs': True}"
+                                   attrs="{'readonly':[('readonly','=',True)]}"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="dependant_workflow_ids" widget="many2many_tags"
+                                   domain="[('service_process_id', '=', service_process_id), ('id', '!=', id)]"
+                                   attrs="{'readonly':[('readonly','=',True)]}"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="required_completed_service_ids"
+                                   attrs="{'readonly':[('readonly','=',True)],'invisible':[('is_group','=',False)]}"
+                                   widget="many2many_tags"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="dependant_service_ids" invisible="1"/>
+                            <field name="is_activity_required" attrs="{'readonly':[('readonly','=',True)]}"/>
+                            <field name="is_timesheet_required" attrs="{'readonly':[('readonly','=',True)]}"/>
+                            <field name="required_payment" attrs="{'readonly':[('readonly','=',True)]}"/>
+
+
+                            <field name="replacement_id" invisible="1"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+
+                            <field name="actual_workflow_days_to_complete"
+                                   attrs="{'invisible':[('status','!=','completed')]}" invisible="1" readonly="1"/>
+                            <field name="is_show" invisible="1"/>
+                            <field name="service_process_id" attrs="{'invisible':[('is_show','!=',False)]}"
+                                   groups="ebs_fusion_services.group_service_order_user"/>
+                            <field name="related_service_order_type" String="Target Audience"/>
+                            <field name="related_client_id" String="Client"
+                                   attrs="{'invisible':[('related_service_order_type','=','visitor')]}"/>
+                            <field name="related_employee_id" String="Employee"
+                                   attrs="{'invisible':[('related_service_order_type','in',['company','visitor'])]}"/>
+                            <field name="related_dependent_id" String="Dependent"
+                                   attrs="{'invisible':[('related_service_order_type','in',['company','visitor','employee'])]}"/>
+                            <field name="related_partner_id" String="Visitor"
+                                   attrs="{'invisible':[('related_service_order_type','in',['company','dependent','employee'])]}"/>
+
+
+                            <field name="workflow_complete" invisible="1"/>
+                            <field name="next_assigned_user" invisible="1"
+                                   attrs="{'invisible':[('workflow_complete','=',False)],'required':[('workflow_complete','=',True)]}"/>
+                        </group>
+                        <group>
+                            <field name="edit_access" invisible="1"/>
+                            <field name="readonly" invisible="1"/>
+
+                            <field name="is_group" invisible="1"/>
+                            <field name="output" attrs="{'readonly':[('readonly','=',True)]}"/>
+                            <field name="activity_id"
+                                   attrs="{'readonly':[('readonly','=',True)],'required':[('stage_id','!=',False)], 'invisible':[('stage_id','=',False)]}"/>
+
+                            <field name="assigned_to" options="{'no_create': True,'no_create_edit':True}"/>
+
+                            <field name="activity_type_ids" widget="many2many_tags" invisible="1"/>
+                            <field name="required_out_docs" widget="many2many_tags"
+                                   context="{'service_process_id': service_process_id, 'out_docs': True}"
+                                   options="{'no_create': True,'no_create_edit':True}"
+                                   attrs="{'readonly':[('readonly','=',True)]}"/>
+                            <field name="workflow_days_to_complete" attrs="{'readonly':[('readonly','=',True)]}"/>
+
+                            <field name="start_date" invisible="0" readonly="1"/>
+                            <field name="due_date" invisible="1" attrs="{'readonly':[('readonly','=',True)]}"/>
+                            <field name="end_date" invisible="0" attrs="{'readonly':[('readonly','=',True)]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="return_reason"
+                               attrs="{'invisible':[('return_reason','=',False)]}" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Timesheets" name="timesheets">
+                            <field name="workflow_timesheet_ids"
+                                   attrs="{'readonly':[('status','in',['completed','cancelled','returned'])]}">
+                                <tree editable="bottom">
+                                    <field name="date"/>
+                                    <field name="name"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Payments" name="payments">
+                            <field name="workflow_payment_ids"
+                                   attrs="{'readonly':[('status','in',['completed','cancelled','returned'])]}">
+                                <tree editable="bottom">
+                                    <field name="product_id" required="1"/>
+                                    <field name="date" required="1"/>
+                                    <field name="credit_card_id" required="1"
+                                           options="{'no_create_edit': 1, 'no_create': 1}"/>
+                                    <field name="file_to_payment" widget="binary"/>
+                                    <field name="is_invoiced" readonly="1"/>
+
+                                    <field name="amount"/>
+                                    <field name="move_id" readonly="1"/>
+
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+                <div class="oe_chatter" style="display:block;">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+
+
+            </form>
+        </field>
+    </record>
+
+
+    <record id="ebs_workflow_doc_tracking_tree" model="ir.ui.view">
+        <field name="name">ebs.workflow.doc.tracking.tree</field>
+        <field name="model">ebs.workflow.doc.tracking</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="tracking_date"/>
+                <field name="document_id" options="{'no_create': True,'no_create_edit':True}"/>
+                <field name="employee_id" options="{'no_create': True,'no_create_edit':True}"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <act_window id="create_multipart_invoices_action"
+                name="Create Invoices"
+                binding_model="ebs.crm.service.process"
+                binding_views="list"
+                res_model="ebs.advance.payment.inv"
+                view_mode="form" target="new"
+                context="{'invoices':True, 'full': True}"/>
+
+
+    <act_window id="create_multipart_proforma_invoices_action"
+                name="Create Proforma Invoices"
+                binding_model="ebs.crm.service.process"
+                binding_views="list"
+                res_model="ebs.advance.payment.inv"
+                view_mode="form" target="new"
+                context="{'proforma':True, 'full':True}"/>
+
+
+</odoo>

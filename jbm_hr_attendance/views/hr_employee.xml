@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="jbm_hr_attendance.hr_employee_form_inherit">
+            <field name="name">hr.employee.form.view.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_phone']" position="after">
+                    <field name="out_of_attendance"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

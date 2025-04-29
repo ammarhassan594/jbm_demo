@@ -1,0 +1,12 @@
+<odoo>
+    <record id="approval_request_view_form_inherit" model="ir.ui.view">
+        <field name="name">approval.request</field>
+        <field name="model">approval.request</field>
+        <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='approver_ids']/tree/field[@name='user_id']" position="after">
+                <field name="activity_type_id" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

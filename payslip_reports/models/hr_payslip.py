@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fields, apiclass HRPayslip(models.Model):    _inherit = 'hr.payslip'    def print_employee_payslip(self):        return self.env.ref('payslip_reports.employees_detailed_xlsx').report_action(self)

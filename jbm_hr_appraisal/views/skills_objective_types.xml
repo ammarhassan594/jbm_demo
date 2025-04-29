@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_skills_objective_types_form_view" model="ir.ui.view">
+            <field name="name">employee.skills.objective.types.form.view</field>
+            <field name="model">employee.skills.objective.types</field>
+            <field name="arch" type="xml">
+                <form string="Skills Objective Types">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="company_id" string="Organization"/>
+                            <h1>
+                                <field name="company_id"
+                                       options="{'no_create': True,'no_edit':True}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="type_category"/>
+                            </group>
+                            <group>
+                                <field name="default_overall"/>
+                                <field name="general_skill"/>
+                                <field name="show_on_all"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="description" string="Description">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_skills_objective_types_tree_view" model="ir.ui.view">
+            <field name="name">employee.skills.objective.types.tree</field>
+            <field name="model">employee.skills.objective.types</field>
+            <field name="arch" type="xml">
+                <tree string="Skills Objectives Types">
+                    <field name="company_id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="type_category"/>
+                    <field name="default_overall"/>
+                    <field name="general_skill"/>
+                    <field name="show_on_all"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_skills_objective_types_search_view" model="ir.ui.view">
+            <field name="name">employee.skills.objective.types.search</field>
+            <field name="model">employee.skills.objective.types</field>
+            <field name="arch" type="xml">
+                <search string="Skills Objectives Types">
+                    <field name="company_id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="default_overall"/>
+                    <field name="general_skill"/>
+                    <field name="show_on_all"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Organization" name="group_by_company_id"
+                                domain="[]"
+                                context="{'group_by':'company_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="employee_skills_objective_types_act_window" model="ir.actions.act_window">
+            <field name="name">Skills Objective Types</field>
+            <field name="res_model">employee.skills.objective.types</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    There is no examples click here to add new skills objective types.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Skills Configuration"
+                  groups="base.group_system,jbm_group_access_right_extended.custom_hr_manager,jbm_group_access_right_extended.custom_hr_user,jbm_group_access_right_extended.custom_group_shared_service_manager,jbm_group_access_right_extended.custom_general_manager,jbm_group_access_right_extended.custom_general_manager_representative"
+                  id="root_menu_skills_configuration"
+                  sequence="4"
+                  parent="hr.menu_human_resources_configuration"
+        />
+        <menuitem name="Skills Objective Types"
+                  id="employee_skills_objective_types_menu"
+                  groups="base.group_system,jbm_group_access_right_extended.custom_hr_manager,jbm_group_access_right_extended.custom_hr_user,jbm_group_access_right_extended.custom_group_shared_service_manager,jbm_group_access_right_extended.custom_general_manager,jbm_group_access_right_extended.custom_general_manager_representative"
+                  parent="root_menu_skills_configuration"
+                  sequence="1"
+                  action="employee_skills_objective_types_act_window"/>
+
+    </data>
+</odoo>

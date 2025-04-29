@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="excellence_element_form_inherit" model="ir.ui.view">
+            <field name="name">Excellence.element.form.view.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='personal_information']" position="after">
+                    <page name="excellence_element" string="Excellence">
+                        <field name="employee_excellence_ids">
+                            <tree editable="bottom">
+                                <field name="type_id"/>
+                                <field name="date_taken"/>
+                                <field name="attachment_ids"/>
+                                <field name="remarks"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

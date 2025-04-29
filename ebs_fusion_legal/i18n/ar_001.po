@@ -1,0 +1,845 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_legal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-13 09:40+0000\n"
+"PO-Revision-Date: 2023-02-13 09:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "<span class=\"o_stat_text\">Documents</span>"
+msgstr ""
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "<span class=\"o_stat_text\">Related Case</span>"
+msgstr ""
+
+#. module: ebs_fusion_legal
+#: model:res.groups,name:ebs_fusion_legal.group_ebs_fusion_legal
+msgid "Access to Legal"
+msgstr "الوصول إلى الشؤون القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__fgh_as__accused
+msgid "Accused"
+msgstr "المتهم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_case_contact__type__accuser
+msgid "Accuser"
+msgstr "المتهم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__accuser_ids
+msgid "Accusers"
+msgstr "متهمون"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_track_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "Activity Track"
+msgstr "مسار النشاط"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__activity_type_id
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_activity_type
+msgid "Activity Type"
+msgstr "نوع النشاط"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__arabic_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__arabic_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__arabic_name
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__case_id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__case_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.ebs_legal_case_calendar
+msgid "Case"
+msgstr "قضية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__case_against
+msgid "Case Against"
+msgstr "قضية ضد"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__case_classification_id
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_class
+msgid "Case Classification"
+msgstr "تصنيف الحالة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__case_partial_classification_id
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_partial_class
+msgid "Case Partial Classification"
+msgstr "التصنيف الجزئي للقضية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__case_type_id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__case_type_id
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_type
+msgid "Case Type"
+msgstr "نوع القضية"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "Case with Arbitrator/ Outside Qatar"
+msgstr "القضية مع محكم / خارج قطر"
+
+#. module: ebs_fusion_legal
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case
+msgid "Cases"
+msgstr "حالات"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_attended
+msgid "Cases Attended"
+msgstr "الحالات التي حضرها"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_closed
+msgid "Cases Closed"
+msgstr "الحالات مغلقة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_in_qatar
+msgid "Cases In Qatar"
+msgstr "حالات في قطر"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_not_attended
+msgid "Cases Not Attended"
+msgstr "حالات لم يحضر"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_not_resolved
+msgid "Cases Not Resolved"
+msgstr "القضايا التي لم يتم حلها"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_outside_qatar
+msgid "Cases Outside Qatar"
+msgstr "حالات خارج قطر"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_received
+msgid "Cases Received"
+msgstr "الحالات المتلقاة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_handled_by_inhouse_legal_team
+msgid "Cases handled by Inhouse Legal Team"
+msgstr "تم التعامل مع القضايا من قبل الفريق القانوني الداخلي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_handled_by_qatar_law_firms
+msgid "Cases handled by Qatar Law Firms"
+msgstr "القضايا التي تم التعامل معها من قبل مكاتب المحاماة القطرية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__cases_with_arbitrator
+msgid "Cases with Arbitrator"
+msgstr "القضايا مع المحكم"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "Claimant"
+msgstr "المدعي"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_tree
+msgid "Claimants"
+msgstr "المطالبين"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__partner_id
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__case_type__client
+msgid "Client"
+msgstr "عميل"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__comments
+msgid "Comments"
+msgstr "تعليقات"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_fusion_legal
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_config
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__partner_id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__contact_id
+msgid "Contact"
+msgstr "اتصال"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__court_id
+msgid "Court"
+msgstr "محكمة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__court
+msgid "Court Name"
+msgstr "اسم المحكمة"
+
+#. module: ebs_fusion_legal
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_court
+msgid "Courts"
+msgstr "المحاكم"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "Create Document"
+msgstr "إنشاء وثيقة"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+msgid "Create New Case"
+msgstr "إنشاء حالة جديدة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__date
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__date_closed
+msgid "Date Closed"
+msgstr "التاريخ مغلق"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_case_contact__type__defender
+msgid "Defender"
+msgstr "مدافع"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__defender_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_tree
+msgid "Defenders"
+msgstr "المدافعون"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_litigation_degree
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__litigation_degree_id
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_litigation_degree
+msgid "Degree Of Litigation"
+msgstr "درجة التقاضي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_documents_document
+msgid "Document"
+msgstr "المستند"
+
+#. module: ebs_fusion_legal
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.documents_custom_legal_search
+msgid "Document Category"
+msgstr "فئة الوثيقة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__document_count
+msgid "Document Count"
+msgstr "عدد المستندات"
+
+#. module: ebs_fusion_legal
+#: code:addons/ebs_fusion_legal/models/ebs_legal_case.py:0
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_documents
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_documents
+#, python-format
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_case_contact
+msgid "EBS Case Contact"
+msgstr "جهة اتصال حالة EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_activity_track
+msgid "EBS Legal Activity"
+msgstr "النشاط القانوني لـ EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_activity_type
+msgid "EBS Legal Activity Type"
+msgstr "نوع النشاط القانوني لـ EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_case
+msgid "EBS Legal Case"
+msgstr "قضية EBS القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_case_class
+msgid "EBS Legal Case Class"
+msgstr "فئة القضية القانونية EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_case_partial_class
+msgid "EBS Legal Case Partial Class"
+msgstr "فئة جزئية للقضية القانونية من EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_case_type
+msgid "EBS Legal Case Type"
+msgstr "نوع القضية القانونية لـ EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_court
+msgid "EBS Legal Court"
+msgstr "محكمة EBS القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_law_firm
+msgid "EBS Legal Law Firm"
+msgstr "شركة المحاماة القانونية EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_litigation_degree
+msgid "EBS Legal Litigation Degree"
+msgstr "درجة التقاضي القانوني EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_purpose
+msgid "EBS Legal Purpose"
+msgstr "الغرض القانوني من EBS"
+
+#. module: ebs_fusion_legal
+#: model:ir.model,name:ebs_fusion_legal.model_ebs_legal_types
+msgid "EBS Legal Types"
+msgstr "أنواع EBS القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__employee_id
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__case_type__employee
+msgid "Employee"
+msgstr "موظف"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__fgh_as
+msgid "FHG"
+msgstr "FHG"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__case_against__fme
+msgid "FME"
+msgstr "FME"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء."
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_needaction
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_has_error
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__judgment__innocence
+msgid "Innocence"
+msgstr "البراءة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__judgment
+msgid "Judgment"
+msgstr "حكم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__judgment_details
+msgid "Judgment Details"
+msgstr "تفاصيل الحكم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__law_firm_id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__law_firms
+msgid "Law Firm"
+msgstr "شركة محاماة"
+
+#. module: ebs_fusion_legal
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_law_firm
+msgid "Law Firms"
+msgstr "مؤسسات قانونية"
+
+#. module: ebs_fusion_legal
+#: model:documents.folder,name:ebs_fusion_legal.documents_legal_folder
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_parent
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_case_root
+msgid "Legal"
+msgstr "قانوني"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_activity_type
+msgid "Legal Activity Type"
+msgstr "نوع النشاط القانوني"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_documents_document__case_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.documents_custom_legal_search
+msgid "Legal Case"
+msgstr "قضية قانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_case_class
+msgid "Legal Case Classification"
+msgstr "تصنيف الدعوى القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_case_partial_class
+msgid "Legal Case Partial Classification"
+msgstr "التصنيف الجزئي للقضية القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_case_type
+msgid "Legal Case Type"
+msgstr "نوع القضية القانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_case
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_case_ongoing
+msgid "Legal Cases"
+msgstr "قضايا شرعية"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_court
+msgid "Legal Court"
+msgstr "محكمة قانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_law_firm
+msgid "Legal Law Firm"
+msgstr "شركة محاماة قانونية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__location_case_qatar
+msgid "Location of Case in Qatar"
+msgstr "موقع القضية في قطر"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_type__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_class__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_partial_class__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case_type__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_court__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_law_firm__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_litigation_degree__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_purpose__name
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_types__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_fusion_legal
+#: code:addons/ebs_fusion_legal/models/ebs_legal_case.py:0
+#, python-format
+msgid "New Case"
+msgstr "حالة جديدة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي حدث التقويم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__name
+msgid "Number"
+msgstr "رقم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__state__ongoing
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_legal.view_ebs_legal_case_search
+msgid "Ongoing"
+msgstr "جاري التنفيذ"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__judgment__other
+msgid "Other"
+msgstr "آخر"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__case_against__other
+msgid "Other Party"
+msgstr "حفلة اخرى"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__document_ids
+msgid "Police Report"
+msgstr "تقرير الشرطة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__police_report_number
+msgid "Police Report Number"
+msgstr "رقم تقرير الشرطة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__public_prosecution_number
+msgid "Public Prosecution Number"
+msgstr "رقم النيابة العامة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__purpose
+msgid "Purpose"
+msgstr "غاية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__related_case_count
+msgid "Related Case"
+msgstr "حالة ذات صلة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__parent_id
+msgid "Related Case/Report"
+msgstr "حالة / تقرير ذات صلة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__related_number
+msgid "Related Number"
+msgstr "رقم ذو صلة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__activity_user_id
+msgid "Responsible User"
+msgstr "مستخدم مسؤول"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__state
+msgid "State"
+msgstr "ولاية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_case_contact__type
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__case_type
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__type_id
+msgid "Type"
+msgstr "يكتب"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: ebs_fusion_legal
+#: model:ir.actions.act_window,name:ebs_fusion_legal.action_ebs_legal_types
+#: model:ir.ui.menu,name:ebs_fusion_legal.menu_ebs_legal_types
+msgid "Types"
+msgstr "أنواع"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_activity_track__user_id
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__user_id
+msgid "User"
+msgstr "مستخدم"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields.selection,name:ebs_fusion_legal.selection__ebs_legal_case__fgh_as__victim
+msgid "Victim"
+msgstr "ضحية"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,field_description:ebs_fusion_legal.field_ebs_legal_case__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ebs_fusion_legal
+#: model:ir.model.fields,help:ebs_fusion_legal.field_ebs_legal_case__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"

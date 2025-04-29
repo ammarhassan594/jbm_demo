@@ -1,0 +1,15 @@
+<odoo>
+
+    <record id="taqat_custom_res_company_view" model="ir.ui.view">
+        <field name="name">custom.res.company.view</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="analytic_account_id" />
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

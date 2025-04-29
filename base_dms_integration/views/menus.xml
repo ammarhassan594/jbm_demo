@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_root_dms_integration" name="DMS Integration"/>
+    <menuitem
+            id="menu_dms_integration"
+            name="DMS API"
+            parent="menu_root_dms_integration"
+            sequence="1"
+            action="dms_integration_act_window"/>
+
+
+</odoo>

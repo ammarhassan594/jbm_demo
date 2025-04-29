@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+
+        <record id="submitted_letter_request_email_template" model="mail.template">
+            <field name="name">Submitted Letter Request</field>
+            <field name="model_id" ref="ebs_capstone_hr.model_ebs_hr_letter_request"/>
+            <field name="subject">Letter Request ({{object.name}}) from {{object.employee_id.name}} is submitted</field>
+            <field name="email_from">{{(object.employee_id.work_email )}}</field>
+            <field name="email_to">{{(object.signatory_id.work_email)}}</field>
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding:0px;">
+                    <p style="margin:0px;padding:0px;font-size:13px;">
+                        Dear<t t-esc="object.signatory_id.name"/>,
+                        <br/>
+                        <br/>
+                        <p>
+                            Kindly the new letter request is submitted:
+                            <ul>
+                                <li>Request No.:
+                                    <t t-esc="object.name"/>
+                                </li>
+                                <li>Date:
+                                    <t t-esc="object.date"/>
+                                </li>
+                                <li>Employee:
+                                    <t t-esc="object.employee_id.name"/>
+                                </li>
+                                <li>Type:
+                                    <t t-esc="dict(object.fields_get(allfields=['type'])['type']['selection'])[object.type]"/>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            For more information, please visit
+                            <a href="{{(object.get_letter_request_link())}}"
+                               target="_blank">request link
+                            </a>
+                        </p>
+                        <br/>
+                        Regards,
+                        <br/>
+                        <t t-esc="object.employee_id.name"/>
+                    </p>
+                </div>
+
+            </field>
+
+        </record>
+
+        <record id="ready_for_collection_letter_request_email_template" model="mail.template">
+            <field name="name">Ready For Collection Letter Request</field>
+            <field name="model_id" ref="ebs_capstone_hr.model_ebs_hr_letter_request"/>
+            <field name="subject">Letter Request {{object.name}} from {{object.employee_id.name}} is ready for
+                collection
+            </field>
+            <field name="email_from">{{(object.employee_id.work_email )}}</field>
+            <field name="email_to">{{(object.signatory_id.work_email)}}</field>
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding:0px;">
+                    <p style="margin:0px;padding:0px;font-size:13px;">
+                        Dear<t t-esc="object.signatory_id.name"/>,
+                        <br/>
+                        <br/>
+                        <p>
+                            Kindly the letter request is ready for collection:
+                            <ul>
+                                <li>Request No.:
+                                    <t t-esc="object.name"/>
+                                </li>
+                                <li>Date:
+                                    <t t-esc="object.date"/>
+                                </li>
+                                <li>Employee:
+                                    <t t-esc="object.employee_id.name"/>
+                                </li>
+                                <li>Type:
+                                    <t t-esc="dict(object.fields_get(allfields=['type'])['type']['selection'])[object.type]"/>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            For more information, please visit
+                            <a href="object.get_letter_request_link()"
+                               target="_blank">request link
+                            </a>
+                        </p>
+                        <br/>
+                        Regards,
+                        <br/>
+                        <t t-esc="object.employee_id.name"/>
+                    </p>
+                </div>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

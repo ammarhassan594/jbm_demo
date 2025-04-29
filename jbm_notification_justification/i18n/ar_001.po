@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_notification_justification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-13 09:51+0000\n"
+"PO-Revision-Date: 2023-08-13 09:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_notification_justification
+#: model_terms:ir.ui.view,arch_db:jbm_notification_justification.jbm_notification_justification_res_config_setting
+msgid ""
+"<br/>\n"
+"                                This is hours of rejection after, the system will reject any justification After these\n"
+"                                hours"
+msgstr "عدد الساعات التي بعدها سيقوم النظام بعمل رفض لعدد ساعات التأخير او المغادرة المبكرة  "
+
+#. module: jbm_notification_justification
+#: model:ir.model,name:jbm_notification_justification.model_hr_attendance
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: jbm_notification_justification
+#: model:ir.model,name:jbm_notification_justification.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: jbm_notification_justification
+#: model:ir.model,name:jbm_notification_justification.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: jbm_notification_justification
+#: model:ir.model.fields,field_description:jbm_notification_justification.field_hr_attendance__last_early_out_time
+msgid "Last Early Out Time"
+msgstr "وقت المغادرة المبكرة"
+
+#. module: jbm_notification_justification
+#: model:ir.model.fields,field_description:jbm_notification_justification.field_hr_attendance__last_late_in_time
+msgid "Last Late In Time"
+msgstr "وقت إدخال ألتأخير"
+
+#. module: jbm_notification_justification
+#: code:addons/jbm_notification_justification/models/hr_attendance.py:0
+#, python-format
+msgid ""
+"Please approve on Attendance %(name)s early check out on employee "
+"%(employee)s"
+msgstr ""
+
+#. module: jbm_notification_justification
+#: code:addons/jbm_notification_justification/models/hr_attendance.py:0
+#, python-format
+msgid ""
+"Please approve on Attendance %(name)s late check in on employee %(employee)s"
+msgstr ""
+
+#. module: jbm_notification_justification
+#: model_terms:ir.ui.view,arch_db:jbm_notification_justification.jbm_notification_justification_res_config_setting
+msgid "Reject After"
+msgstr "(ساعات) الرفض بعد "
+
+#. module: jbm_notification_justification
+#: model:ir.model.fields,field_description:jbm_notification_justification.field_res_company__reject_after
+#: model:ir.model.fields,field_description:jbm_notification_justification.field_res_config_settings__reject_after
+#: model_terms:ir.ui.view,arch_db:jbm_notification_justification.jbm_notification_justification_res_config_setting
+msgid "Reject After (Hours)"
+msgstr "(ساعات) الرفض بعد"
+
+#. module: jbm_notification_justification
+#: model:ir.actions.server,name:jbm_notification_justification.send_sms_notification_early_out_ir_actions_server
+#: model:ir.cron,cron_name:jbm_notification_justification.send_sms_notification_early_out
+#: model:ir.cron,name:jbm_notification_justification.send_sms_notification_early_out
+msgid "Send Sms Notification Early Out Justification"
+msgstr ""
+
+#. module: jbm_notification_justification
+#: model:ir.actions.server,name:jbm_notification_justification.update_lasted_attendance_late_in_early_out_ir_actions_server
+#: model:ir.cron,cron_name:jbm_notification_justification.update_lasted_attendance_late_in_early_out
+#: model:ir.cron,name:jbm_notification_justification.update_lasted_attendance_late_in_early_out
+msgid "Update Time Of Lasted Attendance Late in or early out"
+msgstr ""

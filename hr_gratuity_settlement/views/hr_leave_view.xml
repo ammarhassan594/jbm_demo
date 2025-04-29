@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="hr_leave_view_form_manager_custom" model="ir.ui.view">
+            <field name="name">Hr Leave</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                            <field name="unpaid_leave_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="edit_holiday_status_form_custom" model="ir.ui.view">
+            <field name="name">Hr Leave Type</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='allocation_type']" position="after">
+                            <field name="exceed_allocation_days"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

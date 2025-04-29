@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="res_partner_form_view_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='title']" position="after">
+                    <field name="is_legacy_account" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="res_partner_filter_view_inherit" model="ir.ui.view">
+            <field name="name">res_partner.filter.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <separator/>
+                    <filter string="Legacy Account" name="is_legacy_account" />
+                </xpath>
+<!--                <xpath expr="//filter[@name='salesperson']" position="after">-->
+<!--                    <filter string="Legacy Account" name="is_legacy_account" domain="[]" context="{'group_by': 'is_legacy_account'}"/>-->
+<!--                </xpath>-->
+
+            </field>
+        </record>
+    </data>
+</odoo>

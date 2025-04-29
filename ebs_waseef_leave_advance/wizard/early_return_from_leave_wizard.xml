@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!--Import Wizard View-->
+        <record id="early_return_from_leave_data_wizard_form" model="ir.ui.view">
+            <field name="name">Early Return From Leave</field>
+            <field name="model">return.leave.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="return_date" required="True"/>
+                            <field name="has_leave_advance" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="pay_on" attrs="{'invisible': [('has_leave_advance', '=', False)]}"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="create_early_return_from_leave" class="oe_highlight" string="Create" type="object"/>
+                        <button string="Cancel" class="oe_highlight"  special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_return_from_leave_data_wizard" model="ir.actions.act_window">
+            <field name="name">Early Return From Leave</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">return.leave.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+<!--        <menuitem id="menu_register_employees_menu" name="Register Employees" action="action_register_employees_data_wizard"-->
+<!--                  parent="hr_attendance.menu_hr_attendance_root"-->
+<!--                  sequence="15"/>-->
+
+</odoo>

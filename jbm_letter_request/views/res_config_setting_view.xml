@@ -1,0 +1,105 @@
+<odoo>
+    <record id="letter_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">letter.res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Letter Request"
+                     string="Letter Request"
+                     data-key="jbm_letter_request">
+                    <h2>Letter Request</h2>
+                    <div class="row mt16 o_settings_container"
+                         name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Set Max Number Of Letter Request On Day.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="max_number_letter" class="o_light_label">Max Number Of Letter</label>
+                                    <field name="max_number_letter"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Check Allow Print Signature / Stamp.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="print_signature_stamp" class="o_light_label">Print Signature / Stamp
+                                    </label>
+                                    <field name="print_signature_stamp"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container"
+                         name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Set Max Number Of Letter Request On Day.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="stamp_width" class="o_light_label">Stamp Width (cm)</label>
+                                    <field name="stamp_width"/>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Check Allow Print Signature / Stamp.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="stamp_height" class="o_light_label">Stamp Height (cm)
+                                    </label>
+                                    <field name="stamp_height"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container"
+                         name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Set Max Number Of Letter Request On Day.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="signature_width" class="o_light_label">Signature Width (cm)</label>
+                                    <field name="signature_width"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             title="Check Allow Print Signature / Stamp.">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="signature_height" class="o_light_label">Signature Height (cm)
+                                    </label>
+                                    <field name="signature_height"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_letter_config" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'jbm_letter_request', 'bin_size': False}</field>
+    </record>
+
+    <menuitem id="menu_letter_setting_root"
+              parent="menu_jbm_letter_request_root"
+              name="Setting"
+              groups="base.group_system"
+              sequence="50"/>
+    <menuitem id="menu_letter_config"
+              name="Configuration"
+              parent="menu_letter_setting_root"
+              action="action_letter_config"
+              sequence="1"/>
+
+</odoo>

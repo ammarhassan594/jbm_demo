@@ -1,0 +1,1995 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 09:18+0000\n"
+"PO-Revision-Date: 2023-02-08 09:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "+000 000 000"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "1- Select employee"
+msgstr "1- اختر الموظف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "<b style=\"color: red;\">Main Company Fees are doubled</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "<b>Balance :</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<b>Existing Contact</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "<b>Existing Employee</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<b>New Contact</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "<b>Total Invoice Not Paid :</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "<b>Total Invoice Paid :</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "<b>Total Payment :</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "<b>Total Proforma Invoice Not Paid :</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "<b>Total Proforma Invoice Paid :</b>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<i class=\"fas fa-universal-access icon\" rel=\"tooltip\" title=\"Invite\"/>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+msgid "<small class=\"text-right\">Status:</small>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span aria-hidden=\"true\">1</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+msgid ""
+"<span class=\"employee_table_title\">\n"
+"                                    <b>List of employees</b>\n"
+"                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid ""
+"<span class=\"request_service_table_title\">\n"
+"                                    <b>Payments</b>\n"
+"                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid ""
+"<span class=\"request_service_table_title\">\n"
+"                                <b>Submit New Service Order Request</b>\n"
+"                            </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">Commercial License</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">Commercial Registration</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">Contract Info</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">Establishment Card</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">National Address</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">Services</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">Summary</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span class=\"step-text\">User Information</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                                                                                    Consular\n"
+"                                                                                                                    Service\n"
+"                                                                                                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                                                                                    Entry\n"
+"                                                                                                                    Visas\n"
+"                                                                                                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                                                                                    Exit\n"
+"                                                                                                                    Permit\n"
+"                                                                                                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                                                                                    Family\n"
+"                                                                                                                    Residence\n"
+"                                                                                                                    Visa\n"
+"                                                                                                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                                                                                    Work\n"
+"                                                                                                                    Residence\n"
+"                                                                                                                    Permit\n"
+"                                                                                                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                        <i class=\"fa fa-download\" aria-hidden=\"false\"/>\n"
+"                                                    </span>\n"
+"                                                    Download Document"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>\n"
+"                                                    <i class=\"fa fa-download\" aria-hidden=\"false\"/>\n"
+"                                                </span>\n"
+"                                                Download Document"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.proforma_invoice_portal_content
+msgid ""
+"<span>\n"
+"                                    <i class=\"fa fa-download\" aria-hidden=\"false\"/>\n"
+"                                </span>\n"
+"                                Download proforma Invoice"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>1</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>2</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>3</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>4</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>5</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>6</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>7</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "<span>8</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"<span>ID\n"
+"                                                                                                                    Cards\n"
+"                                                                                                                </span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+msgid "<span>Service Orders</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"A Main Company employee will check and confirm your information. After\n"
+"                                                the\n"
+"                                                confirmation you’ll be able to proceed with your contract."
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Abbreviation"
+msgstr "اختصار"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Activity"
+msgstr "نشاط"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Activity Name:"
+msgstr "اسم النشاط:"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add"
+msgstr "يضيف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Add\n"
+"                                                                    Activity"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add Primary contact person"
+msgstr "إضافة جهة الاتصال الأساسية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add Secondary contact person"
+msgstr "إضافة جهة اتصال ثانوية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add a Service"
+msgstr "أضف خدمة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add new Authorisers"
+msgstr "إضافة معتمدين جدد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add new activity"
+msgstr "أضف نشاطًا جديدًا"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add new manager"
+msgstr "إضافة مدير جديد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add new partner"
+msgstr "إضافة شريك جديد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Add new service"
+msgstr "أضف خدمة جديدة"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+#, python-format
+msgid "Amount"
+msgstr "كمية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "Amount..."
+msgstr "كمية..."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Appointment Requested"
+msgstr "طلب موعد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+msgid "Appointments"
+msgstr "تعيينات"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Approver"
+msgstr "الموافق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Authorisers"
+msgstr "المعتمدين"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Awaiting Approval"
+msgstr "انتظر القبول"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Back"
+msgstr "خلف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Birth\n"
+"                                                                                                            Date"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Browse"
+msgstr "تصفح"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Building"
+msgstr "مبنى"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Business Activities"
+msgstr "الأنشطة التجارية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Business Sector"
+msgstr "قطاع الأعمال"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Business activities"
+msgstr "الأنشطة التجارية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Capital"
+msgstr "عاصمة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Client Employees"
+msgstr "موظفو العميل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Client Image"
+msgstr "صورة العميل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Close"
+msgstr "يغلق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Commercial License"
+msgstr "رخصة تجارية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Commercial Reg. No."
+msgstr "السجل التجاري. لا."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Commercial Reg. Status"
+msgstr "السجل التجاري. حالة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Commercial Reg. status"
+msgstr "السجل التجاري. حالة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Commercial Registration"
+msgstr "التسجيل التجاري"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Company Business Type"
+msgstr "نوع عمل الشركة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.fields
+msgid "Confirm Password"
+msgstr "تأكيد كلمة المرور"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Consular\n"
+"                                                                                                                        Service"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Consular\n"
+"                                                                                            Service"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Consular\n"
+"                                                                                    Service"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Consular\n"
+"                                                                                Service"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid ""
+"Consular\n"
+"                                                                        Service"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Contact Details"
+msgstr "بيانات المتصل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Contact Person is a QID holder?"
+msgstr "الشخص المسؤول هو حامل البطاقة الشخصية؟"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.website_contact_us_inherit
+msgid "Contact us"
+msgstr "اتصل بنا"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.website_contact_us_inherit
+msgid ""
+"Contact us about anything related to our company or\n"
+"                                                        services.\n"
+"                                                        <br/>\n"
+"                                                        We'll do our best to get back to you as soon as possible."
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Contract Info"
+msgstr "معلومات العقد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Contract No."
+msgstr "رقم العقد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Contract No.:"
+msgstr "رقم العقد:"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Contract Preview"
+msgstr "معاينة العقد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Contracts"
+msgstr "انكماش"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Create"
+msgstr "يخلق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Create Appointment"
+msgstr "إنشاء موعد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Create new contact\n"
+"                                    person"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Dashboard"
+msgstr "لوحة القيادة"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+#, python-format
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Date of\n"
+"                                                                                                            issue"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+msgid "Date of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Date of issue"
+msgstr "تاريخ المسألة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Dependent"
+msgstr "متكل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+msgid "Description"
+msgstr "وصف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Diplomatic"
+msgstr "دبلوماسي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Document Number"
+msgstr "رقم المستند"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Document Type"
+msgstr "نوع الوثيقة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.proforma_invoice_portal_content
+msgid "Download"
+msgstr "تحميل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Drag\n"
+"                                                        and drop\n"
+"                                                        document here or"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Drag\n"
+"                                                    and drop\n"
+"                                                    document here or"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Drag and\n"
+"                                                        drop\n"
+"                                                        document here or"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Employee"
+msgstr "موظف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Employee Name"
+msgstr "اسم الموظف"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Employee viewed by customer %s"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Entry\n"
+"                                                                                                                        Visas"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Entry Visas"
+msgstr "تأشيرات الدخول"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Error"
+msgstr "خطأ"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Est. ID"
+msgstr "EST. بطاقة تعريف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Est. Name (Ar)"
+msgstr "EST. الاسم (بالعربية)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Est. Name (En)"
+msgstr "EST. الاسم (بالإنجليزية)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Establishment Card"
+msgstr "بطاقة التأسيس"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Existing Employee"
+msgstr "الموظف الحالي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Exit\n"
+"                                                                                                                        Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Exit\n"
+"                                                                                            Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Exit Date"
+msgstr "تاريخ الخروج"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Exit Permit"
+msgstr "تصريح خروج"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Expiry\n"
+"                                                                                                            Date"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Expiry Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Family\n"
+"                                                                                                                        Residence\n"
+"                                                                                                                        Visa"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Family\n"
+"                                                                                            Residence\n"
+"                                                                                            Visa"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Family Residence\n"
+"                                                                                    Visa"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Family Residence\n"
+"                                                                                Visa"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid ""
+"Family Residence\n"
+"                                                                        Visa"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Female"
+msgstr "أنثى"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Finance Contact"
+msgstr "جهة الاتصال المالية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Finance/Accounts Person"
+msgstr "المالية / الحسابات الشخص"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Firm Nationality"
+msgstr "جنسية الشركة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Firm nationality"
+msgstr "جنسية ثابتة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "First Issue"
+msgstr "العدد الأول"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Full\n"
+"                                                                            Name(En.)"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Full\n"
+"                                                                        Name(En.)"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Full Name(Ar.)"
+msgstr "الاسم الكامل (عربي)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Full Name(En.)"
+msgstr "الاسم الكامل (إنجليزي)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Gender"
+msgstr "جنس"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Govt Fees"
+msgstr "الرسوم الحكومية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "HR"
+msgstr "الموارد البشرية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"ID\n"
+"                                                                                                                        Cards"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"ID\n"
+"                                                                                            Cards"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "ID Cards"
+msgstr "بطاقات الهوية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_home_dashboard
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Invoice Date"
+msgstr "تاريخ الفاتورة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+msgid "Is Proforma"
+msgstr "هل بروفورما"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Job\n"
+"                                                                                Position"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Job Position"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+msgid "Job Title"
+msgstr "مسمى وظيفي"
+
+#. module: ebs_fusion_theme
+#: model:ir.model,name:ebs_fusion_theme.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Labor Quota"
+msgstr "حصة العمالة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Legal Form"
+msgstr "استمارة قانونية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "License Number"
+msgstr "رقم الرخصة"
+
+#. module: ebs_fusion_theme
+#: model:ir.model,name:ebs_fusion_theme.model_mail_message
+msgid "Mail Messages"
+msgstr "رسائل البريد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Main Company Fees"
+msgstr "رسوم الشركة الرئيسية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Male"
+msgstr "ذكر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Manager in charge details"
+msgstr "مدير في تفاصيل المسؤول"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Managers"
+msgstr "المديرين"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "Memo"
+msgstr "مذكرة"
+
+#. module: ebs_fusion_theme
+#: model:ir.model.fields,field_description:ebs_fusion_theme.field_mail_mail__messages_read
+#: model:ir.model.fields,field_description:ebs_fusion_theme.field_mail_message__messages_read
+msgid "Message Read"
+msgstr "قراءة الرسالة"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#, python-format
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Name(Ar)"
+msgstr "الاسم (بالعربية)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Name(Ar.)"
+msgstr "الاسم (عربي)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Name(En.)"
+msgstr "الاسم (En.)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "National Address"
+msgstr "العنوان الوطني"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Nationality"
+msgstr "جنسية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "New"
+msgstr "جديد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_invoices_menu
+msgid "New Invoices"
+msgstr "فواتير جديدة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_payments_menu
+msgid "New Proforma Invoices"
+msgstr "فواتير أولية جديدة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Next"
+msgstr "التالي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "No"
+msgstr "لا"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "No. Of Branches"
+msgstr "عدد الفروع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "No. of branches"
+msgstr "عدد الفروع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "OK"
+msgstr "نعم"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Other"
+msgstr "آخر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Outsourced Employees"
+msgstr "الموظفون الخارجيون"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "PAY"
+msgstr "يدفع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_invoices_menu
+msgid "Paid Invoices"
+msgstr "فواتير مدفوعة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_payments_menu
+msgid "Paid Proforma Invoices"
+msgstr "الفواتير الأولية المدفوعة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Partners"
+msgstr "شركاء"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Passport"
+msgstr "جواز سفر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Passport\n"
+"                                                                                                            Name(Ar.)"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Passport\n"
+"                                                                                                            Name(En.)"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Passport\n"
+"                                                                                                            type"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Passport Name(Ar.)"
+msgstr "اسم جواز السفر (عربي)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Passport Name(En.)"
+msgstr "اسم جواز السفر (إنجليزي)"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Passport No"
+msgstr "رقم جواز السفر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Passport No."
+msgstr "رقم جواز السفر."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+msgid "Passport Number"
+msgstr "رقم جواز السفر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Passport type"
+msgstr "نوع جواز السفر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.fields
+msgid "Password"
+msgstr "كلمة المرور"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "Pay"
+msgstr "يدفع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "Pay Proforma Invoice"
+msgstr "دفع الفاتورة الأولية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+msgid "Payment"
+msgstr "قسط"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "Payment Details"
+msgstr "بيانات الدفع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: ebs_fusion_theme
+#: model:ir.model,name:ebs_fusion_theme.model_account_payment
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_home_dashboard
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_home_menu_proforma_invoice_breadcrumb
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Permission"
+msgstr "إذن"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Person Information"
+msgstr "معلومات الشخص"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Phone Number"
+msgstr "رقم التليفون"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Phone number"
+msgstr "رقم التليفون"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Please Confirm To Create An Appointment."
+msgstr "يرجى التأكيد لإنشاء موعد."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Portal Invitation"
+msgstr "دعوة البوابة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Primary\n"
+"                                        Contact\n"
+"                                        Person"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Primary Contact\n"
+"                                            Person"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_account_dropdown
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Profile"
+msgstr "حساب تعريفي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_home_dashboard
+msgid "Proforma Invoice"
+msgstr "الفاتورة الأولية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid ""
+"Proforma Invoice\n"
+"                                        Charts"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_home_menu_proforma_invoice_breadcrumb
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Proforma Invoices"
+msgstr "فواتير شكلية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+msgid "Proforma Lines"
+msgstr "خطوط بروفورما"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "QID"
+msgstr "البطاقة الشخصية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"QID\n"
+"                                                                                                            No."
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"QID\n"
+"                                                                                    No."
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "QID Expiry Date"
+msgstr "تاريخ انتهاء البطاقة الشخصية"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#, python-format
+msgid "QID No"
+msgstr "رقم البطاقة الشخصية القطرية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "QID No."
+msgstr "رقم البطاقة الشخصية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+msgid "QID Number"
+msgstr "رقم البطاقة الشخصية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+msgid "QID no."
+msgstr "رقم البطاقة الشخصية."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Quantity"
+msgstr "كمية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+msgid "Rate"
+msgstr "معدل"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_account_dropdown
+msgid "Registration"
+msgstr "تسجيل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Regular"
+msgstr "عادي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Related Main Company Company"
+msgstr "الشركة الرئيسية ذات الصلة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+msgid "Relation"
+msgstr "علاقة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Remaining Quantity"
+msgstr "الكمية المتبقية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Renew"
+msgstr "تجديد"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Residency\n"
+"                                                                                                            type"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Residency type"
+msgstr "نوع الإقامة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Search"
+msgstr "يبحث"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Search <span class=\"nolabel\"> (in Content)</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Search Contact:"
+msgstr "بحث جهة الاتصال:"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Search by name or code"
+msgstr "البحث بالاسم أو الرمز"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Secondary\n"
+"                                        Contact\n"
+"                                        Person"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Secondary Contact Person"
+msgstr "جهة الاتصال الثانوية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Sector"
+msgstr "قطاع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Select Crm Team"
+msgstr "حدد فريق Crm"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Select Related Main Company..."
+msgstr "حدد الشركة الرئيسية ذات الصلة ..."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Select Service"
+msgstr "حدد الخدمة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Select Service Order Type..."
+msgstr "حدد نوع طلب الخدمة ..."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Select Team Member"
+msgstr "حدد عضو الفريق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Select employee"
+msgstr "حدد الموظف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid ""
+"Select service\n"
+"                                        option"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Select service option"
+msgstr "حدد خيار الخدمة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Select..."
+msgstr "يختار..."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.website_contact_us_inherit
+msgid "Send us an email"
+msgstr "مراسلتنا على البريد الاليكتروني"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.payment_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+#, python-format
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Service"
+msgstr "خدمة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_home_dashboard
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Service Order"
+msgstr "طلب الخدمة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Services"
+msgstr "خدمات"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Special"
+msgstr "خاص"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#, python-format
+msgid "Sponsor"
+msgstr "راعي"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+msgid "Sponsor name"
+msgstr "اسم الكفيل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "State"
+msgstr "ولاية"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+#, python-format
+msgid "Status"
+msgstr "حالة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Street"
+msgstr "شارع"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Submit"
+msgstr "يُقدِّم"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.my_profile_link
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Submit New Service Order"
+msgstr "Submit New Service Order"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Submit New Service Order Request"
+msgstr "إرسال طلب طلب خدمة جديد"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "Suspicious activity detected by Google reCaptcha."
+msgstr "تم اكتشاف نشاط مريب بواسطة Google reCaptcha."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Target Audience"
+msgstr "الجمهور المستهدف"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Tax Reg. No."
+msgstr "التسجيل الضريبي. لا."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Team"
+msgstr "فريق"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid "Team Member"
+msgstr "أعضاء الفريق"
+
+#. module: ebs_fusion_theme
+#: code:addons/ebs_fusion_theme/controllers/main.py:0
+#, python-format
+msgid "The form's specified model does not exist"
+msgstr "النموذج المحدد للنموذج غير موجود"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_employees
+msgid "There are currently no employees for your account."
+msgstr "لا يوجد حاليا أي موظفين لحسابك."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid "There are currently no payments for your account."
+msgstr "لا يوجد حاليا أي مدفوعات لحسابك."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no authorisers."
+msgstr "لا يوجد معتمدين."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no business activities."
+msgstr "لا توجد أنشطة تجارية."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no contracts linked to this client yet."
+msgstr "لا توجد عقود مرتبطة بهذا العميل حتى الآن."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no contracts linked to this client."
+msgstr "لا توجد عقود مرتبطة بهذا العميل."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no managers."
+msgstr "لا يوجد مديرين."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no partners."
+msgstr "لا يوجد شركاء."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "There are no services selected."
+msgstr "لا توجد خدمات مختارة."
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Trade Name"
+msgstr "اسم تجاري"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Trade Name(Ar)"
+msgstr "الاسم التجاري (عربي)"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Trial End Date"
+msgstr "تاريخ انتهاء النسخة التجريبية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Unit"
+msgstr "وحدة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Update"
+msgstr "تحديث"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Update Activity"
+msgstr "تحديث النشاط"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Update contact"
+msgstr "تحديث جهة الاتصال"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Upload\n"
+"                                                                                                            Passport:"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Upload Passport"
+msgstr "تحميل جواز السفر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Upload Passport:"
+msgstr "تحميل جواز السفر:"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Upload QID"
+msgstr "تحميل البطاقة الشخصية"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "Upload QID:"
+msgstr "تحميل البطاقة الشخصية:"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Urgent"
+msgstr "عاجل"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "User Information"
+msgstr "معلومات المستخدم"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "VP No"
+msgstr "نائب الرئيس لا"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.dependent_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.employee_portal_content
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "View"
+msgstr "منظر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Visa Expiry Date"
+msgstr "تاريخ انتهاء التأشيرة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Visa Issue Date"
+msgstr "تاريخ إصدار التأشيرة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_details
+msgid "Visa No"
+msgstr "رقم التأشيرة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Visitor"
+msgstr "زائر"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Work\n"
+"                                                                                                                        Residence\n"
+"                                                                                                                        Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Work\n"
+"                                                                                            Residence\n"
+"                                                                                            Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Work Residence\n"
+"                                                                                    Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid ""
+"Work Residence\n"
+"                                                                                Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid ""
+"Work Residence\n"
+"                                                                        Permit"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_my_payments
+msgid ""
+"X\n"
+"                                                                            <span aria-hidden=\"true\">1</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.portal_layout
+msgid ""
+"X\n"
+"                                <span aria-hidden=\"true\">1</span>"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.submit_new_service_modal
+msgid "Yes"
+msgstr "نعم"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.reset_password
+msgid "Your Email"
+msgstr "بريدك الالكتروني"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "Zone"
+msgstr "منطقة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "dd/mm/yyyy"
+msgstr "يوم / شهر / سنة"
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+msgid "qid_residency_type"
+msgstr ""
+
+#. module: ebs_fusion_theme
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.registration
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_theme.sidebar_template
+msgid "اسم"
+msgstr ""

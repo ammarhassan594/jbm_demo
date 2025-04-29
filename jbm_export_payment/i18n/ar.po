@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * jbm_export_payment
+#
+# Translators:
+# Mervat Mosaad, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 02:07+0000\n"
+"PO-Revision-Date: 2016-12-17 02:07+0000\n"
+"Last-Translator: SaFi J. <safi2266@gmail.com>, 2016\n"
+"Language-Team: Arabic (https://www.transifex.com/oca/teams/23907/ar/)\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jbm_export_payment
+#: model:ir.model.fields,field_description:jbm_export_payment.field_export_payment__bank_account_id
+msgid "Account Number"
+msgstr "رقم الحساب"
+
+
+#. module: jbm_export_payment
+#: model:ir.model.fields,field_description:jbm_export_payment.field_export_payment__date
+msgid "Date"
+msgstr "التاريخ"
+
+
+#. module: jbm_export_payment
+#: model:ir.actions.act_window,name:jbm_export_payment.action_export_payment_wizard
+msgid "Export Payment"
+msgstr "مدفوعات التصدير"
+
+
+#. module: jbm_export_payment
+#: model_terms:ir.ui.view,arch_db:jbm_export_payment.export_partner_wizard_view_form
+msgid "Generate"
+msgstr "خلق"
+
+
+#. module: jbm_export_payment
+#: model_terms:ir.ui.view,arch_db:jbm_export_payment.export_partner_wizard_view_form
+msgid "Cancel"
+msgstr "إغلاق"
+
+#. module: jbm_export_payment
+#: model:ir.ui.menu,name:jbm_export_payment.menu_export_payment
+msgid "Export Payment"
+msgstr "مدفوعات التصدير"

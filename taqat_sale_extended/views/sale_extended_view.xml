@@ -1,0 +1,9 @@
+<odoo>
+
+      <record model="ir.ui.menu" id="sale.sale_menu_root">
+        <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman_all_leads')),(4,ref('sales_team.group_sale_salesman')),(4,ref('sales_team.group_sale_manager'))]"/>
+    </record>
+
+
+
+</odoo>

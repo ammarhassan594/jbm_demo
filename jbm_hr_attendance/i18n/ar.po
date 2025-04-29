@@ -1,0 +1,478 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * jbm_hr_attendance
+#
+# Translators:
+# Mervat Mosaad, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 02:07+0000\n"
+"PO-Revision-Date: 2016-12-17 02:07+0000\n"
+"Last-Translator: SaFi J. <safi2266@gmail.com>, 2016\n"
+"Language-Team: Arabic (https://www.transifex.com/oca/teams/23907/ar/)\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jbm_hr_attendance
+#: model:ir.ui.menu,name:jbm_hr_attendance.menu_hr_attendance_batch_sheet
+msgid "Attendance Analysis"
+msgstr "تحليل الحضور"
+
+
+
+#. module: jbm_hr_attendance
+#: model:ir.ui.menu,name:jbm_hr_attendance.menu_hr_attendance_batch
+msgid "Attendance Batches"
+msgstr "دفعات الحضور"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.actions.act_window,name:jbm_hr_attendance.action_hr_attendance_batch
+msgid "Attendance Sheet Batches"
+msgstr "دفعات سجل الحضور"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_hr_attendance_batch__name
+msgid "Name"
+msgstr "اﻷسم"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_hr_attendance_batch__employee_ids
+msgid "Employees"
+msgstr "الموظفين"
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_hr_attendance_batch__date_from
+msgid "From"
+msgstr "من"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_hr_attendance_batch__date_to
+msgid "To"
+msgstr "الي"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_batch_form_view
+msgid "Generate Sheets"
+msgstr "خلق سجلات"
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_batch_form_view
+msgid "Send To Draft"
+msgstr "ارسال الي المسوده"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_hr_attendance_batch__state
+msgid "Status"
+msgstr "الحالة"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields.selection,name:jbm_hr_attendance.selection__hr_attendance_batch__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields.selection,name:jbm_hr_attendance.selection__hr_attendance_batch__state__att_gen
+msgid "'Attendance Sheets Generated"
+msgstr " خلقت سجلات الحضور "
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_batch_form_view
+msgid "Period"
+msgstr "فتره"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.ui.menu,name:jbm_hr_attendance.menu_hr_attendance_sheet
+msgid "Attendance Sheets"
+msgstr "سجلات الحضور"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.actions.act_window,name:jbm_hr_attendance.action_hr_attendance_sheet
+msgid "Attendance Sheets"
+msgstr "سجلات الحضور"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__employee_number
+msgid "Employee Number"
+msgstr " رقم الموظف"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__name
+msgid "Name"
+msgstr "اﻷسم"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__contract_ids
+msgid "Contracts"
+msgstr "العقود"
+
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Get Attendances"
+msgstr "الحصول علي الحضور"
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Period"
+msgstr "الفتره"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Attendances"
+msgstr "الحضور"
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Day"
+msgstr "اليوم"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Ac Sign In"
+msgstr "الحضور"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Ac Sign Out"
+msgstr "الخروج"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Status"
+msgstr "الحالة"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Display"
+msgstr "عرض"
+
+
+#. module: jbm_hr_attendance
+#: model_terms:ir.ui.view,arch_db:jbm_hr_attendance.hr_attendance_sheet_form_view
+msgid "Allowances & Deductions"
+msgstr "البدلات والخصومات"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__basic_allowance
+msgid "Basic Allowance"
+msgstr "بدل اساسي"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__housing_allowance
+msgid "Housing Allowance"
+msgstr "بدل سكن"
+
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__social_allowance
+msgid "Social Allowance"
+msgstr "بدل اجتماعي"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__transportation_allowance
+msgid "Transportation Allowance"
+msgstr "بدل نقل"
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__mobile_allowance
+msgid "Mobile Allowance"
+msgstr "بدل الهاتف المحمول"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__other_allowance
+msgid "Other Allowance"
+msgstr "بدلات اخري
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__car_allowance
+msgid "Car Allowance"
+msgstr "بدلات سياره"
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__supervision_allowance
+msgid "Supervision Allowance"
+msgstr "بدل الإشراف "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__basic_deduction
+msgid "Basic Deduction"
+msgstr "الخصم الأساسي "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__other_deduction
+msgid "Other Deduction"
+msgstr "خصومات اخري "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__transportation_deduction
+msgid "Transportation Deduction"
+msgstr "خصم نقل "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__housing_deduction
+msgid "Housing Deduction"
+msgstr "خصم سكن "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__mobile_deduction
+msgid "Mobile Deduction"
+msgstr "خصم الهاتف المحمول "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__social_deduction
+msgid "Social Deduction"
+msgstr "خصم اجتماعي "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__car_deduction
+msgid "Car Deduction"
+msgstr "خصم سياره "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__supervision_deduction
+msgid "Supervision Deduction"
+msgstr "خصم الاشراف "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__basic_allowance_second
+msgid "Basic Allowance Second"
+msgstr "بدل اساسي ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__housing_allowance_second
+msgid "Housing Allowance Second"
+msgstr "بدل سكن ثاني "
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__social_allowance_second
+msgid "Social Allowance Second"
+msgstr "بدل اجتماعي ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__transportation_allowance_second
+msgid "Transportation Allowance Second"
+msgstr "بدل نقل ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__mobile_allowance_second
+msgid "Mobile Allowance Second"
+msgstr "بدل تليفون محمول ثاني "
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__other_allowance_second
+msgid "Other Allowance Second"
+msgstr "بدلات اخري ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__car_allowance_second
+msgid "Car Allowance Second"
+msgstr "بدل سياره ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__supervision_allowance_second
+msgid "Supervision Allowance Second"
+msgstr "بدل اشراف ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__basic_deduction_second
+msgid "Basic Deduction Second"
+msgstr "خصم اساسي ثاني "
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__other_deduction_second
+msgid "Other Deduction Second"
+msgstr "خصم اخر ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__transportation_deduction_second
+msgid "Transportation Deduction Second"
+msgstr "خصم نقل ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__housing_deduction_second
+msgid "Housing Deduction Second"
+msgstr "خصم سكن ثاني "
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__mobile_deduction_second
+msgid "Mobile Deduction Second"
+msgstr "خصم تليفون محمول ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__social_deduction_second
+msgid "Social Deduction Second"
+msgstr "خصم اجتماعي ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__car_deduction_second
+msgid "Car Deduction Second"
+msgstr "خصم سياره ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__supervision_deduction_second
+msgid "Supervision Deduction Second"
+msgstr "خصم الاشراف ثاني "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__basic_allowance_tot
+msgid "Basic Allowance Tot"
+msgstr "Tot بدل اساسي  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__housing_allowance_tot
+msgid "Housing Allowance Tot"
+msgstr "Tot بدل سكن  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__social_allowance_tot
+msgid "Social Allowance Tot"
+msgstr "Tot بدل اجتماعي  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__transportation_allowance_tot
+msgid "Transportation Allowance Tot"
+msgstr "Tot بدل نقل  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__mobile_allowance_tot
+msgid "Mobile Allowance Tot"
+msgstr "Tot بدل تليفون محمول  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__other_allowance_tot
+msgid "Other Allowance Tot"
+msgstr "Tot بدلات اخري  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__car_allowance_tot
+msgid "Car Allowance Tot"
+msgstr "Tot بدل سياره  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__supervision_allowance_tot
+msgid "Supervision Allowance Tot"
+msgstr "Tot بدل الاشراف  "
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__basic_deduction_tot
+msgid "Basic Deduction Tot"
+msgstr "Tot خصم اساسي  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__other_deduction_tot
+msgid "Other Deduction Tot"
+msgstr "Tot خصم اخر  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__transportation_deduction_tot
+msgid "Transportation Deduction Tot"
+msgstr "Tot خصم نقل  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__housing_deduction_tot
+msgid "Housing Deduction Tot"
+msgstr "Tot خصم سكن  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__mobile_deduction_tot
+msgid "Mobile Deduction Tot"
+msgstr "Tot خصم تليفون محمول  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__social_deduction_tot
+msgid "Social Deduction Tot"
+msgstr "Tot خصم اجتماعي  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__car_deduction_tot
+msgid "Car Deduction Tot"
+msgstr "Tot خصم سياره  "
+
+
+#. module: jbm_hr_attendance
+#: model:ir.model.fields,field_description:jbm_hr_attendance.field_attendance_sheet__supervision_deduction_tot
+msgid "Supervision Deduction Tot"
+msgstr "Tot خصم الاشراف  "
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="employees_detailed_xlsx" model="ir.actions.report">
+            <field name="name">كشف موظف تفصيلي</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">payslip_reports.employees_detailed</field>
+            <field name="report_file">payslip_reports.employees_detailed</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

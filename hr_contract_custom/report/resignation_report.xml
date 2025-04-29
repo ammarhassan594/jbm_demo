@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="resignation"
+                model="hr.resignation"
+                string="Resignation"
+                report_type="qweb-pdf"
+                name="hr_contract_custom.resignation_report"
+                file="hr_contract_custom.resignation_report"
+                print_report_name="'Resignation - '+(object.related_employee.name if object.related_employee.name else '')"
+                attachment="'Resignation - '+(object.related_employee.name if object.related_employee.name else '')+'.pdf'"
+
+
+        />
+
+        <template id="resignation_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.report_resignation_document"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_resignation_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <br/>
+                    <br/>
+                    <div id="title">
+                        <h2>
+                            <span style="font-weight: 800;">Resignation for</span>
+                            <span t-field="o.related_employee.name"/>
+                            <!--                        <span t-if="o.name != '/'" t-field="o.name"/>-->
+                        </h2>
+                    </div>
+                    <br/>
+                    <div class="row clearfix m32 mt-3">
+                        <table class="table" style="table-layout: fixed;">
+                            <tbody class="desc_tbody">
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Start Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.start_date"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>End Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.end_date"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Confirmation Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.date_confirmed"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Main Company ID</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.related_fusion_id"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>System ID</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.related_system_id"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Employment Status</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.related_approval.related_employment_status == 'contractor'">
+                                            <span>Contractor</span>
+                                        </t>
+                                        <t t-if="o.related_approval.related_employment_status == 'permanent'">
+                                            <span>Permanent</span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Creation Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.create_date"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Request Approval Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.approval_date"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Last Working Date</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.resignation_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Job Position</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.job_position.name"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Grade</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.grade.name"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Manager</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.related_manager.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Tenure of Experience</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.related_time_hired"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Notice Period</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.notice_period"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Resignation Reason</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.resignation_reason.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Personal Phone No</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.personal_phone_no"/>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <span>Personal Email</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.related_approval.personal_email"/>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Department</span>
+                                    </td>
+                                    <td colspan="5">
+                                        <span t-field="o.related_approval.related_oc.complete_name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">
+                                        <span>Justification</span>
+                                    </td>
+                                    <td colspan="5">
+                                        <span t-field="o.related_approval.reason"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class=" row clearfix m32 mt-3">
+                        <div class="col-12">
+                            <h4>
+                                <span>Warnings</span>
+                            </h4>
+                            <table class="table" style="table-layout: fixed;">
+                                <tbody class="desc_tbody">
+                                    <tr class="font-weight-bold">
+                                        <td>
+                                            <span>Sequence</span>
+                                        </td>
+                                        <td>
+                                            <span>Warning Type</span>
+                                        </td>
+                                        <td>
+                                            <span>Date of Offence</span>
+                                        </td>
+                                        <td>
+                                            <span>Date of Reporting the Offence</span>
+                                        </td>
+                                        <td>
+                                            <span>Date of Issuing Warning Letter</span>
+                                        </td>
+                                        <td>
+                                            <span>Created On</span>
+                                        </td>
+                                        <td>
+                                            <span>Total Days</span>
+                                        </td>
+                                        <td>
+                                            <span>Reason</span>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="o._get_warnings()"
+                                       t-as="row">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="row['name']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['type_offence']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['create_date']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['date_issuing']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['date_offence']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['date_report_offence']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['total_days']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['reason']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class=" row clearfix m32 mt-3">
+                        <div class="col-12">
+                            <h4>
+                                <span>Approvers</span>
+                            </h4>
+                            <table class="table" style="table-layout: fixed;">
+                                <tbody class="desc_tbody">
+                                    <tr class="font-weight-bold">
+                                        <td>
+                                            <span>Sequence</span>
+                                        </td>
+                                        <td>
+                                            <span>Approver</span>
+                                        </td>
+                                        <td>
+                                            <span>Approver Category</span>
+                                        </td>
+                                        <td>
+                                            <span>Approval Date</span>
+                                        </td>
+                                        <td>
+                                            <span>Status</span>
+                                        </td>
+                                        <td>
+                                            <span>Rejection Reason</span>
+                                        </td>
+                                        <td>
+                                            <span>Replacement of the Position</span>
+                                        </td>
+                                        <td>
+                                            <span>Eligible for Rehire</span>
+                                        </td>
+                                        <td>
+                                            <span>Comment</span>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="o._get_approvers()"
+                                       t-as="row">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="row['sequence']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['user_id']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['approver_category']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['approval_date']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['status']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['reject_reason']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['replacement_position']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['eligible_rehire']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="row['eligible_rehire_comment']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+<t t-name="HrDashboardMain">
+    <div class="oh_dashboards">
+        <div class="container-fluid o_hr_dashboard center">
+            <div class="row main-section">
+                <div class="col-2 dashboard_card hr_leaves">
+                    <div class="oh-card">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-calendar"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/leaves.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">الاجازات</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="col-2 dashboard_card hr_permissions">-->
+<!--                    <div class="oh-card">-->
+<!--                        <div class="oh-card-body">-->
+<!--                            <div class="stat-widget-one">-->
+<!--                                <div class="stat-icon">-->
+<!--                                    <i class="fa fa-check-square-o"/>-->
+<!--                                </div>-->
+<!--                                <div class="stat-content">-->
+<!--                                    <div class="stat-text">الإستئذانات</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="col-2 dashboard_card hr_certificate">
+                    <div class="oh-card">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-file-text"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/certificate.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text"> الشهادات</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_loans">
+                    <div class="oh-card">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-credit-card-alt"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/loan.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">السلف</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 dashboard_card hr_allowances">
+                    <div class="oh-card allowances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-user-plus"/>-->
+                                         <img src="/jbm_portal_self_service/static/src/img/icons/benefits.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">المزايا الوظيفية</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_resignation">
+                    <div class="oh-card resignation_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-plug"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/eos.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب استقالة</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_clearances">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-handshake-o"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/clearance.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب اخلاء طرف</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_approval_attendance">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-sign-in"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/work_request.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب احتياج</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_change_data">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-pencil-square-o"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/data_change.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">تغيير بيانات</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_job_card">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-id-card-o"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/access_card.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب البطاقة الوظيفية</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_work_start">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-toggle-on"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/resume_work.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب مباشرة عمل</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_performance_grievance">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-thumbs-down"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/appraisal_appeal.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب تظلم تقييم الأداء الوظيفي</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_attendance">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-check-circle"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/attendance.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">الحضور</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-2 dashboard_card hr_attendance_record">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-list-alt"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/daily_attendance.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">الحضور اليومي</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_violation_balance">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-hourglass-start"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/latency.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">رصيد التاخيرات</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card hr_contact">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-address-book"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/contacts.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">جهات الاتصال</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 dashboard_card hr_appraisal">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-tachometer"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/appraisal.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">التقييم</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card insurance_request">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-tachometer" aria-hidden="true"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/insurance_request.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب تأمين صحي</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card training_course">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-tachometer" aria-hidden="true"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/training_course.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">دورات تدريبية</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 dashboard_card over_time">
+                    <div class="oh-card clearances_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-tachometer" aria-hidden="true"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/permit_work.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب حضور خارج أوقات العمل</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</t>
+
+</templates>

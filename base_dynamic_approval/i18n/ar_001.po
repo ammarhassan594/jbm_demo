@@ -1,0 +1,990 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_dynamic_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 12:47+0000\n"
+"PO-Revision-Date: 2023-02-08 12:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_label
+msgid ""
+"<i class=\"fa fa-info-circle\"/>\n"
+"                        This Record needs to be\n"
+"                        validated."
+msgstr ""
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_label
+msgid ""
+"<i class=\"fa fa-thumbs-down\"/>\n"
+"                        Operation has been\n"
+"                        <b>rejected</b>\n"
+"                        ."
+msgstr ""
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_label
+msgid ""
+"<i class=\"fa fa-thumbs-up\"/>\n"
+"                        Operation has been\n"
+"                        <b>validated</b>\n"
+"                        !"
+msgstr ""
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config_settings_view_form_inherit
+msgid "<span class=\"o_form_label\">Email Sending Calendar</span>"
+msgstr ""
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config2_settings_dynamic_approval_view_form
+msgid "<span class=\"o_form_label\">Hours For Dynamical Approval</span>"
+msgstr ""
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#, python-format
+msgid "A validation process is still open for at least one record."
+msgstr "لا تزال عملية التحقق من الصحة مفتوحة لسجل واحد على الأقل."
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__active
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_search
+msgid "Active"
+msgstr "نشيط"
+
+#. module: base_dynamic_approval
+#: model:res.groups,name:base_dynamic_approval.dynamic_approval_admin_group
+msgid "Administrator"
+msgstr "مدير"
+
+#. module: base_dynamic_approval
+#: model:ir.ui.menu,name:base_dynamic_approval.dynamic_approval_root_menu
+msgid "Advanced Approval"
+msgstr "الموافقة المتقدمة"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_dynamic_approval_mixin
+msgid "Advanced Approval Mixin"
+msgstr "الموافقة المتقدمة Mixin"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "After Final Approval Options"
+msgstr "بعد خيارات الموافقة النهائية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__after_final_approve_server_action_id
+msgid "After Final Approve Server Action"
+msgstr "بعد إجراء خادم الموافقة النهائية"
+
+#. module: base_dynamic_approval
+#: model:res.groups,name:base_dynamic_approval.dynamic_approval_user_group
+msgid "Allow Approve / Reject"
+msgstr "السماح بالموافقة / الرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__automatic_approval
+msgid "Applicable for Dynamic Approval"
+msgstr "ينطبق على الموافقة الديناميكية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__can_edit
+msgid "Applicable for Edit Approval"
+msgstr "ينطبق على تعديل الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__approval_id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__approval_id
+msgid "Approval"
+msgstr "موافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_dynamic_approval_condition
+msgid "Approval Condition"
+msgstr "شرط الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__approval_condition_number
+msgid "Approval Condition Number"
+msgstr "رقم شرط الموافقة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Approval Conditions"
+msgstr "شروط الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.act_window,name:base_dynamic_approval.dynamic_approval_action
+#: model:ir.model,name:base_dynamic_approval.model_dynamic_approval
+#: model:ir.ui.menu,name:base_dynamic_approval.dynamic_approval_menu
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_tree
+msgid "Approval Configuration"
+msgstr "تكوين الموافقة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Approval Levels"
+msgstr "مستويات الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_dynamic_approval_request
+msgid "Approval Request"
+msgstr "طلب مقبول"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.act_window,name:base_dynamic_approval.dynamic_approval_request_action
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_form
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_tree
+msgid "Approval Request Log"
+msgstr "سجل طلب الموافقة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.actions.act_window,help:base_dynamic_approval.dynamic_approval_action
+msgid "Approval is a used to dynamic set workflow for any document you have."
+msgstr "تُستخدم الموافقة لتعيين سير عمل ديناميكي لأي مستند لديك."
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_dynamic_approval_level
+msgid "Approval level"
+msgstr "مستوى الموافقة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.approval_tree
+msgid "Approvals"
+msgstr "الموافقات"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.act_window,name:base_dynamic_approval.approve_dynamic_approval_wizard_action
+#: model:mail.activity.type,name:base_dynamic_approval.mail_activity_type_waiting_approval
+msgid "Approve"
+msgstr "يعتمد"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_approve_dynamic_approval_wizard
+msgid "Approve Advanced Approval Wizard"
+msgstr "اعتماد معالج الموافقة المتقدمة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__validate_by
+msgid "Approve By"
+msgstr "الموافقة من قبل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__approve_note
+msgid "Approve Note"
+msgstr "الموافقة على الملاحظة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__approve_requester_id
+msgid "Approve Requester"
+msgstr "مقدم طلب الموافقة"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_request__status__approved
+#, python-format
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__approved_by
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__approved_by_users
+msgid "Approved By"
+msgstr "تمت الموافقة عليه من قبل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__approve_date
+msgid "Approved Date"
+msgstr "تاريخ الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__group_id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__group_id
+msgid "Approver Group"
+msgstr "مجموعة الموافقين"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Approver Source"
+msgstr "مصدر الموافق"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__user_id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__user_id
+msgid "Approver User"
+msgstr "مستخدم معتمد"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__user_ids
+msgid "Approver Users"
+msgstr "المستخدمون المعتمدون"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.server,name:base_dynamic_approval.automatic_approval_ir_actions_server
+#: model:ir.cron,cron_name:base_dynamic_approval.automatic_approval
+#: model:ir.cron,name:base_dynamic_approval.automatic_approval
+msgid "Automatic Approval"
+msgstr "الموافقة التلقائية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_res_config_settings__number_of_hours
+msgid "Automatically Approve Hours"
+msgstr "الموافقة على الساعات تلقائيًا"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Budget more than 90k"
+msgstr "الميزانية أكثر من 90 ألف"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.approve_dynamic_approval_wizard_form
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.recall_dynamic_approval_wizard_form
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.reject_dynamic_approval_wizard_form
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__company_id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__company_id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__company_id
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_search
+msgid "Company"
+msgstr "شركة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Condition"
+msgstr "حالة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__condition_type
+msgid "Condition Type"
+msgstr "نوع الشرط"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__approval_condition_ids
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Conditions"
+msgstr "شروط"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: base_dynamic_approval
+#: model:ir.ui.menu,name:base_dynamic_approval.menu_dynamic_approval_config
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.approve_dynamic_approval_wizard_form
+msgid "Confirm Approve"
+msgstr "تأكيد الموافقة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.recall_dynamic_approval_wizard_form
+msgid "Confirm Recall"
+msgstr "تأكيد الاستدعاء"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.reject_dynamic_approval_wizard_form
+msgid "Confirm Reject"
+msgstr "تأكيد الرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__create_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__create_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Default User for Activity"
+msgstr "المستخدم الافتراضي للنشاط"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__default_notify_user_field_recall_id
+msgid "Default user field for recall (Activity)"
+msgstr "حقل المستخدم الافتراضي للاستدعاء (النشاط)"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__default_notify_user_field_rejection_id
+msgid "Default user field for rejection (Activity)"
+msgstr "حقل المستخدم الافتراضي للرفض (نشاط)"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__default_notify_user_field_after_final_approve_id
+msgid "Default user fields after final approval (Activity)"
+msgstr "حقول المستخدم الافتراضية بعد الموافقة النهائية (نشاط)"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__name
+msgid "Description"
+msgstr "وصف"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__display_name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,help:base_dynamic_approval.field_dynamic_approval_request__res_name
+msgid "Display name of the related document."
+msgstr "اسم العرض للمستند ذي الصلة."
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__res_name
+msgid "Document Name"
+msgstr "اسم الملف"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__filter_domain
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_condition__condition_type__domain
+msgid "Domain"
+msgstr "اِختِصاص"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_condition__value_type__dynamic
+msgid "Dynamic"
+msgstr "متحرك"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__dynamic_approval_id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__dynamic_approval_id
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config_settings_view_form_inherit
+msgid "Dynamic Approval"
+msgstr "الموافقة الديناميكية"
+
+#. module: base_dynamic_approval
+#: model:ir.module.category,name:base_dynamic_approval.dynamic_approval_category
+msgid "Dynamic Approvals"
+msgstr "الموافقات الديناميكية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__dynamic_approve_level_id
+msgid "Dynamic Approve Level"
+msgstr "مستوى الموافقة الديناميكي"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr "مجموعة الموافقة الديناميكية المعلقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr "طلب الموافقة الديناميكي"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config2_settings_dynamic_approval_view_form
+msgid "Dynamical Approval"
+msgstr "الموافقة الديناميكية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_res_config_settings__email_resource_calendar_id
+msgid "Email Resource Calendar"
+msgstr "تقويم موارد البريد الإلكتروني"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Email Template"
+msgstr "نموذج البريد الإلكتروني"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__email_template_after_final_approve_id
+msgid "Email Template After Final Approve"
+msgstr "نموذج البريد الإلكتروني بعد الموافقة النهائية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__email_template_to_approve_id
+msgid "Email Template To Approve"
+msgstr "نموذج البريد الإلكتروني المراد الموافقة عليه"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config_settings_view_form_inherit
+msgid "Email Time"
+msgstr "وقت البريد الإلكتروني"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__field_name
+msgid "Field Name"
+msgstr "اسم الحقل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_condition__condition_type__field_selection
+msgid "Field Selection"
+msgstr "اختيار المجال"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_condition__value_type__fixed
+msgid "Fixed Value"
+msgstr "قيمة ثابتة"
+
+#. module: base_dynamic_approval
+#: model:res.groups,name:base_dynamic_approval.group_force_dynamic_approval
+msgid "Force Dynamic Approvals"
+msgstr "فرض الموافقات الديناميكية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_level__validate_by__by_group
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_search
+msgid "Group"
+msgstr "مجموعة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_search
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_search
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config2_settings_dynamic_approval_view_form
+msgid "Hours"
+msgstr "ساعات"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config2_settings_dynamic_approval_view_form
+msgid "Hours For Dynamical Approval"
+msgstr "ساعات للحصول على الموافقة الديناميكية"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config2_settings_dynamic_approval_view_form
+msgid "Hours set to automatic dynamical approval.."
+msgstr "تم ضبط الساعات على الموافقة الديناميكية التلقائية .."
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__id
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr "هو طالب الموافقة الديناميكي"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard____last_update
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__last_reminder_date
+msgid "Last Reminder Date"
+msgstr "تاريخ آخر تذكير"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__write_uid
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__write_date
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__approval_level_ids
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Levels"
+msgstr "المستويات"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.actions.act_window,help:base_dynamic_approval.dynamic_approval_request_action
+msgid "Log for a approval requests"
+msgstr "سجل للحصول على طلبات الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__model
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__model
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_search
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_search
+msgid "Model"
+msgstr "نموذج"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Need Activity for next Approval User"
+msgstr "بحاجة إلى نشاط لمستخدم الموافقة التالي"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__need_create_activity_to_approve
+msgid "Need Create Activity To Approve"
+msgstr "تحتاج إلى إنشاء نشاط للموافقة عليه"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Need Notify Approved Users"
+msgstr "تحتاج إلى إخطار المستخدمين المعتمدين"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__need_notify_recall_approved_user
+msgid "Need Notify Recall Approved User"
+msgstr "تحتاج إلى إخطار سحب المستخدم المعتمد"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__need_notify_rejection_approved_user
+msgid "Need Notify Rejection Approved User"
+msgstr "تحتاج إلى إخطار المستخدم المعتمد بالرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__need_validation
+msgid "Need Validation"
+msgstr "تحتاج التحقق"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_request__status__new
+msgid "New"
+msgstr "جديد"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__next_review
+msgid "Next Review"
+msgstr "المراجعة القادمة"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#, python-format
+msgid "Next: %s"
+msgstr "التالي:٪ s"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_approve_dynamic_approval_wizard__note
+msgid "Note"
+msgstr "ملحوظة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__notify_user_field_after_final_approve_ids
+msgid "Notified users fields after final approve"
+msgstr "حقول المستخدمين المبلغة بعد الموافقة النهائية"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__notify_user_field_recall_ids
+msgid "Notified users fields for recall"
+msgstr "يتم إعلام الحقول للتذكير"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__notify_user_field_rejection_ids
+msgid "Notified users fields for rejection"
+msgstr "تم إخطار حقول المستخدمين للرفض"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Notify Users"
+msgstr "إعلام المستخدمين"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__operator
+msgid "Operator"
+msgstr "المشغل أو العامل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_request__status__pending
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_level.py:0
+#, python-format
+msgid "Please choose source of users will approve for level sequence %s"
+msgstr "الرجاء اختيار مصدر المستخدمين الذي سيتم الموافقة عليه لتسلسل المستوى٪ s"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__python_code
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_condition__condition_type__python_code
+msgid "Python Code"
+msgstr "كود بايثون"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_recall_dynamic_approval_wizard__name
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_reject_dynamic_approval_wizard__name
+msgid "Reason"
+msgstr "سبب"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.act_window,name:base_dynamic_approval.recall_dynamic_approval_wizard_action
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.recall_dynamic_approval_wizard_form
+msgid "Recall"
+msgstr "يتذكر"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_recall_dynamic_approval_wizard
+msgid "Recall Advanced Approval Wizard"
+msgstr "استدعاء معالج الموافقة المتقدمة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__recall_email_template_id
+msgid "Recall Email Template"
+msgstr "استدعاء نموذج البريد الإلكتروني"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Recall Options"
+msgstr "استدعاء الخيارات"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__recall_server_action_id
+msgid "Recall Server Action"
+msgstr "استدعاء إجراء الخادم"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#, python-format
+msgid "Recalled, Reason "
+msgstr "تم الاسترجاع ، السبب"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__model_id
+msgid "Referenced Document"
+msgstr "المستند المشار إليه"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.actions.act_window,help:base_dynamic_approval.dynamic_approval_action
+msgid "Register a approval configuration"
+msgstr "تسجيل تكوين الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.act_window,name:base_dynamic_approval.reject_dynamic_approval_wizard_action
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_label
+msgid "Reject"
+msgstr "يرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_reject_dynamic_approval_wizard
+msgid "Reject Advanced Approval Wizard"
+msgstr "رفض معالج الموافقة المتقدمة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__reject_date
+msgid "Reject Date"
+msgstr "تاريخ الرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__reject_reason
+msgid "Reject Reason"
+msgstr "رفض السبب"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__rejected
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_request__status__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#, python-format
+msgid "Rejected, Reason "
+msgstr "رفض السبب"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__rejection_email_template_id
+msgid "Rejection Email Template"
+msgstr "نموذج البريد الإلكتروني للرفض"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Rejection Options"
+msgstr "خيارات الرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__rejection_server_action_id
+msgid "Rejection Server Action"
+msgstr "إجراء خادم الرفض"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__res_id
+msgid "Related Document ID"
+msgstr "معرف الوثيقة ذات الصلة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__res_model
+msgid "Related Document Model"
+msgstr "نموذج الوثيقة ذات الصلة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Reminder Every (Hours)"
+msgstr "تذكير كل (ساعات)"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__reminder_pending_approver_email_template_id
+msgid "Reminder Pending Approver Email Template"
+msgstr "نموذج رسالة بريد إلكتروني للموافق معلق للتذكير"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Reminder Pending Email Template"
+msgstr "نموذج بريد إلكتروني معلق للتذكير"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__reminder_period_to_approve
+msgid "Reminder Period To Approve"
+msgstr "فترة التذكير للموافقة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Request Approval Options"
+msgstr "خيارات الموافقة على الطلب"
+
+#. module: base_dynamic_approval
+#: model:ir.ui.menu,name:base_dynamic_approval.dynamic_approval_request_menu
+msgid "Request Logs"
+msgstr "طلب السجلات"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_buttons
+msgid "Request Validation"
+msgstr "طلب التحقق"
+
+#. module: base_dynamic_approval
+#: model:ir.model,name:base_dynamic_approval.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "فترة عمل المورد"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_buttons
+msgid "Restart Validation"
+msgstr "أعد تشغيل التحقق من الصحة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__field_ids
+msgid "Reviewer fields"
+msgstr "حقول المراجع"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Sales Order Approval"
+msgstr "الموافقة على طلب المبيعات"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_search
+msgid "Search Approval Configuration"
+msgstr "تكوين الموافقة على البحث"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_search
+msgid "Search Approval Request"
+msgstr "طلب الموافقة على البحث"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_level__validate_by__by_fields
+msgid "Select fields in related record"
+msgstr "حدد الحقول في السجل ذات الصلة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_form
+msgid "Send Reminder Email"
+msgstr "إرسال بريد إلكتروني للتذكير"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__sequence
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__sequence
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__sequence
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,help:base_dynamic_approval.field_dynamic_approval__reminder_period_to_approve
+msgid "Set trigger duration after request approval pending"
+msgstr "تعيين مدة المشغل بعد طلب الموافقة المعلقة"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.act_window,name:base_dynamic_approval.action_dynamic_approval_config
+#: model:ir.ui.menu,name:base_dynamic_approval.menu_dynamic_approval_settings
+msgid "Settings"
+msgstr "إعدادات"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__state_from_name
+msgid "State From Name"
+msgstr "الدولة من الاسم"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_request__status
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_request_search
+msgid "Status"
+msgstr "حالة"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_level.py:0
+#, python-format
+msgid ""
+"System can`t find user for user / group for approval type '%s' level "
+"sequence number'%s'."
+msgstr ""
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_level.py:0
+#, python-format
+msgid "There are no res.users in the selected field"
+msgstr "لا يوجد مستخدمون موثوقون في الحقل المحدد"
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#, python-format
+msgid ""
+"This action needs to be validated for at least one record. Reviews pending:\n"
+" - %s \n"
+"Please request a validation."
+msgstr ""
+
+#. module: base_dynamic_approval
+#: code:addons/base_dynamic_approval/models/dynamic_approval_mixin.py:0
+#, python-format
+msgid "This status is not allowed to request approval"
+msgstr "هذه الحالة غير مسموح لها بطلب الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__to_approve_server_action_id
+msgid "To Approve Server Action"
+msgstr "للموافقة على عمل الخادم"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Trigger Server Action"
+msgstr "تشغيل خادم العمل"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__value_type
+msgid "Type"
+msgstr "يكتب"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "Under Approval Options"
+msgstr "ضمن خيارات الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval__state_under_approval
+msgid "Under Approval Status"
+msgstr "تحت حالة الموافقة"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_level__validate_by__by_user
+msgid "User"
+msgstr "مستخدم"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_level__valid_field_ids
+msgid "Valid Field"
+msgstr "حقل صالح"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.tier_validation_label
+msgid "Validate"
+msgstr "تحقق"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_mixin__validated
+msgid "Validated"
+msgstr "تم التحقق من صحتها"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,field_description:base_dynamic_approval.field_dynamic_approval_condition__value
+msgid "Value"
+msgstr "قيمة"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.res_config_settings_view_form_inherit
+msgid "email working hours"
+msgstr "ساعات عمل البريد الإلكتروني"
+
+#. module: base_dynamic_approval
+#: model_terms:ir.ui.view,arch_db:base_dynamic_approval.dynamic_approval_form
+msgid "ex. partner_id.total_invoiced"
+msgstr "السابق. partner_id.total_invoiced"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields,help:base_dynamic_approval.field_dynamic_approval_condition__value
+msgid ""
+"if type is dynamic: ex. partner_id.credit_limit. if type is fixed: ex. 10"
+msgstr ""
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_request__status__recall
+msgid "recall"
+msgstr "يتذكر"
+
+#. module: base_dynamic_approval
+#: model:ir.model.fields.selection,name:base_dynamic_approval.selection__dynamic_approval_level__validate_by__by_role
+msgid "role"
+msgstr "دور"
+
+#. module: base_dynamic_approval
+#: model:ir.actions.server,name:base_dynamic_approval.send_reminder_pending_approval_ir_actions_server
+#: model:ir.cron,cron_name:base_dynamic_approval.send_reminder_pending_approval
+#: model:ir.cron,name:base_dynamic_approval.send_reminder_pending_approval
+msgid "send reminder pending approval"
+msgstr "إرسال تذكير في انتظار الموافقة"

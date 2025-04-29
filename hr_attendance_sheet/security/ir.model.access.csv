@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_public_holiday_user,access_hr_public_holiday.user,model_hr_public_holiday,hr_holidays.group_hr_holidays_user,1,0,0,0
+access_hr_public_holiday_manager,access_hr_public_holiday.manager,model_hr_public_holiday,hr_holidays.group_hr_holidays_manager,1,1,1,1
+access_hr_public_holiday_att_sheet_user,access_hr_public_holiday.attshett.user,model_hr_public_holiday,group_attendance_sheet_user,1,0,0,0
+access_attendance_sheet_user,access.attendance.sheet.user,model_attendance_sheet,group_attendance_sheet_user,1,1,1,1
+access_attendance_sheet_manager,access.attendance.sheet.manager,model_attendance_sheet,group_attendance_sheet_manager,1,1,1,1
+access_attendance_sheet_line_user,access.attendance.sheet.line.user,model_attendance_sheet_line,group_attendance_sheet_user,1,1,1,1
+access_attendance_sheet_line_manager,access.attendance.sheet.line.manager,model_attendance_sheet_line,group_attendance_sheet_manager,1,1,1,1

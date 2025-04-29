@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="event_type_form_inherit" model="ir.ui.view">
+            <field name="name">event.type.custom.form</field>
+            <field name="model">sap.event.type</field>
+            <field name="inherit_id" ref="hr_employee_custom.event_type_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='description']" position="after">
+                    <field name="is_related_transfer"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

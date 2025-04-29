@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+<!--    moved from ebs_capstone_hr module-->
+    <menuitem id="menu_hr_employee_admin" name="All Employees" action="ebs_capstone_hr.ebs_inherit_employee_action"
+              parent="hr.menu_hr_employee_payroll" groups="ebs_hr_custom.group_user_manage_classified_employee"/>
+</odoo>

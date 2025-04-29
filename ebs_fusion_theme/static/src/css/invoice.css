@@ -1,0 +1,75 @@
+
+.invoice_table_class{
+  height: auto;
+  padding: 17px 0 20px;
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.12);
+  border: solid 0.5px #cdcdcd;
+  background-color: #ffffff;
+}
+.invoice_table_class .invoice_table_title{
+  width: 127px;
+  height: 20px;
+ /* margin: 4px 315px 10px 20px;*/
+  font-family: 'ProximaNova';
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747;
+  padding: 21px 0px 10px 20px;
+}
+.invoice_table{
+    margin-top:10px;
+    font-size: 14px;
+    font-family: 'ProximaNova';
+}
+
+.invoice_table thead{
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: left;
+  color: #a1a0a5;
+}
+
+.invoice_table tbody td a{
+    color: #b79854;
+}
+
+.doc_pager .pagination .page-item.active .page-link{
+    background-color: #b79854;
+    border-color: #b79854;
+}
+.doc_pager .pagination{
+    display:inline-flex;
+}
+
+.add_document{
+  margin-top: -10px;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+
+
+@media only screen and (min-width: 1201px) and (max-width:1440px){
+    .document_table_class{
+        width: calc(100% - 45px);
+        margin-left: 15px;
+    }
+}
+
+
+@media only screen and (max-width: 767px)  {
+    .invoice_table{
+        display:table !important;
+    }
+}

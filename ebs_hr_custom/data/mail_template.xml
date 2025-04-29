@@ -1,0 +1,219 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <!--        <record id="email_template_for_hr_responsible" model="mail.template">-->
+        <!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+        <!--            <field name="email_from">${ctx['email_from']}</field>-->
+        <!--            <field name="email_to">${ctx['email_to']}</field>-->
+        <!--            <field name="subject">Employees With Missing Bank Account</field>-->
+        <!--            <field name="lang">${object.lang}</field>-->
+        <!--            <field name="auto_delete" eval="False"/>-->
+        <!--            <field name="body_html" type="html">-->
+        <!--                <div>-->
+        <!--                    <ul>-->
+        <!--                        % for emp in ctx['employees']:-->
+        <!--                        <li>-->
+        <!--                            <span>Employee Number: [${emp.registration_number}] Name: ${emp.name}</span>-->
+        <!--                            <a href="${ctx['base']}/web/#id=${emp.id}&amp;view_type=form&amp;model=hr.employee">-->
+        <!--                                ${ctx['base']}/web/#id=${emp.id}&amp;view_type=form&amp;model=hr.employee-->
+        <!--                            </a>-->
+        <!--                        </li>-->
+        <!--                        % endfor-->
+
+        <!--                    </ul>-->
+        <!--                </div>-->
+        <!--            </field>-->
+        <!--        </record>-->
+        <record id="mail_template_of_notify_completion_of_trial_period" model="mail.template">
+            <field name="name">Notification for Completion of trial period</field>
+            <field name="subject">Notification to Complete End Probation Period To ${object and object.name or ''}
+            </field>
+            <field name="email_from">{{(object.company_id.email or user.email) }}</field>
+            <field name="email_to">{{ctx['email_to']}}</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="html">
+                <div>
+                    Hello ,
+                    <br/>
+                    <p>
+                        <t t-esc="object.name"/>'s end-probation period will be complete on Date
+                        <t t-esc="object.probation_date"/>.
+                    </p>
+                    <br/>
+                    Thank you
+                    <br/>
+                </div>
+            </field>
+        </record>
+
+
+        <record id="mail_template_of_added_new_employee_in_system" model="mail.template">
+            <field name="name">Notification for New employee added in system</field>
+            <field name="subject">Notification Of New Joiner employee</field>
+            <field name="email_from">"{{(object.company_id.email or user.email)}}"</field>
+            <field name="partner_to">{{ctx['partner_to']}}</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="html">
+                <div>
+                    Dear ,
+                    <br/>
+                    <p>I am very pleased to announce that
+                        <t t-esc="object.name"/>
+                        is joining our organization
+                        <t t-if="object.job_id and object.joining_date">
+                            as a
+                            <t t-esc="object.job_id.name"/>
+                            on
+                            <t t-esc="object.joining_date"/>
+                        </t>
+                    </p>
+                    <br/>
+
+                    <table class="table" style="table-layout:auto; font-size:12px; text-align:center">
+                        <!--                       HEADER      -->
+                        <thead style="background-color:#007acc">
+                            <tr class="table-info" style="width:100%">
+                                <th align="center" valign="middle">
+                                    <b>Employee Number</b>
+                                </th>
+                                <th align="center" valign="middle">
+                                    Employee English Name
+                                </th>
+                                <th align="center" valign="middle">
+                                    Date Of Birth
+                                </th>
+                                <th align="center" valign="middle">
+                                    Qatari ID
+                                </th>
+                                <th align="center" valign="middle">
+                                    Nationality
+                                </th>
+                                <th align="center" valign="middle">
+                                    Gender
+                                </th>
+                                <th align="center" valign="middle">
+                                    Marital Status
+                                </th>
+                                <th align="center" valign="middle">
+                                    Joining Date
+                                </th>
+                                <th align="center" valign="middle">
+                                    Job Tile / Designation
+                                </th>
+                                <th align="center" valign="middle">
+                                    Site
+                                </th>
+                                <th align="center" valign="middle">
+                                    Email ID
+                                </th>
+                                <th align="center" valign="middle">
+                                    Reporting Manager
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="width:100%">
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.registration_number"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.name"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.birthday"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.qid_doc_number"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.country_id.name"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.gender"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.marital"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.joining_date"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.job_id.name"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.main_project.name"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.work_email"/>
+                                    </b>
+                                </td>
+                                <td align="center" valign="middle">
+                                    <b>
+                                        <t t-esc="object.parent_id.name"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <br/>
+                    Thank you
+                </div>
+            </field>
+        </record>
+
+        <record id="email_template_for_event" model="mail.template">
+            <field name="name">Notification for New employee event</field>
+            <field name="model_id" ref="model_employee_event"/>
+            <field name="email_from">{{ctx['email_from']}}</field>
+            <field name="email_to">{{ctx['email_from']}}</field>
+            <field name="subject">Employees Event</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[ <p style="margin: 0px; padding: 0px; font-size: 13px;">
+               <p>This are changed fields</p>
+                <br/>
+                 <table style="width:100%" border="5">
+                 <tr>
+                    <td colspan="2" style="background-color: #875A7B;color:white;"> <center>Field Name</center> </td>
+                    <td colspan="2" style="background-color: #875A7B;color:white;"> <center>Old Value</center> </td>
+                    <td colspan="2" style="background-color: #875A7B;color:white;"> <center>New Value</center> </td>
+                 </tr>
+                 % for line in {{ctx['final_data']}}:
+                    <tr>
+                         <td colspan="2"><strong><a>{{line}}</a></strong></td>
+                         <td colspan="2"><strong><a>{{ctx['final_data'][line][0]}}</a></strong></td>
+                         <td colspan="2"><strong><a>{{ctx['final_data'][line][1]}}</a></strong></td>
+                    </tr>
+                % endfor
+                </table>
+                <br/></p> ]]>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="ebs_settings_inherit_employee_promotion" model="ir.ui.view">
+        <field name="name">ebs.settings.employee.promotion</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='hr_payroll_localization']" position="after">
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label string="Basic" for="basic" class="col-lg-3 o_light_label"/>
+                                    <field name="basic"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label string="Housing" for="housing" class="col-lg-3 o_light_label"/>
+                                    <field name="housing"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label string="Transportation" for="transportation"
+                                           class="col-lg-3 o_light_label"/>
+                                    <field name="transportation"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label string="Social" for="social" class="col-lg-3 o_light_label"/>
+                                    <field name="social"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label string="Other" for="other" class="col-lg-3 o_light_label"/>
+                                    <field name="other"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <div class="row mt16">
+                                <label string="Mobile" for="mobile" class="col-lg-3 o_light_label"/>
+                                <field name="mobile"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Uniform" for="uniform" class="col-lg-3 o_light_label"/>
+                                <field name="uniform"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Fixed Overtime" for="fixed_overtime" class="col-lg-3 o_light_label"/>
+                                <field name="fixed_overtime"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Furniture Allowance" for="furniture_allowance"
+                                       class="col-lg-3 o_light_label"/>
+                                <field name="furniture_allowance"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Furniture Maintenance" for="furniture_maintenance"
+                                       class="col-lg-3 o_light_label"/>
+                                <field name="furniture_maintenance"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Ticket Allowance" for="ticket_allowance" class="col-lg-3 o_light_label"/>
+                                <field name="ticket_allowance"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

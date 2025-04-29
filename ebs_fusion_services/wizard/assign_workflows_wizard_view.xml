@@ -1,0 +1,29 @@
+<odoo>
+
+    <record id="view_assign_workflows_wizard_form" model="ir.ui.view">
+        <field name="name">assign.workflows.wizard.form</field>
+        <field name="model">assign.workflows.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="user_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <field name="workflow_ids" invisible="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="assign_workflows_wizard_action" model="ir.actions.act_window">
+        <field name="name">Assign Workflows</field>
+        <field name="res_model">assign.workflows.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

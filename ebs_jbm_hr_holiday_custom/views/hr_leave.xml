@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+
+        <record id="inherit_ebs_lb_payroll_leave_type" model="ir.ui.view">
+            <field name="name">ebs.jbm.hr.leave.type.custom</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="ebs_lb_payroll.custom_hr_leave_type_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_paid']" position="after">
+                    <field name="add_validation_past_leave"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="custom_jbm_hr_holidays_hr_leave_view_form_inherit_test" model="ir.ui.view">
+            <field name="name">custom.jbm.hr.holidays.hr.leave.view.form.inherit.test</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="return_date" required="1"/>
+                    <field name="create_date" string="Submit Date" readonly="1"/>
+                    <field name="approval_date" readonly="1"/>
+                    <field name="phone_number_on_leave"/>
+                    <field name="address_during_leave"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_validate']" position="attributes">
+                    <attribute name="groups"></attribute>
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': ['|', ('can_approve', '=', False),
+                        ('state', '!=', 'validate1')]}
+                    </attribute>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record id="hr_leave_view_tree_remove_buttons" model="ir.ui.view">
+            <field name="name">hr.leave</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_tree"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//button[@name='action_approve']" position="replace">
+
+                </xpath>
+
+                <xpath expr="//button[@name='action_validate']" position="replace">
+
+                </xpath>
+
+                <xpath expr="//button[@name='action_refuse']" position="replace">
+
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="hr_holidays.hr_leave_view_tree_my" model="ir.ui.view">
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='holiday_type']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='holiday_status_id']" position="after">
+                    <field name="create_date" />
+                </xpath>
+
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="payment_lines_form_view" model="ir.ui.view">
+            <field name="name">payment.lines.form.view</field>
+            <field name="model">allowance.request.line</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="date"/>
+                            <field name="ref"/>
+                            <field name="amount"/>
+                            <field name="allowance_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="payment_lines_tree_view" model="ir.ui.view">
+            <field name="name">payment.lines.tree.view</field>
+            <field name="model">allowance.request.line</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="date"/>
+                    <field name="ref"/>
+                    <field name="amount"/>
+                    <field name="allowance_id" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="payment_lines_action" model="ir.actions.act_window">
+            <field name="name">Payment Lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">allowance.request.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Payment Lines" id="payment_lines_menu"
+                  parent="hr_payroll.menu_hr_payroll_employees_root"
+                  sequence="28"
+                  action="payment_lines_action"/>
+    </data>
+</odoo>

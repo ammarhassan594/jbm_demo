@@ -1,0 +1,92 @@
+<odoo>
+    <!--    ebs crm service process form-->
+    <record model="ir.ui.view" id="view_ebs_batch_service_order_form">
+        <field name="name">ebs.batch.service.order.Form</field>
+        <field name="model">ebs.batch.service.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="confirm_batch_order" type="object" string="Confirm" class="oe_highlight"
+                            groups="ebs_fusion_services.group_services_manager"
+                            attrs="{'invisible': [('status', '!=', 'draft')]}"/>
+                    <field name="status" widget="statusbar" clickable='1'/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_created_service_orders" type="object" class="oe_stat_button"
+                                icon="fa-pencil-square-o"
+                                attrs="{'invisible':[('status','=','draft')]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="service_order_count"/>
+                                </span>
+                                <span class="o_stat_text">Service Orders</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="company_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="target_audience"/>
+                            <field name="client_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   domain="[('related_company_ids', 'in', company_id),('is_customer', '=', True),('is_company', '=', True),('parent_id', '=', False)]"/>
+                            <field name="employee_ids" context="{'client_id': client_id}" widget="many2many_tags"
+                                   domain="[('partner_parent_id', '=', client_id)]"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="service_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   domain="[('target_audience', '=', 'person')]"/>
+                            <field name="option_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   domain="[('service_id','=',service_id or 0),('company_id', '=', company_id or 0)]"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="assigned_user_id" options="{'no_create': 1, 'no_create_edit': 1}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_ebs_batch_service_order_tree">
+        <field name="name">ebs.batch.service.order.tree</field>
+        <field name="model">ebs.batch.service.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="service_id"/>
+                <field name="client_id"/>
+                <field name="employee_ids" widget="many2many_tags"/>
+                <field name="date"/>
+                <field name="assigned_user_id"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ebs_batch_service_order_search" model="ir.ui.view">
+        <field name="name">ebs.batch.service.order.search</field>
+        <field name="model">ebs.batch.service.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="client_id"/>
+                <field name="employee_ids"/>
+                <field name="service_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_ebs_batch_service_order">
+        <field name="name">Batch Service Orders</field>
+        <field name="res_model">ebs.batch.service.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

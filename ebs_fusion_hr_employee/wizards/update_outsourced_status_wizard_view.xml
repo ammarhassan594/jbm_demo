@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="update_outsourced_status_wizard_form" model="ir.ui.view">
+            <field name="name">update.outsourced.status.wizard.form</field>
+            <field name="model">update.outsourced.status.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="outsourced_status" required="1"/>
+                            <field name="employee_ids" invisible="1"/>
+                        </group>
+                        <footer>
+                            <button name="button_confirm" string="Confirm" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="update_outsourced_status_wizard_action" model="ir.actions.act_window">
+            <field name="name">Update Outsourced Status</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">update.outsourced.status.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

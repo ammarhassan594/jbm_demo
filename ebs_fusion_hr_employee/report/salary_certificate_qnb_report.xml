@@ -1,0 +1,191 @@
+<odoo>
+
+    <report
+            id="salary_certificate_qnb_report_action"
+            model="hr.employee"
+            report_type="qweb-pdf"
+            string="Salary Certificate – QNB: QID Holder"
+            name="ebs_fusion_hr_employee.salary_certificate_qnb_report"
+            file="ebs_fusion_hr_employee.salary_certificate_qnb_report"
+            print_report_name="'Salary Cert - %s – %s' % (object.name, time.strftime('%d.%m.%y'))"
+            paperformat="ebs_fusion_hr_employee.paperformat_employee_report_letter"
+            menu="False"
+    />
+
+    <template id="salary_certificate_qnb_report">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.basic_layout">
+                <div class="page" style="margin: 0px !important">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-12" style="padding: 0px !important">
+                                <img t-if="o.company_id.company_report_header"
+                                     t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                     style="width:100%" alt="Letter Head"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-right: 20px; margin-left: 20px; padding-top: 300px">
+                        <div>
+                            <div>Date:
+                                <strong>
+                                    <t t-esc="datetime.date.today().strftime('%d/%m/%Y')"/>
+                                </strong>
+                            </div>
+                            <div>The Manager</div>
+                            <div>Qatar National Bank</div>
+                            <div>P.O. Box 3232</div>
+                            <div>Doha, Qatar</div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div>
+                            <span>Subject:</span>
+                            <strong>Salary Certificate</strong>
+                        </div>
+                        <br/>
+                        <div>To Whom It May Concern,</div>
+                        <br/>
+                        <div>
+                            <div>This is to certify that
+                                <strong>
+                                    <t t-esc="o.title.name"/>
+                                    <t t-esc="o.name"/>
+                                </strong>
+                                , a citizen of
+                                <strong>
+                                    <t t-esc="o.nationality_id.name"/>
+                                </strong>
+                                , holding Passport
+                                no.
+                                <strong>
+                                    <t t-esc="o.passport_no"/>
+                                </strong>
+                                and QID no.
+                                <strong>
+                                    <t t-esc="o.qid_no"/>
+                                </strong>
+                                is a confirmed employee of <strong>Fusion Outsourcing and
+                                    Services LLC</strong>. They joined the company on the
+                                <t t-if="o.entry_date">
+                                    <strong>
+                                        <t t-esc="o.entry_date.strftime('%d/%m/%Y')"/>
+                                    </strong>
+                                </t>
+                                <t t-if="o.qid_job_position_id">
+                                    and is currently working as a
+                                <strong>
+                                    <t t-esc="o.qid_job_position_id.name"/>
+                                </strong>
+                                .
+                                </t>
+                                <t t-elif="o.job_id">
+                                  and is currently working as a
+                                <strong>
+                                    <t t-esc="o.job_id.name"/>
+                                </strong>
+                                 .
+                                </t>
+                                 Their monthly salary will be paid through their QNB bank account starting
+                                <strong>
+                                    <t t-esc="datetime.date.today().strftime('%B %Y')"/>
+                                </strong>
+                                and will continue to be paid through the same
+                                moving forward.
+                            </div>
+                            <br/>
+                            <div>Their present salary is QAR
+                                <strong>
+                                    <t t-if="o.active_contract.package - int(o.active_contract.package) > 0">
+                                        <t t-esc="o.active_contract.package"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="int(o.active_contract.package)"/>
+                                    </t>
+                                </strong>
+                                per month. Please find the breakdown of their salary below.
+                            </div>
+                            <br/>
+                            <div>Basic Salary – QAR
+                                <strong>
+                                    <t t-if="o.active_contract.wage - int(o.active_contract.wage) > 0">
+                                        <t t-esc="o.active_contract.wage"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="int(o.active_contract.wage)"/>
+                                    </t>
+                                </strong>
+                            </div>
+                            <div>Accommodation Allowance – QAR
+                                <strong>
+                                    <t t-if="o.active_contract.accommodation - int(o.active_contract.accommodation) > 0">
+                                        <t t-esc="o.active_contract.accommodation"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="int(o.active_contract.accommodation)"/>
+                                    </t>
+                                </strong>
+                            </div>
+                            <div>Transportation Allowance – QAR
+                                <strong>
+                                    <t t-if="o.active_contract.transport_allowance - int(o.active_contract.transport_allowance) > 0">
+                                        <t t-esc="o.active_contract.transport_allowance"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="int(o.active_contract.transport_allowance)"/>
+                                    </t>
+                                </strong>
+                            </div>
+                            <div>Other Allowance – QAR
+                                <strong>
+                                    <t t-if="o.active_contract.living_allowance + o.active_contract.other_allowance + o.active_contract.food_allowance + o.active_contract.mobile_allowance- int(o.active_contract.living_allowance + o.active_contract.other_allowance + o.active_contract.food_allowance + o.active_contract.mobile_allowance) > 0">
+                                        <t t-esc="o.active_contract.living_allowance + o.active_contract.other_allowance + o.active_contract.food_allowance + o.active_contract.mobile_allowance"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="int(o.active_contract.living_allowance + o.active_contract.other_allowance + o.active_contract.food_allowance + o.active_contract.mobile_allowance)"/>
+                                    </t>
+                                </strong>
+                            </div>
+                            <br/>
+                            <div>If
+                                <strong>
+                                    <t t-esc="o.title.name"/>
+                                    <t t-esc="o.name"/>
+                                </strong>
+                                resigns or their employment is terminated by this company, we
+                                will inform you accordingly and pay all amounts of End of Services benefits due to him,
+                                if any, to his Bank account.
+                            </div>
+                            <br/>
+                            <div>The above-named employee fully understands that <strong>Fusion Outsourcing and Services
+                                LLC
+                            </strong> does not in any way hold itself responsible for any debts incurred by them and
+                                that the granting of a Credit Facility is at the sole discretion of your Bank.
+                            </div>
+                            <br/>
+                            <div>Yours sincerely,</div>
+                            <br/>
+                            <br/>
+                            <div>Alexander Lee</div>
+                            <br/>
+                            <div>Authorized Signatory</div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <img t-if="o.company_id.company_report_footer"
+                                     t-att-src="image_data_uri(o.company_id.company_report_footer)"
+                                     style="width:100%" alt="Letter Foot"/>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="page-break-before:always;"></p>
+
+                </div>
+
+            </t>
+        </t>
+    </template>
+
+</odoo>

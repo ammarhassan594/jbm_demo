@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_attendance_form_custom" model="ir.ui.view">
+        <field name="name">attendance.sheet.view.form.custom2</field>
+        <field name="model">attendance.sheet</field>
+        <field name="inherit_id" ref="attendance_sheet_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="contract_id"/>
+            </xpath>
+            <xpath expr="//page[3]" position="after">
+                <page string="Allowance Info" >
+                    <group>
+                        <group>
+                            <field name="accommodation_allowance"/>
+                            <field name="transportation_allowance"/>
+                            <field name="food_allowance"/>
+                            <field name="site_allowance"/>
+                            <field name="mobile_allowance"/>
+                            <field name="other_allowance"/>
+                            <field name="ticket_allowance"/>
+                            <field name="earning_allowance"/>
+                            <field name="overtime_allowance"/>
+                            <field name="leave_allowance"/>
+                            <field name="special_allowance"/>
+                            <field name="fixed_overtime_allowance"/>
+                            <field name="overtime_100_allowance"/>
+                        </group>
+                        <group>
+                            <field name="basic_deduction"/>
+                            <field name="other_deduction"/>
+                            <field name="staff_hotel_deduction"/>
+                            <field name="car_loan_deduction"/>
+                            <field name="transportation_deduction"/>
+                            <field name="accommodation_deduction"/>
+                            <field name="site_deduction"/>
+                            <field name="overtime_deduction"/>
+                            <field name="deduction_settlements"/>
+                            <field name="loan_deduction"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="update_document_view_form" model="ir.ui.view">
+            <field name="name">update.document.form</field>
+            <field name="model">update.document</field>
+            <field name="arch" type="xml">
+                <form string="Create Document">
+                    <group class="oe_title">
+                        <field name="file" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="update_document" string="Update" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    <record id="action_update_document_wizard_window" model="ir.actions.act_window">
+     <field name="name">Update Document</field>
+        <field name="res_model">update.document</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    </data>
+</odoo>

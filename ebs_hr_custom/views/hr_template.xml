@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--    <template id="waseef_org_chart_assets_backend" inherit_id="web.assets_backend">-->
+<!--        <xpath expr="." position="inside">-->
+<!--            <script type="text/javascript"  src="/ebs_hr_custom/static/src/js/hr_org_chart.js"></script>-->
+<!--            <script type="text/javascript"  src="/ebs_hr_custom/static/src/js/form_controller.js"></script>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+</odoo>

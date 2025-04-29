@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sla_activity_type,sla_activity_type.sla_activity_type,model_sla_activity_type,base.group_no_one,1,1,1,1
+access_sla_activity_type_wizard,access.sla.activity.type.wizard,model_sla_activity_wizard,,1,1,1,1

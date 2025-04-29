@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="attendance_api_log_tree_view" model="ir.ui.view">
+            <field name="name">attendance.api.log.tree.view</field>
+            <field name="model">attendance.api.log</field>
+            <field name="arch" type="xml">
+                <tree create="0" delete="0">
+                    <field name="employee_id"/>
+                    <field name="punch_type"/>
+                    <field name="date"/>
+                    <field name="punch_id"/>
+                    <field name="attendance_id"/>
+                    <field name="employee_record_id"/>
+                    <field name="error"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="attendance_api_log_form_view" model="ir.ui.view">
+            <field name="name">attendance.api.log.form.view</field>
+            <field name="model">attendance.api.log</field>
+            <field name="arch" type="xml">
+                <form create="0" edit="0" delete="0">
+                    <sheet>
+                        <widget name="web_ribbon" title="Done"
+                                attrs="{'invisible': ['|','&amp;',('attendance_id','!=',False),('error','!=',False),
+                                '&amp;',('attendance_id','=',False),('error','!=',False)]}"/>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="punch_type"/>
+                                <field name="date"/>
+                                <field name="punch_id"/>
+                                <field name="attendance_id"/>
+                                <field name="employee_record_id"/>
+                                <field name="error"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id='action_attendance_api_log' model='ir.actions.act_window'>
+            <field name="name">Attendance api log</field>
+            <field name="res_model">attendance.api.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_attendance_api_log" name="Attendance api log"
+                  action="action_attendance_api_log"
+                  parent="hr_attendance.menu_hr_attendance_root"/>
+
+    </data>
+</odoo>

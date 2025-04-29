@@ -1,0 +1,135 @@
+<odoo>
+    <!--    ebs na zone form-->
+    <record model="ir.ui.view" id="view_ebs_na_zone_form">
+        <field name="name">ebs.na.zone.Form</field>
+        <field name="model">ebs.na.zone</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs na zone tree-->
+    <record id="view_ebs_na_zone_tree" model="ir.ui.view">
+        <field name="name">ebs.na.zone.tree</field>
+        <field name="model">ebs.na.zone</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs na zone action-->
+    <record model="ir.actions.act_window" id="action_na_zone">
+        <field name="name">Zones</field>
+        <field name="res_model">ebs.na.zone</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="res_partner_menu_config_na_zone"
+              name="Zones"
+              action="action_na_zone"
+              parent="res_partner_menu_config_clients_review"
+              sequence="1"/>
+
+
+        <!--    ebs na street form-->
+    <record model="ir.ui.view" id="view_ebs_na_street_form">
+        <field name="name">ebs.na.street.Form</field>
+        <field name="model">ebs.na.street</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="zone_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs na street tree-->
+    <record id="view_ebs_na_street_tree" model="ir.ui.view">
+        <field name="name">ebs.na.street.tree</field>
+        <field name="model">ebs.na.street</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="zone_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs na bu action-->
+    <record model="ir.actions.act_window" id="action_na_street">
+        <field name="name">Streets</field>
+        <field name="res_model">ebs.na.street</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="res_partner_menu_config_na_street"
+              name="Streets"
+              action="action_na_street"
+              parent="res_partner_menu_config_clients_review"
+              sequence="2"/>
+
+        <!--    ebs na building form-->
+    <record model="ir.ui.view" id="view_ebs_na_building_form">
+        <field name="name">ebs.na.building.Form</field>
+        <field name="model">ebs.na.building</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="street_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs na building tree-->
+    <record id="view_ebs_na_building_tree" model="ir.ui.view">
+        <field name="name">ebs.na.building.tree</field>
+        <field name="model">ebs.na.building</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="street_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs na building action-->
+    <record model="ir.actions.act_window" id="action_na_building">
+        <field name="name">Buildings</field>
+        <field name="res_model">ebs.na.building</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="res_partner_menu_config_na_building"
+              name="Buildings"
+              action="action_na_building"
+              parent="res_partner_menu_config_clients_review"
+              sequence="3"/>
+
+
+</odoo>

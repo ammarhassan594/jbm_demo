@@ -1,0 +1,25 @@
+<odoo>
+    <record id="ebs_custom_services_hr_employee_view" model="ir.ui.view">
+        <field name="name">custom.services.hr.employee.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="visa_expire" position="after">
+                <field name="arrival_date" invisible="1"/>
+                <field name="cancelled_date" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="action_custom_employee" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="hr.view_employee_form"/>
+<!--        <field name="context">{'default_employee_type': 'fusion_employee'}</field>-->
+
+    </record>
+</odoo>

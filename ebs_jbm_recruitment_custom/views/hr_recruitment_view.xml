@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="hr_applicant_view_form_custom_jbm" model="ir.ui.view">
+            <field name="name">hr.applicant.custom.form.inherit</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email_from']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_mobile']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='type_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="hr_applicant_view_form_inherit_custom_jbm_recruitment" model="ir.ui.view">
+            <field name="name">hr.applicant.view.form.inherit.custom.jbm.recruitment</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment_custom.hr_applicant_view_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_of_birth']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='nationality']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='gender']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='last_position']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='marital_status']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

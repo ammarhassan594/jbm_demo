@@ -1,0 +1,56 @@
+<odoo>
+
+    <record model="ir.ui.view" id="ebs_service_fine_view_form">
+        <field name="name">ebs.crm.service.fines.form</field>
+        <field name="model">ebs.crm.service.fines</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="document_type"/>
+                            <field name="is_visa" invisible="1"/>
+                            <field name="visa_type" attrs="{'readonly':[('is_visa','!=',True)]}"/>
+                            <field name="fusion_product_id" options="{'no_create': True,'no_create_edit':True}"/>
+
+                        </group>
+                        <group>
+                            <field name="fine"/>
+                            <field name="days_after_expiry"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ebs_service_fines_view_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.service.fines.tree</field>
+        <field name="model">ebs.crm.service.fines</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <field name="document_type"/>
+                <field name="visa_type"/>
+                <field name="fusion_product_id" />
+                <field name="fine"/>
+                <field name="days_after_expiry"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_ebs_service_fine">
+        <field name="name">Service Fine</field>
+        <field name="res_model">ebs.crm.service.fines</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <menuitem id="ebs_service_fines_menu"
+        name="Service Fine"
+         parent="service_menu_config"
+        action="ebs_fusion_services.action_ebs_service_fine"
+        />
+
+</odoo>

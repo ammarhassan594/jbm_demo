@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_work_certificate" model="report.paperformat">
+            <field name="name">Work Certificate</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">45</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+<!--        <record id="action_work_certificate_report" model="ir.actions.act_window">-->
+<!--            <field name="name">Work Certificate Report</field>-->
+<!--            <field name="res_model">emp.work.certificate.wizard</field>-->
+<!--            <field name="binding_model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="binding_view_types">list,form</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="target">new</field>-->
+<!--        </record>-->
+
+        <report
+                id="employee_work_certificate_action"
+                model="hr.employee"
+                string="Work Certificate"
+                report_type="qweb-pdf"
+                name="taqat_hr_employee.work_certificate_report"
+                file="taqat_hr_employee.work_certificate_report"
+                print_report_name="'Work Certificate'"
+                paperformat="taqat_hr_employee.paperformat_work_certificate"
+                menu="False"
+        />
+
+        <template id="work_certificate_report">
+            <t t-set="total_page" t-value="len(docs)"/>
+            <t t-set="page_number" t-value="0"/>
+
+            <t t-set="page_number" t-value="page_number + 1"/>
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="direction: rtl;text-align:right;">
+                        <div class="header">
+                            <div class="row">
+                                <div class="col-12" style="padding: 0px !important">
+                                    <img src="/taqat_hr_employee/static/src/img/header.jpg"
+                                         style="height:120px;width:100%" alt="Letter Head"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table style="border:none !important; width:100%;font-size:22px;line-height:1.8;">
+                            <tr style="border:none !important;">
+                                <td width="50%" style="border:none !important;direction: rtl;text-align:right;">
+                                    <span>
+                                        السادة /
+                                    </span>
+                                    <span t-esc="o.wizard_name"/>
+                                </td>
+                                <td width="50%" style="border:none !important;direction: rtl;text-align:right;">
+                                    <span>
+                                        المحترمين
+                                    </span>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="font-size:22px;line-height:1.8;">
+                            <span style=" border-bottom: 1px solid black;">
+                                الدوحـة
+                            </span>
+                        </div>
+                        <div style="font-size:22px;line-height:1.8;">
+                            <span>
+                                السلام عليكم ورحمة الله وبركاته
+                            </span>
+
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="text-center" style="font-size:22px;line-height:1.8;">
+                            <span style=" border-bottom: 1px solid black;padding-bottom:-15px;">
+                                <b>
+                                    "شهادة إثبات عمل"
+                                </b>
+                            </span>
+                        </div>
+                        <br/>
+                        <div style="font-size:22px;padding-left:50px;text-align: justify;">
+                            <span style="word-spacing:5px;">
+                                تشهد مؤسسة الشيخ جاسم بن محمد بن ثاني للرعاية
+                            </span>
+
+                            <span style="word-spacing:5px;">الاجتماعية، بأن السيد/</span>
+                            <span style="word-spacing:5px;">
+                                <t t-if="o.arabic_name">
+                                    <t t-esc="o.arabic_name"/>
+                                </t>
+                            </span>
+                            <span style="word-spacing:5px;">
+                                <t t-if="o.country_id">
+                                    <t t-esc="o.country_id.nationality"/>
+                                </t>
+                            </span>
+
+                            <span style="word-spacing:5px;">الجنسية، بطاقة شخصية رقم</span>
+                            <span style="word-spacing:5px;">
+                                <t t-if="o.employee_qid_number">
+                                    (<t t-esc="o.employee_qid_number"/>)
+                                </t>
+                            </span>
+                            <span style="word-spacing:5px;">، يعمل كموظف بالمؤسسة</span>
+
+                            <span style="word-spacing:5px;">اعتباراً من تاريخ</span>
+                            <span style="word-spacing:5px;">
+
+                                <t t-esc="o.joining_date.strftime('%d/%m/%Y')"/>
+
+                            </span>
+                            <span style="word-spacing:5px;">، ولا يزال على رأس عمله</span>
+
+                            <span style="word-spacing:5px;">
+                                حتى تاريخه. وقد أعطيت له هذه الشهادة بناًء على طلبه، دون
+                            </span>
+                            <span>
+                                أدنى مسؤولية على المؤسسة.
+                            </span>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-8"/>
+                            <div class="col-4" align="right" style="font-size:20px">
+                                <img src="/taqat_hr_employee/static/src/img/stamp-removebg-preview.png" alt="stamp"
+                                     style="height:200px;width:250px; padding-right:20px"/>
+                            </div>
+                        </div>
+                        <div class="text-center"
+                             style="font-size:22px; position:absolute; top:650px; left: 50px;">
+                            <span>
+                                <span>
+                                    وتفضلوا بقبول فائق الاحترام
+                                </span>
+                                <br/>
+                                <t t-set="shared_service_manager_group"
+                                   t-value="o.env.ref('jbm_group_access_right_extended.custom_group_shared_service_manager')"/>
+                                <t t-set="shared_service_manager_users"
+                                   t-value="shared_service_manager_group.users"/>
+                                <t t-set="shared_service_manager"
+                                   t-value="shared_service_manager_users[0] if shared_service_manager_users else False"/>
+
+                                <t t-if="shared_service_manager">
+                                    <t t-esc="shared_service_manager.name"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-esc="o.env.user.name"/>
+                                </t>
+                            </span>
+                        </div>
+
+                        <div class="row"
+                             style="direction: rtl;text-align:right; font-size:22px; position:absolute; top:850px; left: 50px; width:100%"
+                             DIR="RTL">
+                            <table style="width:80%">
+                                <tr>
+                                    <td style="width:70%; vertical-align:middle;text-align:right;">
+                                    </td>
+                                    <td style="width:30%;text-align:right;">
+                                        <span>رقم التليفون :</span>
+                                        <t t-esc="o.company_id.partner_id.mobile"/>
+                                        <br/>
+                                        <span>الفاكس :</span>
+                                        <t t-esc="o.company_id.partner_id.fax"/>
+                                        <br/>
+                                        <span>البريد :</span>
+                                        <t t-esc="o.company_id.partner_id.email"/>
+                                        <br/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="row"
+                             style="direction: rtl;text-align:right; font-size:22px; position:absolute; top:950px; right: 50px; float:right;"
+                             DIR="RTL">
+                            <span t-esc="total_page" style="font-size:18px!important;"/>
+                            <span style="padding-left:7px;">من</span>
+                            <span t-esc="page_number"
+                                  style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                        </div>
+                        <div class="footer">
+                            <div class="row">
+                                <img t-attf-src="/taqat_hr_employee/static/src/img/footer.jpg"
+                                     alt="footer"
+                                     style="padding-left:5px;height:80px;width:100%;"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+
+
+        </template>
+
+    </data>
+</odoo>

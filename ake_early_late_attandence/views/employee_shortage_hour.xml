@@ -1,0 +1,83 @@
+<odoo>
+
+    <record id="employee_shortage_hour_tree" model="ir.ui.view">
+        <field name="name">employee.shortage.hour.tree</field>
+        <field name="model">employee.shortage.hour</field>
+        <field name="arch" type="xml">
+            <tree string="Employee shortage hour" create="0" edit="0">
+                <field name="employee_id"/>
+                <field name="date_from" widget="date"/>
+                <field name="date_to" widget="date"/>
+                <field name="violation_hours" widget="float_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_shortage_hour_form" model="ir.ui.view">
+        <field name="name">employee.shortage.hour.form</field>
+        <field name="model">employee.shortage.hour</field>
+        <field name="arch" type="xml">
+            <form string="Employee shortage hour" create="0" edit="0">
+                <header>
+                    <field name="is_manager" invisible="1"/>
+                    <button string="Approve" name="approve_employee_shortage_hour" type="object" icon="fa-thumbs-up"
+                            attrs="{'invisible':['|',('is_manager','=',False),('status','!=','draft')]}"
+                            groups="hr.group_hr_manager"/>
+                    <button string="Refuse" name="refuse_employee_shortage_hour" type="object" icon="fa-thumbs-up"
+                            attrs="{'invisible':['|',('is_manager','=',False),('status','=','refused')]}"
+                            groups="hr.group_hr_manager"/>
+                    <button string="Set to draft" name="action_set_to_draft" type="object" icon="fa-thumbs-up"
+                            attrs="{'invisible':['|',('is_manager','=',False),('status','!=','refused')]}"
+                            groups="hr.group_hr_manager"/>
+                    <field name="status" widget="statusbar"/>
+
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <label for="date_from" string="Violation Period"/>
+                            <div class="o_row" name="validity">
+                                <field name="date_from" widget="date" nolabel="1" readonly="1"/>
+                                <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                                <field name="date_to" widget="date" nolabel="1" readonly="1"/>
+                            </div>
+                            <field name="violation_hours" widget="float_time"/>
+                            <field name="casual_leave_justification_types" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Attendance" name="attendance">
+                            <field name="attendance_ids">
+                                <tree>
+                                    <field name="employee_id"/>
+                                    <field name="check_in"/>
+                                    <field name="check_out"/>
+                                    <field name="is_late_check_in"/>
+                                    <field name="is_early_check_out"/>
+                                    <field name="late_check_in_hour" widget="float_time"/>
+                                    <field name="early_check_out_hour" widget="float_time"/>
+                                    <field name="attendance_status"/>
+                                    <field name="attendance_status_early"/>
+                                    <field name="worked_hours" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_employee_shortage_hour" model="ir.actions.act_window">
+        <field name="name">Employee shortage hour</field>
+        <field name="res_model">employee.shortage.hour</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="taqat_menu_employee_shortage_hour" name="Employee shortage hour"
+              action="action_employee_shortage_hour"
+              parent="ake_early_late_attandence.taqat_menu_hr_attendance_mainmenu" sequence="3"/>
+
+
+</odoo>

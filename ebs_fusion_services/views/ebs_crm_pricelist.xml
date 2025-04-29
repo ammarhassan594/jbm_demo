@@ -1,0 +1,123 @@
+<odoo>
+    <!--    ebs crm pricelist form-->
+    <record model="ir.ui.view" id="view_ebs_crm_pricelist_form">
+        <field name="name">ebs.crm.pricelist.Form</field>
+        <field name="model">ebs.crm.pricelist</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <field name="type" widget="radio" options="{'horizontal': true}"/>
+                    <group>
+                        <group>
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+
+                            <field name="date_from" required="1"/>
+                            <field name="date_to" required="1"/>
+                        </group>
+                        <group>
+                            <field name="company_id" options="{'no_create': True, 'no_create_edit':True}" />
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Pricelist Lines">
+                            <field name="pricelist_line_ids">
+                                <tree create="1">
+                                    <field name="pricelist_category_id"/>
+                                    <field name="name"/>
+                                    <field name="service_ids" widget="many2many_tags"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="govt_product_id"/>
+                                    <field name="govt_fees"/>
+                                    <field name="govt_urgent_fees"/>
+                                    <field name="fusion_product_id"/>
+                                    <field name="fusion_fees"/>
+                                    <field name="fusion_urgent_fees"/>
+                                    <field name="comments"/>
+                                    <field name="show_in_portal"/>
+                                    <field name="is_included"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm pricelist tree-->
+    <record id="view_ebs_crm_pricelist_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.pricelist.tree</field>
+        <field name="model">ebs.crm.pricelist</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm pricelist action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_pricelist">
+        <field name="name">Pricelists</field>
+        <field name="res_model">ebs.crm.pricelist</field>
+
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="ebs_fusion_services.view_ebs_crm_pricelist_tree"/>
+    </record>
+
+    <!--    ebs crm pricelist line form-->
+    <record model="ir.ui.view" id="view_ebs_crm_pricelist_line_form">
+        <field name="name">ebs.crm.pricelist.line.Form</field>
+        <field name="model">ebs.crm.pricelist.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="pricelist_id" invisible="1"/>
+                            <field name="name" required="1"/>
+                            <field name="pricelist_category_id" options="{'no_create': True, 'no_create_edit':True}" required="1" />
+                            <field name="company_id" invisible="0"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="govt_product_id"/>
+                            <field name="govt_fees"/>
+                            <field name="govt_urgent_fees"/>
+                        </group>
+                        <group>
+                            <field name="fusion_product_id"/>
+                            <field name="fusion_fees"/>
+                            <field name="fusion_urgent_fees"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="service_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}" />
+                        </group>
+                        <group>
+                            <field name="show_in_portal"/>
+                            <field name="is_included"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="comments"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

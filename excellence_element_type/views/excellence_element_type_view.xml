@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+
+        <record id="excellence_element_form_type_view" model="ir.ui.view">
+            <field name="name">Excellence Form</field>
+            <field name="model">excellence.element.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="excellence_element_tree_type_view" model="ir.ui.view">
+            <field name="name">Excellence Tree</field>
+            <field name="model">excellence.element.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="excellence_element_type_action" model="ir.actions.act_window">
+            <field name="name">نوع عناصر التميز</field>
+            <field name="res_model">excellence.element.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="عناصر التميز" id="excellence_element_root"
+                  parent="hr.menu_hr_root"/>
+
+        <menuitem name="نوع عناصر التميز" id="excellence_element_type"
+                  parent="excellence_element_root"
+                  action="excellence_element_type_action"/>
+
+        <menuitem name="عناصر التميز" id="excellence_element_menu"
+                  parent="excellence_element_root"
+                  action="excellence_element_window_action"/>
+    </data>
+</odoo>

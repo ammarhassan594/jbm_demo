@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_contract_view_form_inherit" model="ir.ui.view">
+            <field name="name">custom.hr.contract.view</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+
+
+                <field name="employee_id" position="before">
+                    <field name="registration_number"/>
+                </field>
+                <field name="employee_id" position="after">
+                    <field name="employee_payscale_domain" invisible="1"/>
+                    <field name="payscale_id" options="{'no_create_edit': True}"
+                           domain="employee_payscale_domain"
+                           force_save="1"/>
+
+                </field>
+
+                <xpath expr="//page[@name='information']" position="after">
+                    <page string="Leave Type" name="leavetype">
+                        <group name="leave_type">
+                            <field name="leave_type" readonly="1"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='wage']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='information']" position="inside">
+                    <!--                <xpath expr="//notebook/page[@name='information']/group[@name='salary_info']" position="replace">-->
+                    <group>
+                        <group>
+                            <field name="wage" readonly="0" force_save="1"/>
+                            <field name="wage_type" invisible="1"/>
+                            <field name="social_alw"/>
+                            <field name="housing_alw"/>
+                            <field name="transport_alw"/>
+                            <field name="other_alw"/>
+                            <field name="mobile_alw"/>
+                            <field name="supervision_alw"/>
+                            <field name="car_alw"/>
+                        </group>
+
+                        <group>
+                            <field name="furniture_alw"/>
+                            <field name="education_alw"/>
+                            <field name="business_alw"/>
+                            <field name="mobilisation_alw"/>
+                            <field name="car_loan"/>
+                            <field name="marriage_loan"/>
+                            <field name="extra_amount" readonly="1"/>
+                            <field name="gross"/>
+                        </group>
+
+
+                    </group>
+
+                    <group>
+                        <group string="Outside The Payscale">
+                            <group>
+                            <field name="end_of_basic_salary_bonus"/>
+                            <field name="monthly_incentive"/>
+                            <field name="representative_monthly_allowance"/>
+                            <field name="work_condition_allowance"/>
+                        </group>
+                        </group>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_contract_leave_type_form" model="ir.ui.view">
+            <field name="name">contract.leave.type.form</field>
+            <field name="model">contract.leave.type</field>
+            <field name="arch" type="xml">
+                <form string="Contract Leave Type">
+                    <sheet>
+                        <group>
+                            <field name="leave_type"/>
+                            <field name="days"/>
+                            <field name="allocation_id" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_contract_leave_type_tree" model="ir.ui.view">
+            <field name="name">contract.leave.type.tree</field>
+            <field name="model">contract.leave.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="leave_type"/>
+                    <field name="days"/>
+                    <field name="allocation_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

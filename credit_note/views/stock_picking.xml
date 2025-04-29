@@ -1,0 +1,27 @@
+<odoo>
+
+    <data>
+    <record id="material_request_picking_form" model="ir.ui.view">
+        <field name="name">Material Request Picking Form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="ebs_jbm_approval_extend.material_request_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='action_print_material_request_receipt']" position="attributes">
+                <attribute name="attrs">{'invisible':['|', ('state','!=','done'), ('picking_type_code', '!=', 'internal')]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_print_material_request_receipt']" position="after">
+
+                <button name="action_print_delivery_note"
+                        string="Print Receipt"
+                        type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|', ('state','!=','done'), ('picking_type_code', '!=', 'incoming')]}"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    </data>
+</odoo>

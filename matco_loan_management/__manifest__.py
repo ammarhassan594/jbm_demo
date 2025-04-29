@@ -1,0 +1,35 @@
+{
+    'name': 'Matco Loan Management',
+    'version': '13.0',
+    'summary': 'Manage Loan Requests',
+    'description': """
+        Helps you to manage Loan Requests of your company's staff.
+        """,
+    'category': 'Generic Modules/Human Resources',
+    'author': "",
+    'company': '',
+    'maintainer': '',
+    'website': "",
+    'depends': [
+        'base', 'hr', 'web_domain_field','jbm_hr_sponsor', 'ebs_lb_payroll','jbm_salary_rules'],
+    'data': [
+        'data/salary_rule_loan.xml',
+        'data/mail_template.xml',
+        'data/cron_job.xml',
+        'security/ir.model.access.csv',
+        'security/security.xml',
+        'data/hr_loan_type_data.xml',
+        'data/mail_activity.xml',
+        'reports/loan_request_xlsx_report.xml',
+        'views/hr_loan_seq.xml',
+        'views/hr_loan_type.xml',
+        'views/hr_loan.xml',
+        # 'views/hr_payroll.xml',
+        'views/settings.xml',
+        'views/cron_job.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+}

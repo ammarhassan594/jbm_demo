@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cron_job_update_managers_based_departments" forcecreate='True' model="ir.cron">
+        <field name="name">Update Employee Managers Based On Department</field>
+        <field eval="False" name="active"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model._change_managers_based_department()</field>
+    </record>
+
+    <record id="ir_cron_create_employees_allocations_every_year" model="ir.cron">
+        <field name="name">Create Allocations For Employee Every Year</field>
+        <field name="model_id" ref="model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">model._create_allocation_employees_every_year()</field>
+        <field name="interval_number">1</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="ir_cron_create_employees_sick_l_allocations" model="ir.cron">
+        <field name="name">Create Sick Allocations For Employee Every Year</field>
+        <field name="model_id" ref="model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">model._create_employees_sick_allocation_every_year()</field>
+        <field name="interval_number">1</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="ir_cron_send_notification_of_completion_of_trial_period" model="ir.cron">
+        <field name="name">Notification of completion of trial period to manager</field>
+        <field name="model_id" ref="ebs_hr_custom.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model.send_notification_of_completion_of_trial_period()</field>
+        <field name="interval_number">1</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="ir_cron_create_allocation_employee_after_probation_period" model="ir.cron">
+        <field name="name">Create Allocation for Employee after Probation Period</field>
+        <field name="model_id" ref="model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">model._create_allocation_for_probation_employees()</field>
+        <field name="interval_number">6</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+</odoo>

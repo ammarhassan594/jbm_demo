@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ebs_capstone_hr_ebs_hr_document_internal_user,ebs_capstone_hr.ebs_hr_document,model_ebs_hr_document,base.group_user,1,1,1,0
+access_ebs_capstone_hr_ebs_hr_document_user,ebs_capstone_hr.ebs_hr_document,model_ebs_hr_document,hr.group_hr_user,1,1,1,1
+access_ebs_capstone_hr_ebs_hr_document_manager,ebs_capstone_hr.ebs_hr_document,model_ebs_hr_document,hr.group_hr_manager,1,1,1,1
+access_ebs_capstone_hr_ebs_hr_document_type_user,ebs_capstone_hr.ebs_hr_document_type,model_ebs_hr_document_type,hr.group_hr_user,1,1,1,0
+access_ebs_hr_document_type,ebs_capstone_hr.ebs_hr_document_type,model_ebs_hr_document_type,base.group_user,1,0,0,0
+access_hr_payslip,ebs_capstone_hr.hr_payslip,model_hr_payslip,base.group_user,1,0,0,0
+access_ebs_capstone_hr_ebs_hr_document_type_manager,ebs_capstone_hr.ebs_hr_document_type,model_ebs_hr_document_type,hr.group_hr_manager,1,1,1,0
+access_ebs_hr_letter_request_user,access_ebs_hr_letter_request,model_ebs_hr_letter_request,base.group_user,1,1,1,0
+access_ebs_hr_letter_request_manager,access_ebs_hr_letter_request,model_ebs_hr_letter_request,hr.group_hr_manager,1,1,1,1
+access_hr_employee_internal_user,hr.employee system user,hr.model_hr_employee,base.group_user,1,0,0,0
+access_hr_contract_internal_user,hr.contract.user,hr_contract.model_hr_contract,base.group_user,1,0,0,0

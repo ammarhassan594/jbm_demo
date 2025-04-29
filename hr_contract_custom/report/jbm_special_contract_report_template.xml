@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="special_contract_report">
+            <t t-call="web.basic_layout">
+                <div class="page" style="direction: rtl;">
+                    <html>
+
+
+                        <style type="text/css">
+                            body{
+                            font-family: 'Lateef', serif;
+                            font-size:20px;
+                            }
+                            td{
+                            border-right: 1px solid #785838!important;
+                            border-left: 1px solid #785838!important;
+                            border-bottom: 1px solid #785838!important;
+                            font-size:20px;
+                            }
+                            .custom_td{
+                            text-align: right!important;
+                            }
+                        </style>
+                    </html>
+                    <img src="/hr_contract_custom/static/src/img/sc_header.jpg"
+                             style="padding-left:5px;height:147px;width: 820px;"/>
+                    <br/>
+                    <br/>
+                    <table style="border: 1px solid #504949; font-size:18px">
+                        <tr style="line-height:60px;border-bottom: 1px solid #504949;">
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:center;">
+                                توظيف خاص عقـــد
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:center">
+                                Special Employment Contract
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                حرر هذا العقد في يوم day arabic الموافق <t t-esc="o.date_start.strftime('%d/%m/%Y')"/> ، بمدينة الدوحة بين كل المذكورين
+                                أدناه
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                This contract is made on <b><t t-esc="o.date_start.strftime('%d/%m/%Y')"/></b> Doha City Doha
+                                between the below mentioned parties
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">.
+                                مؤسسة الشيخ جاسم بن محمد بن ثاني للرعاية الاجتماعية ، ومقـرها مدينـة الدوحـة
+                                بدولـة قطر، ويمثله في هذا العقد
+                                <b><t t-esc="o.employee_id.parent_id.arabic_name"/></b>
+                                المدير العام (طرف أول)
+
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">1.
+                                Sheikh Jasim Bin Mohamed Bin Thani Social welfare Foundation (JBM Foundation),
+                                which is seated in Doha city - the State of Qatar, duly represented by  <b><t t-esc="o.employee_id.parent_id.name"/>
+                                </b> referred to as the “First Party”.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:center;" class="text-justify">
+                                <t t-esc="o.name"/>/ <t t-esc="o.employee_id.nationality_id.name"/>، رقـم البطاقة: <t t-esc="o.employee_id.qid_no"/> ، ومحـل إقامتـه
+                                الأصـلي .<t t-esc="o.employee_id.place_of_birth"/> ، وتاريخ ميلاده: <t t-if="o.employee_id.birthday">
+                                        <t t-esc="o.employee_id.birthday.strftime('%d/%m/%Y')"/>
+                                    </t> ، (طرف ثاني)
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:center;direction:ltr!important" class="text-justify">2.
+                                <t t-esc="o.name"/> , Nationality .<t t-esc="o.employee_id.nationality_id.name"/> ID No: <t t-esc="o.employee_id.qid_no"/> Original place of
+                                residence .<t t-esc="o.employee_id.place_of_birth"/> Date of birth:<t t-if="o.employee_id.birthday">
+                                        <t t-esc="o.employee_id.birthday.strftime('%d/%m/%Y')"/>
+                                    </t> Hereinafter referred to as
+                                the (Second Party).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;font-size:24px;">
+                                <u>العنوان :</u>
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important; font-size:24px;">
+                                <u>Address:</u>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td width="50%" style="text-align:center" colspan="4">
+                                <table style="width:100%;border: 0.5px solid;">
+                                    <tr>
+                                        <th style="border: 0.5px solid">الدولـــــــة :</th>
+                                        <th style="border: 0.5px solid">قطر</th>
+                                        <th style="border: 0.5px solid">المدينــــة</th>
+                                        <th style="border: 0.5px solid">الدوحة</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0.5px solid;">اسم المنطقة:</td>
+                                        <td style="border: 0.5px solid">:..................</td>
+                                        <td style="border: 0.5px solid;">الشــــارع :</td>
+                                        <td style="border: 0.5px solid;width:60px;"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="border: 0.5px solid;">رقـم المــنزل:</td>
+                                        <td style="border: 0.5px solid;width:60px;"></td>
+                                        <td style="border: 0.5px solid;">الرمز البريدي :</td>
+                                        <td style="border: 0.5px solid;width:60px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0.5px solid;">هاتف نقال :</td>
+                                        <td style="border: 0.5px solid;width:60px;">55785578</td>
+                                        <td style="border: 0.5px solid;">هاتـف المنزل :</td>
+                                        <td style="border: 0.5px solid;width:60px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0.5px solid;">هاتف آخــر :</td>
+                                        <td style="border: 0.5px solid;width:60px;"></td>
+                                        <td style="border: 0.5px solid;">فاكــــــس :</td>
+                                        <td style="border: 0.5px solid;width:60px;"></td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td width="50%" colspan="4" style="text-align:center">
+                                <table style="width:100%;border: 0.5px; solid">
+                                    <tr>
+                                        <th style="border: 0.5px solid ;width: 60px"></th>
+                                        <th style="border: 0.5px solid">City: Doha</th>
+                                        <th style="border: 0.5px solid">Qatar</th>
+                                        <th style="border: 0.5px solid">Country</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:Region</td>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:Street</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:Postal code</td>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:House no</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:House</td>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:Tel. mob</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:Fax</td>
+                                        <td style="border: 0.5px solid;width: 60px;"></td>
+                                        <td style="border: 0.5px solid">:Other Tel</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0.5px solid;"></td>
+                                        <td style="border: 0.5px solid;"></td>
+                                        <td style="border: 0.5px solid;"></td>
+                                        <td style="border: 0.5px solid;">:E-mail</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" style="border: 1px solid #504949; font-size:18px">
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                وحيث أن الطرف الأول يرغب في توظيف الطرف الثاني لذا فقد اتفق الطرفان على أن يعمل
+                                الطرف الثاني لدى الطرف الأول وفقاً لأحكام المواد التالية :
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                Whereas the First Party intends to employ the Second Party they are decided to
+                                amend it according to the terms of this contract, therefore both parties agreed
+                                that the second party shall be employed to the first party according to the
+                                provisions of the following articles:
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="4"
+                                style="height: 30px;width:50%;border: 1px solid #504949; text-align:center;">
+
+                            </td>
+                            <td colspan="4"
+                                style="height: 30px;width:50%;border: 1px solid #504949; text-align:center">
+
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" style="border: 1px solid #504949; font-size:18px">
+                        <tr>
+                            <br></br>
+                            <br></br>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right" class="text-justify">
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (1)</center>
+                                <br></br>
+                                يعمل الطرف الثاني لدى الطرف الأول بــوظيفــة "<t t-esc="o.job_id.name"/>"، بــراتـب مقطوع
+                                قــــدره (<t t-esc="o.wage"/>) ريال قطري، يصرف له في نهاية كل شهر ميلادي،اعتبارا من
+                                تاريخ <t t-esc="o.date_start.strftime('%d/%m/%Y')"/>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (2)</center>
+                                <br></br>
+                                <br></br>
+                                مدة العقد سنة ميلادية تبدأ من تاريخ مباشرة الطرف الثاني للعمل لدى الطرف الأول،
+                                ويتجدد تلقائياً لمدة أو مدد مماثلة ما لم يخطر أحد الطرفين الآخر كتابة برغبته في
+                                إنهاء العقد قبل نهايته بستين يوماً على الأقل .
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (3)</center>
+                                <br></br>
+                                <br></br>
+                                يستحق الطرف الثاني البدلات والمزايا التالية:-
+                                - بدل العمل الاضافى في حالة أوقات الدوام والعطل الرسمية طبقا ً لائحة المؤسسة.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>Article (1 )</center>
+                                <br></br>
+                                The Second Party hereby works with the First Party in the position of “<t t-esc="o.job_id.name"/>.”, with total salary equal to (<t t-esc="o.wage"/>*) QRs, payable at the end
+                                of each calendar month effective from <t t-esc="o.date_start.strftime('%d/%m/%Y')"/>.
+                                <br></br>
+                                <br></br>
+                                <center>Article (2)</center>
+                                <br></br>
+                                <br></br>
+                                The duration of the contract is One calendar years, starting from the date on
+                                which the Second Party shall commence working for the First Party and shall be
+                                renewable, automatically, from period to period, unless one of the parties
+                                notifies the other in writing of his intention to terminate the contract,
+                                provided that such notice shall be given at least sixty days prior to the date
+                                of the intended termination.
+                                <br></br>
+                                <br></br>
+                                <center>Article (3)</center>
+                                <br></br>
+                                <br></br>
+                                The second party is entitled to the following allowances and benefits; -
+                                - Over time allowance when working out of regular duty and holidays as rolls.
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%"
+                           style="border: 1px solid #504949; font-size:18px;page-break-before:always;">
+                        <tr style="border-bottom: 1px solid">
+                            <td style="height: 50px;width:50% ;border-right:1px solid"></td>
+                            <td style="height: 50px;width:50% ;border-right:1px solid"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%;height: 110px;border-right:1px solid"></td>
+                            <td style="width:50%;height: 110px;border-right:1px solid"></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid">
+                            <td style="text-align:right;border-bottom: 1px solid;border-top: 1px solid;" class="text-justify">
+                                <br></br>
+                                <center>مادة (4)</center>
+                                <br></br>
+                                يمنح الطرف الثاني سنوياً إجازة دورية براتب إجمالي تحدّد مدتها بـ (30) يوماً،
+                                وفقاً لشروط وأحكام لائحة الموارد البشرية للمؤسسة.
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (5)</center>
+                                <br></br>
+                                يستحق الطرف الثاني تذكرة سفر واحدة بالطائرة بالدرجة السياحية له في الحالات
+                                التالية:-
+                                أ - عند القيام بالإجازة الدورية (تذكرة ذهاب و عودة)
+                                ب - من مقر العمل بالدولة إلى محل إقامته الأصلي عند انتهاء الخدمة ومغادرة البلاد
+                                بصفة نهائية.
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (6)</center>
+                                <br></br>
+                                يوفر الطرف الأول الرعاية الطبية للطرف الثاني وفقاً لسياسة التأمين الصحي المتبعة
+                                في المؤسسة، ووفقا لأحكام لائحة الموارد البشرية للمؤسسة.
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (7)</center>
+                                <br></br>
+                                يتعين على الطرف الثاني، خلال فتــرة تعاقده وبعد انتهاء التعاقد، عدم افشاء أو
+                                استغلال أية معلومات ســرية تعود للطــرف الأول أو الجهات التي عمل فيها، بموجب هذا
+                                العقد أو أي عقد سابق، كما يتعهد بالمحافظة التامة على سرية المعلومات التي يحصل
+                                عليها بموجب عملـــه.
+
+                            </td>
+                            <td style="border-right:1px solid; text-align:left;border-top: 1px solid;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <center>Article( 4 )</center>
+                                <br></br>
+                                The Second Party shall be entitled to an annual leave with total salary, the
+                                period of which shall be determined for (30.) days according to the terms and
+                                provisions of JBM Foundation Human Resources Regulation.
+                                <br></br>
+                                <br></br>
+                                <center>Article( 5 )</center>
+                                <br></br>
+                                The Second Party, shall be entitled to only one travel ticket by plane in
+                                economic class in the following cases:
+                                A: Upon taking annual leave, (Round Trip Ticket)
+                                B: From his work location to his original residence upon termination of service
+                                <br></br>
+                                <br></br>
+                                <center>Article (6)</center>
+                                <br></br>
+                                The first Party shall provide medical care to the second party in accordance
+                                with the health insurance policy in force in the JBM Foundation, and according
+                                to the terms of the Human Resources Regulations
+                                <br></br>
+                                <br></br>
+                                <center>Article (7)</center>
+                                <br></br>
+                                During the period of the contract and thereafter, the Second Party shall not
+                                disclose or use any confidential information belonging to the First Party or
+                                such information that has come to the Second Party’s knowledge in the course of
+                                employment, pursuant to this contract or any previous contract. The Second Party
+                                shall also, undertake to maintain full confidentiality of such information
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%"
+                           style="border: 1px solid #504949; font-size:18px; page-break-before:always;">
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <center>Article (8)</center>
+                                <br></br>
+                                The Second Party undertakes not to engage in any work for a third party, with or
+                                without payment, unless shall have obtained a written permission from the
+                                Director-General of the JBM Foundation.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                <br></br>
+                                <center>مادة (8)</center>
+                                <br></br>
+                                يلتزم الطرف الثاني بعدم مزاولة أي عمل آخر للغير ، بأجر أو بدون أجر، ولو في غير
+                                أوقات العمل الرسمية، إلاّ بموافقة كتابية مسبقة من مدير عام المؤسسة.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <center>Article (9)</center>
+                                <br></br>
+                                Either party is entitled to terminate the contract, at any time, after the
+                                expiration of the test period and so notified prior to the by written
+                                notification in at least (60) days prior to the termination.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                <br></br>
+                                <center>مادة (9)</center>
+                                <br></br>
+                                يحق لأي من الطرفين إنهاء العقد في أي وقت بعد إنقضاء فترة الإختبار، وذلك بإخطار
+                                كتابي سابق على انتهائه بستين يوماً على الأقل.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <center>Article (10)</center>
+                                <br></br>
+                                The notices issued under this contract shall be in writing and shall be
+                                delivered to the other party. The First Party may use the modern means of
+                                communication to notify the Second Party of all matters pertinent to this
+                                contract.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                <br></br>
+                                <center>مادة (10)</center>
+                                <br></br>
+                                تكون الاخطارات الصادرة بموجب هذا العقد كتابة وتسلم للطرف الآخر، و يجوز للطرف
+                                الأول استخدام وسائل الاتصال الحديثة لاخطار الطرف الثاني بكل ما يتعلق بهذا العقد .
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"
+                                style="height: 50px;width:50%;border: 1px solid #504949; text-align:center;">
+                            </td>
+                            <td colspan="4"
+                                style="height: 50px;width:50%;border: 1px solid #504949; text-align:center">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <center>Article (11)</center>
+                                <br></br>
+                                The Qatari courts shall be exclusively competent to hear any dispute that may
+                                arise between the parties regarding the interpretation or execution of this
+                                contract. The Labor Law shall apply to all matters that is not mentioned in this
+                                contract.
+                                <br></br>
+                                <center>Article (12)</center>
+                                <br></br>
+                                The First Party will pay charges of residence permit and renewal thereof for the
+                                Second Party, along his period of service at the JBM Foundation.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                <br></br>
+                                <center>مادة (11)</center>
+                                <br></br>
+                                تختص المحاكم القطرية دون غيرها، بالفصل في أي نزاع قد ينشأ بين الطرفين بشأن تفسير
+                                أو تنفيذ بنود هذا العقد. ويطبق قانون العمل فيما لم يرد بشأنه نص في هذا العقد.
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <center>مادة (12)</center>
+                                <br></br>
+                                يتحمل الطرف الأول قيمة الرسوم التي تفرضها الدولة للحصول على الإقامة وتجديدها
+                                بالنسبة للطرف الثاني طوال مدة خدمته بالمؤسسة.
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%"
+                           style="border: 1px solid #504949; font-size:18px; page-break-before:always;">
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:right;" class="text-justify">
+                                <br></br>
+                                <br></br>
+                                <center>مادة (13)</center>
+                                <br></br>
+                                <br></br>
+                                يستحق الطرف الثاني عند انتهاء خدمته مكافأة نهاية خدمة بواقع راتب شهر واحد عن كل
+                                سنة ميلادية من سنوات الخدمة الفعلية ويحسب استحقاق نهاية الخدمة من تاريخ مباشرة
+                                العمل في المؤسسة ، وبحد أقصى عشرة أشهر. وتحتسب المكافأة وفقاً لآخر راتب تقاضاه
+                                الموظف.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:left;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <br></br>
+                                <center>Article (13)</center>
+                                <br></br>
+                                <br></br>
+                                The Second Party shall be entitled to end of service gratuity at the end of
+                                his/her service to be calculated as one month’s salary against each year of
+                                service to the maximum of ten months, the entitlements of his service shall be
+                                calculated as from the date of starting work The gratuity will be accounted
+                                according to the last salary he/she earns.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:center;" class="text-justify">
+                                <br></br>
+                                <br></br>
+                                <center>مادة (14)</center>
+                                <br></br>
+                                <br></br>
+                                حرر هذا العقد من نسختين أصليتين متطابقتين باللغتين العربية والانجليزية، وفي حالة
+                                وجود تعارض بين النصين يطبق النص المحرر باللغة العربية، تسلّم الطرف الثاني
+                                إحداهما واحتفظ الطرف الأول بالأخرى للعمل بموجبها.
+                            </td>
+                            <td width="50%" colspan="4" style="border: 1px solid #504949; text-align:center;direction:ltr!important" class="text-justify">
+                                <br></br>
+                                <br></br>
+                                <center>Article (14)</center>
+                                <br></br>
+                                <br></br>
+                                This contract is made in two identical original copies, in both Arabic and
+                                English languages. However, in the event of discrepancy between the two
+                                versions, the Arabic text shall prevail. One copy shall be provided to the
+                                Second Party, whereas the other one shall be maintained by the First Party to
+                                act upon.
+                            </td>
+                        </tr>
+                    </table>
+                    <br></br>
+                    <br></br>
+                    <table style="border: 1px solid black;width:100%">
+                        <tr>
+                            <td style="border: 1px solid black;height:25px;width:35px;"></td>
+                            <td style="border: 1px solid black;height:25px;text-align:center;background:burlywood;">
+                                الطرف الثاني
+                            </td>
+                            <td style="border: 1px solid black;height:25px;text-align:center;background:burlywood;">
+                                الطرف الأول
+                            </td>
+                            <td style="border: 1px solid black;height:25px;text-align:center;background:burlywood;">
+                                Second Party
+                            </td>
+                            <td style="border: 1px solid black;height:25px;text-align:center;background:burlywood;">
+                                First Party
+                            </td>
+                            <td style="border: 1px solid black;height:25px;width:35px;"></td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border: 1px solid black;height:25px;width:35px;background:burlywood;">التوقيع
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+
+                            <td style="border: 1px solid black;height:25px;width:35px;background:burlywood;">الاسـم>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border-top: non"></td>
+                            <td style="border: 1px solid black;height:25px;width:35px;background:burlywood;"></td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_jbm_main_template_hr_special_contract_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_contract_custom.special_contract_report"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="paper_format_special_contract" model="report.paperformat">
+            <field name="name">Special Contract Paper format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="special_contract_action" model="ir.actions.report">
+            <field name="name">Special Contract Report</field>
+            <field name="model">hr.contract</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hr_contract_custom.report_jbm_main_template_hr_special_contract_report</field>
+            <field name="report_file">hr_contract_custom.report_jbm_main_template_hr_special_contract_report</field>
+            <field name="binding_model_id" ref="model_hr_contract"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="hr_contract_custom.paper_format_special_contract"/>
+        </record>
+    </data>
+</odoo>

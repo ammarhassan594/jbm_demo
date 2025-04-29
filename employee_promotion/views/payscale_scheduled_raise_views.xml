@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+
+        <record id="payscale_scheduled_rais_form_view" model="ir.ui.view">
+            <field name="name">payscale.scheduled.rais.form.view</field>
+            <field name="model">payscale.scheduled.raise</field>
+            <field name="arch" type="xml">
+                <form string="Payscale Scheduled Raise">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="payscale_id"/>
+                                <field name="start_date"/>
+                                <field name="actual_days"/>
+                                <field name="fixed_amount"/>
+                                <field name="percentage" widget="percentage"/>
+                                <field name="extra_amount"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="payscale_scheduled_rais_tree_view" model="ir.ui.view">
+            <field name="name">payscale.scheduled.rais.tree.view</field>
+            <field name="model">payscale.scheduled.raise</field>
+            <field name="arch" type="xml">
+                <tree string="Payscale Scheduled Raise">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="payscale_id"/>
+                    <field name="actual_days"/>
+                    <field name="fixed_amount"/>
+                    <field name="percentage"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="payscale_scheduled_rais_action" model="ir.actions.act_window">
+            <field name="name">Payscale Scheduled Raise</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">payscale.scheduled.raise</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Payscale Scheduled Raise" id="payscale_scheduled_rais_menu"
+                  sequence="1"
+                  action="payscale_scheduled_rais_action"
+                  parent="employee_promotion_menu"
+                  groups="hr.group_hr_manager,jbm_group_access_right_extended.custom_group_shared_service_manager"
+        />
+    </data>
+</odoo>

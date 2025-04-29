@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+        <record id="it_inherit_approval_request_view_form" model="ir.ui.view">
+            <field name="name">inherit.approval.request</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_get_attachment_view']" position="after">
+                    <button type="object" string="Purchase Request" class="btn btn-primary btn-sm"
+                            name="open_purchase_request" context="{'category_id':'active_id'}"
+                            attrs="{'invisible': ['|', ('approval_type', '!=', 'attendance'), ('request_status', '!=', 'approved')]}"/>
+                </xpath>
+
+                <xpath expr="//page[@name='approvers']" position="after">
+                    <page name="pr_other_information" string="Other Information"
+                          attrs="{'invisible':[('approval_request_id', '=', False)]}">
+                        <group>
+                            <div class="o_td_label">
+                                <label for="approval_request_id" string="Material Request Number" style="font-weight:bold;"
+                                       attrs="{'invisible': [('approval_type', '!=', 'purchase')]}"/>
+                                <label for="approval_request_id" string="Purchase Request Number" style="font-weight:bold;"
+                                       attrs="{'invisible': [('approval_type', '=', 'purchase')]}"/>
+                            </div>
+                            <field name="approval_request_id" nolabel="1" readonly="1"/>
+                            <field name="requester_id" attrs="{'invisible': [('approval_type', '!=', 'purchase')]}"/>
+                            <field name="approved_purchase_order_id" string="Approved RFQ" readonly="1"
+                                   attrs="{'invisible': [('approval_type', '!=', 'attendance')]}"/>
+                            <field name="approved_po_number" string="Approved PO" readonly="1"
+                                   attrs="{'invisible': [('approval_type', '!=', 'attendance')]}"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

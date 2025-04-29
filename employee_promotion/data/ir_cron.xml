@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="ir_cron_get_eligible_for_promotion" model="ir.cron">
+            <field name="name">Get All Eligible For Promotion</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="employee_promotion.model_eligible_for_promotion"/>
+            <field name="code">model.get_eligible_for_promotion()</field>
+            <field name="state">code</field>
+        </record>
+
+        <record id="ir_cron_payscale_raise" model="ir.cron">
+            <field name="name">Payscale Scheduled Raise</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="employee_promotion.model_payscale_scheduled_raise"/>
+            <field name="code">model.schedule_payscale_raise()</field>
+            <field name="state">code</field>
+        </record>
+
+        <record id="ir_cron_promotion_rules" model="ir.cron">
+            <field name="name">Scheduled Promotion Rules</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_promotion_rules"/>
+            <field name="code">model.schedule_promotion_rules()</field>
+            <field name="state">code</field>
+        </record>
+    </data>
+</odoo>

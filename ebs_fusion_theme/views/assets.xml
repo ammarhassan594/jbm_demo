@@ -1,0 +1,24 @@
+<odoo>
+    <template id="ebs_fusion_theme_assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/contact_form.js"></script>
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/dashboard.js"></script>
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/jquery.steps.js"></script>
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/invoice_chart.js"></script>
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/payments_chart.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+            <script type="text/javascript" src="/ebs_fusion_theme/static/src/js/main.js"></script>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/homepage.css"/>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/dashboard.css"/>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/invoice.css"/>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/employee.css"/>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/website_login.css"/>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/opensans-font.css"/>
+            <link rel="stylesheet" type="css" href="/ebs_fusion_theme/static/src/css/style.css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </xpath>
+    </template>
+</odoo>

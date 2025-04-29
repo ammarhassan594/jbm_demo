@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="ir_model_form_view_inherit" model="ir.ui.view">
+            <field name="name">ir.model.form.view.inherit</field>
+            <field name="model">ir.model</field>
+            <field name="inherit_id" ref="base.view_model_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='views']" position="after">
+                    <page string="SLA APIs" name="sla_apis" groups="base.group_no_one">
+                        <group>
+                            <group>
+                                <field name="record_identifier_api" domain="[('id', 'in', field_id)]"/>
+                                <field name="requestor_field_id" domain="[('id', 'in', field_id)]"/>
+                                <field name="subject_field_id" domain="[('id', 'in', field_id)]"/>
+                                <field name="model_type"/>
+                                <field name="state_field_id" domain="[('id', 'in', field_id)]"/>
+                                <field name="value_state_field" options="{'no_create': True, 'no_create_edit':True}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

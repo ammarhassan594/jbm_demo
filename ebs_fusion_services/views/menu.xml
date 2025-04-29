@@ -1,0 +1,60 @@
+<odoo>
+    <menuitem id="menu_services_root" name="Services" sequence="7"
+              web_icon="ebs_fusion_services,static/src/img/service_icon.jpeg"
+              action="ebs_fusion_crm_proposal_workflow_action" groups="group_services_user"/>
+    <menuitem id="crm_menu_services" name="Services" parent="menu_services_root" sequence="4"/>
+    <menuitem id="crm_menu_labor_quota" name="Labor Quota" parent="menu_services_root" sequence="5"/>
+    <menuitem id="service_menu_config" name="Configuration" parent="menu_services_root" sequence="6"/>
+    <menuitem id="menu_ebs_labor_quota_id" name="Labor Quota"
+              parent="crm_menu_labor_quota" action="ebs_fusion_services.action_labor_quota" sequence="1"/>
+    <menuitem id="menu_ebs_labor_quota_lines_id" name="Labor Quota Lines"
+              parent="crm_menu_labor_quota" action="ebs_fusion_services.action_labor_quota_lines" sequence="2"/>
+    <menuitem id="menu_ebs_crm_services" name="Services"
+              parent="crm_menu_services" action="ebs_fusion_services.action_ebs_crm_services" sequence="1"/>
+
+
+    <menuitem id="menu_ebs_crm_service_stages" name="Service Stages"
+              parent="service_menu_config" action="ebs_fusion_services.action_ebs_crm_service_stages" sequence="2"/>
+
+    <menuitem id="menu_ebs_crm_service_group" name="Service Group"
+              parent="service_menu_config" action="ebs_fusion_services.action_ebs_crm_service_group"/>
+    <menuitem id="menu_ebs_service_user_group" name="Service User Group"
+              parent="service_menu_config" action="ebs_fusion_services.action_ebs_service_user_groups"/>
+    <menuitem id="menu_ebs_crm_service_authority" name="Service Authority"
+              parent="service_menu_config" action="ebs_fusion_services.action_ebs_crm_service_authority" sequence="4"/>
+
+    <menuitem id="menu_proposal_root" name="Contracts" parent="crm.crm_menu_root" sequence="2"/>
+    <menuitem id="menu_ebs_crm_proposal" name="Contracts"
+              parent="ebs_fusion_services.menu_proposal_root" action="ebs_fusion_services.action_ebs_crm_proposal"
+              sequence="4"/>
+
+
+    <menuitem id="menu_contract_fees" name="Contract Fees" parent="ebs_fusion_services.menu_proposal_root"
+              action="ebs_fusion_services.action_ebs_contract_proposal_fees" sequence="12"/>
+    <menuitem id="menu_contract_details" name="Opportunity Types" parent="crm.crm_menu_config"
+              action="ebs_fusion_services.action_ebs_crm_contract_details" sequence="11"/>
+
+
+    <menuitem id="menu_service_order_root" name="Service Orders" parent="menu_services_root" sequence="1"/>
+    <menuitem id="menu_batch_service_order" name="Batch Service Orders"
+              parent="ebs_fusion_services.menu_service_order_root" sequence="2"
+              action="ebs_fusion_services.action_ebs_batch_service_order"
+              groups="ebs_fusion_services.group_service_order_manager"/>
+    <menuitem id="proposal_process_dashboard" name="Service Orders" parent="ebs_fusion_services.menu_service_order_root"
+              sequence="3"
+              action="ebs_fusion_services.ebs_fusion_crm_proposal_process_action"
+              groups="ebs_fusion_services.group_service_order_user"/>
+    <menuitem id="sub_service_process_dashboard_menu" name="Sub Service Orders"
+              parent="ebs_fusion_services.menu_service_order_root" sequence="4"
+              action="ebs_fusion_services.ebs_fusion_crm_sub_proposal_process_action"
+              groups="ebs_fusion_services.group_service_order_user"/>
+    <menuitem id="proposal_workflow_dashboard" name="My Workflows" parent="ebs_fusion_services.menu_service_order_root"
+              sequence="5"
+              action="ebs_fusion_services.ebs_fusion_crm_proposal_workflow_action"/>
+    <menuitem id="proposal_workflow_dashboard_manager" name="All Workflows"
+              parent="ebs_fusion_services.menu_service_order_root" sequence="6"
+              action="ebs_fusion_services.ebs_fusion_crm_proposal_workflow_action_admin_users"
+              groups="ebs_fusion_services.group_fusion_workflow_manager"/>
+
+
+</odoo>

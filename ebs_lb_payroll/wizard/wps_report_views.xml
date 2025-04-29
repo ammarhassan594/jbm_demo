@@ -1,0 +1,45 @@
+<odoo>
+    <record id="wps_report_form" model="ir.ui.view">
+        <field name="name">wps.report.form</field>
+        <field name="model">ebs.wps.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="hide_batch_id" invisible="1"/>
+                        <field name="batch_id" required="1" attrs="{'readonly': [('hide_batch_id','=',True)]}"/>
+                        <field name="config_id" required="1" options="{'no_create_edit': 1, 'no_create': 1}"/>
+                        <field name="sponsor_id" required="1" options="{'no_create_edit': 1, 'no_create': 1}"/>
+                    </group>
+                    <group>
+                        <field name="employee_ids" options="{'no_create_edit': 1, 'no_create': 1}" domain="[('is_wps', '=', True)]">
+                            <tree edit="0">
+                                <field name="name"/>
+                                <field name="company_id"/>
+                                <field name="department_id"/>
+                                <field name="job_id"/>
+                                <field name="is_wps"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="file" filename="name" string="Download Report" attrs="{'invisible': [('file','=',False)]}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight"  attrs="{'invisible': ['!',('file','=',False)]}"/>
+                    <button special="cancel" string="Cancel" icon="fa-times-circle" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wps_report_wizard" model="ir.actions.act_window">
+        <field name="name">WPS Report</field>
+        <field name="res_model">ebs.wps.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="wps_report_form"/>
+    </record>
+</odoo>

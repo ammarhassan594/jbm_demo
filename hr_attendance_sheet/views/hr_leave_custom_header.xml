@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <record model="ir.ui.view" id="hr_leave_inherit_form_view_to_add_button">
+            <field name="name">hr.leave.form.view</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_vacation_mngmt.hr_vacation_form_view"/>
+            <field name="arch" type="xml">
+                <header>
+                    <button name="check_dates" type="object"
+                                    string="check"  class="oe_highlight"/>
+                </header>
+            </field>
+        </record>
+
+</odoo>

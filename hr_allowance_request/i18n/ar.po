@@ -1,0 +1,220 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * hr_allowance_request
+#
+# Translators:
+# Mervat Mosaad, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 02:07+0000\n"
+"PO-Revision-Date: 2016-12-17 02:07+0000\n"
+"Last-Translator: Mervat Mosaad, 2023\n"
+"Language-Team: Arabic \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__country_id
+msgid "Nationality"
+msgstr "الجنسيه"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__marital
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__marital__single
+msgid "Single"
+msgstr "اعزب"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__marital__married
+msgid "Married"
+msgstr "متزوج"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__allowance_type
+msgid "Allowance Type"
+msgstr "نوع البدل"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__gender
+msgid "Gender"
+msgstr "نوع الجنس"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__currency_id
+msgid "Currency"
+msgstr "العمله"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__payment_date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__effective_date
+msgid "Effective Date"
+msgstr "التاريخ الفعلي"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__final_approve_date
+msgid "Final Approve Date"
+msgstr "تاريخ اخر موافقه"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__eligible_amount
+msgid "Eligible Amount"
+msgstr "المبلغ المؤهل"
+
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Amortization"
+msgstr "استهلاك"
+
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Date"
+msgstr "التاريخ"
+
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Amount"
+msgstr "القيمه"
+
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_form_view
+msgid "Note"
+msgstr "الملاحظات"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__amortized_balance
+msgid "Amortized Balance"
+msgstr "الرصيد المستهلك"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__remaining_unamortized_balance
+msgid "Remaining Unamortized Balance"
+msgstr "الرصيد المتبقي غير المستهلك"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__total_collected
+msgid "Total Collected"
+msgstr "مجموع المبالغ المحصلة"
+
+
+
+#. module: hr_allowance_request
+#: model:ir.ui.menu,name:hr_allowance_request.menu_allowance_requests
+msgid "Allowances"
+msgstr "بدلات/علاوات"
+
+
+#. module: hr_allowance_request
+#: model:ir.ui.menu,name:hr_allowance_request.base_menu_allowance_requests
+msgid "Allowances Request"
+msgstr "طلب بدلات/علاوات"
+
+#. module: hr_allowance_request
+#: model:ir.actions.act_window,name:hr_allowance_request.act_hr_employee_allowance_request
+msgid "Allowances"
+msgstr "بدلات/علاوات"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_tree_view
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields,field_description:hr_allowance_request.field_allowance_request__state
+msgid "State"
+msgstr "الحاله"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__confirmed
+msgid "Confirmed"
+msgstr "انتظار"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__first_approved
+msgid "First Approval"
+msgstr "الموافقه الاولي"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__approved
+msgid "Second Approval"
+msgstr "الموافقه الثانيه"
+
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__paid
+msgid "Paid"
+msgstr "تم الدفع"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__refused
+msgid "Refused"
+msgstr "رفض"
+
+#. module: hr_allowance_request
+#: model:ir.model.fields.selection,name:hr_allowance_request.selection__allowance_request__state__canceled
+msgid "Cancelled"
+msgstr "اغلاق"
+
+#. module: hr_allowance_request
+#: model_terms:ir.ui.view,arch_db:hr_allowance_request.allowance_request_tree_view
+msgid "Name"
+msgstr "اﻷسم"
+
+
+
+

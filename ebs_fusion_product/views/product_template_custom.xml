@@ -1,0 +1,70 @@
+<odoo>
+    <record id="ebs_fusion_product_template_form" model="ir.ui.view">
+        <field name="name">ebs.fusion.product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Assets" attrs="{'invisible':[('is_asset','=',False)]}">
+                    <group>
+                        <group>
+                            <field name="asset_id" string="Asset Model" attrs="{'required': [('is_asset', '=', True)]}"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Specification Of Product" id="specific_product">
+                    <group>
+
+                        <group string="Manufacture">
+                             <field name="product_country_manufacturer_id"/>
+                            <field name="company_name_manufacturer"/>
+                            <field name="paetner_name_manufacturer"/>
+                            <field name="date_of_manufacturer"/>
+                            <field name="production_timeline_to_manufacture"/>
+                            <field name="vendor_manufacturing_tools"/>
+                        </group>
+                        <group string="Cost">
+                            <field name="landing_cost_of_shipping_land"/>
+                            <field name="landing_cost_of_shipping_air"/>
+                            <field name="landing_cost_of_shipping_sea"/>
+                            <field name="product_operation_cost"/>
+                            <field name="product_insurance_cost"/>
+                            <field name="actual_cost_of_product"/>
+                        </group>
+                        <group>
+                            <field name="date_of_esta_company"/>
+                            <field name="end_date_guarantee_certification"/>
+                            <field name="start_date_guarantee_certification"/>
+                            <field name="certification_of_product_id"/>
+                            <field name="industry_of_product_id"/>
+                            <field name="process_delivering_the_product"/>
+                            <field name="letter_agency_autho_id"/>
+                            <field name="sales_contact_person"/>
+                            <field name="technical_contact_person"/>
+                            <field name="marketing_contact_person"/>
+                        </group>
+                        <group>
+                            <field name="process_installation_product"/>
+                            <field name="requirement_install_the_product"/>
+                            <field name="timeline_installation"/>
+                            <field name="spare_parts_product"/>
+                            <field name="shelf_life_spare_parts"/>
+                            <field name="product_training_program_manual"/>
+                            <field name="user_manual_product"/>
+                            <field name="duration_use_product"/>
+                            <field name="profile_product"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//div[@name='options']" position="inside">
+                <div>
+                    <field name="is_asset"/>
+                    <label for="is_asset"/>
+                </div>
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>

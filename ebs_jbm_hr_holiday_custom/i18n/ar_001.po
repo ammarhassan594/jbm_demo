@@ -1,0 +1,744 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_jbm_hr_holiday_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-13 09:42+0000\n"
+"PO-Revision-Date: 2023-02-13 09:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                        ال يحتاج"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                        غير مـــوافـــق"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                        مـــوافـــق"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                    بدل تذاكر السفر"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;تذاكر\n"
+"                                    السفر"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;منحة\n"
+"                                    الإجازة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,print_report_name:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_resuming_work_report
+msgid "'(Leave request - resuming work from)'"
+msgstr "(طلب إجازة - استئناف العمل من)"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,print_report_name:ebs_jbm_hr_holiday_custom.report_jbm_custom_leave_report
+msgid "'Leave report'"
+msgstr "ترك التقرير"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,print_report_name:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_report
+msgid "'Leave request report'"
+msgstr "تقرير طلب الإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,print_report_name:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_action
+msgid "'Leave work Resumption'"
+msgstr "استئناف العمل بالإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid ""
+"<br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>2-</span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>3-</span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid ""
+"<span style=\" border-bottom: 1px solid black;padding-bottom:-15px;\">اعتماد"
+" المدير العام</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid ""
+"<span style=\" border-bottom: 1px solid black;padding-bottom:-15px;\">اعتماد المسؤول المباشر\n"
+"                        </span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid ""
+"<span style=\" border-bottom: 1px solid black;padding-bottom:-15px;\">توقيع الموظف\n"
+"                        </span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid ""
+"<span style=\"color:#661a00!important;\">ملاحظات شؤون الموظفين:</span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid ""
+"<span style=\"padding-left:100px;color:#785838;\">___________________________________________________</span>\n"
+"                            <span style=\"color:#785838;\">________________________________________________</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid ""
+"<span style=\"padding-left:50px\">..................................</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "<span style=\"padding-left:7px;\">من</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid ""
+"<span style=\"padding-left:8px;\">أقر بأنني أديت أعمالي الرسمية يوم:</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid ""
+"<span style=\"padding-left:8px;\">توقيع الموظف:</span>\n"
+"                            <span>____________________________________________________________________</span>\n"
+"                            <span style=\"padding-left:8px;padding-right:8px;\">التاريخ:</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid ""
+"<span style=\"padding-left:8px;\">توقيع طالب اإلجازة:</span>\n"
+"                            <span style=\"padding-left:8px;padding-top:15px;color:#785838;\">_________________________________________________________\n"
+"                            </span>\n"
+"                            <span style=\"padding-left:8px;\">التاريخ:</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid ""
+"<span style=\"text-align:right;\">وهو اليوم الأول بعد إنتهاء إجازته.</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid ""
+"<span>\n"
+"                            <b style=\" border-bottom: 1px solid black;padding-bottom:-15px;\">إقرار مباشرة العمل</b>\n"
+"                        </span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid "<span>\"، وذلك في تاريخ</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid ""
+"<span>......................................................................</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid "<span>.......................................................</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid ""
+"<span>أحيطكم علما بأن املوظف املذكور قد باشر أعماله الرسمية يف يوم</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid "<span>أقر أنا الموقعة أدناه/</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid ""
+"<span>إجازة عارضة، حيث أني تغيبت خاللها عن العمل\n"
+"                                    ألسباب خاصة..\n"
+"                                </span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid "<span>ثاني للرعاية الاجتماعية بوظيفة \"</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_template
+msgid "<span>مؤسسة الشيخ جاسم بن محمد بن</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "<span>وتفضلوا بقبول فائق االحترام</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid ""
+"<span>وهو آخر يوم من أيام العمل الرسمية قبل البدء يف اإلجازة املصرح بها "
+"لي.</span>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_holiday_custom.field_hr_leave_type__add_validation_past_leave
+msgid "Add validation past leave"
+msgstr "إضافة التحقق من صحة الإجازة الماضية"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_holiday_custom.field_hr_leave__address_during_leave
+msgid "Address during leave"
+msgstr "العنوان أثناء الإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_holiday_custom.field_hr_leave__approval_date
+msgid "Approval Date"
+msgstr "تاريخ الموافقة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,name:ebs_jbm_hr_holiday_custom.report_jbm_custom_leave_report
+msgid "Leave Report"
+msgstr "اترك التقرير"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,name:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_report
+msgid "Leave Request Report"
+msgstr "تقرير طلب الإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,name:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_resuming_work_report
+msgid "Leave Request Resuming Work Report"
+msgstr "تقرير طلب إجازة استئناف العمل"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model,name:ebs_jbm_hr_holiday_custom.model_hr_leave_type
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.actions.report,name:ebs_jbm_hr_holiday_custom.leaves_work_resumption_report_action
+msgid "Leaves Work Resumption"
+msgstr "استئناف عمل الإجازات"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_holiday_custom.field_hr_leave__phone_number_on_leave
+msgid "Phone number while on leave"
+msgstr "رقم الهاتف أثناء الإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model.fields,field_description:ebs_jbm_hr_holiday_custom.field_hr_leave__return_date
+msgid "Return Date"
+msgstr "تاريخ العودة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model:ir.model,name:ebs_jbm_hr_holiday_custom.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "______"
+msgstr "______"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "________________________________"
+msgstr "________________________________"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "______________________________________"
+msgstr "______________________________________"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "______________________________________________"
+msgstr "______________________________________________"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: code:addons/ebs_jbm_hr_holiday_custom/models/hr_leave.py:0
+#, python-format
+msgid "you cannot submit a past leave request in this leave type"
+msgstr "لا يمكنك تقديم طلب إجازة سابق في هذا النوع من الإجازة"
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "أرجو املوافقة على احتساب مدة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid "أيام عدد الإجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "إعتباراً من:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "إلـــــــــى"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"األسباب:\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>-1</span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>-2</span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>-3</span>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "اإلجازة العارضة املستنفذةيوم"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "اإلدارة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "اإلسم الكامل:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "اإلعتماد"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "االعتماد"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "االعتمـــاد"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "الاسم لكامل:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"البديل:\n"
+"                                    &amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid "التوقيع"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "التوقيع:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "الدرجة الوظيفية:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid "الرئيس املباشر:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "الرئيس املباشر: direct manager"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "الرصيد املتبقي"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "الرصيد املتبقي بعد القيام باإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "الرقم الوظيفي :"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "الرقم الوظيفي:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "العنوان أثناء اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "العهدة املدرجة: information field : custody"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "القائم بالعمل أثناء اإلجازة: replacement"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "الوظيفة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "بداية اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "تاريخ التعيني:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "تاريخ العودة من اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "تاريخ القيام باإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "تاريخ بداية اخلدمة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "تاريخ بدايةالإجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "تاريخ تقدمي الطلب:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "تاريخ نهاية اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid "تاريخ نهاية الاجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "تـــــاريخ آخـــــر إجــــــازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"توقيع\n"
+"                                    طالب\n"
+"                                    الإجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "توقيع الرئيس املباشر"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid ""
+"توقيع مقدم\n"
+"                                    الطلب:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "توقيــــع مدير اإلدارة:______________________________________"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "رصيد اإلجازات"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid ""
+"رصيـــد اإلجازة العارضة\n"
+"                                    املتبقي"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "رصيــــــــــد اإلجــــــــازات:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "رقم الهاتف أثناء اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "شؤون املوظفني"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "عدد أيام اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "مدة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "مدة اإلجازة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid ""
+"مدة اإلجازة العارضة يف\n"
+"                                    السنة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "مدة اإلجـازة العــارضة املطلوبة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "مسؤول الشؤون اإلدارية"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "معدد األيا املمنوحـة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "منوذج إقرار القيام باإلجازة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "نموذج طلب إجازة خاصة / دورية"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "نموذج طلب إجازة عارضة"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "نهاية اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "نوع اإلجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid "نوع الاجازة:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "وحتى:"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "يتم تسليمها لـ: replacement"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"يحتاج\n"
+"                                        &amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid ""
+"يعبأ بواسطة\n"
+"                                    املوظف"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid ""
+"يعبأ بواسطة\n"
+"                                    املوظف املختص"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+msgid "يعبأ بواسطة الرئيس المباشر"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "يعبأ بواسطة الرئيس املباشر"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid ""
+"يعبأ بواسطة املوارد\n"
+"                                    البشرية"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_report
+msgid "يعبأ بواسطة املوارد البشرية"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.leave_request_resuming_work_report
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_leave_request_template
+msgid "يعبأ بواسطة املوظف"
+msgstr ""
+
+#. module: ebs_jbm_hr_holiday_custom
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_hr_holiday_custom.report_jbm_sick_leave_report
+msgid "يـــــوم، للفتـــــرة من:"
+msgstr ""

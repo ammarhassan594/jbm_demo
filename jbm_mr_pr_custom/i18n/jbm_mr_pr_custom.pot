@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_mr_pr_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-31 09:39+0000\n"
+"PO-Revision-Date: 2024-10-31 09:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_mr_pr_custom
+#: model:ir.model,name:jbm_mr_pr_custom.model_approval_request
+#: model:ir.model.fields,field_description:jbm_mr_pr_custom.field_approval_request__approval_request_id
+msgid "Approval Request"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model:ir.model.fields,field_description:jbm_mr_pr_custom.field_approval_request__approved_purchase_order_id
+msgid "Approved Purchase Order"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model_terms:ir.ui.view,arch_db:jbm_mr_pr_custom.it_inherit_approval_request_view_form
+msgid "MR Request"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model:ir.model.fields,field_description:jbm_mr_pr_custom.field_purchase_order__mr_request_id
+msgid "Mr Request"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model:ir.model.fields,field_description:jbm_mr_pr_custom.field_purchase_order__mr_user_id
+msgid "Mr User"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: code:addons/jbm_mr_pr_custom/models/approval_request.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model_terms:ir.ui.view,arch_db:jbm_mr_pr_custom.it_inherit_approval_request_view_form
+msgid "Other Information"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model_terms:ir.ui.view,arch_db:jbm_mr_pr_custom.it_inherit_approval_request_view_form
+msgid "PR Request"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model:ir.model,name:jbm_mr_pr_custom.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model_terms:ir.ui.view,arch_db:jbm_mr_pr_custom.it_inherit_approval_request_view_form
+msgid "Purchase Request"
+msgstr ""
+
+#. module: jbm_mr_pr_custom
+#: model:ir.model.fields,field_description:jbm_mr_pr_custom.field_approval_request__requester_id
+msgid "Requester"
+msgstr ""

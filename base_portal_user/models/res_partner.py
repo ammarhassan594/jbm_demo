@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-################################################################################from odoo import fields, modelsclass ResPartner(models.AbstractModel):    _inherit = 'res.partner'    activity_state = fields.Selection(groups="base.group_user,base_portal_user.group_user_portal")

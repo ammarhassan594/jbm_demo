@@ -1,0 +1,3090 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_fusion_hr_employee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 08:56+0000\n"
+"PO-Revision-Date: 2023-01-23 08:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.noc_generic_report_action
+msgid "'NOC - Generic - %s' % object.name"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.noc_to_waive_notice_period_report_action
+msgid "'NOC to Waive Notice Period - %s' % object.name"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.salary_certificate_cbq_report_action
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.salary_certificate_qnb_report_action
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report_action
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.salary_certificate_visa_report_action
+msgid "'Salary Cert - %s – %s' % (object.name, time.strftime('%d.%m.%y'))"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ", Building No:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ", Street No:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ", Zone No:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ", a citizen of"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid ""
+", holding Passport\n"
+"                                        no."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+", holding Passport\n"
+"                                no."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ",residing in Street No:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid ""
+".\n"
+"                                    Please find the breakdown of their salary below."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"<br/>\n"
+"                                        Housing Allowance                       <strong style=\"padding-left: 196px;\">-</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"<br/>\n"
+"                                        Other Allowance\n"
+"                                        <strong style=\"padding-left: 212px;\">-</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"<br/>\n"
+"                                        Transportation Allowance                <strong style=\"padding-left: 150px;\">-</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"<br/>\n"
+"                                Their present salary is QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.res_config_settings_view_form_accounting
+msgid ""
+"<span class=\"o_form_label\">Main Employee Payable</span>\n"
+"                           <br/>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.res_config_settings_view_form_accounting
+msgid ""
+"<span class=\"o_form_label\">Main Employee Receivable</span>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.res_config_settings_view_form_accounting
+msgid ""
+"<span class=\"o_form_label\">Outsourced Employee Payable</span>\n"
+"                             <br/>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.res_config_settings_view_form_accounting
+msgid ""
+"<span class=\"o_form_label\">Outsourced Employee Receivable</span>\n"
+"                               <br/>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "<span style=\"font-weight: 550;\">التاريخ:</span>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid ""
+"<span>Subject:</span>\n"
+"                                <strong>Application for Liquor Permit</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"<span>Subject:</span>\n"
+"                            <strong>Salary Certificate</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.documents_custom_kanban_inherit
+msgid "<strong>Client Name</strong>:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.documents_custom_kanban_inherit
+msgid "<strong>Employee Name</strong>:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "<strong>Qatar Distribution Company</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+msgid ""
+"<u style=\"font-weight: bold;\">الموضوع \" عدم ممانعة من نقل الكفالة \"\n"
+"                            </u>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid ""
+"<u style=\"font-weight: bold;\">الموضوع \" عدم ممانعة من نقل الكفالة و التنازل على فترة\n"
+"                               الاخطار\"\n"
+"                            </u>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__blood_group__ab+
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__blood_group__ab+
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__blood_group__ab+
+msgid "AB+"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__blood_group__ab-
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__blood_group__ab-
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__blood_group__ab-
+msgid "AB-"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__client_abbreviation
+msgid "Abbreviation"
+msgstr "اختصار"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__absconding_report_no
+msgid "Absconding Report No."
+msgstr ".رقم تقرير الهروب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__has_access_card
+msgid "Access Card"
+msgstr "بطاقة الدخول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.module.category,description:ebs_fusion_hr_employee.employee_type_access_category
+msgid "Access Employee Type"
+msgstr "الوصول إلى نوع الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:res.groups,name:ebs_fusion_hr_employee.group_access_client_employee
+msgid "Access Of Client Employee"
+msgstr "وصول موظف العميل"
+
+#. module: ebs_fusion_hr_employee
+#: model:res.groups,name:ebs_fusion_hr_employee.group_access_fusion_employee
+msgid "Access Of Main Company Employee"
+msgstr "وصول موظف الشركة الرئيسي"
+
+#. module: ebs_fusion_hr_employee
+#: model:res.groups,name:ebs_fusion_hr_employee.group_access_other_employee
+msgid "Access Of Outsourced Employees"
+msgstr "الوصول إلى الموظفين الخارجيين"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid "Accommodation Allowance – QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Active Contract"
+msgstr "عقد نشط"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.actions.act_window,help:ebs_fusion_hr_employee.open_view_client_employee_list_my
+msgid "Add a new Client employee"
+msgstr "إضافة موظف عميل جديد"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.actions.act_window,help:ebs_fusion_hr_employee.open_view_fos_employee_list_my
+msgid "Add a new Outsourced Employees"
+msgstr "إضافة موظفين خارجيين جدد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_admin_supervisor
+msgid "Admin Supervisor"
+msgstr "مشرف إداري"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__after_entry
+msgid "After Entry"
+msgstr "بعد الدخول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__age
+msgid "Age"
+msgstr "عمر"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Alexander Lee"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__allergic_food_drink
+msgid "Allergic to any Food / Drinks or Nature"
+msgstr "حساسية من أي طعام / شراب أو طبيعة"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Allowance"
+msgstr "مخصص"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__employee_allowance_ids
+msgid "Allowances"
+msgstr "البدلات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__alt_mobile_number
+msgid "Alternate Mobile Number"
+msgstr "رقم الهاتف النقال البديل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__any_contagious_disease
+msgid "Any Contagious Disease"
+msgstr "أي مرض معدي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__application_no
+msgid "Application Number"
+msgstr "رقم الطلب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__arabic_name
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__assets
+msgid "Assets"
+msgstr "الأصول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__attested_education_certificate_id
+msgid "Attested Education Certificate"
+msgstr "شهادة تعليم مصدقة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__authority
+msgid "Authority"
+msgstr "السلطة"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Authorized Signatory"
+msgstr "المفوض بالتوقيع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "الحسابات البنكية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__bank_details_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Bank Details"
+msgstr "تفاصيل البنك"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__bank_details_in_the_home_country_id
+msgid "Bank Details in the Home Country"
+msgstr "تفاصيل البنك في الوطن الأم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__bank_info
+msgid "Bank Information"
+msgstr "المعلومات المصرفية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__bank_name
+msgid "Bank Name"
+msgstr "اسم البنك"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__basic_salary
+msgid "Basic Salary"
+msgstr "راتب اساسي"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"Basic Salary                            <strong style=\"padding-left: "
+"247px;\">-</strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid "Basic Salary – QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "Basic Salary: QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__birth_certificate_id
+msgid "Birth Certificate"
+msgstr "شهادة الميلاد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__blood_group
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__blood_group
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__blood_group
+msgid "Blood Group"
+msgstr "فصيلة الدم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__blood_pressure
+msgid "Blood Pressure"
+msgstr "ضغط الدم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__blood_test_id
+msgid "Blood Test Result"
+msgstr "نتيجة فحص الدم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__building
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__building
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__building
+msgid "Building"
+msgstr "بناء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__building_no
+msgid "Building No"
+msgstr "لا للبناء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__visa_type__business
+msgid "Business"
+msgstr "اعمال"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.letter_print_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.pay_card_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.update_outsourced_status_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.workmens_compensation_wizard_form
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__cancellation_date
+msgid "Cancellation Date"
+msgstr "تاريخ الإلغاء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__cancelled
+msgid "Cancelled"
+msgstr "ألغيت"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__cancel_noc
+msgid "Cancelled/NOC"
+msgstr "ملغاة / شهادة عدم ممانعة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__candidate_university_letter_id
+msgid "Candidate's University Letter"
+msgstr "خطاب جامعة المرشح"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__candidate_transcript
+msgid "Candidate(s) Transcript"
+msgstr "كشف درجات المرشح (المرشحين)"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__cases
+msgid "Cases"
+msgstr "حالات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__certificates_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__certificate_id
+msgid "Certificate"
+msgstr "شهادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__certificates_obtained
+msgid "Certificates Obtained"
+msgstr "الحصول على الشهادات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__certificate_type_id
+msgid "Certificates Type"
+msgstr "نوع الشهادات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_certificate_type
+msgid "Certification Type"
+msgstr "نوع الشهادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__relation_with_dependent__child
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_sponsoring_dependents__dependant_type__child
+msgid "Child"
+msgstr "طفل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__citizenship_id
+msgid "Citizenship"
+msgstr "المواطنة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__city
+msgid "City"
+msgstr "مدينة"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Client"
+msgstr "عميل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.open_view_client_employee_list_my
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.menu_hr_client_employee_payroll
+msgid "Client Employees"
+msgstr "موظفو العميل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__comments
+msgid "Comments"
+msgstr "تعليقات"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+msgid "Commercial Bank Qatar"
+msgstr "البنك التجاري قطر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_cr_no
+msgid "Commercial Registeration No."
+msgstr ".رقم السجل التجاري"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__communication_chart
+msgid "Communication Chart"
+msgstr "مخطط الاتصالات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__company_email
+msgid "Company Email address"
+msgstr "عنوان البريد الإلكتروني للشركة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_company_name
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__company_worked
+msgid "Company Worked for"
+msgstr "عملت الشركة ل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.letter_print_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.pay_card_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.update_outsourced_status_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.workmens_compensation_wizard_form
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__contract_duration
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__ticket_eligibility
+msgid "Contract Duration"
+msgstr "مدة العقد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__country_id
+msgid "Country"
+msgstr "دولة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__country_passport_id
+msgid "Country Of Passport"
+msgstr "بلد جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_country
+msgid "Country of Passport"
+msgstr "بلد جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Create Document"
+msgstr "إنشاء وثيقة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__create_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__create_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__currency_id
+msgid "Currency"
+msgstr "عملة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__currency_home_country_id
+msgid "Currency Home Country"
+msgstr "بلد العملة الرئيسية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__current_address
+msgid "Current Address"
+msgstr "العنوان الحالي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__dob
+msgid "Date of Birth"
+msgstr "تاريخ الولادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__date_entry
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__date_entry
+msgid "Date of Entry"
+msgstr "تاريخ الدخول"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Date:"
+msgstr ":تاريخ"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_dated
+msgid "Dated"
+msgstr "بتاريخ"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "Dear Sir,"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__department
+msgid "Department"
+msgstr "قسم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__dependant_type
+msgid "Dependant Type"
+msgstr "نوع المعال"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__dependent_work_ids
+msgid "Dependent Work"
+msgstr "العمل المعتمد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__designation_risk
+msgid "Designation Risk"
+msgstr "مخاطر التعيين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__diabetic
+msgid "Diabetic"
+msgstr "مريض بالسكر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__passport_type__diplomatic
+msgid "Diplomatic"
+msgstr "دبلوماسي"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "Director"
+msgstr "مخرج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__display_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__divorce_certificate_id
+msgid "Divorce certificate"
+msgstr "شهادة الطلاق"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__drink_alcohol
+msgid "Do you Drink Alcohol?"
+msgstr "هل تشرب الخمر؟"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__do_you_smoke
+msgid "Do you smoke ?"
+msgstr "هل تدخن ؟"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_documents_document
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Document"
+msgstr "المستند"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__document_count
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Doha, Qatar"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "Doha, State of Qatar"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__double_citizenship_ids
+msgid "Double Country Citizenship"
+msgstr "جنسية الدولة المزدوجة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__dress_size
+msgid "Dress Size"
+msgstr "مقاس الفستان"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__driver_lic_expiry_date
+msgid "Driver's License Expiry Date"
+msgstr "تاريخ انتهاء رخصة القيادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__driver_lic_no_id
+msgid "Driver's License No"
+msgstr "رقم رخصة القيادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__driving_licence_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Driving Licence"
+msgstr "رخصة قيادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__licence_serial_id
+msgid "Driving Licence Serial Number"
+msgstr "الرقم التسلسلي لرخصة القيادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__driving_ref_no
+msgid "Driving Reference Number"
+msgstr "الرقم المرجعي للقيادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__hr_employee_econtract_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "E-Contract"
+msgstr "العقد الإلكتروني"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__e_services_expiry_date
+msgid "E-Services Expiry Date"
+msgstr "تاريخ انتهاء الخدمات الإلكترونية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_designation_description
+msgid "EBS Designation Description"
+msgstr "وصف التعيين EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_driving_licence
+msgid "EBS Driving Licence"
+msgstr "رخصة قيادة EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_education
+msgid "EBS Education"
+msgstr "تعليم EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.ebs_emp_residence_action
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_emp_residence
+msgid "EBS Emp Residence"
+msgstr "سكن إم. بي EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_employee_allowance
+msgid "EBS Employee Allowance"
+msgstr "بدل الموظف EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_family_details
+msgid "EBS Family Details"
+msgstr "تفاصيل عائلية EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_health_card
+msgid "EBS Health Card"
+msgstr "بطاقة صحية EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_history_experience
+msgid "EBS History Experience"
+msgstr "تجربة التاريخ EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_hobbies
+msgid "EBS Hobbies"
+msgstr "هوايات EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_insurance
+msgid "EBS Insurance"
+msgstr "تأمين EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_penalty
+msgid "EBS Penalty"
+msgstr "جزاء EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_residency_permit
+msgid "EBS Residency Permit"
+msgstr "تصريح الإقامة EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_sponsoring_dependents
+msgid "EBS Sponsoring Dependents"
+msgstr "كفالة المعالين EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_visa_details
+msgid "EBS Visa Details"
+msgstr "تفاصيل التأشيرة EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_ebs_workmen_compensation
+msgid "EBS Workmen Compensation"
+msgstr "تعويض العمال EBS"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__education_ids
+msgid "Education"
+msgstr "تعليم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__education_certificate_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Education Certificate"
+msgstr "شهادة التعليم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_education_type
+msgid "Education Type"
+msgstr "نوع التعليم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__education_spatial_environment
+msgid "Education and Spatial Environment"
+msgstr "التعليم والبيئة المكانية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__education_type_id
+msgid "Education type"
+msgstr "نوع التعليم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_email
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__qcsw_preffered_contact__email
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Emergency - Home Country"
+msgstr "الطوارئ - الوطن الأم"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Emergency - Qatar"
+msgstr "طوارئ - قطر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__emergency_no
+msgid "Emergency Contact number"
+msgstr "رقم الاتصال في حالات الطوارئ"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__emergency_contact_qatar
+msgid "Emergency Contact(Qatar)"
+msgstr "جهة اتصال الطوارئ (قطر)"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__emergency_phone_qatar
+msgid "Emergency Phone(Qatar)"
+msgstr "هاتف الطوارئ (قطر)"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_account_setup_bank_manual_config__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_residency_permit__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_partner_bank__employee_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__employee_ids
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_documents_document__employee_client_id
+msgid "Employee Client"
+msgstr "عميل الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Employee No"
+msgstr "الموظف لا"
+
+#. module: ebs_fusion_hr_employee
+#: code:addons/ebs_fusion_hr_employee/models/hr_employee_custom.py:0
+#, python-format
+msgid "Employee No field must be unique"
+msgstr "الموظف لا يجب أن يكون الحقل فريدًا"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__employee_no
+msgid "Employee No."
+msgstr ".الموظف لا"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.employee_penalty_act_window
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.employee_penalty_tree_view
+msgid "Employee Penalty"
+msgstr "عقوبة الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__has_employee_personal_profile
+msgid "Employee Personal Profile"
+msgstr "الملف الشخصي للموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__emp_residence_id
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.ebs_emp_residence_menu
+msgid "Employee Residence"
+msgstr "إقامة الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_documents_document__employee_type
+msgid "Employee Type"
+msgstr "نوع موظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.module.category,name:ebs_fusion_hr_employee.employee_type_access_category
+msgid "Employee Type Access"
+msgstr "وصول نوع الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__employees_address
+msgid "Employees Address"
+msgstr "عنوان الموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__emp_name
+msgid "Employers Name"
+msgstr "اسم صاحب العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__end_of_notice_period
+msgid "End of Notice Period"
+msgstr "نهاية فترة الإخطار"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__entry_date
+msgid "Entry Date"
+msgstr "موعد الدخول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__exceptions
+msgid "Exceptions"
+msgstr "استثناءات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__exit_date
+msgid "Exit Date"
+msgstr "تاريخ الخروج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__expired_document_o2m
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Expired Documents"
+msgstr "المستندات منتهية الصلاحية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__expiry_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_residency_permit__expiry_date
+msgid "Expiry Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,help:ebs_fusion_hr_employee.field_hr_employee__passport_expiry_date
+msgid "Expiry date of Passport ID"
+msgstr "تاريخ انتهاء صلاحية جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__eye_test
+msgid "Eye Sight Test"
+msgstr "اختبار البصر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__facebook
+msgid "Facebook"
+msgstr "فيسبوك"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__family_details_ids
+msgid "Faily Details"
+msgstr "تفاصيل عائلية"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Family Details"
+msgstr "تفاصيل عائلية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__father_name
+msgid "Father Name"
+msgstr "اسم الأب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_fax
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__qcsw_preffered_contact__fax
+msgid "Fax"
+msgstr "فاكس"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__feet_size
+msgid "Feet Size"
+msgstr "حجم القدمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__file
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_file
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__binary_data
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__binary_data
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__binary_data
+msgid "File"
+msgstr "ملف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__first_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__first_name
+msgid "First Name"
+msgstr "الاسم الاول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__food_allowance
+msgid "Food Allowance"
+msgstr "بدل الطعام"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "Food Allowance: QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__form_individual_licence
+msgid "Form for Individual licensing"
+msgstr "استمارة الترخيص الفردي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__frequency_activity
+msgid "Frequency of activity"
+msgstr "تواتر النشاط"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__fullname
+msgid "Fullname"
+msgstr "الاسم بالكامل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__general
+msgid "General"
+msgstr "عام"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__google
+msgid "Google"
+msgstr "جوجل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__grade
+msgid "Grade"
+msgstr "رتبة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__hc_serial_no_id
+msgid "HC Serial Number"
+msgstr "رقم سري HC"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_hr_employee_econtract
+msgid "HR Employee Econtract"
+msgstr " عقد موظف الموارد البشرية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__health_card_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Health Card"
+msgstr "بطاقة صحية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__health_certificate_expiry_date
+msgid "Health Certificate (Food Handler Services) Expiry Date"
+msgstr "شهادة صحية (خدمات مناول الطعام) تاريخ انتهاء الصلاحية"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Health Condition"
+msgstr "الحالة الصحية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__heart_desease
+msgid "Heart Desease"
+msgstr "مرض قلبي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__height
+msgid "Height"
+msgstr "ارتفاع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__history_experience_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "History Experience"
+msgstr "تجربة التاريخ"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__hobbies_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Hobbies"
+msgstr "هوايات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__home_number
+msgid "Home Number"
+msgstr "رقم البيت"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_employee_allowance__type__housing
+msgid "Housing"
+msgstr "الإسكان"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__housing_allowance
+msgid "Housing Allowance"
+msgstr "بدل سكن"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "Housing Allowance: QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__hypertensive
+msgid "Hypertensive"
+msgstr "ارتفاع ضغط الدم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__iban
+msgid "IBAN"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_account_setup_bank_manual_config__iban_no
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_partner_bank__iban_no
+msgid "IBAN No"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "If"
+msgstr "لو"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__inside_country
+msgid "Inside The Country"
+msgstr "داخل الدولة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__inside_country_mev
+msgid "Inside the Country – MEV"
+msgstr " MEV - داخل الدولة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__instructions
+msgid "Instructions"
+msgstr "تعليمات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__insurance_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Insurance"
+msgstr "تأمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__insurance_covered
+msgid "Insurance Covered for"
+msgstr "مغطى التأمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_insurance_workmens_compensation
+msgid "Insurance Workmens Compensation Report"
+msgstr "تقرير تعويضات عمال التأمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.action_outsourced_employee_insurance_addition
+msgid "Insurance: Workmens Compensation Addition"
+msgstr "التأمين: اضافة تعويض العمال"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.action_outsourced_employee_insurance_deletion
+msgid "Insurance: Workmens Compensation Deletion"
+msgstr "التأمين: شطب تعويض العمال"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_driving_licence__licence_type__international
+msgid "International"
+msgstr "دولي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__is_qid
+msgid "Is QID"
+msgstr "هل البطاقة الشخصية القطرية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__issue_date
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__issue_date
+msgid "Issued Date"
+msgstr "تاريخ الإصدار"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__job_description
+msgid "Job Description"
+msgstr "المسمى الوظيفي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__joining_date
+msgid "Joining Date"
+msgstr "تاريخ الانضمام"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__labor_card_expiry_date
+msgid "Labor Card Expiry Date"
+msgstr "تاريخ انتهاء بطاقة العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__labor_card_id
+msgid "Labor Card Ref.No"
+msgstr "رقم بطاقة العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card____last_update
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__last_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__last_name
+msgid "Last Name"
+msgstr "الكنية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__write_uid
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_insurance_workmens_compensation__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_pay_card__write_date
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Leaves"
+msgstr "أوراق"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__comp_footer
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Letter Foot"
+msgstr "قدم الرسالة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__comp_hearder
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Letter Head"
+msgstr "رأس الرسالة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.letter_print_wizard_action
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.pay_card_wizard_action
+msgid "Letter Print"
+msgstr "طباعة الرسالة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_letter_print_wizard
+msgid "Letter Print Wizard"
+msgstr "معالج طباعة الرسالة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__licence_type
+msgid "Licence Type"
+msgstr "نوع الرخصة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__life_insurance
+msgid "Life Insurance"
+msgstr "التأمين على الحياة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__line_manager
+msgid "Line Manager"
+msgstr "المدير المباشر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__linkedin
+msgid "Linkedin"
+msgstr "ينكدين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__list_benefeciary
+msgid "List of Benefeciary"
+msgstr "قائمة المستفيدين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__list_of_beneficiary
+msgid "List of Beneficiary"
+msgstr "قائمة المستفيدين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_driving_licence__licence_type__local
+msgid "Local"
+msgstr "محلي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__location
+msgid "Location"
+msgstr "موقع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__company_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Main Company"
+msgstr "الشركة الرئيسية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_company__fusion_employee_payable
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_config_settings__fusion_employee_payable
+msgid "Main Company Employee Payable"
+msgstr "موظف الشركة الرئيسي مستحق الدفع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_company__fusion_employee_receivable
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_config_settings__fusion_employee_receivable
+msgid "Main Company Employee Receivable"
+msgstr "موظف الشركة الرئيسي المستحق"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Marital Status *"
+msgstr "الحالة الحالة الإجتماعية *"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__marriage_certificate_id
+msgid "Marriage Certificate"
+msgstr "وثيقة زواج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__marriage_contract_id
+msgid "Marriage Contract"
+msgstr "عقد زواج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__medical
+msgid "Medical"
+msgstr "طبي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__middel_name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__middle_name
+msgid "Middle Name"
+msgstr "الاسم الوسطى"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_mobile_no
+msgid "Mobile No"
+msgstr "رقم المحمول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__mobile_number
+msgid "Mobile Number"
+msgstr "رقم الهاتف المحمول"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__mother_name
+msgid "Mother Name"
+msgstr "اسم الأم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__car
+msgid "Motor (Car)"
+msgstr "(جمل) محرك"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.menu_hr_employee_my_profile_root
+msgid "My Profile"
+msgstr "ملفي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.noc_generic_report_action
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__noc_generic_report_action
+msgid "NOC - Generic"
+msgstr "شهادة عدم ممانعة - عامة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.noc_to_waive_notice_period_report_action
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__noc_to_waive_notice_period_report_action
+msgid "NOC to Waive Notice Period"
+msgstr "شهادة عدم ممانعة للتنازل عن فترة الإخطار"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_certificate_type__name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__name
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_education_type__name
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__representative_name
+msgid "Name and data of the PRO representative"
+msgstr "اسم وبيانات ممثل المندوب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__employee_id
+msgid "Name of the Insurance Client"
+msgstr "اسم عميل التأمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__name_insurance_company
+msgid "Name of the Insurance Company"
+msgstr "اسم شركة التأمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__name_insurer
+msgid "Name of the Insurer"
+msgstr "اسم المؤمن"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__main_official_name
+msgid "Name of the Main Official"
+msgstr "اسم المسؤول الرئيسي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__manager_id
+msgid "Name of the Responsible Manager"
+msgstr "اسم المدير المسؤول"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Name(Arabic)"
+msgstr "الاسم (عربي)"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Name(English)"
+msgstr "الاسم (انجليزي)"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "National Address"
+msgstr "العنوان الوطني"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__nationality_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__nationality_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__nationality_id
+msgid "Nationality"
+msgstr "جنسية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__nationality_birth
+msgid "Nationality – Birth"
+msgstr "الجنسية - الميلاد"
+
+#. module: ebs_fusion_hr_employee
+#: code:addons/ebs_fusion_hr_employee/models/hr_employee_custom.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_history_experience__cancel_noc__no
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__certificates_obtained__no
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee_econtract__housing_allowance__no
+msgid "No"
+msgstr "رقم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__no_certificate
+msgid "No. of Certificates"
+msgstr "عدد الشهادات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__non_marriageid_certificate_id
+msgid "Non-Marriage Certificate"
+msgstr "شهادة عدم زواج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__nortarized_certificate_id
+msgid "Notarized qualification certificate"
+msgstr "شهادة مؤهل موثقة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__lives_birth_id
+msgid "Notification of Live Birth"
+msgstr "إخطار ولادة حية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__other
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__other
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__visa_type__other
+msgid "Other"
+msgstr "آخر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__other_allownce
+msgid "Other Allowance"
+msgstr "بدلات أخرى"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid "Other Allowance – QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "Other Allowance: QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_employee_allowance__type__other
+msgid "Other/Comments"
+msgstr "تعليقات أخرى"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_history_experience__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__text
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__others_comments
+msgid "Others/Comments"
+msgstr "تعليقات أخرى"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__onboarding
+msgid "Outside Visa Test Process"
+msgstr "عملية اختبار التأشيرة الخارجية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.outsourced_employee_liquor_permit
+msgid "Outsourced Employee Liquor Permit"
+msgstr "تصريح الخمور للموظفين الاستعانة بمصادر خارجية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_company__outsourced_employee_payable
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_config_settings__outsourced_employee_payable
+msgid "Outsourced Employee Payable"
+msgstr "موظف الاستعانة بمصادر خارجية مستحق الدفع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_company__outsourced_employee_receivable
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_res_config_settings__outsourced_employee_receivable
+msgid "Outsourced Employee Receivable"
+msgstr "موظف خارجي مستحق القبض"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.outsourced_employee_report_wizard_action
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.outsourced_employee_report_wizard_menu
+msgid "Outsourced Employee Report"
+msgstr "تقرير الموظف الخارجي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.outsourced_employee_report_config_action
+#: model:ir.model,name:ebs_fusion_hr_employee.model_outsourced_employee_report_config
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.outsourced_employee_report_config_menu
+msgid "Outsourced Employee Report Config"
+msgstr "تكوين تقرير الموظف الخارجي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_outsourced_employee_report_wizard
+msgid "Outsourced Employee Report Wizard"
+msgstr "معالج تقرير الموظف الخارجي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.open_view_fos_employee_list_my
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.menu_hr_fos_employee_payroll
+#: model:ir.ui.menu,name:ebs_fusion_hr_employee.menu_hr_payroll_fos_employees
+msgid "Outsourced Employees"
+msgstr "الموظفون الخارجيون"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.server,name:ebs_fusion_hr_employee.ir_cron_outsourced_national_address_reminder_ir_actions_server
+#: model:ir.cron,cron_name:ebs_fusion_hr_employee.ir_cron_outsourced_national_address_reminder
+#: model:ir.cron,name:ebs_fusion_hr_employee.ir_cron_outsourced_national_address_reminder
+msgid "Outsourced National Address Reminder"
+msgstr "الاستعانة بمصادر خارجية للتذكير بالعنوان الوطني"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__outsourced_employee_report_config__template__outsourced_national_address_report
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__outsourced_employee_report_wizard__report_template__outsourced_national_address_report
+msgid "Outsourced National Address Report"
+msgstr "تقرير العنوان الوطني الاستعانة بمصادر خارجية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.server,name:ebs_fusion_hr_employee.ir_cron_outsourced_qid_reminder_ir_actions_server
+#: model:ir.cron,cron_name:ebs_fusion_hr_employee.ir_cron_outsourced_qid_reminder
+#: model:ir.cron,name:ebs_fusion_hr_employee.ir_cron_outsourced_qid_reminder
+msgid "Outsourced QID Reminder"
+msgstr "الاستعانة بمصادر خارجية بطاقة الهوية الشخصية تذكير"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__outsourced_employee_report_config__template__outsourced_qid_report
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__outsourced_employee_report_wizard__report_template__outsourced_qid_report
+msgid "Outsourced RP Expiry Date Report"
+msgstr "تقرير تاريخ انتهاء الاستعانة بمصادر خارجية RP"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__overseas_phone_number
+msgid "Overseas Phone  Number"
+msgstr "رقم الهاتف في الخارج"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "P.O. Box 3232"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__p_o_box
+msgid "P.O.Box"
+msgstr "صندوق بريد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__pro_id_card_ref_no_id
+msgid "PRO ID Card Ref.No"
+msgstr "رقم بطاقة هوية المندوب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__pro_id_expiry_date
+msgid "PRO ID Expiry Date"
+msgstr "تاريخ انتهاء بطاقة الهوية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__partner_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__partner_id
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.custom_documents_view
+msgid "Partner"
+msgstr "شريك"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_details_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Passport Details"
+msgstr "تفاصيل جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_expiry_date
+msgid "Passport Expiry Date"
+msgstr "وقت نفاذ صلاحيه جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_name
+msgid "Passport Name"
+msgstr "اسم جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_no
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_no_search
+msgid "Passport No"
+msgstr "رقم جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__passport_number
+msgid "Passport Number"
+msgstr "رقم جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__image_1920
+msgid "Passport Photo"
+msgstr "صورة جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__passport_ref_no_id
+msgid "Passport Ref.No"
+msgstr "مرجع جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__passport_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__passport_serial_no_id
+msgid "Passport Serial Number"
+msgstr "الرقم التسلسلي لجواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__passport_type
+msgid "Passport Type"
+msgstr "نوع جواز السفر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.action_outsourced_employee_pay_card_report
+#: model:ir.model,name:ebs_fusion_hr_employee.model_pay_card
+msgid "Pay Card Report"
+msgstr "تقرير بطاقة الدفع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__penalty_ids
+msgid "Penalty"
+msgstr "جزاء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__penalty_issue
+msgid "Penalty Issued for"
+msgstr "العقوبة الصادرة عن"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__permanent_address
+msgid "Permanent Address"
+msgstr "العنوان الثابت"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__personal_email
+msgid "Personal Email Address"
+msgstr "عنوان البريد الإلكتروني الشخصي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__phone_personal
+msgid "Personal Phone Number"
+msgstr "رقم الهاتف الشخصي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_phone
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__phone_home
+msgid "Phone Home"
+msgstr "هاتف المنزل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__place_birth
+msgid "Place of Birth"
+msgstr "مكان الولادة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__place_issue
+msgid "Place of Issue"
+msgstr "مكان صدوره"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.pay_card_wizard_form
+msgid "Please confirm to download paycard report."
+msgstr ".يرجى التأكيد لتنزيل تقرير بطاقة الدفع"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.workmens_compensation_wizard_form
+msgid "Please confirm to download workmens compensation report."
+msgstr ".يرجى التأكيد لتحميل تقرير تعويضات العمال"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__police_certificate_id
+msgid "Police Certificate"
+msgstr "شهادة شرطة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__policy_no
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__policy_number
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__policy_number
+msgid "Policy Number"
+msgstr "رقم مركز الشرطه"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__potential_candidate
+msgid "Potential Candidate"
+msgstr "مرشح محتمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_preffered_contact
+msgid "Preffered Contact"
+msgstr "الاتصال المفضل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.action_outsourced_employee_letter_print
+msgid "Print letter"
+msgstr "طباعة الرسالة"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Private Information"
+msgstr "معلومات خاصة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__probation_period
+msgid "Probation Period"
+msgstr "فترة اختبار"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__profession_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__profession_id
+msgid "Profession"
+msgstr "مهنة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__visa_type__project
+msgid "Project"
+msgstr "المشروع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__provider
+msgid "Provider"
+msgstr "مزود"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "QCSW"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "QCSW - Activation Application on Single Window Portal"
+msgstr " تطبيق التنشيط على بوابة النافذة الواحدة - QCSW"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_address
+msgid "QCSW Address"
+msgstr "تبوك QCSW "
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_comments
+msgid "QCSW Other/ Comments"
+msgstr "تعليقات أخرى QCSW"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qcsw_po_box
+msgid "QCSW P.O Box"
+msgstr "صندوق بريد QCSW"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__outsourced_employee_liquor_permit
+msgid "QDC Liquor Permit Application"
+msgstr "طلب تصريح الخمور QDC"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__residency_permit_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "QID"
+msgstr "البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qid_expiry_date
+msgid "QID Expiry Date"
+msgstr "تاريخ انتهاء البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qid_job_position_id
+msgid "QID Job Position"
+msgstr "وظيفه QID"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qid_name
+msgid "QID Name"
+msgstr "اسم البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qid_no
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__qid_no_search
+msgid "QID No"
+msgstr "رقم البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_residency_permit__qid_ref_no
+msgid "QID Reference Number"
+msgstr "الرقم المرجعي للبطاقة الشخصية القطرية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_health_card__qid_serial_no_id
+msgid "QID Serial Number"
+msgstr "الرقم التسلسلي للبطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "QID no."
+msgstr "رقم البطاقة الشخصية."
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__qatar_id
+msgid "Qatar Id"
+msgstr "معرف قطر"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Qatar National Bank"
+msgstr "بنك قطر الوطني"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__qualification_employees_staff
+msgid "Qualification of Employees and Staff"
+msgstr "تأهيل الموظفين والموظفين"
+
+#. module: ebs_fusion_hr_employee
+#: code:addons/ebs_fusion_hr_employee/models/outsourced_employee_report_config.py:0
+#, python-format
+msgid "Record For %s Template Already Exist."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__reference
+msgid "Reference"
+msgstr "المرجعي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__passport_type__regular
+msgid "Regular"
+msgstr "عادي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__document_o2m
+msgid "Related Documents"
+msgstr "الوثائق ذات الصلة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__emergency_relation_hc
+msgid "Relation to Employee"
+msgstr "العلاقة بالموظف"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__emergency_relation_qatar
+msgid "Relation to Employee(Qatar)"
+msgstr "العلاقة بالموظف (قطر)"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__relation_with_dependent
+msgid "Relation with Dependant"
+msgstr "العلاقة مع المعال"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__release_of_responsibility
+msgid "Release of Responsibility"
+msgstr "إخلاء المسؤولية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__religion
+msgid "Religion"
+msgstr "دِين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__remark
+msgid "Remark"
+msgstr "ملاحظة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__renewal_date
+msgid "Renewal Date"
+msgstr "تاريخ التجديد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_letter_print_wizard__report_action
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__template
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_wizard__report_template
+msgid "Report Template"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.server,name:ebs_fusion_hr_employee.hr_employee_server_action
+msgid "Res Partner Server Action"
+msgstr "إجراء خادم الشريك الدقة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__recidency_type
+msgid "Residency type"
+msgstr "نوع الإقامة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__responsibility
+msgid "Responsibility"
+msgstr "المسئولية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_designation_description__rules
+msgid "Rules"
+msgstr "قواعد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__qcsw_preffered_contact__sms
+msgid "SMS"
+msgstr "رسالة قصيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__comments
+msgid "SOCIAL MEDIA Others/Comments"
+msgstr "وسائل التواصل الاجتماعي أخرى / تعليقات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__salary_certificate_visa_cbq_report_action
+msgid "Salary Certificate -  CBQ - Work Visa Holder Only"
+msgstr "شهادة الراتب - CBQ - حامل تأشيرة العمل فقط"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__salary_certificate_visa_report_action
+msgid "Salary Certificate - QNB - Work Visa Holder Only"
+msgstr "شهادة الراتب - QNB - حامل تأشيرة العمل فقط"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.salary_certificate_cbq_report_action
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__salary_certificate_cbq_report_action
+msgid "Salary Certificate – CBQ: QID Holder"
+msgstr "شهادة الراتب - CBQ: حامل البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report_action
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.salary_certificate_visa_report_action
+msgid "Salary Certificate – CBQ: Visa Holder"
+msgstr "شهادة الراتب - CBQ: حامل التأشيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__salary_certificate_generic_qid_holder
+msgid "Salary Certificate – Generic: QID Holder"
+msgstr "شهادة راتب - عامة: حامل البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder
+#: model:ir.actions.report,name:ebs_fusion_hr_employee.salary_certificate_qnb_report_action
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__letter_print_wizard__report_action__salary_certificate_qnb_report_action
+msgid "Salary Certificate – QNB: QID Holder"
+msgstr "شهادة راتب - QNB: حامل البطاقة الشخصية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__passport_type__service
+msgid "Service"
+msgstr "خدمة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__service_fee
+msgid "Service Fee"
+msgstr "رسوم الخدمة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__signature
+msgid "Signature"
+msgstr "التوقيع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__skype_id
+msgid "Skype ID"
+msgstr "هوية السكايب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__snapchat
+msgid "Snapchat"
+msgstr "سناب شات"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Social Media User Name Employee"
+msgstr "موظف اسم مستخدم وسائل التواصل الاجتماعي"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__passport_type__special
+msgid "Special"
+msgstr "مميز"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__sponsor
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Sponsor"
+msgstr "كفيل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__sponsor_id
+msgid "Sponsor ID"
+msgstr "هوية الكفيل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__sponsor_name
+msgid "Sponsor Name"
+msgstr "اسم الكفيل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored
+msgid "Sponsored"
+msgstr "برعاية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored_outside_country_to_cancelled
+msgid "Sponsored - Outside the Country - To be Cancelled"
+msgstr "برعاية - خارج الدولة - سيتم إلغاؤها"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored_absconding
+msgid "Sponsored – Absconding"
+msgstr "برعاية - الهروب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored_outside_country
+msgid "Sponsored – Outside The Country"
+msgstr "برعاية - خارج البلاد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored_to_cancelled
+msgid "Sponsored – To be Cancelled"
+msgstr "برعاية - سيتم إلغاؤها"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored_transfer_rejected
+msgid "Sponsored – Transfer Rejected"
+msgstr "دعائية - تم رفض التحويل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__sponsored_transferring_out
+msgid "Sponsored – Transferring Out"
+msgstr "برعاية - نقل للخارج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__sponsoring_dependents_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Sponsoring Dependents"
+msgstr "كفالة المعالين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__state_id
+msgid "State"
+msgstr "ولاية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_update_outsourced_status_wizard__outsourced_status
+msgid "Status"
+msgstr "حالة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__street
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__street
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__na_street
+msgid "Street"
+msgstr "شارع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__street_no
+msgid "Street No"
+msgstr "رقم الشارع"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__street2
+msgid "Street2"
+msgstr "ستريتء"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__name
+msgid "Template Name"
+msgstr "اسم القالب"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "The Manager"
+msgstr "المدير"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"The above-named employee fully understands that <strong>Fusion Outsourcing and Services\n"
+"                                LLC\n"
+"                            </strong> does not in any way hold itself responsible for any debts incurred by them and\n"
+"                                that\n"
+"                                the granting of any Credit Facility is at the sole discretion of your Bank."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid ""
+"The above-named employee fully understands that <strong>Fusion Outsourcing and Services\n"
+"                                LLC\n"
+"                            </strong> does not in any way hold itself responsible for any debts incurred by them and\n"
+"                                that the granting of a Credit Facility is at the sole discretion of your Bank."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+msgid ""
+"The above-named employee fully understands that <strong>Main Company Outsourcing and Services\n"
+"                                LLC\n"
+"                            </strong> does not in any way hold itself responsible for any debts incurred by them and\n"
+"                                that\n"
+"                                the granting of any Credit Facility is at the sole discretion of your Bank."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,help:ebs_fusion_hr_employee.field_documents_document__employee_type
+msgid ""
+"The employee type. Although the primary purpose may seem to categorize "
+"employees, this field has also an impact in the Contract History. Only "
+"Employee type is supposed to be under contract and will have a Contract "
+"History."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:res.groups,comment:ebs_fusion_hr_employee.group_access_fusion_employee
+msgid ""
+"The user will be able to access employee type of Main Company employee."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:res.groups,comment:ebs_fusion_hr_employee.group_access_other_employee
+msgid "The user will be able to access employee type of Outsourced Employees."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:res.groups,comment:ebs_fusion_hr_employee.group_access_client_employee
+msgid "The user will be able to access employee type of client employee."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"Their monthly salary will be paid through their QNB bank account starting"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "Their present monthly salary is QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+msgid "Their present salary is QAR"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "They joined the company on the"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: code:addons/ebs_fusion_hr_employee/models/hr_employee_custom.py:0
+#, python-format
+msgid "This action is available only for Outsourced Employees."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "This is to certify that"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid ""
+"This letter is issued upon his request for whatever legal purpose it may serve, and <strong>\n"
+"                                    Main Company Outsourcing and Services LLC\n"
+"                                </strong> holds no liability for any commitment enter vide this certificate."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid ""
+"This letter is issued upon their request for whatever legal purpose it may serve, and\n"
+"                                Main Company Outsourcing and Services LLC holds no liability for any commitment through this\n"
+"                                certificate."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "To Whom It May Concern,"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__total_salary
+msgid "Total Salary"
+msgstr "كامل الراتب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__training_certificate_id
+msgid "Training Certificate"
+msgstr "شهادة تدريب"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__trainings_attended
+msgid "Trainings Attended"
+msgstr "حضر التدريبات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__transfer_completion
+msgid "Transfer Completion Date"
+msgstr "تاريخ إتمام التحويل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__transfer_no
+msgid "Transfer No."
+msgstr "رقم التحويل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__transferred_out
+msgid "Transferred Out"
+msgstr "المحولة إلى الخارج"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__transferring_in
+msgid "Transferring In"
+msgstr "التحويل للداخل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__transportation_allowance
+msgid "Transportation Allowance"
+msgstr "بدل مواصلات"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid "Transportation Allowance – QAR"
+msgstr "بدل مواصلات - ريال قطري"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "Transportation Allowance: QAR"
+msgstr "بدل المواصلات: ريال قطري"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__twitter
+msgid "Twitter"
+msgstr "تويتر"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_employee_allowance__type
+msgid "Type of Allowance"
+msgstr "نوع البدل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_hobbies__type_hobbies
+msgid "Type of Hobbies"
+msgstr "نوع الهوايات"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__type_insurance
+msgid "Type of Insurance"
+msgstr "نوع التأمين"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_penalty__penalty_type
+msgid "Type of Penalty"
+msgstr "نوع العقوبة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__unit
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__unit
+msgid "Unit"
+msgstr "وحدة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__university_institute
+msgid "University/Institute"
+msgstr "جامعة / معهد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.update_outsourced_status_wizard_action
+#: model:ir.actions.server,name:ebs_fusion_hr_employee.action_update_employee_outsourced_status
+msgid "Update Outsourced Status"
+msgstr "تحديث حالة الاستعانة بمصادر خارجية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model,name:ebs_fusion_hr_employee.model_update_outsourced_status_wizard
+msgid "Update Outsourced Status Wizard"
+msgstr "معالج تحديث حالة الاستعانة بمصادر خارجية"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__user_partner_id
+msgid "User's partner"
+msgstr "شريك المستخدم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_outsourced_employee_report_config__user_ids
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__vaccination_card_id
+msgid "Vaccination Card"
+msgstr "بطاقة التطعيم"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_insurance__valid_till
+msgid "Valid Till"
+msgstr "صالح حتى"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_workmen_compensation__value
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__value
+msgid "Value"
+msgstr "قيمة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_driving_licence__vehicle_used
+msgid "Vehicle to be used"
+msgstr "السيارة المراد استخدامها"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_details_ids
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "Visa Details"
+msgstr "تفاصيل التأشيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_expire
+msgid "Visa Expiring Date"
+msgstr "تاريخ انتهاء صلاحية التأشيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_issue
+msgid "Visa Issue Date"
+msgstr "تاريخ إصدار التأشيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_no
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_no_search
+msgid "Visa No"
+msgstr "رقم التأشيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__visa_no
+msgid "Visa Number"
+msgstr "رقم الفيزا"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__visa_ready_to_use
+msgid "Visa Ready To Use"
+msgstr "تأشيرة جاهزة للاستخدام"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__visa_serial_no_id
+msgid "Visa Serial Number"
+msgstr "الرقم التسلسلي للتأشيرة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__visa_type
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_type
+msgid "Visa Type"
+msgstr "نوع الفيزا"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_visa_details__visa_valid_till
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__visa_valid_till
+msgid "Visa Valid till"
+msgstr "تأشيرة صالحة حتى"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Visa no."
+msgstr "فيزا لا."
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__visa_type__visit
+msgid "Visit"
+msgstr "يزور"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__waist_size
+msgid "Waist Size"
+msgstr "مقاس الخصر"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "We kindly request your good office to provide a Liquor Permit for"
+msgstr "نرجو منكم التفضل بمكتبكم الحميدة لتقديم تصريح الخمور لـ"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__weight
+msgid "Weight"
+msgstr "وزن"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_family_details__relation_with_dependent__wife
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_sponsoring_dependents__dependant_type__wife
+msgid "Wife"
+msgstr "زوجة"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.actions.act_window,help:ebs_fusion_hr_employee.open_view_client_employee_list_my
+#: model_terms:ir.actions.act_window,help:ebs_fusion_hr_employee.open_view_fos_employee_list_my
+msgid ""
+"With just a quick glance on the Odoo employee screen, you\n"
+"                can easily find all the information you need for each person;\n"
+"                contact data, job position, availability, etc."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_visa_details__visa_type__work
+msgid "Work"
+msgstr "عمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__work_multi_entry
+msgid "Work - Multi Entry"
+msgstr "عمل - دخول متعدد"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__update_outsourced_status_wizard__outsourced_status__work_permit
+msgid "Work Permit"
+msgstr "تصريح العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__work_permit_expiry_date
+msgid "Work Permit Expiry Date"
+msgstr "تاريخ انتهاء تصريح العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__work_permit_ref_no_id
+msgid "Work Permit Ref.No"
+msgstr "مرجع تصريح العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_family_details__work_status
+msgid "Work Status"
+msgstr "حالة العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__work_visa_number
+msgid "Work Visa Number"
+msgstr "رقم تأشيرة العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__workmen_compensation_ids
+msgid "Workmen Compensation"
+msgstr "تعويض العمال"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.act_window,name:ebs_fusion_hr_employee.workmens_compensation_wizard_action
+msgid "Workmens Compensation"
+msgstr "تعويضات العمال ل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_insurance__type_insurance__workplace_compensation
+msgid "Workplace Compensation"
+msgstr "تعويض مكان العمل"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_education__year_passing
+msgid "Year of Passing (Date of Issue)"
+msgstr "سنة النجاح (تاريخ الإصدار)"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_history_experience__cancel_noc__yes
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee__certificates_obtained__yes
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__hr_employee_econtract__housing_allowance__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "Yours sincerely,"
+msgstr "تفضلوا بقبول فائق الاحترام،"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_sponsoring_dependents__zip
+msgid "Zip"
+msgstr "أَزِيز"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_ebs_emp_residence__zone_id
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee__zone_id
+msgid "Zone"
+msgstr "منطقة"
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields,field_description:ebs_fusion_hr_employee.field_hr_employee_econtract__zone_no
+msgid "Zone No"
+msgstr "المنطقة لا"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "and"
+msgstr "و"
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid "and QID no."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "and is currently working as"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "and is currently working as a"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid ""
+"and will continue to be paid through the same\n"
+"                                moving forward."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "and will continue to be paid through the same moving forward."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid "as a"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.model.fields.selection,name:ebs_fusion_hr_employee.selection__ebs_employee_allowance__type__car
+msgid "car"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"is a confirmed employee of <strong>Fusion Outsourcing and\n"
+"                                    Services LLC</strong>."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid ""
+"is a confirmed employee of <strong>Fusion Outsourcing and\n"
+"                                    Services LLC</strong>. They joined the company on"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid ""
+"is a confirmed employee of <strong>Fusion Outsourcing and\n"
+"                                    Services LLC</strong>. They joined the company on the"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+msgid ""
+"is a confirmed employee of <strong>Main Company Outsourcing and\n"
+"                                    Services LLC</strong>. They joined the company on the"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.outsourced_employee_liquor_permits_report
+msgid ""
+"is currently employed in <strong>Fusion Outsourcing and\n"
+"                                    Services LLC\n"
+"                                </strong>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model:ir.actions.report,print_report_name:ebs_fusion_hr_employee.outsourced_employee_liquor_permit
+msgid "object.name"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+msgid "per month."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_generic_qid_holder_report
+msgid "per month. Below is the breakdown of salary:"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid "per month. Please find the breakdown of their salary below."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_qnb_report
+msgid ""
+"resigns or their employment is terminated by this company, we\n"
+"                                will inform you accordingly and pay all amounts of End of Services benefits due to him,\n"
+"                                if any, to his Bank account."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_cbq_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.salary_certificate_visa_report
+msgid ""
+"resigns or their employment is terminated by this company, we\n"
+"                                will inform you accordingly and pay all amounts of End of Services benefits due to them,\n"
+"                                if\n"
+"                                any, to their Bank account."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.ebs_custom_hr_employee_view
+msgid "الاسم"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "الجنسية"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "السيد/ مدير ادارة علاقات العمل المحترم"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "تحية طيبة وبعد،،،"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid ""
+"شركة/\n"
+"                                <b>فيوجن اوتسورسينج اند سيرفيسز</b>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "مقدمه لسيادتكم"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid ""
+"من شركتنا ولا مانع لدينا من\n"
+"                                إنتقاله وتغيير جهة\n"
+"                                العمل إلى اي شركة\n"
+"                                <b>يرغب الانتقال اليها. </b>"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid ""
+"نحيط سيادتكم علمأ نحن شركة/ <b>فيوجن اوتسورسينج اند سيرفيسز</b> ،\n"
+"                                قيد منشأة رقم\n"
+"                                <b>14.4008.00</b>\n"
+"                                ،بانه\n"
+"                                قد تم إخلاء طرف السيد/"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "و رخصة إقامة رقم"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid ""
+"و هذا الكتاب بمثابة اقرار\n"
+"                                <b> عدم\n"
+"                                    ممانعة بإلغاء فترة الإخطار \n"
+"                                </b>\n"
+"                                وذلك حسب النظم المتبعة لدى إدارتكم المُوقرة ، شاكرين لكم حسن تعاونكم معنا."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "وتفضلوا بقبول فائق الإحترام والتقدير.."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+msgid ""
+"وذلك حسب النظم المتبعة لدى إدارتكم المُوقرة ، شاكرين لكم حسن تعاونكم معنا."
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid ""
+"وزارة العمل – دولة\n"
+"                                قطر"
+msgstr ""
+
+#. module: ebs_fusion_hr_employee
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_generic_report
+#: model_terms:ir.ui.view,arch_db:ebs_fusion_hr_employee.noc_to_waive_notice_period_report
+msgid "ويحمل جواز سفر رقم"
+msgstr ""

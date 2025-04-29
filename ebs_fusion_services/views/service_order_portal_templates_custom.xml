@@ -1,0 +1,1095 @@
+<odoo>
+    <template id="portal_my_home_service" name="Portal My Home : service entries" inherit_id="portal.portal_my_home"
+              priority="20">
+
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Services</t>
+                <t t-set="url" t-value="'/services'"/>
+                <t t-set="count" t-value="service_count"/>
+                <t t-set="image" t-value="'service.png'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_service_model" name="service model">
+        <t t-call="ebs_fusion_services.create_service_order">
+            <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">gt</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Hide portal purchase menu -->
+    <template id="purchase.portal_my_home_purchase" name="Portal My Home : purchase entry"
+              inherit_id="portal.portal_my_home" priority="25">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="False" t-call="portal.portal_docs_entry">
+                <t t-set="title">Purchase Orders</t>
+                <t t-set="url" t-value="'/my/purchase'"/>
+                <t t-set="count" t-value="purchase_count"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_menu_service_breadcrumb" name="Portal layout : Service Order Menu Entries"
+              inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ['services', 'service_order'] or service_order"
+                t-attf-class="breadcrumb-item #{'active' if main_service_menu else ''}">
+                <a t-if="not main_service_menu" href="/services">Service Orders</a>
+                <t t-else="">Service Orders</t>
+            </li>
+            <li t-if="page_name == 'service_order' or service_order"
+                t-attf-class="breadcrumb-item #{'active' if so_menu_name else ''}">
+                <a t-if="service_order" t-att-href="parent_url">
+                    <t t-esc="parent_menu_name"/>
+                </a>
+                <t t-else="">
+                    <t t-esc="so_menu_name"/>
+                </t>
+            </li>
+            <li t-if="service_order" class="breadcrumb-item active">
+                <t t-esc="service_order.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="create_service_order" name="Create Service Order">
+        <t t-call="portal.portal_layout">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="bg-white sidebar" style="width:11%;">
+                        <ul class="nav nav-sidebar">
+                            <div class="col side-menubar">
+                                <div class="row">
+                                    <li class="py-2">
+                                        <a href="/my/home">My Service</a>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li class="py-2">
+                                        <a href="/my/account">My Profile</a>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li class="py-2">
+                                        <a href="/my/docs">My Documents</a>
+                                    </li>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="w-100">
+                        <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                        <t t-call="portal.portal_searchbar">
+                            <t t-set="title">Create new service order</t>
+                        </t>
+
+                        <div class="bg-white" style="padding:20px;">
+                            <h4>Create a new Service Order</h4>
+                            <form action="/submit_order" method="post" id="order_form">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="row"></div>
+                                <div class="row">
+                                    <div class="col-lg-6 form-group">
+                                        <label id="service_label" for="services">Service Name:</label>
+                                        <select id="services" class="form-control selectpicker" data-live-search="true"
+                                                name="services"
+                                                required="1">
+                                            <option value="">Select...</option>
+                                            <t t-foreach="services" t-as="service">
+                                                <option t-attf-value="#{service.id}">
+                                                    <t t-esc="service.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label id="option_label" for="service_option">Service Option:</label>
+                                            <select id="service_option" class="form-control selectpicker"
+                                                    data-live-search="true"
+                                                    name="service_option">
+                                                <option value="">Select...</option>
+                                                <t t-foreach="options" t-as="opt">
+                                                    <option t-attf-value="opt.name">
+                                                        <t t-esc="opt.name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <br/>
+                                        <div class="custom-control custom-checkbox checkbox-lg">
+                                            <input type="checkbox" class="custom-control-input" id="urgent"
+                                                   name="urgent"/>
+                                            <label class="custom-control-label" for="urgent">Urgent</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <button id="submit_btn" class="btn servicebtn btn-primary" style="margin-top:10px;">
+                                    Submit
+                                </button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Services</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">1</span>
+                                                </button>
+                                            </div>
+                                            <div id="model_id_header" style="margin-bottom:5px;" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-body" id="model_body">
+
+                                            </div>
+                                            <div style="margin-top:5px;" class="modal-body">
+                                                <b>Please confirm to proceed</b>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button id="submit_btn" class="btn btn-primary">Confirm</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <button type="button" id="model_btn" class="btn btn-primary" style="margin-top:10px;"
+                                    data-toggle="modal" data-target="#exampleModal">
+                                Submit
+                            </button>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </t>
+
+    </template>
+
+    <template id="portal_services_menu" name="Services Menu">
+        <t t-call="portal.portal_layout">
+            <script>
+                $(document).ready(function(){
+                $('#wrapwrap').addClass('add_bg_img');
+                })
+            </script>
+            <div class="container" style="margin-top: 5%;">
+                <div class="row">
+                    <a href="/my/service_orders?status=draft"
+                       class="col-xs-6 col-sm-3 portal-item">
+                        <img class="portal-img" src="/ebs_fusion_services/static/src/img/service-new.png"></img>
+                        <p class="portal-item-text">New Services</p>
+                    </a>
+                    <a href="/my/service_orders?status=ongoing"
+                       class="col-xs-6 col-sm-3 portal-item">
+                        <img class="portal-img" src="/ebs_fusion_services/static/src/img/service-ongoing.png"></img>
+                        <p class="portal-item-text">Under Process</p>
+                    </a>
+                    <a href="/my/service_orders?status=onhold"
+                       class="col-xs-6 col-sm-3 portal-item">
+                        <img class="portal-img" src="/ebs_fusion_services/static/src/img/service-ongoing.png"></img>
+                        <p class="portal-item-text">OnHold</p>
+                    </a>
+                    <a href="/my/service_orders?status=completed"
+                       class="col-xs-6 col-sm-3 portal-item">
+                        <img class="portal-img" src="/ebs_fusion_services/static/src/img/service-completed.png"></img>
+                        <p class="portal-item-text">Completed</p>
+                    </a>
+                    <a href="/my/service_orders?status=cancelled"
+                       class="col-xs-6 col-sm-3 portal-item">
+                        <img class="portal-img" src="/ebs_fusion_services/static/src/img/service-ongoing.png"></img>
+                        <p class="portal-item-text">Cancelled</p>
+                    </a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_services" name="My Service Orders">
+        <t t-call="portal.portal_layout">
+            <style>
+
+                .dropdown-item.active {
+                background-color: #b79854 !important;
+                }
+            </style>
+            <div class="container mt-4" id="chart_details">
+                <div class="panel-group">
+                    <div class="panel panel-default" style="border-color: #847147;">
+                        <div class="panel-heading" id="chart_details_header">
+                            <h4 class="panel-title" style="text-align: center;">
+                                <a data-toggle="collapse" href="#collapse1" style="color: white;">Service Order Charts
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse show"
+                             style="background-color: #ffffff;">
+                            <ul class="list-group">
+                                <div class="container mt-4" id="service_order_chart">
+                                    <ul class="nav nav-tab nav-justified" role="tablist" id="chartTab">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" data-toggle="tab"
+                                               href="#service_order_data_chart">Status
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" data-toggle="tab"
+                                               href="#service_order_data_chart_of_target_audience">Target Audience
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="service_order_data_chart" class="tab-pane fade show active"
+                                             role="tabpanel"
+                                             style="width: 80% !important; margin: 20px auto !important; overflow: auto !important;">
+                                            <input type="hidden" id="service_order_ids" t-att-value="services.ids"/>
+                                            <canvas id="service_order_data_chart_canvas" width="250"
+                                                    height="125"></canvas>
+                                        </div>
+
+                                        <div id="service_order_data_chart_of_target_audience" class="tab-pane fade"
+                                             role="tabpanel"
+                                             style="width: 80% !important; margin: 20px auto !important; overflow: auto !important;">
+                                            <input type="hidden" id="target_audience" t-att-value="services.ids"/>
+                                            <canvas id="service_order_data_chart_canvas_of_target_audience" width="250"
+                                                    height="125"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="container request_services_table_class mt-4 " style="background-color: #ffffff;">
+                    <div t-if="pager" class="o_portal_pager text-center service_pager">
+                        <t t-call="portal.pager"/>
+                    </div>
+                    <div>
+                        <span class="request_service_table_title">
+                            <b>Service Orders</b>
+                        </span>
+                        <form t-if="searchbar_inputs" class="form-inline o_portal_search_panel ml-lg-4 mr-2"
+                              style="float:right;width:30%;margin-top: -5px !important;">
+                            <div class="input-group input-group-sm w-100">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            style="background-color: #b79854;border-color: #b79854;"/>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-foreach='searchbar_inputs' t-as='input'>
+                                            <a t-att-href="'#' + searchbar_inputs[input]['input']"
+                                               t-attf-class="dropdown-item#{search_in == searchbar_inputs[input]['input'] and ' active' or ''}">
+                                                <span t-raw="searchbar_inputs[input]['label']"/>
+                                            </a>
+                                        </t>
+                                    </div>
+                                </div>
+                                <input t-att-type="searchbar_inputs[search_in]['type']"
+                                       class="form-control form-control-sm" placeholder="Search"
+                                       id="portal_search_input" t-att-value='search' name="search"/>
+                                <span class="input-group-append">
+                                    <button class="btn btn-secondary search-submit" type="button"
+                                            style="background-color: #b79854;border-color: #b79854;">
+                                        <span class="fa fa-search"/>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <t t-if="not services">
+                        <p>There are currently no service orders for your account.</p>
+                    </t>
+                    <t t-if="services">
+                        <table class="request_services_table table ">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-muted">
+                                        SO Sequence
+                                        <i class="fa fa-sort-amount-asc sort_by_code ml-1"
+                                           style="font-size:11px;color: #b79854;"
+                                           t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Reference'"/>
+                                        <i t-else="" class="fa fa-sort-amount-asc sort_by_code ml-1"
+                                           style="font-size:11px;"/>
+                                    </th>
+                                    <th scope="col" class="text-muted">
+                                        Date
+                                        <i class="fa fa-sort-amount-asc sort_by_service_date ml-1"
+                                           style="font-size:11px;color: #b79854;"
+                                           t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Service Order Date'"/>
+                                        <i t-else="" class="fa fa-sort-amount-asc sort_by_service_date ml-1"
+                                           style="font-size:11px;"/>
+                                    </th>
+                                    <th scope="col" class="text-muted">Target Audience</th>
+                                    <th scope="col" class="text-muted">Beneficiary</th>
+                                    <th scope="col" class="text-muted">Service</th>
+                                    <th scope="col" class="text-muted">Option</th>
+                                    <th scope="col" class="text-muted">Main Company Fees</th>
+                                    <th scope="col" class="text-muted">Govt. Fees</th>
+                                    <th scope="col" class="text-muted">
+                                        Status
+                                        <i class="fa fa-sort-amount-asc sort_by_service_status ml-1"
+                                           style="font-size:11px;color: #b79854;"
+                                           t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'State'"/>
+                                        <i t-else="" class="fa fa-sort-amount-asc sort_by_service_status ml-1"
+                                           style="font-size:11px;"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="services" t-as="service">
+                                    <tr>
+                                        <td>
+                                            <a t-attf-href="/my/service_orders/#{service.id}?{{ keep_query() }}">
+                                                <t t-esc="service.name"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span t-esc="service.service_order_date and service.service_order_date.strftime('%d/%m/%Y')"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="dict(service._fields['service_order_type'].selection).get(service.service_order_type)"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="service.partner_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="service.service_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="service.option_id.display_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="service.fusion_fees"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="service.govt_fees"/>
+                                        </td>
+                                        <td>
+                                            <t t-if="service.status == 'draft'">
+                                                <button class="text-white rounded btn-space"
+                                                        style="border: none;background-color: #b79854;">
+                                                    <span t-field="service.status"/>
+                                                </button>
+                                            </t>
+                                            <t t-if="service.status == 'ongoing'">
+                                                <button class="text-white rounded btn-space"
+                                                        style="border: none;background-color: #a5a737;">
+                                                    <span t-field="service.status"/>
+                                                </button>
+                                            </t>
+                                            <t t-if="service.status == 'onhold'">
+                                                <button class="text-white rounded btn-space"
+                                                        style="border: none;background-color: #429fbb;">
+                                                    <span t-field="service.status"/>
+                                                </button>
+                                            </t>
+                                            <t t-if="service.status == 'completed'">
+                                                <button class="text-white rounded btn-space"
+                                                        style="border: none;background-color: #de8932;">
+                                                    <span t-field="service.status"/>
+                                                </button>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                    </t>
+                </div>
+            </div>
+
+        </t>
+    </template>
+    <template id="service_order_portal_template" name="Service Order Portal Template" inherit_id="portal.portal_sidebar"
+              primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman">
+                <t t-call="portal.portal_back_in_edit_mode">
+                    <t t-set="backend_url"
+                       t-value="'/web#model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (service_order._name, service_order.id, action.id)"/>
+                </t>
+            </t>
+
+            <div class="row mt16 o_portal_sale_sidebar">
+                <div t-attf-class="col-lg-12">
+                    <div t-call="ebs_fusion_services.service_order_portal_content"/>
+                </div>
+            </div>
+            <div class="o_portal_messages_container mt32">
+                <h4>Message and communication history</h4>
+                <t t-call="portal.message_thread">
+                    <t t-set="token" t-value="service_order.access_token"/>
+                    <t t-set="object" t-value="service_order"/>
+                    <t t-set="pid" t-value="pid"/>
+                    <t t-set="hash" t-value="hash"/>
+
+                </t>
+            </div>
+        </xpath>
+    </template>
+    <template id="sub_service_order_portal_template" name="Service Order Portal Template"
+              inherit_id="portal.portal_sidebar"
+              primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman">
+                <t t-call="portal.portal_back_in_edit_mode">
+                    <t t-set="backend_url"
+                       t-value="'/web#model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (sub_service_order._name, sub_service_order.id, action.id)"/>
+                </t>
+            </t>
+
+            <div class="row mt16 o_portal_sale_sidebar">
+                <div t-attf-class="col-lg-12">
+                    <div t-call="ebs_fusion_services.sub_service_order_portal_content"/>
+                </div>
+            </div>
+            <div class="o_portal_messages_container mt32">
+                <h4>Message and communication history</h4>
+                <t t-call="portal.message_thread">
+                    <t t-set="token" t-value="sub_service_order.access_token"/>
+                    <t t-set="object" t-value="sub_service_order"/>
+                    <t t-set="pid" t-value="pid"/>
+                    <t t-set="hash" t-value="hash"/>
+
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="service_order_portal_content" name="Service Order Portal Content">
+        <div id="request_service">
+            <div id="user_information" class="summary_card card" style="margin-left-166px;">
+                <div class="card-header">
+                    <div class="float-left">Service Order</div>
+                    <div class="float-right">
+                        <small class="text-right">Status:</small>
+                        <t t-if="service_order.status == 'draft'">
+                            <button class="badge badge-pill badge-info"
+                                    style="border: none;background-color: #b79854;">
+                                <span t-field="service_order.status"/>
+                            </button>
+                        </t>
+                        <t t-if="service_order.status == 'ongoing'">
+                            <button class="badge badge-pill badge-info"
+                                    style="border: none;background-color: #a5a737;">
+                                <span t-field="service_order.status"/>
+                            </button>
+                        </t>
+                        <t t-if="service_order.status == 'onhold'">
+                            <button class="badge badge-pill badge-info"
+                                    style="border: none;background-color: #429fbb;">
+                                <span t-field="service_order.status"/>
+                            </button>
+                        </t>
+                        <t t-if="service_order.status == 'completed'">
+                            <button class="badge badge-pill badge-info"
+                                    style="border: none;background-color: #de8932;">
+                                <span t-field="service_order.status"/>
+                            </button>
+                        </t>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" style="margin-top: 0px !important;"></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="summary_table table table-borderless" style="width: 80% !important;">
+                                <tbody class="">
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Sequence</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Service</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.service_id.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Option</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.option_id.display_name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Target Audience</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.service_order_type"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Beneficiary</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.partner_id.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="summary_table table table-borderless" style="width: 80% !important;">
+                                <tbody class="">
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Service Order Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.service_order_date and service_order.service_order_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Start Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.start_date and service_order.start_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">End Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.end_date and service_order.end_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Urgent</div>
+                                            <span t-if="service_order.is_urgent" style="color:red;">
+                                                <b>Main Company Fees are doubled</b>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.is_urgent"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Fusion Fee</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.fusion_fees"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Govt. Fee</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="service_order.govt_fees"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <t t-if="service_order.sub_service_ids">
+                        <h5 class="card-title">Sub Service Order</h5>
+                        <div class="row">
+
+                            <table class="contact_table table table-striped w-100">
+                                <thead id="summary_contact_person_thead1">
+                                    <tr>
+                                        <th scope="col" class="">Name</th>
+                                        <t t-if="service_order.status == 'ongoing'">
+                                            <th scope="col" class="">Service order date</th>
+                                        </t>
+                                        <th scope="col" class="">contact</th>
+                                        <th scope="col" class="">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="summary_table_body_contact_person">
+                                    <t t-foreach="service_order.sub_service_ids" t-as="service">
+                                        <tr id="summary_saved_record_contact">
+                                            <td>
+                                                <a t-attf-href="/my/sub_service_orders/#{service.id}?{{ keep_query() }}">
+                                                    <t t-esc="service.name"/>
+                                                </a>
+                                            </td>
+                                            <t t-if="service_order.status == 'ongoing'">
+                                                <td>
+                                                    <span t-esc="service.service_order_date and service.service_order_date.strftime('%d/%m/%Y')"/>
+                                                </td>
+                                            </t>
+                                            <td>
+                                                <t t-esc="service.partner_id.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="service.status"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="document_modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="document_modal_title">Upload Document</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/submit_service_document" method="post" id="doc_form"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="service_order" t-att-value="service_order.id"/>
+                            <input type="hidden" name="service_order_doc_id"/>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="doc_type">Document Type:</label>
+                                        <select id="doc_type" class="form-control selectpicker" name="doc_type"
+                                                required="1">
+                                            <option value="">Select...</option>
+                                            <t t-foreach="doc_types" t-as="doc_type">
+                                                <option t-attf-value="#{doc_type.id}">
+                                                    <t t-esc="doc_type.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="doc_type">Document Number:</label>
+                                        <input type="text" name="document_number" required="1" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group issue_date">
+                                        <label for="issue_date">Issue Date:</label>
+                                        <input type="date" name="issue_date" required="0" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group expiry_date">
+                                        <label for="expiry_date">Expiry Date:</label>
+                                        <input type="date" name="expiry_date" required="0" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="doc_file">Select a file:</label>
+                                        <input type="file" multiple="true" id="doc_file" name="doc_file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <button id="submit_btn" class="btn btn-primary" style="margin-top:10px;">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </template>
+    <template id="sub_service_order_portal_content" name="Service Order Portal Content">
+        <!-- Intro -->
+        <div id="sub_service_page">
+            <div id="sub_service_information" class="summary_card card">
+                <div class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-md">
+
+                            <span t-field="sub_service_order.name"/>
+
+                        </div>
+                        <div class="col-md text-md-right">
+                            <small class="text-right">Status:</small>
+
+                            <t t-if="sub_service_order.status == 'draft'">
+                                <button class="badge badge-pill badge-info"
+                                        style="border: none;background-color: #b79854;">
+                                    <span t-field="sub_service_order.status"/>
+                                </button>
+                            </t>
+                            <t t-if="sub_service_order.status == 'ongoing'">
+                                <button class="badge badge-pill badge-info"
+                                        style="border: none;background-color: #a5a737;">
+                                    <span t-field="sub_service_order.status"/>
+                                </button>
+                            </t>
+                            <t t-if="sub_service_order.status == 'onhold'">
+                                <button class="badge badge-pill badge-info"
+                                        style="border: none;background-color: #429fbb;">
+                                    <span t-field="sub_service_order.status"/>
+                                </button>
+                            </t>
+                            <t t-if="sub_service_order.status == 'completed'">
+                                <button class="badge badge-pill badge-info"
+                                        style="border: none;background-color: #de8932;">
+                                    <span t-field="sub_service_order.status"/>
+                                </button>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <table class="summary_table table table-borderless" style="width: 80% !important;">
+                                <tbody class="">
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Service</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.service_id.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Contact</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.partner_id.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Urgent</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.is_urgent"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Govt. Fee</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.govt_fees"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <t t-if="sub_service_order.comments">
+                                        <tr>
+                                            <td>
+                                                <div class="fields">Comments</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-left fields">
+                                                    <b>
+                                                        <t t-esc="sub_service_order.comments"/>
+                                                    </b>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </t>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <table class="summary_table table table-borderless" style="width: 80% !important;">
+                                <tbody class="">
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Service Order Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.service_order_date and sub_service_order.service_order_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Start Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.start_date and sub_service_order.start_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Option</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.option_id.display_name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="w-50">
+                                            <div class="fields">Fusion Fee</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-left fields">
+                                                <b>
+                                                    <t t-esc="sub_service_order.fusion_fees"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="modal fade" id="document_modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="document_modal_title">Upload Document</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/submit_service_document" method="post" id="doc_form"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="service_order" t-att-value="sub_service_order.id"/>
+                            <input type="hidden" name="service_order_doc_id"/>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="doc_type">Document Type:</label>
+                                        <select id="doc_type" class="form-control selectpicker" name="doc_type"
+                                                required="1">
+                                            <option value="">Select...</option>
+                                            <t t-foreach="doc_types" t-as="doc_type">
+                                                <option t-attf-value="#{doc_type.id}">
+                                                    <t t-esc="doc_type.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="doc_type">Document Number:</label>
+                                        <input type="text" name="document_number" required="1" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group issue_date">
+                                        <label for="issue_date">Issue Date:</label>
+                                        <input type="date" name="issue_date" required="0" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group expiry_date">
+                                        <label for="expiry_date">Expiry Date:</label>
+                                        <input type="date" name="expiry_date" required="0" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="doc_file">Select a file:</label>
+                                        <input type="file" multiple="true" id="doc_file" name="doc_file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <button id="submit_btn" class="btn btn-primary" style="margin-top:10px;">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="portal_services" name="Service">
+        <t t-call="portal.portal_layout">
+
+
+            <t t-if="not services">
+                <p>There are currently no services.</p>
+            </t>
+            <br/>
+
+            <br/>
+            <t t-if="services" t-call="portal.portal_table">
+                <table class="bg-white table">
+                    <thead>
+                        <tr class="active">
+                            <th>
+                                Name
+                            </th>
+                            <th class="text-right">Service Category</th>
+                            <th class="text-right">Authority/Ministry</th>
+                            <th class="text-right">Service ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="services" t-as="service">
+                            <tr>
+                                <td style="width:20%;">
+                                    <span t-field="service.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="service.authority_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="service.service_id"/>
+                                </td>
+                            </tr>
+
+                        </t>
+                    </tbody>
+                </table>
+            </t>
+        </t>
+    </template>
+
+</odoo>

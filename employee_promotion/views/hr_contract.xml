@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record model="ir.actions.server" id="action_draft_contract">
+            <field name="name">Draft Contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_draft_contract()
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="action_probation_contract">
+            <field name="name">Probation Contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_probation_contract()
+            </field>
+        </record>
+
+
+        <record model="ir.actions.server" id="action_open_contract">
+            <field name="name">Running Contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_open_contract()
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="action_close_contract">
+            <field name="name">Expired Contract</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_close_contract()
+            </field>
+        </record>
+    </data>
+</odoo>

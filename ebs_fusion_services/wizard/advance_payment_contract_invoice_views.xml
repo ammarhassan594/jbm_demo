@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_advance_payment_contract_inv" model="ir.ui.view">
+        <field name="name">Invoice Orders</field>
+        <field name="model">ebs.advance.payment.contract.inv</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="contract_fee_ids">
+                            <tree editable="top" create="0">
+                                <field name="fusion_fees_id" readonly="1"/>
+                                <field name="label"/>
+                                <field name="invoice_date" required="1"/>
+                                <field name="amount_to_be_paid" string="Amount to be paid"/>
+                                <field name="remaining_amount" string="Amount Remaining" readonly="1"/>
+                            </tree>
+                        </field>
+
+
+                        <group>
+
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="confirm_button" string="Confirm" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_advance_payment_contract_inv" model="ir.actions.act_window">
+        <field name="name">Create invoices</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.advance.payment.contract.inv</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <!-- TODO: check if we need this -->
+        <!--        <field name="binding_model_id" ref="sale.model_sale_order" />-->
+        <!--        <field name="binding_view_types">list</field>-->
+    </record>
+
+</odoo>

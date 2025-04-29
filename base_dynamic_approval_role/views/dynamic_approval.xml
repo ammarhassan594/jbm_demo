@@ -1,0 +1,18 @@
+<odoo>
+
+    <record id="dynamic_approval_form_inherit" model="ir.ui.view">
+        <field name="name">dynamic.approval.form.inherit</field>
+        <field name="model">dynamic.approval</field>
+        <field name="inherit_id" ref="base_dynamic_approval.dynamic_approval_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='approval_level_ids']/tree/field[@name='user_id']" position="after">
+                <field name="role_id"/>
+            </xpath>
+            <xpath expr="//field[@name='approval_level_ids']/form/sheet/group/group/field[@name='user_id']"
+                   position="after">
+                <field name="role_id" attrs="{'invisible': [('validate_by', '!=', 'by_role')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="Core Changes" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script src="/hr_core/static/src/js/core_changes.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

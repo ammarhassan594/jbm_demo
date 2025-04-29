@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <template id="integration_configuration_id_field">
+            <group>
+                <field name="integration_configuration_id"/>
+            </group>
+        </template>
+
+
+        <template id="send_sms_button">
+
+            <div>
+                <button
+                        name="send_sms_message"
+                        string="Send SMS Message"
+                        type="object"
+                        class="btn btn-primary"
+                />
+            </div>
+        </template>
+    </data>
+</odoo>

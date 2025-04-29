@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="hr_salary_scale_configuration_tree_view" model="ir.ui.view">
+            <field name="name">hr.salary.scale.configuration.tree</field>
+            <field name="model">hr.salary.scale.configuration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="grade"/>
+                    <field name="type_id"/>
+                    <field name="number_of_years"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hr_salary_scale_configuration_form_view">
+            <field name="name">hr.salary.scale.configuration.form</field>
+            <field name="model">hr.salary.scale.configuration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="grade"/>
+                            <field name="type_id"/>
+                            <field name="number_of_years"/>
+                        </group>
+                        <notebook>
+                            <page name="elements" string="Elements">
+                                <field name="element_ids">
+                                    <tree editable="bottom" create="0">
+                                        <field name="allowance_id" readonly="1" force_save="1"/>
+                                        <field name="from_amount"/>
+                                        <field name="to_amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_salary_scale_configuration">
+            <field name="name">Salary Scale Configuration</field>
+            <field name="res_model">hr.salary.scale.configuration</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        <menuitem id="menu_salary_scale_configuration" name="Salary scale configuration"-->
+<!--                  parent="hr.menu_human_resources_configuration"-->
+<!--                  action="ebs_jbm_hr_custom.action_salary_scale_configuration"/>-->
+    </data>
+</odoo>

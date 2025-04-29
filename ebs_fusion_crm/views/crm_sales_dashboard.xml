@@ -1,0 +1,32 @@
+<odoo>
+    <record id="ebs_fusion_crm_sales_dashboard_tree" model="ir.ui.view">
+        <field name="name">ebs.fusion.sales.dashboard.tree</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <tree string="Sales Dashboard" create="0" edit="0" delete="0">
+                <field name="partner_id"/>
+                <field name="contact_ids" widget="many2many_tags" options="{'no_create': True,'no_create_edit':True}"/>
+                <field name="industry_id"/>
+                <field name="sub_sectors_ids" widget="many2many_tags" options="{'no_create': True,'no_create_edit':True}"/>
+                <field name="company_id" string="Entity Name"/>
+                <field name="expected_revenue" string="Expected Revenue Amount"/>
+                <field name="prorated_revenue" string="Total Revenue Value"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ebs_fusion_crm_sales_dashboard_action" model="ir.actions.act_window">
+        <field name="name">Sales Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="ebs_fusion_crm.ebs_fusion_crm_sales_dashboard_tree"/>
+    </record>
+
+    <menuitem id="crm_sales_dashboard"
+        name="Sales Dashboard"
+        parent="crm.crm_menu_sales"
+        sequence="5"
+        action="ebs_fusion_crm_sales_dashboard_action"
+        />
+</odoo>

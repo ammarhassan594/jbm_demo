@@ -1,0 +1,1704 @@
+<odoo>
+    <template id="services_agreement_arabic_layout_standard">
+        <div class="header">
+            <div class="row">
+                <div class="col-12"
+                     style="max-width: 100%; height: auto;padding-left:0px;padding-right:0px;text-align:right;">
+                    <span>
+                        <b>
+                            <u>private and confidential</u>
+                        </b>
+                    </span>
+                    <br/>
+                    <span>
+                        Contract No.:
+                        <span t-field="o.sudo().contract_no"/>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="col-12"
+                     style="max-width: 100%; height: auto;padding-left:0px;padding-right:0px;text-align:left;">
+
+                    <ul class="list-inline">
+                        <li>
+                            <i>Page:
+                                <span class="page"/>
+                                of
+                                <span class="topage"/>
+                            </i>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard">
+            <t t-raw="0"/>
+        </div>
+    </template>
+    <template id="services_agreement_arabic_external_layout"><!-- Multicompany -->
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.sudo().company_id"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-call="ebs_fusion_services.services_agreement_arabic_layout_standard">
+            <t t-raw="0"/>
+        </t>
+
+    </template>
+
+    <template id="services_agreement_arabic_report_extended_template">
+        <t t-call="web.html_container">
+            <t t-set="o" t-value="o.with_context({'lang': lang})"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="ebs_fusion_services.services_agreement_arabic_external_layout">
+                    <page>
+                        <STYLE TYPE="text/css">
+                            body {font-family: Arial;font-style:
+                            normal; }
+                        </STYLE>
+                        <div class="row">
+                            <div class="col-6" style="max-width:50%;background: #EBEBEB;font-size:17px;">
+                                <u>
+                                    <b>
+                                        <center>SERVICES AGREEMENT</center>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6" style="max-width:50%;background: #EBEBEB;font-size:17px;">
+                                <u>
+                                    <b>
+                                        <center>إتفاقية خدمات</center>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="max-width:50%;">
+                                This Services Agreement (hereinafter referred to as the
+                                “Agreement”) is entered on
+                                <span t-field="o.sudo().date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                into by and
+                                between:
+                            </div>
+                            <div class="col-6" style="max-width:50%;text-align:right;">
+
+
+                                <span>أبرمت إتفاقية الخدمات هذه (يٌشار لها هنا وفيما بعد بلفظ<b>"الإتفاقية"</b>) ودخلت
+                                    حيز التنفيذ بتاريخ
+                                </span>
+
+
+                                <span t-field="o.sudo().date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                <span>بين كلاً من</span>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                <b>FUSION SUPPORT SERVICES</b>, a limited liability
+                                company incorporated in accordance with the laws of
+                                Qatar and registered under commercial registration
+                                number 53271 and establishment card number 12-
+                                9017-01 (hereinafter referred to as the “First Party”)
+                                represented by <b>SALEH ELSAYED MAHMUD
+                                SALEH</b>, Egyptian citizen holding residency permit in
+                                Qatar number 28481805416; and
+
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                <span>فيوجن سابورت سيرفيسسيز، وهي شركة ذات مسؤلية محدودة تأسست بموجب قوانين دولة قطر
+                                    ومسجلة تحت السجل التجاري رقم 53271، قيد منشاءة رقم 01-9017-12 (يُشار لها هنا وفيما
+                                    بعد بلفظ "الطرف الأول") يمثلها في التوقيع صالح السيد محمود صالح، مصري الجنسيه، يحمل
+                                    رخصة اقامة في دولة قطر رقم 28481805416؛ و
+                                </span>
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;padding-top:10px;">
+                                (2)
+                            </div>
+                            <div class="col-5" style="max-width:44%;padding-top:10px;">
+                                <span t-field="o.sudo().contact_id.name"/>
+                                , a
+                                limited liability company an incorporated in
+                                accordance with the laws of Qatar under commercial
+                                registration number
+                                <span t-field="o.sudo().contact_id.commercial_reg_no"/>
+                                and establishment card
+                                number
+                                <span t-field="o.sudo().contact_id.establishment_card_no"/>
+                                (hereinafter referred to as the
+                                “Second Party”) represented by
+                                <b>
+                                    <span t-field="o.sudo().authorised_contact_id.name"/>
+                                </b>
+                                ,
+                                <span t-field="o.sudo().authorised_contact_id.nationality_id.name"/>
+                                citizen holding10
+                                residency permit in Qatar number<span t-field="o.authorised_contact_id.qid_ref_no"/>.
+
+                            </div>
+                            <div class="col-5" style="text-align:right;max-width:44%;padding-top:10px;">
+                                <p>
+                                    <b>
+                                        <span t-esc="o._get_eng_to_arabic('name', 'res.partner', o.contact_id.id)"/>
+                                    </b>
+                                    <span>، شركة ذات مسئولية محدودة تأسست بموجب قوانين دوله قطر ومسجلة تحت السجل التجاري
+                                        رقم
+                                    </span>
+
+                                    <span t-esc="o._get_eng_to_arabic('commercial_reg_no', 'res.partner', o.contact_id.id)"/>
+                                    <span>، قيد المنشأه رقم</span>
+
+
+                                    <span t-esc="o._get_eng_to_arabic('establishment_card_no', 'res.partner', o.contact_id.id)"/>
+                                    <span>(يٌشار لها هنا وفيما بعد بلفظ "الطرف الثاني")، ويمثلها في التوقيع</span>
+
+
+                                    <span t-esc="o._get_eng_to_arabic('name', 'res.partner', o.authorised_contact_id.id)"/>
+                                    ,
+                                    <span t-esc="o._get_eng_to_arabic('name', 'res.country', o.authorised_contact_id.nationality_id.id)"/>
+                                    ,
+                                    <right>
+                                        <span>الجنسية وتحمل رخصة إقامة في دولة قطر رقم</span>
+                                    </right>
+                                    :
+                                    <span t-esc="o._get_eng_to_arabic('qid_ref_no', 'res.partner', o.authorised_contact_id.id)"/>
+                                </p>
+                            </div>
+                            <div class="col-1" style="max-width:6%;padding-top:10px;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="max-width:50%;">
+                                the First Party and the Second Party shall be severally as (a
+                                “Party”) and jointly referred to as (the “Parties”).
+                            </div>
+                            <div class="col-6" style="max-width:50%;text-align:right;">
+                                يٌشار إلى الطرف الأول والطرف الثاني منفردين بمصطلح ("الطرف") ومجتمعين بمصطلح
+                                ("الأطراف").
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <left>Preamble</left>
+
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>التمهيـــد</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                Whereas; the First Party has the knowledge and the
+                                expertise in companies, establishments and individual
+                                services, in accordance with its license issued by Qatar
+                                Ministry of Interior, as listed in Annex (A) hereto
+                                attached - including but not limited to, assisting in
+                                companies’ incorporation and obtaining of
+                                governmental licenses;
+
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                حيث ان الطرف الأول لديه الخبرة والكفاءة في مجال تقديم خدمات الدعم تخليص المعاملات لحساب
+                                الشركات والمؤسسات والأفراد وبموجب الترخيص الصادر لها من وزارة الداخلية القطرية في إنجاز
+                                ما تم الإشارة إليه بالملحق رقم (أ) والمرفق طيه – تتضمن على سبيل المثال لا الحصر،
+                                المساعدة في تأسيس الشركات والحصول على التراخيص الحكومية؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;padding-top:10px;">
+                                (2)
+                            </div>
+                            <div class="col-5" style="max-width:44%;padding-top:10px;">
+                                Whereas; the Second Party wishes to engage the First
+                                Party for the provision of its services, as listed in
+                                Annex (A), and representing the Second Party before
+                                the governmental departments and the competent
+                                authorities.
+
+                            </div>
+                            <div class="col-5" style="max-width:44%;padding-top:10px;text-align:right;">
+                                يرغب الطرف الثاني من الاستفادة من الخدمات المقدمة من الطرف الاول وتكليفه بإتمام المهام
+                                المشار إليها بالملحق رقم (أ) وكما وتمثيل الطرف الثاني أمام الدوائر والسلطات الحكومية
+                                المختصة.
+                            </div>
+                            <div class="col-1" style="max-width:6%;padding-top:10px;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" style="max-width:50%;">
+                                The Parties confirm their capacity to enter into this
+                                Agreement and have agreed as follows:
+                            </div>
+                            <div class="col-6" style="max-width:50%;text-align:right;">
+                                بعد أن أقر الأطراف بأهليتهم للتعاقد وهم بكامل أهليتهم القانونية للدخول في هذه الإتفاقية،
+                                اتفق الطرفان على ما يلي:
+                            </div>
+                        </div>
+                        <div class="row" style="page-break-after:always;">
+                            <div class="col-6" style="max-width:50%;padding-top:10px;page-break-after:always;">
+                                The above Preamble, and the Definitions below are an
+                                integral part of this Agreement and should be read and
+                                interpreted with it.
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;padding-top:10px;page-break-after:always;">
+                                يعتبر التمهيد أعلاه والمصطلحات وتفسيرات أدناه جزءاً لا يتجزأ من
+                                الاتفاقية ويُقرأ ويفسر معها.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <left>(1) Definitions</left>
+
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(1) مصطلحات وتفسيرات</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                            <div class="col-5" style="max-width:47%;">
+                                <b>
+                                    <u>“Agreement”</u>
+                                </b>
+                                means this Services Agreement including
+                                its Annexes;
+
+                            </div>
+                            <div class="col-5" style="max-width:47%;text-align:right;">
+                                "الإتفاقية" تعني اتفاقية الخدمات هذه متضمنه جميع الملحقات المرفقة بها؛
+                            </div>
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                            <div class="col-5" style="max-width:47%;">
+                                <b>
+                                    <u>“Annex (A)”</u>
+                                </b>
+                                means the list of services provided by the
+                                First Party to the Second Party, as more detailed in the
+                                attached (A) hereto;
+
+                            </div>
+                            <div class="col-5" style="max-width:47%;text-align:right;">
+                                "الملحق (أ)" ويعني قائمة الخدمات المقدمة من الطرف الاول لصالح الطرف الثاني حسب المذكور
+                                تفصيلاً في المرفق (أ)؛
+                            </div>
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                            <div class="col-5" style="max-width:47%;">
+                                <b>
+                                    <u>“Expenses”</u>
+                                </b>
+                                means any amounts, to be paid by the First
+                                Party on behalf of the Second Party, for services of legal
+                                translation, courier, postage and any other payments
+                                related to the Second Party’s transactions;
+
+                            </div>
+                            <div class="col-5" style="max-width:47%;text-align:right;">
+                                "المصاريف" تعني أي مبالغ قد يسددها الطرف الأول نيابة عن الطرف الثاني مقابل أي خدمات
+                                متعلقة بالترجمة القانونية والشحن الجوي والبريد وأي مدفوعات أخرى خاصة بمعاملات الطرف
+                                الثاني؛
+                            </div>
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                            <div class="col-5" style="max-width:47%;">
+                                <b>
+                                    <u>“Government Fees”</u>
+                                </b>
+                                means the amounts charged by the
+                                relevant governmental authority for each transaction,
+                                such government fees shall be paid by the First Party on
+                                behalf of the Second Party, as more detailed in clause (5)
+                                herein;
+
+                            </div>
+                            <div class="col-5" style="max-width:47%;text-align:right;">
+                                "الرسوم الحكومية" تعني المبالغ المفروضة بواسطة السلطات الحكومية مقابل كل معاملة، تلك
+                                الرسوم الحكومية قد يسددها الطرف الأول للجهات الحكومية نيابة عن الطرف الثاني المدفوعة
+                                للحصول على الخدمة من الجهات المختلفة في الدولة حسب المذكور تفصيلاً في المادة (5) من هذه
+                                الاتفاقية؛
+                            </div>
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                            <div class="col-5" style="max-width:47%;">
+                                <b>
+                                    <u>“Services”</u>
+                                </b>
+                                means the services provided by the First Party
+                                in favor of the Second Party as listed in Annex (A) hereto
+                                attached;
+
+                            </div>
+                            <div class="col-5" style="max-width:47%;text-align:right;">
+                                "الخدمات" تعني الخدمات المقدمة من الطرف الاول لصالح الطرف الثاني حسب المشار إليه بالملحق
+                                رقم (أ) والمرفق طيه؛
+                            </div>
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                            <div class="col-5" style="max-width:47%;">
+                                <b>
+                                    <u>“Services Fee”</u>
+                                </b>
+                                means the amount payable by the Second
+                                Party to the First Party, as more detailed in clause (4)
+                                herein, for the services provided by the First Party in
+                                favor of the Second Party.
+
+                            </div>
+                            <div class="col-5" style="max-width:47%;text-align:right;">
+                                <right>
+                                    <span>"أتعاب الخدمات" تعني المبالغ التي يسددها الطرف الثاني للطرف الأول، حسب المذكور
+                                        تفصيلاً في المادة (4) من هذه الاتفاقية، مقابل الخدمات المقدمة من الطرف الاول
+                                        لصالح الطرف الثاني
+                                    </span>
+                                </right>
+                            </div>
+                            <div class="col-1" style="max-width:3%;">
+                                <b>•</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <left>(2) First Party Obligations</left>
+
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(2)إلتزامات الطرف الأول</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall provide the agreed upon Services
+                                as well as the required consultancy, as listed in Annex
+                                (A), to the Second Party, in accordance with the
+                                governmental procedures, the laws and regulations in
+                                force in the State of Qatar. provide the Services in
+                                accordance with all reasonable care. skill and diligence
+                                and in accordance with the standards applicable to
+                                professionals offering similar services;
+
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يقوم الطرف الأول بتقديم خدماته لتخليص المعاملات وتقديم
+                                الاستشارة المطلوبة لصالح الطرف الثاني وفقاً لقائمة الخدمات المتفق
+                                عليها في الملحق رقم (أ)، وبما يتفق مع الإجراءات الحكومية
+                                والقوانين واللوائح المعمول بها في دولة قطر. يتم تقديم الخدمات
+                                بالعناية والمهارة المعقولة ووفقاً للمعايير المطبقة على المهنيين الذين
+                                يقدمون خدمات مماثلة؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall bear costs of preparation and
+                                printing of governmental applications, its typing/fill in,
+                                excluding Government Fees, costs for legal translations
+                                and courier or postage charges within or outside Qatar;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يتحمل الطرف الأول كل المصاريف المتعلقة بطباعة وكتابة النماذج
+                                الرسمية اللازمة، ولا يشمل ذلك المصاريف الحكومية أو نفقات
+                                الترجمة القانونية أو شحن المستندات البري والجوي داخل دولة قطر
+                                أو خارجها؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (c)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall bear any and all fines charged by
+                                any Government authorities due to the delay in
+                                submission of any transaction unless such fines are
+                                results of the negligence, fault, or lack of Documents
+                                submitted by the Second Party. in case if the
+                                Documents are not valid or are near expiry the First
+                                Party will notify the Second Party in advance;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يتحمل الطرف الأول أي غرامات ناتجة عن التأخير في تقديم
+                                المعاملات للجهات الرسمية، ما لم تكن ناجمة عن تقصير أو إهمال أو
+                                أخطاء أو نواقص في المستندات المقدمة بواسطة الطرف الثاني. في
+                                حالة وجود أي وثائق غير صالحة للاستخدام أو على وشك الانتهاء
+                                يقوم الطرف الاول بـإخطار الطرف الثاني بذلك مقدماً؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (3)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (d)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall not be liable for any damage that
+                                may cause due to rejection by the government
+                                competent authorities or due to changes in the
+                                Governmental policies and procedures in providing any
+                                or all agreed upon services, or any hindrance with any
+                                other official Governmental department;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                لا يتحمل الطرف الأول أي مسؤولية لأي ضرر يقع عن رفض
+                                معاملات الطرف الثاني بواسطة السلطات الحكومية المختصة، أو
+                                نتيجة تغيير السياسات والإجراءات الحكومية المتعلقة بتقديم بعض أو
+                                كل من الخدمات المتفق على تقديمها، أو أي عوائق أخري بواسطة
+                                أي جهة حكومية أخرى؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (4)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (e)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall provide the Second Party with
+                                official receipts of any Government Fees paid to the
+                                competent authorities for any of the Second Party’s
+                                transactions.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يتعهد الطرف الأول بتزويد الطرف الثاني بالإيصالات الرسمية لأي
+                                رسوم حكومية سُددت للسلطات المختصة بشأن معاملات الطرف
+                                الثاني.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (4)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <left>(3) Second Party Obligations</left>
+
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(3) إلتزامات الطرف الثاني</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                As applicable, the Second Party shall provide the First
+                                Party with all required Documents at least one week
+                                prior to commencement of any transaction including
+                                but not limited to (commercial registration, trade
+                                license, computer card, ID cards or residency permits,
+                                copy or original passports, certificates, contracts and
+                                all other documents may require for provision of
+                                services), such Documents shall be valid, as well as the
+                                Second Party shall also provide the First Party with
+                                signed and stamped delegation letters on Second
+                                Party’s letterhead;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                حسب المقتضي، يتعهد الطرف الثاني بتسليم كافة المستندات
+                                والأوراق اللازمة والمتعلقة بإتمام المعاملة قبل البدء في تنفيذها
+                                بأسبوع على الأقل ومنها على سبيل المثال لا الحصر (السجل
+                                التجاري، الرخصة التجارية، قيد المنشأة، صور عن بطاقة إثبات
+                                شخصية أو رخصة الإقامة، صور أو أصل جوازات السفر،
+                                الشهادات، العقود، كافة المستندات التي قد تكون مطلوبة لتقديم الخدمة
+                                وإنهاؤها......) على ان تكون هذه المستندات ساريه المفعول، كما
+                                يقوم الطرف الثاني بتزويد الطرف الأول بتفويضات مختومة ومعتمدة
+                                بواسطة المخولين بالتوقيع على أوراق الطرف الثاني المروسة؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Second Party confirm authenticity of all of its
+                                Documents provided to the First Party. the First Party
+                                shall not be legally liable if any of such Documents
+                                appear to be fake/non-valid, and the Second Party shall
+                                be liable for all legal consequences towards the First
+                                Party as well as towards third parties;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يتعهد الطرف الثاني بصحة المستندات المقدمة للطرف الأول من
+                                الناحية القانونية، ولا يتحمل الطرف الأول أي مسؤوليه قانونية حال
+                                ثبوت عدم صحة أو صلاحية تلك المستندات ويتحمل الطرف الثاني
+                                كامل المسؤولية القانونية سواءً تجاه الطرف الأول أو تجاه الغير؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (c)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Second Party undertakes to contact the First Party
+                                during known working hours
+                                <b>(8.30AM to 5.30PM)</b>
+                                from Sunday to Thursday. the First Party will be
+                                entitled to charge additional fees for contacts/services
+                                required out of the said working hours or during public
+                                holidays. Documentation exchange shall take place at
+                                the office of the First Party through an authorized
+                                person(s) of both Parties.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يتعهد الطرف الثاني بالتعامل مع الطرف الأول أثناء اوقات العمل
+                                من <b>(8:30 صباحاً حتى 5:30 مساءً)</b>الرسمية المقررة والمعلن بها
+                                يوم الأحد الي يوم الخميس. حيث أنه حال تم التعامل خلال أوقات
+                                العمل الغير رسميه يكون للطرف الأول حق فرض رسوم إضافية
+                                على الخدمات المقدمة في غير أوقات العمل الرسمية أو المناسبات
+                                والعطل الرسمية. يتم تسليم وإستلام المستندات والأوراق الخاصة
+                                بالمعاملات داخل المقر الرئيسي للطرف الاول من خلال شخص أو
+                                أشخاص مخولين لهم بذلك بواسطة الأطراف.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (3)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <left>(4) Services Fee</left>
+
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(4) أتعاب الخدمات</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Services Fee shall be an amount of QAR
+                                <span t-field="o.amount"/>
+                                (<span t-esc="o.company_currency_id.amount_to_text(o.amount)"/>)
+                                , to be paid by the
+                                Second Party to the First Party on a monthly basis
+                                whether via (12) post-dated cheques or bank transfer,
+                                each payment shall be QAR
+                                <span t-field="o.monthly_service_fee"/>
+                                (<span t-field="o.monthly_service_fee_word"/>)
+                                per month for the Term or
+                                any Renewed Term pursuant to monthly invoices issued by the First Party;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                أتعاب الخدمات هي
+                                <span t-field="o.amount"/>
+                                (<span t-esc="o.company_currency_id.amount_to_text_arabic(o.amount)"/>)
+                                ر.ق سنوياً، يسددها الطرف الثاني لحساب
+                                الطرف الأول على أساس شهري بموجب عدد (12) شيك تقدم حال التوقيع على الإتفاقية أو بموجب
+                                تحويل بنكي، قيمة كل دفعة
+                                <span t-field="o.monthly_service_fee"/>
+                                (<span t-esc="o.company_currency_id.amount_to_text_arabic(o.monthly_service_fee)"/>)
+                                ر.ق شهرياً، تبدأ بتاريخ
+                                توقيع الإتفاقية طوال المدة التعاقدية أو أي مدة تعاقدية مجددة وفقاً للفواتير الشهرية
+                                الصادرة من الطرف الأول؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Second Party shall pay the Government Fees of its
+                                transactions to the First Party in advance as per clause
+                                (5) below;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يقوم الطرف الثاني بسداد المصاريف الحكومية الخاصة بمعاملاته
+                                للطرف الأول مقدماً حسب المذكور في المادة (5) أدناه؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (c)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Services Fee shall be excluded of any Government
+                                Fees or Expenses such as legal translation, courier or
+                                postage charges whether within the State of Qatar or
+                                international as well as any other payments related to
+                                the Second Party’s transactions;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                لا تشمل أتعاب الخدمات أياً من الرسوم الحكومية أو المصاريف مثل
+                                نفقات الترجمة القانونية أو شحن المستندات البري والجوي داخل
+                                دولة قطر أو خارجها وأي مدفوعات أخري خاصة بمعاملات الطرف
+                                الثاني؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (3)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (d)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party reserve its rights to delay executing any
+                                of the Second Party’s transactions in the event of
+                                decline, for any reason, any of related to the Services
+                                Fee due to the First Party until such dues has been
+                                paid;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يحتفظ الطرف الأول بحقه في تأخير تنفيذ أي معاملات للطرف الثاني
+                                في حالة عدم تحصيل أي من أتعاب الخدمات المستحقة للطرف الأول
+                                بموجب هذه الإتفاقية لأي سبب حتى تمام سداد المتأخرات؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (4)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (e)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall be entitled to evaluate the Services
+                                Fee and notify the Second Party in writing with any
+                                increase of the Services Fee at least one (1) month
+                                before the expiry of the Term or any Renewed Term.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يحق للطرف الأول إعادة تقييم أتعاب الخدمات وإخطار الطرف
+                                الثاني كتابياً قبل شهر واحد (1) على الأقل من إنتهاء المدة التعاقدية
+                                أو أي مدة تعاقدية مجددة بأي زيادة في أتعاب الخدمات.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (5)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <left>(5) Government Fees</left>
+
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(5) المصاريف الحكومية</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Second Party shall make an advance payment of
+                                QAR
+                                <span t-field="o.advance_payment_amount_percentage"/>
+                                (<span t-field="o.advance_payment_amount_percentage_in_word"/>)
+                                to be held
+                                on account (“Starting Amount”). such funds shall be
+                                used by the First Party to pay all Government Fees, and
+                                any Expenses. All such costs and expenses to be
+                                reimbursed on a monthly basis. The First Party shall
+                                issue invoices to the Second Party attaching any
+                                payments receipts. In the event that the balance
+                                dropped off QAR 3.000 (Three Thousand Qatari
+                                Riyals) the Second Party shall immediately replenish
+                                its account in order to reach the Starting Amount on its
+                                account. The First Party reserve its rights to stop any
+                                services in case of failure by the Second Party to pay
+                                its dues/invoices on time;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يقدم الطرف الثاني دفعة من تحت الحساب بقيمة
+                                <span t-field="o.advance_payment_amount_percentage"/>
+                                (<span
+                                    t-esc="o.company_currency_id.amount_to_text_arabic(o.advance_payment_amount_percentage)"/>
+                                )
+                                ر.ق ("المبلغ المبدأي") عند التعاقد وذلك ليستخدمها الطرف الأول في دفع الرسوم الحكومية
+                                والمصاريف على أن تكون فترة المحاسبة الماليه بشكل شهري ويلتزم الطرف الأول بإصدار فواتير
+                                وإرفاق الإيصالات، يقوم الطرف الثاني بإعادة تغذية الحساب لدى الطرف الأول في حال وصول
+                                الرصيد لدى الطرف الاول الي 3,000 ر.ق (ثلاثة ألاف ريال قطري) ليصل لنفس المبلغ المتفق عليه
+                                وذلك تفادياً لتأخير معاملات الطرف الثاني، ويحتفظ الطرف الأول بحقه في إيقاف تنفيذ أي
+                                معاملات في حالة عدم تسوية سداد الفواتير المعلقة؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                In the event of the Second Party’s failure in paying the
+                                dues invoice(s) issued by the First Party, the First Party
+                                reserve its rights to delay executing any of the Second
+                                Party’s transactions until such dues has been paid.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                في حالة فشل الطرف الثاني في سداد الفواتير الصادرة من الطرف
+                                الأول في موعد إستحقاقها، يحتفظ الطرف الأول بحقه في تأخير تنفيذ
+                                أي معاملات للطرف الثاني حتى تمام سداد المتأخرات.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+
+                                        <left>(6) Term, Renewal and Termination</left>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(6) المدة والتجديد وإنهاء الإتفاقية</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the term of this Agreement is one (1) year commencing
+                                on signing date of this Agreement as of
+                                <span t-field="o.start_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                and
+                                shall expire on
+                                <span t-field="o.end_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                (the “Term”);
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+
+
+                                <span>يتم العمل بهذه الاتفاقية لمدة سنة واحدة (1) سنه تبدأ من تاريخ توقيع هذه الإتفاقية
+                                    في
+                                </span>
+                                <span t-field="o.start_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                <span>وتنتهي بتاريخ</span>
+                                <span t-field="o.end_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                <span>المدة التعاقدية</span>
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Agreement shall be renewed for similar Term(s)(the <b>“Renewed Term”</b>), in
+                                accordance
+                                with a written
+                                consent by the Parties at least one (1) month before the
+                                expiry of the Term or any Renewed Term;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                تجدد هذه الإتفاقية لمدة أو مدد تعاقدية مماثلة ("مدة تعاقدية مجددة") بموجب موافقة كتابية
+                                من الأطراف برغبتهما في التجديد قبل شهر واحد (1) على الأقل من تاريخ إنتهاء المدة
+                                التعاقدية أو أي مدة تعاقدية مجددة؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (c)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                this Agreement may be terminated within the first three months by either Party by
+                                providing written notice to the other Party at least two weeks, during the termination
+                                notice period both Parties shall complete any outstanding issues between them
+                                (transactions- payment);
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يجوز إنهاء هذه الإتفاقية خلال الثلاثة أشهر الأولى بموجب إخطار كتابي يرسله الطرف الراغب
+                                في الإنهاء للطرف الآخر قبل أسبوعين على الأقل، في خلال فترة الإنهاء يقوم الأطراف بإنهاء
+                                كافة الأمور المعلقة فيما بينهم سواء كانت (المعاملات- المالية)؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (3)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (d)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                after the first three months of the Agreement, before the expiry of its Term or any
+                                Renewed Term any Party may terminate the Agreement subject to serve a written notice to
+                                the other Party at least one (1) month of the termination date during such period any
+                                Services Fee, Government Fees, and Expenses shall be paid as per this Agreement.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                في حال مرور الثلاثة أشهر الأولي ورغب أي طرف في إنهاء هذه الإتفاقية قبل انتهاء المدة
+                                التعاقدية أو أي مدة تعاقدية مجددة، يلتزم ذلك الطرف بتوجيه إخطار كتابي للطرف الآخر قبل
+                                شهر واحد (1) على الأقل من تاريخ الإنهاء وتسري فيه احكام هذه الإتفاقية من أتعاب الخدمات
+                                والرسوم الحكومية والمصاريف.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (4)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+
+                                        <left>(7) General Terms and Conditions</left>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(7) شروط وأحكام عامة</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                neither Party shall, and the Parties shall procure that each Party does not (except
+                                insofar as may be necessary to perform its duties under this Agreement or officially
+                                required), directly or indirectly disclose at any time hereafter to any other
+                                corporation, entity or individual whatsoever or whomsoever, any information as to the
+                                terms, conditions or provisions of this Agreement or any other information not generally
+                                available to third parties as to the business, secrets, dealings, transactions or
+                                affairs of or relating to the other Party, Neither Party shall use the confidential
+                                information and intellectual property of the other party except as strictly necessary in
+                                the performance of this Agreement;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                لا يجوز لأي طرف، كما يتوجب على كل طرف (إلا بقدر ما هو ضروري أو مطلوب رسمياً لأداء
+                                واجباتها بموجب هذه الاتفاقية) ضمان عدم القيام بالكشف سواءً بشكل مباشر أو غير مباشر وفي
+                                أي وقت لاحق لأي شركة أو كيان أو فرد آخر مهما كان أو أياً كان عن معلومات تتعلّق بشروط أو
+                                أحكام أو بنود هذه الاتفاقية، أو أي معلومات أخرى غير متاحة لأطراف أخري ومتعلقة بالعمل أو
+                                الأسرار أو الصفقات التجارية أو العمليات التجارية أو الأعمال الخاصة بالطرف الآخر, يتعين
+                                على أي من الطرفين استخدام المعلومات السرية والملكية الفكرية للطرف الآخر إلا إذا كان ذلك
+                                ضروريا للغاية في تنفيذ هذه الاتفاقية
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                each Party shall appoint a contact person representing
+                                it so that all requests for services and other
+                                communications are made in writing, emails or a
+                                special system of the First Party;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يلتزم كل طرف تعيين ممثل له بحيث تنحصر المراسلات
+                                والمخاطبات من خلالهما على أن تكون الطلبات مرسلة كتابياً أو عبر
+                                البريد الإلكتروني أو خلال برنامج خاص بالطرف الأول؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (c)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Second Party confirm authenticity of all Documents it provides to First Party. If
+                                any such Documents appear to be fake, the Second Party (and not the First Party) shall
+                                be liable for all legal consequences. the First Party accepts full responsibility for
+                                all legal issues pertaining to its employees without any responsibility of the Second
+                                Party. Any legal issues which arise on the part of the Second Party shall be dealt with
+                                by the Second Party with no responsibility or liability towards the First Party;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يلتزم الطرف الثاني بتقديم جميع الأوراق والمستندات صحيحة وسليمة غير منتهية الصلاحية
+                                لتمكين الطرف الأول من إنهاء ما أو كل إليه لصالح الطرف الثاني. ويحق للطرف الأول التوقف عن
+                                تنفيذ أو إكمال المعاملات إذا ظهر عكس ما تم ذكره، ولا يتحمل الطرف الأول أي مسؤولية
+                                قانونية أو مالية عن أي شبهات أو تزوير أو أي ملابسات فيما استلمه من الطرف الثاني سواء
+                                تجاه الطرف الثاني أو الغير، يتحمل الطرف الأول كامل المسؤولية لجميع المسائل القانونية
+                                التي تخص موظفيه فقط بدون أدنى مسؤولية للطرف الثاني، وأي مسائل قانونية خاصة بالطرف الثاني
+                                سيتعامل معها بدون مسؤولية على الطرف الأول؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (3)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (d)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the First Party shall have the right to terminate this Agreement in the event of failure
+                                of payment of any outstanding invoices by the Second Party. the First Party shall also
+                                have the right to withhold any Documents that belong to the Second Party until all dues
+                                are settled without undertake any liability towards the Second Party or towards any
+                                third party;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يحق للطرف الأول إنهاء أو إلغاء هذة الاتفاقية لوجود أي مستحقات ماليه واجبة الأداء، وله كل
+                                الحق في حجز وعدم تسليم أية مستندات رسميه خاصة بالطرف الثاني، ولا يتحمل الطرف الأول أي
+                                مسؤولية قانونية أو ماليه أو غرامات تنشأ في مواجهة الطرف الثاني أو الغير من جراء إتخاذ
+                                هذه التدابير الوقائية؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (4)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (e)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                In case the Second Party request other services in addition to the agreed list of
+                                services as per Annex (A), such Annex shall be amended and signed by the Parties
+                                considering that the Services Fee shall be amended accordingly as necessary for the
+                                requested additional services;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                في حالة طلب الطرف الثاني خدمات إضافية زيادة على المتفق عليها بالملحق المرفق (أ) يتم
+                                تعديل ملحق الاتفاقية واعتماده بواسطة الأطراف بناء على الخدمات المُضافة مع الوضع في
+                                الاعتبار تعديل أتعاب الخدمة حسب المقتضى؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (5)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (f)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                The First Party shall notify Second Party of all work it undertakes as part of the
+                                services provided in this Agreement.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يلتزم الطرف الأول بإبلاغ وإعلان الطرف الثاني بجميع تفاصيل ما يقوم به من إجراءات العمل
+                                المتفق عليه في هذه الإتفاقية لصالح الطرف الثاني حسب المقتضى.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (6)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+
+                                        <left>(8) Governing Law and Jurisdiction</left>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(8) القانون الواجب التطبيق والسلطة ذات الاختصاص</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (a)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                this Agreement shall be Governed by and construed in accordance with the applicable laws
+                                in the State of Qatar;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                تخضع هذه الإتفاقية وتفٌسَر وفقاً للقوانين المطبقة في دولة قطر؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (1)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (b)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                the Parties shall endeavor to settle all disputes amicably within 30 days;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                يتم حل النزاعات التي قد تطرأ بين الأطراف عن طريق الحل الودي في خلال 30 يوم؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (2)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (c)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                In the event of the parties failing to settle amicably, all disputes shall be finally
+                                settled by the courts of the State of Qatar;
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                في حاله عدم التوصل لحل حسب المذكور بالبند السابق تكون محاكم في دولة قطر هي المختصة
+                                بالنظر والفصل في هذا النزاع؛
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (3)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="max-width:6%;">
+                                (d)
+                            </div>
+                            <div class="col-5" style="max-width:44%;">
+                                This Agreement is made in the Arabic and English language - in case of any discrepancy
+                                between the Arabic language and English language, the parties agree that the Arabic
+                                version shall prevail for the interpretation and enforcement of this Agreement.
+                            </div>
+                            <div class="col-5" style="max-width:44%;text-align:right;">
+                                حررت هذه الاتفاقية باللغة العربية والإنجليزية وفي حال الإختلاف بين النص العربي والنص
+                                الإنجليزي، أتفق الطرفان على ان تكون اللغة العربية هي المرجحة لتفسير وتطبيق هذا
+                                الإتفاقية.
+                            </div>
+                            <div class="col-1" style="max-width:6%;">
+                                (4)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:left;font-size:16px;">
+                                <u>
+                                    <b>
+
+                                        <left>(9) Correspondences</left>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:right;font-size:16px;">
+                                <u>
+                                    <b>
+                                        <right>(9) المراسلات</right>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-6" style="max-width:50%;">
+                                All correspondences between the parties should be through the below addresses:
+                            </div>
+                            <div class="col-6" style="max-width:50%;text-align:right;">
+                                تكون كافة المراسلات فيما بين الطرفين حسب المدرج أدناه:
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:center;font-size:16px;">
+                                <u>
+                                    <b>
+
+                                        <center>the First Party</center>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:center;font-size:17px;">
+                                <u>
+                                    <b>
+                                        <center>(9) المراسلات</center>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                <b>
+                                    <left>FUSION SUPPORT SERVICES LLC</left>
+                                </b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                <b>
+                                    <right>فيوجن سابورت سيرفيسسيز ذ.م.م</right>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+                                <left>Area NO.25 Al Munsurh – C ring Road No.230- Building No.242 - Doha - State
+                                    of Qatar
+                                </left>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <right>منطقة رقم :25 المنصورة - طريق الدائري الثالث رقم 230- مبنى رقم: 242،
+                                    الدوحة - دولة قطر
+                                </right>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+                                <b>
+                                    <left>Tel Number: +974 44271607
+                                    </left>
+                                </b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <right>الهاتف: 44271607 974+
+                                </right>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+
+                                <left>
+                                    <b>P. O Box:</b>
+                                    47146. Doha – Qatar
+                                </left>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <b>
+                                    <right>الهاتف: 44271607 974+
+                                    </right>
+                                </b>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+
+                                <left>
+                                    E-mail: jason.pereira@intertek.com
+                                </left>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <b>
+                                    <right>الإلكتروني: jason.pereira@intertek.com</right>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+
+                                <left>
+                                    ravindar.babu@intertek.com
+                                </left>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <b>
+                                    <right>ravindar.babu@intertek.com</right>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:center;font-size:16px;">
+                                <u>
+                                    <b>
+
+                                        <center>the Second Party</center>
+                                    </b>
+                                </u>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:center;font-size:17px;">
+                                <u>
+                                    <b>
+                                        <center>الطرف الثاني</center>
+                                    </b>
+                                </u>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                <b>
+                                    <left>
+                                        <span t-field="o.contact_id.name"/>
+                                    </left>
+                                </b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                <b>
+                                    <right>
+                                        <span t-esc="o._get_eng_to_arabic('name', 'res.partner', o.contact_id.id)"/>
+                                    </right>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+                                <left>
+                                    <t t-foreach="o.fetch_child_id_address()" t-as="line">
+
+                                        <span t-field="line.street"/>,
+                                        <span t-field="line.street2"/>,
+                                        <span t-field="line.city"/>,
+                                        <span t-field="line.state_id.name"/>,
+                                        <span t-field="line.zip"/>,
+                                        <span t-field="line.country_id.name"/>
+
+                                    </t>
+                                </left>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                    <right>
+                                        <span t-esc="o._get_eng_to_arabic('street', 'res.partner', line.id)"/>
+                                        <span t-esc="o._get_eng_to_arabic('street2', 'res.partner',line.id)"/>,
+                                        <span t-esc="o._get_eng_to_arabic('city', 'res.partner', line.id)"/>,
+                                        <span t-esc="o._get_eng_to_arabic('name', 'res.country.state', line.state_id.id)"/>
+                                        ,
+                                        <span t-esc="o._get_eng_to_arabic('name', 'res.country', line.country_id.id)"/>
+                                    </right>
+                                </t>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+                                <b>
+                                    <left>Tel Number:
+                                        <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                            <span t-field="line.phone"/>
+                                        </t>
+                                    </left>
+                                </b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <right>الهاتف:
+                                    <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                        <span t-field="line.phone"/>
+                                    </t>
+                                </right>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+
+                                <left>
+                                    <b>P. O Box:</b>
+                                    <t t-if="o.sudo().contact_id.po_box">
+                                        <span t-esc="o.sudo().contact_id.po_box"/>
+                                        <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                            <span t-field="line.city"/><![CDATA[&nbsp;]]>-<![CDATA[&nbsp;]]>
+                                            <span t-field="line.country_id.name"/>
+                                        </t>
+                                    </t>
+                                </left>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+                                <right>صندوق بريد:
+                                    <t t-if="o.sudo().contact_id.po_box">
+                                        <span t-esc="o.sudo().contact_id.po_box"/>
+                                    </t>
+                                    <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                        <span t-esc="o._get_eng_to_arabic('city', 'res.partner', line.id)"/>
+                                        <![CDATA[&nbsp;]]>-<![CDATA[&nbsp;]]>
+                                        <span t-esc="o._get_eng_to_arabic('name', 'res.country', line.country_id.id)"/>
+                                    </t>
+
+                                </right>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;">
+
+                                <left>
+                                    E-mail:
+                                    <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                        <span t-field="line.email"/>
+                                    </t>
+                                </left>
+
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;">
+
+                                <right>الإلكتروني:
+                                    <t t-foreach="o.fetch_child_id_address()" t-as="line">
+                                        <span t-field="line.email"/>
+                                    </t>
+                                </right>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:center;font-size:17px;">
+                                <b>
+                                    <u>
+                                        <center>Signatures</center>
+                                    </u>
+                                </b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;background: #EBEBEB;text-align:center;font-size:17px;">
+                                <b>
+                                    <u>
+                                        <center>التوقيعات</center>
+                                    </u>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                SIGNED by;
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                وقعًت بواسطة
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                <b>SALEH ELSAYED MAHMOUD SALEH</b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                <b>صالح السيد محمود صالح</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                for and on behalf of the First Party
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                <b>لصالح وبالنيابة عن الطرف الأول</b>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="row" style="page-break-after:always;">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                <b>JASON CONSTANCIO PEREIRA</b>
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                <b>جاسون كونستانسيو بيريرا</b>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:left;font-size:17px;">
+                                for and on behalf of the Second Party
+                            </div>
+                            <div class="col-6"
+                                 style="max-width:50%;text-align:right;font-size:17px;">
+                                <b>لصالح وبالنيابة عن الطرف الثاني</b>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding-bottom:30px;">
+                            <div class="col-md-12" style="text-align:center;font-size:17px;color:#014717;">
+                                Appendix A: Inclusive of these frequently requested services
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center;font-size:17px;">
+                                <b>SCHEDULES, CHARGES AND FEES</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table" align="center" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"
+                                                style='background-color:#dfe8e8;text-align:center;border:1px solid black;'>
+                                                <span>No</span>
+                                            </th>
+                                            <th class="text-center"
+                                                style='background-color:#dfe8e8;text-align:center;border:1px solid black;'>
+                                                <span>SERVICE ID<br/>NUMBER
+                                                </span>
+                                            </th>
+                                            <th class="text-center"
+                                                style='background-color:#dfe8e8;text-align:center;border:1px solid black;'>
+                                                <span>SERVICE</span>
+                                            </th>
+                                            <th class="text-center"
+                                                style='background-color:#dfe8e8;text-align:center;border:1px solid black;'>
+                                                <span>GOVERNMENT FEE<br/>(QAR)
+                                                </span>
+                                            </th>
+                                            <th class="text-center"
+                                                style='background-color:#dfe8e8;text-align:center;border:1px solid black;'>
+                                                <span>SERVICE<br/>CHARGE (USD)
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="o.sudo().proposal_lines" t-as="l">
+                                            <td style='text-align:left;border:1px solid black;'>
+                                                <![CDATA[&nbsp;]]></td>
+                                            <td style='text-align:left;border:1px solid black;'>
+                                                <span t-field="l.service_id.service_id"/>
+                                            </td>
+                                            <td style='text-align:left;border:1px solid black;'>
+                                                <![CDATA[&nbsp;]]></td>
+                                            <td style='text-align:left;border:1px solid black;'>
+                                                <span t-field="l.govt_fees"/>
+                                            </td>
+                                            <td style='text-align:left;border:1px solid black;'>
+                                                <span t-field="l.fusion_fees"/>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </page>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="paperformat_services_agreement_arabic" model="report.paperformat">
+        <field name="name">FSS Services Agreement</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">05</field>
+        <field name="margin_right">05</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+    <template id="report_services_agreement_arabic">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="ebs_fusion_services.services_agreement_arabic_report_extended_template" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+
+    <report id="services_agreement_arabic_report_template_action"
+            string="FSS Services Agreement"
+            model="ebs.crm.proposal"
+            report_type="qweb-pdf"
+            name="ebs_fusion_services.report_services_agreement_arabic"
+            file="ebs_fusion_services.report_services_agreement_arabic"
+            paperformat="ebs_fusion_services.paperformat_services_agreement_arabic"
+    />
+</odoo>

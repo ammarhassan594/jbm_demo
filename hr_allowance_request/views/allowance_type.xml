@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="allowance_type_form_view" model="ir.ui.view">
+            <field name="name">allowance.type.form</field>
+            <field name="model">allowance.type</field>
+            <field name="arch" type="xml">
+                <form string="Allowance Type">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="num_of_months"/>
+
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="u_code"/>
+                                <field name="enable_payslip"/>
+                                <field name="paid_seperator"/>
+                                <field name="sponsor_ids" widget="many2many_tags"/>
+                            </group>
+
+                            <group>
+                                <field name="month"
+                                       attrs="{'invisible': [('code', '!=', 'leave')],
+                                       'required': [('code', '=', 'leave')]}"/>
+                                <field name="total_days_in_year" attrs="{'invisible': [('code', '!=', 'leave')],
+                                       'required': [('code', '=', 'leave')]}"/>
+                                <field name="age_from"
+                                       attrs="{'invisible': [('code','not in',['education','ticket'])]}"/>
+                                <field name="age_to"
+                                       attrs="{'invisible': [('code','not in',['education', 'ticket'])]}"/>
+<!--                                <field name="number_of_dependent"-->
+<!--                                       attrs="{'invisible': [('code','not in',['ticket'])]}"/>-->
+
+                                <label for="adult_fare_age_from" string="Adult Fare Age &gt;"
+                                       attrs="{'invisible': [('code','not in',['ticket'])]}"/>
+                                <div attrs="{'invisible': [('code','not in',['ticket'])]}">
+                                    <field name="adult_fare_age_from" class="oe_inline"/>
+                                    &lt;=
+                                    <field name="adult_fare_age_to" class="oe_inline"/>
+                                </div>
+
+                                <label for="child_fare_age_from" string="Child Fare Age &gt;"
+                                       attrs="{'invisible': [('code','not in',['ticket'])]}"/>
+
+                                <div attrs="{'invisible': [('code','not in',['ticket'])]}">
+                                    <field name="child_fare_age_from" class="oe_inline"/>
+                                    &lt;=
+                                    <field name="child_fare_age_to" class="oe_inline"/>
+                                </div>
+
+                                <label for="infant_fare_age_from" string="Infant Fare Age &gt;"
+                                       attrs="{'invisible': [('code','not in',['ticket'])]}"/>
+
+                                <div attrs="{'invisible': [('code','not in',['ticket'])]}">
+                                    <field name="infant_fare_age_from" class="oe_inline"/>
+                                    &lt;=
+                                    <field name="infant_fare_age_to" class="oe_inline"/>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="allowance_type_act_window" model="ir.actions.act_window">
+            <field name="name">Allowance Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">allowance.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Allowance Type" id="allowance_type_menu" parent="hr.menu_human_resources_configuration"
+                  action="allowance_type_act_window" sequence="2"/>
+
+    </data>
+</odoo>

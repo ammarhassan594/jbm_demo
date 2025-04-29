@@ -1,0 +1,151 @@
+<odoo>
+    <data>
+
+        <!--Form Here -->
+        <record id="hr_employee_custom_hr_employee_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.form.view.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_employee_custom.view_employee_form_custom"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='outsourced_status_log']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="jbm_employee_custom.view_employee_form" model="ir.ui.view">
+            <field name="name">jbm_employee_custom.hr.employee.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='department_id']" position="before">
+                    <field name="registration_number"/>
+                </xpath>
+                <xpath expr="//field[@name='marital']" position="after">
+                    <field name="contract_status"/>
+                </xpath>
+                <xpath expr="//field[@name='work_phone']" position="after">
+                    <field name="out_of_attendance"/>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']" position="after">
+                    <page string="Organization" name="Organization">
+                        <group>
+                            <group>
+                                <field name="parent_id" options="{'no_open':True}" required="1"/>
+                                <field name="line_manager_id" required="1"/>
+                                <field name="sponsorship_type"/>
+                                <field name="sponsor" required="0" invisible="1"/>
+                                <field name="status"/>
+                                <field name="actual_duty_manual" force_save="1"/>
+                                <field name="actual_duty" force_save="1"/>
+                            </group>
+                            <group>
+                                <div id="o_employee_right">
+                                    <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
+                                    <field name="child_ids" widget="hr_org_chart" readonly="1"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <div id="o_work_employee_container"> <!-- These two div are used to position org_chart -->
+                                <div id="o_work_employee_main">
+                                    <group>
+                                        <group string="Location">
+                                            <field name="address_id"
+                                                   context="{'show_address': 1}"
+                                                   options='{"always_reload": True, "highlight_first_line": True}'/>
+
+                                        </group>
+
+                                    </group>
+                                    <group>
+                                        <group string="Schedule" groups="base.group_no_one">
+                                            <field name="resource_calendar_id"/>
+                                        </group>
+                                    </group>
+                                </div>
+                            </div>
+
+                        </group>
+                    </page>
+                    <page string="Dependent" name="dependent"
+                          attrs="{'invisible': [('contract_status', '=', 'single')]}">
+                        <group>
+                            <field name="emp_children_ids" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="relation" readonly="1"/>
+                                    <field name="date_of_birth"/>
+                                    <field name="qid"/>
+                                    <field name="passport_number"/>
+                                    <field name="passport_issue_date" optional="hide"/>
+                                    <field name="passport_issue_place" optional="hide"/>
+                                    <field name="hamad_card_number"/>
+                                    <field name="Hamad_card_expiry_date"/>
+                                    <field name="Passport_expiry_date" optional="hide"/>
+                                    <field name="insurance_details" optional="hide"/>
+                                    <field name="school_name" optional="hide"/>
+                                    <field name="age" invisible="1"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group name="top_group" colspan="4">
+                                            <group name="group_left" string="Dependent Info">
+                                                <field name="name"/>
+                                                <field name="relation"/>
+                                                <filed name="gender"/>
+                                                <field name="date_of_birth"/>
+                                                <field name="insurance_details"/>
+                                                <field name="school_name"/>
+                                                <field name="age" readonly="1" invisible="1"/>
+                                            </group>
+                                            <group string="QID Info">
+                                                <field name="qid"/>
+                                                <field name="QID_expiry_date"/>
+                                                <field name="QID_attachment"/>
+                                            </group>
+                                        </group>
+                                        <group name="bottom_group" colspan="4">
+                                            <group string="Hamad Card Info">
+                                                <field name="hamad_card_number"/>
+                                                <field name="Hamad_card_expiry_date"/>
+                                            </group>
+                                            <group string="Passport Info">
+                                                <field name="passport_number"/>
+                                                <field name="passport_issue_date"/>
+                                                <field name="passport_issue_place"/>
+                                                <field name="Passport_expiry_date"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+
+                <field name='coach_id' position="after">
+                    <field name="joining_date"/>
+                    <field name="probation" force-save="1"/>
+                    <field name="probation_date"/>
+                    <field name="is_end_probation_period" readonly="1" invisible="1"/>
+                    <field name="number_of_years_work"/>
+                    <field name="contract_duration"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="hr_fleet_view_employee_form" model="ir.ui.view">
+            <field name="name">hr_fleet.hr.employee.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_fleet.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='mobility_card']" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+        <!--To here-->
+    </data>
+</odoo>

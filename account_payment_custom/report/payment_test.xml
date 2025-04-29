@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="payment_method_report_template2">
+            <t t-call="web.html_container">
+                <t t-set="total_page" t-value="len(docs)"/>
+                <t t-set="page_number" t-value="0"/>
+                <t t-foreach="payments" t-as="o">
+                    <t t-set="page_number" t-value="page_number + 1"/>
+                    <t t-call="web.basic_layout">
+                        <div class="page" style="direction: ltr;">
+                            <style>
+                                @font-face {
+                                font-family: 'DecoType';
+                                src: url(/jbm_letter_request/static/src/font/43-DecoType-Naskh-Variants.ttf)
+                                format('truetype');
+                                }
+                                @font-face {
+                                font-family: 'AdvertisingMedium';
+                                src: url(/jbm_portal_self_service/static/src/font/AdvertisingMedium-1.ttf)
+                                format('truetype');
+                                }
+                                @font-face {
+                                font-family: 'AdvertisingBold';
+                                src: url(/jbm_portal_self_service/static/src/font/AdvertisingBold.ttf)
+                                format('truetype');
+                                }
+                                <!--                                table {-->
+                                <!--                                border-collapse: separate;-->
+                                <!--                                width: 100%;-->
+                                <!--                                }-->
+
+                                <!--                                table, th, td {-->
+                                <!--                                border: 1px solid black;-->
+                                <!--                                }-->
+
+                                <!--                                th, td {-->
+                                <!--                                padding: 10px; /* Adjust the padding to control distance between cell content and-->
+                                <!--                                borders */-->
+                                <!--                                text-align: left;-->
+                                <!--                                }-->
+                            </style>
+
+                            <div class="header" style="">
+                                <div class="row">
+                                    <div class="col-12" style="padding: 0px !important">
+                                        <img src="/jbm_portal_self_service/static/src/img/header.jpg"
+                                             style="height:90px;width:100%" alt="Letter Head"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <fieldset style="border: 1px black solid; padding: 10px; margin: 10px;">
+
+                                <legend style="border: 2px #b8860b solid; margin-left: 9em; padding: 0.2em 0.8em; width: 65%; background-color: rgb(0, 32, 96);
+                            font-size:16pt;font-family: AdvertisingMedium; text-align: center; font-weight:bold; color: white; border-radius: 10px;">
+                                    سند صرف
+                                </legend>
+                                <table class="table"
+                                       style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+
+                                    <tr>
+                                        <td style="border: 1px solid black; background-color: rgb(226, 234, 246); font-family: sans-serif;">
+                                            Date:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align: center; font-family: sans-serif;">
+                                            <span t-esc="date"/>
+                                        </td>
+                                        <td style="font-weight:bold;  border: 1px solid black; text-align:right; padding-right:6px; background-color: rgb(226, 234, 246); direction: rtl;">
+                                            التاريخ:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; background-color: rgb(226, 234, 246); font-family: sans-serif;">
+                                            Number:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align: center; font-family: sans-serif;">
+                                            <span t-field="o.name"/>
+                                        </td>
+                                        <td style="font-weight:bold;  border: 1px solid black; text-align:right; padding-right:6px; background-color: rgb(226, 234, 246); direction: rtl;">
+                                            سند صرف رقم:
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                                <table class="table"
+                                       style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+                                    <tbody>
+                                        <tr style="border: 1px solid black;">
+                                            <th colspan="4"
+                                                style="background-color: rgb(0, 32, 96); color: white; text-align: center; font-weight:bold; font-size: 18px;">
+                                                بيانات السند
+                                            </th>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td colspan="3"
+                                                style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                                <span class="pr-2" t-esc="partner"/>
+                                            </td>
+                                            <td colspan="1"
+                                                style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                اسم المستفيد:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                                <t t-esc="qid_number"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                البطاقة الشخصية/السجل التجاري:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:center; font-weight:bold;">
+                                                <t t-esc="amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                المبلغ:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                                <t t-if="budgetary_position">
+                                                    <span class="pr-2"
+                                                          t-esc="budgetary_position.name"/>
+                                                </t>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                اسم بند الموازنة:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:center; font-weight:bold;">
+                                                <t t-if="budgetary_position">
+                                                    <span class="pr-2"
+                                                          t-esc="budgetary_position.budget_position_number"/>
+                                                </t>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                رقم بند الموازنة:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"
+                                                style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                                <p>
+                                                    <span t-field="o.ref"/>
+                                                </p>
+                                            </td>
+                                            <td colspan="1"
+                                                style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                وذلك عن:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: 1px solid black; text-align:center; font-weight:bold;">
+                                                <span t-esc="date"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                تاريخ(التحويل بنكي/الشيك):
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:center; font-weight:bold;">
+                                                <span t-esc="check_number or ''" class="pr-2"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                رقم(التحويل بنكي/الشيك):
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: 1px solid black; text-align:center; font-weight:bold;">
+                                                <span t-esc="acc_number or ''" class="pr-2"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                رقم الحساب:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:center; font-weight:bold;">
+                                                <span t-esc="bank_id.name" class="pr-2"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                اسم البنك:
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table"
+                                       style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+                                    <tbody>
+                                        <tr style="border: 1px solid black;">
+                                            <th colspan="4"
+                                                style="background-color: rgb(0, 32, 96); color: white; text-align: center; font-weight:bold; font-size: 18px;">
+                                                الاعتماد
+                                            </th>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                                <div class="text-center">
+                                                    <t t-set="width"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                    <t t-set="height"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                    <t t-if="accounting_signature">
+                                                        <img t-if="accounting_signature.sign_signature"
+                                                             t-att-src="image_data_uri(accounting_signature.sign_signature)"
+                                                             alt="Logo"
+                                                             t-attf-style="width: 300px; height: 47px;"/>
+                                                    </t>
+                                                </div>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                التوقيع:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                                <span t-esc="accounting_name"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                المحاسب:
+                                            </td>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                                <div class="text-center">
+                                                    <t t-set="width"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                    <t t-set="height"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                    <t t-if="auditor_signature">
+                                                        <img t-if="auditor_signature.sign_signature"
+                                                             t-att-src="image_data_uri(auditor_signature.sign_signature)"
+                                                             alt="Logo"
+                                                             t-attf-style="width: 300px; height: 47px;"/>
+                                                    </t>
+                                                </div>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                التوقيع:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                                <span t-esc="auditor_name"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                المدقق:
+                                            </td>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                                <div class="text-center">
+                                                    <t t-set="width"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                    <t t-set="height"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                    <t t-if="accounting_manager_signature">
+                                                        <img t-if="accounting_manager_signature.sign_signature"
+                                                             t-att-src="image_data_uri(accounting_manager_signature.sign_signature)"
+                                                             alt="Logo"
+                                                             t-attf-style="width: 300px; height: 47px;"/>
+                                                    </t>
+                                                </div>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                التوقيع:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                                <span t-esc="accounting_manager_name"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                رئيس قسم الشؤون المالية:
+                                            </td>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                                <div class="text-center">
+                                                    <t t-set="width"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                    <t t-set="height"
+                                                       t-value="o.sudo().env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                    <t t-if="shared_service_manager_signature">
+                                                        <img t-if="shared_service_manager_signature.sign_signature"
+                                                             t-att-src="image_data_uri(shared_service_manager_signature.sign_signature)"
+                                                             alt="Logo"
+                                                             t-attf-style="width: 300px; height: 47px;"/>
+                                                    </t>
+                                                </div>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                التوقيع:
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                                <span t-esc="shared_service_manager_name"/>
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                مدير إدارة الخدمات المشتركة:
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table"
+                                       style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+                                    <tbody>
+                                        <tr style="border: 1px solid black;">
+                                            <th colspan="4" axis="expenses"
+                                                style="background-color: rgb(0, 32, 96);color: white; text-align: center; font-weight:bold; font-size: 18px; direction: rtl;">
+                                                بيانات المستلم(في حالة شيك)
+                                            </th>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td width="30%"
+                                                style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                                <!--                                            <span t-esc="o.request_employee_id.employee_qid_number"/>-->
+                                            </td>
+                                            <td width="20%"
+                                                style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                رقم البطاقة الشخصية:
+                                            </td>
+                                            <td width="30%"
+                                                style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            </td>
+                                            <td width="20%"
+                                                style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                                الاسم:
+                                            </td>
+                                        </tr>
+                                        <tr style="border: 1px solid black;">
+                                            <td style="border: 1px solid black;  padding: 0; ">
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                                :التوقيع
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right;">
+                                                <!--                                            <span t-esc="signature.employee_id.arabic_name"/>-->
+                                            </td>
+                                            <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                                التاريخ:
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <!--                        </div>-->
+
+                            <div class="footer">
+                                <div class="row">
+                                    <img t-attf-src="/jbm_portal_self_service/static/src/img/footer.jpg"
+                                         alt="footer"
+                                         style="padding-left:5px;height:50px;width:100%;"/>
+                                </div>
+                                <span style="font-size: 10px; margin-right:230px;">F-QMS-10-01 Rev.1(14/07/2024)</span>
+                                <span style="font-size: 10px; margin-left:260px; text-align:right;">نظام إدارة الجودة
+                                    9001:2015
+                                </span>
+                                <span style="font-size: 10px; text-align:center;">صفحة 1 من 1</span>
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>
+

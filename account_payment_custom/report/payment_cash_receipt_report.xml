@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="cash_receipt_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <html>
+                            <style>
+                                .blank-row {
+                                height: 80px;
+                                }
+
+                            </style>
+                            <img t-if="o.company_id.company_report_header" t-att-src="image_data_uri(o.company_id.company_report_header)" alt="header"
+                                 style="padding-left:5px;height:147px;width:100%;"/>
+<!--                            <img src="/account_payment_custom/static/src/img/sc_header.jpg"-->
+<!--                                 style="padding-left:5px;height:147px;width:100%;"/>-->
+                            <br/>
+                            <br/>
+                            <table width="100%" style="line-height:30px;">
+                                <tr style="text-align:center;background-color: #808080; color:white">
+                                    <td>سند قبض</td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <table style="line-height:30px;margin-left:210px">
+                                <tr>
+                                    <td width="40%" style="text-align:right;padding-right:10px">شيك</td>
+                                    <td>
+                                        <input type="checkbox" id="test_2"/>
+                                    </td>
+                                    <td width="40%" style="text-align:right;padding-left:70px;padding-right:10px">
+                                        نقداً
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" checked="True" id="test_1"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <table style="line-height:30px" width="100%">
+                                <tr>
+                                    <td width="42%" style="text-align:right;padding-right:5px;border:1px solid black;">
+                                        <span>
+                                            <t t-esc="o.name"/>
+                                        </span>
+                                    </td>
+                                    <td style="padding-left:5px">: الرقم</td>
+                                    <td width="42%" style="text-align:right;padding-right:5px;border:1px solid black;">
+                                        <span>
+                                            <t t-esc="o.date"/>
+                                        </span>
+                                    </td>
+                                    <td style="padding-left:5px">:التاريخ</td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <table width='36%'
+                                   style="line-height:30px;border-collapse:collapse;border:1px solid black;margin-left:230px !important;">
+                                <tr style="background-color: #808080;">
+                                    <td style="border:1px solid black;text-align:center;" width="22%">ريال</td>
+                                    <td style="border:1px solid black;text-align:center" width="14%">درهم</td>
+                                </tr>
+                                <tr style="height: 40px;">
+                                    <td style="border:1px solid black;text-align:center;" width="40%">
+                                        <t t-if="o.amount > 0">
+                                            <span t-esc="str(o.amount).split('.')[0]"/>
+                                        </t>
+                                    </td>
+                                    <td style="border:1px solid black;text-align:center;" width="10%">
+                                        <t t-if="o.amount > 0">
+                                            <span t-esc="str(o.amount).split('.')[1]"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table style="border-collapse:collapse;border:1px solid black;line-height:30px;text-align:right"
+                                   width="100%">
+                                <tr>
+                                    <td width="70%" style="border:1px solid black;padding-right:5px">
+                                        <t t-esc="o.partner_id.name"/>
+                                    </td>
+                                    <td style="border:1px solid black;padding-right:5px">
+                                        :استلمنا من السيد / السادة
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%" style="border:1px solid black;padding-right:5px;">
+                                        <span t-esc="o.currency_id.amount_to_text(o.amount)"/>
+                                    </td>
+                                    <td style="border:1px solid black;padding-right:5px">
+                                        :مبلغ وقدره
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%" style="border:1px solid black;padding-right:5px;">
+                                        <span t-esc="o.payment_method_line_id.name"/>
+                                    </td>
+                                    <td style="border:1px solid black;padding-right:5px">
+                                        :نقداً / شيك رقم
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%" style="border:1px solid black;padding-right:5px;">
+                                        <span t-esc="o.partner_bank_id.bank_id.name"/>
+                                    </td>
+                                    <td style="border:1px solid black;padding-right:5px">
+                                        :مسحوب على بنك
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%" style="border:1px solid black;">
+                                    </td>
+                                    <td style="border:1px solid black;padding-right:5px">
+                                        :تاريخ الشيك
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" width="70%" style="text-align:right!important">
+                                        <span t-esc="o.desc"/>
+                                        :وذلك عن
+                                    </td>
+                                </tr>
+                                <tr class="blank-row">
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <table style="border-collapse:collapse;line-height:30px;margin-left:70px" width="80%">
+                                <tr>
+                                    <td style="border:1px solid black;text-align:center" width="30%">المحاسب</td>
+                                    <td width="10%"></td>
+                                    <td style="border:1px solid black;text-align:center" width="30%">المستلم</td>
+                                </tr>
+                                <tr style="height: 60px;">
+                                    <td style="border:1px solid black;text-align:center" width="30%">
+                                        <span t-esc="o.create_uid.name"/>
+                                    </td>
+                                    <td width="10%"></td>
+                                    <td style="border:1px solid black;text-align:center" width="30%">
+                                        <span t-esc="o.create_uid.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="footer">
+                                <img t-if="o.company_id.company_report_footer" t-att-src="image_data_uri(o.company_id.company_report_footer)" alt="footer"
+                                 style="height:80px;width:105%;padding-right:10px;"/>
+<!--                                <img src="/account_payment_custom/static/src/img/footer.jpg"-->
+<!--                                     style="height:80px;width:105%;padding-right:10px;"/>-->
+                            </div>
+                            <!--                            <div class="footer">-->
+                            <!--                                <img src="/account_payment_custom/static/src/img/footer.jpg"-->
+                            <!--                                     style="height:70px;width:110%;"/>-->
+                            <!--                                <div class="row">-->
+                            <!--                                    <table>-->
+                            <!--                                        <tr>-->
+                            <!--                                            <td>-->
+                            <!--                                                <span t-esc="total_page" style="font-size:10px!important;"/>-->
+                            <!--                                            </td>-->
+                            <!--                                            <td>-->
+                            <!--                                                <span t-esc="page_number"-->
+                            <!--                                                      style="padding-left:7px;font-size:18px!important;color:#785838!important"/>-->
+                            <!--                                            </td>-->
+                            <!--                                        </tr>-->
+                            <!--                                    </table>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                        </html>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

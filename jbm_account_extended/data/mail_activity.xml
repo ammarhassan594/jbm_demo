@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="mail_activity_journal_entry" model="mail.activity.type">
+            <field name="name">Journal Entry</field>
+            <field name="icon">fa-check-circle</field>
+            <field name="sequence">4</field>
+            <field name="res_model">account.move</field>
+        </record>
+    </data>
+</odoo>

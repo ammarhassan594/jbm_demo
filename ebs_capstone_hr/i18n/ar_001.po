@@ -1,0 +1,1551 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_capstone_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230322\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-11 20:23+0000\n"
+"PO-Revision-Date: 2023-06-11 20:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__sim_card
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__sim_card
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__sim_card
+msgid " SIM Card #"
+msgstr "بطاقة SIM #"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_contract__vacation_schedule__12
+msgid "12 months"
+msgstr "12 شهر"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_contract__vacation_schedule__24
+msgid "24 months"
+msgstr "24 شهر"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__probation__90d
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__probation__90d
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__probation__90d
+msgid "3 Months"
+msgstr "3 شهور"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__probation__180d
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__probation__180d
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__probation__180d
+msgid "6 Months"
+msgstr "6 شهور"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.email_template_vacation_reminder
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"\n"
+"                        Vacation reminder, 3 months left,\n"
+"                        <t t-esc=\"object.employee_id.name\"/>\n"
+"                        <t t-esc=\"object.date_start\"/>\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.email_template_birthday
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        <br/>\n"
+"                        Hey<t t-esc=\"object.name\"/>,\n"
+"\n"
+"                        You think you are special just because it's your birthday today?\n"
+"                        No way! You're special every day!!!\n"
+"\n"
+"                        Team Foodak is wishing you a lifetime of happiness and success and never forget #ForeverYoung\n"
+"\n"
+"                        Wishing you a very happy birthday!\n"
+"                        <br/>\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.email_template_birthday_event_reminder
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Birthday reminder\n"
+"                        <t t-esc=\"object.name\"/>\n"
+"                        , birthday date\n"
+"                        <t t-esc=\"object.birthday\"/>\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.other_document_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Contract renewal reminder 2 months in advance for {{object.document_type.name}}, exipation date:\n"
+"                        {{object.expiration_date}}.\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.contract_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Contract renewal reminder 3 months in advance for<t t-esc=\"object.employee_id.name\"/>, exipation\n"
+"                        date:<t t-esc=\"object.date_end\"/>.\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.hr_contract_trial_end_reminder_email_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Dear HR Manager,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <p>\n"
+"                            <t t-esc=\"object.employee_id.name\"/>'s probationary period ends on\n"
+"                            <t t-esc=\"object.trial_date_end\"/>\n"
+"                        </p>\n"
+"                        <br/>\n"
+"                        Regards,\n"
+"                        <br/>\n"
+"                        <t t-esc=\"object.company_id.name\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.ready_for_collection_letter_request_email_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Dear<t t-esc=\"object.signatory_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <p>\n"
+"                            Kindly the letter request is ready for collection:\n"
+"                            <ul>\n"
+"                                <li>Request No.:\n"
+"                                    <t t-esc=\"object.name\"/>\n"
+"                                </li>\n"
+"                                <li>Date:\n"
+"                                    <t t-esc=\"object.date\"/>\n"
+"                                </li>\n"
+"                                <li>Employee:\n"
+"                                    <t t-esc=\"object.employee_id.name\"/>\n"
+"                                </li>\n"
+"                                <li>Type:\n"
+"                                    <t t-esc=\"dict(object.fields_get(allfields=['type'])['type']['selection'])[object.type]\"/>\n"
+"                                </li>\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            For more information, please visit\n"
+"                            <a href=\"object.get_letter_request_link()\" target=\"_blank\">request link\n"
+"                            </a>\n"
+"                        </p>\n"
+"                        <br/>\n"
+"                        Regards,\n"
+"                        <br/>\n"
+"                        <t t-esc=\"object.employee_id.name\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.submitted_letter_request_email_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Dear<t t-esc=\"object.signatory_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <p>\n"
+"                            Kindly the new letter request is submitted:\n"
+"                            <ul>\n"
+"                                <li>Request No.:\n"
+"                                    <t t-esc=\"object.name\"/>\n"
+"                                </li>\n"
+"                                <li>Date:\n"
+"                                    <t t-esc=\"object.date\"/>\n"
+"                                </li>\n"
+"                                <li>Employee:\n"
+"                                    <t t-esc=\"object.employee_id.name\"/>\n"
+"                                </li>\n"
+"                                <li>Type:\n"
+"                                    <t t-esc=\"dict(object.fields_get(allfields=['type'])['type']['selection'])[object.type]\"/>\n"
+"                                </li>\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            For more information, please visit\n"
+"                            <a href=\"{{(object.get_letter_request_link())}}\" target=\"_blank\">request link\n"
+"                            </a>\n"
+"                        </p>\n"
+"                        <br/>\n"
+"                        Regards,\n"
+"                        <br/>\n"
+"                        <t t-esc=\"object.employee_id.name\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.email_template_birthday_event_preparation
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Dears,\n"
+"                        <br/>\n"
+"                        This month is the birthday of\n"
+"                        <t t-esc=\"object.name\"/>\n"
+"                        in\n"
+"                        <t t-esc=\"object.birthday\"/>\n"
+"                        <br/>\n"
+"                        Save the date and prepare an event\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.email_template_performance_appraisal_reminder
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Dears,\n"
+"                        <br/>\n"
+"                        the employee\n"
+"                        <t t-esc=\"object.name\"/>\n"
+"                        has been in the company since\n"
+"                        <t t-esc=\"object.joining_date\"/>\n"
+"                        <br/>\n"
+"                        It is time to make the performance appraisal\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.health_card_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Health Card renewal reminder for<t t-esc=\"object.employee_id.name\"/>, expiration date:\n"
+"                        <t t-esc=\"object.expiration_date\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.email_template_probation_reminder
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Probation period reminder, 3 weeks in advance\n"
+"                        <t t-esc=\"object.employee_id.name\"/>\n"
+"                        <t t-esc=\"object.date_start\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.residence_permit_tempalte
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Residence Permit renewal reminder for<t t-esc=\"object.employee_id.name\"/>, expiration date:\n"
+"                        <t t-esc=\"object.expiration_date\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,body_html:ebs_capstone_hr.work_permit_template
+msgid ""
+"<div style=\"margin:0px;padding:0px;\">\n"
+"                    <p style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                        Work Permit renewal reminder for<t t-esc=\"object.employee_id.name\"/>, expiration date:\n"
+"                        <t t-esc=\"object.expiration_date\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_document__state__active
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__status__active
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__status__active
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__status__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__additional_note
+msgid "Additional Note"
+msgstr "ملاحظة إضافية "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__address_home_id
+msgid "Address"
+msgstr "العنوان"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__addressed_to
+msgid "Addressed To"
+msgstr "موجهة الى"
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.act_window,name:ebs_capstone_hr.ebs_inherit_employee_action
+msgid "All Employees"
+msgstr "كل الموظفين"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_contract__annual_leave
+msgid "Annual Leave"
+msgstr "الإجازة السنوية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__attachment_ids
+msgid "Attachments"
+msgstr "مرفقات"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.email_template_birthday_event_reminder
+msgid "BIRTHDAY EVENT :Reminder"
+msgstr "حدث عيد ميلاد: تذكير"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.email_template_birthday_event_preparation
+msgid "BIRTHDAY EVENT PREPARATION:Reminder"
+msgstr "إعداد حدث عيد الميلاد: تذكير"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.email_template_birthday
+msgid "BIRTHDAY:Reminder"
+msgstr "عيد ميلاد: تذكير"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__barcode
+msgid "Badge ID"
+msgstr "معرّف الشارة "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__bank_account_nb
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__bank_account_nb
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__bank_account_nb
+msgid "Bank #"
+msgstr "رقم البنك"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__bank_account_id
+msgid "Bank Account Number"
+msgstr "رقم الحساب البنكي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__bank_account_type
+msgid "Bank Account Type"
+msgstr "نوع الحساب المصرفي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__bank_name
+msgid "Bank Name"
+msgstr "اسم البنك"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "الموظف العادي "
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.server,name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_ir_actions_server
+#: model:ir.cron,cron_name:ebs_capstone_hr.ir_send_mail_cron_action_birthday
+#: model:ir.cron,name:ebs_capstone_hr.ir_send_mail_cron_action_birthday
+msgid "CHECK EMPLOYEE BIRTHDAY"
+msgstr "تحقق من عيد ميلاد الموظف"
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.server,name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_event_preparation_ir_actions_server
+#: model:ir.cron,cron_name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_event_preparation
+#: model:ir.cron,name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_event_preparation
+msgid "CHECK EMPLOYEE BIRTHDAY EVENT PREPARATION"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.server,name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_event_reminder_ir_actions_server
+#: model:ir.cron,cron_name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_event_reminder
+#: model:ir.cron,name:ebs_capstone_hr.ir_send_mail_cron_action_birthday_event_reminder
+msgid "CHECK EMPLOYEE BIRTHDAY EVENT REMINDER"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.server,name:ebs_capstone_hr.ir_send_mail_cron_document_type_ir_actions_server
+#: model:ir.cron,cron_name:ebs_capstone_hr.ir_send_mail_cron_document_type
+#: model:ir.cron,name:ebs_capstone_hr.ir_send_mail_cron_document_type
+msgid "CHECK EMPLOYEE DOCUMENT TYPE"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.server,name:ebs_capstone_hr.ir_send_mail_cron_probation_ir_actions_server
+#: model:ir.cron,cron_name:ebs_capstone_hr.ir_send_mail_cron_probation
+#: model:ir.cron,name:ebs_capstone_hr.ir_send_mail_cron_probation
+msgid "CHECK EMPLOYEE PROBATION CONTRACT"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.server,name:ebs_capstone_hr.ir_send_mail_cron_action_performance_ir_actions_server
+#: model:ir.cron,cron_name:ebs_capstone_hr.ir_send_mail_cron_action_performance
+#: model:ir.cron,name:ebs_capstone_hr.ir_send_mail_cron_action_performance
+msgid "CHECK PERFORMANCE APPRAISAL"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__certificate
+msgid "Certificate Level"
+msgstr "مستوى الشهادة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__company_id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__company_id
+msgid "Company"
+msgstr "الشركه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__contract_duration
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__contract_duration
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__contract_duration
+msgid "Contract Duration"
+msgstr "مدة العقد"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.contract_template
+msgid "Contract:Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.hr_contract_trial_end_reminder_email_template
+msgid "Contracts Ended Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__country_of_birth
+msgid "Country of Birth"
+msgstr "بلد الميلاد"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__create_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__create_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__create_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__create_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__create_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__create_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__create_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__create_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__current_user
+msgid "Current User"
+msgstr "المستخدم الحالي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_leave_allocation__date_button
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__birthday
+msgid "Date of Birth"
+msgstr "تاريخ الولادة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_department
+msgid "Department"
+msgstr "القسم"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__display_name
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__display_name
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__display_name
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__display_name
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__waseef_document_count
+msgid "Document"
+msgstr "الوثيقه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__name
+msgid "Document Number"
+msgstr "رقم الوثيقه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_ebs_hr_document_type
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__document_type
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.document_view_search
+msgid "Document Type"
+msgstr "نوع الوثيقه"
+
+#. module: ebs_capstone_hr
+#: model:ir.ui.menu,name:ebs_capstone_hr.menu_hr_document_list
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.ebs_hr_employee_custom_form
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: ebs_capstone_hr
+#: model:ir.ui.menu,name:ebs_capstone_hr.menu_hr_document_type
+msgid "Documents Type"
+msgstr "نوع الوثائق"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__state__done
+msgid "Done"
+msgstr "تم"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__emergency_contact
+msgid "Emergency Contact"
+msgstr "جهة الاتصال في حالة الطوارئ"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__emergency_phone
+msgid "Emergency Phone"
+msgstr "هاتف الطوارئ"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_employee
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__employee_id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__employee_id
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.document_view_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__employee_id_domain
+msgid "Employee Domain"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.hr_employee_tree_inherit_add_columns
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.act_window,name:ebs_capstone_hr.hr_sponsor_action
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_payslip__emp_sponsor
+msgid "Employee Sponsor"
+msgstr "الموظف"
+
+#. module: ebs_capstone_hr
+#: model:ir.ui.menu,name:ebs_capstone_hr.hr_sponsor_menu
+msgid "Employee Sponsors"
+msgstr "كفلاء الموظفين"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_hr_employee__bank_account_id
+msgid "Employee bank salary account"
+msgstr "الحساب البنكي لراتب الموظف"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__is_end_probation_period
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__is_end_probation_period
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__is_end_probation_period
+msgid "End Probation Period"
+msgstr "فترة الاختبار النهائية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_hr_employee__address_home_id
+msgid ""
+"Enter here the private address of the employee, not the one linked to your "
+"company."
+msgstr "قم بإدخال العنوان الخاص بالموظف هنا، لا العنوان المرتبط بشركتك. "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__type__salary_breakdown
+msgid "Experience Certificate"
+msgstr "شهادة خبرة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_document__state__expired
+msgid "Expired"
+msgstr "منتهية الصلاحية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__expiration_date
+msgid "Expiry Date"
+msgstr "تاريخ انتهاء الصلاحية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__extension
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__extension
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__extension
+msgid "Ext"
+msgstr "مصدر خارجي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__study_field
+msgid "Field of Study"
+msgstr "مجال الدراسة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__contract_duration__five
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__contract_duration__five
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__contract_duration__five
+msgid "Five"
+msgstr "خمسه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__contract_duration__four
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__contract_duration__four
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__contract_duration__four
+msgid "Four"
+msgstr "اربعه"
+
+#. module: ebs_capstone_hr
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.document_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.ui.menu,name:ebs_capstone_hr.menu_hr_document_list_view
+msgid "HR Document"
+msgstr "وثيقة الموارد البشرية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_ebs_hr_letters_model
+msgid "HR Letter Model"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__has_reminder
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_contract__has_reminder
+msgid "Has Reminder"
+msgstr "لديه تذكير"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.health_card_template
+msgid "Health Card"
+msgstr "بطاقة صحية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__health_card
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__health_card
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__health_card
+msgid "Health Card #"
+msgstr "رقم البطاقه الصحيه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__hide
+msgid "Hide"
+msgstr "اخفاء"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__priority__2
+msgid "High"
+msgstr "مرتفعه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__km_home_work
+msgid "Home-Work Distance"
+msgstr "المسافة بين المنزل والعمل "
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_ebs_hr_document
+msgid "Hr Document"
+msgstr "وثيقه الموارد البشريه"
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.act_window,name:ebs_capstone_hr.document_window
+msgid "Hr Documents"
+msgstr "وثائق الموارد البشريه"
+
+#. module: ebs_capstone_hr
+#: model:ir.actions.act_window,name:ebs_capstone_hr.document_type_window
+msgid "Hr Documents Type"
+msgstr "نوع وثائق الموارد البشريه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__id
+msgid "ID"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_hr_employee__barcode
+msgid "ID used for employee identification."
+msgstr "المعرف المستخدم للتعرف على الموظف. "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__identification_id
+msgid "Identification No"
+msgstr "رقم الهوية "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_needaction
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_has_error
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_department__is_human_resource
+msgid "Is Human Resource"
+msgstr "هل موارد بشرية "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__is_manager
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__is_manager
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__is_manager
+msgid "Is Manager"
+msgstr "هل مدير"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__is_hr_user
+msgid "Is hr user"
+msgstr "هل مستخدم موارد بشريه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__issue_date
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__issue_place
+msgid "Issue Place"
+msgstr "مكان الإصدار"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__joining_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__joining_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__joining_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_leave_allocation__joining_date
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_leave_allocation__date_button__joining
+msgid "Joining Date"
+msgstr "تاريخ الانضمام"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document____last_update
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type____last_update
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request____last_update
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model____last_update
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__write_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__write_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__write_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__write_uid
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__write_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__write_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__write_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__write_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.ebs_hr_employee_custom_form
+msgid "Leave Manager"
+msgstr "مدير الإجازة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_ebs_hr_letter_request
+msgid "Letter Request"
+msgstr "طلب رسالة"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.submitted_letter_request_email_template
+msgid ""
+"Letter Request ({{object.name}}) from {{object.employee_id.name}} is "
+"submitted"
+msgstr "ارسلت"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__name
+msgid "Letter Request No."
+msgstr "رقم طلب الرساله"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.ready_for_collection_letter_request_email_template
+msgid ""
+"Letter Request {{object.name}} from {{object.employee_id.name}} is ready for\n"
+"                collection\n"
+"            "
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__priority__0
+msgid "Low"
+msgstr "منخفض"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "ملحق اساسي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__priority__1
+msgid "Medium"
+msgstr "وسط"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: ebs_capstone_hr
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.ebs_hr_employee_custom_form
+msgid "Mobile"
+msgstr "تليفون محمول"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__type__letter_to_embassy
+msgid "NOC For Family Visa"
+msgstr "NOC لتأشيرة الأسرة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__name
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__children
+msgid "Number of Children"
+msgstr "عدد الأبناء"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__status__on_vacation
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__status__on_vacation
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__status__on_vacation
+msgid "On Vacation"
+msgstr "في إجازة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__sponsorship_type__on_the_company
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__sponsorship_type__on_the_company
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__sponsorship_type__on_the_company
+msgid "On the company"
+msgstr "في الشركه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__sponsorship_type__on_the_familly
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__sponsorship_type__on_the_familly
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__sponsorship_type__on_the_familly
+msgid "On the familly"
+msgstr "في العائله"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__contract_duration__one
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__contract_duration__one
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__contract_duration__one
+msgid "One"
+msgstr "واحد"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.other_document_template
+msgid "Other Documents"
+msgstr "وثائق أخرى"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__owns_car
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__owns_car
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__owns_car
+msgid "Owns a car"
+msgstr "يمتلك سيارة"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.email_template_performance_appraisal_reminder
+msgid "PERFORMANCE APPRAISAL :Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__child_id
+msgid "Passport"
+msgstr "جواز سفر"
+
+#. module: ebs_capstone_hr
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.document_view_search
+msgid "Passport Documents"
+msgstr "وثائق جواز السفر"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__passport_id
+msgid "Passport No"
+msgstr "رقم جواز السفر"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__bank_account_type__card
+msgid "PayCard"
+msgstr "بطاقة الدفع"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__payer_bank_short_name
+msgid "Payer Bank Short Name"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__payer_eid
+msgid "Payer EID"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__payer_iban
+msgid "Payer IBAN"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__payer_qid
+msgid "Payer QID"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__payslip_count
+msgid "Payslip Count"
+msgstr "عدد إيصالات الدفع "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__permit_expire
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__permit_expire
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__permit_expire
+msgid "Permit Expire Date"
+msgstr "تاريخ انتهاء التصريح"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__bank_account_type__personal
+msgid "Personal"
+msgstr "شخصي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__place_of_birth
+msgid "Place of Birth"
+msgstr "مكان الميلاد"
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Accommodation"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Bank Account Number"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Country name"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Gross Salary"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's ID Number"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Job Title"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Joining date"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Mobile Allowance"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's National ID"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's QID"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Salary"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Site Allowance"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: code:addons/ebs_capstone_hr/models/ebs_hr_letter_request.py:0
+#, python-format
+msgid "Please, fill Employee's Transportation Allowance"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__priority
+msgid "Priority"
+msgstr "الاولويه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__phone
+msgid "Private Phone"
+msgstr "هاتف خاص"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__probation
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__probation
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__probation
+msgid "Probation"
+msgstr "تحت الاختبار"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__probation_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__probation_date
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__probation_date
+msgid "Probation Date"
+msgstr "تاريخ الاختبار"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.email_template_probation_reminder
+msgid "Probation:Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.document_view_search
+msgid "QID Documents"
+msgstr "وثائق QID"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.ready_for_collection_letter_request_email_template
+msgid "Ready For Collection Letter Request"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__state__ready_for_collection
+msgid "Ready for Collection"
+msgstr "جاهزة للتحصيل"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__state__rejected
+msgid "Rejected"
+msgstr "رفض"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__days
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_contract__days
+msgid "Reminder Days"
+msgstr "أيام التذكير"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__ikama
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__ikama
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__ikama
+#: model:mail.template,name:ebs_capstone_hr.residence_permit_tempalte
+msgid "Residence Permit"
+msgstr "تصريح الإقامة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__status__resigned
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__status__resigned
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__status__resigned
+msgid "Resigned"
+msgstr "استقالة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__sinid
+msgid "SIN No"
+msgstr "رقم SIN"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ تسليم الرسائل القصيرة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__ssnid
+msgid "SSN No"
+msgstr "رقم SSN"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__type__salary_certificate
+msgid "Salary Certificate"
+msgstr "شهادة راتب"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__type__salary_transfer_letter
+msgid "Salary Transfer Letter"
+msgstr "خطاب تحويل الراتب"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__type__open_bank_account
+msgid "Salary in Details"
+msgstr "الراتب بالتفاصيل"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__study_school
+msgid "School"
+msgstr "مدرسة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__signatory_id
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__signatory
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__signatory
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__signatory
+msgid "Signatory"
+msgstr "موقع"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__signatory_image
+msgid "Signatory Image"
+msgstr "صوره الموقع"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_hr_employee__sinid
+msgid "Social Insurance Number"
+msgstr "رقم التأمين الاجتماعي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_hr_employee__ssnid
+msgid "Social Security Number"
+msgstr "رقم الضمان الاجتماعي"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_sponsor__is_sponsor_by_wassef
+msgid "Sponsor By Wassef"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__sponsorship_type
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__sponsorship_type
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__sponsorship_type
+msgid "Sponsorship Type"
+msgstr "نوع الرعاية"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__spouse_birthdate
+msgid "Spouse Birthdate"
+msgstr "تاريخ ميلاد الزوج/الزوجة "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__spouse_complete_name
+msgid "Spouse Complete Name"
+msgstr "اسم الزوج/الزوجة بالكامل "
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_leave_allocation__start_date
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_leave_allocation__date_button__start
+msgid "Start Date"
+msgstr "تاريخ بدء"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document__state
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__state
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__status
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__status
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__status
+#: model_terms:ir.ui.view,arch_db:ebs_capstone_hr.document_view_search
+msgid "Status"
+msgstr "الحاله"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__state__submitted
+msgid "Submitted"
+msgstr "ارسلت"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.submitted_letter_request_email_template
+msgid "Submitted Letter Request"
+msgstr "ارسال طلب الخطاب"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__status__suspended
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__status__suspended
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__status__suspended
+msgid "Suspended"
+msgstr "معلق"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_document_type__template_id
+msgid "Template"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__status__terminated
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__status__terminated
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__status__terminated
+msgid "Terminated"
+msgstr "إنهاء"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__status__terminated_w_reason
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__status__terminated_w_reason
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__status__terminated_w_reason
+msgid "Terminated with Reason"
+msgstr "انتهى مع سبب"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__priority
+msgid ""
+"The priority of the request, as an integer: 0 means higher priority, 10 "
+"means lower priority."
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__contract_duration__three
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__contract_duration__three
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__contract_duration__three
+msgid "Three"
+msgstr "ثلاثه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_leave_allocation
+msgid "Time Off Allocation"
+msgstr "مخصص الإجازات "
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.hr_contract_trial_end_reminder_email_template
+msgid "Trial End Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__contract_duration__two
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__contract_duration__two
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__contract_duration__two
+msgid "Two"
+msgstr "اثنان"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__state__under_process
+msgid "Under Process"
+msgstr "قيد الإنتاج"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee__contract_duration__open-ended
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_base__contract_duration__open-ended
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__hr_employee_public__contract_duration__open-ended
+msgid "Unlimited"
+msgstr "غير محدود"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_contract__vacation
+msgid "Vacation"
+msgstr "إجازة"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_contract__vacation_schedule
+msgid "Vacation Schedule"
+msgstr "جدول الإجازات"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,name:ebs_capstone_hr.email_template_vacation_reminder
+msgid "Vacation:Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__priority__3
+msgid "Very High"
+msgstr "مرتفع جدا"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__waseef_sponsor
+msgid "Waseef Sponsor"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letter_request__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,help:ebs_capstone_hr.field_ebs_hr_letter_request__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__work_permit
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_base__work_permit
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee_public__work_permit
+#: model:mail.template,name:ebs_capstone_hr.work_permit_template
+msgid "Work Permit"
+msgstr "تصريح العمل"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__permit_no
+msgid "Work Permit No"
+msgstr "رقم تصريح العمل"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_leave_allocation__year
+msgid "Year"
+msgstr "سنه"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_hr_employee__number_of_years_work
+msgid "Yrs w/ JBM"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__datas
+msgid "datas"
+msgstr "المواعيد"
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields.selection,name:ebs_capstone_hr.selection__ebs_hr_letter_request__state__draft
+msgid "draft"
+msgstr "المسوده"
+
+#. module: ebs_capstone_hr
+#: model:ir.model,name:ebs_capstone_hr.model_hr_employee_sponsor
+msgid "hr.employee.sponsor"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:ir.model.fields,field_description:ebs_capstone_hr.field_ebs_hr_letters_model__name
+msgid "name"
+msgstr "الاسم"
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.health_card_template
+#: model:mail.template,subject:ebs_capstone_hr.other_document_template
+#: model:mail.template,subject:ebs_capstone_hr.residence_permit_tempalte
+#: model:mail.template,subject:ebs_capstone_hr.work_permit_template
+msgid "{{object.document_type.name}}- Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.email_template_birthday_event_preparation
+msgid "{{object.name}}- Birthday Event Preparation Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.email_template_birthday_event_reminder
+msgid "{{object.name}}- Birthday Event Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.email_template_birthday
+msgid "{{object.name}}- Birthday Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.email_template_performance_appraisal_reminder
+msgid "{{object.name}}- Performance appraisal Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.contract_template
+#: model:mail.template,subject:ebs_capstone_hr.email_template_probation_reminder
+msgid "{{object.name}}- Reminder"
+msgstr ""
+
+#. module: ebs_capstone_hr
+#: model:mail.template,subject:ebs_capstone_hr.email_template_vacation_reminder
+msgid "{{object.name}}-Vacation Reminder"
+msgstr ""

@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fields, apiclass InheritDynamicApproval(models.Model):    _inherit = 'dynamic.approval'    is_sla = fields.Boolean(string="SLA")

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_send_email_leave_planning" model="ir.cron">
+        <field name="name">Notify employees for enter leaver planning</field>
+        <field name="model_id" ref="ebs_hr_leave_custom.model_hr_leave_planning"/>
+        <field name="state">code</field>
+        <field name="code">model._send_email_employees()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <!--        <field name="nextcall" eval="(datetime.now() + timedelta(days=365)).strftime('%Y-%m-%d 23:59:59')" />   &lt;!&ndash;Dynamic&ndash;&gt;-->
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+
+    <record id="ir_cron_change_label_time_off_to_leave" model="ir.cron">
+        <field name="name">Change label time off to leave</field>
+        <field name="model_id" ref="ebs_hr_leave_custom.model_hr_leave"/>
+        <field name="state">code</field>
+        <field name="code">model.change_label_time_off_to_leave()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="ir_cron_automatic_leave_approval" model="ir.cron">
+        <field name="name">Automatic Leave Approval</field>
+        <field name="model_id" ref="ebs_hr_leave_custom.model_hr_leave"/>
+        <field name="state">code</field>
+        <field name="code">model._automatic_leave_approve()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="ir_cron_delete_inactive_activity_leave" model="ir.cron">
+        <field name="name">Delete Inactive Activity Leave</field>
+        <field name="model_id" ref="ebs_hr_leave_custom.model_hr_leave"/>
+        <field name="state">code</field>
+        <field name="code">model._delete_inactive_activity_leave()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="False"/>
+    </record>
+
+</odoo>

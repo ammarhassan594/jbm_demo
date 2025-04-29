@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="permit_over_time_request">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <style>
+                        @font-face {
+                        font-family: 'DecoType';
+                        src: url(/jbm_letter_request/static/src/font/43-DecoType-Naskh-Variants.ttf)
+                        format('truetype');
+                        }
+                        @font-face {
+                        font-family: 'AdvertisingMedium';
+                        src: url(/jbm_portal_self_service/static/src/font/AdvertisingMedium-1.ttf)
+                        format('truetype');
+                        }
+                        @font-face {
+                        font-family: 'AdvertisingBold';
+                        src: url(/jbm_portal_self_service/static/src/font/AdvertisingBold.ttf) format('truetype');
+                        }
+                        <!--                                table {-->
+                        <!--                                border-collapse: separate;-->
+                        <!--                                width: 100%;-->
+                        <!--                                }-->
+
+                        <!--                                table, th, td {-->
+                        <!--                                border: 1px solid black;-->
+                        <!--                                }-->
+
+                        <!--                                th, td {-->
+                        <!--                                padding: 10px; /* Adjust the padding to control distance between cell content and-->
+                        <!--                                borders */-->
+                        <!--                                text-align: left;-->
+                        <!--                                }-->
+                    </style>
+                    <t t-foreach="docs" t-as="o">
+                        <t t-set="o" t-value="o.sudo()"/>
+                        <div class="header" style="">
+                            <div class="row">
+                                <div class="col-12" style="padding: 0px !important">
+                                    <img src="/jbm_portal_self_service/static/src/img/header.jpg"
+                                         style="height:120px;width:100%" alt="Letter Head"/>
+                                </div>
+                            </div>
+                        </div>
+                        <fieldset style="border: 1px black solid; padding: 10px; margin: 10px;">
+
+                            <legend style="border: 2px #b8860b solid; margin-left: 9em; padding: 0.2em 0.8em; width: 65%; background-color: rgb(0, 32, 96);
+                            font-size:13pt;font-family: AdvertisingMedium; text-align: center; font-weight:bold; color: white; border-radius: 10px;">
+                                Off-hours
+                                Access Permit |تصريح دخول المؤسسة خارج أوقات العمل
+                                الرسمية
+                            </legend>
+
+
+                            <!--                                                    <div class="container" style="border: 1px solid black; padding: 10px; margin: 10px;">-->
+
+                            <!--                                                        <div class="content" style="margin:auto; margin-top: -22px; margin-bottom: 10px; text-align: center;-->
+                            <!--                                                                                    padding: 15px 22px 15px 25px; text-transform:uppercase; line-height: 1em;-->
+                            <!--                                                                                    background-color: rgb(0, 32, 96); width: 60%; min-width: 170px; border: 2px solid gold">-->
+                            <!--                                                            <div-->
+                            <!--                                                                 style="font-size:10pt;font-family: AdvertisingMedium; color: white; font-weight:900;">-->
+                            <!--                                                                Off-hours-->
+                            <!--                                                                Access Permit |تصريح دخول المؤسسة خارج أوقات العمل-->
+                            <!--                                                                الرسمية-->
+                            <!--                                                            </div>-->
+                            <!--                                                        </div>-->
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+
+                                <tr>
+                                    <td style="border: 1px solid black; background-color: rgb(226, 234, 246); font-family: sans-serif;">
+                                        Date:
+                                    </td>
+                                    <td style="border: 1px solid black; text-align: center; font-family: sans-serif;">
+                                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"
+                                              t-options="{'widget': 'date'}"/>
+                                    </td>
+                                    <td style="font-weight:bold;  border: 1px solid black; text-align:right; padding-right:6px; background-color: rgb(226, 234, 246); direction: rtl;">
+                                        التاريخ:
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+                                <tbody>
+                                    <tr style="border: 1px solid black;">
+                                        <th colspan="2"
+                                            axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px;">
+                                            Employee Information
+                                        </th>
+                                        <th colspan="2" axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; text-align: right; font-weight:bold; font-size: 18px;">
+                                            بيانات الموظف
+                                        </th>
+                                    </tr>
+                                    <tr style="border: 1px solid black;">
+                                        <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                            <span t-esc="o.request_employee_id.registration_number"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            الرقم الوظيفي:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-esc="o.request_employee_id.arabic_name"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            اسم الموظف:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                            <span t-esc="o.request_employee_id.employee_qid_number"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            رقم البطاقة الشخصية:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-esc="o.request_employee_id.job_title"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            المسمي الوظيفي:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-esc="o.request_employee_id.department_id.parent_id.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            الإدارة:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-esc="o.request_employee_id.department_id.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            القسم:
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+                                <tbody>
+                                    <tr style="border: 1px solid black;">
+
+                                        <th colspan="2"
+                                            axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px;">
+                                            Permit Details
+                                        </th>
+                                        <th colspan="2" axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; text-align: right; font-weight:bold; font-size: 18px;">
+                                            بيانات التصريح
+                                        </th>
+                                    </tr>
+                                    <tr style="border: 1px solid black;">
+                                        <td style="border: 1px solid black; font-family: sans-serif; text-align:right;">
+                                            <span t-esc="o.date_from"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            تاريخ انتهاء التصريح:
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-family: sans-serif;">
+                                            <span t-esc="o.date_to"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            تاريخ بداية التصريح:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                            <t t-if="o.in_out_document_device == 'not_allowed'">
+                                                <input style="margin-right: 20px; background-color: rgb(226, 234, 246); font-weight:bold;"
+                                                       type="checkbox" checked="True"/>:غير مسموح
+                                            </t>
+                                            <t t-else="">
+                                                <input style="margin-right: 20px; background-color: rgb(226, 234, 246); font-weight:bold;"
+                                                       type="checkbox"/>:غير مسموح
+                                            </t>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                            <t t-if="o.in_out_document_device == 'allowed'">
+                                                <input style="margin-right: 20px; background-color: rgb(226, 234, 246); font-weight:bold;"
+                                                       type="checkbox" checked="True"/>:مسموح
+                                            </t>
+                                            <t t-else="">
+                                                <input style="margin-right: 20px; background-color: rgb(226, 234, 246); font-weight:bold;"
+                                                       type="checkbox"/>:مسموح
+                                            </t>
+                                        </td>
+                                        <td colspan="2"
+                                            style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            إدخال/ إخراج مستندات أو أجهزة:
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.in_out_document_device == 'allowed'">
+                                        <td colspan="3" style="border: 1px solid black; text-align:right; font-family: sans-serif; direction: rtl;">
+                                            <span t-esc="o.determined_allowed"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                            :تحديد المسموح
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-esc="o.request_employee_id.parent_id.arabic_name"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            <b>المسؤول المباشر:</b>
+
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; font-weight:bold;">
+                                            <span t-esc="o.request_employee_id.arabic_name"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            مقدم الطلب:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black;  padding: 0; ">
+                                            <div class="text-center">
+                                                <t t-set="width"
+                                                   t-value="o.env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                <t t-set="height"
+                                                   t-value="o.env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                <img t-if="o.request_employee_id.parent_id.user_id.sign_signature"
+                                                     t-att-src="image_data_uri(o.request_employee_id.parent_id.user_id.sign_signature)"
+                                                     alt="Logo"
+                                                     t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                            </div>
+                                            <!--                                            <img t-att-src="image_data_uri(o.request_employee_id.parent_id.user_id.sign_signature)"-->
+                                            <!--                                                 alt="Logo" t-attf-style="width:120px; height:30px;"/>-->
+
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            التوقيع:
+                                        </td>
+                                        <td style="border: 1px solid black;  padding: 0; ">
+                                            <div class="text-center">
+                                                <t t-set="width"
+                                                   t-value="o.env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                <t t-set="height"
+                                                   t-value="o.env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                <img t-if="o.request_employee_id.user_id.sign_signature"
+                                                     t-att-src="image_data_uri(o.request_employee_id.user_id.sign_signature)"
+                                                     alt="Logo"
+                                                     t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                            </div>
+                                            <!--                                            <img t-att-src="image_data_uri(o.request_employee_id.parent_id.user_id.sign_signature)"-->
+                                            <!--                                                 alt="Logo" t-attf-style="width:120px; height:30px;"/>-->
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold; direction: rtl;">
+                                            التوقيع:
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <p style="text-align:right; font-size:12pt;font-family: AdvertisingMedium;">-:اقر انا الموقع
+                                أعلاه
+                                <span style="font-weight:bold;" t-esc="o.request_employee_id.arabic_name"/>
+                                بأنني أفهم وأوافق على النقاط التالية
+                            </p>
+                            <ul style="direction: rtl;  font-size:11pt;font-family: AdvertisingMedium; margin-right: 40px;">
+                                <li style="text-align: right;">سألتزم بالتواجد في المناطق المسموح بها فقط ولأغراض عملية
+                                    محددة.
+                                </li>
+                                <li style="text-align: right;">سألتزم بجميع قواعد السلامة والأمان المعمول بها في
+                                    المؤسسة.
+                                </li>
+                                <li style="text-align: right;">سأتخذ جميع التدابير اللازمة للحفاظ على أمن المؤسسة
+                                    وممتلكاتها.
+                                </li>
+                                <li style="text-align: right;">أتعهد بعدم مشاركة أو تسريب أي معلومات سرية أو حساسة</li>
+                                <li style="text-align: right;">أدرك أن هذا التصريح قابل للسحب في أي وقت من قبل الإدارة
+                                </li>
+                                <li style="text-align: right;">
+                                    <u>أدرك بأن هذا التصريح لا يعتبر تكليف عمل إضافي.</u>
+                                </li>
+                                <li style="text-align: right;">
+                                    <u>أدرك بأنه لا يحق لي المطالبة بأي بدل أو تعويض مالي عن العمل خارج ساعات الدوام
+                                        الرسمية.
+                                    </u>
+                                </li>
+                                <li style="text-align: right;">أفهم تماماً أن الإدارة غير مسؤولة عن أي إصابة أو خسارة أو
+                                    ضرر يمكن أن يحدث لي أثناء تواجدي خارج ساعات الدوام الرسمية.
+                                </li>
+                            </ul>
+
+                            <table class="table"
+                                   style="border-color:black; border-collapse: collapse; font-size:10pt;font-family: AdvertisingMedium;">
+                                <tbody>
+                                    <tr style="border: 1px solid black;">
+
+                                        <th colspan="2"
+                                            axis="expenses"
+                                            style="background-color: rgb(0, 32, 96); color: white; font-weight:bold; font-size: 18px;">
+                                            Shared Service Department Approval
+                                        </th>
+                                        <th colspan="2" axis="expenses"
+                                            style="background-color: rgb(0, 32, 96);color: white; text-align: right; font-weight:bold; font-size: 18px;">
+                                            اعتماد إدارة الخدمات المشتركة
+                                        </th>
+                                    </tr>
+                                    <tr style="border: 1px solid black;">
+                                        <td style="border: 1px solid black;  padding: 0; ">
+                                            <div class="text-center">
+                                                <t t-set="signature"
+                                                   t-value="o.env.ref('jbm_group_access_right_extended.custom_group_shared_service_manager').users[0]"/>
+                                                <t t-set="width"
+                                                   t-value="o.env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_width')"/>
+                                                <t t-set="height"
+                                                   t-value="o.env['ir.config_parameter'].get_param('ebs_jbm_hr_holiday_custom.report_signature_height')"/>
+                                                <img t-if="signature"
+                                                     t-att-src="image_data_uri(signature.sign_signature)"
+                                                     alt="Logo"
+                                                     t-attf-style="width:#{( 96 * float(width)) / 2.54}px;
+                                             height:#{( 96 * float(height)) / 2.54}px;"/>
+                                            </div>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                            :التوقيع
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right;">
+                                            <span t-esc="signature.employee_id.arabic_name"/>
+                                        </td>
+                                        <td style="border: 1px solid black; text-align:right; background-color: rgb(226, 234, 246); font-weight:bold;">
+                                            :مدير إدارة الخدمات
+                                            المشتركة
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </fieldset>
+                        <!--                        </div>-->
+
+                        <div class="footer">
+                            <div class="row">
+                                <img t-attf-src="/jbm_portal_self_service/static/src/img/footer.jpg" alt="footer"
+                                     style="padding-left:5px;height:80px;width:100%;"/>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+
+        </template>
+
+        <record id="approval_permit_over_time_request" model="ir.actions.report">
+            <field name="name">Permit Over Time Request</field>
+            <field name="model">approval.request</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jbm_portal_self_service.permit_over_time_request</field>
+            <field name="report_file">jbm_portal_self_service.permit_over_time_request</field>
+            <!--            <field name="paperformat_id" ref="paperformat_letter_salary_certificate"/>-->
+        </record>
+    </data>
+</odoo>
+

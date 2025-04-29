@@ -1,0 +1,2818 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_lb_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 05:19+0000\n"
+"PO-Revision-Date: 2023-01-23 05:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__arap
+msgid " Dues/ Remaining"
+msgstr "رميننغ/ دوس"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,comment:ebs_lb_payroll.group_fos_payroll
+msgid " FOS payroll "
+msgstr "فس بيرل"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,comment:ebs_lb_payroll.group_fusion_payroll
+msgid " Main Company payroll "
+msgstr "مين كومباني بيرل"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ebs_payroll_expense_transfer_window
+msgid " Payroll Expense Transfer"
+msgstr "بيرل إكسبينسي ترانسفر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip__state
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_line__state
+msgid ""
+"* When the payslip is created the status is 'Draft'\n"
+"                \n"
+"* If the payslip is under verification, the status is 'Waiting'.\n"
+"                \n"
+"* If the payslip is confirmed then status is set to 'Done'.\n"
+"                \n"
+"* When user cancel payslip the status is 'Rejected'."
+msgstr ""
+"* عند إنشاء إيصال مرتب يكون في الحالة 'مسودة'\n"
+"                \n"
+"* إذا كان الإيصال قيد التحقق ينتقل للحالة 'انتظار'.\n"
+"                \n"
+"* اذا تم تأكيد الإيصال ينتقل للحالة 'مكتمل'.\n"
+"                \n"
+"* عنمما يقوم المستخدم بإلغاء إيصال المرتب تكون حالته 'مرفوض'."
+
+#. module: ebs_lb_payroll
+#: model:mail.template,body_html:ebs_lb_payroll.payslip_email_template_send
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"\t\t\t\t<p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"\t\t\t\t\tDear ${object.employee_id.name},<br/><br/>\n"
+"\t\t\t\t\tYour Payslip report from ${object.date_from} to ${object.date_to}\n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t<p>\n"
+"\n"
+"\t\t\t\t\t<br/>\n"
+"\t\t\t\t\tThank you.\n"
+"\t\t\t\t</p>\n"
+"\t\t\t</div>\n"
+"\t\t"
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"\t\t\t\t<p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"\t\t\t\t\tعزيزي ${object.employee_id.name},<br/><br/>\n"
+"\t\t\t\t\tأبلغ عن إيصال الدفع الخاص بك من ${object.date_from} ل ${object.date_to}\n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t<p>\n"
+"\n"
+"\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t.شكرًا لك\n"
+"\t\t\t\t</p>\n"
+"\t\t\t</div>\n"
+"\t\t"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.hr_employee_leave_holidays_view_form2_inherited
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                    Leaves\n"
+"                </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+"                   أوراق \n"
+"                </span>"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebspayroll_import_allowances_form
+msgid "<span class=\"o_stat_text\">Elements</span>"
+msgstr "<span class=\"o_stat_text\">عناصر</span>"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_employee_view
+msgid "<span class=\"o_stat_text\">End of Service Amount</span>"
+msgstr "<span class=\"o_stat_text\">مبلغ نهاية الخدمة</span>"
+
+#. module: ebs_lb_payroll
+#: model:ir.module.category,description:ebs_lb_payroll.module_category_payroll_custom
+msgid "Access rights of Payroll"
+msgstr "حقوق الوصول إلى الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_needaction
+msgid "Action Needed"
+msgstr "اكشن نيدد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__active
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__active
+msgid "Active"
+msgstr "اكتفي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_ids
+msgid "Activities"
+msgstr "أكتفتيس"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشاط استثناء الديكور"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_additional_element_types__type__a
+msgid "Addition"
+msgstr "إضافة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__additional_element_id
+msgid "Addition Element"
+msgstr "عنصر إضافي"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.additional_element_window
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__ae
+msgid "Additional Element"
+msgstr "عنصر إضافي"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.additional_element_lines_window
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_additional_element_lines
+msgid "Additional Element Lines"
+msgstr "خطوط عنصر إضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__additional_element_type_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__related_element_type
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_import_allowances_conf_lines__template__additional_element_type
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebspayroll_import_allowances_conf_form
+msgid "Additional Element Type"
+msgstr "نوع الوظيفة الإضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_additional_element_types
+msgid "Additional Element types"
+msgstr "أنواع العناصر الإضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_additional_elements
+#: model:ir.ui.menu,name:ebs_lb_payroll.additional_element_menu
+msgid "Additional Elements"
+msgstr "عناصر إضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.additional_element_lines_menu
+msgid "Additional Elements Lines"
+msgstr "خطوط عنصر إضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.additional_elements_types_window
+#: model:ir.ui.menu,name:ebs_lb_payroll.additional_elements_types_menu
+msgid "Additional Elements Types"
+msgstr "أنواع العناصر الإضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__additional_type
+msgid "Additional Type"
+msgstr "نوع إضافي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_mod_end_of_service_payment_request
+msgid "AdditionalElements"
+msgstr "عناصر إضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__air_ticket_deposit
+msgid "Air Ticket Deposit"
+msgstr "إيداع تذاكر الطيران"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.hr_payslip_month_form_fos_employee_menu
+msgid "All Payroll - Outsourced"
+msgstr "جميع كشوف المرتبات - الاستعانة بمصادر خارجية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip__fully_invoiced
+msgid "All payslip lines are invoiced"
+msgstr "يتم تحرير فواتير لجميع سطور إيصالات الدفع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__allocated_per_month
+msgid "Allocated Per Month"
+msgstr "المخصص لكل شهر"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.payroll_allowance_menu
+msgid "Allowance"
+msgstr "مخصص"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.allowance_request_window
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_allowance_request
+#: model:ir.ui.menu,name:ebs_lb_payroll.allowance_request_window_menu
+msgid "Allowance Request"
+msgstr "طلب بدل"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.allowance_request_type_window
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_allowance_request_type
+msgid "Allowance Request Type"
+msgstr "نوع طلب البدل"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.allowance_request_type_window_menu
+msgid "Allowance Request Types"
+msgstr "أنواع طلبات المخصصات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_allowance_request_lines
+msgid "Allowance Request lines"
+msgstr "سطور طلب المخصصات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__allowance_type_id
+msgid "Allowance Type"
+msgstr "نوع البدل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__amortization_start_date
+msgid "Amortization Start Date"
+msgstr "تاريخ بدء الإطفاء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__amount
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+msgid "Amount"
+msgstr "مقدار"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__amount_approved
+msgid "Amount Approved"
+msgstr "المبلغ المعتمد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__amount_to_request
+msgid "Amount To request"
+msgstr "المبلغ المطلوب"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.server,name:ebs_lb_payroll.direct_approved_action_server
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ticket_allowance_request_form
+msgid "Approve"
+msgstr "يعتمد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__approve_requester_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__approve_requester_id
+msgid "Approve Requester"
+msgstr "مقدم طلب الموافقة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_allowance_request__state__approved
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_ticket_allowance_request__state__approved
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip_run__state__approved
+msgid "Approved"
+msgstr "وافق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__approved_amount
+msgid "Approved Amount"
+msgstr "المبلغ المعتمد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__by_finance
+msgid "Approved By Finance"
+msgstr "تمت الموافقة عليها من قبل المالية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__by_hr
+msgid "Approved by HR"
+msgstr "معتمد من الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_element_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.transportation_rule_filter
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__area
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__area
+msgid "Area"
+msgstr "مساحة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payroll_structure__use_worked_day_lines
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Balance"
+msgstr "توازن"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__bank_account_id
+msgid "Bank Account"
+msgstr "حساب البنك"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_wage
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__basic
+msgid "Basic Salary"
+msgstr "راتب اساسي"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Batch"
+msgstr "حزمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_line__payslip_run_id
+msgid "Batch Name"
+msgstr "اسم الدفعة"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#, python-format
+msgid "Before proceeding, please set a deduction reason"
+msgstr "قبل المتابعة ، يرجى تحديد سبب الخصم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__building
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__building
+msgid "Building"
+msgstr "بناء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__button_show
+msgid "Button Show"
+msgstr "عرض الزر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_config__template__cbq
+msgid "CBQ"
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/import_allowances.py:0
+#, python-format
+msgid "Can Not Delete Done Records."
+msgstr ".لا يمكن حذف السجلات المنفذة"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/ebs_mod_end_of_service_payment_request.py:0
+#, python-format
+msgid "Can Not Delete Record Which Is Not In Draft State."
+msgstr ".لا يمكن حذف سجل ليس في حالة المسودة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_additional_elements__state__cancel
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_elements_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.generate_invoice_wiz
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.payroll_payment_wiz
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.payslip_send_mail_wizard_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.salary_report_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.wps_report_form
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_leave_custom.py:0
+#, python-format
+msgid "Cannot take 2 Haj Leave per year"
+msgstr "لا يمكن أخذ إجازة حج مرتين في السنة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_childs
+msgid "Children's"
+msgstr "أطفال"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__client_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__client_id
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_run_view_search
+msgid "Client"
+msgstr "عميل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__close_account_id
+msgid "Close Account"
+msgstr "حساب مغلق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__closing_account_id
+msgid "Closing Account"
+msgstr "الحساب الختامي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__code
+msgid "Code"
+msgstr "رمز"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_import_allowances_conf_lines__template__comment
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_employees__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__company_currency_id
+msgid "Company Currency"
+msgstr "عملة الشركة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__client_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__client_id
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view_tree
+msgid "Company/Client"
+msgstr "الشركة / العميل"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+msgid "Compute Amortization"
+msgstr "حساب الاستهلاك"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__conf_id
+msgid "Conf"
+msgstr "أسيوط"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__transfer_config_id
+msgid "Config Id"
+msgstr "معرف التكوين"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__line_ids
+msgid "Config Lines"
+msgstr "خطوط التكوين"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_additional_elements__state__confirm
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_elements_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.salary_report_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.wps_report_form
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip_run__state__verify
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__contract_id
+msgid "Contract"
+msgstr "لمدة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__contract_date
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__method__contract
+msgid "Contract Date"
+msgstr "تاريخ العقد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__country_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Create Draft Entry"
+msgstr "إنشاء إدخال مسودة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__create_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__create_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.report,name:ebs_lb_payroll.salary_report_action_id
+msgid "Custom XLS Report"
+msgstr "تقرير XLS مخصص"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__daily_rate
+msgid "Daily Rate"
+msgstr "تقييم يومي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payroll_structure_type__wage_type__daily
+msgid "Daily Wage"
+msgstr "الأجر اليومي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__payment_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__start_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__date
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/additional_elements.py:0
+#: code:addons/ebs_lb_payroll/models/transportation_rule.py:0
+#, python-format
+msgid "Date already exists"
+msgstr "التاريخ موجود بالفعل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__date_of_birth
+msgid "Date of Birth"
+msgstr "تاريخ الولادة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__days
+msgid "Days"
+msgstr "أيام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_additional_element_types__type__d
+msgid "Deduction"
+msgstr "المستقطع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__deduction_reason
+msgid "Deduction Reasons"
+msgstr "أسباب الخصم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__deduction_reason__04
+msgid "Deduction related to advances payment"
+msgstr "الخصم المتعلق بدفع السلف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__deduction_reason__03
+msgid "Deduction related to harm or damage"
+msgstr "الحسم المتعلق بالضرر أو الضرر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__deduction_reason__02
+msgid "Deduction related to work arrangement "
+msgstr "الاستقطاع المتعلق بترتيب العمل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__deduction_reason__01
+msgid "Deduction related to working hours"
+msgstr "الاستقطاع المتعلق بساعات العمل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__ded
+msgid "Deductions Total Amount"
+msgstr "المبلغ الإجمالي للخصومات"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_employee_view_inherit
+msgid "Dependant"
+msgstr "يعتمد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__description
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__description
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__description
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__description
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__sign_signature
+msgid "Digital Signature"
+msgstr "توقيع إلكتروني"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.server,name:ebs_lb_payroll.direct_confirm_approved_action_server
+msgid "Direct Approve"
+msgstr "الموافقة المباشرة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Director Approved"
+msgstr "وافق المدير"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__director_approver_id
+msgid "Director Approver"
+msgstr "الموافق المخرج"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,name:ebs_lb_payroll.group_director_payroll_confirm
+msgid "Director payroll confirm"
+msgstr "تأكيد كشوف رواتب المدير"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,comment:ebs_lb_payroll.group_director_payroll_confirm
+msgid "Director payroll confirm group"
+msgstr "مجموعة تأكيد رواتب المدير"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__display_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_import_allowances__status__done
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__done
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip_run__state__close
+msgid "Done"
+msgstr "المنتهية"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.salary_report_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.wps_report_form
+msgid "Download Report"
+msgstr "تنزيل التقرير"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__state__draft
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_allowance_request__state__draft
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_ticket_allowance_request__state__draft
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_additional_elements__state__draft
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_import_allowances__status__draft
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__dynamic_approval_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__dynamic_approval_id
+msgid "Dynamic Approval"
+msgstr "الموافقة الديناميكية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__dynamic_approve_pending_group
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr "مجموعة الموافقة الديناميكية المعلقة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__dynamic_approve_request_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr "طلب الموافقة الديناميكي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_salary_report
+msgid "EBS HR Salary Report"
+msgstr "تقرير راتب HR EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_salary_report_lines
+msgid "EBS HR Salary Report Line"
+msgstr "خط تقرير الراتب HR EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_wps_config
+msgid "EBS HR WPS Config"
+msgstr "تكوين WPS HR EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_wps_lines
+msgid "EBS HR WPS Lines"
+msgstr "خطوط WPS HR EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_emp_transfer_config
+msgid "EBS Payroll Employee Expense Config"
+msgstr "تكوين نفقات الموظفين الرواتب EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_emp_transfer_config_lines
+msgid "EBS Payroll Employee Expense Config Lines"
+msgstr "خطوط تكوين نفقات الموظفين في كشوف المرتبات EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_expense_transfer
+msgid "EBS Payroll Expense Transfer"
+msgstr "تحويل نفقات الرواتب من EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_expense_transfer_lines
+msgid "EBS Payroll Expense Transfer Lines "
+msgstr "خطوط تحويل مصاريف كشوف المرتبات EBS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__eos_gratuity
+msgid "EOS Gratuity"
+msgstr "مكافأة EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_eos_notice_period
+msgid "EOS Notice Period"
+msgstr "فترة إشعار EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_eos_other_entitlements
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__eos_other_entitlement
+msgid "EOS Other Entitlement"
+msgstr "استحقاقات أخرى EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ebs_hr_eos_other_entitlements_types_action
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_eos_other_entitlements_types
+#: model:ir.ui.menu,name:ebs_lb_payroll.ebs_hr_eos_other_entitlements_types_menu
+msgid "EOS Other Entitlement Types"
+msgstr "أنواع استحقاقات أخرى EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__eos_paid_leave
+msgid "EOS Paid Leaves"
+msgstr "الإجازات المدفوعة EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__eos_provision
+msgid "EOS Provision"
+msgstr "توفير EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__method__default
+msgid "Earliest Date"
+msgstr "أقرب تاريخ"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_hr_eos_config
+msgid "Ebs Hr Eos Config"
+msgstr "التكوين Eos Hr Ebs"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__element_count
+msgid "Element Count"
+msgstr "عدد العناصر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__type
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_element_filter
+msgid "Element Type"
+msgstr "نوع العنصر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__eligible_after
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_eligible_after
+msgid "Eligible After"
+msgstr "مؤهل بعد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__eligible_after_years
+msgid "Eligible After in years"
+msgstr "مؤهل بعد سنوات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_eligible_every_year
+msgid "Eligible every/year"
+msgstr " مؤهل كل عام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_employee
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__employee_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__employee_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__employee_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__employee_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__employee_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__employee
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__employee
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__emp_id
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_emp_child
+msgid "Employee Child"
+msgstr "الموظف الطفل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.action_view_hr_payslip_month_form_fos_employee
+msgid "Employee Payslips"
+msgstr "كشوف رواتب الموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ebs_payroll_emp_transfer_config_window
+#: model:ir.ui.menu,name:ebs_lb_payroll.ebs_payroll_emp_transfer_config_menu
+msgid "Employee Transfer Configuration"
+msgstr "تكوين نقل الموظفين"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__employee_type
+msgid "Employee Type"
+msgstr "نوع موظف"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/additional_element_lines.py:0
+#: code:addons/ebs_lb_payroll/models/transportation_rule_lines.py:0
+#: model:ir.model.constraint,message:ebs_lb_payroll.constraint_ebspayroll_additional_element_lines_add_element_line_emp_unique
+#: model:ir.model.constraint,message:ebs_lb_payroll.constraint_ebspayroll_transportation_rule_lines_transportation_line_emp_unique
+#, python-format
+msgid "Employee already exists"
+msgstr "الموظف موجود بالفعل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_contract__accommodation
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_employee__emp_accommodation
+msgid "Employee's Accommodation."
+msgstr ".سكن الموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_contract__package
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_employee__emp_package
+msgid "Employee's Package."
+msgstr ".حزمة الموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_employee__emp_wage
+msgid "Employee's monthly gross wage."
+msgstr ".الأجر الإجمالي الشهري للموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__employee_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__employee_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_employees__employee_ids
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__end_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__end_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__end_of_service_id
+msgid "End Of Service"
+msgstr "نهاية الخدمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_action
+msgid "End Of Service Payment"
+msgstr "دفع نهاية الخدمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.end_of_service_service_menu
+msgid "End Of Service Payment Request"
+msgstr "طلب دفع نهاية الخدمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_employee__emp_trial_end_date
+msgid "End date of the trial period (if there is one)."
+msgstr ".تاريخ انتهاء الفترة التجريبية (إن وجدت)"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__eos_amount
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_employee_view
+msgid "End of Service"
+msgstr "نهاية الخدمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.eos_config_action
+#: model:ir.ui.menu,name:ebs_lb_payroll.eos_config_menu
+msgid "End of Service Configur"
+msgstr "تكوين نهاية الخدمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__eos_taken_amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__eos_taken_amount
+msgid "End of Service Taken"
+msgstr "تم الحصول على نهاية الخدمة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.eos_config_form
+msgid "Entitlements Types"
+msgstr "أنواع الاستحقاقات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__entitlements_types_ids
+msgid "Entitlements types"
+msgstr "أنواع الاستحقاقات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__eos_ids
+msgid "Eos"
+msgstr "EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__eos_config_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__eos_config_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__eos_config_id
+msgid "Eos Config"
+msgstr "التكوين EOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__estate_number
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__estate_number
+msgid "Estate Number"
+msgstr "رقم العقار"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__file
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__file
+msgid "Excel Report"
+msgstr "تتفوق تقرير"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.expense_transfer_menu
+msgid "Expense Transfer"
+msgstr "تحويل المصاريف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__expense_transfer_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__expense_transfer_jv
+msgid "Expense Transfer "
+msgstr "تحويل المصاريف"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Expense Transfer JV's"
+msgstr "JV's تحويل المصاريف"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_payroll_expense_transfer_form
+msgid "Expense Transfer Lines"
+msgstr "خطوط تحويل المصاريف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_lines__template__extra_hours
+msgid "Extra Hours"
+msgstr "ساعات إضافية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__fos_air_ticket_deposit
+msgid "FOS Air Ticket Deposit"
+msgstr "إيداع تذاكر الطيران FOS"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,name:ebs_lb_payroll.group_fos_payroll
+msgid "FOS Payroll"
+msgstr "كشف رواتب FOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__fos_private_medical_insurance
+msgid "FOS Private Medical Insurance"
+msgstr "تأمين طبي خاص FOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__fos_service_fee
+msgid "FOS Service Fee"
+msgstr "رسوم الخدمة FOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__fos_workmen_compensation
+msgid "FOS workmen compensation"
+msgstr "تعويض العمال FOS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__fax
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__fax
+msgid "Fax"
+msgstr "فاكس"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__file
+msgid "File"
+msgstr "ملف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__name
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__state__finance_approve
+msgid "Finance Approve"
+msgstr "الموافقة المالية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__finance_approver_id
+msgid "Finance Approver"
+msgstr "الموافق على التمويل"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.server,name:ebs_lb_payroll.finance_confirm_approved_action_server
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Finance Confirm"
+msgstr "تأكيد التمويل"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,name:ebs_lb_payroll.group_finance_payroll_confirm
+msgid "Finance payroll confirm"
+msgstr "تأكيد كشوف المرتبات المالية"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,comment:ebs_lb_payroll.group_finance_payroll_confirm
+msgid "Finance payroll confirm group"
+msgstr "مجموعة تأكيد كشوف المرتبات المالية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__floor
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__floor
+msgid "Floor"
+msgstr "أرضية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__generate_invoice__type__fold
+msgid "Fold"
+msgstr "يطوى"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__food_allowance
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_food_allowance
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__food
+msgid "Food Allowance"
+msgstr "بدل الطعام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__from_account_ids
+msgid "From Account"
+msgstr "من حساب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__from_date
+msgid "From Date"
+msgstr "من التاريخ"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__from_year
+msgid "From(Year)"
+msgstr "من عام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__fully_invoiced
+msgid "Fully Invoiced"
+msgstr "مفوتر بالكامل"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.server,name:ebs_lb_payroll.generate_journals_action_server
+msgid "Generate Expense Journals"
+msgstr "إنشاء المجلات المصاريف"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.generate_invoice_win_id
+#: model:ir.model,name:ebs_lb_payroll.model_generate_invoice
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.generate_invoice_wiz
+msgid "Generate Invoice"
+msgstr "توليد الفاتورة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_payment_wiz
+msgid "Generate payment from payroll"
+msgstr "توليد الدفع من كشوف المرتبات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_payslip_employees
+msgid "Generate payslips for all selected employees"
+msgstr "إنشاء إيصالات مرتبات لكافة الموظفين المحددين"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_job__payroll_grade__1
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payroll_structure__payroll_grade__1
+msgid "Grade 1"
+msgstr "رتبة ١"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_job__payroll_grade__2
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payroll_structure__payroll_grade__2
+msgid "Grade 2"
+msgstr "رتبة ٢"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_job__payroll_grade__3
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payroll_structure__payroll_grade__3
+msgid "Grade 3"
+msgstr "رتبة ٣"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__gratuity_account_id
+msgid "Gratuity Account"
+msgstr "حساب الإكراميات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__remaining_end_of_service_amount
+msgid "Gratuity Amount"
+msgstr "مبلغ الإكرامية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__gross
+msgid "Gross Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_element_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_search
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.transportation_rule_filter
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__state__hr_approve
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "HR Approve"
+msgstr "موافقة الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.server,name:ebs_lb_payroll.hr_confirm_approved_action_server
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "HR Confirm"
+msgstr "تأكيد الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_leave_type__validation_type__hr
+msgid "HR Department"
+msgstr "قسم الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,name:ebs_lb_payroll.group_payroll_hr
+msgid "HR Payroll"
+msgstr "كشوف مرتبات الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,comment:ebs_lb_payroll.group_payroll_hr
+msgid "HR payroll confirm group"
+msgstr "مجموعة تأكيد كشوف رواتب الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__accommodation
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_accommodation
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__acc
+msgid "Housing Allowance"
+msgstr "بدل سكن"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__hr_approver_id
+msgid "Hr Approver"
+msgstr "الموافق على الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ".رمز للإشارة إلى نشاط استثناء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_needaction
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ".إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_has_error
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ".إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#, python-format
+msgid "If you select other option, you must fill out the deduction reason"
+msgstr ".إذا حددت خيارًا آخر ، فيجب عليك ملء سبب الخصم"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebspayroll_import_allowances_form
+msgid "Import"
+msgstr "يستورد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__import_allowance_id
+msgid "Import Allowance"
+msgstr "بدل استيراد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_import_allowances
+#: model:ir.ui.menu,name:ebs_lb_payroll.import_allowances_window_menu
+msgid "Import Allowances"
+msgstr "بدلات الاستيراد"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ebspayroll_import_allowances_window
+msgid "Import Allowances "
+msgstr "بدلات الاستيراد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_import_allowances_conf
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_import_allowances_conf_lines
+#: model:ir.ui.menu,name:ebs_lb_payroll.import_allowances_conf_window_menu
+msgid "Import Allowances Configuration"
+msgstr "تكوين مخصصات الاستيراد"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ebspayroll_import_allowances_conf_window
+msgid "Import Allowances Configuration "
+msgstr "تكوين مخصصات الاستيراد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__include_unpaid
+msgid "Include Unpaid Leaves"
+msgstr "تضمين الإجازات غير مدفوعة الأجر"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/import_allowances.py:0
+#, python-format
+msgid "Invalid file!"
+msgstr "ملف غير صالح!"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_line__invoice_line_id
+msgid "Invoice Line "
+msgstr "خط الفاتورة"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/account_move.py:0
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__payslipinvoice_ids
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+#, python-format
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_line__is_created
+msgid "Is Created"
+msgstr "أنشئ"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__is_date_compute
+msgid "Is Date Compute"
+msgstr "هو تاريخ الحساب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule_category__is_deduction
+msgid "Is Deduction"
+msgstr "هو خصم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__is_dynamic_approval_requester
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr "هو طالب الموافقة الديناميكي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_payment__is_employee_payment
+msgid "Is Employee Payment"
+msgstr "هو دفع الموظف"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__is_haj_leave
+msgid "Is Hajj Leave"
+msgstr "هل إجازة الحج"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__is_labor
+msgid "Is Labor"
+msgstr "هو العمل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__is_paid
+msgid "Is Paid"
+msgstr "مدفوع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__is_sick_leave
+msgid "Is Sick Leave"
+msgstr "هي إجازة مرضية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__is_student
+msgid "Is Student"
+msgstr "طالب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__istaxable
+msgid "Is Taxable"
+msgstr "خاضع للضريبة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__is_unpaid
+msgid "Is Unpaid"
+msgstr "غير مدفوعة الأجر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_line__is_created
+msgid "Is payslip line already created for invoice"
+msgstr "هل تم إنشاء سطر إيصال الدفع للفاتورة بالفعل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_job
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__joining_date
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__method__joining
+msgid "Joining Date"
+msgstr "تاريخ الانضمام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__journal_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__journal_id
+msgid "Journal"
+msgstr "مجلة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__journal_entries_count
+msgid "Journal Entries Count"
+msgstr "عدد إدخالات دفتر اليومية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__label
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__label
+msgid "Label"
+msgstr "مُلصَق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child____last_update
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__write_uid
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__write_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_leave_type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__leave_type_id
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.Lebanese_payroll_data_menu
+msgid "Lebanese Payroll Data"
+msgstr "بيانات الرواتب اللبنانية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_leave_type__validation_type__manager
+msgid "Line Manager"
+msgstr "المدير المباشر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_leave_type__validation_type__both
+msgid "Line Manager and HR Department"
+msgstr "المدير المباشر وإدارة الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__lines_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__lines
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__lines
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__lines
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_elements_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebspayroll_import_allowances_conf_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.salary_report_config_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.transportation_rule_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.wps_config_form
+msgid "Lines"
+msgstr "خطوط"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__living_allowance
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_living_allowance
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__living_alw
+msgid "Living Allowance"
+msgstr "بدل المعيشة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__company_id
+msgid "Main Company"
+msgstr "الشركة الرئيسية"
+
+#. module: ebs_lb_payroll
+#: model:res.groups,name:ebs_lb_payroll.group_fusion_payroll
+msgid "Main Company Payroll"
+msgstr "كشوف رواتب الشركة الرئيسية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__main_expense_account
+msgid "Main Expense Account"
+msgstr "حساب المصاريف الرئيسي"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "Manager Approve"
+msgstr "موافقة المدير"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__maximum_ticket_allowance
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_maximum_ticket_allowance
+msgid "Maximum Ticket Allowance"
+msgstr "الحد الأقصى لبدل التذكرة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__method
+msgid "Method"
+msgstr "طريقة"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/allowance_request.py:0
+#, python-format
+msgid "Missing Payment Date"
+msgstr "تاريخ الدفع مفقود"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/allowance_request.py:0
+#, python-format
+msgid "Missing amortization date"
+msgstr "تاريخ الاستهلاك مفقود"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/allowance_request.py:0
+#, python-format
+msgid "Missing number of month"
+msgstr "رقم الشهر مفقود"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__mobile_allowance
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_mobile_allowance
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__mobile
+msgid "Mobile Allowance"
+msgstr "بدل المحمول"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__monthly_salary
+msgid "Monthly Salary"
+msgstr "راتب شهري"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements_types__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_type__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf__name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_emp_child__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/districts.py:0
+#: code:addons/ebs_lb_payroll/models/governorate.py:0
+#: code:addons/ebs_lb_payroll/models/legal_types.py:0
+#, python-format
+msgid "Name field must be unique"
+msgstr "يجب أن يكون حقل الاسم فريدًا"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__need_validation
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__need_validation
+msgid "Need Validation"
+msgstr "تحتاج التحقق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__net
+msgid "Net Amount"
+msgstr "كمية الشبكة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__net_gratuity_amount
+msgid "Net Gratuity Amount"
+msgstr "صافي مبلغ الإكرامية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__net_payment
+msgid "Net Payment"
+msgstr "الدفع الصافي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip_run__state__draft
+msgid "New"
+msgstr "جديد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي حدث التقويم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__next_review
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__next_review
+msgid "Next Review"
+msgstr "المراجعة القادمة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_leave_type__validation_type__no_validation
+msgid "No Validation"
+msgstr "لا يوجد تحقق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__number_of_days_worked
+msgid "No. Of Days Worked"
+msgstr "عدد أيام العمل"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/ebs_mod_end_of_service_payment_request.py:0
+#: code:addons/ebs_lb_payroll/models/ebs_mod_end_of_service_payment_request.py:0
+#: code:addons/ebs_lb_payroll/models/ebs_mod_end_of_service_payment_request.py:0
+#, python-format
+msgid "Not Eligibal To Take Gratuity."
+msgstr ".غير مؤهل للحصول على منحة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__comments
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_lines__template__notes
+msgid "Notes/Comments"
+msgstr "ملاحظات / تعليقات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__notice_period_months
+msgid "Notice Period(Months)"
+msgstr "فترة الإخطار (شهور)"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__notice_period_ids
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.eos_config_form
+msgid "Notice Periods"
+msgstr "فترة إشعار"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebspayroll_import_allowances_conf_lines__template__no_working_days
+msgid "Number Of Working Days"
+msgstr "عدد أيام العمل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__number_of_month
+msgid "Number of Month"
+msgstr "عدد الشهر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_lines__template__no_working_days
+msgid "Number of working days"
+msgstr "عدد أيام العمل"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#, python-format
+msgid "One of the contract for these payslips has no structure type."
+msgstr ".لا يوجد نوع هيكل في أحد عقود كشوف الدفع هذه"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#, python-format
+msgid "One of the payroll structures has no account journal defined on it."
+msgstr ".لا يحتوي أحد هياكل كشوف المرتبات على دفتر يومية حساب محدد عليه"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__payslip_ids
+msgid "Orders"
+msgstr "أوامر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__other_allowance
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_other_allowance
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__other_alw
+msgid "Other Allowance"
+msgstr "بدلات أخرى"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__type
+msgid "Other Entitlement Type"
+msgstr "نوع استحقاق آخر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__other_entitlements_ids
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "Other Entitlements"
+msgstr "استحقاقات أخرى"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__other_entitlements_amount
+msgid "Other Entitlements Amount"
+msgstr "مبلغ المستحقات الأخرى"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__deduction_reason__99
+msgid "Other Reasons"
+msgstr "أسباب أخرى"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.server,name:ebs_lb_payroll.outsourced_director_approved_action_server
+msgid "Outsourced Approve"
+msgstr "الموافقة الاستعانة بمصادر خارجية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_partner__po_box
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_res_users__po_box
+msgid "PO Box"
+msgstr "صندوق بريد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__package
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_package
+msgid "Package"
+msgstr "طَرد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__package
+msgid "Package Amount"
+msgstr "مبلغ العبوة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__paid
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip_run__state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__paid_leave_account_id
+msgid "Paid Leave Account"
+msgstr "حساب إجازة مدفوعة الأجر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__paid_leaves_ids
+msgid "Paid Leaves"
+msgstr "الإجازات المدفوعة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "Paid Leaves Amount"
+msgstr "مبلغ الإجازات المدفوعة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__paid_leaves_days
+msgid "Paid Leaves Days"
+msgstr "أيام الإجازات المدفوعة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__partner_parent_id
+msgid "Parent Company"
+msgstr "الشركة الام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__partial_eos
+msgid "Partial End of Service"
+msgstr "نهاية الخدمة الجزئية"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_employee_view
+msgid "Partial Gratuity"
+msgstr "مكافأة جزئية"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "Partial Gratuity Amount"
+msgstr "مبلغ المكافأة الجزئي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال المرتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__payment_id
+msgid "Payment"
+msgstr "قسط"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__payment_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__payment_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__payment_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__payment_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__payment_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule__payment_date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_payment_wiz__payment_method_id
+msgid "Payment Method"
+msgstr "طريقة الدفع او السداد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_lines__template__payment_type
+msgid "Payment Type"
+msgstr "نوع الدفع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: ebs_lb_payroll
+#: model:ir.module.category,name:ebs_lb_payroll.module_category_payroll_custom
+msgid "Payroll Access"
+msgstr "الوصول إلى الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer_lines__expense_transfer_id
+msgid "Payroll Expense Transfer"
+msgstr "تحويل مصاريف الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__payroll_grade
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_job__payroll_grade
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payroll_structure__payroll_grade
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__payroll_grade
+msgid "Payroll Grade"
+msgstr "درجة الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.payslip_line_view_menu
+msgid "Payroll Lines"
+msgstr "خطوط الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.payrol_payment_win
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.payroll_payment_wiz
+msgid "Payroll Payment"
+msgstr "دفع الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.ui.menu,name:ebs_lb_payroll.salary_report_action_wizard
+msgid "Payroll Report"
+msgstr "تقرير الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__payslip_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__payslip_ids
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+msgid "Payslip"
+msgstr "قسيمة الراتب"
+
+#. module: ebs_lb_payroll
+#: model:mail.template,name:ebs_lb_payroll.payslip_email_template_send
+msgid "Payslip : Send by email"
+msgstr "إيصال الدفع: أرسل عبر البريد الإلكتروني"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "دفعات إيصال المرتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__payslip_comments
+msgid "Payslip Comments"
+msgstr "تعليقات كشوف المرتبات"
+
+#. module: ebs_lb_payroll
+#: model:mail.template,subject:ebs_lb_payroll.payslip_email_template_send
+msgid "Payslip Info "
+msgstr "معلومات قسيمة الدفع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_payslip_line
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Payslip Line"
+msgstr "بند إيصال المرتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.custom_payslip_line_window
+msgid "Payslip Lines"
+msgstr "خطوط قسائم الراتب"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+msgid "Payslip Run"
+msgstr "تشغيل قسيمة الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_payslip_send_mail
+msgid "Payslip Send Mail"
+msgstr "قسيمة دفع إرسال بريد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__payslip_totals
+msgid "Payslip Total"
+msgstr "إجمالي قسائم الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_bank_statement_line__payslip_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_move__payslip_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_move_line__payslip_line_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_payment__payslip_id
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.hr_employee_payroll_view_form2_inherited
+msgid "Payslips"
+msgstr "كشوف الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_emp_transfer_config_lines__percentage
+msgid "Percentage"
+msgstr "النسبة المئوية"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Period"
+msgstr "فترة"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/ebs_mod_end_of_service_payment_request.py:0
+#, python-format
+msgid "Please Fill Joining Date In Employee."
+msgstr ".يرجى ملء تاريخ الالتحاق بالموظف"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_leave_custom.py:0
+#, python-format
+msgid "Please attach file in supported attachments"
+msgstr ".يرجى إرفاق الملف في المرفقات المدعومة"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/ebs_mod_end_of_service_payment_request.py:0
+#, python-format
+msgid "Please define an accounting sales journal for the company %s (%s)."
+msgstr ".(%s) %s الرجاء تحديد دفتر يومية مبيعات محاسبة للشركة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__private_medical_insurance
+msgid "Private Medical Insurance "
+msgstr "تأمين طبي خاص"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__product_id
+msgid "Product"
+msgstr "منتج"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__prorata_method
+msgid "Prorata Method"
+msgstr "طريقة Prorata"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_config__template__qnb
+msgid "QNB"
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_contract_custom.py:0
+#, python-format
+msgid "Rate Must be between 0 and 100"
+msgstr " .يجب أن يكون السعر بين ٠ و ١٠٠"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ticket_allowance_request_form
+msgid "Reject"
+msgstr "يرفض"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__rejected
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__rejected
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_allowance_request__state__reject
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_ticket_allowance_request__state__reject
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__cancel
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__remaining_amount
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__remaining_amount2
+msgid "Remaining Amount"
+msgstr "الكمية المتبقية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__parent_id
+msgid "Request"
+msgstr "طلب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__request_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__request_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__rap
+msgid "Request for Allowance Payment"
+msgstr "طلب دفع بدل"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Reset to Draft"
+msgstr "إعادة التعيين إلى المسودة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "Reset to draft"
+msgstr "إعادة التعيين إلى المسودة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__activity_user_id
+msgid "Responsible User"
+msgstr "مستخدم مسؤول"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__role_distribution_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__role_distribution_id
+msgid "Role Distribution"
+msgstr "توزيع الدور"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+msgid "Rule"
+msgstr "القاعدة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__rule_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__rule_ids
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__rules_ids
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.generate_invoice_wiz
+msgid "Rules"
+msgstr "قواعد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__aap
+msgid "Salary Advance"
+msgstr "سلفه على الراتب"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_employee_view
+msgid "Salary Information"
+msgstr "معلومات الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.salary_report_wizard
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__salary_report_id
+msgid "Salary Report"
+msgstr "تقرير الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.salary_report_config_action
+#: model:ir.ui.menu,name:ebs_lb_payroll.salary_report_config_menu
+msgid "Salary Report Config"
+msgstr "تكوين تقرير الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__salary_report_lines
+msgid "Salary Report Lines"
+msgstr "خطوط تقرير الرواتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_salary_report_wizard
+msgid "Salary Report Wizard"
+msgstr "معالج تقرير الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "قاعدة المرتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_salary_rule_category
+msgid "Salary Rule Category"
+msgstr "فئة قواعد المرتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_hr_wps_lines__template__salary_rules
+msgid "Salary Rules"
+msgstr "قواعد الرواتب"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#, python-format
+msgid "Salary Slip"
+msgstr "وصل الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_payroll_structure
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Salary Structure"
+msgstr "هيكل المرتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_payroll_structure_type
+msgid "Salary Structure Type"
+msgstr "نوع هيكل الراتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__salary_days
+msgid "Salary days"
+msgstr "أيام الراتب"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_element_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_search
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.transportation_rule_filter
+msgid "Search"
+msgstr "يبحث"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.payslip_send_mail_wizard_form
+msgid "Send"
+msgstr "إرسال"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.payslip_send_mail_id
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.payslip_send_mail_wizard_form
+msgid "Send Payslip by Email"
+msgstr "إرسال قسيمة الدفع بالبريد الإلكتروني"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report_lines__sequence
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_bank_statement_line__service_payment_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_move__service_payment_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_account_payment__service_payment_id
+msgid "Service Payment"
+msgstr "دفع الخدمة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ticket_allowance_request_form
+msgid "Set Draft"
+msgstr "تعيين المسودة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.additional_elements_form
+msgid "Set to Draft"
+msgstr "تعيين إلى مسودة"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Show Invoice"
+msgstr "إظهار الفاتورة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__company_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__sponsored_company_id
+msgid "Sponsor"
+msgstr "كفيل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__start_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_salary_report__start_date
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_salary_report_wizard__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__parent_state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_ticket_allowance_request__state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__status
+msgid "State"
+msgstr "ولاية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__state_from_name
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__state_from_name
+msgid "State From Name"
+msgstr "الدولة من الاسم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_line__state
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__state
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_filter
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.allowance_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.payroll_payment_wiz
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ticket_allowance_request_form
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_mod_end_of_service_payment_request__state__submitted
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_allowance_request__state__submit
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__ebs_payroll_ticket_allowance_request__state__submit
+msgid "Submitted"
+msgstr "مُقَدَّم"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__template
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__template
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances__configuration_id
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_import_allowances_conf_lines__template
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_salary_rule__template
+msgid "Template"
+msgstr "نموذج"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip__employee_type
+msgid ""
+"The employee type. Although the primary purpose may seem to categorize "
+"employees, this field has also an impact in the Contract History. Only "
+"Employee type is supposed to be under contract and will have a Contract "
+"History."
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/hr_payslip_custom.py:0
+#, python-format
+msgid ""
+"This payslip can be erroneous! Work entries may not be generated for the "
+"period from %s to %s."
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__talw
+msgid "Ticket Allowance Payment"
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.ticket_allowance_request_window
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_payroll_ticket_allowance_request
+#: model:ir.ui.menu,name:ebs_lb_payroll.ticket_allowance_request_window_menu
+msgid "Ticket Allowance Request"
+msgstr "دفع بدل التذكرة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__timeoff
+msgid "Time off"
+msgstr "الإجازات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__to_date
+msgid "To Date"
+msgstr "ان يذهب في موعد"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.hr_payslip_action_view_to_pay_fos_employee
+#: model:ir.ui.menu,name:ebs_lb_payroll.hr_payslip_view_to_pay_fos_employee_menu
+msgid "To Pay - Outsourced"
+msgstr "للدفع - الاستعانة بمصادر خارجية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_eos_notice_period__to_year
+msgid "To(Year)"
+msgstr "(سنة) ل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__today_date
+msgid "Today_date"
+msgstr "تاريخ اليوم"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_tree
+msgid "Total"
+msgstr "مجموع"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_payslip_line_tree
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_employee_view
+msgid "Total Figures"
+msgstr "مجموع الأرقام"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Total Working Days"
+msgstr "إجمالي أيام العمل"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_mod_end_of_service_payment_request_form
+msgid "Totals"
+msgstr "المجاميع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_expense_transfer__transfer_lines_ids
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.ebs_payroll_emp_transfer_config_form
+msgid "Transfer Lines"
+msgstr "خطوط النقل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__transport_allowance
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_transport_allowance
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_salary_rule__template__trns
+msgid "Transport Allowance"
+msgstr "بدل النقل"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.transportation_rule_window
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_transportation_rule
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_transportation_rule_lines__transportation_rule_id
+#: model:ir.ui.menu,name:ebs_lb_payroll.transportation_rule_menu
+msgid "Transportation Rule"
+msgstr "قاعدة النقل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebspayroll_transportation_rule_lines
+msgid "Transportation Rule Lines"
+msgstr "خطوط قواعد النقل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__emp_trial_end_date
+msgid "Trial End Date"
+msgstr "تاريخ انتهاء النسخة التجريبية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_other_entitlements__type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request__request_type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_payroll_allowance_request_lines__parent_type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_lines__rule_type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_element_types__type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebspayroll_additional_elements__rule_type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_generate_invoice__type
+msgid "Type"
+msgstr "يكتب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ".نوع نشاط الاستثناء المسجل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__generate_invoice__type__unfold
+msgid "UnFold"
+msgstr "غير مطوي"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__unpaid_amount
+msgid "Unpaid Amount"
+msgstr "المبلغ غير المسدد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__unpaid_leave_account_id
+msgid "Unpaid Leave Account"
+msgstr "حساب إجازة غير مدفوعة الأجر"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__unpaid_leaves_days
+msgid "Unpaid Leaves Days"
+msgstr "أيام الإجازات غير المدفوعة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_payslip_send_mail__template_id
+msgid "Use template"
+msgstr "استخدم القالب"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_employee__company_currency_id
+msgid "Utility field to express amount currency"
+msgstr "حقل المنفعة للتعبير عن مبلغ العملة"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave__validated
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__validated
+msgid "Validated"
+msgstr "تم التحقق من صحتها"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_leave_type__validation_type
+msgid "Validation"
+msgstr "تصديق"
+
+#. module: ebs_lb_payroll
+#: code:addons/ebs_lb_payroll/models/commissioning_areas.py:0
+#: code:addons/ebs_lb_payroll/models/district_town.py:0
+#: code:addons/ebs_lb_payroll/models/districts.py:0
+#: code:addons/ebs_lb_payroll/models/governorate.py:0
+#: code:addons/ebs_lb_payroll/models/legal_types.py:0
+#: code:addons/ebs_lb_payroll/models/real_estate_areas.py:0
+#, python-format
+msgid "Value field must be unique"
+msgstr "يجب أن يكون حقل القيمة فريدًا"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__is_wps
+msgid "WPS"
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.wps_config_action
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_wps_report_wizard__config_id
+#: model:ir.ui.menu,name:ebs_lb_payroll.wps_config_menu
+msgid "WPS Config"
+msgstr "التكوين WPS"
+
+#. module: ebs_lb_payroll
+#: model:ir.actions.act_window,name:ebs_lb_payroll.wps_report_wizard
+#: model:ir.ui.menu,name:ebs_lb_payroll.wps_report_action_wizard
+msgid "WPS Report"
+msgstr "تقرير WPS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model,name:ebs_lb_payroll.model_ebs_wps_report_wizard
+msgid "WPS Report Wizard"
+msgstr "معالج التقرير WPS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__wps_working_days
+msgid "WPS Working Days"
+msgstr "أيام العمل WPS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__wage_rate
+msgid "Wage Rate"
+msgstr "معدل الأجور"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__wage_type
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payroll_structure_type__wage_type
+msgid "Wage Type"
+msgstr "نوع الأجور"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__state__verify
+msgid "Waiting"
+msgstr "في الانتظار"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_run__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payslip_run__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Worked Day"
+msgstr "يوم عمل"
+
+#. module: ebs_lb_payroll
+#: model_terms:ir.ui.view,arch_db:ebs_lb_payroll.custom_hr_payslip_view
+msgid "Worked Days"
+msgstr "أيام عمل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,help:ebs_lb_payroll.field_hr_payroll_structure__use_worked_day_lines
+msgid "Worked days won't be computed/displayed in payslips."
+msgstr ".لن يتم احتساب / عرض أيام العمل في كشوف المرتبات"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_eos_config__working_days
+msgid "Working days"
+msgstr "أيام العمل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_employee__workmen_compensation
+msgid "Workmen's Compensation"
+msgstr "تعويضات العمال ل"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_lines__wps_config_id
+msgid "Wps Config"
+msgstr ""
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_hr_wps_config__wps_report_lines
+msgid "Wps Report Lines"
+msgstr "التكوين WPS"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip_line__is_check_balance
+msgid "balance"
+msgstr "الرصيد"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__button_show__director
+msgid "director"
+msgstr "مدير"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_contract__eligible_every_year
+msgid "eligible every/year"
+msgstr "مؤهل كل عام"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__button_show__finance
+msgid "finance"
+msgstr "المالية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields.selection,name:ebs_lb_payroll.selection__hr_payslip__button_show__hr
+msgid "hr"
+msgstr "مدير الموارد البشرية"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_hr_payslip__outsource_director_approver_id
+msgid "outsource director approver"
+msgstr "مدير الاستعانة بمصادر خارجية الموافق"
+
+#. module: ebs_lb_payroll
+#: model:ir.model.fields,field_description:ebs_lb_payroll.field_ebs_mod_end_of_service_payment_request__paid_leaves_amount
+msgid "paid Amount"
+msgstr "المبلغ المدفوع"
+
+#. module: ebs_lb_payroll
+#: model:mail.template,report_name:ebs_lb_payroll.payslip_email_template_send
+msgid "payslip_of_${(object.name or '').replace('/','_')}"
+msgstr ""

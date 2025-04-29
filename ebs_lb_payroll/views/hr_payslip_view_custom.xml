@@ -1,0 +1,376 @@
+<odoo>
+    <data>
+
+        <record id="custom_hr_payslip_view" model="ir.ui.view">
+            <field name="name">custom.hr.payslip.view</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='compute_sheet']" position="after">
+                    <!--                    <button string="Approve" class="oe_highlight" name="direct_approved" type="object" groups="ebs_lb_payroll.group_fos_payroll" states="draft" />-->
+                    <!--                    <button string="Manager Approve" class="oe_highlight" name="action_manager_approve" type="object" attrs="{'invisible': ['|', ('is_required_approve', '=', False)]}"  states="verify"/>-->
+                    <!--                    <button string="HR Confirm" class="oe_highlight" name="action_hr_confirm" type="object" attrs="{'invisible': [('button_show', '!=', 'hr')]}"  states="by_manager"/>-->
+                    <!--                    <button string="Finance Confirm" class="oe_highlight" name="action_finance_confirm" type="object" attrs="{'invisible': [('button_show', '!=', 'finance')]}" />-->
+                    <!--                    <button string="Director Approved" class="oe_highlight" name="director_approved" type="object" attrs="{'invisible': [('button_show', '!=', 'director')]}" />-->
+                    <button string="Reset to Draft" class="oe_highlight" name="reset_to_draft" type="object"
+                            states="verify,by_manager,by_hr,by_finance,cancel"/>
+                </xpath>
+                <!--                <xpath expr="//button[@name='action_payslip_done']" position="replace">-->
+                <!--                    <button string="Create Draft Entry" name="action_payslip_done" type="object" invisible="1" attrs="{'invisible': [('state', 'not in', 'verify')]}" class="oe_highlight" context="{'payslip_generate_pdf': True}"/>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='move_id']" position="after">
+                    <field name="payment_id" readonly="True"/>
+                    <field name="fully_invoiced" readonly="True"/>
+                    <field name="is_required_approve" invisible="1"/>
+
+                </xpath>
+
+                <!--                <xpath expr="//field[@name='date_from']" position="after">-->
+                <!--                </xpath>-->
+
+                <xpath expr="//field[@name='input_line_ids']//..//separator[last()]" position="replace">
+                </xpath>
+
+                <!--                <xpath expr="//field[@name='input_line_ids']" position="replace">-->
+                <!--                </xpath>-->
+                <xpath expr="//page[@name='account_info']" position="inside">
+                    <group>
+                        <field name="expense_transfer_ids" readonly="True" string="Expense Transfer JV's"
+                               attrs="{'invisible': [('expense_transfer_ids', '=', False)]}">
+                            <tree>
+                                <field name="name"/>
+                                <field name="company_id"/>
+                                <field name="amount_total_signed" string="Balance"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+
+                        <field name="payslipinvoice_ids" readonly="True" string="Invoices"
+                               groups="ebs_lb_payroll.group_fos_payroll"
+                               attrs="{'invisible': [('payslipinvoice_ids', '=', False)]}">
+                            <tree>
+                                <field name="name"/>
+                                <field name="invoice_origin"/>
+                                <field name="company_id"/>
+                                <field name="invoice_date_due"/>
+                                <field name="amount_untaxed_signed"/>
+                                <field name="amount_total_signed"/>
+                                <field name="amount_residual_signed"/>
+                                <field name="state"/>
+                                <button name="action_show_invoice_line" string="Show Invoice"
+                                        type="object"
+                                        icon="fa-list" options="{&quot;warn&quot;: true}"/>
+                            </tree>
+
+                        </field>
+                    </group>
+                </xpath>
+
+
+                <xpath expr="//field[@name='payment_id']" position="after">
+                    <!--                    <field name="expense_transfer_jv" readonly="True"/>-->
+                    <!--                    <field name="expense_transfer_jv_second" readonly="True"/>-->
+                    <field name="button_show" readonly="True" invisible="True"/>
+                    <field name="hr_approver_id" invisible="1"/>
+                    <field name="finance_approver_id" invisible="1"/>
+                    <field name="director_approver_id" invisible="1"/>
+                    <field name="outsource_director_approver_id" invisible="1"/>
+                </xpath>
+
+
+                <xpath expr="//field[@name='line_ids']" position="replace">
+                    <field name="line_ids" colspan="4" nolabel="1">
+                        <tree string="Salary Structure" decoration-danger="is_check_balance == True" editable="bottom"
+                              decoration-info="total == 0">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="category_id"/>
+                            <field name="sequence" invisible="1"/>
+                            <field name="quantity"/>
+                            <field name="rate"/>
+                            <field name="salary_rule_id"/>
+                            <field name="amount" readonly="1"/>
+                            <field name="total"/>
+                            <field name="state"/>
+                            <field name="is_check_balance" invisible="1"/>
+                        </tree>
+                        <form string="Payslip Line">
+                            <group col="4">
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="category_id"/>
+                                <field name="sequence"/>
+                                <field name="quantity"/>
+                                <field name="rate"/>
+                                <field name="amount"/>
+                                <field name="total"/>
+                                <field name="salary_rule_id"/>
+                            </group>
+                        </form>
+                    </field>
+                </xpath>
+                <field name="worked_days_line_ids" position="replace">
+                    <field name="worked_days_line_ids">
+                        <tree string="Worked Days" editable="bottom">
+                            <field name="amount"
+                                   invisible="1"/> <!-- Do not remove this otherwise the amount won't be saved -->
+                            <field name="work_entry_type_id"/>
+                            <field name="name"/>
+                            <field name="number_of_days" sum="Total Working Days"/>
+                            <field name="number_of_hours"/>
+                            <!--                            <field name="amount"/>-->
+                            <field name="contract_id" invisible="True"/>
+                            <field name="sequence" invisible="True"/>
+                        </tree>
+                        <form string="Worked Day">
+                            <group col="4">
+                                <field name="work_entry_type_id"/>
+                                <field name="name"/>
+                                <field name="sequence"/>
+                                <field name="number_of_days"/>
+                                <field name="number_of_hours"/>
+                                <field name="contract_id"/>
+                            </group>
+                        </form>
+                    </field>
+                </field>
+
+                <xpath expr="//group" position="replace">
+                    <group>
+                        <group>
+                            <label for="date_from" string="Period"/>
+                            <div>
+                                <field name="date_from" class="oe_inline"/>
+                                -
+                                <field name="date_to" class="oe_inline"/>
+                            </div>
+                            <field name="contract_id"
+                                   domain="[('employee_id','=',employee_id),('state','!=','cancel'),('date_start','&lt;=',date_to),'|',('date_end','&gt;=',date_from),('date_end','=',False)]"
+                                   context="{'default_employee_id': employee_id}" required="1"/>
+                            <field name="country_id" invisible="1"/>
+                            <field name="country_code" invisible="1"/>
+                            <field name="payslip_run_id" string="Batch"/>
+                            <field name="struct_id" required="1"/>
+                            <field name="salary_attachment_ids" invisible="1" force_save="1"/>
+                            <field name="wage_type" invisible="1"/>
+                            <field name="sum_worked_hours" invisible="1"/>
+                            <field name="normal_wage" invisible="1"/>
+                            <field name="credit_note" invisible="1"/>
+                            <field name="has_negative_net_to_report" invisible="1"/>
+                            <field name="negative_net_to_report_display" invisible="1"/>
+                            <field name="is_superuser" invisible="1"/>
+                            <field name="has_refund_slip" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                            <field name="contract_id"
+                                   domain="[('employee_id','=',employee_id),('date_start','&lt;=',date_to),'|',('date_end','&gt;=',date_from),('date_end','=',False)]"
+                                   context="{'default_employee_id': employee_id}" required="1"/>
+                            <!--                            <field name="payroll_grade" invisible="True"/>-->
+                            <field name="number"/>
+                            <field name="employee_type" invisible="1"/>
+                            <field name="is_wps" invisible="1"/>
+                            <field name="is_labor" invisible="1"/>
+                            <field name="deduction_reason"
+                                   attrs="{'readonly':[('state','not in',['draft','verify'])]}"/>
+                            <field name="comments"/>
+                            <field name="wps_working_days"
+                                   attrs="{'invisible': ['|', ('employee_type', '!=', 'fos_employee'), '|', ('is_wps', '=', False), ('is_labor', '=', False)]}"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='comments']" position="after">
+                    <field name="payslip_comments"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="custom_hr_payslip_view_tree" model="ir.ui.view">
+            <field name="name">custom.hr.payslip.view.tree</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+            <field name="arch" type="xml">
+                <field name="employee_id" position="after">
+                    <field name="partner_parent_id" optional="hide" string="Company/Client"/>
+                    <field name="sponsored_company_id" optional="hide"/>
+                    <field name="employee_type"/>
+
+                </field>
+            </field>
+        </record>
+
+        <record id="custom_hr_payslip_run_view_search" model="ir.ui.view">
+            <field name="name">custom.hr.payslip.run.view.search</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="client_id"/>
+                </field>
+                <filter name="state" position="after">
+                    <filter string="Client" name="client" context="{'group_by': 'client_id'}"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="custom_hr_payslip_run_view_form" model="ir.ui.view">
+            <field name="name">custom.hr.payslip.run.view.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="attributes">
+                    <attribute name="attrs">{'readonly':[('state','=','close')]}</attribute>
+                </field>
+                <field name="company_id" position="after">
+                    <field name="client_id" groups="ebs_lb_payroll.group_fos_payroll"
+                           options="{'no_create_edit': True, 'no_create': True}"
+                           attrs="{'readonly':[('state','=','close')]}"/>
+                </field>
+                <xpath position="attributes" expr="//button[@name=%(hr_payroll.action_hr_payslip_by_employees)d]">
+                    <attribute name="context">{'payslip_batch_company':company_id, 'payslip_batch_client': client_id}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_validate']" position="attributes">
+                    <attribute name="states">approved</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_validate']" position="after">
+                    <button name="ebs_lb_payroll.wps_report_wizard" string="WPS Report" type="action"
+                            context="{'default_batch_id': active_id, 'default_hide_batch_id': True}"
+                            attrs="{'invisible': [('state', 'not in', ['close', 'paid'])]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="direct_approved_action_server" model="ir.actions.server">
+            <field name="name">Approve</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="groups_id" eval="[(4, ref('ebs_lb_payroll.group_fos_payroll'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.direct_approved()
+            </field>
+        </record>
+        <record id="outsourced_director_approved_action_server" model="ir.actions.server">
+            <field name="name">Outsourced Approve</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="groups_id" eval="[(4, ref('ebs_lb_payroll.group_fos_payroll'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.outsourced_direct_approved()
+            </field>
+        </record>
+        <record id="hr_confirm_approved_action_server" model="ir.actions.server">
+            <field name="name">HR Confirm</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="groups_id" eval="[(4, ref('ebs_lb_payroll.group_payroll_hr'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.hr_confirm_approved_by_action()
+            </field>
+        </record>
+
+        <record id="finance_confirm_approved_action_server" model="ir.actions.server">
+            <field name="name">Finance Confirm</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="groups_id" eval="[(4, ref('ebs_lb_payroll.group_finance_payroll_confirm'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.finance_confirm_approved_by_action()
+            </field>
+        </record>
+        <record id="direct_confirm_approved_action_server" model="ir.actions.server">
+            <field name="name">Direct Approve</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="groups_id" eval="[(4,ref('ebs_lb_payroll.group_director_payroll_confirm'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.direct_approved_by_action()
+            </field>
+        </record>
+        <record id="generate_journals_action_server" model="ir.actions.server">
+            <field name="name">Generate Expense Journals</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_payslip"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="state">code</field>
+
+            <field name="code">
+                if records:
+                action = records.generate_expense_transfer_journal_entry()
+            </field>
+        </record>
+
+
+        <menuitem
+                id="hr_payroll.menu_hr_payroll_payslips"
+                name="Payroll"
+                parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
+                sequence="70"
+                groups="hr_contract_custom.group_access_fusion_employee_contract,hr_contract_custom.group_access_other_employee_contract"/>
+
+        <menuitem
+                id="hr_payroll.menu_hr_payroll_employee_payslips"
+                name="All Payroll - Main Company"
+                parent="hr_payroll.menu_hr_payroll_payslips"
+                sequence="60"
+                action="hr_payroll.action_view_hr_payslip_month_form"
+                groups="ebs_lb_payroll.group_fusion_payroll"/>
+
+        <record id="hr_payroll.menu_hr_payroll_employee_payslips_to_pay" model="ir.ui.menu">
+            <field name="name">To Pay - Main Company</field>
+            <field name="groups_id" eval="[(4, ref('ebs_lb_payroll.group_fusion_payroll'))]"/>
+        </record>
+        <record id="hr_payroll.action_view_hr_payslip_month_form" model="ir.actions.act_window">
+            <field name="domain">[('employee_type', '=', 'fusion_employee')]</field>
+        </record>
+
+        <record id="hr_payroll.hr_payslip_action_view_to_pay" model="ir.actions.act_window">
+            <field name="domain">[('state', 'in', ['draft', 'verify']), ('employee_type', '=', 'fusion_employee')]
+            </field>
+        </record>
+
+        <record id="hr_payslip_action_view_to_pay_fos_employee" model="ir.actions.act_window">
+            <field name="name">To Pay - Outsourced</field>
+            <field name="res_model">hr.payslip</field>
+            <field name="view_mode">tree,kanban,form,pivot</field>
+            <field name="search_view_id" ref="hr_payroll.view_hr_payslip_filter"/>
+            <field name="domain">[('state', 'in', ['draft', 'verify']), ('employee_type', '=', 'fos_employee')]</field>
+        </record>
+
+        <record id="action_view_hr_payslip_month_form_fos_employee" model="ir.actions.act_window">
+            <field name="name">Employee Payslips</field>
+            <field name="res_model">hr.payslip</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="search_view_id" ref="hr_payroll.view_hr_payslip_filter"/>
+            <field name="domain">[('employee_type', '=', 'fos_employee')]</field>
+
+            <field name="context">{"search_default_group_by_batch":1}</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="hr_payslip_view_to_pay_fos_employee_menu" name="To Pay - Outsourced"
+                  parent="hr_payroll.menu_hr_payroll_payslips" action="hr_payslip_action_view_to_pay_fos_employee"
+                  sequence="8" groups="ebs_lb_payroll.group_fos_payroll"/>
+        <menuitem id="hr_payslip_month_form_fos_employee_menu" name="All Payroll - Outsourced"
+                  parent="hr_payroll.menu_hr_payroll_payslips" action="action_view_hr_payslip_month_form_fos_employee"
+                  sequence="9" groups="ebs_lb_payroll.group_fos_payroll"/>
+
+
+    </data>
+</odoo>

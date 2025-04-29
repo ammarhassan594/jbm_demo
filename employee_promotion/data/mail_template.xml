@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="update_contract_email_template" model="mail.template">
+            <field name="name">Update Contract Notification</field>
+            <field name="model_id" ref="employee_promotion.model_employee_promotion"/>
+            <field name="email_from">{{ctx['email_from']}}</field>
+            <field name="email_to">{{ctx['email_to']}}</field>
+            <field name="subject">Notification For Contract Update</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear,
+                        <br/>
+                        <br/>
+                        <p>Contract is updated for
+                            <strong><t t-esc="ctx['name']"/>.
+                            </strong>
+                        </p>
+                        <t t-if="ctx['old_contract']">
+                            <p>Old Contract is<t t-esc="ctx['old_contract']"/>.
+                            </p>
+                        </t>
+                        <t t-if="ctx['new_contract']">
+                            <p>New Contract is<t t-esc="ctx['new_contract']"/>.
+                            </p>
+                        </t>
+                        <br/>
+                    </p>
+                    <t t-if="ctx['old_contract_id'] and ctx['new_contract_id']">
+                        <div style="margin: 0px; padding: 0px;">
+                            You can check the more details by clicking on the below link.
+                            <div style="margin: 16px 0px 16px 0px;">
+                                <span style="margin: 16px 0px 16px 0px;">
+                                    <a href="#{object.get_url()}"
+                                       target="_blank"
+                                       style="background-color: #875a7b; text-decoration: none; color: #fff; padding: 8px 16px 8px 16px; border-radius: 5px;">
+                                        Old Contract
+                                    </a>
+                                </span>
+                                <span style="margin: 16px 0px 16px 0px;">
+                                    <a href="#{object.get_url()}"
+                                       target="_blank"
+                                       style="background-color: #875a7b; text-decoration: none; color: #fff; padding: 8px 16px 8px 16px; border-radius: 5px;">
+                                        New Contract
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

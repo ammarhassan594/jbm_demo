@@ -1,0 +1,14 @@
+<odoo>
+    <menuitem
+            name="Leave"
+            id="hr_holidays.menu_hr_holidays_root"
+            sequence="95"
+            web_icon="hr_holidays,static/description/icon.png"
+            groups="hr_holidays.group_hr_holidays_responsible,base.group_user"/>
+    <menuitem
+            id="social.menu_social_global"
+            name="Social Marketing"
+            web_icon="social,static/description/icon.png"
+            sequence="9"
+            groups="social.group_social_user,base.group_user"/>
+</odoo>

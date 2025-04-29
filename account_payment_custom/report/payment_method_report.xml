@@ -1,0 +1,323 @@
+<odoo>
+    <data>
+        <template id="payment_method_report_template">
+            <t t-call="web.html_container">
+                <t t-set="total_page" t-value="len(docs)"/>
+                <t t-set="page_number" t-value="0"/>
+                <t t-foreach="payments" t-as="o">
+                    <t t-set="page_number" t-value="page_number + 1"/>
+                    <t t-call="web.basic_layout">
+                        <div class="page" style="direction: rtl; text-align: center;" DIR="RTL" align="right">
+                            <!--                                    <img t-if="o.company_id.company_report_header" t-att-src="image_data_uri(o.company_id.company_report_header)" alt="header"-->
+                            <!--                                      style="padding-left:5px;height:147px;width:100%;"/>-->
+                            <!--                                    <img src="/account_payment_custom/static/src/img/sc_header.jpg"-->
+                            <!--                                         style="padding-left:5px;height:147px;width:100%;"/>-->
+
+                            <style type="text/css">
+                                body{
+                                font-family: 'Lateef', serif;
+                                font-size:22px !important;
+                                }
+                                .titleb{
+                                font-weight:bold;
+                                font-size:22px !important;
+                                padding-top: 5px !important;
+                                }
+                                td{
+                                border: 1px solid #785838!important;
+                                padding-right:5px !important;
+                                }
+
+                                .main_table{
+                                text-align: right !important;;
+                                margin-top:20px !important;;
+                                }
+
+                                .main_table tr{
+                                line-height:12px !important;
+                                }
+                            </style>
+                            <div class="header">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img t-if="o.company_id.company_report_header"
+                                             t-att-src="image_data_uri(o.company_id.company_report_header)"
+                                             style="width:100%" alt="Letter Head"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <span style="text-align:center!important;color:#5e0b05;font-size:35px !important;">
+                                <strong>
+                                    <center>سند صرف شيك</center>
+                                </strong>
+                            </span>
+                            <t t-set="partner" t-value="o.partner_id"/>
+                            <table width="100%" border="0">
+                                <tr style="line-height:30px;">
+                                    <td class="titleb border-0 text-left pl-3">
+                                        <!--            Date                -->
+                                        التاريخ:
+                                    </td>
+                                    <td class="text-right pr-2" style=";width:19rem !important;">
+                                        <span t-esc="date"/>
+                                    </td>
+                                    <td class="titleb border-0 text-left pl-3 pr-5">
+                                        <!--        Payment No.               -->
+                                        الرقم:
+                                    </td>
+                                    <td class="text-right pr-2"
+                                        style="width:19rem !important;">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table class="main_table" style="margin-left: auto;margin-right: auto;
+                              width:200px !important;height:100px !important;">
+                                <tr class="text-center" style="background-color: #dfd7cf!important;">
+                                    <td
+                                            style="width:150px !important;padding-top:15px !important;color:#5e0b05;text-align:center!important;">
+                                        <!--                                                decimals(dirhams)        -->
+                                        درهم
+                                    </td>
+                                    <td
+                                            style="color:#5e0b05;text-align:center!important;padding-top:15px !important;width:150px !important;">
+                                        <!--                                                Amount no decimals(rial) -->
+                                        ريال
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td class="text-center"
+                                        style="width:150px !important; padding-top:15px !important;">
+                                        <t t-esc="amt_fraction"/>
+                                    </td>
+                                    <td class="text-center" style="width:100px !important;padding-top:15px !important;">
+                                        <t t-esc="'{0:,.0f}'.format(amt)"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table width="100%" style="text-align:right!important;">
+                                <tr>
+                                    <td colspan="2">
+                                        <!--                                                Payed to         -->
+                                        اسم المستفيد:
+                                        <span class="pr-2" t-esc="partner and partner.name or ''"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <!--                                                Total Amount            -->
+                                        مبلغ وقدره:
+                                        <span class="pr-2"
+                                              t-esc="o.currency_id.with_context(lang='ar_001').amount_to_text(o.amount)"/>
+                                        <span>قطري فقط لا غير</span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!--                                                Budget number( from budget position and account)                        -->
+                                        رقم بند الموازنة:
+                                        <t t-if="budgetary_position">
+                                            <span class="pr-2"
+                                                  t-esc="budgetary_position.budget_position_number"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <!--                                                budget name                                                           -->
+                                        إسم بند الموازنة:
+                                        <t t-if="budgetary_position">
+                                            <span class="pr-2" t-esc="budgetary_position.name"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <!--                                                that about (?)  check this field             -->
+                                        وذلك عن:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="height:50px">
+                                        <p>
+                                            <span t-field="o.ref"/>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="main_table" style="width:100% !important;height:100% !important;">
+                                <tr style="width:100% !important;height:100% !important;">
+                                    <td style="padding:5px !important;">
+                                        <!--                                                check number                                                        -->
+                                        رقم الشيك:
+                                        <span t-esc="check_number or ''" class="pr-2"/>
+                                    </td>
+                                    <td style="padding:5px !important;">
+                                        <!--                                                check date                                                          -->
+                                        التاريخ:
+                                        <span t-esc="check_date or ''" class="pr-2"/>
+                                    </td>
+                                </tr>
+                                <tr style="width:100% !important;height:100% !important;">
+                                    <td style="padding:5px !important;">
+                                        <!--                                                bank name                                                           -->
+                                        إسم البنك:
+                                        <t t-if="bank_id">
+                                            <span t-esc="bank_id.name" class="pr-2"/>
+                                        </t>
+                                    </td>
+                                    <td style="padding:5px !important;">
+                                        <!--                                                account number                                                      -->
+                                        رقم الحساب:
+                                        <span t-esc="acc_number or ''" class="pr-2"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <!--                                      3 boxes                                   -->
+                            <table>
+                                <t t-set="account_name" t-value="o.create_uid"/>
+                                <t t-set="account_manager_group"
+                                   t-value="o.env.ref('jbm_group_access_right_extended.custom_accounting_manager')"/>
+                                <t t-set="account_manager_users"
+                                   t-value="account_manager_group.users"/>
+                                <t t-set="account_manager"
+                                   t-value="account_manager_users[0] if account_manager_users else False"/>
+
+                                <t t-set="account_auditor_group"
+                                   t-value="o.env.ref('jbm_group_access_right_extended.custom_accounting_auditor_manager')"/>
+                                <t t-set="account_auditor_users"
+                                   t-value="account_auditor_group.users"/>
+                                <t t-set="account_auditor"
+                                   t-value="account_auditor_users[0] if account_auditor_users else False"/>
+
+
+                                <tr>
+                                    <td class="titleb"
+                                        style="color:#5e0b05;text-align:center!important;">
+                                        <!--                                                     Auditor                                                  -->
+                                        المحاسب
+                                    </td>
+                                    <td class="border-0"/>
+                                    <td class="titleb"
+                                        style="color:#5e0b05;text-align:center!important;">
+                                        <!--                                                Accounting Manager                                                   -->
+                                        مراجع
+                                    </td>
+                                    <td class="border-0"/>
+                                    <td class="titleb "
+                                        style="color:#5e0b05;text-align:center!important;">
+                                        <!--                                                Accountant/created by                                           -->
+                                        رئيس حسابات
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:30%;height:30%;" class="text-center">
+                                        <span t-esc="account_name.name or ''"/>
+                                        <div t-if="account_name and account_name.sudo().sign_signature"
+                                             style="width:100%;text-align:center;">
+                                            <img width="150" height="75"
+                                                 t-attf-src="data:image/*;base64,{{account_name.sudo().sign_signature}}"
+                                                 alt="account_name.name"/>
+                                        </div>
+                                    </td>
+                                    <td class="border-0"/>
+                                    <td style="width:30%;height:30%;" class="text-center">
+                                        <span t-esc="account_auditor and account_auditor.name or ''"/>
+                                        <div t-if="account_auditor and account_auditor.sudo().sign_signature"
+                                             style="width:100%;text-align:center;">
+                                            <img width="150" height="75"
+                                                 t-attf-src="data:image/*;base64,{{account_auditor.sudo().sign_signature}}"
+                                                 alt="account_auditor.name"/>
+                                        </div>
+                                    </td>
+                                    <td class="border-0"/>
+                                    <!--                                            Created by                  -->
+                                    <td style="width:30%;height:30%;" class="text-center">
+                                        <span t-esc="account_manager and account_manager.name or ''"/>
+                                        <div t-if="account_manager and account_manager.sudo().sign_signature"
+                                             style="width:100%;text-align:center;">
+                                            <img width="150" height="75"
+                                                 t-attf-src="data:image/*;base64,{{account_manager.sudo().sign_signature}}"
+                                                 alt="account_manager.name"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="main_table" style="width:100% !important;height:100% !important;">
+                                <tr style="width:100% !important;height:100% !important; padding:5px !important;">
+                                    <td class="text-center" colspan="2"
+                                        style="background-color: #dfd7cf!important;color:#5e0b05;padding:5px !important;">
+                                        <!--                                        Recipient/ Name /  Created by                                                             -->
+                                        المستلم
+                                    </td>
+                                </tr>
+                                <tr style="width:100% !important;height:100% !important;">
+                                    <td style="padding:5px !important;">
+                                        <!--                                                name/ created by -->
+                                        الإسم:
+                                        <!--                                            <span t-esc="created_by" class="pr-2"/>-->
+                                    </td>
+                                    <td style="padding:5px !important;">
+                                        <!--                                                QID number of               -->
+                                        رقم البطاقة الشخصية:
+                                        <!--                                                <span t-esc="qid_number" class="pr-2"/>-->
+                                    </td>
+                                </tr>
+                                <tr style="width:100% !important;height:100% !important;">
+                                    <td style="padding:5px !important;">
+                                        <!--                                                phone number of Shared services manager-->
+                                        رقم الهاتف:
+                                    </td>
+                                    <!--                                            <span t-esc="shared_service_manager_phone" class="pr-2"/>-->
+                                    <td>
+                                        <!--                                                Date                    -->
+                                        التاريخ:
+                                        <!--                                                <span t-esc="date" class="pr-2"/>-->
+                                    </td>
+                                </tr>
+                                <tr style="width:100% !important;height:100% !important;">
+                                    <td colspan="2" style="height:1.75rem; padding:5px !important;">
+                                        <!--                                                Signature of shared services manager-->
+                                        التوقيع:
+                                        <!--                                                <span t-esc="shared_service_manager and shared_service_manager.signature or ''" class="pr-2"/>-->
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="pt-3 text-center"
+                                 style="font-size:30px !important;">
+                                <!--                                        Shared services Manager signature -->
+                                الاعتماد
+                            </div>
+                            <div class="footer">
+                                <img t-if="o.company_id.company_report_footer"
+                                     t-att-src="image_data_uri(o.company_id.company_report_footer)" alt="footer"
+                                     style="height:70px;width:100%;"/>
+                                <!--                                        <img src="/account_payment_custom/static/src/img/footer.jpg"-->
+                                <!--                                             style="height:70px;width:100%;"/>-->
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <span t-esc="total_page" style="font-size:10px!important;"/>
+                                            </td>
+                                            <td>
+                                                <span style="padding-left:7px;">من</span>
+                                            </td>
+                                            <td>
+                                                <span t-esc="page_number"
+                                                      style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

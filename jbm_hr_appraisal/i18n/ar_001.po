@@ -1,0 +1,1549 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_hr_appraisal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230613\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-30 16:02+0000\n"
+"PO-Revision-Date: 2024-01-30 16:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "100-90"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "49-0"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "65-50"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "75-66"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "89-76"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<b>\n"
+"                                                        لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً أو جيد إذا\n"
+"                                                        أتيحت\n"
+"                                                        له\n"
+"                                                        فرصة تدريب خلال العام الذي يوضع عنه تقرير تقييم الاداء، وتخلف\n"
+"                                                        عنه\n"
+"                                                        دون عذر تقبله جھة عمله.\n"
+"                                                    </b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<b>\n"
+"                                                        لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً إذا\n"
+"                                                        أتيحت له فرصة تدريب خلال العام الذي يوضع عنه تقرير\n"
+"                                                        تقييم الاداء، ولم يجتزه بنجاح.\n"
+"                                                    </b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<b>\n"
+"                                        ملاحظة: يعلن الموظف بصورة من تقرير تقييم الأداء بمجرد اعتماده ويجوز للموظف أن\n"
+"                                        يتظلم خلال خمسة عشر يوماً من تاريخ علمه ولا يعتبر التقرير نهائياً إلا بعد انقضاء\n"
+"                                        ميعاد التظلم منه أو البت فيه.\n"
+"\n"
+"                                    </b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "<b>جيد جدا</b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "<b>جيد</b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "<b>ضعيف</b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<b>لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً أو جيد، من\n"
+"                                                        الفئات\n"
+"                                                        المبينة فيما يلي:\n"
+"                                                    </b>\n"
+"                                                    <br/>\n"
+"                                                    الموظف الذي وقع عليه جزاء تأديبي بالخصم من راتبه أو الوقف عن العمل\n"
+"                                                    لمدة\n"
+"                                                    تزيد على عشرة أيام،\n"
+"                                                    أو وقعت عليه جزاءات يجاوز مجموعها الخصم من الراتب\n"
+"                                                    أو الوقف عن العمل خمسة عشر يوماً خلال العام الذي يوضع عنه التقرير،\n"
+"                                                    أو\n"
+"                                                    جزاء أشد."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<b>لا يجوز تقييم أداء الموظف بمستوى ممتاز أو جيد جداً، من\n"
+"                                                        الفئات المبينة فيما يلي:\n"
+"                                                    </b>\n"
+"                                                    <br/>\n"
+"\n"
+"                                                    1- الموظف الذي وقع عليه جزاء تأديبي بالخصم من راتبه أو\n"
+"\n"
+"                                                    الوقف عن العمل لمدة تزيد عن خمسة أيام، أو وقعت عليه\n"
+"\n"
+"                                                    جزاءات تجاوز مجموعها الخصم من الراتب أو الوقف عن\n"
+"\n"
+"                                                    العمل لمدة تزيد عن عشرة أيام، خلال العام الذي يوضع عنه\n"
+"\n"
+"                                                    تقرير تقييم الأداء، أو جزاء أشد.\n"
+"                                                    <br/>\n"
+"                                                    <br/>\n"
+"                                                    2-الموظف من شاغلي الوظائف من الثالثة إلى الأولى الذي\n"
+"                                                    وقع عليه جزاء خلال العام الذي يوضع عنه تقرير تقييم\n"
+"                                                    الأداء."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "<b>مقبول</b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "<b>ممتاز</b>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.res_config_settings_view_employee_form_inherit
+msgid "<span class=\"o_form_label\">Activate Skills Appraisal</span>"
+msgstr "تفعيل تقييم المهارات"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_view_hr_job_form
+msgid "<span class=\"o_stat_text\">Employee(s)</span>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<span>\n"
+"                                                        <b>جيد جدا</b>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<span>\n"
+"                                                        <b>جيد</b>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<span>\n"
+"                                                        <b>ضعيف</b>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<span>\n"
+"                                                        <b>مقبول</b>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"<span>\n"
+"                                                        <b>ممتاز</b>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_form_view
+msgid "<span>Jobs</span>"
+msgstr "الوظائف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_res_config_settings__activate_skills_appraisal
+msgid "Activate Skills"
+msgstr "تفعيل المهارات"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.res_config_settings_view_employee_form_inherit
+msgid "Activate skills appraisal for employees."
+msgstr "تفعيل تقييم المهارات للموظفين"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__active
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__active
+msgid "Active"
+msgstr "الحقل نشط"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__appraisal_ids
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__appraisal_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__appraisal_id
+msgid "Appraisal"
+msgstr "التقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.actions.act_window,name:jbm_hr_appraisal.appraisal_batch_act_window
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_appraisal_batch
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__appraisal_batch_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_batch_id
+#: model:ir.ui.menu,name:jbm_hr_appraisal.hr_appraisal_batch_menu
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_tree_view
+msgid "Appraisal Batch"
+msgstr "دفعة التقييم"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.inherit_view_hr_appraisal_form
+msgid "Appraisal Deadline"
+msgstr "الموعد النهائي للتقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_skill_line_ids
+msgid "Appraisal Skill Line"
+msgstr "مهارات التقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__appraisal_skill_type_ids
+msgid "Appraisal Skill Type"
+msgstr "أنواع مهارات التقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_skill_type_line_ids
+msgid "Appraisal Skill Type Line"
+msgstr "أنواع مهارات التقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_start_date
+msgid "Appraisal Start Date"
+msgstr "تاريخ بدء التقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__number_appraisal
+msgid "Appraisals"
+msgstr "التقييمات"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_approval_request
+msgid "Approval Request"
+msgstr "طلب موافقة "
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__approve_requester_id
+msgid "Approve Requester"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__approved_by_id
+msgid "Approved BY"
+msgstr "تمت الموافقة بواسطة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__approve_grade
+msgid "Approved Grade"
+msgstr "الدرجة المعتمدة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__approved_in
+msgid "Approved In"
+msgstr "تاريخ الموافقة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__approver_user_ids
+msgid "Approvers"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__available_skill_ids
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__available_skill_ids
+msgid "Available Skills"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "الموظف العادي "
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#, python-format
+msgid "Can not delete batch not on draft"
+msgstr "لا يمكن حذف الدفعة غير الموجودة في المسودة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__type_category
+msgid "Category"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__code
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__code
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#, python-format
+msgid "Compose Email"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__computation_type
+msgid "Computation Type"
+msgstr "نوع الحساب"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.inherit_view_hr_appraisal_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_appraisal_batch__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_course__course_ids
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__course_ids
+msgid "Course"
+msgstr "دورة تدريبية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__from_job_position
+msgid "Create from Job Position"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__create_from_batch
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__create_from_batch
+msgid "Create from batch"
+msgstr "إنشاء من دفعة التقييم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__create_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__create_uid
+msgid "Created by"
+msgstr "تم انشائها بواسطة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__create_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__create_date
+msgid "Created on"
+msgstr "تم الإنشاء بتاريخ"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_current_grade
+msgid "Current Grade"
+msgstr "الدرجة الحالية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_employee_grade
+msgid "Employee Grade"
+msgstr "الدرجة الإجمالية من قبل الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__no_of_employee
+msgid "Current Number of Employees"
+msgstr "عدد الموظفين الحالي"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__current_overall_grade
+msgid "Current Overall Grade"
+msgstr "الدرجة الإجمالية الحالية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__appraisal_deadline
+msgid "Deadline"
+msgstr "الموعد النهائي"
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#: code:addons/jbm_hr_appraisal/models/hr_appraisal.py:0
+#, python-format
+msgid "Deadline should be greater than start date"
+msgstr "يجب أن يكون الموعد النهائي أكبر من تاريخ البدء"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.inherit_view_hr_appraisal_form
+msgid "Delete"
+msgstr "حذف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__department_ids
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_contract__department
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_contract__department_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__description
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__description
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__description
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__description
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__description
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_view_hr_job_form
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_form_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_form_view
+msgid "Description"
+msgstr "الوصف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__display_name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__display_name
+msgid "Display Name"
+msgstr "الأسم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_appraisal_batch__state__done
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+msgid "Done"
+msgstr "المنتهية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_appraisal_batch__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__dynamic_approval_id
+msgid "Dynamic Approval"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "معالج تكوين رسالة البريد الإلكتروني"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_employee
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__employee_ids
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_appraisal
+msgid "Employee Appraisal"
+msgstr "تقييم الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_employee_course
+msgid "Employee Course"
+msgstr "دورات الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__employee_grade
+msgid "Employee Grade"
+msgstr "درجة الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__employee_notes
+msgid "Employee Notes"
+msgstr "ملاحظات الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_employee_skills_objectives
+msgid "Employee Skills Objectives"
+msgstr "مهارات الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_employee_skills_objective_types
+msgid "Employee skills objective types"
+msgstr "أنواع مهارات الموظف"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+msgid "Employees"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__expected_employees
+msgid "Expected New Employees"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_job__expected_employees
+msgid ""
+"Expected number of employees for this job position after new recruitment."
+msgstr "عدد الموظفين المتوقع أن يشغلوا هذا المنصب بعد التعيينات الجديدة."
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__computation_code
+msgid "Expression"
+msgstr "تعبير"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__from_job_position
+msgid "From Job Position"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__general_skill
+msgid "General Skill"
+msgstr "المهارات العامة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__grade
+msgid "Grade"
+msgstr "درجة"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_job_skill_type_lines
+msgid "HR Job Skill Type Lines"
+msgstr "أنواع المهارات الوظيفية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_jobs_skills_lines
+msgid "HR Job Skills"
+msgstr "المهارات"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__id
+msgid "ID"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_needaction
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_has_error
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__job_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__job_id
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__job_category
+msgid "Job Category"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__job_code
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_employee__job_code
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__job_code
+msgid "Job Code"
+msgstr "كود الوظيفة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__description
+msgid "Job Description"
+msgstr "المسمى الوظيفي"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_job
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__job_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_contract__job_id
+msgid "Job Position"
+msgstr "المسمى الوظيفي"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__child_ids
+msgid "Jobs subordinates"
+msgstr "وظائف المرؤوسين"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines____last_update
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__write_uid
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__write_date
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "Letter Footer"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "Letter Head"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_employee__parent_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_employee_base__parent_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_employee_public__parent_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_appraisal__state__manager_approve
+msgid "Manager Approve"
+msgstr "موافقة المدير"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__manager_notes
+msgid "Manager Notes"
+msgstr "ملاحظات المدير"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__employee_skills_objectives__computation_type__manual
+msgid "Manual"
+msgstr "يدوي"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__n_related_jobs
+msgid "N.Jobs"
+msgstr "الوظائف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__name
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__name
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+msgid "Name"
+msgstr "الأسم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__next_review
+msgid "Next Review"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/hr_job.py:0
+#, python-format
+msgid "Not allowed to have a number less than or equal zero"
+msgstr "لا يجوز أن يكون هناك رقم أقل من أو يساوي الصفر"
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#, python-format
+msgid "Not found manager for employee %s"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__n_allowed_employees
+msgid "Number of allowed employees"
+msgstr "عدد الموظفين المسموح لهم"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_job__no_of_employee
+msgid "Number of employees currently occupying this job position."
+msgstr "عدد الموظفين الذين يشغلون هذا المنصب حاليًا. "
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__company_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__company_id
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_form_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_search_view
+msgid "Organization"
+msgstr "المنظمة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__default_overall
+msgid "Overall (%)"
+msgstr "إجمالي (٪)"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__overall_grade
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__default_overall_grade
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__appraisal_overall_grade
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__overall_grade
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__overall_grade
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__overall_grade
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__default_overall_grade
+msgid "Overall Grade"
+msgstr "الدرجة الإجمالية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__overall_grade_appraisal
+msgid "Overall Grade Appraisal"
+msgstr "الدرجة الإجمالية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__overall_score
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__overall_score
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__overall_score
+msgid "Overall Score (%)"
+msgstr "المجموع النهائي (٪)"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__parent_id
+msgid "Parent"
+msgstr "الرئيسي"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__partner_manager_ids
+msgid "Partner Manager"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__default_percentage
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__default_percentage
+msgid "Percentage on appraisal"
+msgstr "النسبة المئوية للتقييم"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.inherit_view_hr_appraisal_form
+msgid "Print"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__employee_skills_objectives__computation_type__python_code
+msgid "Python Code"
+msgstr "كود بايثون"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__recommendation
+msgid "Recommendation"
+msgstr "التوصية"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+msgid "Reset to draft"
+msgstr "إعادة تعيين للمسودة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__computation_result
+msgid "Result"
+msgstr "نتيجة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__role_distribution_id
+msgid "Role Distribution"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__employee_skills_objectives__computation_type__sql_code
+msgid "SQL Code"
+msgstr "كود سيكول"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__score
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__score
+msgid "Score (%)"
+msgstr "الدرجة (٪)"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__default_show
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__default_show
+msgid "Show in employee appraisal"
+msgstr "تظهر في تقييم الموظف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__show_on_all
+msgid "Show on all appraisals"
+msgstr "عرض على جميع التقييمات"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__skill_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__skill_id
+msgid "Skill"
+msgstr "مهارة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__skill_job_ids
+msgid "Skill Job"
+msgstr "وظيفة المهارة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__skill_line_ids
+msgid "Skill Line"
+msgstr "المهارة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objective_types__skill_objective_ids
+msgid "Skill Objective"
+msgstr "المهارات"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_appraisal_batch_skill_type__skill_type_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_employee_skills_objectives__skill_type_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__skill_type_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_type_lines__skill_type_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job_skill_type_lines__skill_type_id
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_jobs_skills_lines__skill_type_id
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_search_view
+msgid "Skill Type"
+msgstr "نوع المهارة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_job__skill_type_line_ids
+msgid "Skill Type Line"
+msgstr "نوع المهارة"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_form_view
+msgid "Skill Types"
+msgstr "أنواع المهارات"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.inherit_view_hr_appraisal_form
+msgid "Skill Types Evaluations"
+msgstr "تقييمات أنواع المهارات"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_view_hr_job_form
+msgid "Skills And Objectives"
+msgstr "المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_view_hr_job_form
+msgid "Skills And Objectives Types"
+msgstr "أنواع المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.ui.menu,name:jbm_hr_appraisal.root_menu_skills_configuration
+msgid "Skills Configuration"
+msgstr "تهيئة الصفات"
+
+#. module: jbm_hr_appraisal
+#: model:ir.actions.act_window,name:jbm_hr_appraisal.employee_skills_objective_types_act_window
+#: model:ir.ui.menu,name:jbm_hr_appraisal.employee_skills_objective_types_menu
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_form_view
+msgid "Skills Objective Types"
+msgstr "أنواع المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_form_view
+msgid "Skills Objectives"
+msgstr "المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objective_types_tree_view
+msgid "Skills Objectives Types"
+msgstr "أنواع المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.actions.act_window,name:jbm_hr_appraisal.employee_skills_objectives_act_window
+#: model:ir.ui.menu,name:jbm_hr_appraisal.employee_skills_and_objective_menu
+msgid "Skills and Objectives"
+msgstr "المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.inherit_view_hr_appraisal_form
+msgid "Skills and Objectives Evaluation"
+msgstr "تقييم المهارات والأهداف"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__appraisal_start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.appraisal_batch_search_view
+msgid "State"
+msgstr "الحالة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__state_from_name
+msgid "State From Name"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal__state
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#, python-format
+msgid "The overall score value can not exceed 100%"
+msgstr "لا يمكن أن تتجاوز قيمة النتيجة الإجمالية 100٪"
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/skills_objectives.py:0
+#, python-format
+msgid "The percentage does not exceed 100%"
+msgstr "النسبة لا تتجاوز 100٪"
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/hr_appraisal.py:0
+#, python-format
+msgid "The total score value of skill type can not exceed 100%"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/hr_appraisal.py:0
+#, python-format
+msgid "The total score value of skill type can not less than 100%"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:jbm_hr_appraisal.appraisal_batch_act_window
+msgid "There is no examples click here to add new Appraisal Batch."
+msgstr "لا توجد أمثلة انقر هنا لإضافة دفعة تقييم جديدة."
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:jbm_hr_appraisal.employee_skills_objectives_act_window
+msgid "There is no examples click here to add new skills and objectives."
+msgstr "لا توجد أمثلة انقر هنا لإضافة مهارات وأهداف جديدة."
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:jbm_hr_appraisal.employee_skills_objective_types_act_window
+msgid "There is no examples click here to add new skills objective types."
+msgstr "لا توجد أمثلة انقر هنا لإضافة أنواع أهداف مهارات جديدة."
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#, python-format
+msgid "There's no skill types evaluations for employee %s"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: code:addons/jbm_hr_appraisal/models/appraisal_batch.py:0
+#, python-format
+msgid "There's no skills and objectives evaluation for employee %s"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_skill_lines__total_score
+msgid "Total Score (%)"
+msgstr "مجموع النقاط (٪)"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_appraisal_batch__state__under_approval
+msgid "Under Approval"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__validated
+msgid "Validated"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,field_description:jbm_hr_appraisal.field_hr_appraisal_batch__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields,help:jbm_hr_appraisal.field_hr_appraisal_batch__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_skill_lines_approve_grade_not_zero
+msgid "You cannot set a negative Approved Grade."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_skill_lines_employee_grade_not_zero
+msgid "You cannot set a negative Employee Grade."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_batch_overall_grade_appraisal_not_zero
+msgid "You cannot set a negative Overall Grade Appraisal."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_appraisal_batch_skill_type_overall_grade_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_appraisal_overall_grade_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_skill_lines_overall_grade_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_skill_type_lines_overall_grade_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_jobs_skills_lines_default_overall_grade_not_zero
+msgid "You cannot set a negative Overall Grade."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_appraisal_batch_skill_type_overall_score_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_skill_type_lines_overall_score_not_zero
+msgid "You cannot set a negative Overall Score."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_appraisal_skill_lines_total_score_not_zero
+msgid "You cannot set a negative Total Score."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_employee_skills_objectives_default_overall_grade_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_job_skill_type_lines_overall_grade_not_zero
+msgid "You cannot set a negative for Overall Grade."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_job_skill_type_lines_overall_score_not_zero
+msgid "You cannot set a negative for Overall Score."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_employee_skills_objective_types_default_overall_not_zero
+msgid "You cannot set a negative for Overall."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_employee_skills_objectives_default_percentage_not_zero
+#: model:ir.model.constraint,message:jbm_hr_appraisal.constraint_hr_jobs_skills_lines_default_percentage_not_zero
+msgid "You cannot set a negative for Percentage on appraisal."
+msgstr "لا يمكنك إعطاء قيمة سالبة"
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_appraisal_batch_skill_type
+msgid "appraisal.batch.skill.type"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_search_view
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.employee_skills_objectives_tree_view
+msgid "employee_skills_objectives"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_appraisal_skill_lines
+msgid "hr.appraisal.skill.lines"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model,name:jbm_hr_appraisal.model_hr_appraisal_skill_type_lines
+msgid "hr.appraisal.skill.type.lines"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.actions.report,print_report_name:jbm_hr_appraisal.jbm_report_hr_appraisal_supervisory_non_supervisory
+msgid "object.employee_id.name"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_job__job_category__supervisory
+msgid "إشرافية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "اسم الموظف"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__employee_skills_objective_types__type_category__personal_attributes
+msgid "الأداء الوظيفي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "البيان"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "التاريخ"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "التخصص"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "التقدير"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "التقييم"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "التوصية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "التوقيع"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الجنسية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الدرجة"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الدرجة العظمي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الدرجة المالية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الدرجة المستحقة"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"الدورات التدريبية أو عناصر التميز (خطاب شكر/ مكافأة / أعمال بارزة..إلخ) التي حصل\n"
+"                                    عليها الموظف خلال السنة"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الدورة التدريبية او عنصر التميز"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الرقم الشخصي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الرقم الوظيفي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__employee_skills_objective_types__type_category__job_performance
+msgid "السمات الشخصية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "العنصر الرئيسي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "العنصر الفرعي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "المؤهل العلمي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "المجموع الكلي للدرجات"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "المسؤول المباشر"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "المسمى الوظيفي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "الوحدة / القسم"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "تاريخ التعيين"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "تاريخ التقييم"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "تاريخ الجزاء"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "تاريخ الحصول على الدرجة"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "تقييم الأداء لأخر ثلاث سنوات"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "تقييم الموظف لنفسه"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "توقيع الموظف"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "راسب"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "سبب الجزاء"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "شرح العنصر"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.model.fields.selection,name:jbm_hr_appraisal.selection__hr_job__job_category__non_supervisory
+msgid "غير إشرافية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "معتمد التقييم"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "ملاحظات الموارد البشرية"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "ناجح"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model:ir.actions.report,name:jbm_hr_appraisal.jbm_report_hr_appraisal_supervisory_non_supervisory
+msgid "نموذج تقييم الأداء الوظيفي"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "نموذج تقييم الأداء الوظيفي (الوظائف الإشرافية)"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "نموذج تقييم الأداء الوظيفي (الوظائف الغير الإشرافية)"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "نوع الجزاء"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid ""
+"ﺍلجزﺍءﺍﺕ ﺍﻟﺘﺄﺩﻳﺒﻴﺔ ﺍﻟﺘﻲ ﻭﻗﻌﺖ ﻋﻠﻰ\n"
+"                                    الموﻇﻒ ﺧﻼﻝ ﺳﻨﺔ ﺍﻟﺘﻘﻴﻴﻢ"
+msgstr ""
+
+#. module: jbm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:jbm_hr_appraisal.jbm_hr_appraisal_template
+msgid "ﺍﻹﺩﺍﺭﺓ"
+msgstr ""

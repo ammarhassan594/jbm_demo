@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_justification_type","justification_type","model_justification_type",,1,1,1,1
+"access_justification_attendance_wizard","justification.attendance.wizard","model_justification_attendance_wizard",,1,1,1,1
+"access_approve_late_early_attendance_wizard","access.approve.late.early.attendance.wizard","model_approve_late_early_attendance_wizard",,1,1,1,1
+"access_employee_shortage_hour","employee.shortage.hour","model_employee_shortage_hour",,1,1,1,1

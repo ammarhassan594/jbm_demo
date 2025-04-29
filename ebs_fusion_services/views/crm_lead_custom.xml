@@ -1,0 +1,161 @@
+<odoo>
+    <record id="ebs_fusion_crm_lead_form" model="ir.ui.view">
+        <field name="name">ebs.fusion.crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+
+                <button class="oe_stat_button" type="object"
+                        name="open_contract"
+                        context="{'search_default_lead_id':active_id}"
+                        icon="fa-tasks" attrs="{'invisible': [('stage_code', '&lt;', 7)]}">
+                    <field string="Contract" name="contract_count" widget="statinfo"/>
+                </button>
+            </div>
+
+            <field name="user_id" position="after">
+                <field name="fme" force_save="1" attrs="{'readonly': [('stage_code', '==', 8)]}" invisible="1"/>
+                <field name="fss" force_save="1" attrs="{'readonly': [('stage_code', '==', 8)]}" invisible="1"/>
+                <field name="fos" force_save="1" attrs="{'readonly': [('stage_code', '==', 8)]}" invisible="1"/>
+                <field name="company_type" widget="radio" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+            </field>
+
+
+            <xpath expr="/form/sheet/notebook/page[@name='lead']" position="after">
+                <page string="Contracts" name="CRM Contract" invisible="1">
+                    <field name="crm_proposal_ids" attrs="{'readonly': [('stage_code', '==', 8)]}">
+                        <form>
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                                <group>
+                                    <field name="real_revenue"/>
+                                </group>
+                            </group>
+                        </form>
+                        <tree string="Contracts" editable="bottom">
+                            <field name="name"/>
+                            <field name="real_revenue"/>
+                            <field name="state"/>
+
+                        </tree>
+                    </field>
+                </page>
+                <page string="Services" attrs="{'invisible':[('stage_code','=',1)]}">
+                    <field name="opportunity_type_service_mapping_ids" attrs="{'readonly': [('stage_code', '==', 8)]}">
+                        <tree editable="bottom">
+                            <field name="lead_id" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+
+                            <field name="service_id" options="{'no_create_edit':1}" domain="[('state', '=', 'ready')]"
+                                   required="1"/>
+                            <field name="service_option_id" options="{'no_create_edit':1}"/>
+                            <field name="qty"/>
+                            <field name="govt_fees"/>
+                            <field name="fusion_fees"/>
+                            <field name="state" invisible="1"/>
+                            <field name="stage_code_service" invisible="1"/>
+
+                            <button name="approve_opportunity_type_service_mapping_line" string="Approve" type="object"
+                                    attrs="{'invisible': ['|',('state', '=', 'approved'),('stage_code_service', '==', 8)]}"/>
+                            <button name="reject_opportunity_type_service_mapping_line" string="Reject" type="object"
+                                    attrs="{'invisible': ['|',('state', '=', 'rejected'),('stage_code_service', '==', 8)]}"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="FOS Fees Structure"
+                      attrs="{'invisible': ['|', ('company_type', '!=', 'fos'),('stage_code', '=',1)]}">
+                    <field name="fos_fee_structure_ids" attrs="{'readonly': [('stage_code', '==', 8)]}">
+                        <tree editable="bottom">
+                            <field name="number_employees"/>
+                            <field name="job_position"/>
+                            <field name="visa_type"/>
+                            <field name="gender"/>
+                            <field name="nationality_id"/>
+                            <field name="labor_quota_id" required="1" options="{'no_create':True,'no_create_edit': 1}"/>
+                            <field name="fee_person_month"/>
+                            <field name="status" readonly="1"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Monthly Salary Breakdown"
+                      attrs="{'invisible': ['|', ('company_type', '!=', 'fos'),('stage_code', '=',1)]}">
+                    <field name="salary_structure_ids" attrs="{'readonly': [('stage_code', '==', 8)]}">
+                        <tree editable="bottom">
+                            <field name="annual_salary" readonly="1"/>
+                            <field name="monthly_salary" readonly="1"/>
+                            <field name="monthly_gross"/>
+                            <field name="housing_allowance"/>
+                            <field name="transportation_allowance"/>
+                            <field name="other_allowance"/>
+                            <field name="eos_gratuity" force_save="1"/>
+                            <field name="eos_monthly_fee" force_save="1"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Work Permit Issuance" invisible="1"
+                      attrs="{'invisible': ['|', ('fos', '=', True),('stage_code', '=',1)]}">
+                    <field name="permit_issuance_ids" attrs="{'readonly': [('stage_code', '==', 8)]}">
+                        <tree editable="bottom">
+                            <field name="issuance_fees"/>
+                            <field name="amount"/>
+                        </tree>
+                    </field>
+                </page>
+
+                <page string="Fees" attrs="{'invisible': [('stage_code', '&lt;', 2)]}">
+                    <group>
+                        <field name="annual_turnover"
+                               attrs="{'readonly': [('stage_code', '==', 8)], 'invisible':[('company_type','!=','fme')]}"/>
+                        <field name="payment_terms_id" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                    </group>
+
+                    <field name="contract_proposal_fee_ids" attrs="{'readonly': [('stage_code', '==', 8)]}">
+                        <tree editable="bottom">
+                            <field name="fusion_fees_id"/>
+                            <field name="label"/>
+                            <field name="amount"/>
+                            <field name="type" invisible="1" force_save="1"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <group>
+                                    <field name="fusion_fees_id"/>
+                                    <field name="label"/>
+                                </group>
+                                <group>
+                                    <field name="amount"/>
+                                    <field name="type" invisible="1" force_save="1"/>
+                                </group>
+                            </group>
+                        </form>
+                    </field>
+
+                    <group invisible="1">
+                        <group string="FOS" attrs="{'invisible': [('fos', '=', False)]}">
+                            <field name="deposit_amount" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                            <field name="insurance_amount" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                            <field name="penalty_amount" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                        </group>
+                        <group string="FME" attrs="{'invisible': [('fme', '=', False)]}">
+                            <field name="annual_payment" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                            <field name="annual_turnover" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                        </group>
+                        <group string="FSS" attrs="{'invisible': [('fss', '=', False)]}">
+                            <field name="total_service_fee" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                            <field name="monthly_service_fee" attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                            <field name="advance_payment_amount_percentage"
+                                   attrs="{'readonly': [('stage_code', '==', 8)]}"/>
+                        </group>
+                    </group>
+
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

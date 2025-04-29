@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="account_move_line_form_view_inherit" model="ir.ui.view">
+            <field name="name">account.move.line.form.view.inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_id']" position="after">
+                    <field name="legacy_baned_value"  readonly="1"/>
+                    <field name="legacy_job_value"  readonly="1"/>
+                    <field name="legacy_department_value" readonly="1"/>
+                    <field name="legacy_hr_value"  readonly="1"/>
+                    <field name="legacy_amount_USD" readonly="1"/>
+                    <field name="legacy_currency"  readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="account_move_line_filter_view_inherit" model="ir.ui.view">
+            <field name="name">account.move.line.filter.view.inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='receivable']" position="after">
+                    <separator/>
+                    <filter string="Legacy Baned" name="legacy_baned_value" />
+                    <filter string="Legacy Job" name="legacy_job_value" />
+                    <filter string="Legacy Department" name="legacy_department_value" />
+                    <filter string="Legacy HR Value" name="legacy_hr_value" />
+                    <filter string="Legacy Amount USD" name="legacy_amount_USD" />
+                    <filter string="Legacy Currency" name="legacy_currency" />
+                </xpath>
+                <xpath expr="//filter[@name='groupby_date']" position="after">
+                    <filter string="Legacy Baned" name="legacy_baned_value" domain="[]" context="{'group_by': 'legacy_baned_value'}"/>
+                    <filter string="Legacy Job" name="legacy_job_value" domain="[]" context="{'group_by': 'legacy_job_value'}"/>
+                    <filter string="Legacy Department" name="legacy_department_value" domain="[]" context="{'group_by': 'legacy_department_value'}"/>
+                    <filter string="Legacy HR Value" name="legacy_hr_value" domain="[]" context="{'group_by': 'legacy_hr_value'}"/>
+                    <filter string="Legacy Amount USD" name="legacy_amount_USD" domain="[]" context="{'group_by': 'legacy_amount_USD'}"/>
+                    <filter string="Legacy Currency" name="legacy_currency" domain="[]" context="{'group_by': 'legacy_currency'}"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

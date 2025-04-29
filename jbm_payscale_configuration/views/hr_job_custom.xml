@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="hr_job_custom_view" model="ir.ui.view">
+            <field name="name">custom.hr.job.view</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <field name="department_id" position="after">
+                    <field name="level"/>
+                    <field name="payscale_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

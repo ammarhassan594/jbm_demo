@@ -1,0 +1,20 @@
+<odoo>
+    <record id="mail.menu_root_discuss" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base_portal_user.group_user_portal'))]"/>
+    </record>
+    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base_portal_user.group_user_portal'))]"/>
+    </record>
+    <record id="calendar.calendar_menu_config" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base_portal_user.group_user_portal'))]"/>
+    </record>
+    <record id="calendar.calendar_submenu_reminders" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base_portal_user.group_user_portal'))]"/>
+    </record>
+    <record id="appointment.calendar_appointment_type_menu_action" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base_portal_user.group_user_portal'))]"/>
+    </record>
+    <record id="documents.menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

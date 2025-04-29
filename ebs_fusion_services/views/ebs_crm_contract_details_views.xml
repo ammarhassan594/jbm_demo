@@ -1,0 +1,51 @@
+<odoo>
+    <!--    ebs crm contract details form-->
+    <record model="ir.ui.view" id="view_ebs_crm_contract_details_form">
+        <field name="name">ebs.crm.contract.details.Form</field>
+        <field name="model">ebs.crm.contract.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="company_ids" widget="many2many_tags"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group>
+                            <field name="fos" attrs="{'invisible':['!',('parent_id','=',False)]}"/>
+                            <field name="fme" attrs="{'invisible':['!',('parent_id','=',False)]}"/>
+                            <field name="fss" attrs="{'invisible':['!',('parent_id','=',False)]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm contract details tree-->
+    <record id="view_ebs_crm_contract_details_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.contract.details.tree</field>
+        <field name="model">ebs.crm.contract.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="company_ids" widget="many2many_tags"/>
+                <field name="parent_id"/>
+                <field name="fos"/>
+                <field name="fme"/>
+                <field name="fss"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm contract details action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_contract_details">
+        <field name="name">Opportunity Types</field>
+        <field name="res_model">ebs.crm.contract.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+</odoo>

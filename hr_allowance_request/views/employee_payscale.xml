@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="allowance_employee_payscale_form_inherit" model="ir.ui.view">
+            <field name="name">allowance.employee.payscale.form.inherit</field>
+            <field name="model">employee.payscale</field>
+            <field name="inherit_id" ref="jbm_payscale_configuration.employee_payscale_group_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]//group[1]//group[5]" position="after">
+                    <group string="Qatar Leave Allowance">
+                        <div>
+                            <field name="leave_allowance_factor" nolabel="1" class="oe_inline"/>
+                            <span class="oe_inline">
+                                * Basic Salary
+                            </span>
+                        </div>
+                    </group>
+                </xpath>
+                <xpath expr="//page[1]//group[2]//group[5]" position="after">
+                    <group string="Ticket Allowance">
+                        <field name="number_of_dependent"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

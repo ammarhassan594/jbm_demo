@@ -1,0 +1,98 @@
+<odoo>
+    <data noupdate="0">
+        <record id="ebs_crm_contract_details_liability" model="ebs.crm.contract.details">
+            <field name="name">Limited Liability Company</field>
+        </record>
+        <record id="ebs_crm_contract_details_pro" model="ebs.crm.contract.details">
+            <field name="name">PRO Services Agreement</field>
+        </record>
+        <record id="ebs_crm_contract_details_closure" model="ebs.crm.contract.details">
+            <field name="name">Company Closure</field>
+        </record>
+        <record id="ebs_crm_contract_details_foreign" model="ebs.crm.contract.details">
+            <field name="name">Foreign Branch Office</field>
+        </record>
+        <record id="ebs_crm_contract_details_trade" model="ebs.crm.contract.details">
+            <field name="name">Trade Representative Office</field>
+        </record>
+        <record id="ebs_crm_contract_details_outsourcing" model="ebs.crm.contract.details">
+            <field name="name">Fusion Outsourcing Sponsored Employee</field>
+            <field name="fos">True</field>
+        </record>
+        <record id="ebs_crm_contract_details_other" model="ebs.crm.contract.details">
+            <field name="name">Other</field>
+        </record>
+        <record id="ebs_crm_contract_details_full_formation" model="ebs.crm.contract.details">
+            <field name="name">Full Formation</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_liability"/>
+        </record>
+        <record id="ebs_crm_contract_details_partial_formation" model="ebs.crm.contract.details">
+            <field name="name">Partial Formation - Third Party</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_liability"/>
+        </record>
+        <record id="ebs_crm_contract_details_share_transfer" model="ebs.crm.contract.details">
+            <field name="name">Share Transfer</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_liability"/>
+        </record>
+        <record id="ebs_crm_contract_details_share_transfer_third" model="ebs.crm.contract.details">
+            <field name="name">Share Transfer - Third Party</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_liability"/>
+        </record>
+        <record id="ebs_crm_contract_details_contracted_monthly" model="ebs.crm.contract.details">
+            <field name="name">Contracted - Monthly Pro</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_pro"/>
+        </record>
+        <record id="ebs_crm_contract_details_contracted_process" model="ebs.crm.contract.details">
+            <field name="name">Contracted - Per Process</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_pro"/>
+        </record>
+        <record id="ebs_crm_contract_details_noncontracted_process" model="ebs.crm.contract.details">
+            <field name="name">Non-Contracted - Per Process</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_pro"/>
+        </record>
+        <record id="ebs_crm_contract_details_corporate" model="ebs.crm.contract.details">
+            <field name="name">One-time Client - Corporate</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_pro"/>
+        </record>
+        <record id="ebs_crm_contract_details_individual" model="ebs.crm.contract.details">
+            <field name="name">One-time Client - Individual</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_pro"/>
+        </record>
+        <record id="ebs_crm_contract_details_liquidation" model="ebs.crm.contract.details">
+            <field name="name">Liquidation &amp; Dissolution</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_closure"/>
+        </record>
+        <record id="ebs_crm_contract_details_court" model="ebs.crm.contract.details">
+            <field name="name">Court Closure</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_closure"/>
+        </record>
+        <record id="ebs_crm_contract_details_fbo_formation" model="ebs.crm.contract.details">
+            <field name="name">FBO Formation</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_foreign"/>
+        </record>
+        <record id="ebs_crm_contract_details_fbo_contract" model="ebs.crm.contract.details">
+            <field name="name">FBO Contract Changes</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_foreign"/>
+        </record>
+        <record id="ebs_crm_contract_details_fbo_closure" model="ebs.crm.contract.details">
+            <field name="name">FBO Closure</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_foreign"/>
+        </record>
+        <record id="ebs_crm_contract_details_client_fos" model="ebs.crm.contract.details">
+            <field name="name">Client - FOS Sponsored</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_outsourcing"/>
+        </record>
+        <record id="ebs_crm_contract_details_client_fusion" model="ebs.crm.contract.details">
+            <field name="name">Client - Main Company Sponsored</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_outsourcing"/>
+        </record>
+        <record id="ebs_crm_contract_details_client_nonsponsored" model="ebs.crm.contract.details">
+            <field name="name">Client - Non-Sponsored</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_outsourcing"/>
+        </record>
+        <record id="ebs_crm_contract_details_client_manpower" model="ebs.crm.contract.details">
+            <field name="name">Client - Manpower</field>
+            <field name="parent_id" ref="ebs_crm_contract_details_outsourcing"/>
+        </record>
+    </data>
+</odoo>

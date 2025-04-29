@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="jbm_minor_integration.view_account_payment_form" model="ir.ui.view">
+            <field name="name">view.account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="priority">32</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_cancel']" position="before">
+
+                    <button name="approve_recurring_payment" string="Confirm Recurring Payment"
+                            type="object" class="btn-primary"
+                            attrs="{'invisible': ['|', ('recurring', '=', False), ('state', '!=', 'draft')]}"
+                    />
+
+                </xpath>
+
+                <xpath expr="//header" position="inside">
+                    <field name="recurring_payment_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id'][2]" position="after">
+                    <field name="beneficiary_qid" string="Beneficiary QID / CR Number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+<!--                    <field name="beneficiary_commercial_number" string="Beneficiary Commercial Number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+                </xpath>
+
+                <xpath expr="//field[@name='journal_id']" position="after">
+                    <field name="recurring" attrs="{'invisible': [('recurring_payment_id', '!=', False)]}"/>
+                    <field name="initial_payment" attrs="{'invisible': [('recurring', '=', False)]}"/>
+                    <label for="recurring_every" attrs="{'invisible': [('recurring', '=', False)]}"/>
+                    <div class="o_row" attrs="{'invisible': [('recurring', '=', False)]}">
+                        <field name="recurring_every" class="oe_inline"
+                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <span class="oe_inline">(Months)</span>
+                    </div>
+                    <field name="end_date"
+                           attrs="{'required': [('recurring', '=', True)], 'invisible': [('recurring', '=', False)], 'readonly': [('state', '!=', 'draft')]}"/>
+
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="bank_name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="iban_number"
+                           attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </xpath>
+                <xpath expr="//form//sheet//group//group[@name='group1']" position="after">
+                    <group string="Payee">
+                        <field name="payee" string="Payee" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="payee_qid" string="Payee Qid" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="commercial_registration_number" string="Commercial registration number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="jbm_minor_integration_view_account_payment_tree_inherit" model="ir.ui.view">
+            <field name="name">jbm_minor_integration.view.account.payment.tree.inherit.tree</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="iban_number" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

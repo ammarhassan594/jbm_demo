@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="client_contact_relation_update_cron" model="ir.cron">
+            <field name="name">Update Client Contact Relation</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">
+datas = {
+    'cr_partner_ids': 'is_shareholder',
+    'cr_manager_ids': 'is_manager_cr',
+    'cl_manager_ids': 'is_manager_cl',
+    'financial_link_partner': 'is_aoa_finance_contact',
+    'ec_manager_ids': 'is_manager_ec',
+    'aoa_shareholder_contact_ids': 'is_aoa_partner',
+    'general_manager': 'is_general_manager',
+    'general_secretary': 'is_general_secretary',
+    'admin_manager': 'is_admin_manager',
+    'banking_signatory': 'is_corporate_banking_signatory',
+    'liaison_officer': 'is_liaison_officer',
+}
+client_ids = model.search([
+    ('is_customer', '=', True),
+    ('is_company','=',True),
+    ('is_company', '=', True),
+    ('parent_id', '=', False)
+])
+client_ids.update_client_contact_relation(datas)
+            </field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="False"/>
+        </record>
+    </data>
+</odoo>

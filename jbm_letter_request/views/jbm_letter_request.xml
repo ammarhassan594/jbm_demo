@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="jbm_letter_request_form_view" model="ir.ui.view">
+            <field name="name">jbm.letter.request.form</field>
+            <field name="model">jbm.letter.request</field>
+            <field name="arch" type="xml">
+                <form string="JBM Letter Request">
+                    <header>
+                        <button name="action_print" type="object"
+                                string="Print"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,print"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name" readonly="1" invisible="1"/>
+                            <field name="name_sequence" readonly="1" />
+
+                        </h1>
+
+                        <group>
+                            <group>
+                                <field name="employee_id"
+                                       attrs="{'readonly': [('state', '=', 'print')]}"
+                                       options="{'no_open': True,'no_create':True}"
+                                       required="1"/>
+                                <field name="user_id" invisible="1"/>
+                                <field name="letter_type_id"
+                                       attrs="{'readonly': [('state', '=', 'print')]}"
+                                       widget="selection" required="1"/>
+                                <field name="code" invisible="1"/>
+                                <field name="date" attrs="{'readonly': [('state', '=', 'print')]}"/>
+                            </group>
+                            <group>
+                                <field name="address_id"
+                                       attrs="{'readonly': [('state', '=', 'print')]}"
+                                       options="{'no_open': True,'no_create':True}"
+                                       domain="[('show_in_letter_request', '=', True)]"/>
+                                <field name="signatory_id" required="1"
+                                       attrs="{'readonly': [('state', '=', 'print')]}"
+                                       options="{'no_create':True , 'no_open': True}"
+                                       domain="[('signatory', '=',True)]"
+                                />
+                                <field name="company_id"
+                                       attrs="{'readonly': [('state', '=', 'print')]}"
+                                       groups="base.group_multi_company"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="note" string="Note">
+                                <field name="description"
+                                       attrs="{'readonly': [('state', '=', 'print')]}"
+                                />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"
+                               widget="mail_followers"
+                               groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="jbm_letter_request_tree_view" model="ir.ui.view">
+            <field name="name">jbm.letter.request.tree.view</field>
+            <field name="model">jbm.letter.request</field>
+            <field name="arch" type="xml">
+                <tree string="JBM Letter Request">
+                    <field name="name" invisible="1"/>
+                    <field name="name_sequence"/>
+                    <field name="employee_id"/>
+                    <field name="letter_type_id"/>
+                    <field name="signatory_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="jbm_letter_request_search_view" model="ir.ui.view">
+            <field name="name">jbm.letter.request.search</field>
+            <field name="model">jbm.letter.request</field>
+            <field name="arch" type="xml">
+                <search string="JBM Letter Request">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="letter_type_id"/>
+                    <field name="signatory_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <separator/>
+                    <filter string="My Request" name="my_request_filter"
+                            domain="[('user_id', '=', uid)]"/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter string="Date" name="groupby_date" domain="[]"
+                                context="{'group_by': 'date'}"/>
+                        <filter string="Employee" name="groupby_employee" domain="[]"
+                                context="{'group_by': 'employee_id'}"/>
+                        <filter string="State" name="group_by_state"
+                                domain="[]" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="jbm_letter_request_act_window" model="ir.actions.act_window">
+            <field name="name">Letter Request</field>
+            <field name="res_model">jbm.letter.request</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="jbm_letter_request_search_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new letter
+                </p>
+            </field>
+        </record>
+
+        <!--    portal action    -->
+
+        <record id="letter_request_self_service_user_act_window" model="ir.actions.act_window">
+            <field name="name">Letter Request</field>
+            <field name="res_model">jbm.letter.request</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="jbm_letter_request_search_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new letter
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem id="menu_jbm_letter_request_root"
+                  name="Letter Request"
+                  sequence="40"
+        />
+
+        <menuitem name="Letter Request"
+                  id="jbm_letter_request_menu"
+                  parent="menu_jbm_letter_request_root"
+                  sequence="1"
+                  action="jbm_letter_request_act_window"/>
+
+    </data>
+</odoo>

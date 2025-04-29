@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Allowance -->
+        <!-- Leave Advance Wage -->
+        <record id="hr_salary_rule_worker_leave_advance_wage" model="hr.salary.rule">
+            <field name="name">Leave Advance Wage</field>
+            <field name="code">LADW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADW.amount</field>
+            <field name="sequence" eval="100"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Accommodation	-->
+        <record id="hr_salary_rule_worker_leave_advance_accomd" model="hr.salary.rule">
+            <field name="name">Leave Advance Accommodation</field>
+            <field name="code">LADACM</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADACM</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADACM.amount</field>
+            <field name="sequence" eval="101"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_mob_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Mobile Allowance</field>
+            <field name="code">LADMO</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADMO</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADMO.amount</field>
+            <field name="sequence" eval="102"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_food_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Food Allowance</field>
+            <field name="code">LADFDW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADFDW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADFDW.amount</field>
+            <field name="sequence" eval="103"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_site_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Site Allowance</field>
+            <field name="code">LADSTW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADSTW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADSTW.amount</field>
+            <field name="sequence" eval="104"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_site_allw" model="hr.salary.rule">
+            <field name="name">Leave Advance Transport Allowance</field>
+            <field name="code">LADTRW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADTRW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADTRW.amount</field>
+            <field name="sequence" eval="105"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_other_alw" model="hr.salary.rule">
+            <field name="name">Leave Advance Other Allowance</field>
+            <field name="code">LADOTHW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADOTHW</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADOTHW.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!-- Deduction -->
+        <!-- Leave Advance Wage -->
+        <record id="hr_salary_rule_worker_leave_advance_wage_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Wage Deduction</field>
+            <field name="code">LADWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADWD.amount</field>
+            <field name="sequence" eval="100"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Accommodation	-->
+        <record id="hr_salary_rule_worker_leave_advance_accomd_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Accommodation Deduction</field>
+            <field name="code">LADACMD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADACMD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADACMD.amount</field>
+            <field name="sequence" eval="101"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_mob_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Mobile Deduction</field>
+            <field name="code">LADMOD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADMOD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADMOD.amount</field>
+            <field name="sequence" eval="102"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_food_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Food Deduction</field>
+            <field name="code">LADFDWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADFDWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADFDWD.amount</field>
+            <field name="sequence" eval="103"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_site_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Site Deduction</field>
+            <field name="code">LADSTWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADSTWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADSTWD.amount</field>
+            <field name="sequence" eval="104"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_site_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Transport Deduction</field>
+            <field name="code">LADTRWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADTRWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADTRWD.amount</field>
+            <field name="sequence" eval="105"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+        <!--Leave Advance Mobile Allowance	-->
+        <record id="hr_salary_rule_worker_leave_advance_other_alw_ded" model="hr.salary.rule">
+            <field name="name">Leave Advance Other Deduction</field>
+            <field name="code">LADOTHWD</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.LADOTHWD</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.LADOTHWD.amount</field>
+            <field name="sequence" eval="106"/>
+            <field name="struct_id" ref="hr_attendance_sheet.structure_worker_wassef"/>
+        </record>
+
+    </data>
+</odoo>

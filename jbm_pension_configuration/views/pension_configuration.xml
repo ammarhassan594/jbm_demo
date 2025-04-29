@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="pension_config_form_view" model="ir.ui.view">
+            <field name="name">pension.config.form</field>
+            <field name="model">pension.config</field>
+            <field name="arch" type="xml">
+                <form string="Pension Configuration">
+                    <sheet>
+                        <group>
+                            <field name="country_id"/>
+                        </group>
+                        <group/>
+                        <notebook>
+                            <page string="Employee Pension">
+                                <group>
+                                    <group string="Employee Pension">
+                                        <field name="employee_basic"/>
+                                        <field name="code" invisible="1"/>
+                                        <field name="employee_social"/>
+                                        <field name="employee_housing"/>
+                                        <field name="employee_transport"/>
+                                        <field name="employee_mobile"/>
+                                    </group>
+                                    <group string="Limit">
+                                        <field name="employee_basic_limit"/>
+                                        <field name="employee_social_limit"/>
+                                        <field name="employee_housing_limit"/>
+                                        <field name="employee_transport_limit"/>
+                                        <field name="employee_mobile_limit"/>
+                                    </group>
+
+                                </group>
+                                <group>
+                                    <field name="employee_max_limit"/>
+                                    <field name="applied_on_date"/>
+                                </group>
+                            </page>
+
+                            <page string="Employer Pension">
+                                <group>
+                                    <group string="Employer Pension">
+                                        <field name="employer_basic"/>
+                                        <field name="employer_social"/>
+                                        <field name="employer_housing"/>
+                                        <field name="employer_transport"/>
+                                        <field name="employer_mobile"/>
+                                    </group>
+                                    <group string="Limit">
+                                        <field name="employer_basic_limit"/>
+                                        <field name="employer_social_limit"/>
+                                        <field name="employer_housing_limit"/>
+                                        <field name="employer_transport_limit"/>
+                                        <field name="employer_mobile_limit"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pension_config_tree_view" model="ir.ui.view">
+            <field name="name">pension.config.tree</field>
+            <field name="model">pension.config</field>
+            <field name="arch" type="xml">
+                <tree string="Pension Configuration">
+                    <field name="country_id"/>
+                    <field name="employee_basic"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pension_configuration_action" model="ir.actions.act_window">
+            <field name="name">Pension Configuration</field>
+            <field name="res_model">pension.config</field>
+            <field name="view_mode">tree,form</field>
+            <field name="usage">menu</field>
+        </record>
+
+        <menuitem name="Pension Configuration"
+                  id="pension_configuration_menu"
+                  parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
+                  action="pension_configuration_action"
+                  groups="hr_payroll.group_hr_payroll_user"
+                  sequence="80"/>
+
+    </data>
+</odoo>

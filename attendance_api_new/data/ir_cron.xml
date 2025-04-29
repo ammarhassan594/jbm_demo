@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="fetch_attendance_data_from_api_action" model="ir.cron">
+            <field name="name">Fetch Attendance Data</field>
+            <field name="model_id" ref="attendance_api_new.model_machine_attendance_record"/>
+            <field name="state">code</field>
+            <field name="code">model.get_attendance_data()</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+
+        <record id="create_attendance_from_machine_records" model="ir.cron">
+            <field name="name">Create Attendance From Machine</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="code">model.create_attendance_from_machine()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=1, minute=00, second=00))"/>
+            <field name="numbercall">-1</field>
+            <field name="doall">True</field>
+        </record>
+    </data>
+</odoo>

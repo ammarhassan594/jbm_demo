@@ -1,0 +1,226 @@
+<odoo>
+    <template id="account.report_payment_receipt">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <div id="report_introduction" class="row pb-2 pt-3">
+                            <img t-if="o.company_id.company_report_header" t-att-src="image_data_uri(o.company_id.company_report_header)" alt="header"
+                                 style="padding-left:5px;height:147px;width:100%;"/>
+<!--                            <div class="float-right col-4">-->
+<!--                                <img class="pos-receipt-logo" width="400" height="200"-->
+<!--                                      t-attf-src="data:image/*;base64, #{o.company_id.sudo().logo}" alt="Logo"/>-->
+
+<!--                            </div>-->
+                            <div class="text-center pt-5 col-4">
+                                <h1>إيصال قبض</h1>
+                                <h1>Receipt Voucher</h1>
+                            </div>
+
+                            <div class="float-right col-4">
+                                <span>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <t t-esc="o.company_id.street"/>
+                                    <t t-esc="o.company_id.street2"/>
+                                </span>
+                                <span><t t-esc="o.company_id.state_id.name"/>,
+                                    <t t-esc="o.company_id.country_id.name"/>
+                                </span>
+                                <br/>
+                                <span>
+                                    <i class="fal fa-phone-square-alt"></i>
+                                    <t t-esc="o.company_id.phone"/>
+                                </span>
+                                <br/>
+                                <span>
+                                    <i class="far fa-envelope"></i>
+                                    <t t-esc="o.company_id.email"/>
+                                </span>
+                                <br/>
+                                <span>
+                                    <t t-esc="o.company_id.website"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4 float-right">
+                                Date :
+                                <span style=" border-bottom: 1px dotted black;">
+                                    <span style="padding-right:5px;padding-left:5px">
+                                        <t t-esc="o.date.day"/>
+                                    </span>
+                                </span>
+                                /
+                                <span style=" border-bottom: 1px dotted black;">
+                                    <span style="padding-right:5px;padding-left:5px">
+                                        <t t-esc="o.date.month"/>
+                                    </span>
+                                </span>
+                                /
+                                <span style=" border-bottom: 1px dotted black;">
+                                    <span style="padding-right:5px;padding-left:5px">
+                                        <t t-esc="o.date.year "/>
+                                    </span>
+                                </span>
+                                : التاريخ
+                            </div>
+                            <div class="col-4">
+                                <table class="table">
+                                    <tr style="border: 2px solid black;">
+                                        <th style="border: 2px solid black;">Qr
+                                            <span class="ml-5">الريال</span>
+                                        </th>
+                                        <th style="border: 2px solid black;">Dirham
+                                            <span class="ml-4">درهم</span>
+                                        </th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td style="border: 2px solid black;">
+                                                <t t-esc="str(o.amount).split('.')[0]"/>
+                                            </td>
+                                            <td style="border: 2px solid black;">
+                                                <t t-esc="str(o.amount).split('.')[1]"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-4">
+                                No. :
+                                <span style=" border-bottom: 1px dotted black;">
+                                    <span class="font-weight-bold"
+                                          style="font-family: 'Times New Roman', Times, serif;color:red;padding:0 5px;">
+                                        <t t-esc="o.name"/>
+                                    </span>
+                                </span>
+                                الرقم:
+                            </div>
+                        </div>
+                        <table class="w-100">
+                            <tr>
+                                <td style="width:22%">Received From Mr. / Ms.:</td>
+                                <td colspan="2" style="border-bottom: 1px dotted black;text-align: center;width:50%">
+                                    <t t-esc="o.partner_id.name"/>
+                                </td>
+                                <td style="text-align: left;width:28%">تلقينا من السيد / السادة:</td>
+                            </tr>
+                            <tr>
+                                <td style="width:22%">
+                                    <span style="border-bottom: 1px dotted black;text-align: center;">Date :</span>
+
+                                </td>
+                                <td colspan="2" style="border-bottom: 1px dotted black;text-align: center;width:50%"><t t-esc="o.date.strftime('%d/%m/%Y')"/></td>
+                                <td style="text-align: left;width:28%">
+                                    <span style="margin-left:10px;">:في تاريخ </span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width:22%">
+                                    <span>Cash / Cheque / TT No.:
+                                    </span>
+                                </td>
+                                <td  style="border-bottom: 1px dotted black;text-align: center;width:28%"></td>
+                                <!--                                        <td style="width:20%;text-align: left;" > </td>-->
+
+                                <td style="border-bottom: 1px dotted black;width:20%;text-align: right;">السيولة النقدية</td>
+                                <td style="text-align: left;width:28%">
+                                     : نقدا/شيك
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:22%">
+                                    <span>Bank:</span>
+                                </td>
+                                <td colspan="2" style="border-bottom: 1px dotted black;text-align: center;width:50%">
+                                    <span class="font-weight-bold" style="padding:0px 10px;"></span>
+                                </td>
+                                <td style="text-align: left;width:28%">: على البنك</td>
+                            </tr>
+                            <tr>
+                                <td style="width:22%">
+                                    <span>The Sum Of :</span>
+                                </td>
+                                <td colspan="2" style="border-bottom: 1px dotted black;text-align: center;width:50%">
+                                    <span class="font-weight-bold" style="padding:0px 10px;">
+                                        <t t-esc="o.number_to_word(str(o.amount).split('.')[0])"/>
+                                        <span t-esc="o.company_id.currency_id.currency_unit_label"></span>
+                                        And
+                                        <t t-esc="o.number_to_word(str(o.amount).split('.')[1])"/>
+                                        <span t-esc="o.company_id.currency_id.currency_subunit_label"></span>
+                                    </span>
+                                </td>
+                                <td style="text-align: left;width:28%">:المبلغ المذكور أعلاه وقيمته</td>
+                            </tr>
+                            <tr>
+                                <td style="width:22%">
+                                    <span>For :</span>
+                                </td>
+                                <td colspan="2" style="border-bottom: 1px dotted black;text-align: center;width:50%">
+                                    <span class="font-weight-bold" style="padding:0px 10px;">
+                                        <t t-if="o.is_proforma">
+                                            <span>Proforma Invoice</span>
+                                        </t>
+<!--                                        <t t-elif="o.invoice_ids">-->
+<!--                                           <span>Inv #</span> <t t-esc="', #'.join(o.invoice_ids.mapped('name'))"/>-->
+<!--                                        </t>-->
+<!--                                        <t t-else="">-->
+<!--                                            <span>Advanced Payment</span>-->
+<!--                                        </t>-->
+
+                                    </span>
+                                </td>
+                                <td style="text-align: left;width:28%">:لقد سألت عن</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row mt-5 px-2">
+                        <div class="col-4 ">
+                            <span class="pl-2">Manager / مدير</span>
+                            <br/>
+                            <span>............................................</span>
+                        </div>
+                        <div class="col-4 ">
+                            <span class="pl-2">Accountant / محاسب</span>
+                            <br/>
+                            <span>.................................................</span>
+                        </div>
+                        <div class="col-4 ">
+                            <span class="pl-2">Receiver / المتلقي</span>
+                            <br/>
+                            <span>.............................................</span>
+                        </div>
+                    </div>
+                    <!--                    </div>-->
+
+                    <div class="footer">
+                        <img t-if="o.company_id.company_report_footer" t-att-src="image_data_uri(o.company_id.company_report_footer)" alt="footer"
+                         style="height:80px;width:105%;padding-right:10px;"/>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="report_payment_receipt_paperformat" model="report.paperformat">
+        <field name="name">Payment Receipt</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">210</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">30</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="account.action_report_payment_receipt" model="ir.actions.report">
+        <field name="paperformat_id" ref="ebs_fusion_account.report_payment_receipt_paperformat"/>
+    </record>
+</odoo>

@@ -1,0 +1,518 @@
+<odoo>
+    <template id="portal_my_home_documents" name="Portal My Home : document entries" inherit_id="portal.portal_my_home"
+              priority="20">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Legal Documents</t>
+                <t t-set="url" t-value="'/my/docs'"/>
+                <t t-set="count" t-value="docs_count"/>
+                <t t-set="image" t-value="'doc.png'"/>
+            </t>
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">To be Expired Documents</t>
+                <t t-set="url" t-value="'/my/renewal_docs'"/>
+                <t t-set="count" t-value="renewal_docs_count"/>
+                <t t-set="image" t-value="'tobeexpired.png'"/>
+            </t>
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Expired Documents</t>
+                <t t-set="url" t-value="'/my/expired_docs'"/>
+                <t t-set="count" t-value="expired_docs_count"/>
+                <t t-set="image" t-value="'expired.png'"/>
+            </t>
+        </xpath>
+    </template>
+
+
+    <template id="portal_my_home_menu_documents_breadcrumb" name="Portal layout : sales menu entries"
+              inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'renewal_docs' or renewal_doc"
+                t-attf-class="breadcrumb-item #{'active ' if not renewal_doc else ''}">
+                <a t-if="renewal_doc" t-attf-href="/my/renewal_docs?{{ keep_query() }}">To be Expired Documents</a>
+                <t t-else="">To be Expired Documents</t>
+            </li>
+            <li t-if="renewal_doc" class="breadcrumb-item active">
+                <t t-esc="renewal_doc.name"/>
+            </li>
+            <li t-if="page_name == 'expired_docs' or expired_doc"
+                t-attf-class="breadcrumb-item #{'active ' if not expired_doc else ''}">
+                <a t-if="expired_doc" t-attf-href="/my/expired_docs?{{ keep_query() }}">Expired Documents</a>
+                <t t-else="">Expired Documents</t>
+            </li>
+            <li t-if="expired_doc" class="breadcrumb-item active">
+                <t t-esc="expired_doc.name"/>
+            </li>
+            <li t-if="page_name == 'docs' or doc" t-attf-class="breadcrumb-item #{'active ' if not doc else ''}">
+                <a t-if="doc" t-attf-href="/my/docs?{{ keep_query() }}">Legal Documents</a>
+                <t t-else="">Legal Documents</t>
+            </li>
+            <li t-if="doc" class="breadcrumb-item active">
+                <t t-esc="doc.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="upload_document" name="Upload Document">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Upload new document</t>
+            </t>
+            <div class="bg-white" style="padding:20px;">
+
+                <h4>Upload a new Document</h4>
+                <br/>
+                <form action="/submit_document" method="post" id="doc_form" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="doc_type">Document Type:</label>
+                                <select id="doc_type" class="form-control selectpicker" data-live-search="true"
+                                        name="doc_type" required="1">
+                                    <option value="">Select...</option>
+                                    <t t-foreach="doc_types" t-as="doc_type">
+                                        <option t-attf-value="#{doc_type.id}">
+                                            <t t-esc="doc_type.name"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="doc_type">Document Number:</label>
+                                <input type="text" name="document_number" required="1" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group issue_date">
+                                <label for="issue_date">Issue Date:</label>
+                                <input type="date" name="issue_date" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group expiry_date">
+                                <label for="expiry_date">Expiry Date:</label>
+                                <input type="date" name="expiry_date" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="doc_file">Select a file:</label>
+                                <input type="file" multiple="true" id="doc_file" name="doc_file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <button id="submit_btn" class="btn btn-primary" style="margin-top:10px;">Submit</button>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_renewal_docs" name="To be Expired Documents">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">To be Expired</t>
+            </t>
+            <t t-if="not renewal_docs">
+                <p>There are currently no documents that are going to be expired for your account.</p>
+            </t>
+            <a class="btn btn-primary oe_highlight" href="/upload_document">Upload Document</a>
+            <br/>
+            <br/>
+            <t t-if="renewal_docs" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Document #</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Type</th>
+                        <th class="text-right">Issue Date</th>
+                        <th class="text-right">Expiry Date</th>
+                    </tr>
+                </thead>
+                <t t-foreach="renewal_docs" t-as="renewal_doc">
+                    <tr>
+                        <td>
+                            <a t-attf-href="/my/docs/#{renewal_doc.id}">
+                                <t t-esc="renewal_doc.document_number"/>
+                            </a>
+                        </td>
+                        <td class="text-left">
+                            <span t-field="renewal_doc.name"/>
+                        </td>
+                        <td class="text-left">
+                            <span t-field="renewal_doc.document_type_id.name"/>
+                        </td>
+
+                        <td class="text-right">
+                            <span t-field="renewal_doc.issue_date"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="renewal_doc.expiry_date"/>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_my_expired_docs" name="Expired Documents">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Expired Documents</t>
+            </t>
+            <t t-if="not expired_docs">
+                <p>There are currently no documents that are expired for your account.</p>
+            </t>
+            <br/>
+            <a class="btn btn-primary oe_highlight" href="/upload_document">Upload Document</a>
+            <br/>
+            <br/>
+            <t t-if="expired_docs" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Document #</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Type</th>
+                        <th class="text-right">Issue Date</th>
+                        <th class="text-right">Expiry Date</th>
+                    </tr>
+                </thead>
+                <t t-foreach="expired_docs" t-as="expired_doc">
+                    <tr>
+                        <td>
+                            <a t-attf-href="/my/docs/#{expired_doc.id}">
+                                <t t-esc="expired_doc.document_number"/>
+                            </a>
+                        </td>
+                        <td class="text-left">
+                            <span t-field="expired_doc.name"/>
+                        </td>
+                        <td class="text-left">
+                            <span t-field="expired_doc.document_type_id.name"/>
+                        </td>
+
+                        <td class="text-right">
+                            <span t-field="expired_doc.issue_date"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="expired_doc.expiry_date"/>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_my_docs" name="My Documents">
+        <t t-call="portal.portal_layout">
+            <style>
+
+                .dropdown-item.active {
+                background-color: #b79854 !important;
+                }
+            </style>
+            <div class="document">
+                <div class="d-flex">
+                    <div class="w-100">
+                        <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                        <div class="flex-container">
+                            <div class="document_table_class mt-4 document_folder_structure">
+                                <span class="document_table_title">Folders</span>
+                                <table class="document_table table ">
+                                    <tbody>
+                                        <tr>
+                                            <td class="folder-click">All
+                                                <input type="hidden" name="folder_id" value="all"/>
+                                            </td>
+                                        </tr>
+                                        <t t-foreach="folders" t-as="folder">
+                                            <tr>
+                                                <td class="folder-click">
+                                                    <t t-if="folder.level > 0">
+                                                        <t t-foreach="range(folder.level)" t-as="l">
+                                                            <span class="pl-3"></span>
+                                                        </t>
+                                                    </t>
+                                                    <input type="hidden" name="folder_id" t-att-value="folder.id"/>
+                                                    <t t-esc="folder.name"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="document_table_class mt-4" style="background-color: #ffffff;">
+                                <div t-if="pager" class="o_portal_pager text-center doc_pager">
+                                    <t t-call="portal.pager"/>
+                                </div>
+                                <div>
+
+                                    <span class="document_table_title">
+                                        <b>List of documents</b>
+                                    </span>
+
+                                    <form t-if="searchbar_inputs" class="form-inline o_portal_search_panel ml-lg-4 mr-2"
+                                          style="float:right;width:30%;margin-top: -5px;">
+                                        <div class="input-group input-group-sm w-100">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                        data-toggle="dropdown"
+                                                        style="background-color: #b79854;border-color: #b79854;"/>
+                                                <div class="dropdown-menu" role="menu">
+                                                    <t t-foreach='searchbar_inputs' t-as='input'>
+                                                        <a t-att-href="'#' + searchbar_inputs[input]['input']"
+                                                           t-attf-class="dropdown-item#{search_in == searchbar_inputs[input]['input'] and ' active' or ''}">
+                                                            <span t-raw="searchbar_inputs[input]['label']"/>
+                                                        </a>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Search"
+                                                   t-att-value='search' name="search"/>
+                                            <span class="input-group-append">
+                                                <button class="btn btn-secondary search-submit" type="button"
+                                                        style="background-color: #b79854;border-color: #b79854;">
+                                                    <span class="fa fa-search"/>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <t t-if="not docs">
+                                    <p class="no_docs_message">There are currently no documents uploaded for your
+                                        account in this folder.
+                                    </p>
+                                </t>
+                                <t t-if="docs">
+                                    <table class="document_table doc_table table ">
+                                        <thead>
+                                            <tr class="active">
+                                                <th class="text-muted">No.
+                                                    <i class="fa fa-sort-amount-asc sort_by_number ml-1"
+                                                       style="font-size:11px;color: #b79854;"
+                                                       t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Document Number'"/>
+                                                    <i t-else="" class="fa fa-sort-amount-asc sort_by_number ml-1"
+                                                       style="font-size:11px; "/>
+                                                </th>
+                                                <th class="text-muted">Name
+                                                    <i class="fa fa-sort-amount-asc sort_by_name ml-1"
+                                                       style="font-size:11px;color: #b79854;"
+                                                       t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Reference'"/>
+                                                    <i t-else="" class="fa fa-sort-amount-asc sort_by_name ml-1"
+                                                       style="font-size:11px;"/>
+                                                </th>
+                                                <th class="text-muted">Type</th>
+                                                <th class="text-muted">Contact</th>
+                                                <th class="text-muted">Issue Date
+                                                    <i class="fa fa-sort-amount-asc sort_by_issue_date ml-1"
+                                                       style="font-size:11px;color: #b79854;"
+                                                       t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Issue Date'"/>
+                                                    <i t-else="" class="fa fa-sort-amount-asc sort_by_issue_date ml-1"
+                                                       style="font-size:11px;"/>
+                                                </th>
+                                                <th class="text-muted">Expiry Date
+                                                    <i class="fa fa-sort-amount-asc sort_by_expire_date ml-1"
+                                                       style="font-size:11px;color: #b79854;"
+                                                       t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Expiry Date'"/>
+                                                    <i t-else="" class="fa fa-sort-amount-asc sort_by_expire_date ml-1"
+                                                       style="font-size:11px;"/>
+                                                </th>
+                                                <th class="text-muted">Status
+                                                    <i class="fa fa-sort-amount-asc sort_by_status ml-1"
+                                                       style="font-size:11px;color: #b79854;"
+                                                       t-if="searchbar_sortings[sortby].get('label', 'Newest') == 'Status'"/>
+                                                    <i t-else="" class="fa fa-sort-amount-asc sort_by_status ml-1"
+                                                       style="font-size:11px;"/>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <t t-foreach="docs" t-as="doc">
+                                                <tr>
+                                                    <td>
+                                                        <t t-esc="doc.document_number"/>
+                                                    </td>
+                                                    <td>
+                                                        <a t-attf-href="/my/docs/#{doc.id}">
+                                                            <span t-field="doc.name"/>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="doc.document_type_id.name"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="doc.partner_id.name"/>
+                                                    </td>
+
+                                                    <td>
+                                                        <span t-esc="doc.issue_date and doc.issue_date.strftime('%d/%m/%Y')"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-esc="doc.expiry_date and doc.expiry_date.strftime('%d/%m/%Y')"/>
+                                                    </td>
+                                                    <td>
+
+                                                        <t t-if="doc.status == 'na'">
+                                                            <button class="text-white rounded btn-space"
+                                                                    style="border: none;background-color: #429fbb;">
+                                                                <span t-field="doc.status"/>
+                                                            </button>
+                                                        </t>
+                                                        <t t-if="doc.status == 'active'">
+                                                            <button class="text-white rounded btn-space"
+                                                                    style="border: none;background-color: #a5a737;">
+                                                                <span t-field="doc.status"/>
+                                                            </button>
+                                                        </t>
+                                                        <t t-if="doc.status == 'expired'">
+                                                            <button class="text-white rounded btn-space"
+                                                                    style="border: none;background-color: #cdcdcd;">
+                                                                <span t-field="doc.status"/>
+                                                            </button>
+                                                        </t>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="docs_portal_template" name="Renewal Docs Portal Template" inherit_id="portal.portal_sidebar"
+              primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman">
+                <t t-call="portal.portal_back_in_edit_mode">
+                    <t t-set="backend_url"
+                       t-value="'/web#model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (doc._name, doc.id, action.id)"/>
+                </t>
+            </t>
+            <div class="row mt16 o_portal_sale_sidebar">
+                <div t-attf-class="col-lg-12">
+                    <div t-call="ebs_fusion_documents.docs_portal_content"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="docs_portal_content" name="Docs Portal Content">
+        <div id="document_page">
+            <div id="doc_information" class="summary_card card">
+                <div class="card-header">
+                    <div class="float-left">
+                        <span t-field="doc.name"/>
+                    </div>
+                    <a t-att-href="'/attachment/download?attachment_id=%i'% doc.attachment_id.id"
+                       class="float-right" style="color: #b79854;">
+                        <span>
+                            <i class="fa fa-download" aria-hidden="false"></i>
+                        </span>
+                        Download Document
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <table class="summary_table table table-borderless" style="width: 80% !important;">
+                                <tbody class="">
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Document Name</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-right fields">
+                                                <b>
+                                                    <t t-esc="doc.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Document Number</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-right fields">
+                                                <b>
+                                                    <t t-esc="doc.document_number"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Document Type</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-right fields">
+                                                <b>
+                                                    <t t-esc="doc.document_type_id.name"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <table class="summary_table table table-borderless" style="width: 80% !important;">
+                                <tbody class="">
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Issue Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-right fields">
+                                                <b>
+                                                    <t t-esc="doc.issue_date and doc.issue_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fields">Expiry Date</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-right fields">
+                                                <b>
+                                                    <t t-esc="doc.expiry_date and doc.expiry_date.strftime('%d/%m/%Y')"/>
+                                                </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+</odoo>

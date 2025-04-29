@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="payment_transfer_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="payment[0]" t-as="o">
+
+                    <!--                <t t-foreach="payment" t-as="o">-->
+                    <!--                    <div class="header">-->
+                    <!--                        <img t-if="o.company_id.company_report_header"-->
+                    <!--                             t-att-src="image_data_uri(o.company_id.company_report_header)" alt="header"-->
+                    <!--                             style="padding-left:5px;height:147px;width:100%;"/>-->
+                    <!--                    </div>-->
+                    <div class="header" style="">
+                        <div class="row">
+                            <div class="col-12" style="padding: 0px !important">
+                                <img src="/jbm_portal_self_service/static/src/img/header.jpg"
+                                     style="height:90px;width:100%" alt="Letter Head"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page">
+
+                        <t t-set="partner" t-value="o.partner_id and o.partner_id[0] or False"/>
+                        <!--                        <center>-->
+                        <!--                            <span class="title-span">-->
+                        <!--                                <u>التحويل البنكى</u>-->
+                        <!--                            </span>-->
+                        <!--                        </center>-->
+
+                        <div class="address text-left">
+                            <t t-set="address"
+                               t-value="partner and partner.child_ids and partner.child_ids[0] or False"/>
+                            <t t-if="address">
+                                <span t-esc="address.name"/>
+                                <br/>
+                            </t>
+                            <t t-set="job" t-value="address and address.job_id or False"/>
+                            <t t-if="job">
+                                <span t-esc="job.name"/>
+                                <br/>
+                            </t>
+                            <t t-if="job and job.address_id">
+                                <span t-esc="job.address_id.name"/>
+                                <br/>
+                            </t>
+                            <t t-if="address">
+                                <t t-if="address.street_name">
+                                    <span t-esc="address.street_name.name"/>
+                                    <br/>
+                                </t>
+                                <t t-if="address.street">
+                                    <span t-esc="address.street"/>
+                                    <br/>
+                                </t>
+                                <t t-if="address.street2">
+                                    <span t-esc="address.street2"/>
+                                    <br/>
+                                </t>
+                                <t t-if="address.street_no">
+                                    <span t-esc="address.street_no"/>
+                                    <br/>
+                                </t>
+                                <t t-if="address.zone_id">
+                                    <span t-esc="address.zone_id.name"/>
+                                    <br/>
+                                </t>
+                                <t t-if="address.zip">
+                                    <span t-esc="address.zip"/>
+                                    <br/>
+                                </t>
+                                <t t-if="address.po_box">
+                                    <span>P.O.Box:</span>
+                                    <span t-esc="' '+ address.po_box"/>
+                                    <br/>
+                                </t>
+                                <t t-set="state" t-value="address.state_id"/>
+                                <t t-set="country" t-value="address.country_id"/>
+                                <t t-if="address.city">
+                                    <span t-esc="address.city + ((state or country) and '- ' or '') + (state and state.name or country and country.name  or '')"></span>
+                                </t>
+                                <t t-if="state and address.country_id">
+                                    <span t-esc="country.name"></span>
+                                </t>
+                            </t>
+                        </div>
+                        <p class="text-left" style="font-size:21px !important;">
+                            <t t-if="o.journal_id.bank_account_id and o.journal_id.bank_account_id.manager_id">
+                                <t t-set="bank_manager" t-value="o.journal_id.bank_account_id.manager_id"/>
+                                <t t-if="bank_manager.title">
+                                    <span t-esc="bank_manager.title.name"/>
+                                    .
+                                </t>
+                                <span t-esc="bank_manager.name"/>
+                                <t t-if="bank_manager.job_id or bank_manager.classification">
+                                    <br/>
+                                    <t t-if="bank_manager.job_id">
+                                        <span t-esc="bank_manager.job_id.name"/>
+                                        -
+                                    </t>
+                                    <span t-esc="bank_manager.classification.name" t-if="bank_manager.classification"/>
+                                </t>
+                                <t t-if="bank_manager.industry_id">
+                                    <br/>
+                                    <span t-esc="bank_manager.industry_id.name"/>
+                                </t>
+                                <t t-if="bank_manager.street">
+                                    <br/>
+                                    <span t-esc="bank_manager.street"/>
+                                </t>
+                                <t t-if="bank_manager.street2">
+                                    <br/>
+                                    <span t-esc="bank_manager.street2"/>
+                                </t>
+                                <t t-if="bank_manager.po_box">
+                                    <br/>
+                                    P.O.Box:
+                                    <span t-esc="bank_manager.po_box"/>
+                                </t>
+                                <t t-if="bank_manager.state_id or bank_manager.country_id">
+                                    <br/>
+                                    <t t-if="bank_manager.state_id">
+                                        <span t-esc="bank_manager.state_id.name"/>
+                                        -
+                                    </t>
+                                    <span t-esc="bank_manager.country_id.name" t-if="bank_manager.country_id"/>
+                                </t>
+                                <br/>
+
+                            </t>
+                            Dear Sir,
+                        </p>
+                        <t t-if="more_than_payment">
+                            <div class="content mb-2">
+                                <span class="border-bottom border-dark">Sub :Transfer For Date</span>
+                            </div>
+                            <br/>
+                        </t>
+                        <t t-else="">
+                            <div class="content mb-2">
+                                <span class="border-bottom border-dark">Sub :Transfer From Account.</span>
+                            </div>
+                        </t>
+                        <t t-set="bank_acc" t-value="False"/>
+                        <t t-if="o.company_id and o.company_id.bank_ids">
+                            <t t-set="bank_acc" t-value="o.company_id.bank_ids[0]"></t>
+                        </t>
+                        <t t-if="more_than_payment">
+                            <div class="para">
+                                <span>Kindly Arrange To Transfer The Amount
+                                    <span t-if="o.currency_id.id != o.company_id.currency_id.id">equivalent to</span>
+                                    <strong>
+                                        <span t-esc="'{0:,.2f}'.format(total_amount)"/> &#160;
+                                        <span t-esc="o.currency_id.name"/>
+                                    </strong>
+                                    (
+                                    <span t-esc="o.currency_id.amount_to_text(total_amount)"/>
+                                    ) From Our Account Number. (
+                                    <span t-esc="(o.journal_id.bank_account_id and o.journal_id.bank_account_id.acc_number) or ''"/>
+                                    ) To Accounts As Per The Following List By Qatari Riyals:
+                                </span>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="para">
+                                <span>Kindly Arrange To Transfer The Amount
+                                    <span t-if="o.currency_id.id != o.company_id.currency_id.id">equivalent to</span>
+                                    <strong>
+                                        <span t-esc="'{0:,.2f}'.format(o.amount)"/> &#160;
+                                        <span t-esc="o.currency_id.name"/>
+                                    </strong>
+                                    (
+                                    <span t-esc="o.currency_id.amount_to_text(o.amount)"/>
+                                    ) From Iban Number. (
+                                    <span t-esc="(o.journal_id.bank_account_id and o.journal_id.bank_account_id.iban_no) or ''"/>
+                                    ) To The
+                                    Following
+                                    Bank Account Number By Qatari Riyals:
+                                </span>
+                            </div>
+                        </t>
+                        <t t-if="more_than_payment">
+                            <table class="table">
+                                <thead>
+                                    <tr style="border: 1px solid black;">
+                                        <th style="border: 1px solid black;">Sr#</th>
+                                        <th style="border: 1px solid black;">Beneficiary</th>
+                                        <th style="border: 1px solid black;">IBAN Account</th>
+                                        <th style="border: 1px solid black;">Bank Name</th>
+                                        <th style="border: 1px solid black;">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="payment" t-as="o" t-esc="index">
+                                        <tr style="border: 1px solid black;">
+                                            <td>
+                                                <!--                                                <t t-esc="index + 1"/>-->
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.partner_id.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.iban_number"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.bank_name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.amount"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <table class="table table-bordered mb-2 mt-4">
+                                <tr>
+                                    <td class="title_td">
+                                        <h6>
+                                            <strong>Beneficiary</strong>
+                                        </h6>
+                                    </td>
+                                    <td class="value_td">
+                                        <t t-if="partner">
+                                            <t t-esc="partner.name"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title_td">
+                                        <h6>
+                                            <strong>Bank Name</strong>
+                                        </h6>
+                                    </td>
+                                    <td class="value_td">
+<!--                                        <t t-set="bank" t-value="o.partner_bank_id"/>-->
+<!--                                        <t t-if="bank and bank.bank_id">-->
+<!--                                            <t t-esc="bank.bank_id.name"></t>-->
+<!--                                        </t>-->
+                                        <t t-esc="o.bank_name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title_td">
+                                        <h6>
+                                            <strong>Bank Branch</strong>
+                                        </h6>
+                                    </td>
+                                    <td class="value_td">
+                                        <t t-if="bank">
+                                            <t t-esc="bank.branch"></t>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title_td">
+                                        <h6>
+                                            <strong>Account No</strong>
+                                        </h6>
+                                    </td>
+                                    <td class="value_td">
+                                        <t t-if="o.case_name">
+                                            <t t-set="account_number"
+                                               t-value="o.partner_bank_id and o.partner_bank_id.acc_number"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="bank_id"
+                                               t-value="o.partner_id.bank_ids and o.partner_id.bank_ids[0]"/>
+                                            <t t-set="account_number"
+                                               t-value="bank_id and bank_id.acc_number"/>
+                                        </t>
+
+                                        <span t-esc="account_number"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title_td">
+                                        <h6>
+                                            <strong>Purpose of Transfer</strong>
+                                        </h6>
+                                    </td>
+                                    <td class="value_td">
+                                        <span t-field="o.purpose_of_transfer"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="title_td">
+                                        <h6>
+                                            <strong>Swift Code</strong>
+                                        </h6>
+                                    </td>
+                                    <td class="value_td">
+                                        <span t-field="o.journal_id.bank_account_id.swift_code"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                        <span class="thankyou">Thanking you,</span>
+                        <div class="row mt-5">
+                            <div class="sign col-6">
+                                <span>Authorized Signatory</span>
+                                <br/>
+                                <!--                                <t t-set="shared_service_manager_group"-->
+                                <!--                                   t-value="o.env.ref('jbm_group_access_right_extended.custom_group_shared_service_manager')"/>-->
+                                <!--                                <t t-set="shared_service_manager_users"-->
+                                <!--                                   t-value="shared_service_manager_group.users"/>-->
+                                <!--                                <t t-set="shared_service_manager"-->
+                                <!--                                   t-value="shared_service_manager_users[0] if shared_service_manager_users else False"/>-->
+
+                                <!--                                &lt;!&ndash;                                <div t-if="shared_service_manager and shared_service_manager.sudo().sign_signature"&ndash;&gt;-->
+                                <!--                                &lt;!&ndash;                                     style="width:100%;text-align:left;">&ndash;&gt;-->
+                                <!--                                &lt;!&ndash;                                    <img width="150" height="75"&ndash;&gt;-->
+                                <!--                                &lt;!&ndash;                                         t-attf-src="data:image/*;base64,{{shared_service_manager.sudo().sign_signature}}"/>&ndash;&gt;-->
+                                <!--                                &lt;!&ndash;                                </div>&ndash;&gt;-->
+                            </div>
+                            <t t-if="more_than_payment">
+                                <t t-if="total_amount > 150000">
+                                    <t t-if="total_amount &lt; 5000000">
+                                        <div class="sign col-6">
+                                            <span style="text-align:right;">Authorized Signatory</span>
+                                        </div>
+                                    </t>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <t t-if="o.amount > 15000">
+                                    <t t-if="o.amount &lt; 500000">
+                                        <div class="sign col-6">
+                                            <span>Authorized Signatory</span>
+                                        </div>
+                                    </t>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="row">
+                            <img t-attf-src="/jbm_portal_self_service/static/src/img/footer.jpg"
+                                 alt="footer"
+                                 style="padding-left:5px;height:50px;width:100%;"/>
+                        </div>
+                    </div>
+                    <style>
+                        .page {
+                        <!--                                font-family: 'Source Serif Pro', Times, serif !important;-->
+                        font-family: 'Tinos', serif !important;
+                        }
+                        .title-span{
+                        font-size:26px !important;
+                        font-weight: bolder !important;
+                        }
+                        td
+                        {
+                        border: 1px solid black !important;
+                        }
+                        .title_td{
+                        width:25% !important;
+                        }
+                        .title_td h6{
+                        text-align: center !important;
+                        font-size:19px !important;
+                        color: black;
+                        }
+                        .value_td{
+                        width:75% !important;
+                        color:black;
+                        font-size:19px !important;
+                        }
+                        .address span{
+                        font-size:21px !important;
+                        }
+                        .content{
+                        text-align:center;
+                        }
+                        .content span{
+                        font-size:24px !important;
+                        display:inline;
+                        width:100%;
+                        }
+                        .sign {
+                        font-size:21px !important;
+                        }
+                        .thankyou {
+                        font-size:25px !important;
+                        }
+
+                        .para span{
+                        font-size:21px !important;
+                        line-height: 1.7;
+                        }
+
+                        .address {
+                        line-height: 1.2;
+                        }
+
+                    </style>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>
+

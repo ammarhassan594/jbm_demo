@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import modelsclass HRPayslip(models.Model):    _inherit = 'hr.payslip'    def action_print_portal_payslip(self):        return {            'name': 'Payslip',            'type': 'ir.actions.act_url',            'url': '/print/portal/payslips?list_ids=%(list_ids)s' % {'list_ids': ','.join(str(x) for x in self.ids)},        }

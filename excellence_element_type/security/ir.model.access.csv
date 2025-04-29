@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+excellence_element_access,excellence_element.excellence_element,model_excellence_element_type,base.group_user,1,1,1,1
+excellence_element_security,excellence_element.excellence_element,model_excellence_element,base.group_user,1,1,1,1
+he_employee_security,hr_employee.excellence_element,model_hr_employee,base.group_user,1,1,1,1

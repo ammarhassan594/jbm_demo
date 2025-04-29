@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="hr_salary_rule_yearly_bonus" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">BONUS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Yearly Bonus</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_yearly_bonus(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+    </data>
+</odoo>

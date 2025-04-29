@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <record id="allowance_type_form_view_inherit" model="ir.ui.view">
+            <field name="name">allowance.type.form.view.inherit</field>
+            <field name="model">allowance.type</field>
+            <field name="inherit_id" ref="hr_allowance_request.allowance_type_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                     <notebook>
+                        <page name="conditions" string="Conditions">
+                            <field name="condition_ids">
+                                <tree string="Conditions">
+                                    <field name="model_id"/>
+                                    <field name="condition_type" optional="show"/>
+                                    <field name="filter_domain" optional="hide"/>
+<!--                                    <field name="field_name" optional="hide"/>-->
+<!--                                    <field name="operator" optional="hide"/>-->
+<!--                                    <field name="value_type" optional="hide"/>-->
+<!--                                    <field name="value" optional="hide"/>-->
+<!--                                    <field name="company_id" invisible="1"/>-->
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <div class="oe_title">
+
+                                            <h1>
+                                                <field name="model_id"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="model" invisible="1"/>
+                                                <field name="allowance_type_id" invisible="1"/>
+                                                <field name="condition_type" required="1"/>
+                                            </group>
+                                        </group>
+                                        <label for="field_name" string="Condition"
+                                               attrs="{'invisible' : [('condition_type', '!=', 'field_selection')],'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                        <div class="o_row"
+                                             attrs="{'invisible' : [('condition_type', '!=', 'field_selection')]}">
+                                            <field name="field_name"
+                                                   placeholder="ex. partner_id.total_invoiced"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                            <field name="operator"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                            <field name="value_type"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                            <field name="value"
+                                                   attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                        </div>
+                                        <group>
+                                            <field name="python_code"
+                                                   attrs="{'invisible' : [('condition_type', '!=', 'python_code')],'required' : [('condition_type', '=', 'python_code')]}"
+                                                   widget="ace" options="{'mode': 'python'}"/>
+                                            <field name="filter_domain" widget="domain"
+                                                   options="{'model': 'model', 'in_dialog': True}"
+                                                   attrs="{'invisible' : [('condition_type', '!=', 'domain')],'required' : [('condition_type', '=', 'domain')]}"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

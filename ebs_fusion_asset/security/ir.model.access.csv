@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ebs_asset_transfer_log,ebs_fusion_asset.ebs_asset_transfer_log,model_ebs_asset_transfer_log,,1,1,1,1
+access_ebs_transfer_asset,ebs_fusion_asset.ebs_transfer_asset,model_ebs_transfer_asset,,1,1,1,1
+
+access_ebs_asset_po,ebs_fusion_asset.ebs_asset_po,model_ebs_asset_po,,1,1,1,1
+access_message_wizard,ebs_fusion_asset.message_wizard,model_message_wizard,,1,1,1,1
+access_ebs_asset_po_line,ebs_fusion_asset.ebs_asset_po_line,model_ebs_asset_po_line,,1,1,1,1
+

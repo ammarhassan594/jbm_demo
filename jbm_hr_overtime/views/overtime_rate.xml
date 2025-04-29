@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="overtime_rate_form_view" model="ir.ui.view">
+            <field name="name">overtime.rate.form</field>
+            <field name="model">overtime.rate</field>
+            <field name="arch" type="xml">
+                <form string="Overtime Rate">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type"/>
+                            </group>
+                            <group>
+                                <field name="rate"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="overtime_rate_tree_view" model="ir.ui.view">
+            <field name="name">overtime.rate.tree</field>
+            <field name="model">overtime.rate</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime Rate" create="0" delete="0" editable="bottom">
+                    <field name="type"/>
+                    <field name="rate"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="overtime_rate_act_window" model="ir.actions.act_window">
+            <field name="name">Overtime Rate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">overtime.rate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no rate click here to add new Overtime Rate.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Overtime Rate"
+                  id="overtime_rate_menu"
+                  parent="overtime_main_menu"
+                  sequence="2"
+                  action="overtime_rate_act_window"/>
+
+    </data>
+</odoo>

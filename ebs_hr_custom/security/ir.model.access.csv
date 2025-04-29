@@ -1,0 +1,11 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_emergency_contact_custom_base","ebs_hr_custom.emergency_contact","model_emergency_contact","base.group_user",1,0,0,0
+"access_emergency_contact_custom_hr","ebs_hr_custom.emergency_contact","model_emergency_contact","hr.group_hr_user",1,1,1,1
+"access_contract_leave_type_base","ebs_hr_custom.contract_leave_type","model_contract_leave_type","base.group_user",1,0,0,0
+"access_contract_leave_type_hr","ebs_hr_custom.contract_leave_type","model_contract_leave_type","hr.group_hr_user",1,1,1,1
+"access_payroll_group","manpower.payroll.group.transfer","model_employee_payroll_group","base.group_user",1,1,1,1
+"access_permanent_pay_scale","permanent.employee.pay.scale.permanent.employee.pay.scale","model_permanent_employee_pay_scale","base.group_user",1,1,1,1
+"access_employee_certificate","access.employee.certificate","model_employee_certificate","base.group_user",1,1,1,1
+"access_company_domain","company.domain.company.domain","model_company_domain","base.group_user",1,1,1,1
+"access_profession_profession","access_profession_profession","model_profession_profession","base.group_user",1,1,1,1
+"access_employee_event","Access.employee.event","model_employee_event",,1,1,1,1

@@ -1,0 +1,57 @@
+<odoo>
+    <data noupdate="0">
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'account_budget'), ('name', '=', 'budget_post_comp_rule')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'account_budget'), ('name', '=', 'budget_comp_rule')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'account_budget'), ('name', '=', 'budget_lines_comp_rule')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'account'), ('name', '=', 'account_comp_rule')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+        <record id="account.account_comp_rule" model="ir.rule">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="account_budget.budget_post_comp_rule" model="ir.rule">
+            <field name="domain_force">['|',('company_ids','=',False),('company_ids', 'in', company_ids)]</field>
+        </record>
+        <record id="account_budget.budget_comp_rule" model="ir.rule">
+            <field name="domain_force">['|',('company_ids','=',False),('company_ids', 'in', company_ids)]</field>
+        </record>
+        <record id="account_budget.budget_lines_comp_rule" model="ir.rule">
+            <field name="domain_force">['|',('company_ids','=',False),('company_ids', 'in', company_ids)]</field>
+        </record>
+<!--        <record model="ir.module.category" id="user_invoice_access_category">-->
+<!--            <field name="name">Invoice Access</field>-->
+<!--            <field name="description">Invoice Read Access</field>-->
+<!--            <field name="sequence">11</field>-->
+<!--        </record>-->
+
+        <record id="group_access_invoice_read" model="res.groups">
+            <field name="name">Access Of Invoice Read</field>
+
+            <field name="comment">The user will be able to read only invoice.</field>
+        </record>
+        <record id="group_access_delete" model="res.groups">
+            <field name="name">Access to Delete Records</field>
+            <field name="comment">The user will be able to delete records.</field>
+        </record>
+
+    </data>
+</odoo>

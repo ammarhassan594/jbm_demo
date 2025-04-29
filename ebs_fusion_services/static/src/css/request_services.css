@@ -1,0 +1,124 @@
+.request_services_table_class{
+  height: auto;
+  padding: 17px 0 20px;
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.12);
+  border: solid 0.5px #cdcdcd;
+  background-color: #ffffff;
+}
+.request_services_table_class .request_service_table_title{
+  width: 127px;
+  height: 20px;
+ /* margin: 4px 315px 10px 20px;*/
+  font-family: 'ProximaNova';
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #201747;
+  padding: 21px 0px 10px 20px;
+}
+.request_services_table{
+    margin-top:10px;
+    font-size: 14px;
+    font-family: 'ProximaNova';
+}
+
+.request_services_table thead{
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: left;
+  color: #a1a0a5;
+}
+
+.request_services_table tbody td a{
+    color: #b79854;
+}
+
+.service_pager .pagination .page-item.active .page-link{
+    background-color: #b79854;
+    border-color: #b79854;
+}
+.service_pager .pagination{
+    display:inline-flex;
+}
+
+@media only screen and (max-width: 767px)  {
+    .table{
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+    }
+}
+.card-header{
+    font-family: 'Montserrat-Bold';
+    color: #201747;
+    font-size: 16px;
+    background-color: white !important;
+}
+
+#request_service{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#request_service .card-title{
+    font-family: "Montserrat-Bold";
+    color: #201747;
+    font-size: 16px;
+    margin-bottom: 12px !important;
+    margin-top: 30px !important;
+}
+#request_service .card-body{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#request_service .row {
+    padding-left: 0px !important;
+}
+#request_service .table {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+#sub_service_page{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#sub_service_page .card-title{
+    font-family: "Montserrat-Bold";
+    color: #201747;
+    font-size: 16px;
+    margin-bottom: 12px !important;
+    margin-top: 30px !important;
+}
+#sub_service_page .card-body{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Montserrat-Regular';
+}
+#sub_service_page .row {
+    padding-left: 0px !important;
+}
+#sub_service_page .table {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+#chart_details {
+    font-family: 'Sk-Modernist-Bold';
+}
+#chart_details .panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+}
+#chart_details_header{
+    background: #847147;
+    color: white;
+}

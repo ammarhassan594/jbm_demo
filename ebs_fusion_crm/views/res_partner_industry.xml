@@ -1,0 +1,32 @@
+<odoo>
+<!--    res partner industry tree view inheruted -->
+    <record id="crm_lead_partner_industry_menu_view" model="ir.ui.view">
+        <field name="name">res partner industry inherited</field>
+        <field name="model">res.partner.industry</field>
+        <field name="inherit_id" ref="base.res_partner_industry_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="full_name" position="after">
+                <field name="parent_id" domain="[('parent_id', '=', False)]"/>
+            </field>
+        </field>
+    </record>
+
+     <record id="view_res_partner_industry_filter_inherited" model="ir.ui.view">
+        <field name="name">res.partner.industry.select</field>
+        <field name="model">res.partner.industry</field>
+        <field name="inherit_id" ref="base.res_partner_industry_view_search"/>
+        <field name="arch" type="xml">
+            <field name="full_name" position="after">
+                <group expand="0" string="Group By" colspan="16">
+                        <filter string="Parent" name="parent" context="{'group_by':'parent_id'}"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="crm_lead_partner_industry_menu"
+            name="Industry"
+            parent="crm.crm_menu_config"
+            action="base.res_partner_industry_action"
+            sequence="8"/>
+</odoo>

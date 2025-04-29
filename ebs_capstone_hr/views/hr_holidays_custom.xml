@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <menuitem
+                id="hr_holidays.menu_hr_holidays_dashboard"
+                name="Everyone"
+                parent="hr_holidays.menu_hr_holidays_root"
+                sequence="2"
+                action="hr_holidays.action_hr_holidays_dashboard"
+                groups="hr.group_hr_user,hr.group_hr_manager"
+        />
+
+        <menuitem
+                id="hr_holidays.menu_hr_holidays_approvals"
+                name="Managers"
+                parent="hr_holidays.menu_hr_holidays_root"
+                sequence="3" groups="hr.group_hr_user,hr.group_hr_manager,hr_holidays.group_hr_holidays_user"/>
+
+    </data>
+</odoo>

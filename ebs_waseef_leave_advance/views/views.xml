@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="ebs_waseef_leave_advance.list">
+      <field name="name">ebs_waseef_leave_advance list</field>
+      <field name="model">ebs_waseef_leave_advance.ebs_waseef_leave_advance</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="ebs_waseef_leave_advance.action_window">
+      <field name="name">ebs_waseef_leave_advance window</field>
+      <field name="res_model">ebs_waseef_leave_advance.ebs_waseef_leave_advance</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="ebs_waseef_leave_advance.action_server">
+      <field name="name">ebs_waseef_leave_advance server</field>
+      <field name="model_id" ref="model_ebs_waseef_leave_advance_ebs_waseef_leave_advance"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="ebs_waseef_leave_advance" id="ebs_waseef_leave_advance.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="ebs_waseef_leave_advance.menu_1" parent="ebs_waseef_leave_advance.menu_root"/>
+    <menuitem name="Menu 2" id="ebs_waseef_leave_advance.menu_2" parent="ebs_waseef_leave_advance.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="ebs_waseef_leave_advance.menu_1_list" parent="ebs_waseef_leave_advance.menu_1"
+              action="ebs_waseef_leave_advance.action_window"/>
+    <menuitem name="Server to list" id="ebs_waseef_leave_advance" parent="ebs_waseef_leave_advance.menu_2"
+              action="ebs_waseef_leave_advance.action_server"/>
+-->
+  </data>
+</odoo>

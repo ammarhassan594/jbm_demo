@@ -1,0 +1,89 @@
+<odoo>
+
+
+    <record id="machine_attendance_record_tree_view2" model="ir.ui.view">
+        <field name="name">machine.attendance.record.tree.view</field>
+        <field name="model">machine.attendance.record</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0"
+                  decoration-muted="state == 'skip'"
+                  decoration-danger="state  == 'failure'"
+                  decoration-success="state == 'success'">
+                <field name="employee_id"/>
+                <field name="punch_type"/>
+                <field name="punch_time"/>
+                <field name="state" invisible="1"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="machine_attendance_record_tree_view" model="ir.ui.view">
+        <field name="name">machine.attendance.record.tree.view</field>
+        <field name="model">machine.attendance.record</field>
+        <field name="arch" type="xml">
+            <tree create="0"  edit="0"
+                  decoration-muted="state == 'skip'"
+                  decoration-danger="state  == 'failure'"
+                  decoration-success="state == 'success'">
+                <field name="employee_id"/>
+                <field name="punch_type"/>
+                <field name="punch_time"/>
+                <field name="state"/>
+                <field name="machine_record_id"/>
+                <field name="error_message" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="machine_attendance_view_filter" model="ir.ui.view">
+        <field name="name">machine.attendance.record.filter.view</field>
+        <field name="model">machine.attendance.record</field>
+        <field name="arch" type="xml">
+            <search string="Hr Attendance Search">
+                <field name="employee_id"/>
+                <filter string="My Log" name="myLog" domain="[('employee_id.user_id.id', '=', uid)]"/>
+                <separator/>
+                <filter string="Punch Time" name="punch_time_filter" date="punch_time" default_period="last_month"/>
+                <group expand="1" string="Group By">
+                    <filter string="Employee" name="groupby_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Punch Time" name="groupby_punch_time" context="{'group_by': 'punch_time:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id='action_machine_attendance_record' model='ir.actions.act_window'>
+        <field name="name">Machine Attendance Record</field>
+        <field name="res_model">machine.attendance.record</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="machine_attendance_record_tree_view"/>
+        <field name="search_view_id" ref="attendance_api_new.machine_attendance_view_filter"/>
+    </record>
+
+    <record id='action_machine_attendance_record2' model='ir.actions.act_window'>
+        <field name="name">الحضور اليومي</field>
+        <field name="res_model">machine.attendance.record</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="machine_attendance_record_tree_view2"/>
+        <field name="search_view_id" ref="attendance_api_new.machine_attendance_view_filter"/>
+    </record>
+
+    <menuitem id="menu_attendance_machine" name="Attendance Machine" parent="hr_attendance.menu_hr_attendance_root"
+              sequence="10"/>
+
+    <menuitem id="menu_machine_attendance_record" name="Machine Attendance Record"
+              action="action_machine_attendance_record"
+              groups="hr_attendance.group_hr_attendance_user"
+              parent="menu_attendance_machine"
+              sequence="10"
+    />
+
+    <menuitem id="menu_machine_attendance_record2" name="الحضور اليومي"
+              action="action_machine_attendance_record2"
+              parent="hr_attendance.menu_hr_attendance_root"
+              sequence="2"
+    />
+
+
+</odoo>

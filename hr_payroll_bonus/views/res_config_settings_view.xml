@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="res_config_settings_payroll_bonus_inherit" model="ir.ui.view">
+            <field name="name">res.config.settings.payroll.bonus.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='hr_payroll_localization']" position="after">
+                    <div class="colhrac" style="margin-left:70px;">
+
+                        <div class="row mt16">
+                            <label string="Month Of Bonus" for="bonus_month" class="col-lg-1 o_light_label"/>
+                            <field name="bonus_month" class="o_row d-flex"/>
+                        </div>
+
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

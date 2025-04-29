@@ -1,0 +1,190 @@
+<odoo>
+    <report
+            id="terms_conditions_mobile_report"
+            model="hr.employee"
+            string="Terms Conditions For Using Mobile Phone"
+            report_type="qweb-pdf"
+            name="hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template"
+            file="hr_employee_custom.terms_conditions_for_using_mobile_phone_report_template"
+            print_report_name="'Terms Conditions For Using Mobile Phone'"
+            paperformat="hr_employee_custom.paperformat_work_certificate"
+    />
+
+    <template id="terms_conditions_for_using_mobile_phone_report_template">
+        <t t-call="web.html_container">
+            <t t-set="total_page" t-value="len(docs)"/>
+            <t t-set="page_number" t-value="0"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-set="page_number" t-value="page_number + 1"/>
+                <t t-call="web.basic_layout">
+                    <div class="page" style="direction: rtl;">
+                        <img src="/hr_contract_custom/static/src/img/sc_header.jpg"
+                                 style="padding-left:5px;height:147px;width:100%;"/>
+                            <br/>
+                            <br/>
+                        <div class="text-center" style="font-size:24px;">
+                            <span>
+                                شروط وأحكام استخدام
+                            </span>
+                        </div>
+                        <div class="text-center" style="font-size:24px;">
+                            <span>
+                                هاتف جوال المؤسسة والخط الملحق به
+                            </span>
+                        </div>
+                        <div class="text-right" style="font-size:18px;">
+                            <span style="word-spacing:5px;">
+                                أنا
+                                <t t-esc="o.arabic_name"/>
+                                الموقعة أدناه، أقر وألتزم باستخدام الهاتف المستلم
+                            </span>
+                        </div>
+                        <div class="text-right" style="font-size:18px;">
+                            <span style="word-spacing:5px;">
+                                من المؤسسة، والخط الملحق به في الغرض المخصص له، وفى حدود الفئة التي
+                            </span>
+                        </div>
+                        <div class="text-right" style="font-size:18px;">
+                            <span style="word-spacing:5px;">
+                                توافق عليها إدارة المؤسسة، وأن أتحمل قيمة أي تجاوز مالي في قيمة تلك الفئة،
+                            </span>
+                        </div>
+                        <div class="text-right" style="font-size:18px;">
+                            <span style="word-spacing:5px;">
+                                والالتزام بكافة الشروط والإحكام الخاصة باستخدام الهاتف والخط الملحق به
+                            </span>
+                        </div>
+                        <div class="text-right" style="font-size:18px;">
+                            <span style="word-spacing:5px;">
+                                وفقا لما يلي:
+                            </span>
+                        </div>
+                        <div class="text-right" style="font-size:18px;padding-right:30px;padding-top:10px;">
+                            <ul style="word-spacing:5px;">
+                                <li style="padding-right:15px;">استخدام الهاتف الجوال أو خط الهاتف في أغراض العمل
+                                    بالمؤسسة فقط.
+                                </li>
+                                <li style="padding-right:15px;">الحفاظ على الهاتف من أي تلف غير عادي.</li>
+                                <li style="padding-right:15px;">التحكم في استخدام الهاتف الجوال، والالتزام بسداد كل
+                                    تكاليف الاستخدام
+                                </li>
+                                <span style="padding-right:15px;">التي تزيد عن الاستخدامات ذات الصلة بالعمل بالمؤسسة.
+                                </span>
+                                <li style="padding-right:15px;">يحق للمؤسسة حصر قيمة الاستخدامات التي لا تخص أعمال
+                                    المؤسسة،
+                                </li>
+                                <span style="padding-right:15px;">وخصمها من راتبي.</span>
+
+                                <li style="padding-right:15px;">الالتزام بعدم تجاوز حد الائتمان المسموح به للهاتف، حتى
+                                    لا يتسبب في
+                                </li>
+                                <span style="padding-right:15px;">وقف الخدمة.</span>
+
+                                <li style="padding-right:15px;">الالتزام بالقوانين والأعراف والتقاليد السارية بالدولة
+                                    والخاصة باستخدام
+                                </li>
+                                <span style="padding-right:15px;">الهواتف الجوال.</span>
+
+                                <li style="padding-right:15px;">الالتزام بتحمل المسؤولية كاملة عن أي مخالفة لشروط تقديم
+                                    الخدمة من
+                                </li>
+                                <span style="padding-right:15px;">غرامات أو أي إجراء آخر قد يفرض من قبل شركة
+                                    الاتصالات.
+                                </span>
+
+                                <li style="padding-right:15px;">الالتزام بسرعة اخطار المؤسسة في حال فقد وضياع الهاتف على
+                                    الفور،
+                                </li>
+                                <span style="padding-right:15px;">حتى يتسنى للمؤسسة اتخاذ الإجراءات اللازمة مع أوريدو،
+                                    وأهمها إيقاف
+                                </span>
+                                <span style="padding-right:15px;">استخدام خط الهاتف.</span>
+
+                                <li style="padding-right:15px;">الالتزام بتسليم الهاتف الجوال للمؤسسة في الحالات
+                                    التالية:
+                                </li>
+
+                                <span>
+                                    <span style="padding-right:10px;">-</span>
+                                    <span style="padding-right:15px;">تغيير الوظيفة أو طبيعة العمل التي على أساسها تم
+                                        منحي الهاتف
+                                    </span>
+                                </span>
+
+                                <span>
+                                    <span style="padding-right:10px;"></span>
+                                    <span style="padding-right:24px;">الجوال والخط الملحق به.</span>
+                                </span>
+                                <BR/>
+                                <span>
+                                    <span style="padding-right:10px;">-</span>
+                                    <span style="padding-right:15px;">تغييرانتهاء العمل بالمؤسسة سواء بالاستقالة او بأي
+                                        وسيلة أو سبب آخر.
+                                    </span>
+                                </span>
+
+                                <span>
+                                    <span style="padding-right:10px;">-</span>
+                                    <span style="padding-right:15px;">تلف الهاتف وعدم صلاحيته للاستخدام.</span>
+                                </span>
+
+                                <li style="padding-right:15px;">تسري هذه الشروط والاحكام على أي وسيلة اتصال أخرى
+                                    توفرها
+                                </li>
+                                <span style="padding-right:15px;">المؤسسة.</span>
+
+                                <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                    <span style="word-spacing:5px;">
+                                        الاســـــــــــــــــم:
+                                        ..........................................................................
+                                    </span>
+                                </div>
+                                <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                    <span style="word-spacing:5px;">
+                                        الوظيفـــــــــــــة:
+                                        ..........................................................................
+                                    </span>
+                                </div>
+                                <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                    <span style="word-spacing:5px;">
+                                        الرقم الشخصي:
+                                        ..........................................................................
+                                    </span>
+                                </div>
+                                <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                    <span style="word-spacing:5px;">
+                                        التوقيـــــــــــــــع:
+                                        ..........................................................................
+                                    </span>
+                                </div>
+                                <div class="text-right" style="font-size:20px;padding-top:10px;">
+                                    <span style="word-spacing:5px;">
+                                        التاريــــــــــــــــخ:
+                                    </span>
+                                </div>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="row footer">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span t-esc="total_page" style="font-size:10px!important;"/>
+                                    </td>
+                                    <td>
+                                        <span style="padding-left:7px;">من</span>
+                                    </td>
+                                    <td>
+                                        <span t-esc="page_number"
+                                              style="padding-left:7px;font-size:18px!important;color:#785838!important"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

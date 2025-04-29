@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+employee_it_devices,it_devices.it_devices,model_it_devices,,1,1,1,1
+employee_it_request,it_request.it_request,model_it_request,,1,1,1,1
+employee_it_access_right_request,it_access_right.it_access_right,model_it_access_right_request,,1,1,1,1

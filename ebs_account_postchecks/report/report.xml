@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="custom_check_paperformat" model="report.paperformat">
+        <field name="name">Custom</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">28</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="custom_bank_tranfer_paperformat" model="report.paperformat">
+        <field name="name">Custom</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">28</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            string="Check Report"
+            id="check_template_action"
+            model="account.payment"
+            report_type="qweb-pdf"
+            name="ebs_account_postchecks.check_template"
+            file="ebs_account_postchecks.check_template"
+            menu="False"
+            paperformat="ebs_account_postchecks.custom_check_paperformat"
+    />
+
+    <report
+            string="Bank Transfer"
+            id="bank_transfer_action"
+            model="account.payment"
+            report_type="qweb-pdf"
+            name="ebs_account_postchecks.bank_transfer_report"
+            file="ebs_account_postchecks.bank_transfer_report"
+            menu="False"
+            paperformat="ebs_account_postchecks.custom_bank_tranfer_paperformat"
+    />
+</odoo>

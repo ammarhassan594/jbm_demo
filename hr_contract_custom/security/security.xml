@@ -1,0 +1,155 @@
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="employee_contract_access_category">
+            <field name="name">Employee Contract Access</field>
+            <field name="description">Access Employee Contract</field>
+            <field name="sequence">11</field>
+        </record>
+
+
+        <record id="group_access_fusion_employee_contract" model="res.groups">
+            <field name="name">Access Of Main Company Employee Contract</field>
+            <field name="category_id" ref="employee_contract_access_category"/>
+            <field name="comment">The user will be able to access employee contract of Main Company employee.</field>
+        </record>
+
+        <record id="group_access_other_employee_contract" model="res.groups">
+            <field name="name">Access Of Outsourced Employees Contract</field>
+            <field name="category_id" ref="employee_contract_access_category"/>
+            <field name="comment">The user will be able to access employee contract of Outsourced Employees.</field>
+        </record>
+
+
+        <record id="access_fusion_employee_contract" model="ir.rule">
+            <field name="name">Access Of Main Company Employee Contract</field>
+            <field name="model_id" ref="model_hr_contract"/>
+            <field name="groups" eval="[(4, ref('hr_contract_custom.group_access_fusion_employee_contract'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fusion_employee')]</field>
+        </record>
+
+        <record id="access_fusion_employee_contract_history" model="ir.rule">
+            <field name="name">Access Of Main Company Employee Contract History</field>
+            <field name="model_id" ref="model_hr_contract_history"/>
+            <field name="groups" eval="[(4, ref('hr_contract_custom.group_access_fusion_employee_contract'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('employee_type','=', 'fusion_employee')]</field>
+        </record>
+
+        <record id="access_other_employee_contract" model="ir.rule">
+            <field name="name">Access Of Outsourced Employees Contract</field>
+            <field name="model_id" ref="model_hr_contract"/>
+            <field name="groups" eval="[(4, ref('hr_contract_custom.group_access_other_employee_contract'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+        </record>
+        <record id="access_other_employee_contract_history" model="ir.rule">
+            <field name="name">Access Of Outsourced Employees Contract History</field>
+            <field name="model_id" ref="model_hr_contract_history"/>
+            <field name="groups" eval="[(4, ref('hr_contract_custom.group_access_other_employee_contract'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('employee_type','=', 'fos_employee')]</field>
+        </record>
+
+
+
+        <!--    <record id="access_other_employee_contract_hiren" model="ir.rule">-->
+        <!--        <field name="name">Hiren</field>-->
+        <!--        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>-->
+        <!--        <field name="groups" eval="[(4, ref('hr_contract_custom.group_access_other_employee_contract'))]"/>-->
+        <!--        <field name="perm_read" eval="1"/>-->
+        <!--        <field name="perm_write" eval="1"/>-->
+        <!--        <field name="perm_create" eval="1"/>-->
+        <!--        <field name="perm_unlink" eval="1"/>-->
+        <!--        <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>-->
+        <!--    </record>-->
+          <function name="write" model="ir.model.data">
+                <function name="search" model="ir.model.data">
+                    <value eval="[('module', '=', 'hr_payroll'), ('name','=','hr_payroll.hr_payroll_rule_officer')] "/>
+
+                </function>
+                <value eval="{'noupdate': False}"/>
+            </function>
+
+        <record id="hr_payroll.hr_payroll_rule_officer" model="ir.rule">
+            <field name="name">Officer and subordinates Payslip</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="active" eval="False"/>
+        </record>
+          <function name="write" model="ir.model.data">
+                <function name="search" model="ir.model.data">
+                    <value eval="[('module', '=', 'hr_payroll'), ('name','=','hr_payroll.hr_payroll_rule_officer')] "/>
+                </function>
+                <value eval="{'noupdate': True}"/>
+            </function>
+
+            <function name="write" model="ir.model.data">
+                <function name="search" model="ir.model.data">
+                    <value eval="[('module', '=', 'hr_payroll'), ('name','=','hr_payroll.group_hr_payroll_manager')] "/>
+                </function>
+                <value eval="{'noupdate': False}"/>
+            </function>
+         <record id="hr_payroll.hr_payslip_rule_manager" model="ir.rule">
+            <field name="name">All Payslip</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="active" eval="True"/>
+        </record>
+            <function name="write" model="ir.model.data">
+                <function name="search" model="ir.model.data">
+                    <value eval="[('module', '=', 'hr_payroll'), ('name','=','hr_payroll.group_hr_payroll_manager')] "/>
+        <!--            <value eval="[('module', '=', 'hr_payroll'), ('name','=','hr_payroll.group_hr_payroll_user')] "/>-->
+                </function>
+                <value eval="{'noupdate': False}"/>
+            </function>
+
+        <record id="access_fusion_hr_payslip_contracts_user_fusion" model="ir.rule">
+            <field name="name">Access Of Main Company Hr Payslips Contract User</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="groups"
+                   eval="[(4, ref('hr_contract_custom.group_access_fusion_employee_contract'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">['&amp;','|','|', ('employee_id.user_id', '=', user.id),
+                ('employee_id.department_id', '=', False), ('employee_id.department_id.manager_id.user_id', '=',
+                user.id),('employee_id.employee_type','=', 'fusion_employee')]
+            </field>
+
+        </record>
+
+
+        <record id="access_other_hr_payslip_contracts_user_fos" model="ir.rule">
+            <field name="name">Access Of Other Hr Payslips Contract User</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+            <field name="groups"
+                   eval="[(4, ref('hr_contract_custom.group_access_other_employee_contract'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">['&amp;','|','|', ('employee_id.user_id', '=', user.id),
+                ('employee_id.department_id', '=', False), ('employee_id.department_id.manager_id.user_id', '=',
+                user.id),('employee_id.employee_type','=', 'fos_employee')]
+            </field>
+
+        </record>
+
+
+    </data>
+
+
+</odoo>

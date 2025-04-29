@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="allowance_request_tree" model="ir.ui.view">
+            <field name="name">allowance_request_tree</field>
+            <field name="model">ebs.payroll.allowance.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="company_id"/>
+                    <field name="request_type"/>
+                    <field name="request_date"/>
+                    <field name="payment_date"/>
+                    <field name="amortization_start_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Form views -->
+
+        <record id="allowance_request_form" model="ir.ui.view">
+            <field name="name">allowance_request_form</field>
+            <field name="model">ebs.payroll.allowance.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="compute_date_lines" string="Compute Amortization" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '!=', 'submit')]}"/>
+                        <button name="submit_request" string="Submit" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="accept_request" string="Approve" class="oe_highlight" type="object"  attrs="{'invisible': [('state', 'in', ['approved','reject','draft'])]}"/>
+                        <button name="reject_request" string="Reject" class="oe_highlight" type="object"  attrs="{'invisible': [('state', 'in', ['approved','reject','draft'])]}"/>
+                        <button name="draft_request" string="Set Draft" class="oe_highlight" type="object"  attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <h1><field name="name"/></h1>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="company_id"/>
+                                <field name="request_type" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="amount" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="is_date_compute" invisible="1"/>
+                                <field name="request_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="payment_date" attrs="{'readonly': [('state', '!=', 'submit')],
+                                                                     'invisible':[('state','=','draft')]}"/>
+                                <field name="amortization_start_date" attrs="{'readonly': [('state', '!=', 'submit')],
+                                                                     'invisible':[('state','=','draft')]}"/>
+                                <field name="number_of_month" attrs="{'readonly': [('state', '!=', 'submit')],
+                                                                     'invisible':[('state','=','draft')]}"/>
+                            </group>
+                        </group>
+                        <group name="group_down">
+                            <field name="description" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <notebook>
+                            <page name="allowance_request_line" string="Lines" attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="lines_ids" attrs="{'readonly': [('state', '=', 'approved')]}">
+                                    <tree editable="bottom">
+                                        <field name="date"/>
+                                        <field name="amount" sum="Amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+        <!--window -->
+        <record id="allowance_request_window" model="ir.actions.act_window">
+            <field name="name">Allowance Request</field>
+            <field name="res_model">ebs.payroll.allowance.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

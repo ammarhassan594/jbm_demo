@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_ebs_contact_industries_id,access_ebs_contact_industries,ebs_fusion_crm.model_ebs_contact_industries,base.group_user,1,1,1,1
+access_ebs_calendar_meeting_room_id,access_ebs_calendar_meeting_room,ebs_fusion_crm.model_ebs_calendar_meeting_room,base.group_user,1,1,1,1
+access_ebs_contact_industries_id_portal,access_ebs_contact_industries_portal,ebs_fusion_crm.model_ebs_contact_industries,base.group_portal,1,1,1,1
+access_ebs_product_pricelist_id,access_ebs_product_pricelist,product.model_product_pricelist,base.group_portal,1,1,1,1

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+       <menuitem id="asset_transfer_log_menu"
+            name="Asset Transfer Log"
+            parent="account.menu_finance_entries_management"
+            action="asset_transfer_log_window"
+            sequence="102"/>
+    </data>
+</odoo>

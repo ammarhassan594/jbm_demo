@@ -1,0 +1,145 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="cnss_tree" model="ir.ui.view">
+            <field name="name">CNSS</field>
+            <field name="model">ebspayroll.cnss</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fromdate"/>
+                    <field name="todate"/>
+                </tree>
+            </field>
+        </record>
+        <!--Form views -->
+        <record id="cnss_form" model="ir.ui.view">
+            <field name="name">CNSS</field>
+            <field name="model">ebspayroll.cnss</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="currency"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="fromdate"/>
+                                <field name="todate"/>
+                            </group>
+                        </group>
+                        <notebook name="cnss_notbook">
+                            <page name="rewards_page" string="Rewards Page">
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="wife_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="wife_amount"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="child_amount" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="child_amount"/>
+                                        </div>
+                                    </group>
+
+                                </group>
+
+                            </page>
+
+                            <page name="illness_page" string="Illness and Motherhood">
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="illness_user_limit" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="illness_user_limit" placeholder="Leave empty for no limit"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div>
+                                            <label for="illness_limit" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="illness_limit" placeholder="Leave empty for no limit"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="illness_user_percentage" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="illness_user_percentage"/>
+                                        </div>
+                                    </group>
+
+                                    <group>
+                                        <div>
+                                            <label for="illness_percentage" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="illness_percentage"/>
+                                        </div>
+                                    </group>
+
+                                </group>
+                            </page>
+
+                            <page name="end_of_service_page" string="End of Service">
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="end_of_service_limit" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="end_of_service_limit" placeholder="Leave empty for no limit"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="end_of_service_percentage" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="end_of_service_percentage"/>
+                                        </div>
+                                    </group>
+                                </group>
+
+                            </page>
+
+                            <page name="family_page" string="Family Compensation">
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="family_limit" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="family_limit" placeholder="Leave empty for no limit"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <div>
+                                            <label for="family_percentage" style="font-weight: 900;margin-right: 15px;"/>
+                                            <field name="family_percentage"/>
+                                        </div>
+                                    </group>
+                                </group>
+                            </page>
+
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--window -->
+        <record id="cnss_window" model="ir.actions.act_window">
+            <field name="name">Tax Rules</field>
+            <field name="res_model">ebspayroll.cnss</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+
+    </data>
+</odoo>

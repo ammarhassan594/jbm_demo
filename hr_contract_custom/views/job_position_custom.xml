@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_hr_job_form_signatures_inherited" model="ir.ui.view">
+            <field name="name">hr.job.form.signatures.inherited</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr='//group[@name="compensations"]' position="after">
+                    <group string="Required Signatures" name="signatures">
+                        <field nolabel="1" name="required_signatures">
+                            <tree editable="bottom">
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="hr_employee_id"/>
+                                <field name="job_title_id"/>
+                                <field name="job_position_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="position_signatures_tree">
+            <field name="name">job_position_signatures_tree</field>
+            <field name="model">hr.job.signature</field>
+            <field name="arch" type="xml">
+                <tree editable="top" default_order="sequence asc">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="hr_employee_id"/>
+                    <field name="job_title_id"/>
+                    <field name="job_position_id"/>
+                </tree>
+            </field>
+        </record>
+        -->
+    </data>
+</odoo>

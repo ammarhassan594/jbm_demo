@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="webclient_bootstrap_inherit" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t/t/t[5]" position="after">
+            <t t-if="request and request.httprequest.cookies">
+                <t t-if="request.httprequest.cookies.get('cids') and ',' in request.httprequest.cookies.get('cids')">
+                    <t t-set="company_id" t-value="request.httprequest.cookies.get('cids').split(',')[0]"/>
+                </t>
+                <t t-else="">
+                    <t t-set="company_id" t-value="request.httprequest.cookies.get('cids')"/>
+                </t>
+                <t t-if="company_id and len(request.env.user.company_ids.ids) &gt; 1">
+                    <t t-set="company" t-value="request.env['res.company'].browse(int(company_id))"/>
+                </t>
+                <t t-else="">
+                    <t t-set="company" t-value="request.env.company"/>
+                </t>
+
+                <style>
+                    .o_main_navbar {
+                    border-bottom: 1px solid
+                    <t t-esc="company.header_color_picker"/>
+                    !important;
+                    background-color:
+                    <t t-esc="company.header_color_picker"/>
+                    !important;
+                    }
+                    .o_home_menu.o_search_hidden{
+                    background-color: <t t-esc="company.background_color_picker"/>!important;
+                    background-image: None;
+                    }
+                    .o_home_menu{
+                    background-color: <t t-esc="company.background_color_picker"/>!important;
+                    background-image: None;
+                    }
+                    .o_main_navbar > a:hover, .o_main_navbar > a:focus, .o_main_navbar > button:hover, .o_main_navbar >
+                    button:focus{
+                    background-color:
+                    <t t-esc="company.header_color_picker"/>
+                    !important;
+                    }
+                    .o_main_navbar > ul > li > a:hover, .o_main_navbar > ul > li > label:hover{
+                    background-color:
+                    <t t-esc="company.header_color_picker"/>
+                    !important;
+                    }
+                    .o_main_navbar .show .dropdown-toggle {
+                    background-color:
+                    <t t-esc="company.header_color_picker"/>
+                    !important;
+                    }
+
+                </style>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

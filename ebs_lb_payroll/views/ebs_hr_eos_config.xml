@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="eos_config_tree" model="ir.ui.view">
+            <field name="name">eos.config.tree</field>
+            <field name="model">ebs.hr.eos.config</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="working_days"/>
+                    <field name="salary_days"/>
+                    <field name="eligible_after_years"/>
+<!--                    <field name="paid_leaves_ids" widget="many2many_tags"/>-->
+<!--                    <field name="unpaid_leave_account_id"/>-->
+<!--                    <field name="paid_leave_account_id"/>-->
+<!--                    <field name="closing_account_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="eos_config_form" model="ir.ui.view">
+            <field name="name">eos.config.form</field>
+            <field name="model">ebs.hr.eos.config</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name" required="1"/>
+                                <field name="start_date" required="1"/>
+                                <field name="end_date" required="1"/>
+                            </group>
+                            <group>
+                                <field name="working_days"/>
+                                <field name="salary_days"/>
+                                <field name="paid_leaves_ids" widget="many2many_tags" invisible="1"/>
+                                <field name="eligible_after_years"/>
+                            </group>
+                            <group name="group_right">
+                                 <field name="gratuity_account_id" invisible="1"/>
+                                <field name="paid_leave_account_id" invisible="1"/>
+                                 <field name="unpaid_leave_account_id" invisible="1"/>
+                                 <field name="closing_account_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="entitlements_types" string="Entitlements Types">
+                                <field name="entitlements_types_ids">
+                                    <tree>
+                                        <field name="name"/>
+<!--                                        <field name="account_id"/>-->
+                                        <field name="eos_config_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Notice Periods" name="notice_period">
+                                <field name="notice_period_ids">
+                                    <tree editable="bottom">
+                                        <field name="from_year"/>
+                                        <field name="to_year"/>
+                                        <field name="notice_period_months"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="eos_config_action" model="ir.actions.act_window">
+            <field name="name">End of Service Configur</field>
+            <field name="res_model">ebs.hr.eos.config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+<!--         <menuitem id="eos_config_menu" name="End of Service Configur" sequence="511"  action="eos_config_action"-->
+<!--              parent="hr_payroll.menu_hr_salary_configuration"/>-->
+
+    </data>
+</odoo>

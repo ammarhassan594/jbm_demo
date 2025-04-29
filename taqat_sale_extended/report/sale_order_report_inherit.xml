@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_inherit_approval" inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//div[@name='so_total_summary']" position="after">
+            <div id="approval" class="row mt32 mb32">
+
+                <div class="col-4 bm-2">
+                    <strong>Approvals :</strong>
+                    <t t-foreach="doc.dynamic_approve_request_ids" t-as="approval">
+                        <t t-if="approval.status == 'approved'">
+                            <br/>
+                            <span>
+                                <t t-esc="approval.user_ids.name"/>
+                            </span>
+                        </t>
+                    </t>
+                </div>
+                <div class="col-8 bm-2">
+
+                </div>
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

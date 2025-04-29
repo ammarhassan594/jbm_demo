@@ -1,0 +1,28 @@
+<odoo>
+    <record id="ebs_fusion_timesheet_tree" model="ir.ui.view">
+        <field name="name">ebs.fusion.timesheet.tree</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="project_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="task_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="ebs_fusion_timesheet_search" model="ir.ui.view">
+        <field name="name">ebs.fusion.timesheet.search</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='groupby_date']" position="after">
+
+                <filter string="Service Order" name="groupby_service_process" domain="[]"
+                        context="{'group_by': 'service_process_id'}" help="Timesheet by Service Order"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

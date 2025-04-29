@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_custom_search" model="ir.ui.view">
+            <field name="name">employee_custom.search</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="arabic_name"/>
+                    <field name="partner_parent_id" required="1"/>
+                    <field name="sponsored_company_id"/>
+                    <field name="qa_staff_no"/>
+                    <!--                    <field name="qid_no" string="QID"/>-->
+                    <!--                    <field name="system_id" invisible="1"/>-->
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_employee_view_searchpanel" model="ir.ui.view">
+            <field name="name">hr.employee.search.panel</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/searchpanel" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_employee_view_search_own" model="ir.ui.view">
+            <field name="name">hr.employee.search.inherit.own</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='job_id']" position="after">
+                    <filter name="own_employee" string="My Profile" domain="[('user_id', '=', uid)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="employee_button_action" model="ir.actions.act_window">
+            <field name="name">Employees</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[]</field>
+            <field name="target">new</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('hr.view_employee_form')})]"/>
+        </record>
+    </data>
+</odoo>

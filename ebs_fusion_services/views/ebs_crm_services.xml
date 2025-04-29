@@ -1,0 +1,255 @@
+<odoo>
+    <!--    ebs crm services groups form-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_form">
+        <field name="name">ebs.crm.service.Form</field>
+        <field name="model">ebs.crm.service</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button name="set_ready" states="draft" class="oe_highlight" type="object" string="Mark Ready"/>
+                    <button name="set_draft" states="ready" class="oe_highlight" type="object" string="Set to Draft"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <h1>
+                                <field name="name" attrs="{'readonly':[('state','=','ready')]}"/>
+                            </h1>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="category_id" attrs="{'readonly':[('state','=','ready')]}"/>
+                            <field name="service_id" string="Abbreviation"
+                                   attrs="{'readonly':[('state','=','ready')]}"/>
+
+                            <field name="target_audience" attrs="{'readonly':[('state','=','ready')]}"/>
+                            <field name="company" invisible="1"/>
+                            <field name="employee" invisible="1"/>
+                            <field name="visitor" invisible="1"/>
+                            <field name="dependent" invisible="1"/>
+
+                            <div class="row container">
+                                <div class="col-xs-3 center-block">
+                                    <label for="fme" style="font-weight: bold;"/>
+                                    <field name="fme" attrs="{'readonly':[('state','=','ready')]}"/>
+                                    <label for="fss" style="font-weight: bold;"/>
+                                    <field name="fss" attrs="{'readonly':[('state','=','ready')]}"/>
+                                    <label for="fos" style="font-weight: bold;"/>
+                                    <field name="fos" attrs="{'readonly':[('state','=','ready')]}"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+
+                            <field name="authority_id"
+                                   attrs="{'readonly':[('state','=','ready')],'required': [('is_group','=',False)],'invisible' : [('is_group', '=', True)]}"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="days_to_complete" attrs="{'readonly':[('state','=','ready')]}"/>
+                            <field name="is_group" attrs="{'readonly':[('state','=','ready')]}"/>
+                            <field name="fines_applicable" attrs="{'readonly':[('state','=','ready')]}"/>
+                            <field name="labor_quota" invisible="1"
+                                   attrs="{'invisible':[('is_group','=',True)],'readonly':[('state','=','ready')]}"/>
+                            <field name="new_option" invisible="1"/>
+                            <field name="renew" invisible="1"/>
+                            <field name="manage" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Workflows">
+                            <field name="workflow_lines"
+                                   context="{'workflow_lines':workflow_lines,'service_id':id, 'default_service_id':id}"
+                                   attrs="{'readonly':[('state','=','ready')]}">
+                                <tree>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="process_char"/>
+                                    <field name="output_char"/>
+                                    <field name="stage_id" invisible="1"/>
+                                    <field name="activity_id" invisible="1"/>
+                                    <field name="replacement_id" invisible="1"/>
+                                    <field name="service_id" invisible="1"/>
+                                    <field name="dependant_workflow_ids" widget="many2many_tags" invisible="1"/>
+                                    <field name="service_phase" invisible="1"/>
+                                    <field name="service_option_ids" widget="many2many_tags"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Documents Used">
+                            <group>
+                                <field name="document_type_ids" attrs="{'readonly':[('state','=','ready')]}">
+                                    <tree editable="bottom">
+                                        <field name="document_type_id" required="1"
+                                               options="{'no_create': True,'no_create_edit':True}"/>
+                                        <field name="input"/>
+                                        <field name="output"/>
+                                        <field name="individual" invisible="1"/>
+                                        <field name="service" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Dependent Service"
+                              attrs="{'invisible' : [('is_group', '=', False)],'readonly':[('state','=','ready')]}">
+                            <group>
+                                <field name="dependent_services_ids" attrs="{'readonly':[('state','=','ready')]}">
+                                    <tree editable="bottom">
+                                        <field name="sequence" force_save="1"/>
+                                        <field name="service" options="{'no_create': True, 'no_create_edit':True}"/>
+                                        <button name="action_show_service" string="Show Services"
+                                                type="object"
+                                                icon="fa-list" options="{&quot;warn&quot;: true}"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+
+                        <page string="Pricelist">
+                            <field name="service_option_ids" attrs="{'readonly':[('state','=','ready')]}">
+                                <tree editable="bottom">
+                                    <field name="display_name"
+                                           attrs="{'readonly':[('name','!=','manage')],'required':[('name','=','manage')]}"/>
+                                    <field name="name" required="1"/>
+                                    <field name="company_id" options="{'no_create': True,'no_create_edit':True}"/>
+                                    <field name="service_order_type"/>
+                                    <field name="duration" required="1"/>
+                                    <field name="duration_type"/>
+                                    <field name="govt_product_id" required="1"
+                                           options="{'no_create': True,'no_create_edit':True}"/>
+                                    <field name="govt_fees" required="1"/>
+                                    <field name="fusion_product_id" required="1"
+                                           options="{'no_create': True,'no_create_edit':True}"/>
+                                    <field name="fusion_fees" required="1"/>
+                                    <field name="account_id" options="{'no_create': True,'no_create_edit':True}"
+                                           optional="hide"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Service Fine" attrs="{'invisible':[('fines_applicable','!=',True)]}">
+                            <field name="service_fine_ids" attrs="{'readonly':[('state','=','ready')]}">
+                            </field>
+                        </page>
+                        <page string="Sequences" attrs="{'invisible':[('sequence_ids','=',False)]}">
+                            <field name="sequence_ids" readonly="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="prefix"/>
+                                    <field name="company_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service groups tree-->
+    <record id="view_ebs_crm_service_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.service.tree</field>
+        <field name="model">ebs.crm.service</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="authority_id"/>
+                <field name="service_id" string="Abbreviation"/>
+                <field name="state"/>
+                <field name="is_group"/>
+                <field name="fines_applicable"/>
+                <field name="fme" optional="hide"/>
+                <field name="fss" optional="hide"/>
+                <field name="fos" optional="hide"/>
+            </tree>
+
+        </field>
+    </record>
+    <record id="view_crm_service_search" model="ir.ui.view">
+        <field name="name">ebs.crm.service.search</field>
+        <field name="model">ebs.crm.service</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="fme"/>
+                <field name="fss"/>
+                <field name="fos"/>
+                <field name="authority_id"/>
+                <filter string="Is Group" name="is_group" domain="[('is_group', '=', True)]"/>
+                <group>
+                    <filter context="{'group_by': 'is_group'}" name="is_group" string="Is Group"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--ebs crm services action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_services">
+        <field name="name">Services</field>
+        <field name="res_model">ebs.crm.service</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!--    ebs crm service workflow form-->
+    <record model="ir.ui.view" id="view_ebs_crm_service_workflow_form">
+        <field name="name">ebs.crm.service.workflow.Form</field>
+        <field name="model">ebs.crm.workflow</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="process_char" invisible="1"/>
+                            <field name="output_char" invisible="1"/>
+                            <field name="stage_id" options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="required_in_docs" widget="many2many_tags"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="dependant_workflow_ids" widget="many2many_tags"
+                                   options="{'no_create': True,'no_create_edit':True}"
+                                   domain="[('service_id', '=', service_id), ('id', '!=', id)]"/>
+                            <field name="required_completed_service_ids"
+                                   options="{'no_create': True,'no_create_edit':True}" widget="many2many_tags"
+                                   attrs="{'invisible':[('is_group','=',False)]}"/>
+                            <field name="is_activity_required"/>
+                            <field name="is_timesheet_required"/>
+                            <field name="required_payment"/>
+                        </group>
+                        <group>
+                            <field name="output"/>
+                            <field name="activity_id" attrs="{'required':[('stage_id','!=',False)]}"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="service_phase" invisible="1"/>
+                            <field name="required_out_docs" widget="many2many_tags"
+                                   options="{'no_create': True,'no_create_edit':True}"/>
+                            <field name="workflow_days_to_complete"/>
+                            <field name="service_option_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group>
+
+                        <group>
+
+                            <field name="service_id" invisible="1"/>
+                            <field name="in_document_types" invisible="1"/>
+                            <field name="out_document_types" invisible="1"/>
+                            <field name="is_group" invisible="1"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--ebs crm service groups action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_group">
+        <field name="name">Service Group</field>
+        <field name="res_model">ebs.crm.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_group', '=', True)]</field>
+        <field name="context">{'default_is_group':True}</field>
+    </record>
+
+</odoo>

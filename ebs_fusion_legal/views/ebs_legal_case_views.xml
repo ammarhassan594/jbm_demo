@@ -1,0 +1,226 @@
+<odoo>
+    <!--    ebs legal case form-->
+    <record model="ir.ui.view" id="view_ebs_legal_case_form">
+        <field name="name">ebs.legal.case.Form</field>
+        <field name="model">ebs.legal.case</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="%(ebs_fusion_documents.document_button_action)d"
+                            string="Create Document"
+                            type="action" class="oe_stat_button"
+                            icon="fa-file"
+                            context="{
+                        'default_case_id':id,
+                        'default_res_id': id,
+                        'default_res_model': context.get('active_model'),
+                        'default_folder_id':%(ebs_fusion_legal.documents_legal_folder)d,
+                        }"/>
+                    <button string="Create New Case" name="create_new_case"
+                            attrs="{'invisible': ['|',('state','!=','closed'),('related_case_count', '!=', 0)]}"
+                            type="object"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button name="action_see_documents" type="object" class="oe_stat_button" icon="fa-file-text-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="document_count"/>
+                                </span>
+                                <span class="o_stat_text">Documents</span>
+                            </div>
+                        </button>
+
+                        <button name="action_related_case" type="object" class="oe_stat_button" icon="fa-share-square-o"
+                                attrs="{'invisible': [('related_case_count', '=', 0)]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="related_case_count"/>
+                                </span>
+                                <span class="o_stat_text">Related Case</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="type_id" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            </h1>
+
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+
+                            <field name="litigation_degree_id" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="court_id" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="case_type_id" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="case_classification_id" context="{'default_case_type_id': case_type_id}"
+                                   attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="case_partial_classification_id"
+                                   attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="case_type" invisible="1"/>
+                            <field name="purpose" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+
+                            <field name="law_firms" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="partner_id" invisible="1"
+                                   attrs="{'invisible':['!',('case_type','=','client')]}"/>
+                            <field name="employee_id" invisible="1"
+                                   attrs="{'invisible':['!',('case_type','=','employee')]}"/>
+                            <field name="contact_id" invisible="1"/>
+
+                            <field name="judgment" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="judgment_details"
+                                   attrs="{'invisible':[('judgment','!=','other')], 'readonly': [('state', '=', 'closed')]}"/>
+                        </group>
+                        <group>
+                            <field name="fgh_as" widget="radio" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="company_id" attrs="{'readonly': [('state', '=', 'closed')]}"
+                                   options="{'no_create_edit': 1,'no_create': 1}"/>
+                            <field name="partner_id" attrs="{'readonly': [('state', '=', 'closed')]}"
+                                   options="{'no_create_edit': 1,'no_create': 1}"/>
+                            <field name="case_against" widget="radio" invisible="1"/>
+                            <field name="parent_id" attrs="{'readonly': [('state', '=', 'closed')]}"
+                                   options="{'no_create_edit': 1,'no_create': 1}"/>
+                            <field name="date" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="date_closed"/>
+                            <field name="user_id" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                            <field name="cases_with_arbitrator" string="Case with Arbitrator/ Outside Qatar"
+                                   attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="comments" attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                    </group>
+                    <notebook>
+                        <page string="Claimant">
+                            <field name="accuser_ids" context="{'default_type': 'accuser'}"
+                                   attrs="{'readonly': [('state', '=', 'closed')]}">
+                                <tree editable="bottom">
+                                    <field name="name" attrs="{'readonly':[('partner_id','!=',False)]}"/>
+                                    <field name="partner_id" options="{'no_create_edit': 1,'no_create': 1}"/>
+                                    <field name="related_number"/>
+                                    <field name="type" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Defenders">
+                            <field name="defender_ids" context="{'default_type': 'defender'}"
+                                   attrs="{'readonly': [('state', '=', 'closed')]}">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="partner_id" options="{'no_create_edit': 1,'no_create': 1}"/>
+                                    <field name="related_number"/>
+                                    <field name="type" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Activity Track">
+                            <field name="activity_track_ids" attrs="{'readonly': [('state', '=', 'closed')]}">
+                                <tree editable="bottom">
+                                    <field name="date"/>
+                                    <field name="activity_type_id" required="1"/>
+                                    <field name="law_firm_id" required="1"
+                                           options="{'no_create_edit': 1,'no_create': 1}"/>
+
+                                    <field name="description"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter" style="display:block;">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs legal case tree-->
+    <record id="view_ebs_legal_case_tree" model="ir.ui.view">
+        <field name="name">ebs.legal.case.tree</field>
+        <field name="model">ebs.legal.case</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_id"/>
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="partner_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <field name="purpose"/>
+                <field name="parent_id"/>
+                <field name="accuser_ids" widget="many2many_tags" string="Claimants"/>
+                <field name="defender_ids" widget="many2many_tags" string="Defenders"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ebs_legal_case_calendar" model="ir.ui.view">
+        <field name="name">ebs.legal.case.calendar</field>
+        <field name="model">ebs.legal.case</field>
+        <field name="arch" type="xml">
+            <calendar string="Case" mode="month" color="name" date_start="date">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="date_closed"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!--    ebs legal case search-->
+    <record id="view_ebs_legal_case_search" model="ir.ui.view">
+        <field name="name">ebs.legal.case.search</field>
+        <field name="model">ebs.legal.case</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="ongoing_cases" string="Ongoing"
+                        domain="[('state','=','ongoing')]" context="{'default_state':'ongoing'}"/>
+                <field name="state"/>
+                <field name="case_type_id"/>
+                <field name="law_firms"/>
+            </search>
+        </field>
+    </record>
+
+    <!--ebs legal case action-->
+    <record model="ir.actions.act_window" id="action_ebs_legal_case">
+        <field name="name">Legal Cases</field>
+        <field name="res_model">ebs.legal.case</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+    <record model="ir.actions.act_window" id="action_ebs_legal_case_ongoing">
+        <field name="name">Legal Cases</field>
+        <field name="res_model">ebs.legal.case</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="domain">[('state','=','draft')]</field>
+        <field name="context">{'default_state':'draft'}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_ebs_legal_documents">
+        <field name="name">Documents</field>
+        <field name="res_model">documents.document</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('folder_id.name','=','Legal')]</field>
+    </record>
+
+
+    <menuitem id="menu_ebs_legal_case_root" name="Legal" sequence="15" groups="group_ebs_fusion_legal"
+              web_icon="ebs_fusion_legal,static/src/img/legal_icon.png"/>
+    <menuitem id="menu_ebs_legal_case_parent" name="Legal" action="ebs_fusion_legal.action_ebs_legal_case_ongoing"
+              parent="menu_ebs_legal_case_root" sequence="1"/>
+    <menuitem id="menu_ebs_legal_case_config" name="Configuration"
+              parent="menu_ebs_legal_case_root" sequence="4"/>
+    <menuitem id="menu_ebs_legal_case" name="Cases"
+              parent="menu_ebs_legal_case_parent" sequence="3" action="ebs_fusion_legal.action_ebs_legal_case"/>
+    <menuitem id="menu_ebs_legal_case_documents" name="Documents"
+              parent="menu_ebs_legal_case_root" action="action_ebs_legal_documents" sequence="2"/>
+
+</odoo>

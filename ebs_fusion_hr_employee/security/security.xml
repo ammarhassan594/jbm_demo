@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.module.category" id="employee_type_access_category">
+        <field name="name">Employee Type Access</field>
+        <field name="description">Access Employee Type</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="group_access_fusion_employee" model="res.groups">
+        <field name="name">Access Of Main Company Employee</field>
+        <field name="category_id" ref="employee_type_access_category"/>
+        <field name="comment">The user will be able to access employee type of Main Company employee.</field>
+    </record>
+
+    <record id="group_access_other_employee" model="res.groups">
+        <field name="name">Access Of Outsourced Employees</field>
+        <field name="category_id" ref="employee_type_access_category"/>
+        <field name="comment">The user will be able to access employee type of Outsourced Employees.</field>
+    </record>
+
+    <record id="group_access_client_employee" model="res.groups">
+        <field name="name">Access Of Client Employee</field>
+        <field name="category_id" ref="employee_type_access_category"/>
+        <field name="comment">The user will be able to access employee type of client employee.</field>
+    </record>
+
+    <record model="res.groups" id="base.group_erp_manager">
+        <field name="implied_ids"
+               eval="[(4, ref('group_access_client_employee')),(4, ref('group_access_other_employee')),(4, ref('group_access_fusion_employee'))]"/>
+    </record>
+
+</odoo>

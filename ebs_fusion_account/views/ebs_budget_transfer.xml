@@ -1,0 +1,90 @@
+<odoo>
+    <!--ebs budget transfer form-->
+    <record model="ir.ui.view" id="view_ebs_budget_transfer_form">
+        <field name="name">ebs.budget.transfer.form</field>
+        <field name="model">ebs.budget.transfer</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Transfer" name="action_budget_transfer" states="confirmed" type="object"
+                            class="oe_highlight"/>
+<!--                    <button string="Confirm" name="action_confirm" states="draft" type="object"-->
+<!--                            class="oe_highlight"/>-->
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required='1' attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                        </group>
+                        <group>
+                            <field name="transfer_date" attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string='From'>
+                            <field name="from_crossovered_budget_id" domain="[('state', '=', 'validate')]"
+                                   attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                            <field name="from_crossovered_budget_lines_id"
+                                   domain="[('crossovered_budget_id', '=', from_crossovered_budget_id)]"
+                                   attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                            <field name="from_amount" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}'/>
+                            <field name="practical_amount" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}' string='Practical Amount'/>
+                            <field name="amount_of_reservation" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}' string='Reserved Amount'/>
+                            <field name="remaining_budget" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}'/>
+                        </group>
+                        <group string='To'>
+                            <field name="to_crossovered_budget_id" domain="[('state', '=', 'validate')]"
+                                   attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                            <field name="to_crossovered_budget_lines_id"
+                                   domain="[('crossovered_budget_id', '=', to_crossovered_budget_id)]"
+                                   attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                            <field name="existing_amount" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}'/>
+                            <field name="to_practical_amount" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}' string='Practical Amount'/>
+                            <field name="to_amount_of_reservation" readonly='1'
+                                   attrs='{"invisible": [("state", "=", "transferred")]}' string='Reserved Amount'/>
+                            <field name="to_amount" attrs='{"readonly": [("state", "=", "transferred")]}'/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--ebs budget transfer tree-->
+    <record id="view_ebs_budget_transfer_tree" model="ir.ui.view">
+        <field name="name">ebs.budget.transfer.tree</field>
+        <field name="model">ebs.budget.transfer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="transfer_date"/>
+                <field name="from_crossovered_budget_id"/>
+                <field name="to_crossovered_budget_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs budget transfer action-->
+    <record model="ir.actions.act_window" id="action_ebs_budget_transfer">
+        <field name="name">Budget Transfer</field>
+        <field name="res_model">ebs.budget.transfer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="ebs_fusion_account.view_ebs_budget_transfer_tree"/>
+    </record>
+
+    <menuitem id="menu_ebs_budget_transfer" name="Budget Transfer"
+              parent="account.menu_finance_entries_management" action="ebs_fusion_account.action_ebs_budget_transfer"
+              sequence="2"/>
+</odoo>

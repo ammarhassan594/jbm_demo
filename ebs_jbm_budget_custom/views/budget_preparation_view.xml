@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <record id="budget_preparation_tree_view" model="ir.ui.view">
+            <field name="name">budget.preparation.tree.view</field>
+            <field name="model">budget.preparation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="department"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="budget_preparation_form_view" model="ir.ui.view">
+            <field name="name">budget.preparation.form.view</field>
+            <field name="model">budget.preparation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <!--                        <button name="action_confirm" string="Submit" type="object" class="oe_highlight"-->
+                        <!--                                attrs="{'invisible':[('state','!=','draft')]}"/>-->
+                        <!--                        <button name="action_approve" string="Approve" type="object"-->
+                        <!--                                attrs="{'invisible':[('state','!=','confirm')]}"/>-->
+                        <button name="action_validate" string="Validate" type="object"
+                                attrs="{'invisible':[('state','in',['validate','cancel'])]}"/>
+                        <button name="action_cancel" string="Cancel" type="object"
+                                attrs="{'invisible':[('state','in',['validate','cancel'])]}"/>
+                         <button name="set_to_draft" string="Set To Draft" type="object"
+                                attrs="{'invisible':['|', ('budget_state','!=','draft'), ('state', '=', 'draft')]}"/>
+                        <field name="state" widget="statusbar"/>
+                        <field name="is_department_manager" invisible="1"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="from_date" attrs="{'readonly': [('state', '=', 'validate')]}"/>
+                                <field name="to_date" attrs="{'readonly': [('state', '=', 'validate')]}"/>
+                                <field name="department" domain="[('is_budget_preparation', '=', True)]" attrs="{'readonly': [('state', '=', 'validate')]}"/>
+                                <field name="user_id" />
+                                <field name="budget_id" domain="[('state', '=', 'draft'), ('date_from', '&lt;=', from_date), ('date_to', '&gt;=', to_date)]" attrs="{'readonly': [('state', '=', 'validate')]}"/>
+                                <field name="budget_state" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="budget_preparation_lines" string="Budget Preparation Lines">
+                                <field name="budget_preparation_lines" attrs="{'readonly': [('state', '=', 'validate')]}">
+                                    <tree editable="bottom">
+                                        <field name="budget_position_id"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="planned_amount" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"/>
+                                        <field name="approved_amount" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}" decoration-danger="approved_amount == 0"/>
+                                        <field name="analytic_account_id"/>
+                                        <field name="company_ids" required="1" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id='action_budget_preparation' model='ir.actions.act_window'>
+            <field name="name">Budget Preparation</field>
+            <field name="res_model">budget.preparation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_budget_preparation" name="Budget Preparation"
+                  action="action_budget_preparation"
+                  parent="account.menu_finance_entries_management"/>
+
+    </data>
+</odoo>

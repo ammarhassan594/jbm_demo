@@ -1,0 +1,115 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="transportation_rule_tree" model="ir.ui.view">
+            <field name="name">Transportation Rule</field>
+            <field name="model">ebspayroll.transportation.rule</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="payment_date"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="transportation_rule_line_tree" model="ir.ui.view">
+            <field name="name">Transportation Rule Lines</field>
+            <field name="model">ebspayroll.transportation.rule.lines</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee"/>
+                    <field name="days"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+        <!--Form views -->
+
+        <record id="transportation_rule_form" model="ir.ui.view">
+            <field name="name">Transportation Rule</field>
+            <field name="model">ebspayroll.transportation.rule</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                         <div name="button_box" class="oe_button_box">
+                            <button name="toggle_active" type="object" invisible="True"
+
+                                    class="oe_stat_button" icon="fa-archive">
+
+                                <field name="active" widget="boolean_button"
+
+                                       options='{"terminology": "archive"}'/>
+
+                            </button>
+                        </div>
+                        <group name="group_top">
+                            <group name="group_left">
+
+                                <field name="payment_date"/>
+                            </group>
+                            <group name="group_right">
+
+
+                            </group>
+                        </group>
+                        <group name="group_down">
+                            <field name="description"/>
+                        </group>
+                        <notebook name="transportation_rule_lines_form_notebook">
+                            <page name="transportation_rule_lines_page" string="Lines">
+                                <field name="lines">
+                                    <tree editable="bottom">
+                                        <field name="employee"/>
+                                        <field name="days"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="transportation_rule_line_form" model="ir.ui.view">
+            <field name="name">Transportation Rule Lines</field>
+            <field name="model">ebspayroll.transportation.rule.lines</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <field name="employee"/>
+                            <field name="days"/>
+                            <field name="amount"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="transportation_rule_filter" model="ir.ui.view">
+            <field name="name">transportation.rule.filters</field>
+            <field name="model">ebspayroll.transportation.rule</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!--window -->
+        <record id="transportation_rule_window" model="ir.actions.act_window">
+            <field name="name">Transportation Rule</field>
+            <field name="res_model">ebspayroll.transportation.rule</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hr_approvals_approval_sequence","hr_approvals.approval_sequence","model_approval_sequence",,1,1,1,1
+"access_hr_resignation_reason","hr_approvals.hr_resignation_reason","model_hr_resignation_reason",,1,1,1,1
+"access_hr_resignation_extension_reason","hr_approvals.hr_resignation_extension_reason","model_hr_resignation_extension_reason",,1,1,1,1
+"access_hr_transfer_reason_reason","hr_approvals.hr_transfer_reason","model_hr_transfer_reason",,1,1,1,1
+"access_resource_calendar","resource.resource_calendar","resource.model_resource_calendar",,1,1,1,1
+"access_approval_job_lines","access.approval.job.lines","model_approval_job_lines",,1,1,1,1
+"access_payment_installment","access.payment.installment","model_payment_installment",,1,1,1,1
+"access_approval_reject_reason","approval.reject.reason","model_approval_reject_reason",,1,1,1,1
+"access_approval_request_type","approval.request.type","model_approval_request_type",,1,1,1,1
+

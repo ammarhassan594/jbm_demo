@@ -1,0 +1,111 @@
+<odoo>
+
+    <record id="hr_attendance_batch_form_view" model="ir.ui.view">
+        <field name="name">hr.attendance.batch.form.view</field>
+        <field name="model">hr.attendance.batch</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Sheet Batch">
+                <header>
+                    <button name="gen_att_sheet" string="Generate Sheets" class="oe_highlight" states="draft"
+                            type="object"/>
+                    <button name="back_to_draft" string="Send To Draft" class="oe_highlight" states="att_gen"
+                            type="object"/>
+<!--                    <button name="action_cancel" string="Cancel" class="oe_highlight" states="att_gen,done"-->
+<!--                            type="object"/>-->
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,att_gen"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                         <button name="action_open_attendance_sheets" class="oe_stat_button" icon="fa-book" type="object"
+                                help="Generated Lines" attrs="{'invisible': [('attendance_sheets_count', '=' , 0)]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="attendance_sheets_count"/>
+                                </span>
+                                <span class="o_stat_text">Sheets</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <label for="date_from" string="Period"/>
+                        <div>
+                            <field name="date_from" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            -
+                            <field name="date_to" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </div>
+                    </group>
+                     <group>
+                        <field name="name" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                    </group>
+                    <group>
+                        <field name="employee_ids"
+                               attrs="{'readonly':[('state','!=','draft')]}">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <notebook>
+<!--                         <page string="Attendance Sheets">-->
+<!--                            <field name="att_sheet_ids" attrs="{'readonly':[('state','!=','draft')]}">-->
+<!--                                <tree create="0">-->
+<!--                                    <field name="name"/>-->
+<!--                                    <field name="employee_id"/>-->
+<!--                                    <field name="total_late" widget="float_time"/>-->
+<!--                                    <field name="total_early_out" widget="float_time"/>-->
+<!--                                    <field name="total_over_break" widget="float_time"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_attendance_batch_tree_view" model="ir.ui.view">
+        <field name="name">hr.attendance.batch.tree.view</field>
+        <field name="model">hr.attendance.batch</field>
+        <field name="arch" type="xml">
+            <tree string="" default_order='id desc'>
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_hr_attendance_batch" model="ir.actions.act_window">
+        <field name="name">Attendance Sheet Batches</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.attendance.batch</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hr_attendance_batch_sheet" name="Attendance Analysis"
+              parent="hr_attendance.menu_hr_attendance_root"
+              sequence="12"
+              groups="hr.group_hr_user"/>
+
+    <menuitem id="menu_hr_attendance_batch" name="Attendance Batches"
+              parent="menu_hr_attendance_batch_sheet"
+              sequence="1" action="action_hr_attendance_batch"
+              groups="hr.group_hr_user"/>
+
+
+</odoo>

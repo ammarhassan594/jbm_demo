@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="appraisal_view_employee_form" model="ir.ui.view">
+            <field name="name">appraisal.view.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='payroll_group']//field[@name='job_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="job_id" options="{'no_create': True,'no_edit':True}"/>
+                    <field name="job_code"/>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+           <record id="training_hr_employee_form_inherit" model="ir.ui.view">
+            <field name="name">training.hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="employee_training_courses.hr_employee_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_course_ids']//tree//field[@name='course_training_id']"
+                       position="after">
+                    <field name="course_ids" invisible="1" readonly="1"/>
+                </xpath>
+                <xpath expr="//field[@name='employee_course_ids']//field[@name='course_training_id']"
+                       position="attributes">
+                    <attribute name="domain">[('id', 'in', course_ids)]</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="bank_transfer_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--                    <t t-call="web.external_layout">-->
+
+
+                    <div style="font-family:Calibri; border-top: 2px solid blue;">
+                        <img t-att-src="image_data_uri(o.company_id.logo)" alt="Logo"
+                             style="position:absolute; top:0px;right:0px;max-height:150pt;max-width:90%"/>
+                    </div>
+
+                    <div style="font-family:Calibri">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Date:</b>
+                        <b style="position:absolute; left:50px" t-field="o.payment_date"/>
+                        <br/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Venture Capital Vision for Internet Marketing</b>
+                        <br/>
+                        <span style="position:absolute; left:0px" t-field="o.company_id.street"/>
+                        <br/>
+                        <span style="position:absolute; left:0px">Commercial Registration 118894</span>
+                        <br/>
+                        <br/>
+                        <b style="position:absolute; left:0px">To</b>
+                        <br/>
+                        <b style="position:absolute; left:0px">The Manager</b>
+                        <br/>
+                        <span style="position:absolute; left:0px">Qatar National Bank</span>
+                        <br/>
+                        <span style="position:absolute; left:0px">Doha, Qatar</span>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <div style="font-family:Calibri">
+                        <center>Subject: <b>Telegraphic Transfer</b> </center>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <div style="font-family:Calibri">
+                        <b style="position:absolute; left:0px">Dear Sir,</b>
+                        <br/>
+                        <span style="position:absolute; left:0px">With respect to the above-mentioned subject, kindly
+                            you are hereby authorized to debit our A/C No. <b t-field="o.journal_id.bank_account_id"/> and arrange the following
+                            payment
+                            transaction, as follows:
+                        </span>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <div style="font-family:Calibri">
+                        <b style="position:absolute; left:0px">Beneficiary name :</b>
+                        <b style="position:absolute; left:150px" t-field="o.partner_id.name"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">IBAN :</b>
+                        <b style="position:absolute; left:150px" t-field="o.bank_account_id.iban"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Swift code :</b>
+                        <b style="position:absolute; left:150px" t-field="o.bank_account_id.swift_code"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Bank name :</b>
+                        <b style="position:absolute; left:150px" t-field="o.bank_account_id.bank_id.name"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Bank account no. :</b>
+                        <b style="position:absolute; left:150px" t-field="o.bank_account_id"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Bank address :</b>
+                        <b style="position:absolute; left:150px" t-field="o.bank_account_id.bank_id.street"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Amount :</b>
+                        <b style="position:absolute; left:150px" t-field="o.check_amount_in_words"/>
+                        <br/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Description :</b>
+                        <b style="position:absolute; left:150px" t-field="o.ref"/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Memo :</b>
+                        <b style="position:absolute; left:150px" t-field="o.communication"/>
+                        <br/>
+                    </div>
+
+                    <div style="font-family:Calibri">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span style="position:absolute; left:0px">Please debit all bank charges to our above-mentioned
+                            account in Qatari Riyals and advise us accordingly
+                        </span>
+                        <br/>
+                        <br/>
+                        <b style="position:absolute; left:0px">Yours Sincerely,</b>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <b style="position:absolute; left:200px">Anthony Awkar</b>
+                        <b style="position:absolute; right:200px">Lolwa Al-Marri</b>
+                    </div>
+
+                    <center style="position:absolute; bottom:0px;">
+                        <span>
+                            _________________________________________________________________________________________________________________________________________
+                        </span><br/>
+                        <span t-field="o.company_id.street"/>, Tel. no
+                        <span t-field="o.company_id.phone"/>, Email
+                        <span t-field="o.company_id.email"/>
+                    </center>
+
+
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>
+

@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record id="hr_job_custom_view" model="ir.ui.view">
+            <field name="name">custom.hr.job.view</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <h1>
+                        <field name="job_arabic_name" placeholder="e.g. مدير مبيعات"/>
+                    </h1>
+                </field>
+                <field name="department_id" position="after">
+                    <field name="employee_payroll_groups"/>
+                    <field name="job_number"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

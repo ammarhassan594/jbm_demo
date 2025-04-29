@@ -1,0 +1,1 @@
+<odoo>    <record id="hr_holidays.action_hr_approval" model="ir.actions.server">        <field name="groups_id" eval="[(6, 0, [ref('jbm_group_access_right_extended.custom_hr_manager')])]"/>    </record>    <record id="hr_holidays.action_manager_approval" model="ir.actions.server">        <field name="binding_model_id" eval="False"/>    </record></odoo>

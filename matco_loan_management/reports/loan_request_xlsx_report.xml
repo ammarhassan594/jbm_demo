@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report
+                id="action_loan_request_xlsx_report"
+                model="hr.loan"
+                string="Generate Loan Request XLSX Report"
+                report_type="xlsx"
+                name="matco_loan_management.request_loan_xlsx_report"
+                file="matco_loan_management.request_loan_xlsx_report"
+                attachment_use="False"
+        />
+</odoo>

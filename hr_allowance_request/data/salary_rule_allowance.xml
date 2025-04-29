@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Adding a salary rule for loan-->
+    <data noupdate="0">
+
+
+        <record id="hr_rule_furniture_alw" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">FURNITURE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Furniture Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_furniture_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_rule_ticket_alw" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="14"/>
+            <field name="code">TICKET</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Ticket Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_ticket_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+        <record id="hr_rule_maintenance_alw" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="15"/>
+            <field name="code">MAINTENANCE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Maintenance Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_maintenance_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_education_allowance" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">EDUCATION</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Education Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_education_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_furniture_maintenance_allowance" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">FURNITURE MAINTENANCE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Furniture Maintenance Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_furniture_maintenance_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+
+
+        <record id="hr_rule_mobilization_allowance" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">MOBILIZATION</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">Mobilization Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_mobilization_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+
+        <record id="hr_rule_business_training_trip_allowance" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">BUSINESS/TRAINING</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">BUSINESS/TRAINING Trip Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_business_training_trip_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+        <record id="hr_rule_EOSB_advance_allowance" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="sequence" eval="13"/>
+            <field name="code">EOSB</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="name">EOSB Advance Allowance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name="amount_python_compute">result = payslip.env['hr.payslip'].get_EOSB_advance_allowance(payslip,employee)</field>
+            <field name="struct_id" ref="jbm_salary_rules.structure_worker_jbm_new"/>
+        </record>
+
+    </data>
+</odoo>

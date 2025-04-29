@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_picking,ebs_jbm_approval_extend.access_stock_picking,model_stock_picking,base_portal_user.group_user_portal,1,1,1,1
+access_stock_picking_type,ebs_jbm_approval_extend.access_stock_picking_type,stock.model_stock_picking_type,base_portal_user.group_user_portal,1,1,1,1

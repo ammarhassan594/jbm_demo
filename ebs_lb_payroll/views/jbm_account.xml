@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="jbm_account_tree" model="ir.ui.view">
+            <field name="name">JBM Account Tree</field>
+            <field name="model">jbm.account</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="jbm_account"/>
+                    <field name="account_description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="jbm_account_form" model="ir.ui.view">
+            <field name="name">JBM Account Form</field>
+            <field name="model">jbm.account</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="jbm_account"/>
+                            <field name="account_description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="jbm_account_action" model="ir.actions.act_window">
+            <field name="name">JBM Account</field>
+            <field name="res_model">jbm.account</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--menu -->
+            <menuitem id="jbm_account_rule_menu" name="JBM Account" sequence="100" action="jbm_account_action"
+              parent="hr_payroll.menu_hr_salary_configuration"/>
+    </data>
+
+</odoo>

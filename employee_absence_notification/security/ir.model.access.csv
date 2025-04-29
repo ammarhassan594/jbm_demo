@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_absence_notification_employee_absence_notification,employee_absence_notification.employee_absence_notification,model_employee_absence_notification_employee_absence_notification,base.group_user,1,1,1,1

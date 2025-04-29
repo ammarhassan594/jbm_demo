@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="hr_leave_form_view_inherit">
+            <field name="name">hr.leave.form.view.inherit</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='holiday_status_id']" position="after">
+                    <field name="replacement_resource_domain" invisible="1"/>
+                    <field name="replacement_employee" invisible="1"/>
+                    <field name="replacement_resource_id"  domain="replacement_resource_domain" options="{'no_create':True,'no_edit':True,'no_open':True}"
+                           attrs="{'required': [ ('replacement_employee', '=', True)]}"/>
+                    <field name="roles_delegate" attrs="{'invisible': [('replacement_resource_id', '=', False)]}"/>
+<!--                    <field name="replacement_employee_domain" invisible="1"/>-->
+<!--                    <field name="replacement_employee_id" attrs="{'required': [ ('replacement_employee', '=', True)]}"-->
+<!--                           domain="replacement_employee_domain"/>-->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="approval_request_view_tree_inherit" model="ir.ui.view">
+            <field name="name">approval.request.view.tree.inherit</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_get_attachment_view']" position="after">
+                    <button name="action_open_stock_picking" type="object"
+                            class="oe_stat_button" icon="fa-credit-card"
+                            attrs="{'invisible': [('stock_picking_count', '=', 0)]}">
+                        <field name="stock_picking_count" string="Internal Picking" widget="statinfo"/>
+                    </button>
+                </xpath>
+
+                <xpath expr="//button[@name='action_approve']" position="after">
+                    <button name="check_product_availability"
+                            string="Stock Available"
+                            type="object"
+                            groups="jbm_group_access_right_extended.custom_procurement_manager,
+                                    jbm_group_access_right_extended.custom_group_inventory_manager"
+                            attrs="{'invisible':[('approval_type','!=','purchase')]}"/>
+                    <button name="create_stock_picking"
+                            string="Internal Picking"
+                            type="object"
+                            groups="jbm_group_access_right_extended.custom_procurement_manager,
+                                    jbm_group_access_right_extended.custom_group_inventory_manager"
+                            attrs="{'invisible':['|', ('approval_type', '!=', 'purchase'),('request_status','!=','approved')]}"/>
+                    <button name="action_print_material_request"
+                            string="Print"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':['|', ('request_status','not in',['pending','under_approval', 'approved']), ('approval_type', '!=', 'purchase')]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('request_status','in',['approved','cancel'])]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='has_date']" position="after">
+                    <field name="is_financial_approver" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="before">
+                    <field name="create_uid" attrs="{'invisible': [('approval_type', '=', 'permit_over_time')]}"/>
+                    <field name="approval_product_type" invisible="1"/>
+                    <field name="purchases_total_amount" invisible="1"/>
+
+                </xpath>
+
+                <xpath expr="//button[@name='action_create_purchase_orders']" position="attributes">
+                    <attribute name="attrs">{'invisible': [
+                        '|',
+                        ('approval_type', '!=', 'purchase'),
+                        ('request_status', '!=', 'approved')
+                        ]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='product_line_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('request_status','not in',('new', 'pending',
+                        'under_approval'))]}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

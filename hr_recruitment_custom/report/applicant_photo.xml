@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="applicant_photo"
+                model="hr.applicant"
+                string="Applicant Photo"
+                report_type="qweb-pdf"
+                name="hr_recruitment_custom.applicant_photo_report"
+                file="hr_recruitment_custom.applicant_photo_report"
+                print_report_name="object.name"
+                attachment="' Applicant Photo - '+(object.partner_name if object.job_id else '')+'.pdf'"
+
+        />
+
+        <template id="applicant_photo_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hr_recruitment_custom.report_applicant_photo"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_applicant_photo">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <div class="text-center" id="title">
+                        <h2>
+                            <span>Applicant Photo</span>
+                            <br/>
+                            <span t-field="o.name"/>
+                            <br/>
+                            <img t-if="o.image_1920 != '' and o.image_1920 != False " t-att-src="'data:image/*;base64,%s' % to_text(o.image_1920)"/>
+                        </h2>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

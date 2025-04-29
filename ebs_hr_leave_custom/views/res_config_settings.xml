@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ebs_hr_leave_view_hr_leave_configuration" model="ir.ui.view">
+            <field name="name">Configure Leave Automatic Approval</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr_vacation_mngmt.view_hr_leave_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='config_leave']" position="inside">
+
+                    <div class="col-xs-12 col-md-6 o_setting_box" name="allow_leave_approval">
+                        <div class="o_setting_right_pane">
+<!--                            <label for="allow_leave_ids" string="Allow leaves for automatically approved"/>-->
+                            <div class="text-muted">
+                                Set a number of hours which approval will be automatically
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <label for="number_of_hours_approval" string="Hours"/>
+                                    <field name="number_of_hours_approval"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="text-muted">
+                                Choose the leaves which be automatically approved
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <label for="allow_leave_ids" string="Allow leaves"/>
+                                    <field name="allow_leave_ids" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

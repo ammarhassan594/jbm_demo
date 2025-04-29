@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dynamic_integration_configuration,dynamic_ooredoo_integration.access_dynamic_integration_configuration,model_dynamic_integration_configuration,base.group_user,1,1,1,1
+access_dynamic_integration_configuration_mixin,dynamic_ooredoo_integration.access_dynamic_integration_configuration_mixin,model_dynamic_integration_mix,base.group_user,1,1,1,1

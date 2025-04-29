@@ -1,0 +1,1415 @@
+<odoo>
+    <record id="view_clients_review_form" model="ir.ui.view">
+        <field name="name">res.partner.clients.review.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" id="client_button_box" name="button_box">
+                        <button name="action_see_client_documents" type="object" class="oe_stat_button"
+                                icon="fa-file-text-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="document_count"/>
+                                </span>
+                                <span class="o_stat_text">Documents</span>
+                            </div>
+                        </button>
+                        <button name="action_see_tenders" type="object" class="oe_stat_button"
+                                icon="fa-file-text-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="tender_count"/>
+                                </span>
+                                <span class="o_stat_text">Deals</span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="expired_documents" icon="fa-file-text-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="document_expired_count"/>
+                                </span>
+                                <span class="o_stat_text">Expired</span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="expiring_document" icon="fa-file-text-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="document_expiring_count"/>
+                                </span>
+                                <span class="o_stat_text">Expiring</span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="action_see_contract" icon="fa-file-text-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="contract_count"/>
+                                </span>
+                                <span class="o_stat_text">Contract</span>
+                            </div>
+                        </button>
+
+
+                    </div>
+                    <button name="active_client" string="Confirm" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('client_state', '=', 'active')]}"/>
+                    <button name="inactive_client" string="Deactivate" type="object" class="oe_highlight bg-danger"
+                            attrs="{'invisible': [('client_state', '!=', 'active')]}"/>
+                    <group>
+                        <group>
+                            <field name="abbreviation"/>
+                            <field name="active" invisible="1"/>
+                            <field name="is_vendor" invisible="1"/>
+
+                            <field name="name" required="1"/>
+                            <field name="arabic_name" required="0"/>
+                            <field name="related_company_ids" string="Related Main Companies" required="0"
+                                   widget="many2many_tags" context="{'override_record_rule': True}"
+                                   options="{'no_create_edit': 1, 'no_create': 1}"/>
+                            <field name="show_branch" invisible="1" force_save="1"/>
+
+                        </group>
+                        <field name="image_1920" widget="image" class="oe_right oe_avatar"
+                               options="{&quot;preview_image&quot;: &quot;image_128&quot;}" nolabel="1"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="client_state"/>
+
+                            <field name="is_branch" readonly="context.get('is_branch_main') == False" invisible="1"/>
+                            <field name="client_parent_id" readonly="context.get('is_branch_main') == False"
+                                   attrs="{'required': [('is_branch','=',True)]}"
+                                   context="{'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form'}"/>
+                        </group>
+                        <group>
+                            <field name="business_sector_id"/>
+                            <field name="company_business_type" widget="radio" options="{'horizontal': true}"/>
+                            <field name="other_business_type"
+                                   attrs="{'invisible': [('company_business_type','!=','other')]}"/>
+                            <field name="nationality_id" invisible="0" readonly="0"/>
+                        </group>
+                    </group>
+                    <label for="document_license_ids"/>
+                    <field name="document_license_ids" context="{'licence':1,'default_partner_id':id,}" readonly="1">
+                        <tree default_order="view_sequence asc">
+                            <field name="name"/>
+                            <field name="document_number"/>
+                            <field name="view_sequence" invisible="1"/>
+                            <field name="document_type_id" options="{'no_create_edit': True}"/>
+                            <field name="issue_date"/>
+                            <field name="expiry_date"/>
+                            <field name="status"/>
+                            <field name="type" invisible="1"/>
+                            <button name="access_content" icon="fa-download" type="object"
+                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                            <button name="preview_document" icon="fa-eye" type="object"
+                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                        </tree>
+                    </field>
+
+
+                    <field name="is_company" invisible="1"/>
+                    <field name="type" invisible="1"/>
+                    <div class="oe_title">
+                        <field name="company_type" options="{'horizontal': true}" class="oe_edit_only" widget="radio"
+                               invisible="1"/>
+
+
+                        <field name="parent_id"
+                               widget="res_partner_many2one"
+                               placeholder="Company"
+                               domain="[('is_company', '=', True)]"
+                               context="{'default_is_company': True, 'show_vat': True}"
+                               attrs="{'invisible': [('is_company','=', True)]}" readonly="1"/>
+                        <field name="company_partner" invisible="1"/>
+                        <field name="is_customer" invisible="1"/>
+
+                        <field name="lang" invisible="1"/>
+                        <field name="related_companies" invisible="1"/>
+                        <field name="user_id" invisible="1"/>
+                    </div>
+                    <group>
+                        <group>
+
+                            <field name="is_vendor" invisible="1"/>
+                        </group>
+                        <group invisible="1">
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="city" placeholder="City" class="o_address_city"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="state_id" class="o_address_state" placeholder="State"
+                                       options='{"no_open": True}'
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                                       context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country"
+                                       options='{"no_open": True, "no_create": True}'
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+
+                            </div>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="legal" string="Legal">
+                            <notebook>
+                                <page name="agreements" string="Agreements">
+                                    <field name="document_agreement_ids">
+                                        <tree default_order="view_sequence asc">
+                                            <field name="name"/>
+                                            <field name="view_sequence" invisible="1"/>
+                                            <field name="document_number"/>
+                                            <field name="document_type_id" required="1"
+                                                   options="{'no_create': True,'no_create_edit':True}"/>
+                                            <field name="issue_date"/>
+                                            <field name="expiry_date"/>
+                                            <field name="status"/>
+                                            <field name="type" invisible="1"/>
+                                            <button name="access_content" icon="fa-download" type="object"
+                                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                                            <button name="preview_document" icon="fa-eye" type="object"
+                                                    attrs="{'invisible':[('type','!=','binary')]}"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page name="shareholders" string="Shareholders">
+                                    <field name="shareholder_contact_ids"
+                                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_shareholder': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_shareholder'}"
+                                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder','=',True), ('is_company', '!=', True)]">
+                                        <tree>
+                                            <field name="company_type"/>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                                   invisible="1"/>
+                                            <field name="ps_passport_ref_no" invisible="1"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable" invisible="1"/>
+                                            <field name="qid_ref_no" invisible="1"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page name="legal_case" string="Legal Cases"
+                                      groups="ebs_fusion_legal.group_ebs_fusion_legal">
+                                    <field name="legal_case_ids" readonly="1" domain="[('partner_id', '=', id)]"/>
+                                </page>
+                            </notebook>
+                        </page>
+                        <page string="Contacts Information" name="contact_info">
+                            <button name="open_client_relation_details"
+                                    string="Client Relation Details"
+                                    type="object" class="oe_highlight"/>
+                            <notebook>
+                                <page name="shareholders" string="Shareholders">
+                                    <field name="shareholder_contact_ids"
+                                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_shareholder': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_shareholder'}"
+                                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder','=',True), ('is_company', '!=', True)]">
+                                        <tree>
+                                            <field name="company_type"/>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage"/>
+                                            <field name="permission" invisible="1"/>
+
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                                   invisible="1"/>
+                                            <field name="ps_passport_ref_no" invisible="1"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable" invisible="1"/>
+                                            <field name="qid_ref_no" invisible="1"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page name="primary_contact" string="Primary Contacts">
+                                    <h3>Primary Contact Details</h3>
+                                    <field name="contact_child_ids" nolabel="1"
+                                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_primary_contact': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_primary_contact'}"
+                                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_company', '!=', True)]">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage" invisible="1"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                                            <field name="ps_passport_ref_no"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable"/>
+                                            <field name="qid_ref_no"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+
+                                    </field>
+                                </page>
+                                <page string="Secondary Contacts">
+                                    <h3>Secondary Contact Details</h3>
+                                    <field name="secondary_contact_child_ids" nolabel="1"
+                                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]"
+                                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_secondary_contact'}">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage" invisible="1"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                                            <field name="ps_passport_ref_no"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable"/>
+                                            <field name="qid_ref_no"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+
+                                    </field>
+                                </page>
+                                <page string="AOA" name="aoa_shareholders">
+
+                                    <group string="Shareholders">
+                                        <field name="aoa_shareholder_contact_ids" nolabel="1"
+                                               context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_aoa_partner': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_aoa_partner'}"
+                                               domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), ('is_company', '!=', True)]">
+                                            <tree>
+                                                <field name="company_type"/>
+                                                <field name="name"/>
+                                                <field name="arabic_name"/>
+                                                <field name="contact_state" invisible="1"/>
+                                                <field name="email" invisible="1"/>
+                                                <field name="mobile"/>
+                                                <field name="partner_email"/>
+                                                <field name="partner_permission" invisible="1"/>
+                                                <field name="permission" invisible="1"/>
+                                                <field name="partner_profit_share"/>
+                                                <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                                       invisible="1"/>
+                                                <field name="ps_passport_ref_no" invisible="1"/>
+                                                <field name="qid_residency_id" widget="many2one_clickable"
+                                                       invisible="1"/>
+                                                <field name="qid_ref_no" invisible="1"/>
+                                                <button name="active_contact" string="Confirm" type="object"
+                                                        attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                                <button name="inactive_contact" string="Deactivate"
+                                                        class="text-danger text-uppercase" type="object"
+                                                        attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </page>
+                                <page string="Commercial Registration">
+
+                                    <h3>Partners</h3>
+                                    <field name="cr_partner_ids" nolabel="1" readonly="0"
+                                           context="{'active_id': id, 'default_is_shareholder':True,  'default_is_company': False, 'role': 'is_shareholder', 'clients_review': True}">
+                                        <tree create="0" delete="0">
+                                            <field name="company_type"/>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                                   invisible="1"/>
+                                            <field name="ps_passport_ref_no" invisible="1"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable" invisible="1"/>
+                                            <field name="qid_ref_no" invisible="1"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+                                    </field>
+                                    <h3>Managers</h3>
+                                    <field name="cr_manager_ids" nolabel="1" readonly="0"
+                                           context="{'active_id': id, 'default_is_manager_cr': True, 'default_is_company': False, 'role': 'is_manager_cr', 'clients_review': True}">
+                                        <tree create="0" delete="0">
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage" invisible="1"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                                            <field name="ps_passport_ref_no"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable"/>
+                                            <field name="qid_ref_no"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+
+                                    </field>
+                                </page>
+                                <page string="Trade License">
+
+                                    <group>
+                                        <group>
+                                            <field name="cl_manager_status" invisible="1"/>
+                                            <field name="cl_manager_ids" readonly="1"
+                                                   context="{'default_is_manager_cl': True, 'default_is_company': False}">
+                                            </field>
+                                        </group>
+                                        <group>
+                                            <button name="active_cl_manager" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('cl_manager_status', '=', 'active')]}"/>
+                                            <button name="inactive_cl_manager" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('cl_manager_status', '!=', 'active')]}"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Establishment Card">
+
+                                    <h3>Authorisers</h3>
+                                    <field name="ec_manager_ids" nolabel="1" readonly="0"
+                                           context="{'active_id': id, 'default_is_manager_ec': True, 'default_is_company': False, 'clients_review': True, 'tree_view_ref':'client_contacts_tree_view'}">
+                                    </field>
+                                </page>
+                                <page string="HR Contacts">
+                                    <h3>HR Contact Details</h3>
+                                    <field name="hr_contact_child_ids" nolabel="1"
+                                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]"
+                                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_hr_contact'}">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage" invisible="1"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                                            <field name="ps_passport_ref_no"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable"/>
+                                            <field name="qid_ref_no"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page string="Finance Contacts">
+                                    <h3>Finance Contact Details</h3>
+                                    <field name="accounting_contact_ids" nolabel="1"
+                                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]"
+                                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_client_finance_ac'}">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage" invisible="1"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                                            <field name="ps_passport_ref_no"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable"/>
+                                            <field name="qid_ref_no"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </page>
+                        <page string="Corporate Licenses" name="corporate_license">
+                            <notebook>
+                                <page string="Commercial Registration">
+                                    <group>
+                                        <group>
+                                            <field name="cr_status" invisible="1"/>
+                                            <field name="cr_document_id"
+                                                   force_save="1"
+                                                   context="{'is_branch_main':is_branch,'client_parent_id':client_parent_id,'default_partner_id': active_id,
+                                        'cr_document': True,
+                                        'form_view_ref': 'ebs_fusion_contacts.clients_documents_view_inherit',
+                                        'default_name':name,
+                                        'shareholder_contact_ids':shareholder_contact_ids,
+                                        'default_arabic_name':arabic_name
+                                        }"/>
+                                            <field name="new_expiry_date"/>
+                                            <field name="new_issue_date"/>
+                                            <field name="cr_doc_no"/>
+                                            <field name="cr_trade_name"/>
+                                            <field name="cr_arabic_name"/>
+                                            <field name="cr_tax_reg_no"/>
+                                            <field name="cr_creation_date"/>
+                                            <field name="cr_legal_form"/>
+                                            <field name="cr_capital"/>
+                                            <field name="cr_reg_status"/>
+                                            <field name="cr_no_brances"/>
+                                            <field name="cr_nationality"/>
+                                        </group>
+                                        <group>
+                                            <button name="active_cr" string="Confirm" type="object"
+                                                    attrs="{'invisible': ['|',('cr_status', '=', 'active'),('cr_document_id','=',False)]}"/>
+                                            <button name="inactive_cr" string="Deactivate"
+                                                    class="text-danger text-uppercase"
+                                                    type="object"
+                                                    attrs="{'invisible': [('cr_status', '!=', 'active')]}"/>
+                                        </group>
+                                    </group>
+                                    <h3>Partners</h3>
+                                    <field name="cr_partner_ids" nolabel="1" readonly="0"
+                                           context="{'active_id': id, 'default_is_shareholder':True,  'default_is_company': False, 'role': 'is_shareholder', 'clients_review': True}">
+                                        <tree create="0" delete="0">
+                                            <field name="company_type"/>
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage"/>
+                                            <field name="permission" invisible="1"/>
+
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                                   invisible="1"/>
+                                            <field name="ps_passport_ref_no" invisible="1"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable" invisible="1"/>
+                                            <field name="qid_ref_no" invisible="1"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+
+                                    </field>
+
+                                    <h3>Managers</h3>
+                                    <field name="cr_manager_ids" nolabel="1" readonly="0"
+                                           context="{'active_id': id, 'default_is_manager_cr': True, 'default_is_company': False, 'role': 'is_manager_cr', 'clients_review': True}">
+                                        <tree create="0" delete="0">
+                                            <field name="name"/>
+                                            <field name="arabic_name"/>
+                                            <field name="contact_state" invisible="1"/>
+                                            <field name="email" invisible="1"/>
+                                            <field name="mobile"/>
+                                            <field name="partner_email"/>
+                                            <field name="partner_permission" invisible="1"/>
+                                            <field name="partner_percentage" invisible="1"/>
+                                            <field name="permission" invisible="1"/>
+                                            <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                                            <field name="ps_passport_ref_no"/>
+                                            <field name="qid_residency_id" widget="many2one_clickable"/>
+                                            <field name="qid_ref_no"/>
+                                            <button name="active_contact" string="Confirm" type="object"
+                                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                            <button name="inactive_contact" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                        </tree>
+
+                                    </field>
+                                    <h3>Business Activities</h3>
+                                    <field name="cr_activity_ids" nolabel="1"/>
+                                </page>
+                                <page string="Trade License">
+                                    <group>
+                                        <group>
+                                            <field name="cl_status" invisible="1"/>
+                                            <field name="cl_document_id"
+                                                   context="{'default_partner_id': active_id, 'cl_document': True,
+                                               'form_view_ref': 'ebs_fusion_contacts.clients_documents_view_inherit',
+                                               'default_name':name,
+                                                'default_arabic_name':arabic_name}" string="Trade License"/>
+                                            <field name="cl_expiry_date"/>
+                                            <field name="cl_issue_date"/>
+                                            <field name="cl_name"/>
+                                            <field name="cl_arabic_name"/>
+                                            <field name="cl_license_number"/>
+                                        </group>
+                                        <group>
+                                            <button name="active_cl" string="Confirm" type="object"
+                                                    attrs="{'invisible': ['|',('cl_status', '=', 'active'),('cl_document_id','=',False)]}"/>
+                                            <button name="inactive_cl" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('cl_status', '!=', 'active')]}"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group>
+                                            <field name="cl_manager_status" invisible="1"/>
+                                            <field name="cl_manager_ids" readonly="1"
+                                                   context="{'default_is_manager_cl': True, 'default_is_company': False}">
+                                            </field>
+                                        </group>
+                                        <group>
+                                            <button name="active_cl_manager" string="Confirm" type="object"
+                                                    attrs="{'invisible': ['|',('cl_manager_status', '=', 'active'),('cl_manager_ids','=',False)]}"/>
+                                            <button name="inactive_cl_manager" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('cl_manager_status', '!=', 'active')]}"/>
+                                        </group>
+                                    </group>
+                                    <group string="National Address">
+                                        <field name="cl_zone_id"/>
+                                        <field name="cl_street"/>
+                                        <field name="cl_building"/>
+                                        <field name="cl_unit"/>
+                                    </group>
+                                    <group string="Documents">
+                                        <field name="cl_document_o2m" nolabel="1">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="document_number"/>
+                                                <field name="document_type_id" options="{'no_create_edit': True}"/>
+                                                <field name="issue_date"/>
+                                                <field name="expiry_date"/>
+                                                <field name="status"/>
+                                                <field name="type" invisible="1"/>
+                                                <button name="access_content" icon="fa-download" type="object"
+                                                        attrs="{'invisible':[('type','!=','binary')]}"/>
+                                                <button name="preview_document" icon="fa-eye" type="object"
+                                                        attrs="{'invisible':[('type','!=','binary')]}"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </page>
+                                <page string="Establishment Card">
+                                    <group>
+                                        <group>
+                                            <field name="ec_status" invisible="1"/>
+                                            <field name="ec_document_id"
+                                                   context="{'default_partner_id': active_id,
+                                                   'cr_document_id': cr_document_id,
+                                                   'default_name':name,
+                                                    'default_arabic_name':arabic_name,
+                                                    'ec_document': True, 'form_view_ref': 'ebs_fusion_contacts.clients_documents_view_inherit'}"/>
+                                            <field name="ec_expiry_date"/>
+                                            <field name="ec_issue_date"/>
+                                            <field name="est_id"/>
+                                            <field name="est_name_en"/>
+                                            <field name="est_arabic_name"/>
+                                            <field name="est_sector"/>
+                                            <field name="est_first_issue"/>
+                                        </group>
+                                        <group>
+                                            <button name="active_ec" string="Confirm" type="object"
+                                                    attrs="{'invisible': ['|',('ec_status', '=', 'active'),('ec_document_id','=',False)]}"/>
+                                            <button name="inactive_ec" string="Deactivate"
+                                                    class="text-danger text-uppercase"
+                                                    type="object"
+                                                    attrs="{'invisible': [('ec_status', '!=', 'active')]}"/>
+                                        </group>
+                                    </group>
+                                    <h3>Authorisers</h3>
+                                    <field name="ec_manager_ids" nolabel="1" readonly="1"
+                                           context="{'tree_view_ref':'client_contacts_tree_view','active_id': id, 'default_is_manager_ec': True, 'default_is_company': False, 'clients_review': True}">
+                                    </field>
+                                </page>
+                                <page string="Article of Association">
+                                    <group>
+                                        <group>
+                                            <field name="aoa_status" invisible="1"/>
+                                            <field name="aoa_document_id" context="{'default_partner_id': active_id, 'aoa_document': True,
+                                                   'form_view_ref': 'ebs_fusion_contacts.clients_documents_view_inherit',
+                                                   'default_name':name,
+                                                   'shareholder_contact_ids':shareholder_contact_ids,
+                                                    'default_arabic_name':arabic_name}"/>
+                                            <field name="date_initiation"/>
+                                            <field name="period"/>
+                                            <field name="date_term"/>
+                                            <field name="aoa_issue_date"/>
+                                            <field name="aoa_expiry_date"/>
+
+                                            <label for="financial_month" string="Financial Year"/>
+                                            <div class="o_row">
+                                                <field name="financial_month"/>
+                                                <field name="financial_day"/>
+                                            </div>
+                                            <field name="financial_link_partner"/>
+                                            <field name="general_manager"/>
+                                            <field name="general_secretary"/>
+                                            <field name="admin_manager"/>
+                                            <field name="banking_signatory"/>
+                                            <field name="liaison_officer"/>
+                                        </group>
+                                        <group>
+                                            <button name="active_aoa" string="Confirm" type="object"
+                                                    attrs="{'invisible': ['|',('aoa_status', '=', 'active'),('aoa_document_id','=',False)]}"/>
+                                            <button name="inactive_aoa" string="Deactivate"
+                                                    class="text-danger text-uppercase" type="object"
+                                                    attrs="{'invisible': [('aoa_status', '!=', 'active')]}"/>
+                                        </group>
+                                    </group>
+                                    <group string="Shareholders">
+                                        <field name="aoa_shareholder_contact_ids" nolabel="1"
+                                               context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_aoa_partner': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_aoa_partner'}"
+                                               domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), ('is_company', '!=', True)]">
+                                            <tree>
+                                                <field name="company_type"/>
+                                                <field name="name"/>
+                                                <field name="arabic_name"/>
+                                                <field name="contact_state" invisible="1"/>
+                                                <field name="email" invisible="1"/>
+                                                <field name="mobile"/>
+                                                <field name="partner_email"/>
+                                                <field name="partner_permission" invisible="1"/>
+
+                                                <field name="permission" invisible="1"/>
+                                                <field name="partner_profit_share"/>
+                                                <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                                       invisible="1"/>
+                                                <field name="ps_passport_ref_no" invisible="1"/>
+                                                <field name="qid_residency_id" widget="many2one_clickable"
+                                                       invisible="1"/>
+                                                <field name="qid_ref_no" invisible="1"/>
+                                                <button name="active_contact" string="Confirm" type="object"
+                                                        attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                                <button name="inactive_contact" string="Deactivate"
+                                                        class="text-danger text-uppercase" type="object"
+                                                        attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </page>
+
+                            </notebook>
+                        </page>
+                        <page string="Branches" attrs="{'invisible': [('show_branch', '=', False)]}" name="branches">
+                            <field name="branch_ids"
+                                   options="{'no_create': True, 'no_create_edit':True}"
+                                   context="{'is_branch_main':is_branch,'default_dependent_id': True, 'default_active': True, 'default_is_company': True, 'default_is_company': True, 'default_is_customer': True, 'form_view_ref': 'ebs_fusion_contacts.view_clients_review_form', 'default_is_branch': True, 'default_client_parent_id': active_id, 'default_parent_id': False}">
+                                <tree edit="0">
+                                    <field name="display_name"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                    <field name="company_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="document_page" string="Documents">
+                            <button name="%(ebs_fusion_documents.document_button_action)d"
+                                    string="Create Document"
+                                    type="action" class="oe_highlight"
+                                    context="{
+                            'default_partner_id':active_id,
+                            'default_res_id': id,
+                            'default_res_model': context.get('active_model'),
+                            'hide_field': 1,
+                            'default_is_client_rel': True,
+                            }"/>
+                            <field name="document_o2m"
+                                   context="{'default_partner_id':active_id,'default_is_client_rel':True}">
+                                <tree default_order="view_sequence asc">
+                                    <field name="name"/>
+                                    <field name="document_number"/>
+                                    <field name="document_type_id" options="{'no_create_edit': True}"/>
+                                    <field name="issue_date"/>
+                                    <field name="view_sequence" invisible="1"/>
+                                    <field name="expiry_date"/>
+                                    <field name="status"/>
+                                    <field name="type" invisible="1"/>
+                                    <button name="access_content" icon="fa-download" type="object"
+                                            attrs="{'invisible':[('type','!=','binary')]}"/>
+                                    <button name="preview_document" icon="fa-eye" type="object"
+                                            attrs="{'invisible':[('type','!=','binary')]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Addresses" name="address">
+                            <field name="child_ids" mode="kanban"
+                                   domain="[('address_type', 'in', ['head_office', 'local_office','Work_sites','labor_accommodation','national_address'])]"
+                                   context="{'default_type': 'other','default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_lang': lang, 'default_user_id': user_id, 'default_type': 'other'}">
+                                <kanban>
+                                    <field name="id"/>
+                                    <field name="color"/>
+                                    <field name="name"/>
+                                    <field name="title"/>
+                                    <field name="type"/>
+                                    <field name="email"/>
+                                    <field name="parent_id"/>
+                                    <field name="is_company"/>
+                                    <field name="function"/>
+                                    <field name="phone"/>
+                                    <field name="street"/>
+                                    <field name="street2"/>
+                                    <field name="zip"/>
+                                    <field name="city"/>
+                                    <field name="country_id"/>
+                                    <field name="mobile"/>
+                                    <field name="state_id"/>
+                                    <field name="image_128"/>
+                                    <field name="lang"/>
+
+                                    <field name="comment"/>
+                                    <field name="display_name"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                            <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+                                                <div class="o_kanban_image">
+                                                    <img alt="Partner" t-if="record.image_128.raw_value"
+                                                         t-att-src="kanban_image('res.partner', 'image_128', record.id.raw_value)"/>
+                                                    <t t-if="!record.image_128.raw_value">
+                                                        <img alt="Delivery"
+                                                             t-if="record.type.raw_value === 'delivery'"
+                                                             t-att-src='_s + "/base/static/img/truck.png"'/>
+                                                        <img alt="Invoice"
+                                                             t-if="record.type.raw_value === 'invoice'"
+                                                             t-att-src='_s + "/base/static/img/money.png"'/>
+                                                        <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
+                                                            <img alt="Logo"
+                                                                 t-if="record.is_company.raw_value === true"
+                                                                 t-att-src='_s + "/base/static/img/company_image.png"'/>
+                                                            <img alt="Avatar"
+                                                                 t-if="record.is_company.raw_value === false"
+                                                                 t-att-src='_s + "/base/static/img/avatar_grey.png"'/>
+                                                        </t>
+                                                    </t>
+                                                </div>
+                                                <div class="oe_kanban_details">
+                                                    <field name="name"/>
+                                                    <div t-if="record.function.raw_value">
+                                                        <field name="function"/>
+                                                    </div>
+                                                    <div t-if="record.email.raw_value">
+                                                        <field name="email" widget="email"/>
+                                                    </div>
+                                                    <div t-if="record.type.raw_value != 'contact'">
+                                                        <div>
+                                                            <field name="zip"/>
+                                                            <field name="city"/>
+                                                        </div>
+                                                        <field t-if="record.state_id.raw_value"
+                                                               name="state_id"/>
+                                                        <field name="country_id"/>
+                                                    </div>
+                                                    <div t-if="record.phone.raw_value">Phone:
+                                                        <field name="phone" widget="phone"/>
+                                                    </div>
+                                                    <div t-if="record.mobile.raw_value">Mobile:
+                                                        <field name="mobile" widget="phone"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form string="Contact / Address">
+                                    <sheet>
+
+                                        <field name="type" invisible="1" required="0" widget="radio"
+                                               options="{'horizontal': true}"/>
+                                        <field name="address_type" required="1" widget="radio"
+                                               options="{'horizontal': true}"/>
+                                        <field name="parent_id" invisible="1"/>
+                                        <hr/>
+                                        <group col="12">
+                                            <group colspan="5">
+                                                <field name="name" string="Name"
+                                                />
+                                                <field name="title" placeholder="e.g. Mr."
+                                                       attrs="{'invisible': [('type','!=', 'contact')]}"/>
+                                                <field name="function" placeholder="e.g. Sales Director"
+                                                       attrs="{'invisible': [('type','!=', 'contact')]}"/>
+                                                <label for="street" string="Address"
+                                                       attrs="{'invisible': [('type','=', 'contact')]}"/>
+                                                <div attrs="{'invisible': [('type','=', 'contact')]}">
+                                                    <div class="o_address_format" name="div_address">
+                                                        <field name="street" placeholder="Street..."
+                                                               class="o_address_street"/>
+                                                        <field name="street_name"/>
+                                                        <field name="building_villa_name"/>
+                                                        <field name="building_villa_no"
+                                                               placeholder="Building Villa Number"/>
+                                                        <field name="floor_room_no"
+                                                               placeholder="Floor Room Number"/>
+                                                        <field name="street2" placeholder="Street 2..."
+                                                               class="o_address_street"/>
+                                                        <field name="street_no" placeholder="Street Number"/>
+                                                        <field name="city" placeholder="City"
+                                                               class="o_address_city"/>
+                                                        <field name="state_id" class="o_address_state"
+                                                               placeholder="State" options='{"no_open": True}'
+                                                               context="{'country_id': country_id, 'zip': zip}"/>
+                                                        <field name="zone_id" placeholder="Zone Name"/>
+                                                        <field name="zone_no" placeholder="Zone No"/>
+                                                        <field name="zip" placeholder="ZIP"
+                                                               class="o_address_zip"/>
+                                                        <field name="country_id" placeholder="Country"
+                                                               class="o_address_country"
+                                                               options='{"no_open": True, "no_create": True}'/>
+                                                    </div>
+                                                </div>
+                                                <field name="signage"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="blue_signage_zone_no"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="blue_signage_street_no"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="blue_signage_building_no"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="comment" placeholder="Internal notes..."/>
+                                            </group>
+                                            <group colspan="5">
+                                                <field name="building_villa_photo"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="client_stamp"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="picture_with_the_signage"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="office_drawing"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="building_villa_drawing_locating_office"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="lease_agreement_copy"
+                                                       attrs='{"invisible": [("address_type", "=","national_address")]}'/>
+                                                <field name="email" widget="email"/>
+                                                <field name="phone" widget="phone"/>
+                                                <field name="mobile" widget="phone"/>
+                                                <field name="kahramaa"
+                                                       attrs='{"invisible": [("address_type", "!=","national_address")]}'/>
+                                                <field name="company_id" invisible="1"/>
+                                                <button name="open_google_url"
+                                                        string="Locate"
+                                                        type="object" class="btn-primary"/>
+                                                <button name="open_google_route"
+                                                        string="Find Route"
+                                                        type="object" class="btn-primary"/>
+                                            </group>
+                                            <group colspan="1">
+                                                <field name="image_1920" widget="image" class="oe_avatar"
+                                                       nolabel="1"
+                                                       options="{'image_preview': 'image_128'}"/>
+                                            </group>
+                                        </group>
+                                        <group colspan="2" col="2">
+                                            <separator string="Geolocation" colspan="2"/>
+                                            <button
+                                                    string="Geolocate"
+                                                    name="geo_localize"
+                                                    colspan="2"
+                                                    icon="fa-check"
+                                                    type="object"/>
+                                            <div>
+                                                <span class="oe_inline">( On</span>
+                                                <field name="date_localization" nolabel="1" class="oe_inline"/>
+                                                <span>: Lat :</span>
+                                                <field name="partner_latitude" nolabel="1" class="oe_inline"/>
+                                                <span>; Long:</span>
+                                                <field name="partner_longitude" nolabel="1" class="oe_inline"/>
+                                                <span>)</span>
+                                            </div>
+                                        </group>
+                                        <field name="lang" invisible="True"/>
+                                        <field name="user_id" invisible="True"/>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page name='internal_notes' string="Internal Notes">
+                            <field name="comment" placeholder="Internal note..."/>
+                        </page>
+                        <page name="marketing" string="Marketing">
+                            <group>
+                                <group>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                    <field name="mobile"/>
+                                    <field name="website"/>
+                                    <field name="letterhead_file"/>
+
+                                </group>
+                                <group>
+                                    <field name="social_facebook"/>
+                                    <field name="social_instagram"/>
+                                    <field name="social_twitter"/>
+                                    <field name="social_linkedin"/>
+                                    <field name="trademark"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="operations" string="Operations">
+                            <group>
+                                <group>
+                                    <field name="account_manager_id"
+                                           options="{'no_create_edit': 1, 'no_create': 1}" invisible="1"/>
+                                    <field name="client_account_manager_id"
+                                           options="{'no_create_edit': 1, 'no_create': 1}"
+                                           domain="[('share','=',False)]"/>
+                                    <field name="qcsw_expiry"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Ministry of Finance Classification">
+                                    <field name="mof_username"/>
+                                    <field name="mof_password"/>
+
+                                </group>
+                                <group string="Commercial Registration">
+                                    <field name="cr_eng_link" widget="url"/>
+                                    <field name="cr_ar_link" widget="url"/>
+
+                                </group>
+
+                            </group>
+
+                            <group>
+                                <group string="Trade License">
+                                    <field name="tl_link" widget="url"/>
+                                </group>
+                                <group string="Authorisers">
+                                    <field nolabel="1" name="client_ec_rel_ids">
+                                        <tree create="0" edit="1">
+                                            <field name="partner_id"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_clients_review_tree" model="ir.ui.view">
+        <field name="name">res.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="arabic_name"/>
+                <field name="related_company_ids" widget="many2many_tags"/>
+                <field name="cr_doc_no"/>
+                <field name="client_account_manager_id"/>
+                <field name="client_state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="authorizer_tree_view" model="ir.ui.view">
+        <field name="name">res.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+
+            </tree>
+        </field>
+    </record>
+    <record id="client_contacts_tree_view" model="ir.ui.view">
+        <field name="name">res.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0">
+                <field name="name"/>
+                <field name="arabic_name"/>
+                <field name="contact_state" invisible="1"/>
+                <field name="email" invisible="1"/>
+                <field name="mobile"/>
+                <field name="partner_email"/>
+                <field name="partner_permission"/>
+                <field name="partner_percentage"/>
+                <field name="permission" invisible="1"/>
+                <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
+                <field name="ps_passport_ref_no"/>
+                <field name="qid_residency_id" widget="many2one_clickable"/>
+                <field name="qid_ref_no"/>
+
+                <button name="active_contact" string="Confirm" type="object"
+                        attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                <button name="inactive_contact" string="Deactivate"
+                        class="text-danger text-uppercase" type="object"
+                        attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="clients_review_view_activity" model="ir.ui.view">
+        <field name="name">clients.review.activity</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <activity string="Clients">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" display="full"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="clients_review_kanban_view">
+        <field name="name">res.partner.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban">
+                <field name="id"/>
+                <field name="color"/>
+                <field name="display_name"/>
+                <field name="title"/>
+                <field name="email"/>
+                <field name="mobile"/>
+                <field name="related_company_ids"/>
+                <field name="client_state"/>
+                <field name="image_128"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <t t-set="placeholder" t-value="'/base/static/img/company_image.png'"/>
+                            <div class="o_kanban_image_fill_left o_kanban_image_full"
+                                 t-attf-style="background-image: url(#{kanban_image('res.partner', 'image_128', record.id.raw_value, placeholder)})"
+                                 role="img"/>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="display_name"/>
+                                </strong>
+                                <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                <ul>
+                                    <li t-if="record.related_company_ids.value != 'No records'">
+                                        <strong>Related Main Companies :</strong>
+                                        <field name="related_company_ids"/>
+                                    </li>
+                                    <li t-if="record.client_parent_id.raw_value">
+                                        <strong>Parent :</strong>
+                                        <field name="client_parent_id"/>
+                                    </li>
+                                    <li t-if="record.client_state.raw_value">
+                                        <strong>Status :</strong>
+                                        <field name="client_state"/>
+                                    </li>
+                                    <li t-if="record.client_account_manager_id.raw_value">
+                                        <strong>Account Manager :</strong>
+                                        <field name="client_account_manager_id"/>
+                                    </li>
+                                </ul>
+                                <div class="oe_kanban_partner_links"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="all_clients_tree_view" model="ir.ui.view">
+        <field name="name">All Clients</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree edit="false" create="false" delete="false">
+                <field name="name"/>
+                <field name="arabic_name"/>
+                <field name="related_company_ids" widget="many2many"/>
+                <field name="cr_doc_no"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_partner_all_client_filter" model="ir.ui.view">
+        <field name="name">res.partner.select.all.client</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="Search Clients">
+                <field name="name"
+                       filter_domain="['|', '|', ('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self)]"/>
+                <field name="related_company_ids" string="Related Main Companies"/>
+                <field name="commercial_reg_no" string="Commercial Reg No"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_all_clients" model="ir.actions.act_window">
+        <field name="name">All Client</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('is_customer', '=', True), ('is_company', '=', True), ('parent_id', '=', False)]</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="ebs_fusion_contacts.all_clients_tree_view"/>
+        <field name="search_view_id" ref="view_res_partner_all_client_filter"/>
+    </record>
+
+    <record id="action_our_companies" model="ir.actions.act_window">
+        <field name="name">Our Companies</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="search_view_id" ref="ebs_fusion_contacts.view_res_partner_client_filter_new"/>
+        <field name="context">{'our_companies':True, 'display_stages_type': 'our_companies'}</field>
+        <field name="domain">[('company_partner','=',True)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a contact in your address book
+            </p>
+            <p>
+                Odoo helps you to easily track all activities related to a customer.
+            </p>
+        </field>
+    </record>
+
+    <record id="res_partner_our_company_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+        <field name="act_window_id" ref="ebs_fusion_contacts.action_our_companies"/>
+    </record>
+
+    <record id="res_partner_our_company_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="ebs_fusion_contacts.view_clients_review_form"/>
+        <field name="act_window_id" ref="ebs_fusion_contacts.action_our_companies"/>
+    </record>
+    <menuitem id="res_partner_menu_companies"
+              name="Companies"
+              action="action_our_companies"
+              parent="ebs_fusion_contacts.menu_companies"
+              sequence="2"/>
+    <menuitem name="Clients"
+              id="menu_clients_review"
+              sequence="6"
+              web_icon="contacts,static/description/icon.png"
+              groups="base.group_user,base.group_partner_manager"/>
+    <menuitem id="res_partner_menu_clients_review"
+              name="Clients"
+              parent="menu_clients_review"
+              sequence="1"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="all_clients_menu" name="All Clients" parent="ebs_fusion_contacts.res_partner_menu_clients_review"
+              action="ebs_fusion_contacts.action_all_clients" sequence="20"/>
+
+    <record id="action_clients_review" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('ebs_fusion_contacts.clients_review_kanban_view')}),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('ebs_fusion_contacts.view_clients_review_tree')}),
+                (0, 0, {'view_mode': 'activity', 'view_id': ref('ebs_fusion_contacts.clients_review_view_activity')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('ebs_fusion_contacts.view_clients_review_form')})]"/>
+        <field name="search_view_id" ref="ebs_fusion_contacts.view_res_partner_client_filter_new"/>
+        <field name="context">{'default_dependent_id':True,'display_stages_type': 'clients',
+            'default_is_company':True, 'default_is_customer': True}
+        </field>
+        <field name="domain">[('is_customer', '=', True),('is_company', '=', True),
+            ('parent_id', '=', False),
+            '|', ('related_company_ids', 'in', context.get('allowed_company_ids')), ('related_company_ids','=',False)]
+        </field>
+    </record>
+
+    <record id="partner_view_clients_review_form" model="ir.ui.view">
+        <field name="name">res.partner.clients.review.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_type" invisible="1"/>
+                            <field name="name" required="1" style="text-transform: uppercase;"/>
+                            <field name="arabic_name" required="1"/>
+                            <field name="qid_resident"/>
+                        </group>
+                        <group>
+                            <field name="is_manager_cl" invisible="1"/>
+                            <field name="email" required="1"/>
+                            <field name="mobile" required="1"/>
+                            <field name="permission" required="1"/>
+                            <field name="percentage"/>
+                            <field name="is_doc_active" invisible="1"/>
+                            <field name="is_qid_active" invisible="1"/>
+                            <field name="dependent_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Passport Details">
+                            <button name="active_passport" string="Confirm" type="object"
+                                    attrs="{'invisible': [('is_doc_active', '=', True)]}"/>
+                            <button name="inactive_passport" string="Deactivate" class="text-danger text-uppercase"
+                                    type="object" attrs="{'invisible': [('is_doc_active', '!=', True)]}"/>
+                            <group>
+                                <field name="ps_passport_serial_no_id"
+                                       context="{'default_partner_id': active_id, 'passport': True, 'form_view_ref': 'ebs_fusion_contacts.clients_view_documents_view_inherit','default_passport_name':name,'default_arabic_name':arabic_name}"
+                                       attrs="{'required':[('qid_resident','=',False)]}"/>
+                            </group>
+                        </page>
+                        <page string="QID Details">
+                            <button name="active_qid" string="Confirm" type="object"
+                                    attrs="{'invisible': [('is_qid_active', '=', True)]}"/>
+                            <button name="inactive_qid" string="Deactivate" class="text-danger text-uppercase"
+                                    type="object" attrs="{'invisible': [('is_qid_active', '!=', True)]}"/>
+                            <group>
+                                <field name="qid_residency_id"
+                                       context="{'default_partner_id': active_id, 'qid': True, 'form_view_ref': 'ebs_fusion_contacts.clients_view_documents_view_inherit','default_qid_name':name,'default_arabic_name':arabic_name,'default_sponsor_name':dependent_id}"
+                                       attrs="{'required':[('qid_resident','=',True)]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs Business Sector Form -->
+    <record model="ir.ui.view" id="view_ebs_na_zone_form">
+        <field name="name">ebs.business.sector.Form</field>
+        <field name="model">ebs.business.sector</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs Business Sector tree-->
+    <record id="view_business_sector_tree" model="ir.ui.view">
+        <field name="name">ebs.business.sector.tree</field>
+        <field name="model">ebs.business.sector</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs Business Sector action-->
+    <record model="ir.actions.act_window" id="action_business_sector">
+        <field name="name">Business Sector</field>
+        <field name="res_model">ebs.business.sector</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_res_partner_contact_filter_inherited" model="ir.ui.view">
+        <field name="name">res.partner.select</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="ps_passport_ref_no" string="Passport"
+                       filter_domain="[('ps_passport_ref_no','ilike', self)]"/>
+                <field name="qid_ref_no" string="QID" filter_domain="[('qid_ref_no','ilike', self)]"/>
+                <field name="visa_ref_no" string="Visa" filter_domain="[('visa_ref_no','ilike', self)]"/>
+            </field>
+            <xpath expr="//search//separator" position="after">
+            </xpath>
+
+            <group name="group_by" position="replace">
+                <filter name="group_fusion_company" string="Fusion Company" context="{'group_by': 'company_id'}"/>
+                <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
+                <filter name="group_sponsor" string="Group Sponsor" context="{'group_by': 'dependent_id'}"/>
+                <filter name="is_employee" string="Employee" domain="[('is_employee','=',True)]"/>
+                <filter name="is_customer" string="Customer" domain="[('is_customer','=',True)]"/>
+                <filter name="is_supplier" string="Supplier" domain="[('is_vendor','=',True)]"/>
+                <filter name="is_dependent" string="Dependent" domain="[('is_dependent','=',True)]"/>
+            </group>
+        </field>
+    </record>
+
+
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+        <field name="name">Contacts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="search_view_id" ref="view_res_partner_contact_filter_inherited"/>
+        <field name="domain">[('address_type', 'not in',
+            ['head_office','local_office','Work_sites',"labor_accommodation","national_address"]), '|',
+            ('is_shareholder', '=', True), ('is_company', '!=', True), ('company_type', '=', 'person')]
+        </field>
+        <field name="context">{'display_stages_type': 'contacts', 'default_type': 'contact'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a contact in your address book
+            </p>
+            <p>
+                Odoo helps you to easily track all activities related to a customer.
+            </p>
+        </field>
+    </record>
+    <menuitem id="res_partner_menu_config_clients_review"
+              name="Configuration"
+              parent="menu_clients_review"
+              sequence="2"/>
+    <menuitem id="res_partner_menu_business_sector"
+              name="Business Sector"
+              action="action_business_sector"
+              parent="ebs_fusion_contacts.res_partner_menu_config_clients_review"
+              sequence="5"/>
+
+
+    <menuitem id="res_partner_menu_clients_main" name="Clients" sequence="1" action="action_clients_review"
+              parent="ebs_fusion_contacts.res_partner_menu_clients_review"/>
+
+    <menuitem id="res_partner_menu_clients_relation_details"
+              name="Client Relation Details"
+              action="action_client_contact"
+              sequence="2"
+              parent="ebs_fusion_contacts.res_partner_menu_clients_review"/>
+
+</odoo>

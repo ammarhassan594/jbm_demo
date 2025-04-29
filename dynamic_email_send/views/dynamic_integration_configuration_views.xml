@@ -1,0 +1,207 @@
+<odoo>
+    <data>
+        <record id="dynamic_integration_configuration_form" model="ir.ui.view">
+            <field name="name">dynamic.email.configuration.form</field>
+            <field name="model">dynamic.email.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Dynamic Configuration of Email">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" required="1" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="model_id" options="{'no_create': True}"/>
+                                <field name="subject"/>
+                                <field name="report_name"/>
+                                <field name="model" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="action_field_id" options="{'no_create': True}"/>
+                                <field name="field_ttype" invisible="1"/>
+                                <field name="action_field_value" attrs="{'invisible' : [('field_ttype', '=', 'selection')],'required' : [('field_ttype', '!=', 'selection')]}"/>
+                                <field name="action_field_selection_id" options="{'no_create': True,'no_edit': True,'no_open': True,}" attrs="{'invisible' : [('field_ttype', '!=', 'selection')],'required' : [('field_ttype', '=', 'selection')]}"/>
+                            </group>
+                            <group>
+                                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"
+                                       invisible="1"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="email_body" string="Email Message">
+                                <group>
+                                    <field name="email_template_config"/>
+                                </group>
+
+                                <group>
+                                    <field name="email_template_id"
+                                           attrs="{'invisible' : [('email_template_config', '!=', 'email_template')],'required' : [('email_template_config', '=', 'email_template')]}"/>
+                                    <field name="email_template" widget="ace"
+                                           attrs="{'invisible' : [('email_template_config', '!=', 'python_code')],'required' : [('email_template_config', '=', 'python_code')]}"/>
+                                </group>
+
+                            </page>
+
+
+                            <page name="conditions" string="Conditions">
+                                    <field name="email_approval_condition_ids">
+                                        <tree string="Email Approval Conditions">
+                                            <field name="sequence" widget="handle"/>
+                                            <field name="name"/>
+                                            <field name="condition_type" optional="show"/>
+                                            <field name="filter_domain" optional="hide"/>
+                                            <field name="field_name" optional="hide"/>
+                                            <field name="operator" optional="hide"/>
+                                            <field name="value_type" optional="hide"/>
+                                            <field name="value" optional="hide"/>
+                                            <field name="company_id" invisible="1"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <div class="oe_title">
+                                                    <h1>
+                                                        <field name="name" placeholder="Budget more than 90k"/>
+                                                    </h1>
+                                                </div>
+                                                <group>
+                                                    <group>
+                                                        <field name="model" invisible="1"/>
+                                                        <field name="email_config_id" invisible="1"/>
+                                                        <field name="condition_type" required="1"/>
+                                                    </group>
+                                                    <group>
+                                                        <field name="sequence"/>
+                                                        <field name="company_id" invisible="1"/>
+                                                    </group>
+                                                </group>
+                                                <label for="field_name" string="Condition"
+                                                       attrs="{'invisible' : [('condition_type', '!=', 'field_selection')],'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                                <div class="o_row"
+                                                     attrs="{'invisible' : [('condition_type', '!=', 'field_selection')]}">
+                                                    <field name="field_name"
+                                                           placeholder="ex. partner_id.total_invoiced"
+                                                           attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                                    <field name="operator"
+                                                           attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                                    <field name="value_type"
+                                                           attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                                    <field name="value"
+                                                           attrs="{'required' : [('condition_type', '=', 'field_selection')]}"/>
+                                                </div>
+                                                <group>
+                                                    <field name="python_code"
+                                                           attrs="{'invisible' : [('condition_type', '!=', 'python_code')],'required' : [('condition_type', '=', 'python_code')]}"
+                                                           widget="ace" options="{'mode': 'python'}"/>
+                                                    <field name="filter_domain" widget="domain"
+                                                           options="{'model': 'model', 'in_dialog': True}"
+                                                           attrs="{'invisible' : [('condition_type', '!=', 'domain')],'required' : [('condition_type', '=', 'domain')]}"/>
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                            </page>
+
+                            <page name="configuration" string="Configuration">
+                                <notebook>
+                                    <page string="Email settings">
+                                        <group name="from_email" string="From Email">
+                                                <field name="from_email_config"/>
+                                                <field name="outgoing_mail_server_id" attrs="{'invisible' : [('from_email_config', '!=', 'outgoing_mail_server')],'required' : [('from_email_config', '=', 'outgoing_mail_server')]}"/>
+                                                <field name="from_email_python_code" attrs="{'invisible' : [('from_email_config', '!=', 'python_code')],'required' : [('from_email_config', '=', 'python_code')]}" widget="ace" options="{'mode': 'python'}"/>
+                                                <field name="from_email" attrs="{'invisible' : [('from_email_config', '!=', 'manually'),('from_email_python_code', '=', False),('outgoing_mail_server_id', '=', False)],'required' : [('from_email_config', '=', 'manually')]}"/>
+                                        </group>
+                                        <group name="to_email" string="To Email">
+                                                <field name="to_email_config" />
+                                                <field name="to_email_python_code" options="{'mode': 'python'}" attrs="{'invisible' : [('to_email_config', '!=', 'python_code')],'required' : [('to_email_config', '=', 'python_code')]}" widget="ace"/>
+                                                <field name="to_email_python_code_records" options="{'mode': 'python'}" attrs="{'invisible' : [('to_email_config', '!=', 'records')],'required' : [('to_email_config', '=', 'records')]}" widget="ace"/>
+                                                <field name="to_email" attrs="{'invisible' : ['|',('to_email_config', '=', False),('to_email_config', '=', 'records'),('to_email_python_code', '=', False)],'required' : [('to_email_config', '=', 'manually')]}"/>
+                                        </group>
+                                        <group name="email_cc" string="Email CC">
+                                                <field name="email_cc_config" />
+                                                <field name="email_cc_python_code" options="{'mode': 'python'}" attrs="{'invisible' : [('email_cc_config', '!=', 'python_code')],'required' : [('email_cc_config', '=', 'python_code')]}" widget="ace"/>
+                                                <field name="email_cc" attrs="{'invisible' : [('email_cc_config', '!=', 'manually'),('email_cc_python_code', '=', False)],'required' : [('email_cc_config', '=', 'manually')]}"/>
+                                        </group>
+
+                                    </page>
+                                    <page string="Attachments">
+                                        <group>
+                                            <field name="attachment_or_report"/>
+                                        </group>
+                                        <group>
+                                            <field name="attachment_ids" widget="many2many_binary" attrs="{'invisible' : ['|',('attachment_or_report', '=', 'report_template'),('attachment_or_report', '=', False)]}"/>
+                                        </group>
+                                        <group>
+                                            <field name="report_template_id" domain="[('model','=',model)]" attrs="{'invisible' : ['|',('attachment_or_report', '=', 'attachment'),('attachment_or_report', '=', False)]}"/>
+                                        </group>
+                                        <group>
+                                            <field name="res_id" readonly="1" force_save="1"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="dynamic_integration_configuration_tree" model="ir.ui.view">
+            <field name="name">dynamic.integration.configuration.tree</field>
+            <field name="model">dynamic.email.configuration</field>
+            <field name="arch" type="xml">
+                <tree string="Dynamic Configuration of SMS Integration">
+                    <field name="model_id"/>
+                    <field name="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dynamic_integration_configuration_search" model="ir.ui.view">
+            <field name="name">dynamic.integration.configuration.search</field>
+            <field name="model">dynamic.email.configuration</field>
+            <field name="arch" type="xml">
+                <search string="Search Configuration of Email">
+                    <field name="name"/>
+                    <field name="model_id" filter_domain="['|',('model_id', 'ilike', self),('model', 'ilike', self)]"/>
+                    <separator/>
+                    <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="model" string="Model" domain="[]" context="{'group_by' : 'model_id'}"/>
+                        <filter string="Company" name="company" domain="[]" context="{'group_by': 'company_id'}"
+                                groups="base.group_multi_company"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="dynamic_integration_configuration_action" model="ir.actions.act_window">
+            <field name="name">Dynamic Email Configuration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dynamic.email.configuration</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="dynamic_integration_configuration_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Register a enabling Email Integration in models
+                </p>
+                <p>
+                    Dynamic Email  is a used to dynamic set email configuration for any model you have.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="dynamic_integration_root"
+                  name="Dynamic Email Configuration"
+                  action="dynamic_integration_configuration_action"
+                  />
+
+    </data>
+</odoo>

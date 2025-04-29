@@ -1,0 +1,102 @@
+<odoo>
+    <!--   ebs calendar meeting room form view -->
+    <record id="ebs_calendar_meeting_room_form" model="ir.ui.view">
+        <field name="name">ebs.calendar.meeting.room.form</field>
+        <field name="model">ebs.calendar.meeting.room</field>
+
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+
+                        <button icon="fa-calendar" class="oe_stat_button"
+                                name="get_meeting" type="object"
+                        >
+                            <field name="count_meeting" string="Meetings" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="location"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="events" string="Events">
+                            <field name="event_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <!--   ebs calendar meeting room tree view -->
+    <record id="ebs_calendar_meeting_room_tree" model="ir.ui.view">
+        <field name="name">ebs.calendar.meeting.room.tree</field>
+        <field name="model">ebs.calendar.meeting.room</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="location"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_ebs_calendar_meeting_room_search">
+        <field name="name">ebs.calendar.meeting.room.search</field>
+        <field name="model">ebs.calendar.meeting.room</field>
+        <field name="arch" type="xml">
+            <search string="Search Meeting Room">
+                <field name="name" string="Name"/>
+                <field name="location" string="Location"/>
+                <field name="code" string="Code"/>
+            </search>
+        </field>
+    </record>
+    <!--    action-->
+    <record id="ebs_calendar_meeting_room_action" model="ir.actions.act_window">
+        <field name="name">Meeting Rooms</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ebs.calendar.meeting.room</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+    <!--    search view-->
+
+    <!--    menu-->
+    <menuitem id="ebs_calendar_configuration_menu" name="Configuration" sequence="16"
+              parent="calendar.mail_menu_calendar"/>
+    <menuitem id="ebs_calendar_meeting_room_menu" name="Meeting Rooms" action="ebs_calendar_meeting_room_action"
+              parent="ebs_calendar_configuration_menu"/>
+
+    <!--   calendar event inherit view -->
+    <record id="custom_calendar_event_inherit_view" model="ir.ui.view">
+        <field name="name">calendar_event_inherit_view</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location']" position="before">
+                <field name="room_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="custom_calendar_event_search">
+        <field name="name">calendar.event.search</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//filter[@name='mymeetings']" position="after">
+                <filter string="Meeting Room" name="meeting_room"
+                        domain="[('room_id','!=',False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

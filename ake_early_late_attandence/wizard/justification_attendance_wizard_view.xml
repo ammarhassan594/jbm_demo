@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="justification_attendance_wizard_view_form" model="ir.ui.view">
+            <field name="name">justification.attendance.wizard.form</field>
+            <field name="model">justification.attendance.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Justification">
+                    <group class="oe_title">
+                        <field name="is_early_check_out_hour_added" invisible="1"/>
+                        <field name="is_late_check_in_hour_added" invisible="1"/>
+                        <field name="approve_options" widget="radio"/>
+                    </group>
+                    <footer>
+                        <button name="refuse_justification" string="Refuse" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_justification_attendance_wizard" model="ir.actions.act_window">
+            <field name="name">Justification attendance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">justification.attendance.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

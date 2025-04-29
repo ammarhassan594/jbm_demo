@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <menuitem
+            id="menu_hr_document_list_view"
+            name="HR Document"
+            parent="hr.menu_hr_root"
+            sequence="3"/>
+
+
+    <menuitem id="menu_hr_document_list" name="Documents" action="document_window"
+              parent="menu_hr_document_list_view"/>
+
+
+    <menuitem id="menu_hr_document_type" name="Documents Type" action="document_type_window"
+              parent="hr.menu_human_resources_configuration" groups="base.group_system" sequence="0"/>
+
+
+<!--    <menuitem id="menu_hr_employee_admin" name="All Employees" action="ebs_inherit_employee_action"-->
+<!--              parent="hr.menu_hr_employee_payroll" groups="hr.group_hr_manager,base.group_system"/>-->
+
+
+
+<!--    <record model='ir.ui.menu' id='hr.menu_hr_employee_payroll'>-->
+<!--        <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>-->
+<!--    </record>-->
+<!--    <record model='ir.ui.menu' id='hr_contract.hr_menu_contract'>-->
+<!--        <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>-->
+<!--    </record>-->
+
+
+</odoo>

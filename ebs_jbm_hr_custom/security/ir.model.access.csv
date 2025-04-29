@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hr_salary_scale_configuration","hr.salary.scale.configuration","model_hr_salary_scale_configuration","base.group_user",1,1,1,1
+"access_hr_payroll_element","hr.payroll.element","model_hr_payroll_element","base.group_user",1,1,1,1
+"access_hr_salary_allowance","hr.salary.allowance","model_hr_salary_allowance","base.group_user",1,1,1,1
+"access_employee_activity","employee.activity","model_employee_activity","base.group_user",1,1,1,1
+"access_hr_employee_system","hr.employee.system","model_hr_employee_system","base.group_user",1,1,1,1
+"access_employee_system","employee.system","model_employee_system","base.group_user",1,1,1,1
+"access_hr_employee_procedure","hr.employee.procedure","model_hr_employee_procedure","base.group_user",1,1,1,1

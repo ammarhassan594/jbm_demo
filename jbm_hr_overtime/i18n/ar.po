@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * jbm_hr_overtime
+#
+# Translators:
+# Mervat Mosaad, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 02:07+0000\n"
+"PO-Revision-Date: 2016-12-17 02:07+0000\n"
+"Last-Translator: SaFi J. <safi2266@gmail.com>, 2016\n"
+"Language-Team: Arabic (https://www.transifex.com/oca/teams/23907/ar/)\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__name
+msgid "Name"
+msgstr "اﻷسم"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__department_id
+msgid "Department"
+msgstr "القسم"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__job_id
+msgid "Job"
+msgstr "الوظيفه"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__date_from
+msgid "Date From"
+msgstr "تاريخ من"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__date_to
+msgid "Date to"
+msgstr "تاريخ الي"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__attached_file
+msgid "Attached File"
+msgstr "الملف المرفق"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__duration_type
+msgid "Duration Type"
+msgstr "نوع المدة"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__duration_type__hours
+msgid "Hours"
+msgstr "ساعات"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__duration_type__days
+msgid "Days"
+msgstr "أيام"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__type
+msgid "Type"
+msgstr "النوع "
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__payslip_paid
+msgid "Paid in Payslip"
+msgstr "دفعت في قسيمه الرواتب "
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__type__cash
+msgid "Cash"
+msgstr "نقدا"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__type__leave
+msgid "Leave"
+msgstr "مغادرة"
+
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Overtime Dates"
+msgstr " مواعيد العمل الإضافي "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Date"
+msgstr " التاريخ "
+
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Overtime Type"
+msgstr " نوع العمل اﻷضافي "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Hours"
+msgstr " الساعات "
+
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Paid"
+msgstr " تم الدفع "
+
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Description"
+msgstr " الوصف "
+
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Total Hours"
+msgstr " إجمالي الساعات "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Total Normal Hours"
+msgstr " إجمالي الساعات العادية "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Total Special Hours"
+msgstr " مجموع الساعات الخاصة "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Submit To Finance"
+msgstr " ارسل الي الحسابات "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Approve"
+msgstr " موافقة "
+
+#. module: jbm_hr_overtime
+#: model_terms:ir.ui.view,arch_db:jbm_hr_overtime.hr_overtime_form_view
+msgid "Refuse"
+msgstr " رفض "
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__state
+msgid "state"
+msgstr "الحالة"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__state__confirmed
+msgid "Waiting"
+msgstr "أنتظار"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__state__approved
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__hr_overtime__state__refused
+msgid "Refused"
+msgstr "رفض"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_hr_overtime__total_hours
+msgid "Hours"
+msgstr "الساعات"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.actions.act_window,name:jbm_hr_overtime.hr_overtime_act_window
+msgid "Overtime Request"
+msgstr "طلب العمل الإضافي"
+
+#. module: jbm_hr_overtime
+#: model:ir.ui.menu,name:jbm_hr_overtime.overtime_main_menu
+msgid "Overtime Request"
+msgstr "طلب العمل الإضافي"
+
+#. module: jbm_hr_overtime
+#: model:ir.ui.menu,name:jbm_hr_overtime.hr_overtime_menu
+msgid "Overtime"
+msgstr " العمل الإضافي"
+
+#. module: jbm_hr_overtime
+#: model:ir.ui.menu,name:jbm_hr_overtime.overtime_rate_menu
+msgid "Overtime Rate"
+msgstr "معدل العمل الإضافي"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.actions.act_window,name:jbm_hr_overtime.overtime_rate_act_window
+msgid "Overtime Rate"
+msgstr "معدل العمل الإضافي"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_overtime_rate__type
+msgid "Type"
+msgstr "النوع"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields,field_description:jbm_hr_overtime.field_overtime_rate__rate
+msgid "Rate"
+msgstr "معدل"
+
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__overtime_rate__type__normal
+msgid "Normal Overtime"
+msgstr "العمل الإضافي الطبيعي"
+
+#. module: jbm_hr_overtime
+#: model:ir.model.fields.selection,name:jbm_hr_overtime.selection__overtime_rate__type__special
+msgid "Special Overtime"
+msgstr "العمل الإضافي الخاص"
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+<odoo>
+
+    <!--    documents.share model-->
+    <record model="ir.ui.view" id="document_share_view_tree">
+        <field name="name">documents.custom.share.view.tree</field>
+        <field name="model">documents.share</field>
+        <field name="inherit_id" ref="documents.share_view_tree"/>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree//field[@name='folder_id']" position="attributes">
+                <attribute name="string">Folder</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="document_share_view_form">
+        <field name="name">documents.custom.share.view.form</field>
+        <field name="model">documents.share</field>
+        <field name="inherit_id" ref="documents.share_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='folder_id']" position="attributes">
+                <attribute name="string">Folder</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    documents.workflow.rule model-->
+    <record model="ir.ui.view" id="document_workflow_rule_view_tree">
+        <field name="name">documents.workflow.rule.view.tree</field>
+        <field name="model">documents.workflow.rule</field>
+        <field name="inherit_id" ref="documents.workflow_rule_view_tree"/>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree//field[@name='domain_folder_id']" position="attributes">
+                <attribute name="string">Folder</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="document_workflow_rule_view_form">
+        <field name="name">documents.workflow.rule.view.form</field>
+        <field name="model">documents.workflow.rule</field>
+        <field name="inherit_id" ref="documents.workflow_rule_form_view"/>
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//field[@name='folder_id']" position="attributes">
+                <attribute name="string">Folder</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    documents.facet model-->
+    <record model="ir.ui.view" id="documents_facet_view_tree">
+        <field name="name">documents.facet.view.tree</field>
+        <field name="model">documents.facet</field>
+        <field name="inherit_id" ref="documents.facet_view_tree"/>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree//field[@name='folder_id']" position="attributes">
+                <attribute name="string">Folder</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="documents_facet_view_form">
+        <field name="name">documents.facet.view.form</field>
+        <field name="model">documents.facet</field>
+        <field name="inherit_id" ref="documents.facet_view_form_with_folder"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='folder_id']" position="attributes">
+                <attribute name="string">Folder</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='folder_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

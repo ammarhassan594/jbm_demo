@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="employment_contract_wizard_view_form" model="ir.ui.view">
+            <field name="name">employment.contract.wizard.view.form</field>
+            <field name="model">employment.contract.wizard</field>
+            <field name="arch" type="xml">
+                <form string="_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <footer>
+                            <button name="print_employment_contract" string="Print" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_employment_contract_wizard" model="ir.actions.act_window">
+            <field name="name">Employment contract wizard</field>
+            <field name="res_model">employment.contract.wizard</field>
+            <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

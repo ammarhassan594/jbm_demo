@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="approve_employee_event_view_form" model="ir.ui.view">
+            <field name="name">approve.employee.event.form</field>
+            <field name="model">approve.employee.event</field>
+            <field name="arch" type="xml">
+                <form string="Approve Employee">
+                    <group>
+                        <field name="employee_id" invisible="1"/>
+                        <field name="event_type_id"/>
+                        <field name="event_reason_id"/>
+                    </group>
+                    <footer>
+                        <button name="approve_employee_event" string="Generate ID" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="approve_employee_event_view_action" model="ir.actions.act_window">
+            <field name="name">Approve Employee Event</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">approve.employee.event</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="approve_employee_event_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

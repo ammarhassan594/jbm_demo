@@ -1,0 +1,390 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ebs_jbm_approval_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20230613\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-27 13:29+0000\n"
+"PO-Revision-Date: 2023-08-27 13:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span style=\"padding-left:20px;\">تنفيذ خدمة / اعمال</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span style=\"padding-left:25px;\">المرفقات</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span style=\"padding-left:25px;\">شراء</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span style=\"padding-left:30px;\">البند يسمح</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span style=\"padding-left:30px;\">عادى</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid ""
+"<span style=\"padding-left:30px;\">لا مانع ويحال الطلب</span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span style=\"padding-left:30px;\">للجهة المختصة للتنفيذ</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span style=\"padding-left:4px;\">من</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>آلإدارة :</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>اسم مقدم الطلب :</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>الاعتماد:</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>البند لا يسمح</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>التاريخ:</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>تم رفض الطلب</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>رقم الطلب:</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>شراء / تنفيذ خدمة / أعمال</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>عاجل</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>قسم المشتريات</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "<span>لجنة المشتريات</span>"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__account_id
+msgid "Account id"
+msgstr "رقم الإرتباط المالي"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_request__approval_product_type
+msgid "Approval Product Type"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model,name:ebs_jbm_approval_extend.model_approval_request
+msgid "Approval Request"
+msgstr "طلب موافقة "
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__is_available
+msgid "Available On Stock"
+msgstr "الموجود في المخزون"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields.selection,name:ebs_jbm_approval_extend.selection__approval_request__approval_product_type__consumable_storable
+msgid "Consumable/Storable"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields.selection,name:ebs_jbm_approval_extend.selection__approval_request__approval_product_type__consumable_storable_service
+msgid "Consumable/Storable/Service"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,help:ebs_jbm_approval_extend.field_approval_product_line__qty_available
+msgid ""
+"Current quantity of products.\n"
+"In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_hr_employee__custody_count
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.view_employee_form
+msgid "Custody"
+msgstr "الكفالة"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__dest_location_id
+msgid "Destination Location"
+msgstr "موقع الوصول"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model,name:ebs_jbm_approval_extend.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__virtual_available
+msgid "Forecasted Quantity"
+msgstr "الكمية المتوقعة"
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.approval_request_view_tree_inherit
+msgid "Internal Picking"
+msgstr "تحويل داخلى"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model,name:ebs_jbm_approval_extend.model_stock_location
+msgid "Inventory Locations"
+msgstr "مواقع المخزون"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__is_finance_manager
+msgid "Is Finance Manager"
+msgstr "هو المدير المالي"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_stock_location__is_material_request_location
+msgid "Is Material Request Location?"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_request__is_financial_approver
+msgid "Is financial Approver"
+msgstr "هو الموافق المالي"
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "Logo"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_stock_picking__material_request_id
+msgid "Material Request"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__picking_type_id
+msgid "Picking Type"
+msgstr "نوع العملية المخذنية"
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.approval_request_view_tree_inherit
+msgid "Print"
+msgstr "'طباعة"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model,name:ebs_jbm_approval_extend.model_approval_product_line
+msgid "Product Line"
+msgstr "سلسلة المنتج "
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_request__purchases_total_amount
+msgid "Purchases Total Amount"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__qty_available
+msgid "Quantity On Hand"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields.selection,name:ebs_jbm_approval_extend.selection__approval_request__approval_product_type__service
+msgid "Service"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_product_line__location_id
+msgid "Source Location"
+msgstr "المصدر"
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_request__stock_ids
+msgid "Stock"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.approval_request_view_tree_inherit
+msgid "Stock Available"
+msgstr "موجود في المخزون"
+
+#. module: ebs_jbm_approval_extend
+#: code:addons/ebs_jbm_approval_extend/models/approval_request.py:0
+#, python-format
+msgid "Stock Picking"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model.fields,field_description:ebs_jbm_approval_extend.field_approval_request__stock_picking_count
+msgid "Stock Picking Count"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.model,name:ebs_jbm_approval_extend.model_stock_picking
+msgid "Transfer"
+msgstr "الشحنة"
+
+#. module: ebs_jbm_approval_extend
+#: code:addons/ebs_jbm_approval_extend/models/approval_request.py:0
+#, python-format
+msgid "You can not cancel an approved request"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "أجمالي المصروفات الفعلية والالتزامات"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "أجمالي الموازنة المعتمدة للادارة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "اسم بند الموازنة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "الاعتماد"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "البيان / المواصفات"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "التاريخ :"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "التزامات قيد ألأجراء"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "التوقيع :"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "الشركات المقترحة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "الغرض من الشراء"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "القيمة التقديرية"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "القيمة الفعلية"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "الكمية"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "المنصرف الفعلي"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "الموازنة المتاحة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "الوحدة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "بيانات طلب الاحتياج"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "رقم بند الموازنة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model:ir.actions.report,name:ebs_jbm_approval_extend.need_request_report_action
+msgid "طلب احتياج"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "مسؤول الجهة الطالبة"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "مسؤول الشؤون المالية"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "موازنة الجهة الطالبة وتوصية الؤون المالية"
+msgstr ""
+
+#. module: ebs_jbm_approval_extend
+#: model_terms:ir.ui.view,arch_db:ebs_jbm_approval_extend.need_request_report_document
+msgid "نموذج طلب احتياج"
+msgstr ""

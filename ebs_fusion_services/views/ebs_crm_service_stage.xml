@@ -1,0 +1,54 @@
+<odoo>
+    <!--    ebs crm services stages form-->
+    <record model="ir.ui.view" id="view_ebs_crm_services_stages_form">
+        <field name="name">ebs.crm.services.stages.Form</field>
+        <field name="model">ebs.crm.service.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Activities" name="activities">
+                            <field name="activity_ids">
+                                <tree editable="1">
+                                    <field name="name"/>
+                                    <field name="in_documents" options="{'no_create': True,'no_create_edit':True}"  widget="many2many_tags"/>
+                                    <field name="out_documents" options="{'no_create': True,'no_create_edit':True}" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    ebs crm service stages tree-->
+    <record id="view_ebs_crm_services_stages_tree" model="ir.ui.view">
+        <field name="name">ebs.crm.services.stages.tree</field>
+        <field name="model">ebs.crm.service.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+
+
+            </tree>
+        </field>
+    </record>
+
+    <!--ebs crm service stages action-->
+    <record model="ir.actions.act_window" id="action_ebs_crm_service_stages">
+        <field name="name">Service Stages</field>
+        <field name="res_model">ebs.crm.service.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

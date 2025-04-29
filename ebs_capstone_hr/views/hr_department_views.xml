@@ -1,0 +1,13 @@
+<odoo>
+    <record id="jbm_hr_department_view_custom" model="ir.ui.view">
+            <field name="name">jbm.hr.department.view.custom</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="before">
+                    <field name="is_human_resource"/>
+                    <field name="is_budget_preparation"/>
+                </field>
+            </field>
+    </record>
+</odoo>

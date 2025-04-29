@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-from odoo import models, fields, api, _class Account(models.Model):    _inherit = 'account.account'    account_type_id = fields.Many2one(comodel_name="account.type", string="Account Type")

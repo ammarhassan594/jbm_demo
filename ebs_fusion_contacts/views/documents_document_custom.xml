@@ -1,0 +1,607 @@
+<odoo>
+    <record id="custom_documents_view_inherit" model="ir.ui.view">
+        <field name="name">custom.documents.view.inherit</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="ebs_fusion_documents.custom_documents_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='version']" position="after">
+                <field name='reminder_for_renewal'
+                       attrs="{'invisible':['|', ('has_reminder_for_renewal','==','no'), ('has_reminder_for_renewal','==', False)], 'required': [('has_reminder_for_renewal','==','required')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='issue_date']" position="attributes">
+                <attribute name="attrs">{'invisible':['|', ('has_issue_date','==','no'), ('has_issue_date','==',
+                    False)], 'required': [('has_issue_date','==','required')]}
+                </attribute>
+            </xpath>
+            <xpath expr="//field[@name='expiry_date']" position="attributes">
+                <attribute name="attrs">{'invisible':['|', ('has_expiry_date','==','no'), ('has_expiry_date','==',
+                    False)], 'required': [('has_expiry_date','==','required')]}
+                </attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='related_to']/group" position="inside">
+                <field name="has_expiry_date" invisible="1"/>
+                <field name="shareholder_id" invisible="1"/>
+                <field name='has_issue_date' invisible="1"/>
+                <field name='has_reminder_for_renewal' invisible="1"/>
+                <field name='has_passport_serial_number' invisible="1"/>
+                <field name='has_qid_serial_number' invisible="1"/>
+                <field name='has_po_box' invisible="1"/>
+                <field name='has_email_address' invisible="1"/>
+                <field name='has_phone_number' invisible="1"/>
+                <field name='has_reference_number' invisible="1"/>
+                <field name='has_power_of_attorney_name' invisible="1"/>
+                <field name='has_tax_identification_no' invisible="1"/>
+                <field name='has_title_of_license' invisible="1"/>
+                <field name='has_membership_no' invisible="1"/>
+                <field name='has_civil_defense_license' invisible="1"/>
+                <field name='has_trade_license' invisible="1"/>
+                <field name='is_completed' invisible="1"/>
+                <field name='has_articles_of_association_notarization_date' invisible="1"/>
+                <field name='has_amendments_of_association_notarization_date' invisible="1"/>
+                <field name='has_sspa_execution_date' invisible="1"/>
+                <field name='has_shareholders_agreement_date' invisible="1"/>
+                <field name='has_service_agreement_date' invisible="1"/>
+                <field name='has_loan_agreement' invisible="1"/>
+                <field name='has_other_agreement_date' invisible="1"/>
+                <field name='passport_serial_number'
+                       attrs="{'invisible':['|', ('has_passport_serial_number','==','no'), ('has_passport_serial_number','==', False)], 'required': [('has_passport_serial_number','==','required')]}"/>
+                <field name='qid_serial_number'
+                       attrs="{'invisible':['|', ('has_qid_serial_number','==','no'), ('has_qid_serial_number','==', False)], 'required': [('has_qid_serial_number','==','required')]}"/>
+                <field name='po_box'
+                       attrs="{'invisible':['|', ('has_po_box','==','no'), ('has_po_box','==', False)], 'required': [('has_po_box','==','required')]}"/>
+                <field name='email_address'
+                       attrs="{'invisible':['|', ('has_email_address','==','no'), ('has_email_address','==', False)], 'required': [('has_email_address','==','required')]}"/>
+                <field name='phone_number'
+                       attrs="{'invisible':['|', ('has_phone_number','==','no'), ('has_phone_number','==', False)], 'required': [('has_phone_number','==','required')]}"/>
+                <field name='reference_number'
+                       attrs="{'invisible':['|', ('has_reference_number','==','no'), ('has_reference_number','==', False)], 'required': [('has_reference_number','==','required')]}"/>
+                <field name='power_of_attorney_name'
+                       attrs="{'invisible':['|', ('has_power_of_attorney_name','==','no'), ('has_power_of_attorney_name','==', False)], 'required': [('has_power_of_attorney_name','==','required')]}"/>
+                <field name='tax_identification_no'
+                       attrs="{'invisible':['|', ('has_tax_identification_no','==','no'), ('has_tax_identification_no','==', False)], 'required': [('has_tax_identification_no','==','required')]}"/>
+                <field name='title_of_license'
+                       attrs="{'invisible':['|', ('has_title_of_license','==','no'), ('has_title_of_license','==', False)], 'required': [('has_title_of_license','==','required')]}"/>
+                <field name='membership_no'
+                       attrs="{'invisible':['|', ('has_membership_no','==','no'), ('has_membership_no','==', False)], 'required': [('has_membership_no','==','required')]}"/>
+                <field name='civil_defense_license'
+                       attrs="{'invisible':['|', ('has_civil_defense_license','==','no'), ('has_civil_defense_license','==', False)]}"/>
+                <field name='trade_license'
+                       attrs="{'invisible':['|', ('has_trade_license','==','no'), ('has_trade_license','==', False)], 'required': [('has_trade_license','==','required')]}"/>
+                <field name='completed' invisible="1"
+                       attrs="{'invisible':['|', ('is_completed','==','no'), ('is_completed','==', False)], 'required': [('is_completed','==','required')]}"/>
+                <field name='articles_of_association_notarization_date'
+                       attrs="{'invisible':['|', ('has_articles_of_association_notarization_date','==','no'), ('has_articles_of_association_notarization_date','==', False)], 'required': [('has_articles_of_association_notarization_date','==','required')]}"/>
+                <field name='amendments_of_association_notarization_date'
+                       attrs="{'invisible':['|', ('has_amendments_of_association_notarization_date','==','no'), ('has_amendments_of_association_notarization_date','==', False)], 'required': [('has_amendments_of_association_notarization_date','==','required')]}"/>
+                <field name='sspa_execution_date'
+                       attrs="{'invisible':['|', ('has_sspa_execution_date','==','no'), ('has_sspa_execution_date','==', False)], 'required': [('has_sspa_execution_date','==','required')]}"/>
+                <field name='shareholders_agreement_date'
+                       attrs="{'invisible':['|', ('has_shareholders_agreement_date','==','no'), ('has_shareholders_agreement_date','==', False)], 'required': [('has_shareholders_agreement_date','==','required')]}"/>
+                <field name='service_agreement_date'
+                       attrs="{'invisible':['|', ('has_service_agreement_date','==','no'), ('has_service_agreement_date','==', False)], 'required': [('has_service_agreement_date','==','required')]}"/>
+                <field name='loan_agreement'
+                       attrs="{'invisible':['|', ('has_loan_agreement','==','no'), ('has_loan_agreement','==', False)], 'required': [('has_loan_agreement','==','required')]}"/>
+                <field name='other_agreement_date'
+                       attrs="{'invisible':['|', ('has_other_agreement_date','==','no'), ('has_other_agreement_date','==', False)], 'required': [('has_other_agreement_date','==','required')]}"/>
+            </xpath>
+            <xpath position="replace" expr="//notebook/page[@name='articles_of_association']">
+                <page name="articles_of_association" string="Articles of Association"
+                      attrs="{'invisible': [('document_type_name', '!=', 'articles of association')]}">
+                    <group>
+                        <field name="date_initiation"/>
+                        <field name="period"/>
+                        <field name="date_term" readonly="1" force_save="1"/>
+
+                        <label for="financial_month" string="Financial Year"/>
+                        <div class="o_row">
+                            <field name="financial_month"/>
+                            <field name="financial_day"/>
+                        </div>
+                        <field name="financial_link_partner"/>
+                        <field name="general_manager"/>
+                        <field name="general_secretary"/>
+                        <field name="admin_manager"/>
+                        <field name="banking_signatory"/>
+                        <field name="liaison_officer"/>
+                    </group>
+                    <group>
+                    </group>
+                    <h3>Shareholder</h3>
+                    <field name="aoa_partner_ids"
+                           context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_aoa_partner': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_aoa_partner'}"
+                           domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+                        <tree>
+                            <field name="company_type"/>
+                            <field name="name"/>
+                            <field name="arabic_name"/>
+                            <field name="contact_state" invisible="1"/>
+                            <field name="email" invisible="1"/>
+                            <field name="mobile"/>
+                            <field name="partner_email"/>
+                            <field name="partner_permission" invisible="1"/>
+
+                            <field name="permission" invisible="1"/>
+                            <field name="partner_profit_share"/>
+                            <field name="ps_passport_serial_no_id" widget="many2one_clickable" invisible="1"/>
+                            <field name="ps_passport_ref_no" invisible="1"/>
+                            <field name="qid_residency_id" widget="many2one_clickable" invisible="1"/>
+                            <field name="qid_ref_no" invisible="1"/>
+                            <button name="active_contact" string="Confirm" type="object"
+                                    attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                            <button name="inactive_contact" string="Deactivate"
+                                    class="text-danger text-uppercase" type="object"
+                                    attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_document_clients_review_form" model="ir.ui.view">
+        <field name="name">view.document.clients.review.form</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="document_number" required="1"/>
+                            <field name="document_type_id" required="1" options="{'no_create_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="folder_id" string="Folder"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+
+                            <field name="datas" string="File" required="1"/>
+                            <field name="name" class='oe_title'/>
+                        </group>
+                        <group>
+                            <field name="issue_date"/>
+                            <field name="partner_id" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+
+    <record id="clients_view_documents_view_inherit" model="ir.ui.view">
+        <field name="name">custom.documents.view.inherit</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="preview_document" string="Preview" type="object" class="oe_stat_button"
+                                icon="fa-file-text-o"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="document_type_id" required="1" options="{'no_create_edit': True}"/>
+                            <field name="document_type_name" invisible="1"/>
+                            <field name="datas" string="English File" required="1"/>
+                            <field name="show_ar_file" invisible="1"/>
+                            <field name="arabic_file" string="Arabic File"
+                                   attrs="{'invisible': [('show_ar_file', '=', False)]}"/>
+
+                            <field name="name" readonly="1"/>
+                            <field name="passport_no" invisible="context.get('qid') == True"
+                                   required="context.get('passport') == True"/>
+                            <field name="document_number" invisible="context.get('passport') == True"
+                                   required="context.get('qid') == True"/>
+                            <field name="partner_id" invisible="1"/>
+
+                            <field name="folder_ids" widget="many2many_tags" invisible="1"/>
+                            <field name="folder_id" string="Folder"
+                                   options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="expiry_date" required="1"/>
+                        </group>
+                        <group>
+                            <field name="passport_name" invisible="context.get('qid') == True" readonly="1"
+                                   force_save="1"/>
+                            <field name="qid_name" invisible="context.get('passport') == True" readonly="1"
+                                   force_save="1"/>
+                            <field name="arabic_name" readonly="1" force_save="1"/>
+                            <field name="issue_date" invisible="context.get('qid') == True"
+                                   required="context.get('passport') == True"/>
+                            <field name="gender" invisible="context.get('qid') == True"
+                                   required="context.get('passport') == True"/>
+                            <field name="country_passport_id" required="1"/>
+                            <field name="hide_job_sponsor" invisible="1"/>
+                            <field name="passport_type" invisible="context.get('qid') == True"
+                                   required="context.get('passport') == True"/>
+                            <field name="residency_type" invisible="context.get('passport') == True"
+                                   required="context.get('qid') == True"/>
+                            <field name="residency_period"/>
+                            <field name="place_of_birth" invisible="context.get('qid') == True"
+                                   required="context.get('passport') == True"/>
+                            <field name="passport_id" invisible="context.get('passport') == True"/>
+                            <field name="date_of_birth" required="1"/>
+                            <field name="job_title"
+                                   attrs="{'invisible': ['|', ('hide_job_sponsor', '=', True), ('document_type_name', '=', 'Passport')], 'required': [('hide_job_sponsor', '=', False), ('document_type_name', '=', 'QID')]}"/>
+                            <field name="sponsor_name"
+                                   attrs="{'invisible': ['|', ('hide_job_sponsor', '=', True), ('document_type_name', '=', 'Passport')], 'required': [('hide_job_sponsor', '=', False), ('document_type_name', '=', 'QID')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="clients_documents_view_inherit" model="ir.ui.view">
+        <field name="name">custom.documents.view.inherit</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="preview_document" string="Preview" type="object" class="oe_stat_button"
+                                icon="fa-file-text-o"/>
+                    </div>
+                    <group>
+                        <group>
+
+                            <field name="document_type_id" required="1" context="{'licence':True}"
+                                   options="{'no_create_edit': True}"/>
+                            <field name="is_main_boolean" invisible="1"/>
+                            <field name="datas" string="English File"/>
+                            <field name="show_ar_file" invisible="1"/>
+                            <field name="arabic_file" string="Arabic File"
+                                   attrs="{'invisible': [('show_ar_file', '=', False)],'required': [('show_ar_file', '=', True)]}"/>
+                            <field name="name"/>
+                            <field name="document_number" invisible="1"/>
+                            <field name="partner_id" invisible="1"/>
+                            <field name="document_type_name" invisible="1"/>
+                            <field name="has_issue_date" invisible="1"/>
+                            <field name="has_expiry_date" invisible="1"/>
+                            <field name="folder_ids" widget="many2many_tags" invisible="1"/>
+                            <field name="folder_id" string="Folder"
+                                   options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="issue_date"
+                                   attrs="{'invisible': ['|',('has_issue_date','==','no'), ('has_issue_date','==', False)], 'required': [('has_issue_date','==','required')]}"/>
+                            <field name="expiry_date"
+                                   attrs="{'invisible':['|', ('has_expiry_date','==','no'), ('has_expiry_date','==', False)], 'required': [('has_expiry_date','==','required')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="QID Metadata" attrs="{'invisible': [('document_type_name', '!=', 'QID')]}">
+                            <group>
+                                <field name="arabic_name" string="Name(Ar)" readonly="1" force_save="1"/>
+                                <field name="qid_name"/>
+                                <field name="date_of_birth"/>
+                                <field name="job_title"/>
+                                <field name="residency_type"/>
+                                <field name="residency_period"/>
+                                <field name="sponsor_name"/>
+                                <field name="country_passport_id"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Passport'),('document_type_name', '!=', 'QID')]}"/>
+                            </group>
+                        </page>
+                        <page string="Passport Metadata"
+                              attrs="{'invisible': [('document_type_name', '!=', 'Passport')]}">
+                            <group>
+                                <field name="arabic_name" string="Name(Ar)" readonly="1" force_save="1"/>
+                                <field name="passport_name"/>
+                                <field name="gender"/>
+                                <field name="date_of_birth"/>
+                                <field name="place_of_birth"/>
+                                <field name="passport_type"/>
+                                <field name="country_passport_id"/>
+                                <field name="issue_date"/>
+                            </group>
+                        </page>
+                        <page string="Commercial Registration (CR) Metadata"
+                              attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}">
+                            <group>
+                                <field name="cr_reg_no"/>
+                                <field name="cr_tax_reg_no"/>
+                                <field name="cr_trade_name" readonly="1" force_save="1"/>
+                                <field name="arabic_name" string="Trade Name(Ar)" readonly="1" force_save="1"/>
+                                <field name="cr_creation_date"/>
+                                <field name="cr_legal_form"/>
+                                <field name="cr_capital"/>
+                                <field name="cr_reg_status"/>
+                                <field name="cr_no_brances"/>
+                                <field name="nationality"/>
+
+                                <field name="cr_partner_ids" readonly="context.get('is_branch_main')"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'partner_id': partner_id, 'clients_review': True, 'default_is_shareholder': True, 'default_parent_id': context.get('partner_id'), 'default_is_company': False}">
+                                    <tree>
+                                        <field name="company_type"/>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission"/>
+                                        <field name="partner_percentage"/>
+                                        <field name="permission" invisible="1"/>
+                                    </tree>
+
+                                </field>
+                                <field name="cr_managers_ids"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'partner_id': partner_id, 'clients_review': True, 'default_is_manager_cr': True, 'default_parent_id': context.get('partner_id'), 'default_is_company': False, 'role': 'is_manager_cr'}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission"/>
+                                        <field name="partner_percentage"/>
+                                        <field name="permission" invisible="1"/>
+                                    </tree>
+
+                                </field>
+                                <field name="cr_business_activities_ids"
+                                       readonly="context.get('is_branch_main')"/>
+                            </group>
+                        </page>
+                        <page string="Commercial License Metadata"
+                              attrs="{'invisible': [('document_type_name', '!=', 'Commercial License')]}">
+                            <group>
+                                <field name="arabic_name" string="Name(Ar)" readonly="1" force_save="1"/>
+                                <field name="cl_name" attrs="{'readonly': True}"/>
+                                <field name="license_number"
+                                       attrs="{'required': [('document_type_name', '=', 'Commercial License')]}"/>
+                                <field name="cl_partner_id"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'default_is_manager_cl': True, 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'default_is_company': False}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+
+                                </field>
+
+                            </group>
+                            <group>
+                                <field name="zone_id"/>
+                                <field name="street"/>
+                                <field name="building"/>
+                                <field name="unit"/>
+                            </group>
+
+
+                            <h3>Documents</h3>
+                            <field name="document_o2m" context="{'default_partner_id':partner_id}"
+                                   domain="[('partner_id', '=', partner_id)]">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="document_number"/>
+                                    <field name="document_type_id" options="{'no_create_edit': True}"/>
+                                    <field name="issue_date"/>
+                                    <field name="expiry_date"/>
+                                    <field name="status"/>
+                                    <field name="type" invisible="1"/>
+                                    <button name="access_content" icon="fa-download" type="object"
+                                            attrs="{'invisible':[('type','!=','binary')]}"/>
+                                    <button name="preview_document" icon="fa-eye" type="object"
+                                            attrs="{'invisible':[('type','!=','binary')]}"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                        <page string="Establishment Card Metadata"
+                              attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}">
+                            <group>
+                                <field name="est_id"/>
+                                <field name="est_name_en" readonly="1" force_save="1"/>
+                                <field name="arabic_name" string="Est. Name(Ar)" readonly="1" force_save="1"/>
+                                <field name="est_sector"/>
+                                <field name="est_first_issue"/>
+                                <field name="cr_authorizers_ids"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'default_is_manager_ec': True, 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'default_is_company': False}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission"/>
+                                        <field name="partner_percentage"/>
+                                        <field name="permission" invisible="1"/>
+                                    </tree>
+
+                                </field>
+                            </group>
+                        </page>
+                        <page name="article_of_association" string="Article of Association"
+                              attrs="{'invisible': [('document_type_name', '!=', 'articles of association')]}">
+                            <group>
+                                <field name="date_initiation"/>
+                                <field name="period"/>
+                                <field name="date_term" force_save="1"/>
+
+                                <label for="financial_month" string="Financial Year"/>
+                                <div class="o_row">
+                                    <field name="financial_month"/>
+                                    <field name="financial_day"/>
+                                </div>
+                                <field name="financial_link_partner"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'role': 'is_aoa_finance_contact'}"/>
+                                <field name="general_manager"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'role': 'is_general_manager'}"/>
+                                <field name="general_secretary"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'role': 'is_general_secretary'}"/>
+                                <field name="admin_manager"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'role': 'is_admin_manager'}"/>
+                                <field name="banking_signatory"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'role': 'is_corporate_banking_signatory'}"/>
+                                <field name="liaison_officer"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'role': 'is_liaison_officer'}"/>
+                                <field name="aoa_partner_ids"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'clients_review': True, 'active_id': id, 'default_is_aoa_partner': True, 'default_is_company': False, 'default_address_type': False, 'default_active': True, 'role': 'is_aoa_partner'}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_company', '!=', True)]">
+                                    <tree>
+                                        <field name="company_type"/>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission" invisible="1"/>
+
+                                        <field name="permission" invisible="1"/>
+                                        <field name="partner_profit_share"/>
+                                        <field name="ps_passport_serial_no_id" widget="many2one_clickable"
+                                               invisible="1"/>
+                                        <field name="ps_passport_ref_no" invisible="1"/>
+                                        <field name="qid_residency_id" widget="many2one_clickable" invisible="1"/>
+                                        <field name="qid_ref_no" invisible="1"/>
+                                        <button name="active_contact" string="Confirm" type="object"
+                                                attrs="{'invisible': [('contact_state', '=', 'active')]}"/>
+                                        <button name="inactive_contact" string="Deactivate"
+                                                class="text-danger text-uppercase" type="object"
+                                                attrs="{'invisible': [('contact_state', '!=', 'active')]}"/>
+                                    </tree>
+                                </field>
+
+
+                            </group>
+                        </page>
+                        <page string="Extra Info" invisible="1">
+                            <group>
+
+                                <field name="arabic_name" string="Name(Ar)" attrs="{'invisible': [('document_type_name', '!=', 'Commercial License'),
+                                    ('document_type_name', '!=', 'Passport'),('document_type_name', '!=', 'QID')]}"
+                                       readonly="1" force_save="1"/>
+                                <field name="cr_reg_no" attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')],
+                             'required': [('document_type_name', '=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="cr_tax_reg_no"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')],
+                                    'required': [('document_type_name', '=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="cr_trade_name" attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')],
+                             'required': [('document_type_name', '=', 'Commercial Registration (CR) Application')]}"
+                                       readonly="1" force_save="1"/>
+                                <field name="arabic_name" string="Trade Name(Ar)"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"
+                                       readonly="1" force_save="1"/>
+                                <field name="cr_creation_date"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"/>
+
+                                <field name="cr_legal_form"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="cr_capital"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="cr_reg_status"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="cr_no_brances"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="nationality"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"/>
+                                <field name="expiry_date"/>
+                                <field name="cr_partner_ids"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"
+                                       readonly="context.get('is_branch_main')"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'partner_id': partner_id, 'clients_review': True, 'default_is_shareholder': True, 'default_parent_id': context.get('partner_id'), 'default_company_type': 'person', 'role': 'is_shareholder'}">
+                                    <tree>
+                                        <field name="company_type"/>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission"/>
+                                        <field name="partner_percentage"/>
+                                        <field name="permission" invisible="1"/>
+                                    </tree>
+
+                                </field>
+                                <field name="cr_managers_ids"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'partner_id': partner_id, 'clients_review': True, 'default_is_manager_cr': True, 'default_parent_id': context.get('partner_id'), 'default_company_type': 'person', 'role': 'is_manager_cr'}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission"/>
+                                        <field name="partner_percentage"/>
+                                        <field name="permission" invisible="1"/>
+                                    </tree>
+
+                                </field>
+                                <field name="cr_business_activities_ids"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial Registration (CR) Application')]}"
+                                       readonly="context.get('is_branch_main')"/>
+                                <field name="cl_name" attrs="{'invisible': [('document_type_name', '!=', 'Commercial License')],
+                             'readonly': True}"/>
+                                <field name="license_number"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial License')], 'required': [('document_type_name', '=', 'Commercial License')]}"/>
+                                <field name="cl_partner_id"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Commercial License')]}"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'default_is_manager_cl': True, 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'default_company_type': 'person', 'role': 'is_manager_cl'}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+
+                                </field>
+                                <field name="est_id"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}"/>
+                                <field name="est_name_en"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}"
+                                       readonly="1" force_save="1"/>
+                                <field name="arabic_name" string="Est. Name(Ar)"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}"
+                                       readonly="1" force_save="1"/>
+                                <field name="est_sector"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}"/>
+                                <field name="est_first_issue"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}"/>
+                                <field name="cr_authorizers_ids"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Establishment Card')]}"
+                                       context="{'search_view_ref': 'base.view_res_partner_filter', 'default_is_manager_ec': True, 'clients_review': True, 'partner_id': partner_id, 'default_parent_id': context.get('partner_id'), 'default_company_type': 'person', 'role': 'is_manager_ec'}"
+                                       domain="[('address_type', 'not in', ['head_office','local_office','Work_sites','labor_accommodation','national_address']), '|', ('is_shareholder', '=', True), ('is_company', '!=', True)]">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="arabic_name"/>
+                                        <field name="contact_state" invisible="1"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="mobile"/>
+                                        <field name="partner_email"/>
+                                        <field name="partner_permission"/>
+                                        <field name="partner_percentage"/>
+                                        <field name="permission" invisible="1"/>
+                                    </tree>
+
+                                </field>
+                                <field name="passport_name"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Passport')]}"/>
+                                <field name="qid_name" attrs="{'invisible': [('document_type_name', '!=', 'QID')]}"/>
+                                <field name="gender" attrs="{'invisible': [('document_type_name', '!=', 'Passport')]}"/>
+                                <field name="date_of_birth"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Passport'),('document_type_name', '!=', 'QID')]}"/>
+                                <field name="place_of_birth"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Passport')]}"/>
+                                <field name="passport_type"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Passport')]}"/>
+                                <field name="job_title" attrs="{'invisible': [('document_type_name', '!=', 'QID')]}"/>
+                                <field name="residency_type"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'QID')]}"/>
+                                <field name="sponsor_name"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'QID')]}"/>
+                                <field name="country_passport_id"
+                                       attrs="{'invisible': [('document_type_name', '!=', 'Passport'),('document_type_name', '!=', 'QID')]}"/>
+                                <field name="issue_date"
+                                       attrs="{'invisible': ['|',('document_type_name', '!=', 'Passport'),('has_issue_date','==','no'), ('has_issue_date','==', False)], 'required': [('has_issue_date','==','required')]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

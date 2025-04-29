@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <record id="scheduled_entries_configuration_tree_view" model="ir.ui.view">
+            <field name="name">scheduled.entries.configuration.tree</field>
+            <field name="model">scheduled.entries.configuration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="number_of_periods"/>
+                    <field name="state"/>
+                    <field name="description"/>
+                    <field name="date"/>
+                    <field name="next_call"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="scheduled_entries_configuration_form_view">
+            <field name="name">scheduled.entries.configuration.form</field>
+            <field name="model">scheduled.entries.configuration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Confirm" name="action_confirm" states="draft" type="object"
+                                class="oe_highlight"/>
+                        <button string="Reset to draft" name="action_draft" states="confirm" type="object"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="is_set_last_call_date" invisible="1"/>
+                            <field name="date" invisible="1"/>
+                            <field name="next_call" invisible="1"/>
+                            <field name="last_call" invisible="1"/>
+                            <field name="code" required="1" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                            <label for="number_of_periods" string="Execute Every"/>
+                            <div>
+                                <field name="number_of_periods" class="oe_inline" required="1"
+                                       attrs="{'readonly' : [('state','!=','draft')]}"/>
+                                <field name="scheduled_period" class="oe_inline" required="1"
+                                       attrs="{'readonly' : [('state','!=','draft')]}"/>
+                            </div>
+                            <field name="description" required="1" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                        </group>
+                        <notebook>
+                            <page name="scheduled_lines" string="Lines">
+                                <field name="scheduled_entries_lines" attrs="{'readonly' : [('state','!=','draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="account_id" required="1"/>
+                                        <field name="analytic_account_id"/>
+                                        <field name="analytic_tag_id"/>
+                                        <field name="debit" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}" required="1"/>
+                                        <field name="credit" widget="monetary"
+                                               options="{'currency_field': 'currency_id'}" required="1"/>
+                                        <field name="partner_id"/>
+                                        <field name="currency_id" required="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="journal_entries" string="Journal Entries">
+                                <field name="move_ids" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_scheduled_entries_configuration">
+            <field name="name">Scheduled entries configuration</field>
+            <field name="res_model">scheduled.entries.configuration</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_scheduled_entries_configuration" name="Scheduled entries configuration"
+                  parent="account.menu_finance_configuration"
+                  action="ebs_jbm_scheduled_entries.action_scheduled_entries_configuration"/>
+    </data>
+</odoo>

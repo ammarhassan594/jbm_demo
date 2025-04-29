@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sla_activity_type_form_view">
+            <field name="name">SLA Type</field>
+            <field name="model">sla.activity.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="name"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="description"/>
+                                <field name="default"/>
+                                <field name="global_activity_multiplier"/>
+                                <field name="model_ids"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sla_activity_type_tree_view" model="ir.ui.view">
+            <field name="name">SLA Type</field>
+            <field name="model">sla.activity.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="default"/>
+                    <field name="global_activity_multiplier"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="sla_activity_type_action_window">
+            <field name="name">SLA Type</field>
+            <field name="res_model">sla.activity.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="sla_activity_type_menu" name="SLA Type" parent="base.menu_administration"
+                  action="sla_activity_type_action_window"/>
+
+    </data>
+</odoo>

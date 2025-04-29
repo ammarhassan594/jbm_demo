@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_leave_planning_user,access.leave.planning.user,model_hr_leave_planning,base.group_user,1,1,1,1
+access_leave_planning_manager,access.leave.planning.manager,model_hr_leave_planning,hr_holidays.group_hr_holidays_manager,1,1,1,1
+access_leave_planning_line_user,access.leave.planning.line.user,model_hr_planning_leave_line,base.group_user,1,1,1,1
+access_permission_config_permission_config,permission_config.permission_config,model_permission_config,base.group_user,1,1,1,1

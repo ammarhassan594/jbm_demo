@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record model="ir.rule" id="custom_accountant_rules">
+            <field name="name">Accountant can see only his created records</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('create_uid','=',user.id)]</field>
+            <field name="groups"  eval="[(4, ref('account.group_account_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="custom_account_groups">
+            <field name="name">By This Rule Can See All Documents</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups"  eval="[(4, ref('jbm_group_access_right_extended.custom_group_shared_service_manager')), (4, ref('jbm_group_access_right_extended.custom_accounting_manager'))]"/>
+        </record>
+    </data>
+</odoo>

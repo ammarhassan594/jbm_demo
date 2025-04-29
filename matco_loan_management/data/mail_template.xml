@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mail_template_send_notification_of_loan_request" model="mail.template">
+            <field name="name">Loan Request Submitted To {{ctx.get('loan_approval_state')}}</field>
+            <field name="subject">Loan Request #{{object.name or ''}} Submitted To {{ctx.get('loan_approval_state')}}
+            </field>
+            <field name="model_id" ref="matco_loan_management.model_hr_loan"/>
+            <field name="email_from">"{{(object.company_id.email or user.email)}}&gt;</field>
+            <field name="partner_to">{{ctx['partner_to']}}</field>
+            <field name="lang">{{user.lang}}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[ <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                 Hello, <br/> <br/>
+               <p>The Loan request of <b>#<t t-esc="object.name"/></b> for the employee <b><t t-esc="object.employee_id.name"/></b> has been sent to you for your approval. Its basic details are as follows:  </p>
+                <br/>
+                 <table style="width:100%" border="5">
+                 <tr>
+                    <td colspan="5" style="background-color: #875A7B;color:white;"> <center>Loan Request Detail</center> </td>
+                 </tr>
+<!--                % if object.employee_id:-->
+                <tr>
+                     <td colspan="2">Requester Name</td>
+                     <td colspan="3"><strong><a><t t-esc="object.employee_id.name "/></a></strong></td>
+                </tr>
+<!--                 %endif-->
+<!--                 % if object.employee_id.department_id:-->
+                 <tr>
+                    <td colspan="2">Department</td>
+                    <td colspan="3"><strong><a><t t-esc="object.employee_id.department_id.name"/></a></strong></td>
+                </tr>
+<!--                 %endif-->
+<!--                % if object.create_date:-->
+                <tr>
+                    <td colspan="2">Requested Date</td>
+                    <td colspan="3"><strong><a><t t-esc="object.create_date"/></a></strong></td>
+                </tr>
+<!--                 %endif-->
+                </table>
+                 <br/>
+                 <div style="margin: 0px; padding: 0px;">
+                        You can check the more details by clicking on the below link.
+                        <div style="margin: 16px 0px 16px 0px;">
+                            <a t-attf-href="#{object.get_url()}"
+                                target="_blank"
+                                style="background-color: #875a7b; text-decoration: none; color: #fff; padding: 8px 16px 8px 16px; border-radius: 5px;">#<t t-esc="object.name"/></a>
+                        </div>
+                    </div> <br/> Thank You<br/>
+                <br/></p> ]]>
+            </field>
+        </record>
+
+        <record id="new_loan_email_template" model="mail.template">
+            <field name="name">New Loan Notification</field>
+            <field name="model_id" ref="matco_loan_management.model_hr_loan"/>
+            <field name="email_from">{ctx['email_from']}</field>
+            <field name="email_to">{ctx['email_to']}</field>
+            <field name="subject">Notification For New Loan</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear, <br/> <br/>
+                        <p><strong><t t-esc="object.name"/></strong> Applied for new loan.</p>
+                        <br/>
+                        <div style="margin: 0px; padding: 0px;">
+                            You can check the more details by clicking on the below link.
+                            <div style="margin: 16px 0px 16px 0px;">
+                                <span style="margin: 16px 0px 16px 0px;">
+                                    <a t-attf-href="#{object.get_url()}"
+                                        target="_blank"
+                                        style="background-color: #875a7b; text-decoration: none; color: #fff; padding: 8px 16px 8px 16px; border-radius: 5px;"></a>#<t t-esc="object.name"/>
+                                </span>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

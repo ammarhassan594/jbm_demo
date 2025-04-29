@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-import loggingfrom odoo import models, fields, api, Command, _class PurchaseOrder(models.Model):    _inherit = 'purchase.order'    approval_request_id = fields.Many2one(comodel_name="approval.request", string="Approval Request")    first_approval_request = fields.Boolean()

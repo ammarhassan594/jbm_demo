@@ -1,0 +1,26 @@
+<odoo>
+    <record id="attendance_api_res_config_setting" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.account</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='hr_attendance']" position="inside">
+                <h2>Attendance API</h2>
+                <div class="row mt16 o_settings_container" name="attendance_api">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <field name="attendance_api_token"/>
+                            <div class="text-muted">
+                                <label for="attendance_api_token" class="o_form_label">API Token</label>
+                                <br/>
+                                Add attendance api token for the generate from attendance system.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

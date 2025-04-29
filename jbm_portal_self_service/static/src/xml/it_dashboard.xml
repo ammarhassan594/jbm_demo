@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+<t t-name="itDashboardMain">
+    <div class="oh_dashboards">
+
+        <div class="container-fluid o_hr_dashboard">
+            <div class="row main-section">
+
+                <div class="col-2 it_access">
+                    <div class="oh-card">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-key"/>-->
+                                    <img src="/jbm_portal_self_service/static/src/img/icons/access_control.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">صلاحية</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 it_approval">
+                    <div class="oh-card">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-life-ring"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/it_support.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">دعم فني</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 it_equipment">
+                    <div class="oh-card administrative_color">
+                        <div class="oh-card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon">
+<!--                                    <i class="fa fa-tachometer" aria-hidden="true"/>-->
+                                        <img src="/jbm_portal_self_service/static/src/img/icons/it_material_request.png"
+                                    style="height:60px;width:55px" alt="Letter Head"/>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-text">طلب أجهزه</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</t>
+
+</templates>

@@ -1,0 +1,167 @@
+<odoo>
+     <record id="return_from_leave_tree" model="ir.ui.view">
+        <field name="name">return.from.leave.view.tree</field>
+        <field name="model">return.from.leave</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="leave_id"/>
+                <field name="return_date"/>
+                <field name="date_to"/>
+                <field name="pay_on"/>
+<!--                <field name="payslip_id"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="return_from_leave_form" model="ir.ui.view">
+        <field name="name">return.from.leave.view.form</field>
+        <field name="model">return.from.leave</field>
+        <field name="arch" type="xml">
+            <form>
+                 <header>
+
+                     <button name="compute_return_payslip" string="Compute Return Payslip" type="object" states=""
+                            class="btn-primary" attrs="{'invisible':[('has_leave_advance', '=', False)]}"/>
+
+                     <button name="action_approve" string="Approve" type="object" states="draft"
+                            class="btn-primary" />
+
+<!--                     <button name="action_payslip" string="Approve" type="object" states="approved"-->
+<!--                            class="btn-primary" />-->
+
+                     <button name="action_cancel" string="Cancel" type="object" states="approved,payslip"
+                            class="btn-primary" />
+
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="approved,cancel"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="leave_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="return_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="date_to"/>
+                            <field name="pay_on" attrs="{'readonly':[('state','!=','draft')], 'invisible':[('has_leave_advance', '=', False)]}"/>
+                            <field name="has_leave_advance" invisible="1"/>
+<!--                            <field name="payslip_id"/>-->
+                        </group>
+                    </group>
+                  <notebook attrs="{'invisible':[('has_leave_advance', '=', False)]}">
+                        <page string="Return From Leave" name="return_from_leave">
+                            <group>
+                                <group>
+                                    <label for="wage" string="Basic Salary"/>
+                                    <div>
+                                        <field name="wage" class="oe_inline"/> - <field name="has_wage" nolabel="1" class="oe_inline"/>
+                                    </div>
+                                </group>
+                                <group>
+                                        <field name="return_wage" class="oe_inline" readonly="1"/>
+                                </group>
+                            </group>
+
+                                <group>
+                                    <group>
+                                        <label for="accommodation" string="Accommodation"/>
+                                        <div>
+                                            <field name="accommodation" class="oe_inline"/> - <field name="has_accommodation" nolabel="1" class="oe_inline"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                            <field name="return_accommodation" class="oe_inline" readonly="1"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group>
+                                        <label for="mobile_allowance" string="Mobile Allowance"/>
+                                        <div>
+                                            <field name="mobile_allowance" class="oe_inline"/> - <field name="has_mobile_allowance" nolabel="1" class="oe_inline"/>
+                                        </div>
+
+                                    </group>
+                                    <group>
+                                            <field name="return_mobile_allowance" class="oe_inline" readonly="1"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group>
+                                        <label for="food_allowance" string="Food Allowance"/>
+                                        <div>
+                                            <field name="food_allowance" class="oe_inline"/> - <field name="has_food_allowance" nolabel="1" class="oe_inline"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                            <field name="return_food_allowance" class="oe_inline" readonly="1"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group>
+                                        <label for="site_allowance" string="Site Allowance"/>
+                                        <div>
+                                            <field name="site_allowance" class="oe_inline"/> - <field name="has_site_allowance" nolabel="1" class="oe_inline"/>
+                                       </div>
+                                    </group>
+                                    <group>
+                                            <field name="return_site_allowance" class="oe_inline" readonly="1"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group>
+                                        <label for="transport_allowance" string="Transport Allowance"/>
+                                        <div>
+                                            <field name="transport_allowance" class="oe_inline"/> - <field name="has_transport_allowance" nolabel="1" class="oe_inline"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                            <field name="return_transport_allowance" class="oe_inline" readonly="1"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group>
+                                        <label for="other_allowance" string="Other Allowance"/>
+                                        <div>
+                                            <field name="other_allowance" class="oe_inline"/> - <field name="has_other_allowance" nolabel="1" class="oe_inline"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                            <field name="return_other_allowance" class="oe_inline" readonly="1"/>
+                                    </group>
+                                </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+
+            </form>
+
+        </field>
+    </record>
+
+    <record id="action_return_from_leave" model="ir.actions.act_window">
+        <field name="name">Return From Leave</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">return.from.leave</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_return_from_leave" name="Early Return From Leave"
+              parent="hr_holidays.menu_hr_holidays_root"
+              sequence="100" action="action_return_from_leave"
+              groups="hr_holidays.group_hr_holidays_user"/>
+
+</odoo>

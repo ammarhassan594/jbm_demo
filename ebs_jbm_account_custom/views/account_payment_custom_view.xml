@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="view_account_payment_form_inherit_custom" model="ir.ui.view">
+            <field name="name">account.payment.form.inherit.custom</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="case_number" invisible="1"/>
+                </xpath>
+                <xpath expr="//button[@name='action_post']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="ebs_jbm_account_custom_view_account_payment_tree_inherit" model="ir.ui.view">
+            <field name="name">ebs_jbm_account_custom.view.account.payment.tree.inherit.tree</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="case_number" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="cts_payment_action" model="ir.actions.act_window">
+            <field name="name">CTS Payments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.payment</field>
+            <field name="domain">[('case_number','!=',False)]</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <!--            <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>-->
+        </record>
+
+        <menuitem id="cts_payment_menu" name="CTS Payment" parent="account.menu_finance_payables"
+                  action="cts_payment_action" sequence="15"/>
+
+    </data>
+</odoo>

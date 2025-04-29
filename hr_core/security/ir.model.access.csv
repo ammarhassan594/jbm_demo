@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_core_hr_compensation,hr_core.hr_compensation,model_hr_compensation,,1,1,1,1
+access_hr_core_hr_compensation_pay_component,hr_core.hr_compensation_pay_component,model_hr_compensation_pay_component,,1,1,1,1
+access_hr_core_job_title,hr_core.job_title,model_job_title,,1,1,1,1
+access_hr_core_job_grade,hr_core.job_grade,model_job_grade,,1,1,1,1
+access_hr_core_hr_isco_code,hr_core.hr_isco_code,model_hr_isco_code,,1,1,1,1
+access_hr_core_hr_cost_center,hr_core.hr_cost_center,model_hr_cost_center,,1,1,1,1
+access_hr_res_users_emp,base.res_users,model_res_users,,1,1,1,0
+access_hr_res_users_all,base.res_users,model_res_users,,1,1,1,1

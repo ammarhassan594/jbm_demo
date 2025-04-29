@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+        <record id="health_card_template" model="mail.template">
+            <field name="name">Health Card</field>
+            <field name="model_id" ref="ebs_capstone_hr.model_ebs_hr_document"/>
+            <field name="subject">{{object.document_type.name}}- Reminder</field>
+            <field name="email_from">{{(object.employee_id.work_email )}}</field>
+            <field name="email_to">{{(object.email)}}</field>
+            <!--            <field name="partner_to">${object.partner_id.id if object.partner_id.email and object.partner_id.email == object.email else False}</field>-->
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding:0px;">
+                    <p style="margin:0px;padding:0px;font-size:13px;">
+                        Health Card renewal reminder for<t t-esc="object.employee_id.name"/>, expiration date:
+                        <t t-esc="object.expiration_date"/>
+                    </p>
+                </div>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

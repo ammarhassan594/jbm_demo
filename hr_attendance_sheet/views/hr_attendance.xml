@@ -1,0 +1,70 @@
+<odoo>
+    <record id="view_attendance_tree_custom" model="ir.ui.view">
+        <field name="name">hr.attendance.view.tree</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="options">{"no_open": True}</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="hr_attendance_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.attendance.form2</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//sheet/group" position="after">
+                    <group>
+                        <group>
+                            <field name="emp_number"/>
+                            <field name="num_of_working_hours"/>
+                            <field name="actual_sign_in" widget="float_time"/>
+                            <field name="actual_sign_out" widget="float_time"/>
+                            <field name="late_in" readonly="0"/>
+                            <field name="diff_time" readonly="0"/>
+                            <field name="day_to"/>
+                        </group>
+                        <group>
+                            <field name="break_hours"/>
+                            <field name="normal_hours"/>
+                            <field name="overtime_hours"/>
+                            <field name="special_overtime"/>
+                            <field name="machine_in"/>
+                            <field name="machine_out"/>
+                            <field name="project_id"/>
+                            <field name="day_from"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="options">{"no_open": True}</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id='inherit_hr_attendance_view_filter' model='ir.ui.view'>
+        <field name='name'>inherit.hr.attendance.view.filter</field>
+        <field name='model'>hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//filter[@name='nocheckout']" position="after">
+                <separator/>
+                <filter string="Permanent in house Employees" name="filter_in_house_employee"
+                        domain="[('employee_id.employee_type', '=', 'perm_in_house')]"/>
+                <filter string="Permanent Staff Employees" name="filter_staff_employee"
+                        domain="[('employee_id.employee_type', '=', 'perm_staff')]"/>
+                <filter string="Temporary Employees" name="filter_temporary_employee"
+                        domain="[('employee_id.employee_type', '=', 'temp')]"/>
+            </xpath>
+        </field>
+    </record>
+
+<!--    <menuitem id="hr_attendance.menu_hr_attendance_manage_attendances" name="Manager" parent="hr_attendance.menu_hr_attendance_root" sequence="10"-->
+<!--              groups="hr_attendance.group_hr_attendance_user" action="hr_attendance.hr_attendance_action"/>-->
+<!--    <menuitem id="hr_attendance.menu_hr_attendance_my_attendances" name="Check In / Check Out"-->
+<!--              parent="hr_attendance.menu_hr_attendance_root" sequence="20"-->
+<!--              groups="base.group_no_one"/>-->
+</odoo>

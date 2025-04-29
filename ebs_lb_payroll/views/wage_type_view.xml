@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="wage_type_tree" model="ir.ui.view">
+            <field name="name">Wage Type</field>
+            <field name="model">ebspayroll.wage.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="value"/>
+                    <field name="name"/>
+                    <field name="wage_type"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="wage_type_form" model="ir.ui.view">
+            <field name="name">Wage Type</field>
+            <field name="model">ebspayroll.wage.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="value"/>
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="wage_type"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="wage_type_window" model="ir.actions.act_window">
+            <field name="name">Wage Type</field>
+            <field name="res_model">ebspayroll.wage.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>
