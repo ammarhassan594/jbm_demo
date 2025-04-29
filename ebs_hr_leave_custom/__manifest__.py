@@ -21,7 +21,7 @@
     # any module necessary for this one to work correctly
     'category': 'Human Resources',
     'depends': ['base', 'web_domain_field', 'hr_holidays',
-                'hr_vacation_mngmt'],
+                ],
 
     # always loaded
     'data': [
