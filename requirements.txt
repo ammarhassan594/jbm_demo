@@ -1,1 +1,1 @@
-inflectopenpyxl
+inflectopenpyxlbravado-core
