@@ -16,7 +16,7 @@
     # any module necessary for this one to work correctly
     'category': 'Human Resources',
     'depends': ['hr', 'project', 'uom', 'analytic', 'timesheet_grid', 'hr_timesheet', 'hr_payroll', 'ebs_capstone_hr',
-                'web_domain_field', 'hr_org_chart', 'report_xlsx', 'hr_vacation_mngmt'],
+                'web_domain_field', 'hr_org_chart', 'report_xlsx'],
 
     # always loaded
     'data': [
