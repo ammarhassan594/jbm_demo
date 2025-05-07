@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="approval_request_view_form_inherit" model="ir.ui.view">
+            <field name="name">approval.request.view.form</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                    <button name="create_bill"
+                            type="object"
+                            class="btn-primary"
+                            string="Create Bill"
+                            icon="fa-file-invoice-dollar" attrs="{'invisible': [('can_create_bill', '=', False)]}"/>
+                </xpath>
+
+                <xpath expr="//page[@name='approvers']" position="after">
+                    <page string="Other Info" name="other_information" attrs="{'invisible': [('can_create_bill', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="can_create_bill" invisible="1"/>
+                                <field name="invoice_id" string="Bill Reference" readonly="1"/>
+                                <field name="accountant_id" string="Accountant Name" readonly="1"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

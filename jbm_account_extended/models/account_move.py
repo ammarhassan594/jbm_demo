@@ -9,8 +9,8 @@ class InheritAccountMove(models.Model):
     _name = 'account.move'
     _inherit = ['account.move', 'dynamic.approval.mixin']
     _state_field = "state"
-    _state_from = ['posted']
-    _state_to = ['posted']
+    _state_from = ['draft']
+    # _state_to = ['posted']
 
 
     approval_for_reverse = fields.Boolean(string="Approval For Reverse", default=False, store=True)
@@ -33,6 +33,12 @@ class InheritAccountMove(models.Model):
 
     def approval_reverse_entry(self):
         self.approval_for_reverse = True
+
+    # def _action_final_approve(self):
+    #     res = super(InheritAccountMove, self)._action_final_approve()
+    #     # if self._name == 'account.move':
+    #     #     self.action_post()
+    #     return res
 
 
 

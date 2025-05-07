@@ -165,8 +165,8 @@ class HrLoan(models.Model):
                                 })
                             record.first_paid_amount = unpaid_amount
 
-                # elif not record.loan_type.years_to_pass:
-                #     raise ValidationError(_('Please set Years to pass value to [%s] loan type', record.loan_type.name))
+                #elif not record.loan_type.years_to_pass:
+                #    raise ValidationError(_('Please set Years to pass value to [%s] loan type', record.loan_type.name))
                 # elif not last_settle_amount:
                 #     marriage_loan = self.env['hr.loan.type'].search([
                 #         ('marriage_loan', '=', True)

@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="base_user_role.view_res_users_role_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page name="menuitems" string="Menu Items">
+                <page name="menuitems" string="Hide Specific Menu">
                     <field name="menu_items_ids"/>
                 </page>
             </xpath>

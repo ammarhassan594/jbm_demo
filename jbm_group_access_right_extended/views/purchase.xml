@@ -1,1 +1,18 @@
-<odoo><!--    <record id="view_purchase_requisition_form_procurement_manager" model="ir.ui.view">--><!--        <field name="name">purchase.requisition.procurement.manager</field>--><!--        <field name="model">purchase.requisition</field>--><!--        <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form"/>--><!--        <field name="groups_id" eval="[(4,ref('jbm_group_access_right_extended.custom_procurement_manager'))]"/>--><!--        <field name="arch" type="xml">--><!--            <xpath expr="//button[@name='action_in_progress']" position="attributes">--><!--                <attribute name="invisible">1</attribute>--><!--            </xpath>--><!--            <xpath expr="//button[@name='action_open']" position="attributes">--><!--                <attribute name="invisible">1</attribute>--><!--            </xpath>--><!--        </field>--><!--    </record>-->    <record id="purchase_order_form_procurement_manager" model="ir.ui.view">        <field name="name">purchase.order.procurement.manager</field>        <field name="model">purchase.order</field>        <field name="inherit_id" ref="purchase.purchase_order_form"/>        <field name="groups_id" eval="[(4,ref('jbm_group_access_right_extended.custom_procurement_manager'))]"/>        <field name="arch" type="xml">            <xpath expr="//button[@name='button_confirm'][1]" position="attributes">                <attribute name="invisible">1</attribute>            </xpath>            <xpath expr="//button[@name='button_confirm'][2]" position="attributes">                <attribute name="invisible">1</attribute>            </xpath>        </field>    </record>    <record id="view_move_form_procurement_manager" model="ir.ui.view">        <field name="name">account.move.procurement.manager</field>        <field name="model">account.move</field>        <field name="inherit_id" ref="account.view_move_form"/>        <field name="groups_id" eval="[(4,ref('jbm_group_access_right_extended.custom_procurement_manager'))]"/>        <field name="arch" type="xml">            <xpath expr="//button[@name='action_post'][2]" position="attributes">                <attribute name="attrs">{'invisible': [('move_type', '=', 'in_invoice')]}</attribute>            </xpath>        </field>    </record></odoo>
+<odoo>
+
+    
+    <record id="view_move_form_procurement_manager" model="ir.ui.view">
+        <field name="name">account.move.procurement.manager</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="groups_id" eval="[(4,ref('jbm_group_access_right_extended.custom_procurement_manager'))]"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='action_post'][2]" position="attributes">
+                <attribute name="attrs">{'invisible': [('move_type', '=', 'in_invoice')]}</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

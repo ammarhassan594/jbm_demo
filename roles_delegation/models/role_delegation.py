@@ -245,6 +245,25 @@ class RoleDelegationApp(models.Model):
     _state_to = ['approved']
 
 
+    def _action_final_approve(self):
+        res = super(RoleDelegationApp, self)._action_final_approve()
+        activity = self._get_user_approval_activities()
+        if activity:
+            activity.action_feedback()
+        if self.activity_ids:
+            self.activity_ids.action_feedback()
+        return res
 
+    def _action_final_approve_activity(self):
+        records = self.env['roles.delegation'].search([
+            ('state', '=', 'approved')
+        ])
+        if records:
+            for record in records:
+                if record.activity_ids:
+                    record.activity_ids.action_feedback()
+                # activity = record._get_user_approval_activities()
+                # if activity:
+                #     activity.action_feedback()
 
 

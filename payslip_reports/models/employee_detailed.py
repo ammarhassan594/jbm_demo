@@ -52,16 +52,22 @@ class PartnerXlsx(models.AbstractModel):
         # One sheet by payslip
         sheet = workbook.add_worksheet(report_name)
 
-        head = workbook.add_format({'align': 'center', 'bold': True, 'size': 16})
+        head = workbook.add_format({'align': 'center', 'bold': True, 'size': 16, 'border': 1})
         header = workbook.add_format({'align': 'right', 'bold': True, 'size': 14, })
         cell_bold = workbook.add_format({'align': 'center', 'bold': True, 'size': 14, })
-        cell = workbook.add_format({'align': 'right', 'size': 14})
+        cell_bold_underline = workbook.add_format({'align': 'right', 'bold': True, 'size': 14, 'underline': True, 'border': 1})
+        cell_bold_2 = workbook.add_format({'align': 'right', 'bold': True, 'size': 14, 'border': 1})
+        cell = workbook.add_format({'align': 'right', 'size': 14,  'border': 1})
+        cell_underline = workbook.add_format({'align': 'right', 'size': 14,  'border': 1, 'underline': True})
+        center_underline = workbook.add_format({'align': 'center', 'bold': True, 'size': 16, 'underline': True, 'border': 1})
         border_cell = workbook.add_format({'align': 'right', 'size': 14, 'border': 1})
+        sheet.set_paper(9)  # 9 = A4, 1 = Letter, 5 = Legal, etc.
 
-        row = 3
+        row = 10
         column = 5
 
-        sheet.merge_range(row, column, row + 1, column + 4, 'كشف موظف تفصيلي', head)
+        sheet.merge_range(row, 1, row + 1, column + 9, str(self._get_arabic_date(payslip).get('year')) + \
+                          ' ' + "بيان راتب شهر" + ' ' + self._get_arabic_date(payslip).get('month_name'), head)
         row += 1
         column += 5
         full_path = os.path.realpath(__file__)
@@ -71,17 +77,17 @@ class PartnerXlsx(models.AbstractModel):
         c_p = path + '/static/src/img/'
         if not c_p:
             raise ValidationError('Check addon paths on configuration file')
-        header_path = c_p + 'sc_header.jpg'
+        header_path = c_p + 'jbm_logo.jpg'
 
         with open(header_path, "rb") as image_file:
             image_data = image_file.read()
             base64_data = base64.b64encode(image_data).decode("utf-8")
         if base64_data:
             logo_image = io.BytesIO(base64.b64decode(base64_data))
-            sheet.insert_image(row - 3, 13, "image.png",
-                               {'image_data': logo_image, 'x_scale': 0.31, 'y_scale': 0.31})
+            sheet.insert_image(1, 1, "image.png",
+                               {'image_data': logo_image, 'x_scale': 1.132, 'y_scale': 1})
 
-        row = 11
+        row = 15
         column = 14
 
         sheet.merge_range(row, column, row - 1, column - 2, 'المسمي  الوظيفي ', cell_bold)
@@ -102,6 +108,14 @@ class PartnerXlsx(models.AbstractModel):
 
         row += 3
 
+        sheet.merge_range(row, column, row - 1, column - 2, 'IBAN  رقم  الحساب  البنكي ', cell_bold)
+        sheet.merge_range(row, column - 3, row - 1, column - 13,
+                          payslip.employee_id.bank_account_id.iban_no if payslip.employee_id.bank_account_id else False,
+                          border_cell)
+
+        row += 3
+
+
         sheet.merge_range(row, column, row - 1, column - 2, ' الا دارة', cell_bold)
         sheet.merge_range(row, column - 3, row - 1, column - 6,
                           payslip.employee_id.department_id.name if payslip.employee_id.department_id else '',
@@ -119,9 +133,9 @@ class PartnerXlsx(models.AbstractModel):
                               "%Y/%m/%d") if payslip.employee_id.joining_date else '',
                           border_cell)
 
-        sheet.merge_range(row, column - 8, row - 1, column - 10, 'IBAN     رقم الحساب  البنكي', cell_bold)
+        sheet.merge_range(row, column - 8, row - 1, column - 10, 'رقم البطاقة الشخصية', cell_bold)
         sheet.merge_range(row, column - 11, row - 1, column - 13,
-                          payslip.employee_id.bank_account_id.iban_no if payslip.employee_id.bank_account_id else '',
+                          payslip.employee_id.employee_qid_number if payslip.employee_id.employee_qid_number else '',
                           border_cell)
         row += 3
 
@@ -148,24 +162,27 @@ class PartnerXlsx(models.AbstractModel):
         row += 2
 
         for basic in payslip.line_ids.filtered(lambda line: line.category_id.code == 'BASIC'):
+            sheet.merge_range(row, column, row - 1, column - 3 ,' ', cell)
             sheet.merge_range(row, column - 4, row - 1, column - 11,
                               basic.salary_rule_id.with_context(lang='ar_001').name, cell)
             sheet.merge_range(row, column - 12, row - 1, column - 13, basic.total, cell)
+
             row += 2
         all_allowances = payslip.line_ids.filtered(
             lambda line: line.category_id.code not in ['BASIC', 'NET'] \
                          and line.total > 0 and not line.salary_rule_id.input_element)
         if all_allowances:
-            sheet.merge_range(row, column, row - 1, column - 3, 'البدلات طبقاً للائحة الموارد البشرية', cell)
+            sheet.merge_range(row, column, row - 1, column - 3, 'البدلات طبقاً للائحة الموارد البشرية', cell_underline)
             row += 2
             for allowance in all_allowances:
+                sheet.merge_range(row, column, row - 1, column - 3, ' ', cell)
                 sheet.merge_range(row, column - 4, row - 1, column - 11,
                                   allowance.salary_rule_id.with_context(lang='ar_001').name,
                                   cell)
                 sheet.merge_range(row, column - 12, row - 1, column - 13, allowance.total, cell)
                 row += 2
 
-        sheet.merge_range(row, column, row - 1, column - 3, 'إجمالى الراتب', cell_bold)
+        sheet.merge_range(row, column, row - 1, column - 3, 'إجمالى الراتب', cell_bold_underline)
         total_salary = sum(
             payslip.line_ids.filtered(
                 lambda line: line.category_id.code not in ['NET'] and \
@@ -179,53 +196,69 @@ class PartnerXlsx(models.AbstractModel):
             lambda line: line.category_id.code not in ['BASIC', 'NET'] and \
                          line.total > 0 and line.salary_rule_id.input_element)
         if input_elements:
-            sheet.merge_range(row, column, row - 1, column - 13, ' إضافات', cell_bold)
+            sheet.merge_range(row, column, row - 1, column - 13, ' إضافات', center_underline)
             row += 2
             for addition in input_elements:
+                sheet.merge_range(row, column, row - 1, column - 3, ' ', cell)
                 sheet.merge_range(row, column - 4, row - 1, column - 11,
                                   addition.salary_rule_id.with_context(lang='ar_001').name, cell)
                 sheet.merge_range(row, column - 12, row - 1, column - 13, addition.total, cell)
                 row += 2
 
-            sheet.merge_range(row, column, row - 1, column - 3, 'إجمالى الاضافات', cell_bold)
+            sheet.merge_range(row, column, row - 1, column - 3, ' ', cell)
+            sheet.merge_range(row, column -4, row - 1, column - 11, 'إجمالى الاضافات', cell)
             total_additions = sum(
                 payslip.line_ids.filtered(
                     lambda line: line.category_id.code not in ['BASIC', 'NET'] and \
                                  line.total > 0 and line.salary_rule_id.input_element).mapped('total'))
-            sheet.merge_range(row, column - 4, row - 1, column - 11,
-                              payslip.currency_id.with_context(lang='ar_001').amount_to_text(total_additions), cell)
+            # sheet.merge_range(row, column - 4, row - 1, column - 11,
+            #                   payslip.currency_id.with_context(lang='ar_001').amount_to_text(total_additions), cell)
             sheet.merge_range(row, column - 12, row - 1, column - 13, total_additions, cell)
             row += 3
         all_deductions = payslip.line_ids.filtered(lambda line: line.total < 0 and line.category_id.code != 'COMP')
         if all_deductions:
-            sheet.merge_range(row, column, row - 1, column - 13, 'الخصومات والإستقطاعات والسلف', cell_bold)
+            sheet.merge_range(row , column, row - 2, column - 13, 'الخصومات والإستقطاعات والسلف', center_underline)
             row += 2
             for deduction in all_deductions:
+                sheet.merge_range(row, column, row - 1, column - 3, ' ', cell)
                 sheet.merge_range(row, column - 4, row - 1, column - 11,
                                   deduction.salary_rule_id.with_context(lang='ar_001').name, cell)
                 sheet.merge_range(row, column - 12, row - 1, column - 13, abs(deduction.total), cell)
                 row += 2
 
-            sheet.merge_range(row, column, row - 1, column - 3, 'إجمالى الخصومات', cell_bold)
+            sheet.merge_range(row, column, row - 1, column - 3, ' ', cell)
+            sheet.merge_range(row, column -4, row - 1, column - 11, 'إجمالى الخصومات', cell)
             total_deduction = abs(sum(
                 payslip.line_ids.filtered(lambda line: line.total < 0 and line.category_id.code != 'COMP').mapped(
                     'total')))
-            sheet.merge_range(row, column - 4, row - 1, column - 11,
-                              payslip.currency_id.with_context(lang='ar_001').amount_to_text(total_deduction), cell)
+            # sheet.merge_range(row, column - 4, row - 1, column - 11,
+            #                   payslip.currency_id.with_context(lang='ar_001').amount_to_text(total_deduction), cell)
             sheet.merge_range(row, column - 12, row - 1, column - 13, total_deduction, cell)
             row += 3
 
-        sheet.merge_range(row, column, row - 1, column - 3, 'صافى الراتب', cell_bold)
+        sheet.merge_range(row, column, row -2, column - 3, 'صافى الراتب', cell_bold_2)
         # net_salary = total_salary + total_additions + total_deduction
         net_salary = payslip.net_wage
-        sheet.merge_range(row, column - 4, row - 1, column - 11,
-                          payslip.currency_id.with_context(lang='ar_001').amount_to_text(net_salary), cell_bold)
-        sheet.merge_range(row, column - 12, row - 1, column - 13, net_salary, cell_bold)
-        row += 5
+        sheet.merge_range(row, column - 4, row -2, column - 11,
+                          payslip.currency_id.with_context(lang='ar_001').amount_to_text(net_salary), cell_bold_2)
+        sheet.merge_range(row, column - 12, row - 2, column - 13, net_salary, cell_bold_2)
+        row += 10
 
         sheet.merge_range(row, column - 1, row - 1, column - 4, 'شؤون الموظفين', cell_bold)
         sheet.merge_range(row, column - 5, row - 1, column - 8, 'محاسب', cell_bold)
-        sheet.merge_range(row, column - 9, row - 1, column - 12, 'رئيس الحسابات', cell_bold)
+        sheet.merge_range(row, column - 9, row - 1, column - 12, 'رئيس قسم الشؤون المالية', cell_bold)
+
+        row += 2
+
+        footer_path = c_p + 'img.jpg'
+
+        with open(footer_path, "rb") as image_file:
+            image_data = image_file.read()
+            base64_data = base64.b64encode(image_data).decode("utf-8")
+        if base64_data:
+            logo_image = io.BytesIO(base64.b64decode(base64_data))
+            sheet.insert_image(row, 0, "img.jpg",
+                               {'image_data': logo_image, 'x_scale': 0.42, 'y_scale': 0.3})
 
     def collaborator_employees_report(self, payslip, workbook):
         report_name = payslip.employee_id.name
@@ -251,15 +284,15 @@ class PartnerXlsx(models.AbstractModel):
         c_p = path + '/static/src/img/'
         if not c_p:
             raise ValidationError('Check addon paths on configuration file')
-        header_path = c_p + 'sc_header.jpg'
+        header_path = c_p + 'jbm_logo.jpg'
 
         with open(header_path, "rb") as image_file:
             image_data = image_file.read()
             base64_data = base64.b64encode(image_data).decode("utf-8")
         if base64_data:
             logo_image = io.BytesIO(base64.b64decode(base64_data))
-            sheet.insert_image(row - 3, 13, "image.png",
-                               {'image_data': logo_image, 'x_scale': 0.32, 'y_scale': 0.32})
+            sheet.insert_image(row - 3, 1, "image.png",
+                               {'image_data': logo_image, 'x_scale': 1.132, 'y_scale': 1})
 
         row = 11
         column = 14

@@ -25,5 +25,6 @@
         'views/employee_payscale.xml',
         'views/hr_contract.xml',
         'views/hr_job_custom.xml',
+        'views/hr_employee.xml',
     ],
 }

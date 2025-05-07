@@ -36,7 +36,7 @@ class AccountPaymentCustom(models.Model):
 
             # Format the amount as currency
             formatted_amount = format_amount(self.env, self.amount, self.currency_id)
-            message = "تم طلب اعتماد الدفعة المالية بمبلغ:(المبلغ - {}) للمستفيد:({}), يرجى مراجعة الطلب في نظام موارد".format(formatted_amount, self.partner_id.with_context(lang='ar_001').name)
+            message = "تم طلب اعتماد الدفعة المالية بمبلغ : ({}) للمستفيد : ({}), يرجى مراجعة الطلب في نظام موارد".format(formatted_amount, self.partner_id.with_context(lang='ar_001').name)
             employee = self.env['hr.employee'].search([('user_id', '=', user.id)])
             if employee:
                 employee.sudo().with_context(message=message).send_sms_message()

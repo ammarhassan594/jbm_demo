@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="accounting_secrecy_level_category" model="ir.module.category">
+        <field name="description">Accounting- Secrecy Level</field>
+        <field name="name">Accounting- Secrecy Level</field>
+        <field name="sequence">10</field>
+    </record>
+
+
+    <record id="group_normal_level" model="res.groups">
+        <field name="name">Normal Level</field>
+        <field name="category_id" ref="jbm_custom_account.accounting_secrecy_level_category"/>
+        <field name="comment">The user will be able to read normal bills only.</field>
+    </record>
+
+    <record id="group_confidential_level" model="res.groups">
+        <field name="name">Confidential Level</field>
+        <field name="category_id" ref="jbm_custom_account.accounting_secrecy_level_category"/>
+        <field name="comment">The user will be able to read Confidential bills only.</field>
+    </record>
+
+
+    <record id="group_very_confidential_level" model="res.groups">
+        <field name="name">Very Confidential Level</field>
+        <field name="category_id" ref="jbm_custom_account.accounting_secrecy_level_category"/>
+        <field name="comment">The user will be able to read Very Confidential bills only.</field>
+    </record>
+
+
+    <record id="payment_secrecy_level_category" model="ir.module.category">
+        <field name="description">Payment - Secrecy Level</field>
+        <field name="name">Payment - Secrecy Level</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="group_payment_normal_level" model="res.groups">
+        <field name="name">Normal Level</field>
+        <field name="category_id" ref="jbm_custom_account.payment_secrecy_level_category"/>
+        <field name="comment">The user will be able to read normal payments only.</field>
+    </record>
+
+
+    <record id="group_payment_confidential_level" model="res.groups">
+        <field name="name">Confidential Level</field>
+        <field name="category_id" ref="jbm_custom_account.payment_secrecy_level_category"/>
+        <field name="comment">The user will be able to read Confidential payments only.</field>
+    </record>
+
+    <record id="group_payment_very_confidential_level" model="res.groups">
+        <field name="name">Very Confidential Level</field>
+        <field name="category_id" ref="jbm_custom_account.payment_secrecy_level_category"/>
+        <field name="comment">The user will be able to read Very Confidential payments only.</field>
+    </record>
+
+
+</odoo>

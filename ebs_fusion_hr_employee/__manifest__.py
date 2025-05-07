@@ -23,7 +23,7 @@
         'hr_employee_custom',
         'hr_holidays',
         'ebs_fusion_services',
-        'ebs_lb_payroll',
+        'ebs_lb_payroll'
     ],
     'data': [
         'security/ir.model.access.csv',

@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="approval_category_from_view_inherit" model="ir.ui.view">
+            <field name="name">approval.category.from.view.inherit</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='description']" position="after">
+                    <field name="create_bill" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

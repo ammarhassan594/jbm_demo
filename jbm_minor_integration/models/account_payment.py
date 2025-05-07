@@ -164,7 +164,7 @@ class AccountPayment(models.Model):
         if case_number:
             values.update({"case_number": case_number})
         if customer_qid:
-            values.update({"qid_number": customer_qid})
+            values.update({"beneficiary_qid": customer_qid})
         if case_number:
             values.update({"case_number": case_number})
         if recurring:

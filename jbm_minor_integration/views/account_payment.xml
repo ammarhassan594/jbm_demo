@@ -23,7 +23,7 @@
                 </xpath>
                 <xpath expr="//field[@name='partner_id'][2]" position="after">
                     <field name="beneficiary_qid" string="Beneficiary QID / CR Number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-<!--                    <field name="beneficiary_commercial_number" string="Beneficiary Commercial Number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+                    <!-- <field name="beneficiary_commercial_number" string="Beneficiary Commercial Number" attrs="{'readonly': [('state', '!=', 'draft')]}"/> -->
                 </xpath>
 
                 <xpath expr="//field[@name='journal_id']" position="after">

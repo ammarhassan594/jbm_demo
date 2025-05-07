@@ -716,6 +716,7 @@ class HrEmployeePrivate(models.Model):
             # else:
             #     rec.employee_check_in = False
             today = date.today()
+            # today = today + timedelta(days=-26)
             time_str = ''
             check_in = rec.env['machine.attendance.record'].search([('employee_id', '=', rec.id), ('punch_type', '=', 'I'), ('punch_date', '=', today)])
             if check_in:
@@ -729,6 +730,7 @@ class HrEmployeePrivate(models.Model):
     def _compute_employee_check_out(self):
         for rec in self:
             today = date.today()
+            # today = today + timedelta(days=-26)
             time_str = ''
             check_out = rec.env['machine.attendance.record'].search(
                 [('employee_id', '=', rec.id), ('punch_type', '=', 'O'), ('punch_date', '=', today)])

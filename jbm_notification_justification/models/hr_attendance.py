@@ -75,8 +75,7 @@ class JustificationHrAttendance(models.Model):
         """
         super(JustificationHrAttendance, self)._enable_late_check_in(late_check_in_hours)
         self.last_late_in_time = fields.Datetime.now()
-        # message = "تم تسجيل تأخيرك عن الدوام لمدة {} بتاريخ {} "f
-        # message = f"تم تسجيل تأخيرك عن الدوام لمدة {late_check_in_hours} بتاريخ {date.today()}"
+        message = "Dear %s, You have today late check in " % self.employee_id.name
         # self.send_sms_justification(self.employee_id.work_phone, message)
         # self.send_sms_message()
 

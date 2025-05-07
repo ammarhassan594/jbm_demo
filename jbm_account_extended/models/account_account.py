@@ -24,3 +24,9 @@ class InheritAccountAccount(models.Model):
     def action_cancel(self):
         self.ensure_one()
         self.state = 'cancelled'
+
+    def _action_final_approve(self):
+        res = super(InheritAccountAccount, self)._action_final_approve()
+        if self._name == 'account.account':
+            self.action_confirm()
+        return res

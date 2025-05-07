@@ -512,7 +512,6 @@ class EmployeePromotion(models.Model):
     gross_salary_old = fields.Monetary(related="contract_id.gross")
     gross_salary_new = fields.Monetary('Gross Salary', compute='_compute_gross_salary',
                                        help="Employee's monthly gross wage.")
-    end_of_basic_salary_bonus = fields.Monetary(string="End Of Basic Salary Bonus", related='new_contract_id.end_of_basic_salary_bonus')
 
     total_salary_differance = fields.Monetary(string="Total Salary Difference",
                                               compute="_calc_total_salary_differance")
@@ -555,8 +554,6 @@ class EmployeePromotion(models.Model):
                                       + record.social_alw_new \
                                       + record.other_allowance_new \
                                       + record.supervision_alw_new
-            if record.new_contract_id and record.new_contract_id.end_of_basic_salary_bonus:
-                record.gross_salary_new += record.end_of_basic_salary_bonus
 
     ticket_type_alw_old = fields.Selection(related="contract_id.ticket_type_alw")
 

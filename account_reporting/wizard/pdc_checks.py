@@ -33,20 +33,9 @@ class PdcChecksWizard(models.TransientModel):
         journals = self.env['account.journal'].search(
             [('type', '=', 'bank'), ('default_account_id', '=', self.account_id.id)])
         if journals:
-            payments1 = self.env['account.payment'].search(
-                [
-                    ('recurring', '=', True), ('recurring_every', '!=', False), ('end_date', '!=', False),
-                 ('end_date', '>=', self.date), ('type', '=', 'scheduled'), ('journal_id', '=', journals[0].id),
-
-                 ])
-            # payments2 = self.env['account.payment'].search(
-            #     [
-            #         ('recurring', '!=', True), ('date', '>=', self.date),
-            #         ('journal_id', '=', journals[0].id),
-            #
-            #     ]).filtered(lambda p: p.payment_method_line_id.payment_method_id.code == 'check_printing')
-            payments = payments1
-
+            payments = self.env['account.payment'].search(
+                [('recurring', '=', True), ('recurring_every', '!=', False), ('end_date', '!=', False),
+                 ('end_date', '>=', self.date), ('journal_id', '=', journals[0].id)])
             if payments:
                 output = io.BytesIO()
                 workbook = xlsxwriter.Workbook(output, {
@@ -150,11 +139,11 @@ class PdcChecksWizard(models.TransientModel):
                     current_payment_date = payment_date + relativedelta(months=payment.recurring_every)
 
                     while 1:
-                        if payment.end_date and current_payment_date <= payment.end_date:
+                        if current_payment_date <= payment.end_date:
                             if not first_payment_date:
                                 first_payment_date = payment_date + relativedelta(months=payment.recurring_every)
                             remain_payments += 1
-                        elif payment.end_date and payment.end_date < current_payment_date:
+                        elif payment.end_date < current_payment_date:
                             break
                         current_payment_date += relativedelta(months=payment.recurring_every)
                     if remain_payments:

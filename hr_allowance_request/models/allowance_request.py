@@ -548,7 +548,7 @@ class AllowanceRequest(models.Model):
                     ('allowance_type.code', '=', 'leave'),
                     ('state', 'not in', ['canceled', 'refused']),
                 ]).filtered(
-                    lambda x: x.payment_date.year == rec.payment_date.year)
+                    lambda x: x.payment_date and x.payment_date.year == rec.payment_date.year)
 
                 if len(leave_request) >= 1:
                     raise ValidationError(
@@ -1305,7 +1305,7 @@ class EducationAllowanceLines(models.Model):
                 else:
                     eligible_amount = 0
                 education_requests_lines = self.env['education.allowance.line'].search([
-                    ('allowance_request_id.sudo().employee_id', '=', dep.allowance_request_id.employee_id.id),
+                    ('allowance_request_id.employee_id', '=', dep.allowance_request_id.employee_id.id),
                     ('allowance_request_id.state', 'not in', ['refused', 'canceled']),
                     ('allowance_request_id.code', '=', 'education'),
                     ('allowance_request_id.academic_id', '=', dep.allowance_request_id.academic_id.id),

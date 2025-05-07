@@ -54,7 +54,7 @@ class BankStatement(models.TransientModel):
                     ('recurring', '=', False), ('payment_type', '=', 'outbound'),
                     ('date', '<=', self.date), ('state', '=', 'draft'),
                     ('journal_id', '=', journal.id),
-                    ('payment_method_line_id.payment_method', '=', 'check')
+                    ('payment_method_line_id.payment_method', '=', 'cheque')
                 ]).filtered(lambda m: not m.move_id.has_reconciled_entries)
                 amount_draft = sum(payments_draft.mapped('amount'))
 
@@ -63,7 +63,7 @@ class BankStatement(models.TransientModel):
                     ('recurring', '=', False), ('payment_type', '=', 'outbound'),
                     ('date', '<=', self.date), ('state', '=', 'posted'),
                     ('journal_id', '=', journal.id),
-                    ('payment_method_line_id.payment_method', '=', 'check')
+                    ('payment_method_line_id.payment_method', '=', 'cheque')
                 ]).filtered(lambda m: not m.line_id.has_reconciled_entries)
                 amount_posted = sum(payments_posted.mapped('amount'))
 

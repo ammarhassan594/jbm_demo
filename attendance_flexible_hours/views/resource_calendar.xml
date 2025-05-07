@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="resource_calendar_form_view_inherit" model="ir.ui.view">
+            <field name="name">resource.calendar.form.view.inherit</field>
+            <field name="model">resource.calendar</field>
+            <field name="inherit_id" ref="resource.resource_calendar_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_fulltime']" position="after">
+                    <group>
+                        <field name="allow_flexible_hours"/>
+                        <field name="max_check_in_hour" attrs="{'invisible': [('allow_flexible_hours','=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

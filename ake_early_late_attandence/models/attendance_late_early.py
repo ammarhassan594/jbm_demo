@@ -10,7 +10,6 @@ import pytz
 _logger = logging.getLogger(__name__)
 
 
-
 class HRAttendanceCustom(models.Model):
     _name = 'hr.attendance'
     _inherit = ['hr.attendance', 'mail.thread', 'mail.activity.mixin']
@@ -186,7 +185,25 @@ class HRAttendanceCustom(models.Model):
                      ('request_date_to', '>=', attendance_checkin_utc.date()),
                      ('state', '=', 'validate')
                      ])
-                if leaves:
+                public_holiday = employee_attendance.employee_id.contract_id.resource_calendar_id.global_leave_ids.filtered(
+                    lambda x: x.date_from.date() <= attendance_checkin_utc.date() <= x.date_to.date()) \
+                    if employee_attendance.employee_id.contract_id else False
+                if public_holiday:
+                    public_holiday_morning = public_holiday.filtered(
+                        lambda x: x.date_from.astimezone(to_zone).time().hour <= calendar_attend.hour_from)
+                    if public_holiday_morning:
+                        if attendance_checkin_utc <= public_holiday_morning.date_to.replace(tzinfo=from_zone):
+                            employee_attendance._disable_late_check_in()
+                        else:
+                            public_holiday_diff = (attendance_checkin_central.time().hour + (
+                                    attendance_checkin_central.time().minute / 60)) - (
+                                                          public_holiday_morning.date_to.astimezone(
+                                                              to_zone).time().hour + (
+                                                                  public_holiday_morning.date_to.astimezone(
+                                                                      to_zone).time().minute / 60))
+                            employee_attendance._enable_late_check_in(public_holiday_diff)
+
+                elif leaves:
                     for leave in leaves:
                         hour_from = time_to_float(leave.date_from.astimezone(to_zone).time())
                         if hour_from == calendar_attend.hour_from:
@@ -237,7 +254,24 @@ class HRAttendanceCustom(models.Model):
                  ('request_date_from', '<=', attendance_checkout_utc.date()),
                  ('request_date_to', '>=', attendance_checkout_utc.date()),
                  ('state', '=', 'validate')])
-            if leaves:
+            public_holiday = employee_attendance.employee_id.contract_id.resource_calendar_id.global_leave_ids.filtered(
+                lambda x: x.date_from.date() <= attendance_checkout_central.date() <= x.date_to.date()) \
+                if employee_attendance.employee_id.contract_id else False
+
+            if public_holiday:
+                public_holiday_evening = public_holiday.filtered(
+                    lambda x: x.date_to.astimezone(to_zone).time().hour >= evening_data.hour_to)
+                if public_holiday_evening:
+                    if attendance_checkout_utc <= public_holiday_evening.date_to.replace(tzinfo=from_zone):
+                        employee_attendance._disable_early_check_out()
+                    else:
+                        public_holiday_diff = (public_holiday_evening.date_to.astimezone(to_zone).time().hour + (
+                                                       public_holiday_evening.date_to.astimezone(
+                                                           to_zone).time().minute / 60)) - (
+                                                      attendance_checkout_central.time().hour + (
+                                                      attendance_checkout_central.time().minute / 60))
+                        employee_attendance._enable_early_check_out(public_holiday_diff)
+            elif leaves:
                 for leave in leaves:
                     hour_to = time_to_float(leave.date_to.astimezone(to_zone).time())
                     if hour_to >= evening_data.hour_to:

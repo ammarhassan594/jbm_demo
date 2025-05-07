@@ -1,0 +1,208 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_manager
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20240217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-15 21:46+0000\n"
+"PO-Revision-Date: 2025-04-15 21:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__allocation_ids
+msgid "Allocation"
+msgstr "أرصدة الإجازات"
+
+#. module: hr_employee_manager
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Allocations"
+msgstr "أرصدة الإجازات"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__allowance_ids
+msgid "Allowances"
+msgstr "البدلات"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__4
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__4
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__4
+msgid "April"
+msgstr "أبريل"
+
+#. module: hr_employee_manager
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Attendances"
+msgstr "الحضور"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__8
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__8
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__8
+msgid "August"
+msgstr "أغسطس"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__12
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__12
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__12
+msgid "December"
+msgstr "ديسمبر"
+
+#. module: hr_employee_manager
+#: model:ir.model,name:hr_employee_manager.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__attendance_ids
+msgid "Employee Attendances"
+msgstr "حضور الموظف"
+
+#. module: hr_employee_manager
+#: model:ir.actions.act_window,name:hr_employee_manager.employee_manager_action
+#: model:ir.ui.menu,name:hr_employee_manager.employee_manger_main_menu
+msgid "Employee Manager"
+msgstr ""
+
+#. module: hr_employee_manager
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Employee's Name"
+msgstr "اسم الموظف"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__leave_end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__2
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__2
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__2
+msgid "February"
+msgstr "فبراير"
+
+#. module: hr_employee_manager
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Finance"
+msgstr "المالية"
+
+#. module: hr_employee_manager
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Garde"
+msgstr "الدرجه"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__1
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__1
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__1
+msgid "January"
+msgstr "يناير"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__7
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__7
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__6
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__6
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__6
+msgid "June"
+msgstr "يونيو"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__leave_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Leaves"
+msgstr "الإجازات"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__loan_ids
+msgid "Loans"
+msgstr "طلب سلفة"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__3
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__3
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__3
+msgid "March"
+msgstr "مارس"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__5
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__5
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__5
+msgid "May"
+msgstr "مايو"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__approval_month_selection
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__attendance_month_selection
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__finance_month_selection
+msgid "Month"
+msgstr "شهر"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__11
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__11
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__11
+msgid "November"
+msgstr "نوفمبر"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__10
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__10
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__10
+msgid "October"
+msgstr "أكتوبر"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__employee_promotion_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Promotions"
+msgstr "ترقيات"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__approval_request_ids
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Requests"
+msgstr "الطلبات"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__payslip_ids
+msgid "Salary"
+msgstr "المرتبات"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__approval_month_selection__9
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__attendance_month_selection__9
+#: model:ir.model.fields.selection,name:hr_employee_manager.selection__hr_employee__finance_month_selection__9
+msgid "September"
+msgstr "سيبتمبر"
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__leave_start_date
+msgid "Start Date"
+msgstr "تاريخ البدء "
+
+#. module: hr_employee_manager
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__approval_year_selection
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__attendance_year_selection
+#: model:ir.model.fields,field_description:hr_employee_manager.field_hr_employee__finance_year_selection
+msgid "Year"
+msgstr "السنه"
+
+#. module: hr_employee_manager
+#: model_terms:ir.ui.view,arch_db:hr_employee_manager.employee_manager_form_view
+msgid "Grade"
+msgstr "الدرجه"

@@ -245,7 +245,7 @@ class Contacts_Contacts(models.Model):
     qid_father_name = fields.Char("QID Father Name", related='qid_residency_id.father_name')
     qid_passport_no = fields.Char("Passport", related='qid_residency_id.passport_id')
 
-    qid_ref_no = fields.Char("QID Reference Number", related='qid_residency_id.document_number')
+    qid_ref_no = fields.Char("QID Reference Number", translate=True, related='qid_residency_id.document_number')
     qid_expiry_date = fields.Date("QID Expiry Date", related='qid_residency_id.expiry_date')
     qid_birth_date = fields.Date("QID Birth Date", related='qid_residency_id.date_of_birth')
 
@@ -2521,6 +2521,11 @@ class EbsClientContact(models.Model):
     def write(self, vals):
         for record in self:
             # If client is change, remove contacts from old client.
+            if 'contact_state' in vals:
+                if vals.get('contact_state') == 'active':
+                    if record.is_vendor and record.message_attachment_count < 1:
+                        raise UserError(_("You have to upload attachment to move the supplier to be actived."))
+
             if 'client_id' in vals:
                 record.partner_id.write({'last_client_id': False})
                 if record.partner_id.id in record.client_id.contact_child_ids.ids and not 'rmv_prmry_cntct' in self._context:

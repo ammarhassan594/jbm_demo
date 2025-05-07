@@ -35,7 +35,7 @@ class PurchaseOrder(models.Model):
                     activity.action_feedback(feedback=_('Rejected, Reason ') + reason)
 
             self.button_confirm()
-        return super(PurchaseOrder, self)._action_final_approve()
+        super(PurchaseOrder, self)._action_final_approve()
         # else:
         #     super(PurchaseOrder, self)._action_final_approve()
 

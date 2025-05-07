@@ -80,9 +80,14 @@ class MachineAttendanceRecord(models.Model):
                         if rec.punch_type == 'I':
                             day = str(date.today().weekday())
                             # day = '0'
+
                             hour_from = employee.resource_calendar_id.attendance_ids.filtered(lambda s: s.dayofweek == day).filtered(
                                 lambda s: s.day_period == 'morning').hour_from
+
                             if hour_from:
+                                if employee.resource_calendar_id.allow_flexible_hours:
+                                    hour_from = hour_from + employee.resource_calendar_id.max_check_in_hour
+
                                 hour = (rec.punch_time + timedelta(hours=3)).strftime("%H")
                                 min = (rec.punch_time + timedelta(hours=3)).strftime("%M")
                                 total_time = float(hour) + ((float(min) * 0.5) / 30)

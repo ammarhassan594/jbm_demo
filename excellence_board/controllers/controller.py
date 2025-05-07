@@ -10,7 +10,7 @@ class ExcellenceBoard(http.Controller):
         data = []
         excellenceBoards = request.env['excellence.board'].sudo().search([])
         if excellenceBoards:
-            for excellence in excellenceBoards:
+            for excellence in  excellenceBoards:
                 data.append({
                     "id": excellence.id,
                     "name": excellence.name,

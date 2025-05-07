@@ -16,8 +16,8 @@ class InheritHrLeave(models.Model):
                 user = employee.sudo().leave_manager_id
                 if user:
                     employee_manager = self.env['hr.employee'].search([('user_id', '=', user.id)])
-                    # employee_manager.sudo().with_context(message=message).send_sms_message()
-                # employee.sudo().with_context(message=message).send_sms_message()
+                    employee_manager.sudo().with_context(message=message).send_sms_message()
+                employee.sudo().with_context(message=message).send_sms_message()
         return holidays
 
     def action_validate(self):
@@ -30,12 +30,12 @@ class InheritHrLeave(models.Model):
                     ('model_id', '=', employee_model.id)
                 ])
                 if ooredo_employee_conf:
-                    message = f")تم اعتماد طلب الإجازة {self.holiday_status_id.with_context(lang='ar_001').name} بتاريخ من ({self.request_date_from} إلي {self.request_date_to}"
+                    # message = f")تم اعتماد طلب الإجازة {self.holiday_status_id.with_context(lang='ar_001').name} بتاريخ من ({self.request_date_from} إلي {self.request_date_to}"
                     message = "تم اعتماد طلب الإجازة (%s) بتاريخ من %s إلى %s " % (
                     self.holiday_status_id.with_context(lang="ar_001").name, self.request_date_from,
                     self.request_date_to)
-                    # for employee in self.sudo().employee_ids:
-                    #     employee.sudo().with_context(message=message).send_sms_message()
+                    for employee in self.sudo().employee_ids:
+                        employee.sudo().with_context(message=message).send_sms_message()
         res = super(InheritHrLeave, self).action_validate()
         if self.state == 'validate':
 
@@ -54,8 +54,10 @@ class InheritHrLeave(models.Model):
                             from_date_time = datetime.combine(self.request_date_from, time(0, 0, 0))
                             domain.append(('check_in', '>=', from_date_time))
 
+                        # Remove existing attendance records within the leave date range
                         self.env['hr.attendance'].search(domain).sudo().unlink()
 
+                        # Download attendance from the machine if the leave is validated
                         self.env['hr.attendance'].with_context(cron_job=False).download_attendance_from_machine(
                             self.request_date_from,
                             self.request_date_to,

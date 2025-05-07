@@ -1,0 +1,205 @@
+<odoo>
+    <data>
+
+        <record id="employee_manager_form_view" model="ir.ui.view">
+            <field name="name">employee.manager.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="avatar_128" invisible="1"/>
+                        <field name="image_1920" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"avatar_128"}' readonly="1"/>
+                        <div class="oe_title">
+                            <h1 class="d-flex">
+                                <field name="name" placeholder="Employee's Name" required="True" readonly="1"/>
+                            </h1>
+                        </div>
+
+                        <notebook>
+                            <page string="Allocations">
+                                <group>
+                                    <field name="allocation_ids" readonly="1">
+                                        <tree>
+                                            <field name="state" invisible="1"/>
+                                            <field name="holiday_status_id"/>
+                                            <field name="name"/>
+                                            <field name="duration_display"/>
+                                            <field name="leaves_taken"/>
+                                            <field name="remaining_leaves"/>
+                                        </tree>
+                                    </field>
+                                </group>
+
+                                <group colspan="1">
+                                    <field name="allowed_violation_balance"/>
+                                    <field name="employee_violation_balance"/>
+                                </group>
+                            </page>
+
+                            <page string="Leaves">
+                                <group col="4">
+                                    <field name="leave_start_date"/>
+                                    <field name="leave_end_date" attrs="{'required': [('leave_start_date', '!=', False)]}"/>
+                                </group>
+                                <group>
+                                    <field name="leave_ids" readonly="">
+                                        <tree>
+                                            <field name="holiday_status_id"/>
+                                            <field name="name"/>
+                                            <field name="date_from"/>
+                                            <field name="date_to"/>
+                                            <field name="duration_display"/>
+                                            <field name="state"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                            <page string="Attendances">
+                                <group>
+                                    <group col="4">
+                                        <field name="attendance_month_selection"/>
+                                        <field name="attendance_year_selection" attrs="{'required': [('attendance_month_selection', '!=', False)]}"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <field name="attendance_ids" readonly="1">
+                                        <tree limit="10">
+                                            <field name="check_in"/>
+                                            <field name="check_out"/>
+                                            <field name="worked_hours"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                            <page string="Finance">
+                                <group>
+                                    <group col="4">
+                                        <field name="finance_month_selection"/>
+                                        <field name="finance_year_selection" attrs="{'required': [('finance_month_selection', '!=', False)]}"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="payslip_ids" readonly="1">
+                                        <tree>
+                                            <field name="number" />
+                                            <field name="payslip_run_id" />
+                                            <field name="basic_wage" />
+                                            <field name="net_wage" />
+                                            <field name="state" />
+                                        </tree>
+                                    </field>
+                                </group>
+
+                                <group>
+                                    <field name="loan_ids" readonly="1">
+                                        <tree>
+                                            <field name="total_amount"/>
+                                            <field name="total_paid_amount"/>
+                                            <field name="balance_amount"/>
+                                            <field name="state"/>
+                                        </tree>
+                                    </field>
+                                </group>
+
+
+                                <group>
+                                    <field name="allowance_ids" readonly="1">
+                                        <tree>
+                                            <field name="allowance_type"/>
+                                            <field name="eligible_amount"/>
+                                            <field name="date"/>
+                                            <field name="payment_date"/>
+                                            <field name="state"/>
+                                        </tree>
+                                    </field>
+                                </group>
+
+                            </page>
+
+                            <page string="Promotions">
+                                <group>
+                                    <field name="employee_promotion_ids" readonly="1">
+                                        <tree>
+                                            <field name="state" invisible="1"/>
+                                            <field name="date_start"/>
+                                            <field name="new_payscale_id" string="Grade"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                            <page string="Requests">
+                                <group>
+                                    <group col="4">
+                                        <field name="approval_month_selection"/>
+                                        <field name="approval_year_selection" attrs="{'required': [('approval_month_selection', '!=', False)]}" />
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <field name="approval_request_ids" readonly="1">
+                                        <tree limit="5">
+                                            <field name="name"/>
+                                            <field name="date"/>
+                                            <field name="request_status"/>
+                                        </tree>
+                                    </field>
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="employee_manager_action" model="ir.actions.act_window">
+            <field name="name">Employee Manager</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">kanban,tree,form</field>
+             <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('hr.hr_kanban_view_employees')}),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('hr.view_employee_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('employee_manager_form_view')}),
+                          ]"/>
+            <field name="search_view_id" ref="hr.view_employee_filter"/>
+        </record>
+
+
+        <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+            <field name="name">Employees</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="domain">[]</field>
+            <field name="context">{'chat_icon': True}</field>
+             <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('hr.hr_kanban_view_employees')}),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('hr.view_employee_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('hr.view_employee_form')}),
+                          ]"/>
+            <field name="search_view_id" ref="hr.view_employee_filter"/>
+            <field name="help" type="html">
+             <p class="o_view_nocontent_smiling_face">
+               Add a new employee
+             </p><p>
+               With just a quick glance on the Odoo employee screen, you
+               can easily find all the information you need for each person;
+               contact data, job position, availability, etc.
+             </p>
+            </field>
+        </record>
+
+
+        <menuitem
+                id="employee_manger_main_menu"
+                name="Employee Manager"
+                action="employee_manager_action"/>
+    </data>
+</odoo>

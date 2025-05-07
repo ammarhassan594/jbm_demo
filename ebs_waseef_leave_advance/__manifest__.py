@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_holidays', 'ebs_hr_leave_custom'],
+    'depends': ['base', 'hr_holidays', 'hr_vacation_mngmt', 'ebs_hr_leave_custom'],
 
     # always loaded
     'data': [

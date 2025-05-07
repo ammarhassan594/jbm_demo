@@ -1,0 +1,322 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jbm_custom_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20240217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-20 13:48+0000\n"
+"PO-Revision-Date: 2025-01-20 13:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__approve_requester_id
+msgid "Approve Requester"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_payment__bill_count
+msgid "Bill Count"
+msgstr ""
+
+#. module: jbm_custom_account
+#: code:addons/jbm_custom_account/models/account_payment.py:0
+#: model_terms:ir.ui.view,arch_db:jbm_custom_account.account_payment_form_view_inherit
+#, python-format
+msgid "Bills"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields.selection,name:jbm_custom_account.selection__account_move__secrecy_level__confidential
+#: model:ir.model.fields.selection,name:jbm_custom_account.selection__account_payment__secrecy_level__confidential
+msgid "Confidential"
+msgstr "سري"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__dynamic_approval_id
+msgid "Dynamic Approval"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__dynamic_approve_pending_group
+msgid "Dynamic Approve Pending Group"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__dynamic_approve_request_ids
+msgid "Dynamic Approve Request"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونات Font awesome، مثال: fa-tasks "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_needaction
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_has_error
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__is_dynamic_approval_requester
+msgid "Is Dynamic Approval Requester"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: jbm_custom_account
+#: model:ir.model,name:jbm_custom_account.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "نهاية الوقت المعين للنشاط"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "الفعالية التالية في تقويم الأنشطة "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__next_review
+msgid "Next Review"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields.selection,name:jbm_custom_account.selection__account_move__secrecy_level__normal
+#: model:ir.model.fields.selection,name:jbm_custom_account.selection__account_payment__secrecy_level__normal
+msgid "Normal"
+msgstr "عادي"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة "
+
+#. module: jbm_custom_account
+#: model_terms:ir.ui.view,arch_db:jbm_custom_account.account_move_form_view_inherit
+msgid "Payment"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_bank_statement_line__payment_count
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__payment_count
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_payment__payment_count
+msgid "Payment Count"
+msgstr ""
+
+#. module: jbm_custom_account
+#: code:addons/jbm_custom_account/models/account_move.py:0
+#: model:ir.model,name:jbm_custom_account.model_account_payment
+#, python-format
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__role_distribution_id
+msgid "Role Distribution"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_bank_statement_line__secrecy_level
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__secrecy_level
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_payment__secrecy_level
+msgid "Secrecy Level"
+msgstr "مستوى السريه"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__state_from_name
+msgid "State From Name"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل. "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل غير المقروءة "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل غير المقروءة "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__validated
+msgid "Validated"
+msgstr ""
+
+#. module: jbm_custom_account
+#: model:ir.model.fields.selection,name:jbm_custom_account.selection__account_move__secrecy_level__very_confidential
+#: model:ir.model.fields.selection,name:jbm_custom_account.selection__account_payment__secrecy_level__very_confidential
+msgid "Very Confidential"
+msgstr "سري جداً"
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,field_description:jbm_custom_account.field_account_move__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني "
+
+#. module: jbm_custom_account
+#: model:ir.model.fields,help:jbm_custom_account.field_account_move__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني "

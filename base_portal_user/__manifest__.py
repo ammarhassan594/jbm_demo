@@ -9,8 +9,7 @@
     'category': 'Product',
     'version': '1.0.0.0.0.1',
     'license': 'LGPL-3',
-    'depends': ['auth_signup', 'portal', 'calendar', 'base', 'mail', 'rating', 'resource',
-                'appointment', 'hr', 'base_user_role'],
+    'depends': ['auth_signup', 'portal', 'calendar', 'base', 'mail', 'rating', 'resource','appointment', 'hr', 'base_user_role'],
     'data': [
         # Security Files
         'security/groups.xml',

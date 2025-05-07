@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "employee_promotion_dynamic_approval",
+    'name': "hr_allowance_request_extended",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as

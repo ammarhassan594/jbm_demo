@@ -39,7 +39,7 @@
                 'job_org_chart/static/src/js/job_org_chart.js',
             ],
             'web.assets_qweb': [
-                'job_org_chart/static/src/xml/job_org_chart.xml',
+                'job_org_chart/static/src/xml/**/*',
             ],
         },
 }

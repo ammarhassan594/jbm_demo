@@ -159,7 +159,7 @@ class InheritHrEmployee(models.Model):
                 template.email_from = self.env.user.company_id.partner_id.email
                 template.email_to = hr_manager.work_email
                 initial_div = f'<div style="text-align:right; direction:rtl;">'
-                first_body_part = "تم تسجيل غياب عن الدوام بتاريخ " + f"{date.today()}" + " للموظفين التاليين: " + "<br/>"
+                first_body_part = "تم تسجيل غياب  عن الدوام بتاريخ " + f"{date.today()}" + " للموظفين التاليين: " + "<br/>"
                 second_body_part = '<br/>'
                 for dep in departments:
                     second_body_part += f'<p style="font-weight: bold;">{dep.arabic_name if dep.arabic_name else dep.name}</p>'

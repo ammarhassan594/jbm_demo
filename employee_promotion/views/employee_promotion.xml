@@ -157,7 +157,6 @@
                                         <field name="social_alw_new"/>
                                         <field name="car_alw_new"/>
                                         <field name="supervision_alw_new"/>
-                                        <field name="end_of_basic_salary_bonus" attrs="{'invisible': [('new_contract_id', '=', False)]}"/>
                                         <field name="gross_salary_new"/>
                                         <field name="ticket_allowance_new"/>
                                         <field name="mobilisation_allowance"/>

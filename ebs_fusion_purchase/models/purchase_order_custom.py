@@ -128,10 +128,10 @@ class PurchaseOrder(models.Model):
                     coo_approval_needed = True
             if not finance_approval_needed and not coo_approval_needed:
                 order.button_approve(force=True)
-            elif finance_approval_needed:
-                raise ValidationError(_("Finanace Manager approval needed."))
+            #elif finance_approval_needed:
+                #raise ValidationError(_("Finanace Manager approval needed."))
             if not finance_approval_needed and coo_approval_needed:
                 order.write({'state': 'to approve'})
-            elif finance_approval_needed and coo_approval_needed:
-                raise ValidationError(_("Finanace Manager approval needed."))
+            #elif finance_approval_needed and coo_approval_needed:
+                #raise ValidationError(_("Finanace Manager approval needed."))
         return True

@@ -14,6 +14,7 @@ class InheritHrPayslip(models.Model):
         bonus_configuration = self.env['bonus.configuration'].search([
             ('bonus_month', '=', current_date.month)
         ])
+        print('bonus_configuration', bonus_configuration)
         if bonus_configuration:
             nationality = employee.country_id.code if employee.country_id else False
             if nationality:

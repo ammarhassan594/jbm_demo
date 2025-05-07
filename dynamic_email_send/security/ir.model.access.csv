@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_dynamic_email_configuration,dynamic_email_send.access_dynamic_email_configuration,model_dynamic_email_configuration,base.group_user,1,1,1,1
-access_dynamic_approval_email_condition,dynamic_email_send.dynamic_approval_email_condition,model_dynamic_approval_email_condition,base.group_user,1,1,1,1
-access_models_selection_fields,dynamic_email_send.models_selection_fields,model_models_selection_fields,base.group_user,1,1,1,1

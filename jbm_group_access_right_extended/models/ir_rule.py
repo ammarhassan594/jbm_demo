@@ -97,46 +97,6 @@ class IrRuleInherit(models.Model):
             else:
                 self._cr.execute(base_query, (model_name, self._uid))
             return self.browse(row[0] for row in self._cr.fetchall())
-        # elif self.env.user.has_group('jbm_group_access_right_extended.procurement_user_role') and model_name in [
-        #     'approval.request', 'hr.attendance', 'hr.payslip']:
-        #     record_rules = []
-        #     if model_name == 'approval.request':
-        #         record_rules = [
-        #             self.env.ref('jbm_group_access_right_extended.jbm_rule_for_only_and_his_child_approval_request').id]
-        #     # elif model_name == 'hr.attendance':
-        #     #     record_rules = [self.env.ref('jbm_group_access_right_extended.hr_attendance_rule_of_read_only').id,
-        #     #                     self.env.ref('jbm_group_access_right_extended.hr_attendance_rule_of_read_only_test').id]
-        #
-        #     elif model_name == 'hr.payslip':
-        #         record_rules = [
-        #             self.env.ref('jbm_group_access_right_extended.jbm_rule_of_hr_payslip_for_read').id,
-        #             self.env.ref(
-        #                 'jbm_group_access_right_extended.jbm_reverse_rule_of_hr_payslip_for_read').id]
-        #     if record_rules:
-        #         self._cr.execute(query, (model_name, tuple(record_rules), self._uid))
-        #     else:
-        #         self._cr.execute(base_query, (model_name, self._uid))
-        #     return self.browse(row[0] for row in self._cr.fetchall())
-        # elif self.env.user.has_group('jbm_group_access_right_extended.custom_procurement_manager') and model_name in [
-        #     'hr.attendance', 'approval.request', 'hr.payslip']:
-        #     record_rules = []
-        #     # if model_name == 'hr.attendance':
-        #     #     record_rules = [
-        #     #         self.env.ref('jbm_group_access_right_extended.rule_of_jbm_attendance_manager_only_read').id,
-        #     #         self.env.ref('jbm_group_access_right_extended.rule_reverse_of_jbm_attendance_manager_only_read').id]
-        #     if model_name == 'approval.request':
-        #         record_rules = [
-        #             self.env.ref('jbm_group_access_right_extended.jbm_rule_for_only_and_his_child_approval_request').id]
-        #     elif model_name == 'hr.payslip':
-        #         record_rules = [
-        #             self.env.ref('jbm_group_access_right_extended.jbm_rule_of_hr_payslip_for_read').id,
-        #             self.env.ref(
-        #                 'jbm_group_access_right_extended.jbm_reverse_rule_of_hr_payslip_for_read').id]
-        #     if record_rules:
-        #         self._cr.execute(query, (model_name, tuple(record_rules), self._uid))
-        #     else:
-        #         self._cr.execute(base_query, (model_name, self._uid))
-        #     return self.browse(row[0] for row in self._cr.fetchall())
         elif (self.env.user.has_group(
                 'jbm_group_access_right_extended.custom_committee_user') or self.env.user.has_group(
             'jbm_group_access_right_extended.custom_committee_leader')) and model_name in [

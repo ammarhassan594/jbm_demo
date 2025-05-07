@@ -5,7 +5,7 @@
     'category': 'tools',
     'summary': 'Waqf Employee Screen',
     'description': """""",
-    'depends': ['base', 'hr'],
+    'depends': ['base'],
     'data': ['security/ir.model.access.csv',
              'views/ebs_jbm_waqf.xml'],
     'demo': [],

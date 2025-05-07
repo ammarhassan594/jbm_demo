@@ -1267,9 +1267,11 @@ class ApprovalRequest(models.Model):
                     break
 
             if equal or self.env.user.has_group('security_rules.group_hc_employee'):
-                rec.can_see_eligible = True
+                if rec.request_status != 'approved':
+                    rec.can_see_eligible = True
             else:
-                rec.can_see_eligible = False
+                if rec.request_status == 'new':
+                    rec.can_see_eligible = False
 
 
 class ApprovalRejectReason(models.TransientModel):

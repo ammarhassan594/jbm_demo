@@ -75,7 +75,7 @@ class ExportPayment(models.TransientModel):
                 bank_address += payment.partner_bank_id.bank_id.country.name + ','
             if payment.partner_bank_id.bank_id and payment.partner_bank_id.bank_id.zip:
                 bank_address += payment.partner_bank_id.bank_id.zip
-            iban = payment.partner_id.bank_ids[0].acc_number if payment.partner_id.bank_ids else payment.partner_bank_id.iban_no
+            iban = payment.partner_id.bank_ids[0].acc_number if payment.partner_id else payment.partner_bank_id.iban_no
             worksheet.write(row, 0, count)
             worksheet.write(row, 1, iban or '')
             worksheet.write(row, 2, payment.amount or 0)

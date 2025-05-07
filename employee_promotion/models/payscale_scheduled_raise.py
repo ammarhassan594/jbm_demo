@@ -122,9 +122,9 @@ class PayscaleScheduledRaise(models.Model):
                                             # 'exceptional_promotion': True,
                                         })
                                         if new_promotion:
-                                            # new_promotion.write({
-                                            #     'state': 'approve'
-                                            # })
+                                            new_promotion.write({
+                                                'state': 'approve'
+                                            })
                                             new_promotion._get_payscale_grade_values()
 
                                 elif rais_amount > 0.0 and rais_amount >= basic_max:
@@ -164,9 +164,9 @@ class PayscaleScheduledRaise(models.Model):
                                                 # 'exceptional_promotion': True,
                                             })
                                             if new_promotion:
-                                                # new_promotion.write({
-                                                #     'state': 'approve'
-                                                # })
+                                                new_promotion.write({
+                                                    'state': 'approve'
+                                                })
                                                 new_promotion._get_payscale_grade_values()
 
                                     elif contract.wage < basic_max and rais_amount > basic_max:
@@ -213,9 +213,9 @@ class PayscaleScheduledRaise(models.Model):
                                                 # 'exceptional_promotion': True,
                                             })
                                             if new_promotion:
-                                                # new_promotion.write({
-                                                #     'state': 'approve'
-                                                # })
+                                                new_promotion.write({
+                                                    'state': 'approve'
+                                                })
                                                 new_promotion._get_payscale_grade_values()
 
                                     elif contract.wage == basic_max:
@@ -258,9 +258,9 @@ class PayscaleScheduledRaise(models.Model):
                                                 # 'exceptional_promotion': True,
                                             })
                                             if new_promotion:
-                                                # new_promotion.write({
-                                                #     'state': 'approve'
-                                                # })
+                                                new_promotion.write({
+                                                    'state': 'approve'
+                                                })
                                                 new_promotion._get_payscale_grade_values()
 
 
@@ -311,9 +311,9 @@ class PayscaleScheduledRaise(models.Model):
                                         # 'exceptional_promotion': True,
                                     })
                                     if new_promotion:
-                                        # new_promotion.write({
-                                        #     'state': 'approve'
-                                        # })
+                                        new_promotion.write({
+                                            'state': 'approve'
+                                        })
                                         new_promotion._get_payscale_grade_values()
                             elif rais_amount > 0.0 and rais_amount >= basic_max:
                                 if contract.wage < basic_max and rais_amount == basic_max:
@@ -352,9 +352,9 @@ class PayscaleScheduledRaise(models.Model):
                                             # 'exceptional_promotion': True,
                                         })
                                         if new_promotion:
-                                            # new_promotion.write({
-                                            #     'state': 'approve'
-                                            # })
+                                            new_promotion.write({
+                                                'state': 'approve'
+                                            })
                                             new_promotion._get_payscale_grade_values()
 
                                 elif contract.wage < basic_max and rais_amount > basic_max:
@@ -401,9 +401,9 @@ class PayscaleScheduledRaise(models.Model):
                                             # 'exceptional_promotion': True,
                                         })
                                         if new_promotion:
-                                            # new_promotion.write({
-                                            #     'state': 'approve'
-                                            # })
+                                            new_promotion.write({
+                                                'state': 'approve'
+                                            })
                                             new_promotion._get_payscale_grade_values()
 
                                 elif contract.wage == basic_max:
@@ -448,7 +448,7 @@ class PayscaleScheduledRaise(models.Model):
                                             # 'exceptional_promotion': True,
                                         })
                                         if new_promotion:
-                                            # new_promotion.write({
-                                            #     'state': 'approve'
-                                            # })
+                                            new_promotion.write({
+                                                'state': 'approve'
+                                            })
                                             new_promotion._get_payscale_grade_values()

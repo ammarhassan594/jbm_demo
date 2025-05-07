@@ -109,8 +109,8 @@ msgstr "قائمة"
 
 #. module: jbm_group_access_right_extended
 #: model_terms:ir.ui.view,arch_db:jbm_group_access_right_extended.user_role_view_inherited
-msgid "Menu Items"
-msgstr "عناصر القائمة"
+msgid "Hide Specific Menu"
+msgstr "القوائم المحظورة"
 
 #. module: jbm_group_access_right_extended
 #: code:addons/jbm_group_access_right_extended/models/hr_leave.py:0

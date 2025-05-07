@@ -6,17 +6,17 @@
         <field name="inherit_id" ref="hr.view_hr_job_form"/>
         <field name="arch" type="xml">
             <xpath expr="//header//button[@name='set_recruit']" position="before">
-<!--                <button string="Department Manager Approve" name="action_department_manager_approve" type="object"-->
-<!--                        attrs="{'invisible':['|',('state','!=','department_manager'),('employee_type','!=','main_company_employee')]}"-->
-<!--                        groups="hr.group_hr_manager"/>-->
+                <button string="Department Manager Approve" name="action_department_manager_approve" type="object"
+                        attrs="{'invisible':['|',('state','!=','department_manager'),('employee_type','!=','main_company_employee')]}"
+                        groups="hr.group_hr_manager"/>
                 <button string="HR Manager Approve" name="action_hr_manager" type="object"
                         attrs="{'invisible':['|',('state','!=','hr_manager'),('employee_type','!=','main_company_employee')]}"
                         groups="hr.group_hr_manager"/>
                 <button string="Account Manager Approve" name="action_account_manager" type="object"
                         attrs="{'invisible':['|',('state','!=','account_manager'),('employee_type','!=','main_company_employee')]}"
                         groups="account.group_account_manager"/>
-<!--                <button string="Refuse" name="action_manager_refuse" type="object"-->
-<!--                        groups="hr.group_hr_manager,account.group_account_manager"/>-->
+                <button string="Refuse" name="action_manager_refuse" type="object"
+                        groups="hr.group_hr_manager,account.group_account_manager"/>
 
                 <button string="Operational Employee Approve" name="action_operational_employee" type="object"
                         attrs="{'invisible':['|',('state','!=','department_manager'),('employee_type','!=','outsourced_employee')]}"
@@ -26,9 +26,9 @@
                         attrs="{'invisible':['|',('state','!=','department_manager'),('employee_type','!=','outsourced_employee')]}"
                         groups="taqat_groups_access_rights_extended.group_operational_manager"/>
 
-<!--                <button string="Department Manager Approve" name="action_department_manager" type="object"-->
-<!--                        attrs="{'invisible':['|',('state','!=','department_manager'),('employee_type','!=','outsourced_employee')]}"-->
-<!--                        groups="taqat_groups_access_rights_extended.group_employability_manager"/>-->
+                <button string="Department Manager Approve" name="action_department_manager" type="object"
+                        attrs="{'invisible':['|',('state','!=','department_manager'),('employee_type','!=','outsourced_employee')]}"
+                        groups="taqat_groups_access_rights_extended.group_employability_manager"/>
 
             </xpath>
             <xpath expr="//header//field[@name='state']" position="attributes">

@@ -32,7 +32,7 @@ class PublicAlertApi(http.Controller):
                     result.append({"title": public_alert.title,
                                    "date": public_alert.date if public_alert.date else '',
                                    "description": public_alert.description,
-                                   "attachment": base64.encodebytes(public_alert.attachment)
+                                   "attachment": public_alert.attachment
                                  # "attachment": list(base64.standard_b64decode(public_alert.attachment))
                                  })
                 else:

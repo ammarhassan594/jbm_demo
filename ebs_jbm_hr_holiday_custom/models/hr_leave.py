@@ -41,20 +41,20 @@ class HrLeaveCustom(models.Model):
     def _compute_can_approve(self):
         res = super(HrLeaveCustom, self)._compute_can_approve()
 
-        for holiday in self:
-            if holiday.can_approve and holiday.state == 'confirm':
-                if holiday.validation_type in ['both', 'manager'] and \
-                        self.env.user != holiday.employee_id.leave_manager_id and holiday.employee_id.leave_manager_id:
-                    holiday.can_approve = False
-                if holiday.validation_type in ['both', 'manager'] and \
-                        not holiday.employee_id.leave_manager_id:
-                    holiday.can_approve = True
-                elif holiday.validation_type == 'hr' and \
-                        self.env.user != holiday.holiday_status_id.responsible_id:
-                    holiday.can_approve = False
-            elif holiday.can_approve and holiday.state == 'validate1' and \
-                    self.env.user != holiday.holiday_status_id.responsible_id:
-                holiday.can_approve = False
+        # for holiday in self:
+        #     if holiday.can_approve and holiday.state == 'confirm':
+        #         if holiday.validation_type in ['both', 'manager'] and \
+        #                 self.env.user != holiday.employee_id.leave_manager_id and holiday.employee_id.leave_manager_id:
+        #             holiday.can_approve = False
+        #         if holiday.validation_type in ['both', 'manager'] and \
+        #                 not holiday.employee_id.leave_manager_id:
+        #             holiday.can_approve = True
+        #         elif holiday.validation_type == 'hr' and \
+        #                 self.env.user != holiday.holiday_status_id.responsible_id:
+        #             holiday.can_approve = False
+        #     elif holiday.can_approve and holiday.state == 'validate1' and \
+        #             self.env.user != holiday.holiday_status_id.responsible_id:
+        #         holiday.can_approve = False
 
         return res
 

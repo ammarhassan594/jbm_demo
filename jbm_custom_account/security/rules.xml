@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="accounting_normal_level_rule" model="ir.rule">
+            <field name="name">Accounting Normal Rule</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('secrecy_level','=', 'normal')]</field>
+            <field name="groups" eval="[(4,ref('jbm_custom_account.group_normal_level'))]"/>
+        </record>
+
+
+        <record id="accounting_confidential_level_rule" model="ir.rule">
+            <field name="name">Confidential Normal Rule</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('secrecy_level','=', 'confidential')]</field>
+            <field name="groups" eval="[(4,ref('jbm_custom_account.group_confidential_level'))]"/>
+        </record>
+
+
+        <record id="accounting_very_confidential_level_rule" model="ir.rule">
+            <field name="name">Very Confidential Normal Rule</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('secrecy_level','=', 'very_confidential')]</field>
+            <field name="groups" eval="[(4,ref('jbm_custom_account.group_very_confidential_level'))]"/>
+        </record>
+
+
+
+        <record id="payment_normal_level_rule" model="ir.rule">
+            <field name="name">Payment Normal Rule</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('secrecy_level','=', 'normal')]</field>
+            <field name="groups" eval="[(4,ref('jbm_custom_account.group_payment_normal_level'))]"/>
+        </record>
+
+
+        <record id="payment_confidential_level_rule" model="ir.rule">
+            <field name="name">Confidential Normal Rule</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('secrecy_level','=', 'confidential')]</field>
+            <field name="groups" eval="[(4,ref('jbm_custom_account.group_payment_confidential_level'))]"/>
+        </record>
+
+
+        <record id="payment_very_confidential_level_rule" model="ir.rule">
+            <field name="name">Very Confidential Normal Rule</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="domain_force">[('secrecy_level','=', 'very_confidential')]</field>
+            <field name="groups" eval="[(4,ref('jbm_custom_account.group_payment_very_confidential_level'))]"/>
+        </record>
+    </data>
+</odoo>

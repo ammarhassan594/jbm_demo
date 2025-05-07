@@ -30,7 +30,7 @@ class EmployeeActivitiesAPI(http.Controller):
                         activity.res_id, activity.res_model)
                         data.append({
                             'URL': request_url,
-                            'display_name': activity.display_name if activity.display_name else '',
+                            'display_name': activity.res_model_id.with_context(lang="ar_001").name if activity.res_model_id.name else '',
                             'date_deadline': activity.date_deadline if activity.date_deadline else '',
                             'create_date': activity.create_date if activity.create_date else '',
                             'summary': activity.summary if activity.summary else '',

@@ -456,7 +456,7 @@ class EmployeeGratuity(models.Model):
                 if user:
                     act_dct = {
                         'activity_type_id': activity_to_do,
-                        'note': "للتكرم بمراجعة طلب الموافقة على نظام موارد.",
+                        'note': "kindly check this Gratuity Settlement Request, it's awaiting your approval",
                         'user_id': user.id,
                         'res_id': self.id,
                         'res_model_id': model_id,

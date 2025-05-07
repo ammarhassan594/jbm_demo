@@ -11,5 +11,16 @@
                 action = records.roles_delegations()
             </field>
         </record>
+
+        <record id="approve_activity_of_delegations" model="ir.cron">
+            <field name="name">Approve activity of delegation</field>
+            <field name="model_id" ref="roles_delegation.model_roles_delegation"/>
+            <field name="state">code</field>
+            <field name="code">model._action_final_approve_activity()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
     </data>
 </odoo>

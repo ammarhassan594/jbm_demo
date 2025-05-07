@@ -46,7 +46,7 @@ class BankReceonWizard(models.TransientModel):
                 ('recurring', '=', False), ('payment_type', '=', 'outbound'),
                 ('date', '<=', self.date), ('state', '=', 'posted'),
                 ('journal_id', '=', journals.id),
-                ('payment_method_line_id.payment_method', '=', 'check')
+                ('payment_method_line_id.payment_method', '=', 'cheque')
             ]).filtered(lambda m: not m.move_id.has_reconciled_entries)
             payment_len = len(payments)
             #     if payments:

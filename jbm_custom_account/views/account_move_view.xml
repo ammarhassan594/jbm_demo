@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+
+         <record id="account_move_form_view_inherit" model="ir.ui.view">
+            <field name="name">account.move.form.view.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//form//header//button[@name='action_post'][1]" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//form//header//button[@name='action_post'][2]" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+
+                <xpath expr="//button[@name='open_payment_view']" position="before">
+                    <field name="payment_count" invisible="1"/>
+                    <field name="bill_id" invisible="0"/>
+                    <button class="oe_stat_button" name="action_get_payments" string="Payment" type="object" icon="fa-bars" attrs="{'invisible': [('payment_count', '=', 0)]}"/>
+                </xpath>
+
+
+                <xpath expr="//field[@name='partner_bank_id']" position="after">
+                    <field name="secrecy_level" attrs="{'invisible': [('move_type', '!=', 'in_invoice')], 'readonly': [('state', '=', 'posted')]}" />
+                </xpath>
+            </field>
+         </record>
+
+         <record id="account_move_tree_view_inherit" model="ir.ui.view">
+            <field name="name">account.move.tree.view.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_untaxed_signed']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='amount_total_in_currency_signed']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+            </field>
+         </record>
+    </data>
+</odoo>

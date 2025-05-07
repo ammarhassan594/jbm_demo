@@ -721,19 +721,6 @@
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
             <form string="Supplier">
-<!--                <header>-->
-
-<!--                    <button name="%(ebs_fusion_documents.document_button_action)d"-->
-<!--                            string="Create Document"-->
-<!--                            type="action" class="oe_stat_button"-->
-<!--                            icon="fa-file"-->
-<!--                            context="{-->
-<!--                    'default_partner_id':id,-->
-<!--                    'default_res_id': id,-->
-<!--                    'default_res_model': context.get('active_model'),-->
-<!--                    'hide_field': 1,-->
-<!--                    }"/>-->
-<!--                </header>-->
                 <sheet>
                     <div class="oe_button_box" id="client_button_box" name="button_box">
                         <button name="action_see_documents" type="object" class="oe_stat_button" icon="fa-file-text-o">
@@ -1074,7 +1061,7 @@
                                     <field name="ps_passport_serial_no_id" widget="many2one_clickable"/>
                                     <field name="ps_passport_ref_no"/>
                                     <field name="qid_residency_id" widget="many2one_clickable"/>
-                                    <field name="qid_ref_no" readonly="0"/>
+                                    <field name="qid_ref_no"/>
                                 </tree>
                             </field>
                             <h3>Managers</h3>
